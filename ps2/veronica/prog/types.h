@@ -1,12 +1,12 @@
-typedef struct vector3 {
+typedef struct Vector3 {
     float x;
     float y;
     float z;
 }
-vector3;
+Vector3;
 
 
-typedef struct camera {
+typedef struct Camera {
     /*   0 */ unsigned int flg;
     /*   4 */ int camver;
     /*   8 */ unsigned char mode0;
@@ -74,7 +74,7 @@ typedef struct camera {
     /* 716 */ float ipf[20][3];
     /* 956 */ float icr[20][3];
 }
-camera;
+Camera;
 
 
 typedef struct Timestamp {
