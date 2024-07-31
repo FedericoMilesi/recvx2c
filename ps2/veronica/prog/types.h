@@ -75,3 +75,47 @@ typedef struct camera {
     /* 956 */ float icr[20][3];
 }
 camera;
+
+
+typedef struct Timestamp {
+    /* 0 */ unsigned short year;
+    /* 2 */ unsigned char month;
+    /* 3 */ unsigned char day;
+    /* 4 */ unsigned char hour;
+    /* 5 */ unsigned char minute;
+    /* 6 */ unsigned char second;
+    /* 7 */ unsigned char dayofweek;
+}
+Timestamp;
+
+
+typedef struct Disk {
+    /*  0 */ unsigned char volume[32];
+    /* 32 */ unsigned short total_blocks;
+    /* 34 */ unsigned short total_user_blocks;
+    /* 36 */ unsigned short free_blocks;
+    /* 38 */ unsigned short free_user_blocks;
+    /* 40 */ unsigned short total_exe_blocks;
+    /* 42 */ unsigned short free_exe_blocks;
+    /* 44 */ unsigned short block_size;
+    /* 46 */ unsigned short icon_no;
+    /* 48 */ Timestamp time;
+}
+Disk;
+
+
+typedef struct Drive {
+    /*  0 */ unsigned short Ready;
+    /*  2 */ unsigned short IsFormat;
+    /*  4 */ unsigned int LastError;
+    /*  8 */ unsigned int ProgressCount;
+    /* 12 */ unsigned int ProgressMax;
+    /* 16 */ unsigned int Operation;
+    /* 20 */ Disk DiskInfo;
+    /* 76 */ unsigned int Connect;
+    /* 80 */ void* Work;
+    /* 84 */ unsigned int WorkSize;
+    /* 88 */ unsigned int Capacity;
+    /* 92 */ int MemMode;
+}
+Drive;
