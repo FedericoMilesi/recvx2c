@@ -4919,11 +4919,7 @@ int Adv_ChangeDiscScreen()
 	// Func End, Address: 0x2c84cc, Func Offset: 0xec
 }
 
-// 
-// Start address: 0x2c84d0
-int Adv_SoundMuseum()
-{
-	// Line 6907, Address: 0x2c84d0, Func Offset: 0
-	// Func End, Address: 0x2c84d8, Func Offset: 0x8
-}
+int Adv_SoundMuseum() /* Matching - 100% */ { // Line 6907, Address: 0x2c84d0
+    return 1;
+} 
 
