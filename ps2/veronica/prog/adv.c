@@ -2067,7 +2067,7 @@ int Adv_GameOptionScreen();
 int Adv_ChangeDiscScreen();
 int Adv_SoundMuseum();
 
-void CallPlayerDeadVoice(int PlayerNo) { // Line 211, Address: 0x2c0d40
+void CallPlayerDeadVoice(int PlayerNo) /* Matching - 100% */ { // Line 211, Address: 0x2c0d40
     PlayBgmEx2(PatId[3], PlayerNo + 8, 1, -45);
 }
 
