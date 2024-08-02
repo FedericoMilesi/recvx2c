@@ -2067,12 +2067,8 @@ int Adv_GameOptionScreen();
 int Adv_ChangeDiscScreen();
 int Adv_SoundMuseum();
 
-// 
-// Start address: 0x2c0d40
-void CallPlayerDeadVoice(int PlayerNo)
-{
-	// Line 211, Address: 0x2c0d40, Func Offset: 0
-	// Func End, Address: 0x2c0d5c, Func Offset: 0x1c
+void CallPlayerDeadVoice(int PlayerNo) { // Line 211, Address: 0x2c0d40
+    PlayBgmEx2(PatId[3], PlayerNo + 8, 1, -45);
 }
 
 // 
