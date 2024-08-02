@@ -4710,20 +4710,24 @@ int DisplayOptionPlateLevel3(int PortId, int Flag)
 	// Func End, Address: 0x2c7cf0, Func Offset: 0x480
 }
 
-// 
-// Start address: 0x2c7cf0
-int DisplayOptionPlate(int PortId, int Level, int Flag)
-{
-	// Line 5429, Address: 0x2c7cf0, Func Offset: 0
-	// Line 5430, Address: 0x2c7cf4, Func Offset: 0x4
-	// Line 5432, Address: 0x2c7d28, Func Offset: 0x38
-	// Line 5435, Address: 0x2c7d3c, Func Offset: 0x4c
-	// Line 5438, Address: 0x2c7d50, Func Offset: 0x60
-	// Line 5441, Address: 0x2c7d64, Func Offset: 0x74
-	// Line 5444, Address: 0x2c7d74, Func Offset: 0x84
-	// Line 5446, Address: 0x2c7d78, Func Offset: 0x88
-	// Func End, Address: 0x2c7d84, Func Offset: 0x94
-}
+int DisplayOptionPlate(int PortId, int Level, int Flag) /* Matching - 100% */ { // Line 5429, Address: 0x2c7cf0
+    switch (Level) { // Line 5430, Address: 0x2c7cf4                   
+        case 0:
+            return DisplayOptionPlateLevel0(PortId, Flag); // Line 5432, Address: 0x2c7d28
+        case 1:
+
+            return DisplayOptionPlateLevel1(PortId, Flag); // Line 5435, Address: 0x2c7d3c
+        case 2:
+
+            return DisplayOptionPlateLevel2(PortId, Flag); // Line 5438, Address: 0x2c7d50
+        case 3: 
+
+            return DisplayOptionPlateLevel3(PortId, Flag); // Line 5441, Address: 0x2c7d64
+        default:
+            
+            return -1; // Line 5444, Address: 0x2c7d74
+    }
+} // Line 5446, Address: 0x2c7d78
 
 // 
 // Start address: 0x2c7d90
