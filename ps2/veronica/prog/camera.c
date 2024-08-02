@@ -2,7 +2,7 @@
 
 extern Camera cam;
 extern float cmmat[0][16];
-extern float cmat[16];
+extern float* cmat;
 
 void bhInitCamera();
 void bhControlCamera();
@@ -74,7 +74,7 @@ void bhInitCamera() /* Matching - 100% */ { // Line 58, Address: 0x279ea0, 0x279
 
 
 
-void bhControlCamera() /* Matching - 98.37% */ { // Line 77, Address: 0x279f50, 0x279f5c
+void bhControlCamera() { /* Matching - 100% */ // Line 77, Address: 0x279f50, 0x279f5c
     Vector3 pos = { 0.0, 0.0, -1.0 }, ps; // Line 78, Address: 0x279f54, 0x279f60, 0x279f70
 
     njSetPerspective(cam.pers); // Line 80, Address: 0x279f6c, 0x279f78
