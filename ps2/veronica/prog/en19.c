@@ -2037,13 +2037,10 @@ void bhEne19_Damage()
 	// Func End, Address: 0x1f0bb8, Func Offset: 0x8
 }
 
-// 
-// Start address: 0x1f0bc0
-void bhEne19_Die(BH_PWORK* ewP)
-{
-	// Line 774, Address: 0x1f0bc0, Func Offset: 0
-	// Line 776, Address: 0x1f0bcc, Func Offset: 0xc
-	// Func End, Address: 0x1f0bd4, Func Offset: 0x14
+void bhEne19_Die(BH_PWORK* ewP) /* Matching - 100% */ {
+    ewP->flg |= 0x2; // Line 774, Address: 0x1f0bc0
+
+    ewP->mtx[0] = 0; // Line 776, Address: 0x1f0bcc
 }
 
 // 
