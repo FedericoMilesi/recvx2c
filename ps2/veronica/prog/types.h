@@ -157,3 +157,14 @@ typedef struct KeyRepeatInfo {
     unsigned int Key;
 }
 KeyRepeatInfo;
+
+
+typedef struct VibrationInfo {
+    /* 0 */ unsigned char unit;
+    /* 1 */ unsigned char flag;
+    /* 2 */ char power;
+    /* 3 */ unsigned char freq;
+    /* 4 */ unsigned char inc;
+    /* 5 */ unsigned char reserved[3];
+}
+VibrationInfo;
