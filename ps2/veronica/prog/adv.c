@@ -2317,19 +2317,18 @@ void AllFreeAdvMemory() /* Matching - 100%*/ { // Line 558, Address: 0x2c1380
     } // Line 563, Address: 0x2c1398
 } // Line 564, Address: 0x2c13ac
 
-// 
-// Start address: 0x2c13c0
-int CheckReadEndAdvInsideFile()
-{
-	int ReturnCode;
-	// Line 575, Address: 0x2c13c0, Func Offset: 0
-	// Line 579, Address: 0x2c13c8, Func Offset: 0x8
-	// Line 581, Address: 0x2c13d4, Func Offset: 0x14
-	// Line 582, Address: 0x2c13e0, Func Offset: 0x20
-	// Line 585, Address: 0x2c13e8, Func Offset: 0x28
-	// Line 586, Address: 0x2c13ec, Func Offset: 0x2c
-	// Func End, Address: 0x2c13fc, Func Offset: 0x3c
-}
+int CheckReadEndAdvInsideFile() /* Matching - 100% */ { // Line 575, Address: 0x2c13c0
+    int ReturnCode;
+
+
+    ReturnCode = GetReadFileStatus(); // Line 579, Address: 0x2c13c8
+    
+    if (ReturnCode == -1) { // Line 581, Address: 0x2c13d4
+        AllFreeAdvMemory(); // Line 582, Address: 0x2c13e0
+    }
+    
+    return ReturnCode; // Line 585, Address: 0x2c13e8
+} // Line 586, Address: 0x2c13ec
 
 // 
 // Start address: 0x2c1400
