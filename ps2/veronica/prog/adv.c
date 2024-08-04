@@ -2071,12 +2071,8 @@ void CallPlayerDeadVoice(int PlayerNo) /* Matching - 100% */ { // Line 211, Addr
     PlayBgmEx2(PatId[3], PlayerNo + 8, 1, -45);
 }
 
-// 
-// Start address: 0x2c0d60
-void CallSystemVoice(int VoiceNo)
-{
-	// Line 223, Address: 0x2c0d60, Func Offset: 0
-	// Func End, Address: 0x2c0d80, Func Offset: 0x20
+void CallSystemVoice(int VoiceNo) /* Matching - 100% */ { // Line 223, Address: 0x2c0d60
+    PlayVoiceEx2(PatId[3], VoiceNo + 16, 0, 1, 0, 0);
 }
 
 float GetSamurai(int Time) /* Matching - 100% */ { // Line 234, Address: 0x2c0d80
