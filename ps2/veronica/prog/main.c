@@ -1737,18 +1737,20 @@ int njUserMain()
 	// Func End, Address: 0x12b4d8, Func Offset: 0xa8
 }
 
-// 
-// Start address: 0x12b4e0
-void njUserExit()
-{
-	// Line 342, Address: 0x12b4e0, Func Offset: 0
-	// Line 343, Address: 0x12b4e8, Func Offset: 0x8
-	// Line 345, Address: 0x12b4f0, Func Offset: 0x10
-	// Line 353, Address: 0x12b4f8, Func Offset: 0x18
-	// Line 354, Address: 0x12b500, Func Offset: 0x20
-	// Line 355, Address: 0x12b508, Func Offset: 0x28
-	// Line 356, Address: 0x12b510, Func Offset: 0x30
-	// Line 357, Address: 0x12b518, Func Offset: 0x38
-	// Func End, Address: 0x12b524, Func Offset: 0x44
-}
+void njUserExit() /* Matching - 100% */ { // Line 342, Address: 0x12b4e0
+    ExitSoundProgram(); // Line 343, Address: 0x12b4e8
+    
+    BupExit(); // Line 345, Address: 0x12b4f0,
+
+
+
+
+
+
+    
+    njExitTexture(); // Line 353, Address: 0x12b4f8
+    njExitPrint(); // Line 354, Address: 0x12b500,
+    sbExitSystem(); // Line 355, Address: 0x12b508
+    syBtExit(); // Line 356, Address: 0x12b510
+} // Line 357, Address: 0x12b518
 
