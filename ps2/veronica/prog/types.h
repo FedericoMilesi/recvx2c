@@ -119,3 +119,41 @@ typedef struct Drive {
     /* 92 */ int MemMode;
 }
 Drive;
+
+
+typedef struct Controller {
+    /*  0 */ int PerType;
+    /*  4 */ int OldPerType;
+    /*  8 */ int PerTypeEx;
+    /* 12 */ unsigned int Flag;
+    /* 16 */ int SoftReset;
+    /* 20 */ unsigned int on;
+    /* 24 */ unsigned int press;
+    /* 28 */ unsigned int Rept;
+    /* 32 */ unsigned int on2;
+    /* 36 */ unsigned int on2old;
+    /* 40 */ unsigned int press2;
+    /* 44 */ unsigned short l;
+    /* 46 */ unsigned short r;
+    /* 48 */ short x1;
+    /* 50 */ short y1;
+    /* 52 */ short x2;
+    /* 54 */ short y2;
+    /* 56 */ short Calibrate;
+}
+Controller;
+
+
+typedef struct ControllerButton {
+    int Type;
+    unsigned int Button;
+}
+ControllerButton;
+
+
+typedef struct KeyRepeatInfo {
+    unsigned int WaitFlag;
+    unsigned int WaitCnt;
+    unsigned int Key;
+}
+KeyRepeatInfo;
