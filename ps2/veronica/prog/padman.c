@@ -53,7 +53,7 @@ void ClearSoftResetKeyFlag(int ControllerId);
 
 
 
-
+/* 100% match */
 void InitReadKeyEx(int MaxPlayer) {
     unsigned int i, j;
 
@@ -121,14 +121,14 @@ void InitReadKeyEx(int MaxPlayer) {
 
 
 
-
+/* 100% match */
 void SetRepeatKeyTimer(unsigned int FirstTimer, unsigned int NextTimer) {
     KeyWaitFirst = FirstTimer; // Line 126, Address: 0x297ef0
     KeyWaitNext = NextTimer; // Line 127, Address: 0x297ef8
 } // Line 128, Address: 0x297efc
 
 
-
+/* 100% match */
 int CheckSoftResetKeyFlag(int ControllerId) {
     if (ControllerId < 0) return Pad[CurrentPortId].SoftReset; else return Pad[ControllerId].SoftReset; // Line 133, Address: 0x297f10
 
@@ -136,7 +136,7 @@ int CheckSoftResetKeyFlag(int ControllerId) {
 
 } // Line 137, Address: 0x297f60
 
-
+/* 100% match */
 void ClearSoftResetKeyFlag(int ControllerId) {
     int i;
 
