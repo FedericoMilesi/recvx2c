@@ -347,12 +347,8 @@ void bhEne08_Init(BH_PWORK* epw)
 	// Func End, Address: 0x1c60e0, Func Offset: 0xf0
 }
 
-// 
-// Start address: 0x1c60e0
-void bhEne08_Move(BH_PWORK* epw)
-{
-	// Line 218, Address: 0x1c60e0, Func Offset: 0
-	// Func End, Address: 0x1c6100, Func Offset: 0x20
+void bhEne08_Move(BH_PWORK* epw) /* Matching - 100% */ { // Line 218, Address: 0x1c60e0
+    bhEne08_MoveMode2[epw->mode2](); 
 }
 
 // 
