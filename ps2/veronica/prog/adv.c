@@ -2309,18 +2309,13 @@ void FreeAdvMemoryEx(int MemoryBlockNo)
 	// Func End, Address: 0x2c1374, Func Offset: 0x44
 }
 
-// 
-// Start address: 0x2c1380
-void AllFreeAdvMemory()
-{
-	int i;
-	// Line 558, Address: 0x2c1380, Func Offset: 0
-	// Line 561, Address: 0x2c138c, Func Offset: 0xc
-	// Line 562, Address: 0x2c1390, Func Offset: 0x10
-	// Line 563, Address: 0x2c1398, Func Offset: 0x18
-	// Line 564, Address: 0x2c13ac, Func Offset: 0x2c
-	// Func End, Address: 0x2c13bc, Func Offset: 0x3c
-}
+void AllFreeAdvMemory() /* Matching - 100%*/ { // Line 558, Address: 0x2c1380
+    int i;
+
+    for (i = 7; i >= 0; i--) { // Line 561, Address: 0x2c138c
+        FreeAdvMemoryEx(i); // Line 562, Address: 0x2c1390
+    } // Line 563, Address: 0x2c1398
+} // Line 564, Address: 0x2c13ac
 
 // 
 // Start address: 0x2c13c0
