@@ -41,6 +41,31 @@ int _dpfne(double left, double right)
 	// Line 88, Address: 0x2e5ed4, Func Offset: 0x14
 	// Line 89, Address: 0x2e5ed8, Func Offset: 0x18
 	// Func End, Address: 0x2e5ee0, Func Offset: 0x20
+
+
+
+
+
+
+
+
+
+
+/* 100% match */
+double _d_ulltod(unsigned long long ul) { // Line 55, Address: 0x2e5e60
+    double d;
+
+    if ((long)ul > 0) // Line 58, Address: 0x2e5e64
+        return (long)ul; // Line 59, Address: 0x2e5e6c
+    else {
+        d = (long)((ul >> 1) | (ul & 1)); // Line 61, Address: 0x2e5e7c
+        return d + d; // Line 62, Address: 0x2e5e8c
+    }
+} // Line 64, Address: 0x2e5e98
+
+/* 100% match */
+double _d_utod(unsigned int ui) {
+    return _d_ulltod(ui); // Line 68, Address: 0x2e5eb0
 }
 
 // 
