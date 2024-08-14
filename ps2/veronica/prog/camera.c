@@ -54,8 +54,8 @@ void bhGetCameraPosition();
 
 
 
-
-void bhInitCamera() /* Matching - 100% */ { // Line 58, Address: 0x279ea0, 0x279eb0
+/* Matching - 100% */
+void bhInitCamera() { // Line 58, Address: 0x279ea0, 0x279eb0
     npSetMemory(cam, 1196, 0); // Line 59, Address: 0x279ea4, 0x279eb4
     cam.flg = 0; // Line 60, Address: 0x279ebc
     cam.ln = 256.0; // Line 61, Address: 0x279ec4
@@ -73,8 +73,8 @@ void bhInitCamera() /* Matching - 100% */ { // Line 58, Address: 0x279ea0, 0x279
 
 
 
-
-void bhControlCamera() { /* Matching - 100% */ // Line 77, Address: 0x279f50, 0x279f5c
+/* Matching - 100% */
+void bhControlCamera() { // Line 77, Address: 0x279f50, 0x279f5c
     Vector3 pos = { 0.0, 0.0, -1.0 }, ps; // Line 78, Address: 0x279f54, 0x279f60, 0x279f70
 
     njSetPerspective(cam.pers); // Line 80, Address: 0x279f6c, 0x279f78
@@ -139,8 +139,8 @@ void bhControlCamera() { /* Matching - 100% */ // Line 77, Address: 0x279f50, 0x
 
 
 
-
-void bhMakeCameraVector() /* Matching - 99.76% */ { // Line 143, Address: 0x27a160, 0x27a16c
+/* Matching - 99.76% */
+void bhMakeCameraVector() { // Line 143, Address: 0x27a160, 0x27a16c
     Vector3 pos = { 0.0, 0.0, -1.0 }; // Line 144, Address: 0x27a164, 0x27a170
     njUnitMatrix(0); // Line 145, Address: 0x27a180
     njRotateY(0, cam.ay); // Line 146, Address: 0x27a18c
@@ -154,8 +154,8 @@ void bhMakeCameraVector() /* Matching - 99.76% */ { // Line 143, Address: 0x27a1
 
 
 
-
-void bhGetCameraPosition() /* Matching - 100% */ { // Line 158, Address: 0x27a210
+/* Matching - 100% */
+void bhGetCameraPosition() { // Line 158, Address: 0x27a210
     Vector3 ps;
     njUnitMatrix(0); // Line 160, Address: 0x27a218
     njTranslate(0, cam.px + cam.ofx, cam.py + cam.ofy, cam.pz + cam.ofz); // Line 161, Address: 0x27a220
