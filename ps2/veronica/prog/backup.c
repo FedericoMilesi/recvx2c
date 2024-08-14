@@ -12,15 +12,15 @@ void BupInitCallback();
 
 
 
-
-void BupInit() /* Matching - 100% */ { // Line 16, Address: 0x2c9a60, 0x2c9a70
+/* Matching - 100% */
+void BupInit() { // Line 16, Address: 0x2c9a60, 0x2c9a70
     memset(gBupInfo, 0, sizeof(gBupInfo)); // Line 17, Address: 0x2c9a64, 0x2c9a74
     buInit(122, 255, 0, &BupInitCallback); // Line 18, Address: 0x2c9a7c
 } // Line 19, Address: 0x2c9a94
 
 
-
-void BupExit() /* Matching - 100% */ { // Line 23, Address: 0x2c9aa0
+/* Matching - 100% */
+void BupExit() { // Line 23, Address: 0x2c9aa0
 
     while (buExit() != 0); // Line 25, Address: 0x2c9aa8
 } // Line 26, Address: 0x2c9ac8
@@ -201,8 +201,8 @@ void BupExit() /* Matching - 100% */ { // Line 23, Address: 0x2c9aa0
 
 
 
-
-void ClearInfo(int drive) /* Matching - 100% */ {
+/* Matching - 100% */
+void ClearInfo(int drive) {
     Drive* info = &gBupInfo[drive]; // Line 206, Address: 0x2c9ae0
     info->ProgressCount = 0; // Line 207, Address: 0x2c9af8
     info->ProgressMax = 0; // Line 208, Address: 0x2c9afc
@@ -214,8 +214,8 @@ void ClearInfo(int drive) /* Matching - 100% */ {
 }
 
 
-
-int BupComplete(int drive, int op, int stat) /* Matching - 99.79% */ { // Line 218, Address: 0x2c9b28, 0x2c9b30, 0x2c9b40
+/* Matching - 99.79% */
+int BupComplete(int drive, int op, int stat) { // Line 218, Address: 0x2c9b28, 0x2c9b30, 0x2c9b40
     int ret;
     Drive* info;
 
@@ -273,8 +273,8 @@ int BupComplete(int drive, int op, int stat) /* Matching - 99.79% */ { // Line 2
 
 
 
-
-int BupProgress(int drive, int op, int count, int max) /* Matching - 100% */ {
+/* Matching - 100% */
+int BupProgress(int drive, int op, int count, int max) {
     Drive* info = &gBupInfo[drive]; // Line 278, Address: 0x2c9c40
 
 
@@ -286,8 +286,8 @@ int BupProgress(int drive, int op, int count, int max) /* Matching - 100% */ {
     return 0; // Line 286, Address: 0x2c9c64
 }
 
-
-void BupInitCallback() /* Matching - 100% */ { // Line 290, Address: 0x2c9c70, 0x2c9c78
+/* Matching - 100% */
+void BupInitCallback() { // Line 290, Address: 0x2c9c70, 0x2c9c78
 
 
 
