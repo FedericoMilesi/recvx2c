@@ -6,8 +6,8 @@ void main();
 
 
 
-
-void main() /* Matching - 100% */ { // Line 10, Address: 0x12b0a0
+/* Matching - 100% */
+void main() { // Line 10, Address: 0x12b0a0
   njUserInit(); // Line 11, Address: 0x12b0a8
 
 loop_1:
