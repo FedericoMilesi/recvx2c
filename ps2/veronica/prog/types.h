@@ -168,3 +168,98 @@ typedef struct VibrationInfo {
     /* 5 */ unsigned char reserved[3];
 }
 VibrationInfo;
+
+
+typedef struct GDS_DCF GDS_DCF;
+typedef struct GDS_FS_LIF GDS_FS_LIF;
+
+
+typedef struct GDS_FS_DIRREC_ENT {
+    int fad;
+    int fsize;
+    unsigned char flag;
+    unsigned char sid;
+    char fname[32];
+    char pad[2];
+}
+GDS_FS_DIRREC_ENT;
+
+
+typedef struct GDS_FS_DIRINFO {
+    int fad;
+    int fsize;
+    unsigned char flag;
+    unsigned char pad[3];
+}
+GDS_FS_DIRINFO;
+
+
+typedef struct GDS_FS_WORK GDS_FS_WORK;
+typedef struct GDS_FS_HANDLE {
+    GDS_FS_WORK* wk;
+    int fid;
+    int fad;
+    int fsize;
+    int fsctsize;
+    int ofs;
+    int trnsed;
+    int rsize;
+    int trsize;
+    void(*rdendcb)(void*);
+    void* rdcb_1st;
+    void(*trendcb)(void*);
+    void* trcb_1st;
+    void(*errcb)(void*, int);
+    void* errcb_1st;
+    int gdchn;
+    int gdchn_wait;
+    int ex_errcode;
+    short act;
+    short trflag;
+    short used;
+    short tmode;
+    short stat;
+    short err;
+}
+GDS_FS_HANDLE;
+
+
+typedef struct GDS_FS_DIRREC_TBL {
+    int dir_num;
+    int max_ent;
+    int dir_fad;
+    int pad;
+    GDS_FS_DIRREC_ENT dirrec_tbl[1];
+}
+GDS_FS_DIRREC_TBL;
+
+
+typedef struct GDS_FS_WORK {
+    int max_open;
+    int pathtbl_fad;
+    int pathtbl_size;
+    GDS_DCF* dcf;
+    GDS_FS_DIRREC_TBL* curdir;
+    GDS_FS_HANDLE* syshdl;
+    GDS_FS_HANDLE* hndtbl;
+    GDS_FS_HANDLE* now_work;
+    int f_svr;
+    void(*g_errcb)(void*, int);
+    void* g_errcb_1st;
+    int gdc_ver;
+    int errstat;
+    int istray;
+    short f_init;
+    short daplayed;
+    GDS_FS_LIF* liftbl;
+    unsigned int sctbuf[1040];
+    GDS_FS_HANDLE hndlist[1];
+}
+GDS_FS_WORK;
+
+
+typedef struct LfOpen {
+    unsigned int Flag;
+    GDS_FS_HANDLE* GdFs;
+}
+LfOpen;
