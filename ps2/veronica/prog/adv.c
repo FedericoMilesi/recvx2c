@@ -2067,15 +2067,18 @@ int Adv_GameOptionScreen();
 int Adv_ChangeDiscScreen();
 int Adv_SoundMuseum();
 
-void CallPlayerDeadVoice(int PlayerNo) /* Matching - 100% */ { // Line 211, Address: 0x2c0d40
+/* Matching - 100% */
+void CallPlayerDeadVoice(int PlayerNo) { // Line 211, Address: 0x2c0d40
     PlayBgmEx2(PatId[3], PlayerNo + 8, 1, -45);
 }
 
-void CallSystemVoice(int VoiceNo) /* Matching - 100% */ { // Line 223, Address: 0x2c0d60
+/* Matching - 100% */
+void CallSystemVoice(int VoiceNo) { // Line 223, Address: 0x2c0d60
     PlayVoiceEx2(PatId[3], VoiceNo + 16, 0, 1, 0, 0);
 }
 
-float GetSamurai(int Time) /* Matching - 100% */ { // Line 234, Address: 0x2c0d80
+/* Matching - 100% */
+float GetSamurai(int Time) { // Line 234, Address: 0x2c0d80
     return 1.0f / (((Time / 100) * 30) + (((Time % 100) * 6) / 10));
 } // Line 235, Address: 0x2c0e04
 
@@ -2309,7 +2312,8 @@ void FreeAdvMemoryEx(int MemoryBlockNo)
 	// Func End, Address: 0x2c1374, Func Offset: 0x44
 }
 
-void AllFreeAdvMemory() /* Matching - 100%*/ { // Line 558, Address: 0x2c1380
+/* Matching - 100% */
+void AllFreeAdvMemory() { // Line 558, Address: 0x2c1380
     int i;
 
     for (i = 7; i >= 0; i--) { // Line 561, Address: 0x2c138c
@@ -2317,7 +2321,8 @@ void AllFreeAdvMemory() /* Matching - 100%*/ { // Line 558, Address: 0x2c1380
     } // Line 563, Address: 0x2c1398
 } // Line 564, Address: 0x2c13ac
 
-int CheckReadEndAdvInsideFile() /* Matching - 100% */ { // Line 575, Address: 0x2c13c0
+/* Matching - 100% */
+int CheckReadEndAdvInsideFile() { // Line 575, Address: 0x2c13c0
     int ReturnCode;
 
 
@@ -4691,7 +4696,8 @@ int DisplayOptionPlateLevel3(int PortId, int Flag)
 	// Func End, Address: 0x2c7cf0, Func Offset: 0x480
 }
 
-int DisplayOptionPlate(int PortId, int Level, int Flag) /* Matching - 100% */ { // Line 5429, Address: 0x2c7cf0
+/* Matching - 100% */
+int DisplayOptionPlate(int PortId, int Level, int Flag) { // Line 5429, Address: 0x2c7cf0
     switch (Level) { // Line 5430, Address: 0x2c7cf4                   
         case 0:
             return DisplayOptionPlateLevel0(PortId, Flag); // Line 5432, Address: 0x2c7d28
@@ -4900,7 +4906,8 @@ int Adv_ChangeDiscScreen()
 	// Func End, Address: 0x2c84cc, Func Offset: 0xec
 }
 
-int Adv_SoundMuseum() /* Matching - 100% */ { // Line 6907, Address: 0x2c84d0
+/* Matching - 100% */
+int Adv_SoundMuseum() { // Line 6907, Address: 0x2c84d0
     return 1;
 } 
 
