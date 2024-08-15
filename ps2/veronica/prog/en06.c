@@ -1749,7 +1749,8 @@ void bhEne06_Init(BH_PWORK* epw)
 	// Func End, Address: 0x1b9dc0, Func Offset: 0x450
 }
 
-void bhEne06_Brain(BH_PWORK* epw) /* Matching - 100% */ { // Line 597, Address: 0x1b9dc0
+/* Matching - 100% */
+void bhEne06_Brain(BH_PWORK* epw) { // Line 597, Address: 0x1b9dc0
     bhEne06_BrainType[epw->type](); 
 }
 
