@@ -1737,7 +1737,8 @@ int njUserMain()
 	// Func End, Address: 0x12b4d8, Func Offset: 0xa8
 }
 
-void njUserExit() /* Matching - 100% */ { // Line 342, Address: 0x12b4e0
+/* Matching - 100% */
+void njUserExit() { // Line 342, Address: 0x12b4e0
     ExitSoundProgram(); // Line 343, Address: 0x12b4e8
     
     BupExit(); // Line 345, Address: 0x12b4f0,
