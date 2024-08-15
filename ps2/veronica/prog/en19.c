@@ -2037,7 +2037,8 @@ void bhEne19_Damage()
 	// Func End, Address: 0x1f0bb8, Func Offset: 0x8
 }
 
-void bhEne19_Die(BH_PWORK* ewP) /* Matching - 100% */ {
+/* Matching - 100% */
+void bhEne19_Die(BH_PWORK* ewP) {
     ewP->flg |= 0x2; // Line 774, Address: 0x1f0bc0
 
     ewP->mtx[0] = 0; // Line 776, Address: 0x1f0bcc
