@@ -7156,7 +7156,8 @@ void PushPalletBuffer()
 	// Func End, Address: 0x2a7c84, Func Offset: 0x34
 }
 
-void PopPalletBuffer() /* Matching - 100% */ { // Line 7224, Address: 0x2a7c90
+/* Matching - 100% */
+void PopPalletBuffer() { // Line 7224, Address: 0x2a7c90
     njSetPaletteMode(2); // Line 7225, Address: 0x2a7c98
     njMemCopy4(&palbuf, &palbuf[3072], 1024); // Line 7226, Address: 0x2a7ca0
 } // Line 7227, Address: 0x2a7cb8
