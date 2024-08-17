@@ -642,16 +642,20 @@ void bhInitRoomChangeSystem()
 	// Func End, Address: 0x1324b8, Func Offset: 0x418
 }
 
-// 
-// Start address: 0x1324c0
-void bhSysCallInit()
-{
-	// Line 592, Address: 0x1324c0, Func Offset: 0
-	// Line 593, Address: 0x1324c8, Func Offset: 0x8
-	// Line 596, Address: 0x1324d0, Func Offset: 0x10
-	// Line 604, Address: 0x1324e4, Func Offset: 0x24
-	// Func End, Address: 0x1324f0, Func Offset: 0x30
-}
+/* 100% match */
+void bhSysCallInit() { // Line 592, Address: 0x1324c0
+    bhInitSystem(); // Line 593, Address: 0x1324c8
+
+    
+    sys->tk_flg = 0x300002; // Line 596, Address: 0x1324d0
+
+
+
+
+
+
+    
+} // Line 604, Address: 0x1324e4
 
 // 
 // Start address: 0x1324f0
