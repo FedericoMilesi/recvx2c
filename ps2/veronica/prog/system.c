@@ -443,8 +443,9 @@ void bhExitGame();
 void bhSetEventTimer(int mode);
 void EasyDispMessage(float PosY, unsigned int MessageNo);
 
-int bhCalcVtxBuffer() {
- // Line 343, Address: 0x131b90
+/* 100% match */
+int bhCalcVtxBuffer() { // Line 343, Address: 0x131b90
+    return 0;
 }
 
 void bhChangeHWSetting() { // Line 350, Address: 0x131ba0
