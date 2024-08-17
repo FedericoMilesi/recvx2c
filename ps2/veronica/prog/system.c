@@ -657,21 +657,34 @@ void bhSysCallInit() { // Line 592, Address: 0x1324c0
     
 } // Line 604, Address: 0x1324e4
 
-// 
-// Start address: 0x1324f0
-void bhSysCallDiscChange()
-{
-	// Line 610, Address: 0x1324f0, Func Offset: 0
-	// Line 611, Address: 0x1324f8, Func Offset: 0x8
-	// Line 612, Address: 0x132500, Func Offset: 0x10
-	// Line 616, Address: 0x132510, Func Offset: 0x20
-	// Line 618, Address: 0x132520, Func Offset: 0x30
-	// Line 619, Address: 0x132528, Func Offset: 0x38
-	// Line 620, Address: 0x132530, Func Offset: 0x40
-	// Line 621, Address: 0x132548, Func Offset: 0x58
-	// Line 636, Address: 0x132560, Func Offset: 0x70
-	// Func End, Address: 0x13256c, Func Offset: 0x7c
-}
+/* 100% match */
+void bhSysCallDiscChange() { // Line 610, Address: 0x1324f0
+    njFogDisable(); // Line 611, Address: 0x1324f8
+    njSetBackColor(0, 0, 0); // Line 612, Address: 0x132500
+
+
+
+    if (Adv_ChangeDiscScreen() != 0) { // Line 616, Address: 0x132510
+        
+        njWaitVSync(); // Line 618, Address: 0x132520
+        njSetPaletteMode(2); // Line 619, Address: 0x132528
+        sys->tk_flg = sys->dcg_tkbak; // Line 620, Address: 0x132530
+        sys->ts_flg = sys->dcg_tsbak; // Line 621, Address: 0x132548
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+} // Line 636, Address: 0x132560
 
 // 
 // Start address: 0x132570
