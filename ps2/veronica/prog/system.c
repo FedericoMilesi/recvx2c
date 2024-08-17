@@ -448,6 +448,7 @@ int bhCalcVtxBuffer() { // Line 343, Address: 0x131b90
     return 0;
 }
 
+/* 100% match */
 void bhChangeHWSetting() { // Line 350, Address: 0x131ba0
     sys->ss_flg ^= 2; // Line 351, Address: 0x131ba8, 0x131bb8
     if (sys->ss_flg & 2) { // Line 352, Address: 0x131bb4, 0x131bc0
