@@ -1875,19 +1875,61 @@ void bhMainGameOver()
 	// Func End, Address: 0x2bb020, Func Offset: 0xf30
 }
 
-// 
-// Start address: 0x2bb020
-void bhExitGameOver()
-{
-	// Line 542, Address: 0x2bb020, Func Offset: 0
-	// Line 587, Address: 0x2bb028, Func Offset: 0x8
-	// Line 588, Address: 0x2bb040, Func Offset: 0x20
-	// Line 589, Address: 0x2bb048, Func Offset: 0x28
-	// Line 591, Address: 0x2bb050, Func Offset: 0x30
-	// Line 592, Address: 0x2bb058, Func Offset: 0x38
-	// Line 595, Address: 0x2bb060, Func Offset: 0x40
-	// Func End, Address: 0x2bb06c, Func Offset: 0x4c
-}
+/* 100% match */
+void bhExitGameOver() { // Line 542, Address: 0x2bb020
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    if (sys->gm_mode < 3) { // Line 587, Address: 0x2bb028
+        bhReturnTitle(); // Line 588, Address: 0x2bb040
+        return; // Line 589, Address: 0x2bb048
+    }
+    sys->ts_flg |= 0x4000; // Line 591, Address: 0x2bb050
+    bhPopGameData(); // Line 592, Address: 0x2bb058
+
+
+} // Line 595, Address: 0x2bb060
 
 // 
 // Start address: 0x2bb070
