@@ -1615,7 +1615,9 @@ _anon11* hws;
 _anon46* sys;
 _anon32* rom;
 BH_PWORK* plp;
-void(*bhSysTaskJumpTab)()[23];
+typedef void(*fn)(System*); // not originally outputted by dwarf2cpp
+fn bhSysTaskJumpTab[23]; // modified, below is the original definition 
+//void(*bhSysTaskJumpTab)()[23];
 _anon24 tbuf[256];
 float crmat[16];
 _anon45 view;
@@ -1716,28 +1718,46 @@ void njUserInit()
 	// Func End, Address: 0x12b42c, Func Offset: 0x33c
 }
 
-// 
-// Start address: 0x12b430
-int njUserMain()
-{
-	int i;
-	// Line 300, Address: 0x12b430, Func Offset: 0
-	// Line 303, Address: 0x12b440, Func Offset: 0x10
-	// Line 314, Address: 0x12b450, Func Offset: 0x20
-	// Line 303, Address: 0x12b454, Func Offset: 0x24
-	// Line 315, Address: 0x12b460, Func Offset: 0x30
-	// Line 318, Address: 0x12b490, Func Offset: 0x60
-	// Line 319, Address: 0x12b49c, Func Offset: 0x6c
-	// Line 320, Address: 0x12b4a0, Func Offset: 0x70
-	// Line 322, Address: 0x12b4b0, Func Offset: 0x80
-	// Line 324, Address: 0x12b4b8, Func Offset: 0x88
-	// Line 336, Address: 0x12b4c0, Func Offset: 0x90
-	// Line 333, Address: 0x12b4cc, Func Offset: 0x9c
-	// Line 336, Address: 0x12b4d0, Func Offset: 0xa0
-	// Func End, Address: 0x12b4d8, Func Offset: 0xa8
-}
+/* 100% match */
+int njUserMain() { // Line 300, Address: 0x12b430
+    int i; 
 
-/* Matching - 100% */
+    Ps2_sys_cnt++; // Line 303, Address: 0x12b440, 0x12b454
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    for (i = 0; i < 23; i++) { // Line 314, Address: 0x12b450
+        if (((sys->tk_flg & (1 << i))) && (!(sys->ts_flg & (1 << i)))) { // Line 315, Address: 0x12b460
+
+            
+            bhSysTaskJumpTab[i](sys); // Line 318, Address: 0x12b490
+        } // Line 319, Address: 0x12b49c
+    } // Line 320, Address: 0x12b4a0
+    
+    PS2_jikken(); // Line 322, Address: 0x12b4b0
+    
+    bhCheckSoftReset(); // Line 324, Address: 0x12b4b8
+    
+        
+    
+        
+        
+        
+        
+        
+    return 0; // Line 333, Address: 0x12b4cc
+
+    
+} // Line 336, Address: 0x12b4c0, 0x12b4d0
+
+/* 100% match */
 void njUserExit() { // Line 342, Address: 0x12b4e0
     ExitSoundProgram(); // Line 343, Address: 0x12b4e8
     
