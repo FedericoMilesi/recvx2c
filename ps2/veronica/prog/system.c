@@ -2158,25 +2158,28 @@ void bhReturnTitle()
 	// Func End, Address: 0x137230, Func Offset: 0xc0
 }
 
-// 
-// Start address: 0x137230
-void bhExitGame()
-{
-	// Line 3173, Address: 0x137230, Func Offset: 0
-	// Line 3174, Address: 0x137238, Func Offset: 0x8
-	// Line 3175, Address: 0x137250, Func Offset: 0x20
-	// Line 3176, Address: 0x137258, Func Offset: 0x28
-	// Line 3177, Address: 0x137260, Func Offset: 0x30
-	// Line 3178, Address: 0x137268, Func Offset: 0x38
-	// Line 3179, Address: 0x137270, Func Offset: 0x40
-	// Line 3180, Address: 0x137278, Func Offset: 0x48
-	// Line 3186, Address: 0x137280, Func Offset: 0x50
-	// Line 3187, Address: 0x137288, Func Offset: 0x58
-	// Line 3191, Address: 0x137298, Func Offset: 0x68
-	// Line 3192, Address: 0x1372a8, Func Offset: 0x78
-	// Line 3193, Address: 0x1372b0, Func Offset: 0x80
-	// Func End, Address: 0x1372bc, Func Offset: 0x8c
-}
+/* 100% match */
+void bhExitGame() { // Line 3173, Address: 0x137230
+    if ((sys->ss_flg & 0x2)) { // Line 3174, Address: 0x137238
+        njWaitVSync(); // Line 3175, Address: 0x137250
+        njWaitVSync(); // Line 3176, Address: 0x137258
+        njWaitVSync(); // Line 3177, Address: 0x137260
+        bhChangeHWSetting(); // Line 3178, Address: 0x137268
+    } else { // Line 3179, Address: 0x137270
+        njWaitVSync(); // Line 3180, Address: 0x137278
+    }
+
+
+
+    
+    njReleaseTextureAll(); // Line 3186, Address: 0x137280
+    njGarbageTexture(&tbuf, 256); // Line 3187, Address: 0x137288
+
+
+    
+    njSetBackColor(0, 0, 0); // Line 3191, Address: 0x137298
+    bhInitSystem(); // Line 3192, Address: 0x1372a8
+} // Line 3193, Address: 0x1372b0
 
 // 
 // Start address: 0x1372c0
