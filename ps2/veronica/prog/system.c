@@ -1462,12 +1462,9 @@ void bhSysCallOption()
 	// Func End, Address: 0x134694, Func Offset: 0x1d4
 }
 
-// 
-// Start address: 0x1346a0
-void bhSysCallCompEvent()
-{
-	// Line 1912, Address: 0x1346a0, Func Offset: 0
-	// Func End, Address: 0x1346a8, Func Offset: 0x8
+/* 100% match */
+void bhSysCallCompEvent() { // Line 1912, Address: 0x1346a0
+    bhControlSpEvtComputer();
 }
 
 // 
