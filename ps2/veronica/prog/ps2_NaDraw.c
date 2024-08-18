@@ -634,13 +634,10 @@ void njQuadTextureEnd()
 	// Func End, Address: 0x2df044, Func Offset: 0x24
 }
 
-// 
-// Start address: 0x2df050
-void njSetQuadTexture(int texid, unsigned int col)
-{
-	// Line 922, Address: 0x2df050, Func Offset: 0
-	// Line 923, Address: 0x2df054, Func Offset: 0x4
-	// Func End, Address: 0x2df05c, Func Offset: 0xc
+/* 100% match */
+void njSetQuadTexture(int texid, unsigned int col) {
+    Ps2_quad_color = col; // Line 922, Address: 0x2df050
+    njSetTextureNumSys(texid); // Line 923, Address: 0x2df054
 }
 
 // 
