@@ -56,23 +56,11 @@ void njDrawLine2D(_anon2* p, int n, float pri, unsigned int attr);
 void njDrawPolygon2D(_anon2* p, int n, float pri, unsigned int attr);
 void njDrawPolygon2DM(_anon2* p, int n, float pri, unsigned int attr);
 
-// 
-// Start address: 0x2df1f0
-void CalcPs2ZbuffAB()
-{
-	// Line 35, Address: 0x2df1f0, Func Offset: 0
-	// Line 36, Address: 0x2df200, Func Offset: 0x10
-	// Line 35, Address: 0x2df208, Func Offset: 0x18
-	// Line 36, Address: 0x2df210, Func Offset: 0x20
-	// Line 35, Address: 0x2df214, Func Offset: 0x24
-	// Line 36, Address: 0x2df220, Func Offset: 0x30
-	// Line 35, Address: 0x2df224, Func Offset: 0x34
-	// Line 36, Address: 0x2df228, Func Offset: 0x38
-	// Line 35, Address: 0x2df22c, Func Offset: 0x3c
-	// Line 36, Address: 0x2df230, Func Offset: 0x40
-	// Line 37, Address: 0x2df238, Func Offset: 0x48
-	// Func End, Address: 0x2df240, Func Offset: 0x50
-}
+/* 100% match */
+void CalcPs2ZbuffAB() { 
+    Ps2_zbuff_a = (-65536.0f * fNaViwClipNear) / (fNaViwClipFar - fNaViwClipNear); // Line 35, Address: 0x2df1f0, 0x2df208, 0x2df214, 0x2df224, 0x2df22c
+    Ps2_zbuff_b = (65536.0f * fNaViwClipNear * fNaViwClipFar) / (fNaViwClipFar - fNaViwClipNear); // Line 36, Address: 0x2df200, 0x2df210, 0x2df220, 0x2df228, 0x2df230
+} // Line 37, Address: 0x2df238
 
 // 
 // Start address: 0x2df240
