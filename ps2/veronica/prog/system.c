@@ -699,18 +699,24 @@ void bhSysCallSoundMuseum()
 	// Func End, Address: 0x1325c0, Func Offset: 0x50
 }
 
-// 
-// Start address: 0x1325c0
-void bhSysCallWarning()
-{
-	// Line 660, Address: 0x1325c0, Func Offset: 0
-	// Line 662, Address: 0x1325c8, Func Offset: 0x8
-	// Line 663, Address: 0x1325d0, Func Offset: 0x10
-	// Line 664, Address: 0x1325e0, Func Offset: 0x20
-	// Line 669, Address: 0x1325f0, Func Offset: 0x30
-	// Line 676, Address: 0x132604, Func Offset: 0x44
-	// Func End, Address: 0x132610, Func Offset: 0x50
-}
+/* 100% match */
+void bhSysCallWarning() { // Line 660, Address: 0x1325c0
+    
+    njFogDisable(); // Line 662, Address: 0x1325c8
+    njSetBackColor(0, 0, 0); // Line 663, Address: 0x1325d0
+    if (Adv_FirstWarningMessage() != 0) { // Line 664, Address: 0x1325e0
+
+
+
+        
+        sys->tk_flg = 0x300004; // Line 669, Address: 0x1325f0
+    }
+
+
+
+
+    
+} // Line 676, Address: 0x132604
 
 /* 100% match */
 void bhSysCallIpl() { // Line 682, Address: 0x132610
