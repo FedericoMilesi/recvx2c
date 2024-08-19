@@ -784,17 +784,14 @@ void bhSysCallTitle()
 	// Func End, Address: 0x132820, Func Offset: 0x40
 }
 
-// 
-// Start address: 0x132820
-void bhSysCallOpening()
-{
-	// Line 788, Address: 0x132820, Func Offset: 0
-	// Line 789, Address: 0x132828, Func Offset: 0x8
-	// Line 790, Address: 0x132830, Func Offset: 0x10
-	// Line 793, Address: 0x132840, Func Offset: 0x20
-	// Line 794, Address: 0x132848, Func Offset: 0x28
-	// Func End, Address: 0x132854, Func Offset: 0x34
-}
+/* 100% match */
+void bhSysCallOpening() { // Line 788, Address: 0x132820
+    njFogDisable(); // Line 789, Address: 0x132828
+    njSetBackColor(0, 0, 0); // Line 790, Address: 0x132830
+
+    
+    bhFirstGameStart(); // Line 793, Address: 0x132840
+} // Line 794, Address: 0x132848
 
 // 
 // Start address: 0x132860
