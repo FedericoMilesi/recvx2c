@@ -712,18 +712,20 @@ void bhSysCallWarning()
 	// Func End, Address: 0x132610, Func Offset: 0x50
 }
 
-// 
-// Start address: 0x132610
-void bhSysCallIpl()
-{
-	// Line 682, Address: 0x132610, Func Offset: 0
-	// Line 683, Address: 0x132618, Func Offset: 0x8
-	// Line 684, Address: 0x132620, Func Offset: 0x10
-	// Line 686, Address: 0x132630, Func Offset: 0x20
-	// Line 688, Address: 0x132640, Func Offset: 0x30
-	// Line 694, Address: 0x132654, Func Offset: 0x44
-	// Func End, Address: 0x132660, Func Offset: 0x50
-}
+/* 100% match */
+void bhSysCallIpl() { // Line 682, Address: 0x132610
+    njFogDisable(); // Line 683, Address: 0x132618
+    njSetBackColor(0, 0, 0); // Line 684, Address: 0x132620
+    
+    if (Adv_CapcomLogo() != 0) { // Line 686, Address: 0x132630
+        
+        sys->tk_flg = 0x300008; // Line 688, Address: 0x132640
+    }
+
+
+
+    
+} // Line 694, Address: 0x132654
 
 // 
 // Start address: 0x132660
