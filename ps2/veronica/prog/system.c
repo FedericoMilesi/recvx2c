@@ -506,67 +506,90 @@ void bhChangeHWSetting() { // Line 350, Address: 0x131ba0
 
 } // Line 405, Address: 0x131e3c
 
-// 
-// Start address: 0x131e50
-void bhInitSystem()
-{
-	unsigned int size;
-	unsigned int free;
-	// Line 411, Address: 0x131e50, Func Offset: 0
-	// Line 419, Address: 0x131e58, Func Offset: 0x8
-	// Line 421, Address: 0x131e60, Func Offset: 0x10
-	// Line 423, Address: 0x131e70, Func Offset: 0x20
-	// Line 421, Address: 0x131e7c, Func Offset: 0x2c
-	// Line 423, Address: 0x131e80, Func Offset: 0x30
-	// Line 421, Address: 0x131e84, Func Offset: 0x34
-	// Line 423, Address: 0x131e8c, Func Offset: 0x3c
-	// Line 424, Address: 0x131e98, Func Offset: 0x48
-	// Line 425, Address: 0x131eb4, Func Offset: 0x64
-	// Line 427, Address: 0x131ed0, Func Offset: 0x80
-	// Line 429, Address: 0x131efc, Func Offset: 0xac
-	// Line 430, Address: 0x131f04, Func Offset: 0xb4
-	// Line 461, Address: 0x131f0c, Func Offset: 0xbc
-	// Line 432, Address: 0x131f10, Func Offset: 0xc0
-	// Line 455, Address: 0x131f14, Func Offset: 0xc4
-	// Line 430, Address: 0x131f18, Func Offset: 0xc8
-	// Line 457, Address: 0x131f24, Func Offset: 0xd4
-	// Line 461, Address: 0x131f28, Func Offset: 0xd8
-	// Line 463, Address: 0x131f2c, Func Offset: 0xdc
-	// Line 430, Address: 0x131f30, Func Offset: 0xe0
-	// Line 432, Address: 0x131f44, Func Offset: 0xf4
-	// Line 467, Address: 0x131f4c, Func Offset: 0xfc
-	// Line 432, Address: 0x131f54, Func Offset: 0x104
-	// Line 438, Address: 0x131f60, Func Offset: 0x110
-	// Line 455, Address: 0x131f74, Func Offset: 0x124
-	// Line 456, Address: 0x131f80, Func Offset: 0x130
-	// Line 455, Address: 0x131f84, Func Offset: 0x134
-	// Line 456, Address: 0x131f8c, Func Offset: 0x13c
-	// Line 457, Address: 0x131f94, Func Offset: 0x144
-	// Line 456, Address: 0x131f98, Func Offset: 0x148
-	// Line 457, Address: 0x131fa0, Func Offset: 0x150
-	// Line 461, Address: 0x131fa8, Func Offset: 0x158
-	// Line 457, Address: 0x131fac, Func Offset: 0x15c
-	// Line 461, Address: 0x131fb4, Func Offset: 0x164
-	// Line 462, Address: 0x131fb8, Func Offset: 0x168
-	// Line 463, Address: 0x131fd4, Func Offset: 0x184
-	// Line 467, Address: 0x131fe4, Func Offset: 0x194
-	// Line 468, Address: 0x131fec, Func Offset: 0x19c
-	// Line 471, Address: 0x131ff4, Func Offset: 0x1a4
-	// Line 468, Address: 0x131ffc, Func Offset: 0x1ac
-	// Line 471, Address: 0x132000, Func Offset: 0x1b0
-	// Line 468, Address: 0x132008, Func Offset: 0x1b8
-	// Line 471, Address: 0x132010, Func Offset: 0x1c0
-	// Line 473, Address: 0x13201c, Func Offset: 0x1cc
-	// Line 474, Address: 0x132048, Func Offset: 0x1f8
-	// Line 475, Address: 0x132058, Func Offset: 0x208
-	// Line 485, Address: 0x132060, Func Offset: 0x210
-	// Line 479, Address: 0x132068, Func Offset: 0x218
-	// Line 485, Address: 0x13206c, Func Offset: 0x21c
-	// Line 488, Address: 0x13207c, Func Offset: 0x22c
-	// Line 489, Address: 0x132084, Func Offset: 0x234
-	// Line 490, Address: 0x13208c, Func Offset: 0x23c
-	// Line 492, Address: 0x132094, Func Offset: 0x244
-	// Func End, Address: 0x1320a0, Func Offset: 0x250
+/* 99.93% match */
+void bhInitSystem() { // Line 411, Address: 0x131e50
+    unsigned int free;
+    unsigned int size;
+
+
+
+
+    
+    bhClearVSync(); // Line 419, Address: 0x131e58
+    
+    sys->ss_flg &= ~0x40440; // Line 421, Address: 0x131e60, 0x131e7c, 0x131e84
+    
+    npSetMemory((unsigned char*)&sys->tk_flg, 175260, 0); // Line 423, Address: 0x131e70, 0x131e80, 0x131e8c
+    sys->memp = freemem; // Line 424, Address: 0x131e98
+    sys->endp = njpmemp; // Line 425, Address: 0x131eb4
+    
+    sys->memp += (int)&sys->save_end - (int)&sys->version; // Line 427, Address: 0x131ed0
+    
+    TypewriterKeepMemory(); // Line 429, Address: 0x131efc
+    keepmem = sys->mempb = sys->memp; // Line 430, Address: 0x131f04, 0x131f18, 0x131f30
+    
+    sys->loop_ct = 1; // Line 432, Address: 0x131f10, 0x131f44, 0x131f54
+
+
+
+
+    
+    sys->p1per = 0; // Line 438, Address: 0x131f60
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    sys->pt_flg |= ~0; // Line 455, Address: 0x131f14, 0x131f74, 0x131f84
+    
+    sys->sp_flg |= ~0; // Line 457, Address: 0x131f24, 0x131f94, 0x131fa0, 0x131fac
+
+
+    
+    sys->ss_flg &= ~0x300; // Line 461, Address: 0x131f0c, 0x131f28, 0x131fa8, 0x131fb4
+    plp = &ply; // Line 462, Address: 0x131fb8
+    sys->plp = plp; // Line 463, Address: 0x131fd4
+
+
+    
+    sys->ef_pbnk = 32; // Line 467, Address: 0x131f4c, 0x131fe4
+    syMallocStat((unsigned int*)&free, (unsigned int*)&size); // Line 468, Address: 0x131fec, 0x131ffc, 0x132008
+
+    
+    sys->fsize = free; // Line 471, Address: 0x131ff4, 0x132000, 0x132010
+    
+    njClipZ(-2.0f, -20000.0f); // Line 473, Address: 0x13201c
+    if ((sys->ss_flg & 0x2)) { // Line 474, Address: 0x132048
+        sys->fog_cngct = 3; // Line 475, Address: 0x132058
+    } else {
+
+        
+        sys->fog_cngct = 2; // Line 479, Address: 0x132068
+    }
+
+
+
+    
+    bhInitVSync(); // Line 485, Address: 0x132060, 0x13206c
+
+    
+    pl_sleep_cnt = 0; // Line 488, Address: 0x13207c
+    bhFontScaleSet(1.0f, 1.0f, 1.0f); // Line 489, Address: 0x132084
+    Pause_Flag = 0; // Line 490, Address: 0x13208c
+    
+    NowLoadDisp = 0; // Line 492, Address: 0x132094
+    PauseBtn = 0;
 }
 
 // 
