@@ -2130,30 +2130,20 @@ void bhSysCallScreenSaver()
 	// Func End, Address: 0x13716c, Func Offset: 0x4dc
 }
 
-// 
-// Start address: 0x137170
-void bhReturnTitle()
-{
-	// Line 3155, Address: 0x137170, Func Offset: 0
-	// Line 3156, Address: 0x137178, Func Offset: 0x8
-	// Line 3157, Address: 0x13718c, Func Offset: 0x1c
-	// Line 3158, Address: 0x137194, Func Offset: 0x24
-	// Line 3159, Address: 0x1371b0, Func Offset: 0x40
-	// Line 3160, Address: 0x1371b8, Func Offset: 0x48
-	// Line 3161, Address: 0x1371c0, Func Offset: 0x50
-	// Line 3162, Address: 0x1371cc, Func Offset: 0x5c
-	// Line 3161, Address: 0x1371d8, Func Offset: 0x68
-	// Line 3162, Address: 0x1371e0, Func Offset: 0x70
-	// Line 3164, Address: 0x1371e8, Func Offset: 0x78
-	// Line 3165, Address: 0x1371f0, Func Offset: 0x80
-	// Line 3164, Address: 0x1371f8, Func Offset: 0x88
-	// Line 3165, Address: 0x1371fc, Func Offset: 0x8c
-	// Line 3166, Address: 0x137208, Func Offset: 0x98
-	// Line 3165, Address: 0x13720c, Func Offset: 0x9c
-	// Line 3166, Address: 0x137214, Func Offset: 0xa4
-	// Line 3167, Address: 0x137224, Func Offset: 0xb4
-	// Func End, Address: 0x137230, Func Offset: 0xc0
-}
+/* 100% match */
+void bhReturnTitle() { // Line 3155, Address: 0x137170
+    sys->ss_flg |= 0x20000; // Line 3156, Address: 0x137178
+    bhExitGame(); // Line 3157, Address: 0x13718c
+    if (!(sys->ss_flg & 0x200000)) { // Line 3158, Address: 0x137194
+        sys->tk_flg = 0x300008; // Line 3159, Address: 0x1371b0
+    } else { // Line 3160, Address: 0x1371b8
+        sys->ss_flg &= ~0x200000; // Line 3161, Address: 0x1371c0, 0x1371d8
+        sys->tk_flg = 0x300004; // Line 3162, Address: 0x1371e0
+    }
+    sys->ts_flg = 0; // Line 3164, Address: 0x1371e8, 0x1371f8
+    sys->ss_flg &= ~0x20000; // Line 3165, Address: 0x1371f0, 0x1371fc, 0x13720c
+    sys->ss_flg |= 0x1000; // Line 3166, Address: 0x137214
+} // Line 3167, Address: 0x137224
 
 /* 100% match */
 void bhExitGame() { // Line 3173, Address: 0x137230
