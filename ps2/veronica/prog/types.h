@@ -1389,3 +1389,38 @@ typedef struct System {
     float sfct;
 }
 System;
+
+/* Dreamcast SDK types */
+
+typedef struct PDS_PERIPHERALINFO
+{
+	unsigned int type;
+	unsigned int reserved[3];
+	unsigned char is_root;
+	unsigned char area_code;
+	unsigned char connector_dir[2];
+	char product_name[32];
+	char license[64];
+	unsigned short stdby_pow;
+	unsigned short max_pow;
+} PDS_PERIPHERALINFO;
+
+typedef struct PDS_PERIPHERAL
+{
+	unsigned int id;
+	unsigned int support;
+	unsigned int on;
+	unsigned int off;
+	unsigned int press;
+	unsigned int release;
+	unsigned short r;
+	unsigned short l;
+	short x1;
+	short y1;
+	short x2;
+	short y2;
+	char* name;
+	void* extend;
+	unsigned int old;
+	PDS_PERIPHERALINFO* info;
+} PDS_PERIPHERAL; 
