@@ -108,14 +108,11 @@ void njPtclDrawPolygon(_anon0* p, int n, float h)
 	// Func End, Address: 0x2d84b4, Func Offset: 0x1b4
 }
 
-// 
-// Start address: 0x2d84c0
-void njPtclSpriteStart(int texid, unsigned int col, int flag)
-{
-	// Line 140, Address: 0x2d84c0, Func Offset: 0
-	// Line 141, Address: 0x2d84c8, Func Offset: 0x8
-	// Line 143, Address: 0x2d84cc, Func Offset: 0xc
-	// Func End, Address: 0x2d84d4, Func Offset: 0x14
+/* 100% match */
+void njPtclSpriteStart(int texid, unsigned int col, int flag) { // Line 140, Address: 0x2d84c0
+    Ps2_ptcl_spr_col = col; // Line 141, Address: 0x2d84c8
+    Ps2_ptcl_spr_flag = flag;
+    njSetTextureNumSys(texid); // Line 143, Address: 0x2d84cc
 }
 
 /* empty */
