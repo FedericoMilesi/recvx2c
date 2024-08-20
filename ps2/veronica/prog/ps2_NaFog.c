@@ -29,14 +29,10 @@ void njGenerateFogTable3(float near, float far);
 float njCalcFogPowerEx(float INVZ);
 float njCalcFogPower(float fVSZ);
 
-// 
-// Start address: 0x2d5f60
-void njFogEnable()
-{
-	// Line 82, Address: 0x2d5f60, Func Offset: 0
-	// Line 83, Address: 0x2d5f68, Func Offset: 0x8
-	// Func End, Address: 0x2d5f70, Func Offset: 0x10
-}
+/* 100% match */
+void njFogEnable() { 
+    ulNaFogState = 1; // Line 82, Address: 0x2d5f60
+} // Line 83, Address: 0x2d5f68
 
 // 
 // Start address: 0x2d5f70
