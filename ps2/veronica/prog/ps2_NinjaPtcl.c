@@ -53,13 +53,8 @@ void njPtclPolygonStart(unsigned int col)
 	// Func End, Address: 0x2d82ec, Func Offset: 0xc
 }
 
-// 
-// Start address: 0x2d82f0
-void njPtclPolygonEnd()
-{
-	// Line 56, Address: 0x2d82f0, Func Offset: 0
-	// Func End, Address: 0x2d82f8, Func Offset: 0x8
-}
+/* empty */
+void njPtclPolygonEnd() { } // Line 56, Address: 0x2d82f0
 
 // 
 // Start address: 0x2d8300
@@ -127,13 +122,8 @@ void njPtclSpriteStart(int texid, unsigned int col, int flag)
 	// Func End, Address: 0x2d84d4, Func Offset: 0x14
 }
 
-// 
-// Start address: 0x2d84e0
-void njPtclSpriteEnd()
-{
-	// Line 153, Address: 0x2d84e0, Func Offset: 0
-	// Func End, Address: 0x2d84e8, Func Offset: 0x8
-}
+/* empty */
+void njPtclSpriteEnd() { } // Line 153, Address: 0x2d84e0
 
 // 
 // Start address: 0x2d84f0
