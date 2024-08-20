@@ -34,14 +34,10 @@ void njFogEnable() {
     ulNaFogState = 1; // Line 82, Address: 0x2d5f60
 } // Line 83, Address: 0x2d5f68
 
-// 
-// Start address: 0x2d5f70
-void njFogDisable()
-{
-	// Line 96, Address: 0x2d5f70, Func Offset: 0
-	// Line 97, Address: 0x2d5f74, Func Offset: 0x4
-	// Func End, Address: 0x2d5f7c, Func Offset: 0xc
-}
+/* 100% match */
+void njFogDisable() { 
+    ulNaFogState = 0; // Line 96, Address: 0x2d5f70
+} // Line 97, Address: 0x2d5f74
 
 // 
 // Start address: 0x2d5f80
