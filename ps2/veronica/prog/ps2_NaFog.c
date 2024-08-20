@@ -67,14 +67,10 @@ void njSetFogColor(unsigned int ulColor)
 	// Func End, Address: 0x2d60f8, Func Offset: 0x178
 }
 
-// 
-// Start address: 0x2d6100
-void njSetFogTable(float* FogTbl)
-{
-	// Line 140, Address: 0x2d6100, Func Offset: 0
-	// Line 141, Address: 0x2d6104, Func Offset: 0x4
-	// Func End, Address: 0x2d610c, Func Offset: 0xc
-}
+/* 100% match */
+void njSetFogTable(float* FogTbl) {
+    fpNaFogTblTop = FogTbl; // Line 140, Address: 0x2d6100
+} // Line 141, Address: 0x2d6104
 
 // 
 // Start address: 0x2d6110
