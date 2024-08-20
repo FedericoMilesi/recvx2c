@@ -44,14 +44,10 @@ void njPtclSpriteStart(int texid, unsigned int col, int flag);
 void njPtclSpriteEnd();
 void njPtclDrawSprite(_anon0* p, int n, float w, float h);
 
-// 
-// Start address: 0x2d82e0
-void njPtclPolygonStart(unsigned int col)
-{
-	// Line 46, Address: 0x2d82e0, Func Offset: 0
-	// Line 47, Address: 0x2d82e4, Func Offset: 0x4
-	// Func End, Address: 0x2d82ec, Func Offset: 0xc
-}
+/* 100% match */
+void njPtclPolygonStart(unsigned int col) {
+    Ps2_ptcl_poly_col = col; // Line 46, Address: 0x2d82e0
+} // Line 47, Address: 0x2d82e4
 
 /* empty */
 void njPtclPolygonEnd() { } // Line 56, Address: 0x2d82f0
