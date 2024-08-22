@@ -1421,12 +1421,9 @@ void bhSysCallMovie()
 	// Func End, Address: 0x134454, Func Offset: 0x574
 }
 
-// 
-// Start address: 0x134460
-void bhSysCallEnding()
-{
-	// Line 1839, Address: 0x134460, Func Offset: 0
-	// Func End, Address: 0x134468, Func Offset: 0x8
+/* 100% match */
+void bhSysCallEnding() { // Line 1839, Address: 0x134460
+    ControlRanking();
 }
 
 // 
