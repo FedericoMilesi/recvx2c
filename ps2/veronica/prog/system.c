@@ -1426,12 +1426,9 @@ void bhSysCallEnding() { // Line 1839, Address: 0x134460
     ControlRanking();
 }
 
-// 
-// Start address: 0x134470
-void bhSysCallGameover()
-{
-	// Line 1847, Address: 0x134470, Func Offset: 0
-	// Func End, Address: 0x134478, Func Offset: 0x8
+/* 100% match */
+void bhSysCallGameover() { // Line 1847, Address: 0x134470
+    bhControlGameOver();
 }
 
 // 
