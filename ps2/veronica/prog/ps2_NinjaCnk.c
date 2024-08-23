@@ -854,13 +854,10 @@ void njCnkSetSimpleLightColor(float fR, float fG, float fB)
 	// Func End, Address: 0x2cf89c, Func Offset: 0x1c
 }
 
-// 
-// Start address: 0x2cf8a0
-void njCnkSetSimpleMultiLight(int lLightMax)
-{
-	// Line 1108, Address: 0x2cf8a0, Func Offset: 0
-	// Line 1109, Address: 0x2cf8a8, Func Offset: 0x8
-	// Func End, Address: 0x2cf8b4, Func Offset: 0x14
+/* 100% match */
+void njCnkSetSimpleMultiLight(int lLightMax) {
+    NaCnkLighting[3].lLightMax = lLightMax; // Line 1108, Address: 0x2cf8a0
+    njCnkSetSimpleMultiLightSwitch(0, 1); // Line 1109, Address: 0x2cf8a8
 }
 
 // 
