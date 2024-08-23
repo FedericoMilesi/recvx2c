@@ -596,14 +596,12 @@ tagCHUNK_HEAD* njCnkDefaultLong(tagCHUNK_HEAD* pCnk);
 tagCHUNK_HEAD* njCnkDefaultShort(tagCHUNK_HEAD* pCnk);
 void njCnkEasyMultiDrawObjectI(cnkobj* pObject);
 
-// 
-// Start address: 0x2cf360
-void njInit3D(_anon11* pBufferTop, int iBufferMax)
-{
-	// Line 570, Address: 0x2cf360, Func Offset: 0
-	// Line 571, Address: 0x2cf368, Func Offset: 0x8
-	// Line 573, Address: 0x2cf36c, Func Offset: 0xc
-	// Func End, Address: 0x2cf374, Func Offset: 0x14
+/* 100% match */
+void njInit3D(NJS_VERTEX_BUF* pBufferTop, int iBufferMax) {
+    pNaCnkVerBufTop = (tagVU1_STRIP_BUF*)pBufferTop; // Line 570, Address: 0x2cf360
+    iNaCnkVerBufMax = iBufferMax; // Line 571, Address: 0x2cf368
+    
+    _Init_ScissorSystem(); // Line 573, Address: 0x2cf36c
 }
 
 // 
