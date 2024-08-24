@@ -1643,79 +1643,153 @@ void njUserInit();
 int njUserMain();
 void njUserExit();
 
-// 
-// Start address: 0x12b0f0
-void njUserInit()
-{
-	// Line 149, Address: 0x12b0f0, Func Offset: 0
-	// Line 165, Address: 0x12b0f8, Func Offset: 0x8
-	// Line 167, Address: 0x12b120, Func Offset: 0x30
-	// Line 168, Address: 0x12b130, Func Offset: 0x40
-	// Line 169, Address: 0x12b13c, Func Offset: 0x4c
-	// Line 170, Address: 0x12b144, Func Offset: 0x54
-	// Line 172, Address: 0x12b14c, Func Offset: 0x5c
-	// Line 174, Address: 0x12b15c, Func Offset: 0x6c
-	// Line 172, Address: 0x12b160, Func Offset: 0x70
-	// Line 173, Address: 0x12b164, Func Offset: 0x74
-	// Line 174, Address: 0x12b170, Func Offset: 0x80
-	// Line 175, Address: 0x12b178, Func Offset: 0x88
-	// Line 177, Address: 0x12b180, Func Offset: 0x90
-	// Line 178, Address: 0x12b190, Func Offset: 0xa0
-	// Line 179, Address: 0x12b19c, Func Offset: 0xac
-	// Line 183, Address: 0x12b1a8, Func Offset: 0xb8
-	// Line 184, Address: 0x12b1b4, Func Offset: 0xc4
-	// Line 185, Address: 0x12b1b8, Func Offset: 0xc8
-	// Line 187, Address: 0x12b1bc, Func Offset: 0xcc
-	// Line 183, Address: 0x12b1c0, Func Offset: 0xd0
-	// Line 184, Address: 0x12b1c4, Func Offset: 0xd4
-	// Line 185, Address: 0x12b1d0, Func Offset: 0xe0
-	// Line 186, Address: 0x12b1dc, Func Offset: 0xec
-	// Line 187, Address: 0x12b1e8, Func Offset: 0xf8
-	// Line 188, Address: 0x12b1f0, Func Offset: 0x100
-	// Line 189, Address: 0x12b200, Func Offset: 0x110
-	// Line 190, Address: 0x12b208, Func Offset: 0x118
-	// Line 191, Address: 0x12b210, Func Offset: 0x120
-	// Line 192, Address: 0x12b228, Func Offset: 0x138
-	// Line 193, Address: 0x12b230, Func Offset: 0x140
-	// Line 194, Address: 0x12b248, Func Offset: 0x158
-	// Line 200, Address: 0x12b254, Func Offset: 0x164
-	// Line 202, Address: 0x12b268, Func Offset: 0x178
-	// Line 207, Address: 0x12b274, Func Offset: 0x184
-	// Line 209, Address: 0x12b278, Func Offset: 0x188
-	// Line 211, Address: 0x12b27c, Func Offset: 0x18c
-	// Line 202, Address: 0x12b280, Func Offset: 0x190
-	// Line 204, Address: 0x12b29c, Func Offset: 0x1ac
-	// Line 207, Address: 0x12b2b4, Func Offset: 0x1c4
-	// Line 209, Address: 0x12b2c8, Func Offset: 0x1d8
-	// Line 211, Address: 0x12b2cc, Func Offset: 0x1dc
-	// Line 209, Address: 0x12b2d4, Func Offset: 0x1e4
-	// Line 211, Address: 0x12b2e0, Func Offset: 0x1f0
-	// Line 212, Address: 0x12b2e8, Func Offset: 0x1f8
-	// Line 213, Address: 0x12b300, Func Offset: 0x210
-	// Line 218, Address: 0x12b320, Func Offset: 0x230
-	// Line 219, Address: 0x12b330, Func Offset: 0x240
-	// Line 220, Address: 0x12b344, Func Offset: 0x254
-	// Line 221, Address: 0x12b354, Func Offset: 0x264
-	// Line 222, Address: 0x12b35c, Func Offset: 0x26c
-	// Line 224, Address: 0x12b364, Func Offset: 0x274
-	// Line 225, Address: 0x12b370, Func Offset: 0x280
-	// Line 226, Address: 0x12b37c, Func Offset: 0x28c
-	// Line 228, Address: 0x12b388, Func Offset: 0x298
-	// Line 230, Address: 0x12b390, Func Offset: 0x2a0
-	// Line 231, Address: 0x12b3a0, Func Offset: 0x2b0
-	// Line 257, Address: 0x12b3a8, Func Offset: 0x2b8
-	// Line 271, Address: 0x12b3b0, Func Offset: 0x2c0
-	// Line 272, Address: 0x12b3c4, Func Offset: 0x2d4
-	// Line 273, Address: 0x12b3e0, Func Offset: 0x2f0
-	// Line 275, Address: 0x12b3f0, Func Offset: 0x300
-	// Line 277, Address: 0x12b3f8, Func Offset: 0x308
-	// Line 275, Address: 0x12b3fc, Func Offset: 0x30c
-	// Line 277, Address: 0x12b400, Func Offset: 0x310
-	// Line 280, Address: 0x12b408, Func Offset: 0x318
-	// Line 283, Address: 0x12b410, Func Offset: 0x320
-	// Line 293, Address: 0x12b418, Func Offset: 0x328
-	// Line 294, Address: 0x12b420, Func Offset: 0x330
-	// Func End, Address: 0x12b42c, Func Offset: 0x33c
+/* 100% match */
+void njUserInit() { // Line 149, Address: 0x12b0f0
+    int temp; // not originally outputted by dwarf2cpp
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    switch (syCblCheck()) { // Line 165, Address: 0x12b0f8                  
+    case 1:
+        hws->mode = 0x31; // Line 167, Address: 0x12b120
+        hws->frame = 0; // Line 168, Address: 0x12b130
+        hws->count = 2; // Line 169, Address: 0x12b13c
+        break; // Line 170, Address: 0x12b144
+    case 2:
+        hws->mode = 0x60076; // Line 172, Address: 0x12b14c, 0x12b160
+        hws->frame = 0; // Line 173, Address: 0x12b164
+        hws->count = 1; // Line 174, Address: 0x12b15c, 0x12b170
+        break; // Line 175, Address: 0x12b178
+    default:
+        hws->mode = 0x34; // Line 177, Address: 0x12b180
+        hws->frame = 0; // Line 178, Address: 0x12b190
+        hws->count = 1; // Line 179, Address: 0x12b19c
+        break;
+    }
+    
+    hws->vtx_opq_a = 0xFFF70000; // Line 183, Address: 0x12b1a8, 0x12b1c0
+    hws->vtx_opq_b = 32768; // Line 184, Address: 0x12b1b4, 0x12b1c4
+    hws->vtx_trs_a = 327680; // Line 185, Address: 0x12b1b8, 0x12b1d0
+    hws->vtx_trs_b = 32768; // Line 186, Address: 0x12b1dc
+    hws->vtx_punch = 32512; // Line 187, Address: 0x12b1bc, 0x12b1e8
+    hws->vtx_total = bhCalcVtxBuffer(327680, 32768, 0xFFF70000); // Line 188, Address: 0x12b1f0
+    InitFirstSofdec(); // Line 189, Address: 0x12b200
+    njSetBorderColor(0); // Line 190, Address: 0x12b208
+    sbInitSystem(hws->mode, hws->frame, hws->count); // Line 191, Address: 0x12b210
+    pdSetMode(0); // Line 192, Address: 0x12b228
+    npSetMemory((unsigned char*)sys, sizeof(System), 0); // Line 193, Address: 0x12b230
+    sys->ss_flg = 0x30000; // Line 194, Address: 0x12b248
+    
+    
+    
+    
+    
+    freemem = syMalloc(12845056); // Line 200, Address: 0x12b254
+    
+    temp = hws->vtx_total; // Line 202, Address: 0x12b268, 0x12b280
+    
+    njpmemp = freemem + (12255232 - temp); // Line 204, Address: 0x12b29c
+
+    
+    Ps2_PXLCONV = njpmemp + 4294639616; // Line 207, Address: 0x12b274, 0x12b2b4
+    
+    vwbmemp = freemem + (12517376 - hws->vtx_total); // Line 209, Address: 0x12b278, 0x12b2c8, 0x12b2d4
+    
+    vebmemp = freemem + (12845056 - hws->vtx_total); // Line 211, Address: 0x12b27c, 0x12b2cc, 0x12b2e0
+    njInitTextureBuffer(vwbmemp, 327680, temp, hws); // Line 212, Address: 0x12b2e8
+    njSetVertexBuffer((VertexBuffer*)vebmemp, hws->vtx_total); // Line 213, Address: 0x12b300
+
+
+
+    
+    njInitVertexBuffer(hws->vtx_opq_a, hws->vtx_opq_b, hws->vtx_trs_a, hws->vtx_trs_b, hws->vtx_punch); // Line 218, Address: 0x12b320
+    njInit3D(vwbmemp, 8192); // Line 219, Address: 0x12b330
+    njInitMatrix(&mbuf[0][0], 128, 0); // Line 220, Address: 0x12b344
+    njInitPrint(0, 0, 0); // Line 221, Address: 0x12b354
+    njPolygonCullingMode(0); // Line 222, Address: 0x12b35c
+    
+    njTextureShadingMode(2); // Line 224, Address: 0x12b364
+    njInitView(&view); // Line 225, Address: 0x12b370
+    njSetView(&view); // Line 226, Address: 0x12b37c
+    
+    njGetMatrix(&crmat[0]); // Line 228, Address: 0x12b388
+    
+    npPlusInit(); // Line 230, Address: 0x12b390
+    njInitTexture(&tbuf, 256); // Line 231, Address: 0x12b3a0
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    njSetPaletteMode(2); // Line 257, Address: 0x12b3a8 
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    njPrintSize(13); // Line 271, Address: 0x12b3b0
+    njSetAspect(BHD_ASPECT_X, BHD_ASPECT_Y); // Line 272, Address: 0x12b3c4
+    njClipZ(-2.0f, -20000.0f); // Line 273, Address: 0x12b3e0
+    
+    njSetBackColor(0, 0, 0); // Line 275, Address: 0x12b3f0, 0x12b3fc
+    
+    sys->ss_flg = 0; // Line 277, Address: 0x12b3f8, 0x12b400
+
+    
+    sys->tk_flg = 0x1; // Line 280, Address: 0x12b408
+
+    
+    BupInit(); // Line 283, Address: 0x12b410
+    
+        
+        
+        
+        
+        
+        
+        
+        
+    InitSoundProgram(0); // Line 293, Address: 0x12b418
+    Init_Expand(); // Line 294, Address: 0x12b420
 }
 
 /* 100% match */
