@@ -1431,15 +1431,12 @@ void bhSysCallGameover() { // Line 1847, Address: 0x134470
     bhControlGameOver();
 }
 
-// 
-// Start address: 0x134480
-void bhSysCallTypewriter()
-{
-	// Line 1854, Address: 0x134480, Func Offset: 0
-	// Line 1855, Address: 0x134488, Func Offset: 0x8
-	// Line 1856, Address: 0x1344a8, Func Offset: 0x28
-	// Line 1857, Address: 0x1344b0, Func Offset: 0x30
-	// Func End, Address: 0x1344bc, Func Offset: 0x3c
+/* 100% match */
+void bhSysCallTypewriter() { // Line 1854, Address: 0x134480
+    if ((sys->ts_flg & 0x80)) { // Line 1855, Address: 0x134488
+        njFogDisable(); // Line 1856, Address: 0x1344a8
+    } // Line 1857, Address: 0x1344b0
+    ControlTypewriter();
 }
 
 // 
