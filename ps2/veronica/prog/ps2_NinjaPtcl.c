@@ -12,13 +12,56 @@ void njPtclSpriteStart(int texid, unsigned int col, int flag);
 void njPtclSpriteEnd();
 void njPtclDrawSprite(NJS_POINT3* p, int n, float w, float h);
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* 100% match */
 void njPtclPolygonStart(unsigned int col) {
     Ps2_ptcl_poly_col = col; // Line 46, Address: 0x2d82e0
 } // Line 47, Address: 0x2d82e4
 
+
+
+
+
+
+
 /* empty */
 void njPtclPolygonEnd() { } // Line 56, Address: 0x2d82f0
+
+
+
+
+
+
+
+
 
 /* 100% match */
 void njPtclDrawPolygon(NJS_POINT3* p, int n, float h) { // Line 67, Address: 0x2d8300
@@ -87,6 +130,12 @@ void njPtclDrawPolygon(NJS_POINT3* p, int n, float h) { // Line 67, Address: 0x2
     } // Line 130, Address: 0x2d8484
 }
 
+
+
+
+
+
+
 /* 100% match */
 void njPtclSpriteStart(int texid, unsigned int col, int flag) { // Line 140, Address: 0x2d84c0
     Ps2_ptcl_spr_col = col; // Line 141, Address: 0x2d84c8
@@ -94,8 +143,22 @@ void njPtclSpriteStart(int texid, unsigned int col, int flag) { // Line 140, Add
     njSetTextureNumSys(texid); // Line 143, Address: 0x2d84cc
 }
 
+
+
+
+
+
+
 /* empty */
 void njPtclSpriteEnd() { } // Line 153, Address: 0x2d84e0
+
+
+
+
+
+
+
+
 
 /* 100% match */
 void njPtclDrawSprite(NJS_POINT3* p, int n, float w, float h) { // Line 164, Address: 0x2d84f0
