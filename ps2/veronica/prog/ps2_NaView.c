@@ -144,21 +144,17 @@ void njSetScreenProjection(float dist) { // Line 191, Address: 0x2e2b00
     
 } // Line 203, Address: 0x2e2b2c
 
-// 
-// Start address: 0x2e2b40
-void njSetAspect(float fW, float fH)
-{
-	// Line 221, Address: 0x2e2b40, Func Offset: 0
-	// Line 222, Address: 0x2e2b50, Func Offset: 0x10
-	// Line 226, Address: 0x2e2b58, Func Offset: 0x18
-	// Line 223, Address: 0x2e2b5c, Func Offset: 0x1c
-	// Line 226, Address: 0x2e2b60, Func Offset: 0x20
-	// Line 223, Address: 0x2e2b68, Func Offset: 0x28
-	// Line 226, Address: 0x2e2b6c, Func Offset: 0x2c
-	// Line 228, Address: 0x2e2b74, Func Offset: 0x34
-	// Line 230, Address: 0x2e2b80, Func Offset: 0x40
-	// Func End, Address: 0x2e2b94, Func Offset: 0x54
-}
+/* 100% match */
+void njSetAspect(float fW, float fH) { // Line 221, Address: 0x2e2b40
+    fNaViwAspectW = fW; // Line 222, Address: 0x2e2b50
+    fNaViwAspectH = fH; // Line 223, Address: 0x2e2b5c, 0x2e2b68
+
+    
+    njViewScreenMatrix(&NaViewScreenMatrix[0]); // Line 226, Address: 0x2e2b58, 0x2e2b60, 0x2e2b6c
+    
+    vu1SetScreenAspect(fW, fH); // Line 228, Address: 0x2e2b74
+    
+} // Line 230, Address: 0x2e2b80
 
 // 
 // Start address: 0x2e2ba0
