@@ -23,14 +23,14 @@ struct _anon1
 	float w;
 };
 
-struct _anon2
+typedef struct NJS_SCREEN
 {
 	float dist;
 	float w;
 	float h;
 	float cx;
 	float cy;
-};
+} NJS_SCREEN;
 
 struct _anon3
 {
@@ -71,7 +71,7 @@ float ClipScreenMatrix[4][4];
 float ClipMatrix2[4][4];
 float fVu1Projection;
 
-void njSetScreen(_anon2* pScreen);
+void njSetScreen(NJS_SCREEN* pScreen);
 void njSetPerspective(int lAngle);
 void njSetScreenProjection(float dist);
 void njSetAspect(float fW, float fH);
@@ -83,45 +83,36 @@ void njViewScreenMatrix(float vs[16]);
 void _Make_ClipMatrix(float sc[4], float scr, float near, float far);
 void _Make_ClipVolume(float x, float y);
 
-// 
-// Start address: 0x2e2970
-void njSetScreen(_anon2* pScreen)
-{
-	// Line 122, Address: 0x2e2970, Func Offset: 0
-	// Line 123, Address: 0x2e297c, Func Offset: 0xc
-	// Line 125, Address: 0x2e2988, Func Offset: 0x18
-	// Line 127, Address: 0x2e2990, Func Offset: 0x20
-	// Line 131, Address: 0x2e2998, Func Offset: 0x28
-	// Line 132, Address: 0x2e29a0, Func Offset: 0x30
-	// Line 127, Address: 0x2e29a4, Func Offset: 0x34
-	// Line 128, Address: 0x2e29a8, Func Offset: 0x38
-	// Line 132, Address: 0x2e29b0, Func Offset: 0x40
-	// Line 134, Address: 0x2e29b4, Func Offset: 0x44
-	// Line 128, Address: 0x2e29bc, Func Offset: 0x4c
-	// Line 129, Address: 0x2e29c0, Func Offset: 0x50
-	// Line 141, Address: 0x2e29c8, Func Offset: 0x58
-	// Line 145, Address: 0x2e29d0, Func Offset: 0x60
-	// Line 129, Address: 0x2e29d8, Func Offset: 0x68
-	// Line 130, Address: 0x2e29dc, Func Offset: 0x6c
-	// Line 134, Address: 0x2e29e8, Func Offset: 0x78
-	// Line 131, Address: 0x2e29f0, Func Offset: 0x80
-	// Line 135, Address: 0x2e29f4, Func Offset: 0x84
-	// Line 134, Address: 0x2e29fc, Func Offset: 0x8c
-	// Line 131, Address: 0x2e2a00, Func Offset: 0x90
-	// Line 132, Address: 0x2e2a0c, Func Offset: 0x9c
-	// Line 141, Address: 0x2e2a10, Func Offset: 0xa0
-	// Line 135, Address: 0x2e2a14, Func Offset: 0xa4
-	// Line 141, Address: 0x2e2a18, Func Offset: 0xa8
-	// Line 142, Address: 0x2e2a1c, Func Offset: 0xac
-	// Line 134, Address: 0x2e2a24, Func Offset: 0xb4
-	// Line 132, Address: 0x2e2a2c, Func Offset: 0xbc
-	// Line 135, Address: 0x2e2a38, Func Offset: 0xc8
-	// Line 145, Address: 0x2e2a40, Func Offset: 0xd0
-	// Line 147, Address: 0x2e2a48, Func Offset: 0xd8
-	// Line 148, Address: 0x2e2a54, Func Offset: 0xe4
-	// Line 150, Address: 0x2e2a68, Func Offset: 0xf8
-	// Func End, Address: 0x2e2a78, Func Offset: 0x108
-}
+/* 100% match */
+void njSetScreen(NJS_SCREEN* pScreen) { // Line 122, Address: 0x2e2970
+    _nj_screen_.dist = pScreen->dist; // Line 123, Address: 0x2e297c
+    
+    Ps2CalcScreenCone(); // Line 125, Address: 0x2e2988
+    
+    _nj_screen_.w = pScreen->w; // Line 127, Address: 0x2e2990, 0x2e29a4
+    _nj_screen_.h = pScreen->h; // Line 128, Address: 0x2e29a8, 0x2e29bc
+    _nj_screen_.cx = pScreen->cx; // Line 129, Address: 0x2e29c0, 0x2e29d8
+    _nj_screen_.cy = pScreen->cy; // Line 130, Address: 0x2e29dc
+    fNaViwOffsetX = 1728.0f + pScreen->cx; // Line 131, Address: 0x2e2998, 0x2e29f0, 0x2e2a00
+    fNaViwOffsetY = 1808.0f + pScreen->cy; // Line 132, Address: 0x2e29a0, 0x2e29b0, 0x2e2a0c, 0x2e2a2c
+    
+    fNaViwHalfW = _nj_screen_.w / 2.0f; // Line 134, Address: 0x2e29b4, 0x2e29e8, 0x2e29fc, 0x2e2a24
+    ClipDispW = 2047.0f; // Line 135, Address: 0x2e29f4, 0x2e2a14, 0x2e2a38
+
+
+
+
+    
+    ClipDispH = 2047.0f; // Line 141, Address: 0x2e29c8, 0x2e2a10, 0x2e2a18
+    fNaViwHalfH = _nj_screen_.h / 2.0f; // Line 142, Address: 0x2e2a1c
+
+    
+    njViewScreenMatrix(&NaViewScreenMatrix[0]); // Line 145, Address: 0x2e29d0, 0x2e2a40
+    
+    vu1SetScreenProjection(_nj_screen_.dist); // Line 147, Address: 0x2e2a48
+    vu1SetScreenOffset(fNaViwOffsetX, fNaViwOffsetY); // Line 148, Address: 0x2e2a54
+    
+} // Line 150, Address: 0x2e2a68
 
 // 
 // Start address: 0x2e2a80
