@@ -262,22 +262,25 @@ void njSetView() { // Line 302, Address: 0x2e2c00
     
 } // Line 374, Address: 0x2e2c84
 
-// 
-// Start address: 0x2e2c90
-void njClipZ(float fNear, float fFar)
-{
-	// Line 397, Address: 0x2e2c90, Func Offset: 0
-	// Line 396, Address: 0x2e2c98, Func Offset: 0x8
-	// Line 397, Address: 0x2e2c9c, Func Offset: 0xc
-	// Line 398, Address: 0x2e2cb0, Func Offset: 0x20
-	// Line 400, Address: 0x2e2cd4, Func Offset: 0x44
-	// Line 401, Address: 0x2e2cdc, Func Offset: 0x4c
-	// Line 402, Address: 0x2e2ce4, Func Offset: 0x54
-	// Line 403, Address: 0x2e2cf0, Func Offset: 0x60
-	// Line 405, Address: 0x2e2cfc, Func Offset: 0x6c
-	// Line 407, Address: 0x2e2d10, Func Offset: 0x80
-	// Line 411, Address: 0x2e2d18, Func Offset: 0x88
-	// Func End, Address: 0x2e2d24, Func Offset: 0x94
+/* 100% match */
+void njClipZ(float fNear, float fFar) { // Line 396, Address: 0x2e2c98
+    if (-1.0f < fNear) { // Line 397, Address: 0x2e2c90, 0x2e2c9c
+        fNear = -1.0f; // Line 398, Address: 0x2e2cb0
+    }
+    if (fFar < -65535.0f) { // Line 400, Address: 0x2e2cd4
+        fFar = -65535.0f; // Line 401, Address: 0x2e2cdc
+    } // Line 402, Address: 0x2e2ce4
+    fNaViwClipNear = fNear; // Line 403, Address: 0x2e2cf0
+    
+    fNaViwClipFar = fFar; // Line 405, Address: 0x2e2cfc
+    
+    _fNaViwClipNear = -fNear; // Line 407, Address: 0x2e2d10
+
+
+    
+    _fNaViwClipFar = -fFar; // Line 411, Address: 0x2e2d18
+    vu1SetNearFarClip(_fNaViwClipNear, _fNaViwClipFar);
+    CalcPs2ZbuffAB();
 }
 
 // 
