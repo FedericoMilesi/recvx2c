@@ -1,41 +1,9 @@
-typedef struct _anon0;
-typedef struct tagNJS_SCRVECTOR;
-typedef struct _anon1;
-
-
-typedef float type_0[4][256];
-typedef float type_1[4];
-typedef float type_2[4][256];
-
-struct _anon0
-{
-	float x;
-	float y;
-	float z;
-};
-
-struct tagNJS_SCRVECTOR
-{
-	float x;
-	float y;
-	float z;
-	float iz;
-	float fog;
-};
-
-struct _anon1
-{
-	float dist;
-	float w;
-	float h;
-	float cx;
-	float cy;
-};
+#include "types.h"
 
 unsigned int Ps2_ptcl_poly_col;
 int Ps2_ptcl_spr_flag;
 unsigned int Ps2_ptcl_spr_col;
-_anon1 _nj_screen_;
+NJS_SCREEN _nj_screen_;
 
 void njPtclPolygonStart(unsigned int col);
 void njPtclPolygonEnd();
@@ -58,7 +26,7 @@ void njPtclDrawPolygon(NJS_POINT3* p, int n, float h) { // Line 67, Address: 0x2
     unsigned int col;
     unsigned int i;
     float buff[256][4];
-    tagNJS_SCRVECTOR scr;
+    NJS_SCRVECTOR scr;
     float invz; 
     
     
@@ -135,7 +103,7 @@ void njPtclDrawSprite(NJS_POINT3* p, int n, float w, float h) { // Line 164, Add
     unsigned int col;
     unsigned int i;
     float buff[256][4];
-    tagNJS_SCRVECTOR scr;
+    NJS_SCRVECTOR scr;
     float invz; 
     
     

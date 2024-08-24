@@ -1424,3 +1424,28 @@ typedef struct PDS_PERIPHERAL
 	unsigned int old;
 	PDS_PERIPHERALINFO* info;
 } PDS_PERIPHERAL; 
+
+typedef struct NJS_POINT3
+{
+	float x;
+	float y;
+	float z;
+} NJS_POINT3;
+
+typedef struct NJS_SCRVECTOR
+{
+	float x;
+	float y;
+	float z;
+	float iz;
+	float fog;
+} NJS_SCRVECTOR;
+
+typedef struct NJS_SCREEN
+{
+	float dist;
+	float w;
+	float h;
+	float cx;
+	float cy;
+} NJS_SCREEN;
