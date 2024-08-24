@@ -32,7 +32,7 @@ typedef struct NJS_SCREEN
 	float cy;
 } NJS_SCREEN;
 
-struct _anon3
+typedef struct NJS_VIEW
 {
 	float m[16];
 	float px;
@@ -49,7 +49,7 @@ struct _anon3
 	float avy;
 	float avz;
 	int aroll;
-};
+} NJS_VIEW;
 
 float fNaViwOffsetX;
 float fNaViwOffsetY;
@@ -61,7 +61,7 @@ float _fNaViwClipNear;
 float _fNaViwClipFar;
 float ClipDispW;
 float ClipDispH;
-_anon2 _nj_screen_;
+NJS_SCREEN _nj_screen_;
 float NaViewScreenMatrix[16];
 float fNaViwHalfH;
 float fNaViwHalfW;
@@ -75,7 +75,7 @@ void njSetScreen(NJS_SCREEN* pScreen);
 void njSetPerspective(int lAngle);
 void njSetScreenProjection(float dist);
 void njSetAspect(float fW, float fH);
-void njInitView(_anon3* pView);
+void njInitView(NJS_VIEW* pView);
 void njSetView();
 void njClipZ(float fNear, float fFar);
 int njCalcScreen(_anon0* pPoint, float* fpScreenX, float* fpScreenY);
@@ -156,30 +156,36 @@ void njSetAspect(float fW, float fH) { // Line 221, Address: 0x2e2b40
     
 } // Line 230, Address: 0x2e2b80
 
-// 
-// Start address: 0x2e2ba0
-void njInitView(_anon3* pView)
-{
-	// Line 254, Address: 0x2e2ba0, Func Offset: 0
-	// Line 255, Address: 0x2e2ba4, Func Offset: 0x4
-	// Line 256, Address: 0x2e2ba8, Func Offset: 0x8
-	// Line 259, Address: 0x2e2bac, Func Offset: 0xc
-	// Line 260, Address: 0x2e2bb0, Func Offset: 0x10
-	// Line 261, Address: 0x2e2bb4, Func Offset: 0x14
-	// Line 264, Address: 0x2e2bbc, Func Offset: 0x1c
-	// Line 267, Address: 0x2e2bc0, Func Offset: 0x20
-	// Line 268, Address: 0x2e2bc4, Func Offset: 0x24
-	// Line 269, Address: 0x2e2bc8, Func Offset: 0x28
-	// Line 272, Address: 0x2e2bcc, Func Offset: 0x2c
-	// Line 273, Address: 0x2e2bd0, Func Offset: 0x30
-	// Line 274, Address: 0x2e2bd4, Func Offset: 0x34
-	// Line 279, Address: 0x2e2bd8, Func Offset: 0x38
-	// Line 277, Address: 0x2e2bdc, Func Offset: 0x3c
-	// Line 279, Address: 0x2e2be0, Func Offset: 0x40
-	// Line 280, Address: 0x2e2bec, Func Offset: 0x4c
-	// Line 281, Address: 0x2e2bf0, Func Offset: 0x50
-	// Func End, Address: 0x2e2bf8, Func Offset: 0x58
-}
+/* 100% match */
+void njInitView(NJS_VIEW *pView) {
+    pView->px = 0; // Line 254, Address: 0x2e2ba0
+    pView->py = 0; // Line 255, Address: 0x2e2ba4
+    pView->pz = 0; // Line 256, Address: 0x2e2ba8
+
+    
+    pView->vx = 0; // Line 259, Address: 0x2e2bac
+    pView->vy = 0; // Line 260, Address: 0x2e2bb0
+    pView->vz = -1.0f; // Line 261, Address: 0x2e2bb4
+
+    
+    pView->roll = 0; // Line 264, Address: 0x2e2bbc
+
+    
+    pView->apx = 0; // Line 267, Address: 0x2e2bc0
+    pView->apy = 0; // Line 268, Address: 0x2e2bc4
+    pView->apz = 0; // Line 269, Address: 0x2e2bc8
+
+    
+    pView->avx = 0; // Line 272, Address: 0x2e2bcc
+    pView->avy = 0; // Line 273, Address: 0x2e2bd0
+    pView->avz = -1.0f; // Line 274, Address: 0x2e2bd4
+
+    
+    pView->aroll = 0; // Line 277, Address: 0x2e2bdc
+    
+    ClipDispW = 2047.0f; // Line 279, Address: 0x2e2bd8, 0x2e2be0
+    ClipDispH = 2047.0f; // Line 280, Address: 0x2e2bec
+} // Line 281, Address: 0x2e2bf0
 
 // 
 // Start address: 0x2e2c00
