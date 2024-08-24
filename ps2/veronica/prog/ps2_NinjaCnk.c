@@ -120,7 +120,7 @@ struct _anon3
 	unsigned short usIndexMax;
 };
 
-struct tagVU1_STRIP_BUF
+typedef struct VU1_STRIP_BUF
 {
 	float fU;
 	float fV;
@@ -138,7 +138,7 @@ struct tagVU1_STRIP_BUF
 	float fSy;
 	float fIz;
 	float fNz;
-};
+} VU1_STRIP_BUF;
 
 struct _anon4
 {
@@ -598,7 +598,7 @@ void njCnkEasyMultiDrawObjectI(cnkobj* pObject);
 
 /* 100% match */
 void njInit3D(NJS_VERTEX_BUF* pBufferTop, int iBufferMax) {
-    pNaCnkVerBufTop = (tagVU1_STRIP_BUF*)pBufferTop; // Line 570, Address: 0x2cf360
+    pNaCnkVerBufTop = (VU1_STRIP_BUF*)pBufferTop; // Line 570, Address: 0x2cf360
     iNaCnkVerBufMax = iBufferMax; // Line 571, Address: 0x2cf368
     
     _Init_ScissorSystem(); // Line 573, Address: 0x2cf36c
