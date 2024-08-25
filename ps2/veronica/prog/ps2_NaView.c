@@ -411,31 +411,26 @@ void _Make_ClipMatrix(float sc[4], float scr, float near, float far)
 	// Func End, Address: 0x2e3004, Func Offset: 0x124
 }
 
-// 
-// Start address: 0x2e3010
-void _Make_ClipVolume(float x, float y)
-{
-	// Line 742, Address: 0x2e3010, Func Offset: 0
-	// Line 741, Address: 0x2e3014, Func Offset: 0x4
-	// Line 742, Address: 0x2e3018, Func Offset: 0x8
-	// Line 744, Address: 0x2e3038, Func Offset: 0x28
-	// Line 747, Address: 0x2e3048, Func Offset: 0x38
-	// Line 748, Address: 0x2e3054, Func Offset: 0x44
-	// Line 744, Address: 0x2e3060, Func Offset: 0x50
-	// Line 750, Address: 0x2e3068, Func Offset: 0x58
-	// Line 745, Address: 0x2e3070, Func Offset: 0x60
-	// Line 750, Address: 0x2e3074, Func Offset: 0x64
-	// Line 745, Address: 0x2e3078, Func Offset: 0x68
-	// Line 750, Address: 0x2e307c, Func Offset: 0x6c
-	// Line 745, Address: 0x2e3084, Func Offset: 0x74
-	// Line 750, Address: 0x2e308c, Func Offset: 0x7c
-	// Line 751, Address: 0x2e309c, Func Offset: 0x8c
-	// Line 756, Address: 0x2e30a4, Func Offset: 0x94
-	// Line 757, Address: 0x2e30ac, Func Offset: 0x9c
-	// Line 753, Address: 0x2e30b4, Func Offset: 0xa4
-	// Line 754, Address: 0x2e30c4, Func Offset: 0xb4
-	// Line 759, Address: 0x2e30cc, Func Offset: 0xbc
-	// Line 761, Address: 0x2e30f0, Func Offset: 0xe0
-	// Func End, Address: 0x2e30fc, Func Offset: 0xec
-}
+/* 100% match */
+void _Make_ClipVolume(float x, float y) { // Line 741, Address: 0x2e3014
+    if ((x < 0) && (y < 0)) { // Line 742, Address: 0x2e3010, 0x2e3018
+        
+        ClipDispW = 0.5f * -x; // Line 744, Address: 0x2e3038, 0x2e3060
+        ClipVolume.x = 320.0f; // Line 745, Address: 0x2e3070, 0x2e3078, 0x2e3084
+        
+        ClipDispH = 0.5f * -y; // Line 747, Address: 0x2e3048
+        ClipVolume.y = 240.0f; // Line 748, Address: 0x2e3054
+        
+        _Make_ClipMatrix(ClipMatrix2[0], fVu1Projection, _fNaViwClipNear, _fNaViwClipFar); // Line 750, Address: 0x2e3068, 0x2e3074, 0x2e307c, 0x2e308c
+    } // Line 751, Address: 0x2e309c
+    else {
+        ClipVolume.x = x; // Line 753, Address: 0x2e30b4
+        ClipVolume.y = y; // Line 754, Address: 0x2e30c4
+        
+        ClipDispW = 2047.0f; // Line 756, Address: 0x2e30a4
+        ClipDispH = 2047.0f; // Line 757, Address: 0x2e30ac
+        
+        _Make_ClipMatrix(ClipMatrix2[0], fVu1Projection, _fNaViwClipNear, _fNaViwClipFar); // Line 759, Address: 0x2e30cc
+    }
+} // Line 761, Address: 0x2e30f0
 
