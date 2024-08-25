@@ -8,12 +8,12 @@ typedef float type_0[16];
 typedef float type_1[4];
 typedef float type_2[4][4];
 
-struct _anon0
+typedef struct NJS_POINT3
 {
 	float x;
 	float y;
 	float z;
-};
+} NJS_POINT3;
 
 struct _anon1
 {
@@ -78,7 +78,7 @@ void njSetAspect(float fW, float fH);
 void njInitView(NJS_VIEW* pView);
 void njSetView();
 void njClipZ(float fNear, float fFar);
-int njCalcScreen(_anon0* pPoint, float* fpScreenX, float* fpScreenY);
+int njCalcScreen(NJS_POINT3* pPoint, float* fpScreenX, float* fpScreenY);
 void njViewScreenMatrix(float vs[16]);
 void _Make_ClipMatrix(float sc[4], float scr, float near, float far);
 void _Make_ClipVolume(float x, float y);
@@ -283,39 +283,43 @@ void njClipZ(float fNear, float fFar) { // Line 396, Address: 0x2e2c98
     CalcPs2ZbuffAB();
 }
 
-// 
-// Start address: 0x2e2d30
-int njCalcScreen(_anon0* pPoint, float* fpScreenX, float* fpScreenY)
-{
-	float fZ;
-	float fSY;
-	float fSX;
-	_anon0 Point;
-	// Line 435, Address: 0x2e2d30, Func Offset: 0
-	// Line 441, Address: 0x2e2d48, Func Offset: 0x18
-	// Line 444, Address: 0x2e2d5c, Func Offset: 0x2c
-	// Line 445, Address: 0x2e2d60, Func Offset: 0x30
-	// Line 444, Address: 0x2e2d64, Func Offset: 0x34
-	// Line 446, Address: 0x2e2d70, Func Offset: 0x40
-	// Line 447, Address: 0x2e2d74, Func Offset: 0x44
-	// Line 444, Address: 0x2e2d78, Func Offset: 0x48
-	// Line 447, Address: 0x2e2d7c, Func Offset: 0x4c
-	// Line 448, Address: 0x2e2d80, Func Offset: 0x50
-	// Line 445, Address: 0x2e2d84, Func Offset: 0x54
-	// Line 447, Address: 0x2e2d88, Func Offset: 0x58
-	// Line 448, Address: 0x2e2d90, Func Offset: 0x60
-	// Line 446, Address: 0x2e2d94, Func Offset: 0x64
-	// Line 448, Address: 0x2e2d98, Func Offset: 0x68
-	// Line 451, Address: 0x2e2d9c, Func Offset: 0x6c
-	// Line 448, Address: 0x2e2da0, Func Offset: 0x70
-	// Line 451, Address: 0x2e2da4, Func Offset: 0x74
-	// Line 452, Address: 0x2e2dc4, Func Offset: 0x94
-	// Line 453, Address: 0x2e2de4, Func Offset: 0xb4
-	// Line 454, Address: 0x2e2e08, Func Offset: 0xd8
-	// Line 455, Address: 0x2e2e20, Func Offset: 0xf0
-	// Line 456, Address: 0x2e2e44, Func Offset: 0x114
-	// Line 458, Address: 0x2e2e60, Func Offset: 0x130
-	// Func End, Address: 0x2e2e74, Func Offset: 0x144
+/* 100% match */
+int njCalcScreen(NJS_POINT3* pPoint, float* fpScreenX, float* fpScreenY) { // Line 435, Address: 0x2e2d30
+    float fZ;
+    float fSY;
+    float fSX;
+    NJS_POINT3 Point;
+
+    njCalcPoint(&NaViwViewMatrix[0], pPoint, &Point); // Line 441, Address: 0x2e2d48
+
+    
+    fZ = _nj_screen_.dist / Point.z; // Line 444, Address: 0x2e2d5c, 0x2e2d64, 0x2e2d78
+    fSX = Point.x * fZ; // Line 445, Address: 0x2e2d60, 0x2e2d84
+    fSY = Point.y * fZ; // Line 446, Address: 0x2e2d70, 0x2e2d94
+    *fpScreenX = fNaViwOffsetX + fSX; // Line 447, Address: 0x2e2d74, 0x2e2d7c, 0x2e2d88
+    *fpScreenY = fNaViwOffsetY + fSY; // Line 448, Address: 0x2e2d80, 0x2e2d90, 0x2e2d98, 0x2e2da0
+
+    
+    if (Point.z < _fNaViwClipNear) { // Line 451, Address: 0x2e2da4
+        return -1; // Line 452, Address: 0x2e2dc4
+    } // Line 453, Address: 0x2e2de4
+    if (_fNaViwClipFar < Point.z) { // Line 454, Address: 0x2e2e08
+        return -1; // Line 455, Address: 0x2e2e20
+    } // Line 456, Address: 0x2e2e44
+    if (fSX < -fNaViwHalfW) {
+        return -1; // Line 458, Address: 0x2e2e60
+    }
+    if (fNaViwHalfW < fSX) {
+        return -1;
+    }
+    if (fSY < -fNaViwHalfH) {
+        return -1;
+    }
+    if (fNaViwHalfH < fSY) {
+        return -1;
+    }
+    
+    return 0;
 }
 
 // 
