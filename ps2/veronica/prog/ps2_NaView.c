@@ -322,24 +322,44 @@ int njCalcScreen(NJS_POINT3* pPoint, float* fpScreenX, float* fpScreenY) { // Li
     return 0;
 }
 
-// 
-// Start address: 0x2e2e80
-void njViewScreenMatrix(float vs[16])
-{
-	// Line 521, Address: 0x2e2e80, Func Offset: 0
-	// Line 548, Address: 0x2e2e8c, Func Offset: 0xc
-	// Line 549, Address: 0x2e2e94, Func Offset: 0x14
-	// Line 551, Address: 0x2e2e9c, Func Offset: 0x1c
-	// Line 549, Address: 0x2e2ea0, Func Offset: 0x20
-	// Line 550, Address: 0x2e2ea4, Func Offset: 0x24
-	// Line 551, Address: 0x2e2eb0, Func Offset: 0x30
-	// Line 552, Address: 0x2e2eb4, Func Offset: 0x34
-	// Line 553, Address: 0x2e2eb8, Func Offset: 0x38
-	// Line 554, Address: 0x2e2ebc, Func Offset: 0x3c
-	// Line 555, Address: 0x2e2ec0, Func Offset: 0x40
-	// Line 557, Address: 0x2e2ecc, Func Offset: 0x4c
-	// Func End, Address: 0x2e2edc, Func Offset: 0x5c
-}
+/* 100% match */
+void njViewScreenMatrix(float vs[16]) { // Line 521, Address: 0x2e2e80
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    njUnitMatrix(vs); // Line 548, Address: 0x2e2e8c
+    vs[0] = fNaViwAspectW; // Line 549, Address: 0x2e2e94, 0x2e2ea0
+    vs[5] = fNaViwAspectH; // Line 550, Address: 0x2e2ea4
+    vs[10] = 1.0f; // Line 551, Address: 0x2e2e9c, 0x2e2eb0
+    vs[12] = 0; // Line 552, Address: 0x2e2eb4
+    vs[13] = 0; // Line 553, Address: 0x2e2eb8
+    vs[14] = 0; // Line 554, Address: 0x2e2ebc
+    vs[15] = _nj_screen_.dist; // Line 555, Address: 0x2e2ec0
+    
+} // Line 557, Address: 0x2e2ecc
 
 // 
 // Start address: 0x2e2ee0
