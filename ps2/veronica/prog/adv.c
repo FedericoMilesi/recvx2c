@@ -2119,13 +2119,9 @@ void MountAdvAfs() { // Line 360, Address: 0x2c0fa0
     temp->PatId = PatId[3]; // Line 362, Address: 0x2c0fb0
 }
 
-// 
-// Start address: 0x2c0fc0
-unsigned char* AdvGetResourcePtr(unsigned char* bp, unsigned int ResId)
-{
-	// Line 389, Address: 0x2c0fc0, Func Offset: 0
-	// Line 390, Address: 0x2c0fcc, Func Offset: 0xc
-	// Func End, Address: 0x2c0fd4, Func Offset: 0x14
+/* 100% match */
+unsigned char* AdvGetResourcePtr(unsigned char* bp, unsigned int ResId) { // Line 389, Address: 0x2c0fc0
+    return &bp[((int *)bp)[ResId]]; // Line 390, Address: 0x2c0fcc
 }
 
 // 
