@@ -821,12 +821,9 @@ void RequestAdxFadeFunction2(int SlotNo, int Func, int Timer, int FirstVolume)
 	// Func End, Address: 0x292230, Func Offset: 0x130
 }
 
-// 
-// Start address: 0x292230
-void RequestAdxFadeFunction(int SlotNo, int Func, int Timer)
-{
-	// Line 1507, Address: 0x292230, Func Offset: 0
-	// Func End, Address: 0x292238, Func Offset: 0x8
+/* 100% match */
+void RequestAdxFadeFunction(int SlotNo, int Func, int Timer) { // Line 1507, Address: 0x292230
+    RequestAdxFadeFunction2(SlotNo, Func, Timer, 1);
 }
 
 // 
