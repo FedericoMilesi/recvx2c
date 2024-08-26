@@ -292,35 +292,22 @@ int njCalcScreen(NJS_POINT3* pPoint, float* fpScreenX, float* fpScreenY) { // Li
 
     njCalcPoint(&NaViwViewMatrix[0], pPoint, &Point); // Line 441, Address: 0x2e2d48
 
-    
+
     fZ = _nj_screen_.dist / Point.z; // Line 444, Address: 0x2e2d5c, 0x2e2d64, 0x2e2d78
     fSX = Point.x * fZ; // Line 445, Address: 0x2e2d60, 0x2e2d84
     fSY = Point.y * fZ; // Line 446, Address: 0x2e2d70, 0x2e2d94
     *fpScreenX = fNaViwOffsetX + fSX; // Line 447, Address: 0x2e2d74, 0x2e2d7c, 0x2e2d88
     *fpScreenY = fNaViwOffsetY + fSY; // Line 448, Address: 0x2e2d80, 0x2e2d90, 0x2e2d98, 0x2e2da0
 
-    
-    if (Point.z < _fNaViwClipNear) { // Line 451, Address: 0x2e2da4
-        return -1; // Line 452, Address: 0x2e2dc4
-    } // Line 453, Address: 0x2e2de4
-    if (_fNaViwClipFar < Point.z) { // Line 454, Address: 0x2e2e08
-        return -1; // Line 455, Address: 0x2e2e20
-    } // Line 456, Address: 0x2e2e44
-    if (fSX < -fNaViwHalfW) {
-        return -1; // Line 458, Address: 0x2e2e60
-    }
-    if (fNaViwHalfW < fSX) {
-        return -1;
-    }
-    if (fSY < -fNaViwHalfH) {
-        return -1;
-    }
-    if (fNaViwHalfH < fSY) {
-        return -1;
-    }
-    
+
+    if (Point.z < _fNaViwClipNear) return -1; // Line 451, Address: 0x2e2d9c, 0x2e2da4
+    if (_fNaViwClipFar < Point.z) return -1; // Line 452, Address: 0x2e2dc4
+    if (fSX < -fNaViwHalfW) return -1; // Line 453, Address: 0x2e2de4
+    if (fNaViwHalfW < fSX) return -1; // Line 454, Address: 0x2e2e08
+    if (fSY < -fNaViwHalfH) return -1; // Line 455, Address: 0x2e2e20
+    if (fNaViwHalfH < fSY) return -1; // Line 456, Address: 0x2e2e44
     return 0;
-}
+} // Line 458, Address: 0x2e2e60
 
 /* 100% match */
 void njViewScreenMatrix(float vs[16]) { // Line 521, Address: 0x2e2e80
