@@ -2305,13 +2305,10 @@ void RequestAdvFade(int FadeType, float FadeSpeed)
 	// Func End, Address: 0x2c1508, Func Offset: 0x58
 }
 
-// 
-// Start address: 0x2c1510
-int CheckAdvFade()
-{
-	// Line 670, Address: 0x2c1510, Func Offset: 0
-	// Line 671, Address: 0x2c1518, Func Offset: 0x8
-	// Func End, Address: 0x2c1520, Func Offset: 0x10
+/* 100% match */
+int CheckAdvFade() { // temp var not originally outputted by dwarf2cpp
+    Unknown21* temp = (Unknown21*)&AdvWork; // Line 670, Address: 0x2c1510
+    return temp->FadeType; // Line 671, Address: 0x2c1518
 }
 
 // 
