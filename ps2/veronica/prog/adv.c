@@ -2283,12 +2283,9 @@ void CheckReadEndAdvInsideFile2Ex(int NextMode, int Flag)
 	// Func End, Address: 0x2c1494, Func Offset: 0x94
 }
 
-// 
-// Start address: 0x2c14a0
-void CheckReadEndAdvInsideFile2(int NextMode)
-{
-	// Line 626, Address: 0x2c14a0, Func Offset: 0
-	// Func End, Address: 0x2c14a8, Func Offset: 0x8
+/* 100% match */
+void CheckReadEndAdvInsideFile2(int NextMode) { // Line 626, Address: 0x2c14a0
+    CheckReadEndAdvInsideFile2Ex(NextMode, 0);
 }
 
 // 
