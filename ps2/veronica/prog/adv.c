@@ -2134,24 +2134,23 @@ void AdvSetSoundMode() { // Line 399, Address: 0x2c0fe0
     }
 } // Line 406, Address: 0x2c1010
 
-// 
-// Start address: 0x2c1020
-void AdvCheckSoftReset(int Flag)
-{
-	_anon8* ap;
-	// Line 415, Address: 0x2c1020, Func Offset: 0
-	// Line 416, Address: 0x2c1030, Func Offset: 0x10
-	// Line 418, Address: 0x2c1038, Func Offset: 0x18
-	// Line 419, Address: 0x2c1044, Func Offset: 0x24
-	// Line 420, Address: 0x2c1060, Func Offset: 0x40
-	// Line 421, Address: 0x2c1070, Func Offset: 0x50
-	// Line 422, Address: 0x2c1078, Func Offset: 0x58
-	// Line 423, Address: 0x2c107c, Func Offset: 0x5c
-	// Line 424, Address: 0x2c1084, Func Offset: 0x64
-	// Line 426, Address: 0x2c108c, Func Offset: 0x6c
-	// Line 430, Address: 0x2c1094, Func Offset: 0x74
-	// Func End, Address: 0x2c10a8, Func Offset: 0x88
-}
+/* 100% match */
+void AdvCheckSoftReset(int Flag) { // Line 415, Address: 0x2c1020
+    Unknown21* ap = (Unknown21*)&AdvWork; // Line 416, Address: 0x2c1030
+    
+    if ((ap->SrFlag == 0) && (!(sys->ss_flg & 0x20000)) && (CheckSoftResetKeyFlag(-1) != 0)) { // Line 418, Address: 0x2c1038
+        if (Flag == 0) { // Line 419, Address: 0x2c1044
+            ap->Mode = -1; // Line 420, Address: 0x2c1060
+        } else { // Line 421, Address: 0x2c1070
+            ap->Mode2 = -1; // Line 422, Address: 0x2c1078
+        } // Line 423, Address: 0x2c107c
+        AdvSetSoundMode(); // Line 424, Address: 0x2c1084
+        
+    } // Line 426, Address: 0x2c108c
+
+
+    
+} // Line 430, Address: 0x2c1094
 
 // 
 // Start address: 0x2c10b0
