@@ -2212,18 +2212,13 @@ void AdvPopPaletteData() { // temp var not originally outputted by dwarf2cpp
     sys->gm_flg |= 0x8000; // Line 506, Address: 0x2c1284
 } // Line 507, Address: 0x2c1298
 
-// 
-// Start address: 0x2c12b0
-void RequestAdvInsideFileEx(int InsideFileId, int MemoryBlockNo)
-{
-	_anon8* ap;
-	// Line 517, Address: 0x2c12b0, Func Offset: 0
-	// Line 518, Address: 0x2c12c4, Func Offset: 0x14
-	// Line 520, Address: 0x2c12d0, Func Offset: 0x20
-	// Line 521, Address: 0x2c12f8, Func Offset: 0x48
-	// Line 522, Address: 0x2c1308, Func Offset: 0x58
-	// Func End, Address: 0x2c1320, Func Offset: 0x70
-}
+/* 100% match */
+void RequestAdvInsideFileEx(int InsideFileId, int MemoryBlockNo) { // Line 517, Address: 0x2c12b0
+    Unknown21* ap = (Unknown21*)&AdvWork; // Line 518, Address: 0x2c12c4
+
+    ap->ptr[MemoryBlockNo] = bhGetFreeMemory(GetInsideFileSize(ap->PatId, InsideFileId), 32); // Line 520, Address: 0x2c12d0
+    RequestReadInsideFile(ap->PatId, InsideFileId, (void*)ap->ptr[MemoryBlockNo]); // Line 521, Address: 0x2c12f8
+} // Line 522, Address: 0x2c1308
 
 /* 100% match */
 void RequestAdvInsideFile(int InsideFileId) { // Line 532, Address: 0x2c1320
