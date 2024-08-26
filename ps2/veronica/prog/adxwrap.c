@@ -310,12 +310,9 @@ void InitAdx()
 	// Func End, Address: 0x291100, Func Offset: 0xe0
 }
 
-// 
-// Start address: 0x291100
-void ExitAdx()
-{
-	// Line 233, Address: 0x291100, Func Offset: 0
-	// Func End, Address: 0x291108, Func Offset: 0x8
+/* 100% match */
+void ExitAdx() { // Line 233, Address: 0x291100
+    ADXT_Finish();
 }
 
 // 
