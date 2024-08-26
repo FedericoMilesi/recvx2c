@@ -2186,18 +2186,14 @@ void AdvPopRoomTexture()
 	// Func End, Address: 0x2c11d8, Func Offset: 0x68
 }
 
-// 
-// Start address: 0x2c11e0
-void AdvPushPaletteData()
-{
-	// Line 484, Address: 0x2c11e0, Func Offset: 0
-	// Line 480, Address: 0x2c11e8, Func Offset: 0x8
-	// Line 484, Address: 0x2c11ec, Func Offset: 0xc
-	// Line 480, Address: 0x2c11f4, Func Offset: 0x14
-	// Line 484, Address: 0x2c11f8, Func Offset: 0x18
-	// Line 485, Address: 0x2c1200, Func Offset: 0x20
-	// Line 486, Address: 0x2c1214, Func Offset: 0x34
-	// Func End, Address: 0x2c1220, Func Offset: 0x40
+/* 100% match */
+void AdvPushPaletteData() { // Line 480, Address: 0x2c11e8, 0x2c11f4
+
+
+    // temp var not originally outputted by dwarf2cpp
+    Unknown21* temp = (Unknown21*)&AdvWork; // Line 484, Address: 0x2c11e0, 0x2c11ec, 0x2c11f8
+    njMemCopy4(&palbuf[3072], &palbuf, 1024); // Line 485, Address: 0x2c1200
+    temp->PalMode = njGetPaletteMode(); // Line 486, Address: 0x2c1214
 }
 
 // 
