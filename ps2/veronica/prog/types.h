@@ -1,3 +1,5 @@
+#define NULL 0
+
 typedef struct Vector3 {
     float x;
     float y;

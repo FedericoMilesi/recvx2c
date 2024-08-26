@@ -2030,61 +2030,88 @@ void InitAdvSystem() { // Line 245, Address: 0x2c0e10
     MountAdvAfs(); // Line 255, Address: 0x2c0e60
 } // Line 256, Address: 0x2c0e68
 
-// 
-// Start address: 0x2c0e80
-void ResetAdvSystem()
-{
-	int i;
-	_anon8* ap;
-	// Line 266, Address: 0x2c0e80, Func Offset: 0
-	// Line 267, Address: 0x2c0e8c, Func Offset: 0xc
-	// Line 270, Address: 0x2c0e94, Func Offset: 0x14
-	// Line 271, Address: 0x2c0ea0, Func Offset: 0x20
-	// Line 273, Address: 0x2c0ea8, Func Offset: 0x28
-	// Line 275, Address: 0x2c0eb0, Func Offset: 0x30
-	// Line 276, Address: 0x2c0ec0, Func Offset: 0x40
-	// Line 278, Address: 0x2c0ec8, Func Offset: 0x48
-	// Line 280, Address: 0x2c0ed0, Func Offset: 0x50
-	// Line 279, Address: 0x2c0ed4, Func Offset: 0x54
-	// Line 280, Address: 0x2c0ed8, Func Offset: 0x58
-	// Line 279, Address: 0x2c0edc, Func Offset: 0x5c
-	// Line 280, Address: 0x2c0ee0, Func Offset: 0x60
-	// Line 281, Address: 0x2c0eec, Func Offset: 0x6c
-	// Line 282, Address: 0x2c0ef0, Func Offset: 0x70
-	// Line 283, Address: 0x2c0ef4, Func Offset: 0x74
-	// Line 282, Address: 0x2c0ef8, Func Offset: 0x78
-	// Line 283, Address: 0x2c0efc, Func Offset: 0x7c
-	// Line 284, Address: 0x2c0f0c, Func Offset: 0x8c
-	// Line 285, Address: 0x2c0f10, Func Offset: 0x90
-	// Line 286, Address: 0x2c0f14, Func Offset: 0x94
-	// Line 285, Address: 0x2c0f18, Func Offset: 0x98
-	// Line 286, Address: 0x2c0f1c, Func Offset: 0x9c
-	// Line 288, Address: 0x2c0f2c, Func Offset: 0xac
-	// Line 289, Address: 0x2c0f30, Func Offset: 0xb0
-	// Line 290, Address: 0x2c0f34, Func Offset: 0xb4
-	// Line 291, Address: 0x2c0f38, Func Offset: 0xb8
-	// Line 292, Address: 0x2c0f3c, Func Offset: 0xbc
-	// Line 294, Address: 0x2c0f40, Func Offset: 0xc0
-	// Line 295, Address: 0x2c0f44, Func Offset: 0xc4
-	// Line 296, Address: 0x2c0f48, Func Offset: 0xc8
-	// Line 297, Address: 0x2c0f4c, Func Offset: 0xcc
-	// Line 298, Address: 0x2c0f50, Func Offset: 0xd0
-	// Line 299, Address: 0x2c0f54, Func Offset: 0xd4
-	// Line 301, Address: 0x2c0f58, Func Offset: 0xd8
-	// Line 300, Address: 0x2c0f5c, Func Offset: 0xdc
-	// Line 301, Address: 0x2c0f60, Func Offset: 0xe0
-	// Line 302, Address: 0x2c0f64, Func Offset: 0xe4
-	// Line 304, Address: 0x2c0f68, Func Offset: 0xe8
-	// Line 303, Address: 0x2c0f6c, Func Offset: 0xec
-	// Line 304, Address: 0x2c0f70, Func Offset: 0xf0
-	// Line 305, Address: 0x2c0f74, Func Offset: 0xf4
-	// Line 306, Address: 0x2c0f78, Func Offset: 0xf8
-	// Line 307, Address: 0x2c0f7c, Func Offset: 0xfc
-	// Line 308, Address: 0x2c0f80, Func Offset: 0x100
-	// Line 345, Address: 0x2c0f84, Func Offset: 0x104
-	// Line 346, Address: 0x2c0f8c, Func Offset: 0x10c
-	// Func End, Address: 0x2c0f9c, Func Offset: 0x11c
-}
+/* 100% match */
+void ResetAdvSystem() { // Line 266, Address: 0x2c0e80
+	Unknown21* ap = (Unknown21*)&AdvWork; // Line 267, Address: 0x2c0e8c
+    int i;
+
+    if (ap->Active != 0) // Line 270, Address: 0x2c0e94
+        ExitApplication(); // Line 271, Address: 0x2c0ea0
+    
+    ap->Active = 1; // Line 273, Address: 0x2c0ea8
+    
+    njSetBackColor(0, 0, 0); // Line 275, Address: 0x2c0eb0
+    njFogDisable(); // Line 276, Address: 0x2c0ec0
+    
+    for (i = 0; i < 8; i++) { // Line 278, Address: 0x2c0ec8
+        ap->ptr[i] = NULL; // Line 279, Address: 0x2c0ed4, 0x2c0edc 
+    } // Line 280, Address: 0x2c0ed0, 0x2c0ed8, 0x2c0ee0 
+    for (i = 0; i < 2; i++) { // Line 281, Address: 0x2c0eec
+        ap->SetTexture[i] = 0; // Line 282, Address: 0x2c0ef0, 0x2c0ef8 
+    } // Line 283, Address: 0x2c0ef4, 0x2c0efc 
+    for (i = 0; i < 7; i++) { // Line 284, Address: 0x2c0f0c
+        ap->KeyCommandCount[i] = 0; // Line 285, Address: 0x2c0f10, 0x2c0f18 
+    } // Line 286, Address: 0x2c0f14, 0x2c0f1c 
+  
+    ap->NextReturnCode = 0; // Line 288, Address: 0x2c0f2c
+    ap->Count = 0; // Line 289, Address: 0x2c0f30
+    ap->OptIndex = 0; // Line 290, Address: 0x2c0f34
+    ap->ErrorId = 0; // Line 291, Address: 0x2c0f38
+    ap->ErrorMsgFlushCount = 0; // Line 292, Address: 0x2c0f3c
+    
+    ap->ExtraFlag = 0; // Line 294, Address: 0x2c0f40
+    ap->Mode2 = 0; // Line 295, Address: 0x2c0f44
+    ap->NextMode = 0; // Line 296, Address: 0x2c0f48
+    ap->DepthLevel = 0; // Line 297, Address: 0x2c0f4c
+    ap->GenFlag = 0; // Line 298, Address: 0x2c0f50
+    ap->OptFadeType = 0; // Line 299, Address: 0x2c0f54
+    ap->PalNo = 0; // Line 300, Address: 0x2c0f5c
+    ap->PalFlag = 1; // Line 301, Address: 0x2c0f58, 0x2c0f60 
+    ap->TexFlag = 0; // Line 302, Address: 0x2c0f64
+    ap->SrFlag = 0; // Line 303, Address: 0x2c0f6c
+    ap->SoundMode = -1; // Line 304, Address: 0x2c0f68, 0x2c0f70 
+    ap->OptSaveFlag = 0; // Line 305, Address: 0x2c0f74
+    ap->vMode = 0; // Line 306, Address: 0x2c0f78
+    ap->DriveNo = 0; // Line 307, Address: 0x2c0f7c
+    ap->OldVmOpMode = 0; // Line 308, Address: 0x2c0f80
+    ap->VmOpMode = 0; 
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    StopAdvScreenSaver(1); // Line 345, Address: 0x2c0f84
+} // Line 346, Address: 0x2c0f8c
 
 // 
 // Start address: 0x2c0fa0
