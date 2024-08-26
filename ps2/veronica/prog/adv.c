@@ -2113,13 +2113,10 @@ void ResetAdvSystem() { // Line 266, Address: 0x2c0e80
     StopAdvScreenSaver(1); // Line 345, Address: 0x2c0f84
 } // Line 346, Address: 0x2c0f8c
 
-// 
-// Start address: 0x2c0fa0
-void MountAdvAfs()
-{
-	// Line 360, Address: 0x2c0fa0, Func Offset: 0
-	// Line 362, Address: 0x2c0fb0, Func Offset: 0x10
-	// Func End, Address: 0x2c0fb8, Func Offset: 0x18
+/* 100% match */
+void MountAdvAfs() { // Line 360, Address: 0x2c0fa0
+    Unknown21* temp = (Unknown21*)&AdvWork; // not originally outputted by dwarf2cpp
+    temp->PatId = PatId[3]; // Line 362, Address: 0x2c0fb0
 }
 
 // 
