@@ -2379,12 +2379,9 @@ void ExecuteAdvFadeEx(int Type)
 	// Func End, Address: 0x2c16ac, Func Offset: 0xbc
 }
 
-// 
-// Start address: 0x2c16b0
-void ExecuteAdvFade()
-{
-	// Line 760, Address: 0x2c16b0, Func Offset: 0
-	// Func End, Address: 0x2c16b8, Func Offset: 0x8
+/* 100% match */
+void ExecuteAdvFade() { // Line 760, Address: 0x2c16b0
+    ExecuteAdvFadeEx(0);
 }
 
 // 
