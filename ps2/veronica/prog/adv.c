@@ -2225,22 +2225,16 @@ void RequestAdvInsideFile(int InsideFileId) { // Line 532, Address: 0x2c1320
     RequestAdvInsideFileEx(InsideFileId, 0);
 }
 
-// 
-// Start address: 0x2c1330
-void FreeAdvMemoryEx(int MemoryBlockNo)
-{
-	// Line 545, Address: 0x2c1330, Func Offset: 0
-	// Line 542, Address: 0x2c1338, Func Offset: 0x8
-	// Line 545, Address: 0x2c133c, Func Offset: 0xc
-	// Line 542, Address: 0x2c1340, Func Offset: 0x10
-	// Line 545, Address: 0x2c1344, Func Offset: 0x14
-	// Line 542, Address: 0x2c1348, Func Offset: 0x18
-	// Line 545, Address: 0x2c134c, Func Offset: 0x1c
-	// Line 546, Address: 0x2c1358, Func Offset: 0x28
-	// Line 547, Address: 0x2c1360, Func Offset: 0x30
-	// Line 549, Address: 0x2c1364, Func Offset: 0x34
-	// Func End, Address: 0x2c1374, Func Offset: 0x44
-}
+/* 100% match */
+void FreeAdvMemoryEx(int MemoryBlockNo) { // temp var not originally outputted by dwarf2cpp
+    Unknown21* temp = (Unknown21*)&AdvWork; // Line 542, Address: 0x2c1338, 0x2c1340, 0x2c1348
+
+    
+    if (temp->ptr[MemoryBlockNo] != NULL) { // Line 545, Address: 0x2c1330, 0x2c133c, 0x2c1344, 0x2c134c
+        bhReleaseFreeMemory(temp->ptr[MemoryBlockNo]); // Line 546, Address: 0x2c1358
+        temp->ptr[MemoryBlockNo] = NULL; // Line 547, Address: 0x2c1360
+    } 
+} // Line 549, Address: 0x2c1364
 
 /* 100% match */
 void AllFreeAdvMemory() { // Line 558, Address: 0x2c1380
