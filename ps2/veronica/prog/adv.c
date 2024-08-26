@@ -1,3 +1,5 @@
+#include "types.h"
+
 typedef struct _anon0;
 typedef struct BH_PWORK;
 typedef struct _anon1;
@@ -645,74 +647,6 @@ struct _anon7
 	float prm_3;
 	float prm_4;
 	unsigned char* recp;
-};
-
-struct _anon8
-{
-	int PatId;
-	int Mode;
-	int Mode2;
-	int NextMode;
-	int NextReturnCode;
-	int PortId;
-	int OptIndex;
-	int OptLevel;
-	int NextOptLevel;
-	int OptScrX;
-	int OptScrY;
-	unsigned int PalNo;
-	unsigned int PalMode;
-	unsigned int FontBaseColor;
-	unsigned char* SysMemPtr;
-	unsigned char* MsgPtr;
-	unsigned char* ptr[8];
-	float Timer;
-	float FadeRate;
-	float FadeSpeed;
-	float SaverTimer;
-	float SaverRate;
-	float FlushCount;
-	float FlushSpeed;
-	float FlushCount2;
-	float FlushSpeed2;
-	float ScrollPlatePosX[2][2];
-	char Active;
-	char AppMode;
-	char ExtraFlag;
-	char FadeType;
-	char SaverCommand;
-	char Count;
-	char LastLevel;
-	char FromTitle;
-	char CurrentDiscId;
-	char NextDiscId;
-	char ErrorId;
-	unsigned char ErrorMsgFlushCount;
-	char AnimId;
-	unsigned char AnimTime;
-	char GenFlag;
-	char PalFlag;
-	char SrFlag;
-	char OptFadeType;
-	char TexFlag;
-	char SoundMode;
-	char vibration;
-	char keytype;
-	char adjust_x;
-	char adjust_y;
-	char OptSaveFlag;
-	char vMode;
-	char DriveNo;
-	char MsgNo;
-	char DepthLevel;
-	char OldVmOpMode;
-	char VmOpMode;
-	char SetTexture[2];
-	char KeyCommandCount[7];
-	char Cursor[3];
-	char CursorMax[3];
-	char CursorFlag[4][4];
-	char ModeCommandId[4];
 };
 
 struct _anon9
@@ -1957,7 +1891,7 @@ _anon53 OptionDef[7];
 int AdvFirstInitFlag;
 _anon6 AdvTexList[2];
 int PatId[0];
-_anon8 AdvWork;
+Unknown21 AdvWork;
 _anon40* sys;
 _anon27 tbuf[0];
 _anon34* rom;
@@ -2082,23 +2016,19 @@ float GetSamurai(int Time) {
     return 1.0f / (((Time / 100) * 30) + (((Time % 100) * 6) / 10)); // Line 234, Address: 0x2c0d80
 } // Line 235, Address: 0x2c0e04
 
-// 
-// Start address: 0x2c0e10
-void InitAdvSystem()
-{
-	_anon8* ap;
-	// Line 245, Address: 0x2c0e10, Func Offset: 0
-	// Line 246, Address: 0x2c0e1c, Func Offset: 0xc
-	// Line 248, Address: 0x2c0e24, Func Offset: 0x14
-	// Line 249, Address: 0x2c0e34, Func Offset: 0x24
-	// Line 250, Address: 0x2c0e48, Func Offset: 0x38
-	// Line 252, Address: 0x2c0e50, Func Offset: 0x40
-	// Line 251, Address: 0x2c0e54, Func Offset: 0x44
-	// Line 252, Address: 0x2c0e58, Func Offset: 0x48
-	// Line 255, Address: 0x2c0e60, Func Offset: 0x50
-	// Line 256, Address: 0x2c0e68, Func Offset: 0x58
-	// Func End, Address: 0x2c0e78, Func Offset: 0x68
-}
+/* 100% match */
+void InitAdvSystem() { // Line 245, Address: 0x2c0e10
+    Unknown21* ap = &AdvWork; // Line 246, Address: 0x2c0e1c
+
+    if (AdvFirstInitFlag == 0) { // Line 248, Address: 0x2c0e24
+        memset(&AdvWork, 0, sizeof(Unknown21)); // Line 249, Address: 0x2c0e34
+        ap->PatId = -1; // Line 250, Address: 0x2c0e48
+        ap->Active = 0; // Line 251, Address: 0x2c0e54
+        AdvFirstInitFlag = 1; // Line 252, Address: 0x2c0e50, 0x2c0e58
+    } 
+    
+    MountAdvAfs(); // Line 255, Address: 0x2c0e60
+} // Line 256, Address: 0x2c0e68
 
 // 
 // Start address: 0x2c0e80
