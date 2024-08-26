@@ -2217,12 +2217,9 @@ void RequestAdvInsideFileEx(int InsideFileId, int MemoryBlockNo)
 	// Func End, Address: 0x2c1320, Func Offset: 0x70
 }
 
-// 
-// Start address: 0x2c1320
-void RequestAdvInsideFile(int InsideFileId)
-{
-	// Line 532, Address: 0x2c1320, Func Offset: 0
-	// Func End, Address: 0x2c1328, Func Offset: 0x8
+/* 100% match */
+void RequestAdvInsideFile(int InsideFileId) { // Line 532, Address: 0x2c1320
+    RequestAdvInsideFileEx(InsideFileId, 0);
 }
 
 // 
