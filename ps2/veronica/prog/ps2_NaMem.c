@@ -1,16 +1,106 @@
 void njMemCopy(void* vpDst, void* vpSrc, int lNum);
 void njMemCopy4(void* vpDst, void* vpSrc, int lNum);
 
-// 
-// Start address: 0x2e3100
-void njMemCopy(void* vpDst, void* vpSrc, int lNum)
-{
-	char* cpDst;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 100% match */
+void njMemCopy(void* vpDst, void* vpSrc, int lNum) { // Line 66, Address: 0x2e3100
+    char* cpDst;
 	char* cpSrc;
-	// Line 66, Address: 0x2e3100, Func Offset: 0
-	// Line 77, Address: 0x2e3128, Func Offset: 0x28
-	// Func End, Address: 0x2e3130, Func Offset: 0x30
-}
+    
+    for (cpSrc = vpSrc, cpDst = vpDst; lNum != 0; cpSrc++, cpDst++) { 
+        lNum--;
+        *cpDst = *cpSrc;
+    } 
+    
+    
+    
+} // Line 77, Address: 0x2e3128
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* 100% match */
 void njMemCopy4(void* vpDst, void* vpSrc, int lNum) { // Line 106, Address: 0x2e3130
@@ -25,4 +115,3 @@ void njMemCopy4(void* vpDst, void* vpSrc, int lNum) { // Line 106, Address: 0x2e
     
     
 } // Line 117, Address: 0x2e3158
-
