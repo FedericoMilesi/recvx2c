@@ -1748,7 +1748,7 @@ struct tagMEMORYCARDPORT
 	int lFormatType;
 };
 
-struct _anon47
+typedef struct Unknown22
 {
 	int PerType;
 	int OldPerType;
@@ -1768,7 +1768,7 @@ struct _anon47
 	short x2;
 	short y2;
 	short Calibrate;
-};
+} Unknown22;
 
 struct _anon48
 {
@@ -1896,7 +1896,7 @@ _anon40* sys;
 _anon27 tbuf[0];
 _anon34* rom;
 unsigned int palbuf[0];
-_anon47 Pad[0];
+Unknown22 Pad[0];
 _anon27* Ps2_current_texmemlist;
 _anon0 Qtex[16];
 _anon16 AdvTexInfo[8][2];
@@ -2427,19 +2427,12 @@ void ExecuteAdvScreenSaver() { // Line 790, Address: 0x2c16f0
     AdvDrawFadePolygon(2, ap->SaverRate, 0xF);
 } // Line 812, Address: 0x2c17b0
 
-// 
-// Start address: 0x2c17c0
-void CheckAdvScreenSaverStopKey(int PortId)
-{
-	// Line 823, Address: 0x2c17c0, Func Offset: 0
-	// Line 822, Address: 0x2c17d4, Func Offset: 0x14
-	// Line 823, Address: 0x2c17d8, Func Offset: 0x18
-	// Line 822, Address: 0x2c17dc, Func Offset: 0x1c
-	// Line 823, Address: 0x2c17e0, Func Offset: 0x20
-	// Line 824, Address: 0x2c181c, Func Offset: 0x5c
-	// Line 826, Address: 0x2c1828, Func Offset: 0x68
-	// Func End, Address: 0x2c1834, Func Offset: 0x74
-}
+/* 100% match */
+void CheckAdvScreenSaverStopKey(int PortId) { // Line 822, Address: 0x2c17d4, 0x2c17dc
+    if ((Pad[PortId].on != 0) || (Pad[PortId].x1 != 0) || (Pad[PortId].y1 != 0)) { // Line 823, Address: 0x2c17c0, 0x2c17d8, 0x2c17e0
+        StopAdvScreenSaver(0); // Line 824, Address: 0x2c181c
+    }
+} // Line 826, Address: 0x2c1828
 
 // 
 // Start address: 0x2c1840
