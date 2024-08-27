@@ -3486,24 +3486,18 @@ void FadeInPlate(int NextMode)
 	// Func End, Address: 0x2c3dec, Func Offset: 0x6c
 }
 
-// 
-// Start address: 0x2c3df0
-void FadeOutPlate()
-{
-	_anon8* ap;
-	// Line 3235, Address: 0x2c3df0, Func Offset: 0
-	// Line 3236, Address: 0x2c3dfc, Func Offset: 0xc
-	// Line 3238, Address: 0x2c3e00, Func Offset: 0x10
-	// Line 3239, Address: 0x2c3e08, Func Offset: 0x18
-	// Line 3240, Address: 0x2c3e10, Func Offset: 0x20
-	// Line 3239, Address: 0x2c3e18, Func Offset: 0x28
-	// Line 3240, Address: 0x2c3e1c, Func Offset: 0x2c
-	// Line 3241, Address: 0x2c3e2c, Func Offset: 0x3c
-	// Line 3242, Address: 0x2c3e30, Func Offset: 0x40
-	// Line 3243, Address: 0x2c3e38, Func Offset: 0x48
-	// Line 3245, Address: 0x2c3e40, Func Offset: 0x50
-	// Func End, Address: 0x2c3e50, Func Offset: 0x60
-}
+/* 100% match */ 
+void FadeOutPlate() { // Line 3235, Address: 0x2c3df0
+    Unknown21* ap = (Unknown21*)&AdvWork; // Line 3236, Address: 0x2c3dfc
+
+    ResetFlushPlate(); // Line 3238, Address: 0x2c3e00
+    ap->FlushCount -= ap->FlushSpeed; // Line 3239, Address: 0x2c3e08, 0x2c3e18
+    if (ap->FlushCount < 0) { // Line 3240, Address: 0x2c3e10, 0x2c3e1c
+        ap->FlushCount = 0; // Line 3241, Address: 0x2c3e2c
+        ap->FlushSpeed = 32.0f; // Line 3242, Address: 0x2c3e30
+        ap->Mode = ap->NextMode; // Line 3243, Address: 0x2c3e38
+    }
+} // Line 3245, Address: 0x2c3e40
 
 /* 100% match */ 
 void TitleCall(int PortId, int ReturnCode) { // Line 3251, Address: 0x2c3e50
