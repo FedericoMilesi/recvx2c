@@ -3652,21 +3652,85 @@ int CheckButton(int Level, int Flag, int MaxFlag)
 	// Func End, Address: 0x2c440c, Func Offset: 0x52c
 }
 
-// 
-// Start address: 0x2c4410
-int CheckStartButton()
-{
-	// Line 3511, Address: 0x2c4410, Func Offset: 0
-	// Line 3564, Address: 0x2c4414, Func Offset: 0x4
-	// Line 3511, Address: 0x2c441c, Func Offset: 0xc
-	// Line 3564, Address: 0x2c4420, Func Offset: 0x10
-	// Line 3578, Address: 0x2c444c, Func Offset: 0x3c
-	// Line 3580, Address: 0x2c445c, Func Offset: 0x4c
-	// Line 3584, Address: 0x2c4464, Func Offset: 0x54
-	// Line 3587, Address: 0x2c446c, Func Offset: 0x5c
-	// Line 3588, Address: 0x2c4470, Func Offset: 0x60
-	// Func End, Address: 0x2c447c, Func Offset: 0x6c
-}
+/* 100% match */ 
+int CheckStartButton() { // Line 3511, Address: 0x2c4410, 0x2c441c
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // temp var not originally outputted by dwarf2cpp
+    Unknown21* temp = (Unknown21*)&AdvWork; // Line 3564, Address: 0x2c4414, 0x2c4420
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    if ((Pad[temp->PortId].press & 0x800)) { // Line 3578, Address: 0x2c444c
+        
+        CallSystemSeBasic(3, 0, 0); // Line 3580, Address: 0x2c445c
+
+
+        
+        StopAdvScreenSaver(0); // Line 3584, Address: 0x2c4464
+        return 1;
+    }
+    return 0; // Line 3587, Address: 0x2c446c
+} // Line 3588, Address: 0x2c4470
 
 // 
 // Start address: 0x2c4480
