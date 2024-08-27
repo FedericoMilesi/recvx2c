@@ -2402,33 +2402,30 @@ void StopAdvScreenSaver(int Flag) {
     } // Line 780, Address: 0x2c16e0
 }
 
-// 
-// Start address: 0x2c16f0
-void ExecuteAdvScreenSaver()
-{
-	_anon8* ap;
-	// Line 790, Address: 0x2c16f0, Func Offset: 0
-	// Line 792, Address: 0x2c16f8, Func Offset: 0x8
-	// Line 793, Address: 0x2c1704, Func Offset: 0x14
-	// Line 794, Address: 0x2c1710, Func Offset: 0x20
-	// Line 793, Address: 0x2c1718, Func Offset: 0x28
-	// Line 794, Address: 0x2c171c, Func Offset: 0x2c
-	// Line 795, Address: 0x2c172c, Func Offset: 0x3c
-	// Line 796, Address: 0x2c1734, Func Offset: 0x44
-	// Line 800, Address: 0x2c1738, Func Offset: 0x48
-	// Line 801, Address: 0x2c1748, Func Offset: 0x58
-	// Line 802, Address: 0x2c1758, Func Offset: 0x68
-	// Line 801, Address: 0x2c175c, Func Offset: 0x6c
-	// Line 802, Address: 0x2c1760, Func Offset: 0x70
-	// Line 805, Address: 0x2c1778, Func Offset: 0x88
-	// Line 806, Address: 0x2c1780, Func Offset: 0x90
-	// Line 807, Address: 0x2c1790, Func Offset: 0xa0
-	// Line 806, Address: 0x2c1798, Func Offset: 0xa8
-	// Line 807, Address: 0x2c179c, Func Offset: 0xac
-	// Line 808, Address: 0x2c17ac, Func Offset: 0xbc
-	// Line 812, Address: 0x2c17b0, Func Offset: 0xc0
-	// Func End, Address: 0x2c17c0, Func Offset: 0xd0
-}
+/* 100% match */
+void ExecuteAdvScreenSaver() { // Line 790, Address: 0x2c16f0
+    
+    Unknown21* ap = (Unknown21*)&AdvWork; // Line 792, Address: 0x2c16f8
+    if (ap->SaverCommand == 0) { // Line 793, Address: 0x2c1704, 0x2c1718
+        ap->SaverTimer -= 1.0f; // Line 794, Address: 0x2c1710, 0x2c171c
+        if (ap->SaverTimer < 0) { // Line 795, Address: 0x2c172c
+            ap->SaverCommand = 1; // Line 796, Address: 0x2c1734
+            ap->SaverRate = 0;
+        }
+    }
+    if (ap->SaverCommand == 1) { // Line 800, Address: 0x2c1738
+        ap->SaverRate += 0.01f; // Line 801, Address: 0x2c1748, 0x2c175c
+        if (ap->SaverRate >= 0.5f) { // Line 802, Address: 0x2c1758, 0x2c1760
+            ap->SaverRate = 0.5f;
+        }
+    } else { // Line 805, Address: 0x2c1778
+        ap->SaverRate -= 0.05f; // Line 806, Address: 0x2c1780, 0x2c1798
+        if (ap->SaverRate <= 0) { // Line 807, Address: 0x2c1790, 0x2c179c
+            ap->SaverRate = 0; // Line 808, Address: 0x2c17ac
+        }
+    }
+    AdvDrawFadePolygon(2, ap->SaverRate, 0xF);
+} // Line 812, Address: 0x2c17b0
 
 // 
 // Start address: 0x2c17c0
