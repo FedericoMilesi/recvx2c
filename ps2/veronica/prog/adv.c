@@ -3505,25 +3505,23 @@ void FadeOutPlate()
 	// Func End, Address: 0x2c3e50, Func Offset: 0x60
 }
 
-// 
-// Start address: 0x2c3e50
-void TitleCall(int PortId, int ReturnCode)
-{
-	_anon8* ap;
-	// Line 3251, Address: 0x2c3e50, Func Offset: 0
-	// Line 3252, Address: 0x2c3e64, Func Offset: 0x14
-	// Line 3254, Address: 0x2c3e6c, Func Offset: 0x1c
-	// Line 3255, Address: 0x2c3e74, Func Offset: 0x24
-	// Line 3256, Address: 0x2c3e80, Func Offset: 0x30
-	// Line 3260, Address: 0x2c3e90, Func Offset: 0x40
-	// Line 3262, Address: 0x2c3ea4, Func Offset: 0x54
-	// Line 3264, Address: 0x2c3eac, Func Offset: 0x5c
-	// Line 3263, Address: 0x2c3eb0, Func Offset: 0x60
-	// Line 3264, Address: 0x2c3eb4, Func Offset: 0x64
-	// Line 3265, Address: 0x2c3eb8, Func Offset: 0x68
-	// Line 3266, Address: 0x2c3ec0, Func Offset: 0x70
-	// Func End, Address: 0x2c3ed4, Func Offset: 0x84
-}
+/* 100% match */ 
+void TitleCall(int PortId, int ReturnCode) { // Line 3251, Address: 0x2c3e50
+    Unknown21* ap = (Unknown21*)&AdvWork; // Line 3252, Address: 0x2c3e64
+    
+    StartVibrationEx(PortId, 16); // Line 3254, Address: 0x2c3e6c
+    SetVolumeAdx2(0, 0); // Line 3255, Address: 0x2c3e74
+    PlayAdx(0, ap->PatId, 3); // Line 3256, Address: 0x2c3e80
+
+
+    
+    RequestAdvFade(3, GetSamurai(430)); // Line 3260, Address: 0x2c3e90
+    
+    ap->FlushCount = 180.0f; // Line 3262, Address: 0x2c3ea4
+    ap->NextReturnCode = ReturnCode; // Line 3263, Address: 0x2c3eb0
+    ap->Mode = 17; // Line 3264, Address: 0x2c3eac, 0x2c3eb4
+    ap->GenFlag = 1; // Line 3265, Address: 0x2c3eb8
+} // Line 3266, Address: 0x2c3ec0
 
 // 
 // Start address: 0x2c3ee0
