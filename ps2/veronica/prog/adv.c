@@ -2728,12 +2728,9 @@ void AdvEasySetupTextureEx(int ListNo)
 	// Func End, Address: 0x2c2168, Func Offset: 0x48
 }
 
-// 
-// Start address: 0x2c2170
-void AdvEasySetupTexture()
-{
-	// Line 1394, Address: 0x2c2170, Func Offset: 0
-	// Func End, Address: 0x2c2178, Func Offset: 0x8
+/* 100% match */
+void AdvEasySetupTexture() { // Line 1394, Address: 0x2c2170
+    AdvEasySetupTextureEx(0);
 }
 
 // 
