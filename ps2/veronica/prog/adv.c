@@ -2090,23 +2090,21 @@ void AdvCheckSoftReset(int Flag) { // Line 415, Address: 0x2c1020
     
 } // Line 430, Address: 0x2c1094
 
-// 
-// Start address: 0x2c10b0
-void AdvPushRoomTexture()
-{
-	_anon8* ap;
-	// Line 439, Address: 0x2c10b0, Func Offset: 0
-	// Line 440, Address: 0x2c10bc, Func Offset: 0xc
-	// Line 442, Address: 0x2c10c4, Func Offset: 0x14
-	// Line 444, Address: 0x2c10c8, Func Offset: 0x18
-	// Line 445, Address: 0x2c10dc, Func Offset: 0x2c
-	// Line 446, Address: 0x2c10f4, Func Offset: 0x44
-	// Line 447, Address: 0x2c112c, Func Offset: 0x7c
-	// Line 448, Address: 0x2c113c, Func Offset: 0x8c
-	// Line 449, Address: 0x2c114c, Func Offset: 0x9c
-	// Line 452, Address: 0x2c1154, Func Offset: 0xa4
-	// Func End, Address: 0x2c1164, Func Offset: 0xb4
-}
+/* 100% match */
+void AdvPushRoomTexture() { // Line 439, Address: 0x2c10b0
+    Unknown21* ap = (Unknown21*)&AdvWork; // Line 440, Address: 0x2c10bc
+    
+    ap->TexFlag = 0; // Line 442, Address: 0x2c10c4
+    
+    if (rom->mdl.texP != NULL) { // Line 444, Address: 0x2c10c8
+        ap->SysMemPtr = sys->memp; // Line 445, Address: 0x2c10dc
+        sys->memp = (unsigned char*)bhCopyTexmem2MainmemSub(rom->mdl.texP, (char*)sys->memp); // Line 446, Address: 0x2c10f4
+        njReleaseTexture(rom->mdl.texP); // Line 447, Address: 0x2c112c
+        bhGarbageTexture(&tbuf, 256); // Line 448, Address: 0x2c113c
+        ap->TexFlag = 1; // Line 449, Address: 0x2c114c
+    }
+    
+} // Line 452, Address: 0x2c1154
 
 /* 100% match */
 void AdvPopRoomTexture() { // Line 461, Address: 0x2c1170
