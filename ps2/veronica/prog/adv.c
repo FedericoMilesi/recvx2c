@@ -2870,61 +2870,71 @@ int FindFirstVmDrive()
 	// Func End, Address: 0x2c2420, Func Offset: 0x50
 }
 
-// 
-// Start address: 0x2c2420
-float AdvEasyDispMessage(float PosX, float PosY, unsigned int MessageNo)
-{
-	float SizeX;
-	int SearchFlag;
-	int LoopFlag;
-	float sy;
-	float sx;
-	int y;
+/* 100% match */
+float AdvEasyDispMessage(float PosX, float PosY, unsigned int MessageNo) { // Line 1854, Address: 0x2c2420
+	unsigned char* dmp, * smp;
+	unsigned short* mp, * nmp;
+    unsigned int* mes_dp;
 	int x;
-	unsigned short* nmp;
-	unsigned short* mp;
-	unsigned char* dmp;
-	unsigned char* smp;
-	// Line 1854, Address: 0x2c2420, Func Offset: 0
-	// Line 1865, Address: 0x2c2444, Func Offset: 0x24
-	// Line 1854, Address: 0x2c2450, Func Offset: 0x30
-	// Line 1865, Address: 0x2c2454, Func Offset: 0x34
-	// Line 1860, Address: 0x2c245c, Func Offset: 0x3c
-	// Line 1865, Address: 0x2c2460, Func Offset: 0x40
-	// Line 1866, Address: 0x2c246c, Func Offset: 0x4c
-	// Line 1867, Address: 0x2c247c, Func Offset: 0x5c
-	// Line 1869, Address: 0x2c248c, Func Offset: 0x6c
-	// Line 1870, Address: 0x2c2490, Func Offset: 0x70
-	// Line 1871, Address: 0x2c2494, Func Offset: 0x74
-	// Line 1874, Address: 0x2c2498, Func Offset: 0x78
-	// Line 1895, Address: 0x2c24a8, Func Offset: 0x88
-	// Line 1886, Address: 0x2c24b0, Func Offset: 0x90
-	// Line 1875, Address: 0x2c24b8, Func Offset: 0x98
-	// Line 1877, Address: 0x2c24e8, Func Offset: 0xc8
-	// Line 1879, Address: 0x2c24ec, Func Offset: 0xcc
-	// Line 1882, Address: 0x2c24f4, Func Offset: 0xd4
-	// Line 1881, Address: 0x2c24f8, Func Offset: 0xd8
-	// Line 1884, Address: 0x2c24fc, Func Offset: 0xdc
-	// Line 1886, Address: 0x2c2504, Func Offset: 0xe4
-	// Line 1887, Address: 0x2c2508, Func Offset: 0xe8
-	// Line 1895, Address: 0x2c2510, Func Offset: 0xf0
-	// Line 1899, Address: 0x2c2554, Func Offset: 0x134
-	// Line 1901, Address: 0x2c255c, Func Offset: 0x13c
-	// Line 1902, Address: 0x2c2574, Func Offset: 0x154
-	// Line 1903, Address: 0x2c2594, Func Offset: 0x174
-	// Line 1904, Address: 0x2c2598, Func Offset: 0x178
-	// Line 1905, Address: 0x2c25a0, Func Offset: 0x180
-	// Line 1904, Address: 0x2c25b4, Func Offset: 0x194
-	// Line 1905, Address: 0x2c25c0, Func Offset: 0x1a0
-	// Line 1906, Address: 0x2c25d0, Func Offset: 0x1b0
-	// Line 1907, Address: 0x2c25d8, Func Offset: 0x1b8
-	// Line 1906, Address: 0x2c25dc, Func Offset: 0x1bc
-	// Line 1909, Address: 0x2c25e0, Func Offset: 0x1c0
-	// Line 1911, Address: 0x2c25e8, Func Offset: 0x1c8
-	// Line 1913, Address: 0x2c25f0, Func Offset: 0x1d0
-	// Line 1917, Address: 0x2c2624, Func Offset: 0x204
-	// Func End, Address: 0x2c2650, Func Offset: 0x230
-}
+    int y;
+	int LoopFlag = 1; // Line 1860, Address: 0x2c245c
+	int SearchFlag;
+	float SizeX, sx;
+
+    float sy = PosY; 
+    Unknown21* temp = (Unknown21*)&AdvWork; smp = (void*)((int)temp->MsgPtr + ((int*)temp->MsgPtr)[MessageNo + 1]); // Line 1865, Address: 0x2c2444, 0x2c2454, 0x2c2460 
+    dmp = syMalloc(1024); // Line 1866, Address: 0x2c246c
+    memcpy(dmp, smp, 1024); // Line 1867, Address: 0x2c247c
+    
+    nmp = (void*)dmp; // Line 1869, Address: 0x2c248c
+    y = 0; // Line 1870, Address: 0x2c2490
+    sx = PosX; // Line 1871, Address: 0x2c2494
+
+    while (LoopFlag != 0) {
+        for (x = 0, SizeX = 0, SearchFlag = 1; SearchFlag != 0; x++) { // Line 1874, Address: 0x2c2498
+            switch (nmp[x]) { // Line 1875, Address: 0x2c24b8
+            case 0xFFFF:
+                LoopFlag = 0; // Line 1877, Address: 0x2c24e8
+                SearchFlag = 0;
+                break; // Line 1879, Address: 0x2c24ec
+            case 0xFF00:
+                nmp[x] = 0xFFFF; // Line 1881, Address: 0x2c24f8
+                mes_dp = (void*)(&nmp[x] + 1); // Line 1882, Address: 0x2c24f4
+                SearchFlag = 0; 
+                break; // Line 1884, Address: 0x2c24fc
+            case 0xFF01:
+                SizeX += 14.0f; // Line 1886, Address: 0x2c24b0, 0x2c2504 
+                break; // Line 1887, Address: 0x2c2508
+            default:
+
+                
+
+
+                
+
+                SizeX += FontSz[nmp[x]]; // Line 1895, Address: 0x2c24a8, 0x2c2510 
+                break; 
+            }
+            
+        } // Line 1899, Address: 0x2c2554
+
+        if (PosX < 0) { // Line 1901, Address: 0x2c255c
+            sx = 320.0f - (SizeX / 2.0f); // Line 1902, Address: 0x2c2574
+        } // Line 1903, Address: 0x2c2594
+        sys->mes_tp = (int*)nmp; // Line 1904, Address: 0x2c2598, 0x2c25b4 
+        bhDispMessage(sx, sy, -1, 2, 0, 0, 0); // Line 1905, Address: 0x2c25a0, 0x2c25c0 
+        sy += 30; // Line 1906, Address: 0x2c25d0, 0x2c25dc
+        y++; // Line 1907, Address: 0x2c25d8
+        nmp = (void*)mes_dp; 
+    } // Line 1909, Address: 0x2c25e0
+    
+    syFree(dmp); // Line 1911, Address: 0x2c25e8
+    if (PosX < 0) {
+        return y * 30; // Line 1913, Address: 0x2c25f0
+    } else {
+        return SizeX;
+    }
+} // Line 1917, Address: 0x2c2624
 
 // 
 // Start address: 0x2c2650
