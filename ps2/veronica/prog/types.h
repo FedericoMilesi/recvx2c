@@ -1586,3 +1586,11 @@ typedef struct NJS_SCREEN
 	float cx;
 	float cy;
 } NJS_SCREEN;
+
+typedef struct NJS_POLYGON_VTX
+{
+	float x;
+	float y;
+	float z;
+	unsigned int col;
+} NJS_POLYGON_VTX;

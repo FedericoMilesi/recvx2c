@@ -1887,7 +1887,7 @@ unsigned int AdvGetCancelButton();
 void SetPvrInfo(_anon20* np, _anon16* ip, unsigned char* pp);
 int TransPvpData(unsigned char* pp, int Mode);
 void AdvTransShadowPalette();
-void AdvEasyDrawWindow(_anon32* tlp, _anon32* brp, unsigned int WindowColor, unsigned int BackColor);
+void AdvEasyDrawWindow(Vector3* tlp, Vector3* brp, unsigned int WindowColor, unsigned int BackColor);
 void AdvEasyDrawTexture(int TexNo, unsigned int BaseColor, _anon0* qp, float PosZ, int TransFlag);
 void AdvEasyDrawTextureS(int TexNo, unsigned int BaseColor, _anon0* qp, float PosZ, int TransFlag, unsigned int ShadowAlpha);
 void SetQuadPos(float StartX, float StartY, float SizeX, float SizeY, _anon0* qp);
@@ -2462,9 +2462,9 @@ void AdvTransShadowPalette() { // Line 989, Address: 0x2c19c0
 
 // 
 // Start address: 0x2c1a40
-void AdvEasyDrawWindow(_anon32* tlp, _anon32* brp, unsigned int WindowColor, unsigned int BackColor)
+void AdvEasyDrawWindow(Vector3* tlp, Vector3* brp, unsigned int WindowColor, unsigned int BackColor)
 {
-	_anon13 poly[4];
+	NJS_POLYGON_VTX poly[4];
 	// Line 1022, Address: 0x2c1a40, Func Offset: 0
 	// Line 1025, Address: 0x2c1a6c, Func Offset: 0x2c
 	// Line 1030, Address: 0x2c1a74, Func Offset: 0x34
