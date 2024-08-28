@@ -2694,12 +2694,9 @@ void AdvDwawOnePictureEx(int TexNo, unsigned int BaseColor)
 	// Func End, Address: 0x2c2000, Func Offset: 0xb0
 }
 
-// 
-// Start address: 0x2c2000
-void AdvDwawOnePicture(int TexNo)
-{
-	// Line 1317, Address: 0x2c2000, Func Offset: 0
-	// Func End, Address: 0x2c2008, Func Offset: 0x8
+/* 100% match */
+void AdvDwawOnePicture(int TexNo) { // Line 1317, Address: 0x2c2000
+    AdvDwawOnePictureEx(TexNo, -1);
 }
 
 // 
