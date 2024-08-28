@@ -2804,12 +2804,9 @@ void AdvEasyReleaseTextureEx(int ListNo)
 	// Func End, Address: 0x2c22cc, Func Offset: 0x5c
 }
 
-// 
-// Start address: 0x2c22d0
-void AdvEasyReleaseTexture()
-{
-	// Line 1492, Address: 0x2c22d0, Func Offset: 0
-	// Func End, Address: 0x2c22d8, Func Offset: 0x8
+/* 100% match */
+void AdvEasyReleaseTexture() { // Line 1492, Address: 0x2c22d0
+    AdvEasyReleaseTextureEx(0);
 }
 
 // 
