@@ -2778,12 +2778,9 @@ void AdvEasyTransTextureEx(int ListNo)
 	// Func End, Address: 0x2c2254, Func Offset: 0x14
 }
 
-// 
-// Start address: 0x2c2260
-void AdvEasyTransTexture()
-{
-	// Line 1460, Address: 0x2c2260, Func Offset: 0
-	// Func End, Address: 0x2c2268, Func Offset: 0x8
+/* 100% match */
+void AdvEasyTransTexture() { // Line 1460, Address: 0x2c2260
+    AdvEasyTransTextureEx(0);
 }
 
 // 
