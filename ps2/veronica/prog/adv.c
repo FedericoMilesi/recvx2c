@@ -2108,21 +2108,18 @@ void AdvPushRoomTexture()
 	// Func End, Address: 0x2c1164, Func Offset: 0xb4
 }
 
-// 
-// Start address: 0x2c1170
-void AdvPopRoomTexture()
-{
-	_anon8* ap;
-	// Line 461, Address: 0x2c1170, Func Offset: 0
-	// Line 462, Address: 0x2c117c, Func Offset: 0xc
-	// Line 464, Address: 0x2c1184, Func Offset: 0x14
-	// Line 465, Address: 0x2c1190, Func Offset: 0x20
-	// Line 466, Address: 0x2c11a4, Func Offset: 0x34
-	// Line 467, Address: 0x2c11ac, Func Offset: 0x3c
-	// Line 470, Address: 0x2c11c4, Func Offset: 0x54
-	// Line 471, Address: 0x2c11c8, Func Offset: 0x58
-	// Func End, Address: 0x2c11d8, Func Offset: 0x68
-}
+/* 100% match */
+void AdvPopRoomTexture() { // Line 461, Address: 0x2c1170
+    Unknown21* ap = (Unknown21*)&AdvWork; // Line 462, Address: 0x2c117c
+
+    if (ap->TexFlag != 0) { // Line 464, Address: 0x2c1184
+        if (rom->mdl.texP != NULL) { // Line 465, Address: 0x2c1190
+            bhCopyMainmem2Texmem(rom->mdl.texP); // Line 466, Address: 0x2c11a4
+            sys->memp = ap->SysMemPtr; // Line 467, Address: 0x2c11ac
+        }
+    }
+    ap->TexFlag = 0; // Line 470, Address: 0x2c11c4
+} // Line 471, Address: 0x2c11c8
 
 /* 100% match */
 void AdvPushPaletteData() { // Line 480, Address: 0x2c11e8, 0x2c11f4
