@@ -273,7 +273,7 @@ typedef _anon18 type_199[4];
 typedef unsigned int type_200[16];
 typedef unsigned int type_201[32];
 
-struct _anon0
+typedef struct Unknown23
 {
 	float x1;
 	float y1;
@@ -283,7 +283,7 @@ struct _anon0
 	float v1;
 	float u2;
 	float v2;
-};
+} Unknown23;
 
 struct BH_PWORK
 {
@@ -1954,7 +1954,7 @@ void AdvEasyDrawTexture(int TexNo, unsigned int BaseColor, _anon0* qp, float Pos
 void AdvEasyDrawTextureS(int TexNo, unsigned int BaseColor, _anon0* qp, float PosZ, int TransFlag, unsigned int ShadowAlpha);
 void SetQuadPos(float StartX, float StartY, float SizeX, float SizeY, _anon0* qp);
 void SetQuadUv2Ex(float u, float v, float SizeX, float SizeY, unsigned int ListNo, unsigned int TexNo, _anon0* qp);
-void SetQuadUv2(float u, float v, float SizeX, float SizeY, unsigned int TexNo, _anon0* qp);
+void SetQuadUv2(float u, float v, float SizeX, float SizeY, unsigned int TexNo, Unknown23* qp);
 void AdvDwawOnePictureEx(int TexNo, unsigned int BaseColor);
 void AdvDwawOnePicture(int TexNo);
 void AdvEasySetupTextureBasic(unsigned char* xp, int ListNo, int TexNo);
@@ -2670,12 +2670,9 @@ void SetQuadUv2Ex(float u, float v, float SizeX, float SizeY, unsigned int ListN
 	// Func End, Address: 0x2c1f40, Func Offset: 0xe0
 }
 
-// 
-// Start address: 0x2c1f40
-void SetQuadUv2(float u, float v, float SizeX, float SizeY, unsigned int TexNo, _anon0* qp)
-{
-	// Line 1263, Address: 0x2c1f44, Func Offset: 0x4
-	// Func End, Address: 0x2c1f50, Func Offset: 0x10
+/* 100% match */
+void SetQuadUv2(float u, float v, float SizeX, float SizeY, unsigned int TexNo, Unknown23* qp) { // Line 1263, Address: 0x2c1f44
+    SetQuadUv2Ex(u, v, SizeX, SizeY, 0, TexNo, qp);
 }
 
 // 
