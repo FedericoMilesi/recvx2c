@@ -2832,14 +2832,10 @@ void AdvEasyReleaseAllTexture()
 	// Func End, Address: 0x2c233c, Func Offset: 0x5c
 }
 
-// 
-// Start address: 0x2c2340
-int AdvGetCurrentPort()
-{
-	// Line 1554, Address: 0x2c2340, Func Offset: 0
-	// Line 1555, Address: 0x2c2344, Func Offset: 0x4
-	// Func End, Address: 0x2c234c, Func Offset: 0xc
-}
+/* 100% match */
+int AdvGetCurrentPort() { // Line 1554, Address: 0x2c2340
+    return CurrentPortId; // Line 1555, Address: 0x2c2344
+} 
 
 // 
 // Start address: 0x2c2350
