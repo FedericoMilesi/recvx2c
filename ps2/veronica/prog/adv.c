@@ -3225,15 +3225,12 @@ int Adv_CapcomLogo()
 	// Func End, Address: 0x2c3158, Func Offset: 0x2a8
 }
 
-// 
-// Start address: 0x2c3160
-void ResetFlushPlate()
-{
-	_anon8* ap;
-	// Line 2653, Address: 0x2c3160, Func Offset: 0
-	// Line 2655, Address: 0x2c3168, Func Offset: 0x8
-	// Line 2656, Address: 0x2c316c, Func Offset: 0xc
-	// Func End, Address: 0x2c3174, Func Offset: 0x14
+/* 100% match */ 
+void ResetFlushPlate() {
+    Unknown21* ap = (Unknown21*)&AdvWork; // Line 2653, Address: 0x2c3160
+    
+    ap->FlushSpeed2 = 0; // Line 2655, Address: 0x2c3168
+    ap->FlushCount2 = 0; // Line 2656, Address: 0x2c316c
 }
 
 // 
