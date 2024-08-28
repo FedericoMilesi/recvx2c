@@ -3467,24 +3467,18 @@ void DisplayExtraGamePlate(int Cursor, float FadeRate, int Flag)
 	// Func End, Address: 0x2c3d7c, Func Offset: 0x2bc
 }
 
-// 
-// Start address: 0x2c3d80
-void FadeInPlate(int NextMode)
-{
-	_anon8* ap;
-	// Line 3219, Address: 0x2c3d80, Func Offset: 0
-	// Line 3220, Address: 0x2c3d90, Func Offset: 0x10
-	// Line 3222, Address: 0x2c3d98, Func Offset: 0x18
-	// Line 3223, Address: 0x2c3da0, Func Offset: 0x20
-	// Line 3224, Address: 0x2c3da8, Func Offset: 0x28
-	// Line 3223, Address: 0x2c3db4, Func Offset: 0x34
-	// Line 3224, Address: 0x2c3db8, Func Offset: 0x38
-	// Line 3225, Address: 0x2c3dc8, Func Offset: 0x48
-	// Line 3226, Address: 0x2c3dcc, Func Offset: 0x4c
-	// Line 3227, Address: 0x2c3dd4, Func Offset: 0x54
-	// Line 3229, Address: 0x2c3dd8, Func Offset: 0x58
-	// Func End, Address: 0x2c3dec, Func Offset: 0x6c
-}
+/* 100% match */ 
+void FadeInPlate(int NextMode) { // Line 3219, Address: 0x2c3d80
+    Unknown21* ap = (Unknown21*)&AdvWork; // Line 3220, Address: 0x2c3d90
+
+    ResetFlushPlate(); // Line 3222, Address: 0x2c3d98
+    ap->FlushCount += ap->FlushSpeed; // Line 3223, Address: 0x2c3da0, 0x2c3db4
+    if (ap->FlushCount > 255.0f) { // Line 3224, Address: 0x2c3da8, 0x2c3db8
+        ap->FlushCount = 255.0f; // Line 3225, Address: 0x2c3dc8
+        ap->FlushSpeed = 32.0f; // Line 3226, Address: 0x2c3dcc
+        ap->Mode = NextMode; // Line 3227, Address: 0x2c3dd4
+    }
+} // Line 3229, Address: 0x2c3dd8
 
 /* 100% match */ 
 void FadeOutPlate() { // Line 3235, Address: 0x2c3df0
