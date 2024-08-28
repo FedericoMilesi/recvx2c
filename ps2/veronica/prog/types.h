@@ -1,5 +1,24 @@
 #define NULL 0
 
+typedef struct Unknown24
+{
+	unsigned int TotalSize;
+	unsigned int ClutSize;
+	unsigned int ImageSize;
+	unsigned short HeaderSize;
+	unsigned short ClutColors;
+	unsigned char PictFormat;
+	unsigned char MipMapTextures;
+	unsigned char ClutType;
+	unsigned char ImageType;
+	unsigned short ImageWidth;
+	unsigned short ImageHeight;
+	unsigned long GsTex0;
+	unsigned long GsTex1;
+	unsigned int GsRegs;
+	unsigned int GsTexClut;
+} Unknown24;
+
 typedef struct MEMORYCARDPORT
 {
 	int lCrntType;

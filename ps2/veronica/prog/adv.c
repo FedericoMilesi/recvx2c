@@ -2397,22 +2397,69 @@ unsigned int AdvGetCancelButton()
 	// Func End, Address: 0x2c18c0, Func Offset: 0x40
 }
 
-// 
-// Start address: 0x2c18c0
-void SetPvrInfo(_anon20* np, _anon16* ip, unsigned char* pp)
-{
-	unsigned int GlobalIndex;
-	_anon23* pPichd;
-	// Line 889, Address: 0x2c18c0, Func Offset: 0
-	// Line 932, Address: 0x2c18dc, Func Offset: 0x1c
-	// Line 933, Address: 0x2c18e0, Func Offset: 0x20
-	// Line 930, Address: 0x2c18f0, Func Offset: 0x30
-	// Line 935, Address: 0x2c18f4, Func Offset: 0x34
-	// Line 937, Address: 0x2c18fc, Func Offset: 0x3c
-	// Line 938, Address: 0x2c1914, Func Offset: 0x54
-	// Line 940, Address: 0x2c1928, Func Offset: 0x68
-	// Func End, Address: 0x2c1948, Func Offset: 0x88
-}
+typedef struct Dummy {
+    int unk0;
+    int unk4;
+    int unk8;
+    char pad[115];
+    void* unk80;
+    char pad2[12];
+    char unk90;
+} Dummy;  
+
+/* 100% match */
+void SetPvrInfo(TextureFileLocation* np, TextureInfo* ip, unsigned char* pp) { // Line 889, Address: 0x2c18c0
+    Unknown24* pPichd;
+    unsigned int GlobalIndex;
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // TODO: find correct struct to parse pp to 
+    ((Dummy*)pp)->unk90 = 0; // Line 930, Address: 0x2c18f0
+    
+    GlobalIndex = ((Dummy*)pp)->unk8; // Line 932, Address: 0x2c18dc
+    pPichd = (Unknown24*)&((Dummy*)pp)->unk80; // Line 933, Address: 0x2c18e0
+    
+    Ps2CheckTextureAlpha(pp); // Line 935, Address: 0x2c18f4
+    
+    njSetTextureInfo(ip, (unsigned short*)pp, pPichd->PictFormat, pPichd->ImageWidth, pPichd->ImageHeight); // Line 937, Address: 0x2c18fc
+    njSetTextureName(np, ip, GlobalIndex, 0x40800000); // Line 938, Address: 0x2c1914
+    
+} // Line 940, Address: 0x2c1928
 
 // 
 // Start address: 0x2c1950
