@@ -2874,7 +2874,7 @@ int FindFirstVmDrive()
 float AdvEasyDispMessage(float PosX, float PosY, unsigned int MessageNo) { // Line 1854, Address: 0x2c2420
 	unsigned char* dmp, * smp;
 	unsigned short* mp, * nmp;
-    unsigned int* mes_dp;
+    unsigned int* temp2; // not originally outputted by dwarf2cpp
 	int x;
     int y;
 	int LoopFlag = 1; // Line 1860, Address: 0x2c245c
@@ -2899,7 +2899,7 @@ float AdvEasyDispMessage(float PosX, float PosY, unsigned int MessageNo) { // Li
                 break; // Line 1879, Address: 0x2c24ec
             case 0xFF00:
                 nmp[x] = 0xFFFF; // Line 1881, Address: 0x2c24f8
-                mes_dp = (void*)(&nmp[x] + 1); // Line 1882, Address: 0x2c24f4
+                temp2 = (void*)(&nmp[x] + 1); // Line 1882, Address: 0x2c24f4
                 SearchFlag = 0; 
                 break; // Line 1884, Address: 0x2c24fc
             case 0xFF01:
@@ -2925,7 +2925,7 @@ float AdvEasyDispMessage(float PosX, float PosY, unsigned int MessageNo) { // Li
         bhDispMessage(sx, sy, -1, 2, 0, 0, 0); // Line 1905, Address: 0x2c25a0, 0x2c25c0 
         sy += 30; // Line 1906, Address: 0x2c25d0, 0x2c25dc
         y++; // Line 1907, Address: 0x2c25d8
-        nmp = (void*)mes_dp; 
+        nmp = (void*)temp2; 
     } // Line 1909, Address: 0x2c25e0
     
     syFree(dmp); // Line 1911, Address: 0x2c25e8
