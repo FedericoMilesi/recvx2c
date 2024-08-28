@@ -2499,30 +2499,28 @@ int TransPvpData(unsigned char* pp, int Mode)
 	// Func End, Address: 0x2c19b8, Func Offset: 0x68
 }
 
-// 
-// Start address: 0x2c19c0
-void AdvTransShadowPalette()
-{
-	int i;
-	unsigned int* p;
-	unsigned int* lp;
-	// Line 989, Address: 0x2c19c0, Func Offset: 0
-	// Line 1000, Address: 0x2c19c8, Func Offset: 0x8
-	// Line 1001, Address: 0x2c19d8, Func Offset: 0x18
-	// Line 1000, Address: 0x2c19e0, Func Offset: 0x20
-	// Line 1001, Address: 0x2c19e4, Func Offset: 0x24
-	// Line 1002, Address: 0x2c19ec, Func Offset: 0x2c
-	// Line 1003, Address: 0x2c19f0, Func Offset: 0x30
-	// Line 1004, Address: 0x2c19f4, Func Offset: 0x34
-	// Line 1003, Address: 0x2c19f8, Func Offset: 0x38
-	// Line 1004, Address: 0x2c19fc, Func Offset: 0x3c
-	// Line 1003, Address: 0x2c1a00, Func Offset: 0x40
-	// Line 1004, Address: 0x2c1a04, Func Offset: 0x44
-	// Line 1005, Address: 0x2c1a10, Func Offset: 0x50
-	// Line 1006, Address: 0x2c1a20, Func Offset: 0x60
-	// Line 1009, Address: 0x2c1a28, Func Offset: 0x68
-	// Func End, Address: 0x2c1a38, Func Offset: 0x78
-}
+/* 100% match */
+void AdvTransShadowPalette() { // Line 989, Address: 0x2c19c0
+    int i;
+    unsigned int* p;
+    unsigned int* lp;
+
+
+
+
+
+
+    
+    lp = p = (unsigned int*)bhGetFreeMemory(64, 32); // Line 1000, Address: 0x2c19c8, 0x2c19e0                    
+    *lp++ = 0xFFFFFF; // Line 1001, Address: 0x2c19d8, 0x2c19e4 
+    for (i = 0; i < 15; i++) { // Line 1002, Address: 0x2c19ec
+        *lp++ = 0xFF000000; // Line 1003, Address: 0x2c19f0, 0x2c19f8, 0x2c1a00 
+    } // Line 1004, Address: 0x2c19f4, 0x2c19fc, 0x2c1a04 
+    njSetPaletteData(16, 16, p); // Line 1005, Address: 0x2c1a10
+    bhReleaseFreeMemory(p); // Line 1006, Address: 0x2c1a20
+
+    
+} // Line 1009, Address: 0x2c1a28
 
 // 
 // Start address: 0x2c1a40
