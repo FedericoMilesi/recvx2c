@@ -2840,20 +2840,51 @@ int CheckConnectVmDrive(int SlotNo)
 	// Func End, Address: 0x2c23d0, Func Offset: 0x80
 }
 
-// 
-// Start address: 0x2c23d0
-int FindFirstVmDrive()
-{
-	int DriveNo;
-	int j;
-	// Line 1679, Address: 0x2c23d0, Func Offset: 0
-	// Line 1686, Address: 0x2c23dc, Func Offset: 0xc
-	// Line 1688, Address: 0x2c23e0, Func Offset: 0x10
-	// Line 1690, Address: 0x2c23f4, Func Offset: 0x24
-	// Line 1692, Address: 0x2c23fc, Func Offset: 0x2c
-	// Line 1693, Address: 0x2c240c, Func Offset: 0x3c
-	// Line 1722, Address: 0x2c2410, Func Offset: 0x40
-	// Func End, Address: 0x2c2420, Func Offset: 0x50
+/* 100% match */
+int FindFirstVmDrive() { // Line 1679, Address: 0x2c23d0
+    int DriveNo;
+    int j;
+
+
+
+    
+    for (j = 1; ; ) { // Line 1686, Address: 0x2c23dc
+        
+        DriveNo = CheckConnectVmDrive(0, j); // Line 1688, Address: 0x2c23e0
+        
+        if (DriveNo >= 0) { // Line 1690, Address: 0x2c23f4
+            return DriveNo;
+        } // Line 1692, Address: 0x2c23fc
+        j++; // Line 1693, Address: 0x2c240c
+        if (j >= 3) {
+            break;
+        }
+    }
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    return -1; // Line 1722, Address: 0x2c2410
 }
 
 /* 100% match */
