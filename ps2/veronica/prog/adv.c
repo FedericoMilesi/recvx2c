@@ -2772,7 +2772,7 @@ void AdvEasyTransTextureBasic(int ListNo, int TexNum, int Flag)
 
 /* 100% match */
 void AdvEasyTransTextureEx(int ListNo) { // Line 1448, Address: 0x2c2240
-    Unknown21* temp = (Unknown21*)&AdvWork;
+    Unknown21* temp = (Unknown21*)&AdvWork; // not originally outputted by dwarf2cpp
     AdvEasyTransTextureBasic(ListNo, temp->Count, 0);
 }
 
