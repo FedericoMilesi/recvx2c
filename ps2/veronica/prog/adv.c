@@ -3024,17 +3024,15 @@ int DispVmWarningMessage(int MsgId)
 	// Func End, Address: 0x2c2970, Func Offset: 0xc0
 }
 
-// 
-// Start address: 0x2c2970
-void DefaultSetOption()
-{
-	// Line 2096, Address: 0x2c2970, Func Offset: 0
-	// Line 2099, Address: 0x2c2978, Func Offset: 0x8
-	// Line 2100, Address: 0x2c2980, Func Offset: 0x10
-	// Line 2101, Address: 0x2c2990, Func Offset: 0x20
-	// Line 2102, Address: 0x2c29c4, Func Offset: 0x54
-	// Line 2103, Address: 0x2c29d4, Func Offset: 0x64
-	// Func End, Address: 0x2c29e0, Func Offset: 0x70
+/* 100% match */
+void DefaultSetOption() { // Line 2096, Address: 0x2c2970
+
+    // not originally outputted by dwarf2cpp
+    Unknown21* temp = (Unknown21*)&AdvWork; // Line 2099, Address: 0x2c2978
+    sys->keytype = 0; // Line 2100, Address: 0x2c2980,
+    RequestAdjustDisplay(0, 0); // Line 2101, Address: 0x2c2990
+    sys->vibration = (CheckVibrationUnit((temp->PortId * 6) + 2) == 0) ? 0 : 1; // Line 2102, Address: 0x2c29c4
+    SetUseVibrationUnit(sys->vibration); // Line 2103, Address: 0x2c29d4
 }
 
 // 
