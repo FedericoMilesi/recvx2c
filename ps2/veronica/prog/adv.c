@@ -273,18 +273,6 @@ typedef _anon18 type_199[4];
 typedef unsigned int type_200[16];
 typedef unsigned int type_201[32];
 
-typedef struct Unknown23
-{
-	float x1;
-	float y1;
-	float x2;
-	float y2;
-	float u1;
-	float v1;
-	float u2;
-	float v2;
-} Unknown23;
-
 struct BH_PWORK
 {
 	unsigned int flg;
@@ -857,26 +845,6 @@ struct _anon23
 struct _anon24
 {
 	void* p[2];
-};
-
-struct tagMEMORYCARDSTATE
-{
-	unsigned int ulState;
-	unsigned int ulError;
-	unsigned int ulMcSubState;
-	unsigned int ulFileSize;
-	int lCurrentPort;
-	int lOpenFileNumber;
-	int lSelectFileNumber;
-	int lOpenMode;
-	unsigned short usMcSysState;
-	void* vpAddr;
-	char cCurrentDir[50];
-	char cOpenFileName[32];
-	char cRetryCount;
-	char cMcCheckFlag;
-	char cCheckMcFlag;
-	tagMEMORYCARDPORT Port[2];
 };
 
 struct _anon25
@@ -1739,36 +1707,6 @@ struct _anon46
 	float r1;
 	float r2;
 };
-
-struct tagMEMORYCARDPORT
-{
-	int lCrntType;
-	int lPrevType;
-	int lFreeSize;
-	int lFormatType;
-};
-
-typedef struct Unknown22
-{
-	int PerType;
-	int OldPerType;
-	int PerTypeEx;
-	unsigned int Flag;
-	int SoftReset;
-	unsigned int on;
-	unsigned int press;
-	unsigned int Rept;
-	unsigned int on2;
-	unsigned int on2old;
-	unsigned int press2;
-	unsigned short l;
-	unsigned short r;
-	short x1;
-	short y1;
-	short x2;
-	short y2;
-	short Calibrate;
-} Unknown22;
 
 struct _anon48
 {
