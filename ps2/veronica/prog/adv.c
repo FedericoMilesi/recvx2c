@@ -2385,20 +2385,23 @@ unsigned int AdvGetOkButton() { // Line 836, Address: 0x2c1850
     return ButtonDef[sys->keytype]; // Line 850, Address: 0x2c1858, 0x2c1864
 } // Line 851, Address: 0x2c1878
 
-// 
-// Start address: 0x2c1880
-unsigned int AdvGetCancelButton()
-{
-	unsigned int ButtonDef[3];
-	// Line 864, Address: 0x2c1880, Func Offset: 0
-	// Line 861, Address: 0x2c1890, Func Offset: 0x10
-	// Line 864, Address: 0x2c1894, Func Offset: 0x14
-	// Line 875, Address: 0x2c1898, Func Offset: 0x18
-	// Line 864, Address: 0x2c189c, Func Offset: 0x1c
-	// Line 875, Address: 0x2c18a4, Func Offset: 0x24
-	// Line 876, Address: 0x2c18b8, Func Offset: 0x38
-	// Func End, Address: 0x2c18c0, Func Offset: 0x40
-}
+/* 99.38% match */
+unsigned int AdvGetCancelButton() { // Line 861, Address: 0x2c1890
+
+    // double-check the assigned values
+    unsigned int ButtonDef[3] = {0x20, 0x80, 0x40}; // Line 864, Address: 0x2c1880, 0x2c1894, 0x2c189c
+
+
+
+
+
+
+
+
+
+    
+    return ButtonDef[sys->keytype]; // Line 875, Address: 0x2c1898, 0x2c18a4
+} // Line 876, Address: 0x2c18b8
 
 typedef struct Dummy {
     int unk0;
