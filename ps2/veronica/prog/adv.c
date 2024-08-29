@@ -2451,23 +2451,36 @@ void SetPvrInfo(TextureFileLocation* np, TextureInfo* ip, unsigned char* pp) { /
     
 } // Line 940, Address: 0x2c1928
 
-// 
-// Start address: 0x2c1950
-int TransPvpData(unsigned char* pp, int Mode)
-{
-	_anon11* pPvp;
-	// Line 951, Address: 0x2c1950, Func Offset: 0
-	// Line 959, Address: 0x2c1960, Func Offset: 0x10
-	// Line 951, Address: 0x2c1964, Func Offset: 0x14
-	// Line 959, Address: 0x2c1968, Func Offset: 0x18
-	// Line 960, Address: 0x2c1980, Func Offset: 0x30
-	// Line 964, Address: 0x2c1988, Func Offset: 0x38
-	// Line 969, Address: 0x2c198c, Func Offset: 0x3c
-	// Line 970, Address: 0x2c1994, Func Offset: 0x44
-	// Line 978, Address: 0x2c199c, Func Offset: 0x4c
-	// Line 979, Address: 0x2c19a4, Func Offset: 0x54
-	// Func End, Address: 0x2c19b8, Func Offset: 0x68
-}
+/* 99.62% match */
+int TransPvpData(unsigned char* pp, int Mode) { // Line 951, Address: 0x2c1950
+    Unknown27* pPvp;
+    int temp; // temp var not originally outputted by dwarf2cpp
+    short temp2; // temp var not originally outputted by dwarf2cpp
+
+    pPvp = (Unknown27*)pp;
+
+    
+    if (strncmp(&pPvp->ppStrPvpl, "PVPL", 4) != 0) { // Line 959, Address: 0x2c1960
+        return -1; // Line 960, Address: 0x2c1980
+    }
+
+    
+    temp = pPvp->ppCategoryCode; // Line 964, Address: 0x2c1988
+    temp2 = pPvp->ppBankId;
+
+
+    
+    if (Mode != 0) { // Line 969, Address: 0x2c198c
+        njSetPaletteMode(temp); // Line 970, Address: 0x2c1994
+    } 
+
+
+
+
+
+    
+    return temp2; // Line 978, Address: 0x2c199c
+} // Line 979, Address: 0x2c19a4
 
 /* 100% match */
 void AdvTransShadowPalette() { // Line 989, Address: 0x2c19c0
