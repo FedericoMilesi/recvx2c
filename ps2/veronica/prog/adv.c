@@ -2397,16 +2397,6 @@ unsigned int AdvGetCancelButton() { // Line 861, Address: 0x2c1890
     return ButtonDef[sys->keytype]; // Line 875, Address: 0x2c1898, 0x2c18a4
 } // Line 876, Address: 0x2c18b8
 
-typedef struct Dummy {
-    int unk0;
-    int unk4;
-    int unk8;
-    char pad[115];
-    void* unk80;
-    char pad2[12];
-    char unk90;
-} Dummy;  
-
 /* 100% match */
 void SetPvrInfo(TextureFileLocation* np, TextureInfo* ip, unsigned char* pp) { // Line 889, Address: 0x2c18c0
     Unknown24* pPichd;
