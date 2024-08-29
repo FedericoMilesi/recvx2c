@@ -2505,80 +2505,44 @@ void AdvTransShadowPalette() { // Line 989, Address: 0x2c19c0
     
 } // Line 1009, Address: 0x2c1a28
 
-// 
-// Start address: 0x2c1a40
-void AdvEasyDrawWindow(Vector3* tlp, Vector3* brp, unsigned int WindowColor, unsigned int BackColor)
-{
-	NJS_POLYGON_VTX poly[4];
-	// Line 1022, Address: 0x2c1a40, Func Offset: 0
-	// Line 1025, Address: 0x2c1a6c, Func Offset: 0x2c
-	// Line 1030, Address: 0x2c1a74, Func Offset: 0x34
-	// Line 1031, Address: 0x2c1a78, Func Offset: 0x38
-	// Line 1025, Address: 0x2c1a7c, Func Offset: 0x3c
-	// Line 1026, Address: 0x2c1a88, Func Offset: 0x48
-	// Line 1031, Address: 0x2c1a90, Func Offset: 0x50
-	// Line 1032, Address: 0x2c1a94, Func Offset: 0x54
-	// Line 1026, Address: 0x2c1a98, Func Offset: 0x58
-	// Line 1027, Address: 0x2c1aa4, Func Offset: 0x64
-	// Line 1030, Address: 0x2c1ac4, Func Offset: 0x84
-	// Line 1033, Address: 0x2c1ac8, Func Offset: 0x88
-	// Line 1032, Address: 0x2c1ad4, Func Offset: 0x94
-	// Line 1030, Address: 0x2c1ad8, Func Offset: 0x98
-	// Line 1031, Address: 0x2c1ae0, Func Offset: 0xa0
-	// Line 1033, Address: 0x2c1aec, Func Offset: 0xac
-	// Line 1031, Address: 0x2c1af4, Func Offset: 0xb4
-	// Line 1032, Address: 0x2c1afc, Func Offset: 0xbc
-	// Line 1034, Address: 0x2c1b00, Func Offset: 0xc0
-	// Line 1032, Address: 0x2c1b08, Func Offset: 0xc8
-	// Line 1033, Address: 0x2c1b10, Func Offset: 0xd0
-	// Line 1034, Address: 0x2c1b18, Func Offset: 0xd8
-	// Line 1033, Address: 0x2c1b1c, Func Offset: 0xdc
-	// Line 1034, Address: 0x2c1b20, Func Offset: 0xe0
-	// Line 1035, Address: 0x2c1b28, Func Offset: 0xe8
-	// Line 1037, Address: 0x2c1b34, Func Offset: 0xf4
-	// Line 1035, Address: 0x2c1b38, Func Offset: 0xf8
-	// Line 1037, Address: 0x2c1b40, Func Offset: 0x100
-	// Line 1035, Address: 0x2c1b48, Func Offset: 0x108
-	// Line 1036, Address: 0x2c1b50, Func Offset: 0x110
-	// Line 1037, Address: 0x2c1b58, Func Offset: 0x118
-	// Line 1040, Address: 0x2c1b60, Func Offset: 0x120
-	// Line 1041, Address: 0x2c1b64, Func Offset: 0x124
-	// Line 1044, Address: 0x2c1b6c, Func Offset: 0x12c
-	// Line 1042, Address: 0x2c1b70, Func Offset: 0x130
-	// Line 1040, Address: 0x2c1b74, Func Offset: 0x134
-	// Line 1041, Address: 0x2c1b7c, Func Offset: 0x13c
-	// Line 1044, Address: 0x2c1b80, Func Offset: 0x140
-	// Line 1041, Address: 0x2c1b88, Func Offset: 0x148
-	// Line 1042, Address: 0x2c1b94, Func Offset: 0x154
-	// Line 1043, Address: 0x2c1ba0, Func Offset: 0x160
-	// Line 1044, Address: 0x2c1ba8, Func Offset: 0x168
-	// Line 1045, Address: 0x2c1bb0, Func Offset: 0x170
-	// Line 1047, Address: 0x2c1bbc, Func Offset: 0x17c
-	// Line 1046, Address: 0x2c1bc0, Func Offset: 0x180
-	// Line 1045, Address: 0x2c1bc4, Func Offset: 0x184
-	// Line 1047, Address: 0x2c1bc8, Func Offset: 0x188
-	// Line 1045, Address: 0x2c1bd0, Func Offset: 0x190
-	// Line 1046, Address: 0x2c1bd8, Func Offset: 0x198
-	// Line 1047, Address: 0x2c1bf0, Func Offset: 0x1b0
-	// Line 1050, Address: 0x2c1bf8, Func Offset: 0x1b8
-	// Line 1054, Address: 0x2c1bfc, Func Offset: 0x1bc
-	// Line 1057, Address: 0x2c1c08, Func Offset: 0x1c8
-	// Line 1050, Address: 0x2c1c0c, Func Offset: 0x1cc
-	// Line 1051, Address: 0x2c1c14, Func Offset: 0x1d4
-	// Line 1052, Address: 0x2c1c18, Func Offset: 0x1d8
-	// Line 1057, Address: 0x2c1c1c, Func Offset: 0x1dc
-	// Line 1051, Address: 0x2c1c24, Func Offset: 0x1e4
-	// Line 1052, Address: 0x2c1c2c, Func Offset: 0x1ec
-	// Line 1053, Address: 0x2c1c38, Func Offset: 0x1f8
-	// Line 1054, Address: 0x2c1c3c, Func Offset: 0x1fc
-	// Line 1053, Address: 0x2c1c40, Func Offset: 0x200
-	// Line 1054, Address: 0x2c1c48, Func Offset: 0x208
-	// Line 1055, Address: 0x2c1c5c, Func Offset: 0x21c
-	// Line 1056, Address: 0x2c1c74, Func Offset: 0x234
-	// Line 1057, Address: 0x2c1c90, Func Offset: 0x250
-	// Line 1058, Address: 0x2c1c98, Func Offset: 0x258
-	// Func End, Address: 0x2c1cc8, Func Offset: 0x288
-}
+/* 100% match */
+void AdvEasyDrawWindow(Vector3* tlp, Vector3* brp, unsigned int WindowColor, unsigned int BackColor) { // Line 1022, Address: 0x2c1a40
+    NJS_POLYGON_VTX poly[4];
+
+    poly[0].z = poly[2].z = tlp->z; // Line 1025, Address: 0x2c1a6c
+    poly[1].z = poly[3].z = brp->z; // Line 1026, Address: 0x2c1a88
+    poly[0].col = poly[1].col = poly[2].col = poly[3].col = WindowColor; // Line 1027, Address: 0x2c1aa4
+    
+    
+    poly[0].x = poly[1].x = tlp->x; // Line 1030, Address: 0x2c1a74, 0x2c1ac4 
+    poly[2].x = poly[3].x = brp->x; // Line 1031, Address: 0x2c1a78
+    poly[0].y = poly[2].y = tlp->y; // Line 1032, Address: 0x2c1a94
+    poly[1].y = poly[3].y = 4.0f + tlp->y; // Line 1033, Address: 0x2c1ac8
+    njDrawPolygon((NJS_POLYGON_VTX*)&poly, 4, 0); // Line 1034, Address: 0x2c1b00
+    poly[0].y = poly[2].y = brp->y - 4.0f; // Line 1035, Address: 0x2c1b28
+    poly[1].y = poly[3].y = brp->y; // Line 1036, Address: 0x2c1b50
+    njDrawPolygon((NJS_POLYGON_VTX*)&poly, 4, 0); // Line 1037, Address: 0x2c1b34
+    
+    
+    poly[0].x = poly[1].x = tlp->x; // Line 1040, Address: 0x2c1b60
+    poly[2].x = poly[3].x = 3.0f + tlp->x; // Line 1041, Address: 0x2c1b64
+    poly[0].y = poly[2].y = tlp->y; // Line 1042, Address: 0x2c1b70
+    poly[1].y = poly[3].y = brp->y; // Line 1043, Address: 0x2c1ba0
+    njDrawPolygon((NJS_POLYGON_VTX*)&poly, 4, 0); // Line 1044, Address: 0x2c1b6c
+    poly[0].x = poly[1].x = brp->x - 4.0f; // Line 1045, Address: 0x2c1bb0
+    poly[2].x = poly[3].x = 3.0f + (brp->x - 4.0f); // Line 1046, Address: 0x2c1bc0
+    njDrawPolygon((NJS_POLYGON_VTX*)&poly, 4, 0); // Line 1047, Address: 0x2c1bbc
+    
+    
+    poly[0].x = poly[1].x = tlp->x; // Line 1050, Address: 0x2c1bf8
+    poly[2].x = poly[3].x = brp->x; // Line 1051, Address: 0x2c1c14
+    poly[0].y = poly[2].y = tlp->y; // Line 1052, Address: 0x2c1c18
+    poly[1].y = poly[3].y = brp->y; // Line 1053, Address: 0x2c1c38
+    poly[0].z = poly[2].z = tlp->z - 0.001f; // Line 1054, Address: 0x2c1bfc
+    poly[1].z = poly[3].z = brp->z - 0.001f; // Line 1055, Address: 0x2c1c5c
+    poly[0].col = poly[1].col = poly[2].col = poly[3].col = BackColor; // Line 1056, Address: 0x2c1c74
+    njDrawPolygon((NJS_POLYGON_VTX*)&poly, 4, 1); // Line 1057, Address: 0x2c1c08
+} // Line 1058, Address: 0x2c1c98
 
 // 
 // Start address: 0x2c1cd0
