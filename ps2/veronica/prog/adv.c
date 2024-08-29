@@ -2448,11 +2448,11 @@ void SetPvrInfo(TextureFileLocation* np, TextureInfo* ip, unsigned char* pp) { /
     
     
     
-    // TODO: find correct struct to parse pp to 
-    ((Dummy*)pp)->unk90 = 0; // Line 930, Address: 0x2c18f0
+
+    ((Unknown25*)pp)->PictFormat = 0; // Line 930, Address: 0x2c18f0
     
-    GlobalIndex = ((Dummy*)pp)->unk8; // Line 932, Address: 0x2c18dc
-    pPichd = (Unknown24*)&((Dummy*)pp)->unk80; // Line 933, Address: 0x2c18e0
+    GlobalIndex = ((Unknown25*)pp)->Gindex; // Line 932, Address: 0x2c18dc
+    pPichd = (Unknown24*)&((Unknown25*)pp)->TotalSize; // Line 933, Address: 0x2c18e0
     
     Ps2CheckTextureAlpha(pp); // Line 935, Address: 0x2c18f4
     

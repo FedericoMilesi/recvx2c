@@ -1,5 +1,87 @@
 #define NULL 0
 
+// SCE_GS_TEX0
+typedef struct Unknown26
+{
+	struct
+	{
+		unsigned long TBP0 : 14;
+		unsigned long TBW : 6;
+		unsigned long PSM : 6;
+		unsigned long TW : 4;
+		unsigned long TH : 4;
+		unsigned long TCC : 1;
+		unsigned long TFX : 2;
+		unsigned long CBP : 14;
+		unsigned long CPSM : 4;
+		unsigned long CSM : 1;
+		unsigned long CSA : 5;
+		unsigned long CLD : 3;
+	};
+} Unknown26;
+
+
+typedef struct Unknown27
+{
+	unsigned int gindex;
+	unsigned int size;
+	unsigned int count;
+	void* addr;
+	void* before;
+	void* after;
+} Unknown27;
+
+// SCE_GS_TEX1
+typedef struct Unknown28
+{
+	struct
+	{
+		unsigned long LCM : 1;
+		unsigned long pad01 : 1;
+		unsigned long MXL : 3;
+		unsigned long MMAG : 1;
+		unsigned long MMIN : 3;
+		unsigned long MTBA : 1;
+		unsigned long pad10 : 9;
+		unsigned long L : 2;
+		unsigned long pad21 : 11;
+		unsigned long K : 12;
+		unsigned long pad44 : 20;
+	};
+} Unknown28;
+
+typedef struct Unknown25
+{
+	char FileId[4];
+	unsigned char FormatVersion;
+	unsigned char FormatId;
+	unsigned short Pictures;
+	unsigned int Gindex;
+	unsigned char OrgColorType;
+	unsigned char OrgTexType;
+	unsigned short ClutChange;
+	unsigned int PalNum;
+	unsigned int PalData[27];
+	unsigned int TotalSize;
+	unsigned int ClutSize;
+	unsigned int ImageSize;
+	unsigned short HeaderSize;
+	unsigned short ClutColors;
+	unsigned char PictFormat;
+	unsigned char MipMapTextures;
+	unsigned char ClutType;
+	unsigned char ImageType;
+	unsigned short ImageWidth;
+	unsigned short ImageHeight;
+	Unknown26 GsTex0;
+	Unknown28 GsTex1;
+	unsigned int GsRegs;
+	unsigned int GsTexClut;
+	Unknown27 admin;
+	unsigned int TpFlag;
+	unsigned int ClampFlag;
+} Unknown25;
+
 typedef struct Unknown24
 {
 	unsigned int TotalSize;
