@@ -2677,18 +2677,13 @@ void AdvEasySetupTextureBasic(unsigned char* xp, int ListNo, int TexNo)
 	// Func End, Address: 0x2c2120, Func Offset: 0x110
 }
 
-// 
-// Start address: 0x2c2120
-void AdvEasySetupTextureEx(int ListNo)
-{
-	_anon8* ap;
-	// Line 1378, Address: 0x2c2120, Func Offset: 0
-	// Line 1379, Address: 0x2c212c, Func Offset: 0xc
-	// Line 1381, Address: 0x2c2134, Func Offset: 0x14
-	// Line 1382, Address: 0x2c214c, Func Offset: 0x2c
-	// Line 1383, Address: 0x2c2158, Func Offset: 0x38
-	// Func End, Address: 0x2c2168, Func Offset: 0x48
-}
+/* 100% match */
+void AdvEasySetupTextureEx(int ListNo) { // Line 1378, Address: 0x2c2120
+    Unknown21* ap = (Unknown21*)&AdvWork; // Line 1379, Address: 0x2c212c
+    
+    AdvEasySetupTextureBasic(ap->ptr[ap->Count], ListNo, ap->Count); // Line 1381, Address: 0x2c2134
+    ap->Count++; // Line 1382, Address: 0x2c214c
+} // Line 1383, Address: 0x2c2158
 
 /* 100% match */
 void AdvEasySetupTexture() { // Line 1394, Address: 0x2c2170
