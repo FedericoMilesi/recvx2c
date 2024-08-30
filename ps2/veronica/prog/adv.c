@@ -2559,27 +2559,26 @@ void AdvEasyDrawTexture(int TexNo, unsigned int BaseColor, _anon0* qp, float Pos
 	// Func End, Address: 0x2c1d58, Func Offset: 0x88
 }
 
-// 
-// Start address: 0x2c1d60
-void AdvEasyDrawTextureS(int TexNo, unsigned int BaseColor, _anon0* qp, float PosZ, int TransFlag, unsigned int ShadowAlpha)
-{
-	_anon0* sqp;
-	// Line 1133, Address: 0x2c1d60, Func Offset: 0
-	// Line 1134, Address: 0x2c1d78, Func Offset: 0x18
-	// Line 1133, Address: 0x2c1d7c, Func Offset: 0x1c
-	// Line 1134, Address: 0x2c1d80, Func Offset: 0x20
-	// Line 1136, Address: 0x2c1d90, Func Offset: 0x30
-	// Line 1138, Address: 0x2c1d98, Func Offset: 0x38
-	// Line 1139, Address: 0x2c1da8, Func Offset: 0x48
-	// Line 1149, Address: 0x2c1db4, Func Offset: 0x54
-	// Line 1139, Address: 0x2c1dd4, Func Offset: 0x74
-	// Line 1140, Address: 0x2c1ddc, Func Offset: 0x7c
-	// Line 1141, Address: 0x2c1de8, Func Offset: 0x88
-	// Line 1142, Address: 0x2c1df4, Func Offset: 0x94
-	// Line 1149, Address: 0x2c1dfc, Func Offset: 0x9c
-	// Line 1151, Address: 0x2c1e04, Func Offset: 0xa4
-	// Func End, Address: 0x2c1e24, Func Offset: 0xc4
-}
+/* 100% match */
+void AdvEasyDrawTextureS(int TexNo, unsigned int BaseColor, Unknown23* qp, float PosZ, int TransFlag, unsigned int ShadowAlpha) { // Line 1133, Address: 0x2c1d60, 0x2c1d7c
+    Unknown23* sqp = &Qtex[15]; // Line 1134, Address: 0x2c1d78, 0x2c1d80
+
+    AdvEasyDrawTexture(TexNo, BaseColor, qp, PosZ, TransFlag); // Line 1136, Address: 0x2c1d90
+    
+    memcpy(sqp, qp, 32); // Line 1138, Address: 0x2c1d98
+    sqp->x1 = 3.0f + qp->x1; // Line 1139, Address: 0x2c1da8, 0x2c1dd4
+    sqp->y1 = 3.0f + qp->y1; // Line 1140, Address: 0x2c1ddc
+    sqp->x2 = 3.0f + qp->x2; // Line 1141, Address: 0x2c1de8
+    sqp->y2 = 3.0f + qp->y2; // Line 1142, Address: 0x2c1df4
+
+
+
+
+
+    
+    AdvEasyDrawTexture(TexNo, ShadowAlpha << 24, sqp, PosZ - 0.001f, 1); // Line 1149, Address: 0x2c1dfc
+    
+} // Line 1151, Address: 0x2c1e04
 
 // 
 // Start address: 0x2c1e30
