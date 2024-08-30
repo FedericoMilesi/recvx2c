@@ -2963,40 +2963,41 @@ int Adv_GameOptionScreen()
 	// Func End, Address: 0x2c83e0, Func Offset: 0x650
 }
 
-// 
-// Start address: 0x2c83e0
-int Adv_ChangeDiscScreen()
-{
-	_anon8* ap;
-	// Line 5818, Address: 0x2c83e0, Func Offset: 0
-	// Line 5819, Address: 0x2c83ec, Func Offset: 0xc
-	// Line 5896, Address: 0x2c83f0, Func Offset: 0x10
-	// Line 5898, Address: 0x2c83f8, Func Offset: 0x18
-	// Line 5899, Address: 0x2c8408, Func Offset: 0x28
-	// Line 5898, Address: 0x2c8410, Func Offset: 0x30
-	// Line 5899, Address: 0x2c8414, Func Offset: 0x34
-	// Line 5898, Address: 0x2c8418, Func Offset: 0x38
-	// Line 5899, Address: 0x2c8420, Func Offset: 0x40
-	// Line 5900, Address: 0x2c8428, Func Offset: 0x48
-	// Line 5899, Address: 0x2c842c, Func Offset: 0x4c
-	// Line 5900, Address: 0x2c8434, Func Offset: 0x54
-	// Line 5901, Address: 0x2c844c, Func Offset: 0x6c
-	// Line 5902, Address: 0x2c8454, Func Offset: 0x74
-	// Line 5903, Address: 0x2c845c, Func Offset: 0x7c
-	// Line 5905, Address: 0x2c846c, Func Offset: 0x8c
-	// Line 5907, Address: 0x2c8470, Func Offset: 0x90
-	// Line 5971, Address: 0x2c8478, Func Offset: 0x98
-	// Line 5972, Address: 0x2c8488, Func Offset: 0xa8
-	// Line 5971, Address: 0x2c8490, Func Offset: 0xb0
-	// Line 5972, Address: 0x2c8494, Func Offset: 0xb4
-	// Line 5971, Address: 0x2c8498, Func Offset: 0xb8
-	// Line 5972, Address: 0x2c84a0, Func Offset: 0xc0
-	// Line 5973, Address: 0x2c84b0, Func Offset: 0xd0
-	// Line 5974, Address: 0x2c84b4, Func Offset: 0xd4
-	// Line 5979, Address: 0x2c84b8, Func Offset: 0xd8
-	// Line 5980, Address: 0x2c84bc, Func Offset: 0xdc
-	// Func End, Address: 0x2c84cc, Func Offset: 0xec
-}
+
+/* 100% match */
+int Adv_ChangeDiscScreen() { // Line 5818, Address: 0x2c83e0
+    Unknown21* ap = &AdvWork; // Line 5819, Address: 0x2c83ec
+
+
+
+
+
+
+    UnmountSoundAfs(); // Line 5896, Address: 0x2c83f0
+
+    sys->ss_flg &= 0xFFFBFFFF; // Line 5898, Address: 0x2c83f8, 0x2c8410, 0x2c8418
+    sys->ss_flg &= 0xFFFEFFFF; // Line 5899, Address: 0x2c8408, 0x2c8414, 0x2c8420, 0x2c842c
+    if (!(sys->ss_flg & 1)) { // Line 5900, Address: 0x2c8428, 0x2c8434
+        sys->ss_flg |= 1; // Line 5901, Address: 0x2c844c
+    } else { // Line 5902, Address: 0x2c8454
+        sys->ss_flg &= 0xFFFFFFFE; // Line 5903, Address: 0x2c845c
+    }
+    ap->NextReturnCode = 1; // Line 5905, Address: 0x2c846c
+
+    MountSoundAfs(); // Line 5907, Address: 0x2c8470
+
+
+
+    sys->ss_flg &= 0xFFFDFFFF; // Line 5971, Address: 0x2c8478, 0x2c8490, 0x2c8498
+    sys->ss_flg &= 0xFFFEFFFF; // Line 5972, Address: 0x2c8488, 0x2c8494, 0x2c84a0
+    ap->Mode = 0; // Line 5973, Address: 0x2c84b0
+    ap->Active = 0; // Line 5974, Address: 0x2c84b4
+
+
+
+
+    return ap->NextReturnCode; // Line 5979, Address: 0x2c84b8
+} // Line 5980, Address: 0x2c84bc
 
 /* 100% match */
 int Adv_SoundMuseum() { // Line 6907, Address: 0x2c84d0
