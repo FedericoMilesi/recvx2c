@@ -2544,20 +2544,52 @@ void AdvEasyDrawWindow(Vector3* tlp, Vector3* brp, unsigned int WindowColor, uns
     njDrawPolygon((NJS_POLYGON_VTX*)&poly, 4, 1); // Line 1057, Address: 0x2c1c08
 } // Line 1058, Address: 0x2c1c98
 
-// 
-// Start address: 0x2c1cd0
-void AdvEasyDrawTexture(int TexNo, unsigned int BaseColor, _anon0* qp, float PosZ, int TransFlag)
-{
-	// Line 1073, Address: 0x2c1cd0, Func Offset: 0
-	// Line 1108, Address: 0x2c1cf4, Func Offset: 0x24
-	// Line 1109, Address: 0x2c1cfc, Func Offset: 0x2c
-	// Line 1113, Address: 0x2c1d14, Func Offset: 0x44
-	// Line 1114, Address: 0x2c1d1c, Func Offset: 0x4c
-	// Line 1115, Address: 0x2c1d28, Func Offset: 0x58
-	// Line 1116, Address: 0x2c1d34, Func Offset: 0x64
-	// Line 1117, Address: 0x2c1d3c, Func Offset: 0x6c
-	// Func End, Address: 0x2c1d58, Func Offset: 0x88
-}
+/* 100% match */
+void AdvEasyDrawTexture(int TexNo, unsigned int BaseColor, Unknown23* qp, float PosZ, int TransFlag) { // Line 1073, Address: 0x2c1cd0
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // TODO: find correct cast for line 1109
+    if (TransFlag != 0) { // Line 1108, Address: 0x2c1cf4
+        ((unsigned short*)Ps2_current_texmemlist->texinfo.texsurface.pSurface)[7] |= 0x8000; // Line 1109, Address: 0x2c1cfc
+    }
+
+    
+    njQuadTextureStart(TransFlag); // Line 1113, Address: 0x2c1d14
+    njSetQuadTexture(TexNo, BaseColor); // Line 1114, Address: 0x2c1d1c
+    njDrawQuadTexture(qp, PosZ); // Line 1115, Address: 0x2c1d28
+    njQuadTextureEnd(); // Line 1116, Address: 0x2c1d34
+} // Line 1117, Address: 0x2c1d3c
 
 /* 100% match */
 void AdvEasyDrawTextureS(int TexNo, unsigned int BaseColor, Unknown23* qp, float PosZ, int TransFlag, unsigned int ShadowAlpha) { // Line 1133, Address: 0x2c1d60, 0x2c1d7c
