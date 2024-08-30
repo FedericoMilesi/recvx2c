@@ -1,6 +1,6 @@
 #define NULL 0
 
-typedef struct Unknown27
+typedef struct Unknown29
 {
 	char ppStrPvpl[4];
 	unsigned int ppNextTag;
@@ -8,7 +8,7 @@ typedef struct Unknown27
 	unsigned short ppBankId;
 	unsigned short ppEntryOffset;
 	unsigned short ppEntryCount;
-} Unknown27;
+} Unknown29;
 
 // SCE_GS_TEX0
 typedef struct Unknown26
