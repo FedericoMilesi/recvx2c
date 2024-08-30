@@ -668,6 +668,19 @@ typedef struct TextureInfo {
 TextureInfo;
 
 
+typedef struct Unknown30
+{
+	unsigned int globalIndex;
+	unsigned int bank;
+	unsigned int tspparambuffer;
+	unsigned int texparambuffer;
+	unsigned int texaddr;
+	TextureInfo texinfo;
+	unsigned short count;
+	unsigned short dummy;
+} Unknown30;
+
+
 typedef struct Color {
     /*  0 */ float a;
     /*  4 */ float r;

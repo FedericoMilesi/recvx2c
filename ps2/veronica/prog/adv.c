@@ -2620,24 +2620,16 @@ void SetQuadPos(float StartX, float StartY, float SizeX, float SizeY, Unknown23*
     qp->y2 = StartY + (SizeY - 1.0f); // Line 1223, Address: 0x2c1e54
 }
 
-// 
-// Start address: 0x2c1e60
-void SetQuadUv2Ex(float u, float v, float SizeX, float SizeY, unsigned int ListNo, unsigned int TexNo, _anon0* qp)
-{
-	float TexY;
-	float TexX;
-	// Line 1240, Address: 0x2c1e60, Func Offset: 0
-	// Line 1241, Address: 0x2c1ebc, Func Offset: 0x5c
-	// Line 1243, Address: 0x2c1ef0, Func Offset: 0x90
-	// Line 1245, Address: 0x2c1efc, Func Offset: 0x9c
-	// Line 1243, Address: 0x2c1f00, Func Offset: 0xa0
-	// Line 1244, Address: 0x2c1f04, Func Offset: 0xa4
-	// Line 1245, Address: 0x2c1f08, Func Offset: 0xa8
-	// Line 1244, Address: 0x2c1f10, Func Offset: 0xb0
-	// Line 1245, Address: 0x2c1f14, Func Offset: 0xb4
-	// Line 1246, Address: 0x2c1f24, Func Offset: 0xc4
-	// Line 1247, Address: 0x2c1f38, Func Offset: 0xd8
-	// Func End, Address: 0x2c1f40, Func Offset: 0xe0
+/* 100% match */
+void SetQuadUv2Ex(float u, float v, float SizeX, float SizeY, unsigned int ListNo, unsigned int TexNo, Unknown23* qp) { // Line 1240, Address: 0x2c1e60
+	Unknown30* temp = (Unknown30*)AdvTexList[ListNo].textures[TexNo].texaddr; // Line 1241, Address: 0x2c1ebc
+    float TexX, TexY;
+    TexX = (temp->texinfo.texsurface.nWidth >= 0) ? temp->texinfo.texsurface.nWidth : temp->texinfo.texsurface.nWidth / 3; // Line 1243, Address: 0x2c1ef0, 0x2c1f00
+    TexY = (temp->texinfo.texsurface.nHeight >= 0) ? temp->texinfo.texsurface.nHeight : temp->texinfo.texsurface.nHeight / 3; // Line 1244, Address: 0x2c1f04, 0x2c1f10
+    qp->u1 = u / TexX; // Line 1245, Address: 0x2c1efc, 0x2c1f08, 0x2c1f14
+    qp->v1 = v / TexY; // Line 1246, Address: 0x2c1f24
+    qp->u2 = (u + (SizeX - 1.0f)) / TexX; // Line 1247, Address: 0x2c1f38
+    qp->v2 = (v + (SizeY - 1.0f)) / TexY;
 }
 
 /* 100% match */
