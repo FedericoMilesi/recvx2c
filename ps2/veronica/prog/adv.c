@@ -2704,28 +2704,21 @@ void AdvEasySetTextureList(int ListNo)
 	// Func End, Address: 0x2c21b0, Func Offset: 0x30
 }
 
-// 
-// Start address: 0x2c21b0
-void AdvEasyTransTextureBasic(int ListNo, int TexNum, int Flag)
-{
-	_anon8* ap;
-	// Line 1422, Address: 0x2c21b0, Func Offset: 0
-	// Line 1423, Address: 0x2c21bc, Func Offset: 0xc
-	// Line 1425, Address: 0x2c21c4, Func Offset: 0x14
-	// Line 1422, Address: 0x2c21cc, Func Offset: 0x1c
-	// Line 1425, Address: 0x2c21d0, Func Offset: 0x20
-	// Line 1422, Address: 0x2c21d4, Func Offset: 0x24
-	// Line 1425, Address: 0x2c21d8, Func Offset: 0x28
-	// Line 1426, Address: 0x2c21e0, Func Offset: 0x30
-	// Line 1427, Address: 0x2c21f8, Func Offset: 0x48
-	// Line 1429, Address: 0x2c2200, Func Offset: 0x50
-	// Line 1430, Address: 0x2c2208, Func Offset: 0x58
-	// Line 1434, Address: 0x2c2210, Func Offset: 0x60
-	// Line 1433, Address: 0x2c2218, Func Offset: 0x68
-	// Line 1434, Address: 0x2c221c, Func Offset: 0x6c
-	// Line 1435, Address: 0x2c2220, Func Offset: 0x70
-	// Func End, Address: 0x2c2238, Func Offset: 0x88
-}
+/* 100% match */
+void AdvEasyTransTextureBasic(int ListNo, int TexNum, int Flag) { // Line 1422, Address: 0x2c21b0, 0x2c21cc, 0x2c21d4
+    Unknown21* ap = (Unknown21*)&AdvWork; // Line 1423, Address: 0x2c21bc
+
+    AdvTexList[ListNo].nbTexture = TexNum; // Line 1425, Address: 0x2c21c4, 0x2c21d0, 0x2c21d8
+    njLoadTexture(&AdvTexList[ListNo]); // Line 1426, Address: 0x2c21e0
+    AdvEasySetTextureList(ListNo); // Line 1427, Address: 0x2c21f8
+    
+    if (Flag == 0) { // Line 1429, Address: 0x2c2200
+        AllFreeAdvMemory(); // Line 1430, Address: 0x2c2208
+    }
+    
+    ap->Count = 0; // Line 1433, Address: 0x2c2218
+    ap->SetTexture[ListNo] = 1; // Line 1434, Address: 0x2c2210, 0x2c221c
+} // Line 1435, Address: 0x2c2220
 
 /* 100% match */
 void AdvEasyTransTextureEx(int ListNo) { // Line 1448, Address: 0x2c2240
