@@ -2738,23 +2738,18 @@ void AdvEasyTransTexture() { // Line 1460, Address: 0x2c2260
     AdvEasyTransTextureEx(0);
 }
 
-// 
-// Start address: 0x2c2270
-void AdvEasyReleaseTextureEx(int ListNo)
-{
-	// Line 1474, Address: 0x2c2270, Func Offset: 0
-	// Line 1471, Address: 0x2c2274, Func Offset: 0x4
-	// Line 1474, Address: 0x2c2278, Func Offset: 0x8
-	// Line 1471, Address: 0x2c227c, Func Offset: 0xc
-	// Line 1474, Address: 0x2c2280, Func Offset: 0x10
-	// Line 1471, Address: 0x2c2284, Func Offset: 0x14
-	// Line 1474, Address: 0x2c2288, Func Offset: 0x18
-	// Line 1475, Address: 0x2c2298, Func Offset: 0x28
-	// Line 1476, Address: 0x2c22ac, Func Offset: 0x3c
-	// Line 1479, Address: 0x2c22b0, Func Offset: 0x40
-	// Line 1481, Address: 0x2c22bc, Func Offset: 0x4c
-	// Func End, Address: 0x2c22cc, Func Offset: 0x5c
-}
+/* 100% match */
+void AdvEasyReleaseTextureEx(int ListNo) { // Line 1471, Address: 0x2c2274, 0x2c227c, 0x2c2284
+    Unknown21* temp = (Unknown21*)&AdvWork; // not originally outputted by dwarf2cpp
+
+    if (temp->SetTexture[ListNo] != 0) { // Line 1474, Address: 0x2c2270, 0x2c2278, 0x2c2280, 0x2c2288
+        njReleaseTexture(&AdvTexList[ListNo]); // Line 1475, Address: 0x2c2298
+        temp->SetTexture[ListNo] = 0; // Line 1476, Address: 0x2c22ac
+    }
+    
+    bhGarbageTexture(NULL, 0); // Line 1479, Address: 0x2c22b0
+    
+} // Line 1481, Address: 0x2c22bc
 
 /* 100% match */
 void AdvEasyReleaseTexture() { // Line 1492, Address: 0x2c22d0
