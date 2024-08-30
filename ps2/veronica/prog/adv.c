@@ -3023,7 +3023,7 @@ int DispVmWarningMessage(int MsgId)
 /* 100% match */
 void DefaultSetOption() { // Line 2096, Address: 0x2c2970
 
-    // not originally outputted by dwarf2cpp
+    // temp var not originally outputted by dwarf2cpp
     Unknown21* temp = (Unknown21*)&AdvWork; // Line 2099, Address: 0x2c2978
     sys->keytype = 0; // Line 2100, Address: 0x2c2980,
     RequestAdjustDisplay(0, 0); // Line 2101, Address: 0x2c2990
