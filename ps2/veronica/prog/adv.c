@@ -2761,25 +2761,17 @@ void AdvEasyReleaseTexture() { // Line 1492, Address: 0x2c22d0
     AdvEasyReleaseTextureEx(0);
 }
 
-// 
-// Start address: 0x2c22e0
-void AdvEasyReleaseAllTexture()
-{
-	int i;
-	_anon8* ap;
-	// Line 1503, Address: 0x2c22e0, Func Offset: 0
-	// Line 1504, Address: 0x2c22e4, Func Offset: 0x4
-	// Line 1503, Address: 0x2c22ec, Func Offset: 0xc
-	// Line 1507, Address: 0x2c22f0, Func Offset: 0x10
-	// Line 1508, Address: 0x2c22f4, Func Offset: 0x14
-	// Line 1509, Address: 0x2c22f8, Func Offset: 0x18
-	// Line 1508, Address: 0x2c22fc, Func Offset: 0x1c
-	// Line 1509, Address: 0x2c2300, Func Offset: 0x20
-	// Line 1510, Address: 0x2c2310, Func Offset: 0x30
-	// Line 1511, Address: 0x2c2318, Func Offset: 0x38
-	// Line 1512, Address: 0x2c2330, Func Offset: 0x50
-	// Func End, Address: 0x2c233c, Func Offset: 0x5c
-}
+/* 100% match */
+void AdvEasyReleaseAllTexture() { // Line 1503, Address: 0x2c22e0, 0x2c22ec
+    Unknown21* ap = (Unknown21*)&AdvWork; // Line 1504, Address: 0x2c22e4
+    int i;
+
+    for (i = 0; i < 2; i++) { // Line 1507, Address: 0x2c22f0
+        ap->SetTexture[i] = 0; // Line 1508, Address: 0x2c22f4, 0x2c22fc
+    } // Line 1509, Address: 0x2c22f8, 0x2c2300
+    njReleaseTextureAll(); // Line 1510, Address: 0x2c2310
+    sys->ss_flg &= ~0x40; // Line 1511, Address: 0x2c2318
+} // Line 1512, Address: 0x2c2330
 
 /* 100% match */
 int AdvGetCurrentPort() { // Line 1554, Address: 0x2c2340
