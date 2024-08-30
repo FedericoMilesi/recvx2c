@@ -2612,18 +2612,12 @@ void AdvEasyDrawTextureS(int TexNo, unsigned int BaseColor, Unknown23* qp, float
     
 } // Line 1151, Address: 0x2c1e04
 
-// 
-// Start address: 0x2c1e30
-void SetQuadPos(float StartX, float StartY, float SizeX, float SizeY, _anon0* qp)
-{
-	// Line 1221, Address: 0x2c1e30, Func Offset: 0
-	// Line 1219, Address: 0x2c1e38, Func Offset: 0x8
-	// Line 1221, Address: 0x2c1e3c, Func Offset: 0xc
-	// Line 1220, Address: 0x2c1e40, Func Offset: 0x10
-	// Line 1221, Address: 0x2c1e44, Func Offset: 0x14
-	// Line 1222, Address: 0x2c1e4c, Func Offset: 0x1c
-	// Line 1223, Address: 0x2c1e54, Func Offset: 0x24
-	// Func End, Address: 0x2c1e5c, Func Offset: 0x2c
+/* 100% match */
+void SetQuadPos(float StartX, float StartY, float SizeX, float SizeY, Unknown23* qp) { // Line 1219, Address: 0x2c1e38
+    qp->x1 = StartX; // Line 1220, Address: 0x2c1e40
+    qp->y1 = StartY; // Line 1221, Address: 0x2c1e30, 0x2c1e3c, 0x2c1e44
+    qp->x2 = StartX + (SizeX - 1.0f); // Line 1222, Address: 0x2c1e4c
+    qp->y2 = StartY + (SizeY - 1.0f); // Line 1223, Address: 0x2c1e54
 }
 
 // 
