@@ -141,19 +141,6 @@ typedef struct MEMORYCARDSTATE
 } MEMORYCARDSTATE;
 
 
-typedef struct Unknown23
-{
-	float x1;
-	float y1;
-	float x2;
-	float y2;
-	float u1;
-	float v1;
-	float u2;
-	float v2;
-} Unknown23;
-
-
 typedef struct Unknown22
 {
 	int PerType;
@@ -1718,3 +1705,15 @@ typedef struct NJS_POLYGON_VTX
 	float z;
 	unsigned int col;
 } NJS_POLYGON_VTX;
+
+typedef struct NJS_QUAD_TEXTURE
+{
+	float x1;
+	float y1;
+	float x2;
+	float y2;
+	float u1;
+	float v1;
+	float u2;
+	float v2;
+} NJS_QUAD_TEXTURE;

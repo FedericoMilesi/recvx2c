@@ -13,7 +13,7 @@ _anon34* rom;
 unsigned int palbuf[0];
 Unknown22 Pad[0];
 _anon27* Ps2_current_texmemlist;
-Unknown23 Qtex[16];
+NJS_QUAD_TEXTURE Qtex[16];
 _anon16 AdvTexInfo[8][2];
 _anon20 AdvTexName[8][2];
 char AdvTexPalBank[8][2];
@@ -65,11 +65,11 @@ void SetPvrInfo(TextureFileLocation* np, TextureInfo* ip, unsigned char* pp);
 int TransPvpData(unsigned char* pp, int Mode);
 void AdvTransShadowPalette();
 void AdvEasyDrawWindow(Vector3* tlp, Vector3* brp, unsigned int WindowColor, unsigned int BackColor);
-void AdvEasyDrawTexture(int TexNo, unsigned int BaseColor, Unknown23* qp, float PosZ, int TransFlag);
-void AdvEasyDrawTextureS(int TexNo, unsigned int BaseColor, Unknown23* qp, float PosZ, int TransFlag, unsigned int ShadowAlpha);
-void SetQuadPos(float StartX, float StartY, float SizeX, float SizeY, Unknown23* qp);
-void SetQuadUv2Ex(float u, float v, float SizeX, float SizeY, unsigned int ListNo, unsigned int TexNo, Unknown23* qp);
-void SetQuadUv2(float u, float v, float SizeX, float SizeY, unsigned int TexNo, Unknown23* qp);
+void AdvEasyDrawTexture(int TexNo, unsigned int BaseColor, NJS_QUAD_TEXTURE* qp, float PosZ, int TransFlag);
+void AdvEasyDrawTextureS(int TexNo, unsigned int BaseColor, NJS_QUAD_TEXTURE* qp, float PosZ, int TransFlag, unsigned int ShadowAlpha);
+void SetQuadPos(float StartX, float StartY, float SizeX, float SizeY, NJS_QUAD_TEXTURE* qp);
+void SetQuadUv2Ex(float u, float v, float SizeX, float SizeY, unsigned int ListNo, unsigned int TexNo, NJS_QUAD_TEXTURE* qp);
+void SetQuadUv2(float u, float v, float SizeX, float SizeY, unsigned int TexNo, NJS_QUAD_TEXTURE* qp);
 void AdvDwawOnePictureEx(int TexNo, unsigned int BaseColor);
 void AdvDwawOnePicture(int TexNo);
 void AdvEasySetupTextureBasic(unsigned char* xp, int ListNo, int TexNo);
@@ -722,7 +722,7 @@ void AdvEasyDrawWindow(Vector3* tlp, Vector3* brp, unsigned int WindowColor, uns
 } // Line 1058, Address: 0x2c1c98
 
 /* 100% match */
-void AdvEasyDrawTexture(int TexNo, unsigned int BaseColor, Unknown23* qp, float PosZ, int TransFlag) { // Line 1073, Address: 0x2c1cd0
+void AdvEasyDrawTexture(int TexNo, unsigned int BaseColor, NJS_QUAD_TEXTURE* qp, float PosZ, int TransFlag) { // Line 1073, Address: 0x2c1cd0
     
     
     
@@ -769,8 +769,8 @@ void AdvEasyDrawTexture(int TexNo, unsigned int BaseColor, Unknown23* qp, float 
 } // Line 1117, Address: 0x2c1d3c
 
 /* 100% match */
-void AdvEasyDrawTextureS(int TexNo, unsigned int BaseColor, Unknown23* qp, float PosZ, int TransFlag, unsigned int ShadowAlpha) { // Line 1133, Address: 0x2c1d60, 0x2c1d7c
-    Unknown23* sqp = &Qtex[15]; // Line 1134, Address: 0x2c1d78, 0x2c1d80
+void AdvEasyDrawTextureS(int TexNo, unsigned int BaseColor, NJS_QUAD_TEXTURE* qp, float PosZ, int TransFlag, unsigned int ShadowAlpha) { // Line 1133, Address: 0x2c1d60, 0x2c1d7c
+    NJS_QUAD_TEXTURE* sqp = &Qtex[15]; // Line 1134, Address: 0x2c1d78, 0x2c1d80
 
     AdvEasyDrawTexture(TexNo, BaseColor, qp, PosZ, TransFlag); // Line 1136, Address: 0x2c1d90
     
@@ -790,7 +790,7 @@ void AdvEasyDrawTextureS(int TexNo, unsigned int BaseColor, Unknown23* qp, float
 } // Line 1151, Address: 0x2c1e04
 
 /* 100% match */
-void SetQuadPos(float StartX, float StartY, float SizeX, float SizeY, Unknown23* qp) { // Line 1219, Address: 0x2c1e38
+void SetQuadPos(float StartX, float StartY, float SizeX, float SizeY, NJS_QUAD_TEXTURE* qp) { // Line 1219, Address: 0x2c1e38
     qp->x1 = StartX; // Line 1220, Address: 0x2c1e40
     qp->y1 = StartY; // Line 1221, Address: 0x2c1e30, 0x2c1e3c, 0x2c1e44
     qp->x2 = StartX + (SizeX - 1.0f); // Line 1222, Address: 0x2c1e4c
@@ -798,7 +798,7 @@ void SetQuadPos(float StartX, float StartY, float SizeX, float SizeY, Unknown23*
 }
 
 /* 100% match */
-void SetQuadUv2Ex(float u, float v, float SizeX, float SizeY, unsigned int ListNo, unsigned int TexNo, Unknown23* qp) { // Line 1240, Address: 0x2c1e60
+void SetQuadUv2Ex(float u, float v, float SizeX, float SizeY, unsigned int ListNo, unsigned int TexNo, NJS_QUAD_TEXTURE* qp) { // Line 1240, Address: 0x2c1e60
 	Unknown30* temp = (Unknown30*)AdvTexList[ListNo].textures[TexNo].texaddr; // Line 1241, Address: 0x2c1ebc
     float TexX, TexY;
     TexX = (temp->texinfo.texsurface.nWidth >= 0) ? temp->texinfo.texsurface.nWidth : temp->texinfo.texsurface.nWidth / 3; // Line 1243, Address: 0x2c1ef0, 0x2c1f00
@@ -810,7 +810,7 @@ void SetQuadUv2Ex(float u, float v, float SizeX, float SizeY, unsigned int ListN
 }
 
 /* 100% match */
-void SetQuadUv2(float u, float v, float SizeX, float SizeY, unsigned int TexNo, Unknown23* qp) { // Line 1263, Address: 0x2c1f44
+void SetQuadUv2(float u, float v, float SizeX, float SizeY, unsigned int TexNo, NJS_QUAD_TEXTURE* qp) { // Line 1263, Address: 0x2c1f44
     SetQuadUv2Ex(u, v, SizeX, SizeY, 0, TexNo, qp);
 }
 
