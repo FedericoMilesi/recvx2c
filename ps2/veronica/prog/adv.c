@@ -2690,19 +2690,11 @@ void AdvEasySetupTexture() { // Line 1394, Address: 0x2c2170
     AdvEasySetupTextureEx(0);
 }
 
-// 
-// Start address: 0x2c2180
-void AdvEasySetTextureList(int ListNo)
-{
-	// Line 1406, Address: 0x2c2180, Func Offset: 0
-	// Line 1405, Address: 0x2c2188, Func Offset: 0x8
-	// Line 1406, Address: 0x2c218c, Func Offset: 0xc
-	// Line 1405, Address: 0x2c2190, Func Offset: 0x10
-	// Line 1406, Address: 0x2c2194, Func Offset: 0x14
-	// Line 1407, Address: 0x2c219c, Func Offset: 0x1c
-	// Line 1408, Address: 0x2c21a4, Func Offset: 0x24
-	// Func End, Address: 0x2c21b0, Func Offset: 0x30
-}
+/* 100% match */
+void AdvEasySetTextureList(int ListNo) { // Line 1405, Address: 0x2c2188, 0x2c2190
+    njSetTexture(&AdvTexList[ListNo]); // Line 1406, Address: 0x2c2180, 0x2c218c, 0x2c2194
+    njSetTextureNum(0); // Line 1407, Address: 0x2c219c
+} // Line 1408, Address: 0x2c21a4
 
 /* 100% match */
 void AdvEasyTransTextureBasic(int ListNo, int TexNum, int Flag) { // Line 1422, Address: 0x2c21b0, 0x2c21cc, 0x2c21d4
