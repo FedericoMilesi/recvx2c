@@ -2454,8 +2454,8 @@ void SetPvrInfo(TextureFileLocation* np, TextureInfo* ip, unsigned char* pp) { /
 /* 99.62% match */
 int TransPvpData(unsigned char* pp, int Mode) { // Line 951, Address: 0x2c1950
     Unknown29* pPvp;
-    int temp; // temp var not originally outputted by dwarf2cpp
-    short temp2; // temp var not originally outputted by dwarf2cpp
+    int temp; // not originally outputted by dwarf2cpp
+    short temp2; // not originally outputted by dwarf2cpp
 
     pPvp = (Unknown29*)pp;
 
