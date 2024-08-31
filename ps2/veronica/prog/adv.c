@@ -835,24 +835,26 @@ void AdvDwawOnePicture(int TexNo) { // Line 1317, Address: 0x2c2000
     AdvDwawOnePictureEx(TexNo, -1);
 }
 
-// 
-// Start address: 0x2c2010
-void AdvEasySetupTextureBasic(unsigned char* xp, int ListNo, int TexNo)
-{
-	unsigned int* lp;
-	_anon8* ap;
-	// Line 1350, Address: 0x2c2010, Func Offset: 0
-	// Line 1351, Address: 0x2c202c, Func Offset: 0x1c
-	// Line 1356, Address: 0x2c2034, Func Offset: 0x24
-	// Line 1357, Address: 0x2c2054, Func Offset: 0x44
-	// Line 1359, Address: 0x2c2064, Func Offset: 0x54
-	// Line 1360, Address: 0x2c2074, Func Offset: 0x64
-	// Line 1361, Address: 0x2c2080, Func Offset: 0x70
-	// Line 1363, Address: 0x2c2084, Func Offset: 0x74
-	// Line 1367, Address: 0x2c208c, Func Offset: 0x7c
-	// Line 1368, Address: 0x2c2100, Func Offset: 0xf0
-	// Func End, Address: 0x2c2120, Func Offset: 0x110
-}
+/* 100% match */
+void AdvEasySetupTextureBasic(unsigned char* xp, int ListNo, int TexNo) { // Line 1350, Address: 0x2c2010
+    Unknown21* ap = (Unknown21*)&AdvWork; // Line 1351, Address: 0x2c202c
+    unsigned int* lp;
+
+
+    
+    lp = (unsigned int*)xp; // Line 1356, Address: 0x2c2034
+    AdvTexPalBank[ListNo][TexNo] = -1; // Line 1357, Address: 0x2c2054
+    
+    if (lp[0] != 0) { // Line 1359, Address: 0x2c2064
+        ap->PalNo = TransPvpData(xp + lp[0], ap->PalFlag); // Line 1360, Address: 0x2c2074
+        if (ap->PalFlag != 0) { // Line 1361, Address: 0x2c2080
+            ap->PalFlag = 0;
+        } // Line 1363, Address: 0x2c2084
+        AdvTexPalBank[ListNo][TexNo] = ap->PalNo;
+    }
+    
+    SetPvrInfo(&AdvTexName[ListNo][TexNo], &AdvTexInfo[ListNo][TexNo], xp + lp[1], -1, ap->PalNo); // Line 1367, Address: 0x2c208c
+} // Line 1368, Address: 0x2c2100
 
 /* 100% match */
 void AdvEasySetupTextureEx(int ListNo) { // Line 1378, Address: 0x2c2120
