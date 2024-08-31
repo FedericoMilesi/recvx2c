@@ -814,21 +814,18 @@ void SetQuadUv2(float u, float v, float SizeX, float SizeY, unsigned int TexNo, 
     SetQuadUv2Ex(u, v, SizeX, SizeY, 0, TexNo, qp);
 }
 
-// 
-// Start address: 0x2c1f50
-void AdvDwawOnePictureEx(int TexNo, unsigned int BaseColor)
-{
-	_anon0* qp;
-	// Line 1297, Address: 0x2c1f50, Func Offset: 0
-	// Line 1300, Address: 0x2c1f68, Func Offset: 0x18
-	// Line 1302, Address: 0x2c1f70, Func Offset: 0x20
-	// Line 1303, Address: 0x2c1f7c, Func Offset: 0x2c
-	// Line 1304, Address: 0x2c1f9c, Func Offset: 0x4c
-	// Line 1305, Address: 0x2c1fc0, Func Offset: 0x70
-	// Line 1306, Address: 0x2c1fe0, Func Offset: 0x90
-	// Line 1307, Address: 0x2c1fe8, Func Offset: 0x98
-	// Func End, Address: 0x2c2000, Func Offset: 0xb0
-}
+/* 99.20% match */
+void AdvDwawOnePictureEx(int TexNo, unsigned int BaseColor) { // Line 1297, Address: 0x2c1f50
+
+    
+    NJS_QUAD_TEXTURE* qp = (NJS_QUAD_TEXTURE*)&Qtex[0]; // Line 1300, Address: 0x2c1f68
+    
+    njTextureFilterMode(1); // Line 1302, Address: 0x2c1f70
+    SetQuadPos(0, 0, 512.0f, 1024.0f, qp); // Line 1303, Address: 0x2c1f7c
+    SetQuadUv2(0, 0, 512.0f, 1024.0f, TexNo, qp); // Line 1304, Address: 0x2c1f9c
+    AdvEasyDrawTexture(TexNo, BaseColor, qp, 0.01f, 0); // Line 1305, Address: 0x2c1fc0
+    njTextureFilterMode(0); // Line 1306, Address: 0x2c1fe0
+} // Line 1307, Address: 0x2c1fe8
 
 /* 100% match */
 void AdvDwawOnePicture(int TexNo) { // Line 1317, Address: 0x2c2000
