@@ -1,3 +1,5 @@
+#include "types.h"
+
 typedef struct _anon0;
 typedef struct _sif_serve_data;
 typedef struct _sif_receive_data;
@@ -146,7 +148,7 @@ unsigned char sbuff[512];
 unsigned int getbuff[4];
 _sif_client_data ClientData;
 _sif_client_data GetStClientData;
-_anon1 sndque_tbl[128];
+SNDQUE sndque_tbl[128];
 int sque_r_idx;
 int sque_w_idx;
 int sbuff_idx;
@@ -231,20 +233,15 @@ int SdrDelayThread(int hsync)
 	// Func End, Address: 0x2e992c, Func Offset: 0x5c
 }
 
-// 
-// Start address: 0x2e9930
-void sdr_initQue()
-{
+/* 100% match */
+void sdr_initQue() {
 	int i;
-	// Line 3156, Address: 0x2e9930, Func Offset: 0
-	// Line 3157, Address: 0x2e9938, Func Offset: 0x8
-	// Line 3158, Address: 0x2e9944, Func Offset: 0x14
-	// Line 3159, Address: 0x2e9948, Func Offset: 0x18
-	// Line 3158, Address: 0x2e9950, Func Offset: 0x20
-	// Line 3159, Address: 0x2e9954, Func Offset: 0x24
-	// Line 3160, Address: 0x2e9974, Func Offset: 0x44
-	// Func End, Address: 0x2e997c, Func Offset: 0x4c
-}
+
+	sbuff_idx = 0; // Line 3156, Address: 0x2e9930
+	sque_r_idx = 0; // Line 3157, Address: 0x2e9938
+	sque_w_idx = 0; // Line 3158, Address: 0x2e9944, 0x2e9950
+	for (i = 127; i >= 0; sndque_tbl[i--].cmd = -1); // Line 3159, Address: 0x2e9948, 0x2e9954
+} // Line 3160, Address: 0x2e9974
 
 // 
 // Start address: 0x2e9980

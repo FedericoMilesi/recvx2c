@@ -1,5 +1,13 @@
 #define NULL 0
 
+typedef struct SNDQUE
+{
+	int cmd;
+	char vol;
+	char pan;
+	short pitch;
+} SNDQUE;
+
 typedef struct Unknown29
 {
 	char ppStrPvpl[4];
