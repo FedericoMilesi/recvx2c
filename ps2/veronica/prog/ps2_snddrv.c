@@ -236,22 +236,23 @@ void sdr_initQue() {
 	for (i = 127; i >= 0; sndque_tbl[i--].cmd = -1); // Line 3159, Address: 0x2e9948, 0x2e9954
 } // Line 3160, Address: 0x2e9974
 
-// 
-// Start address: 0x2e9980
-int sdr_initDev(_sif_client_data* cd_p, unsigned int dev)
-{
-	int i;
-	// Line 3180, Address: 0x2e9980, Func Offset: 0
-	// Line 3184, Address: 0x2e9994, Func Offset: 0x14
-	// Line 3185, Address: 0x2e99a0, Func Offset: 0x20
-	// Line 3186, Address: 0x2e99c0, Func Offset: 0x40
-	// Line 3191, Address: 0x2e99cc, Func Offset: 0x4c
-	// Line 3192, Address: 0x2e99d8, Func Offset: 0x58
-	// Line 3193, Address: 0x2e99f0, Func Offset: 0x70
-	// Line 3194, Address: 0x2e9a00, Func Offset: 0x80
-	// Line 3195, Address: 0x2e9a04, Func Offset: 0x84
-	// Func End, Address: 0x2e9a1c, Func Offset: 0x9c
-}
+/* 99.74% match */
+int sdr_initDev(sceSifClientData *cd_p, unsigned int dev) { // Line 3180, Address: 0x2e9980
+	int	i;
+
+    
+	for (i = 1024; i > 0; i--) { // Line 3184, Address: 0x2e9994
+		if (sceSifBindRpc(cd_p, dev, 0) < 0) return -1; // Line 3185, Address: 0x2e99a0
+		if (cd_p->serve != NULL) break; // Line 3186, Address: 0x2e99c0
+
+
+
+        
+		printf("SDR:  BindRpc: Just wait.\n"); // Line 3191, Address: 0x2e99cc
+		if (SdrDelayThread(1) < 0) return -1; // Line 3192, Address: 0x2e99d8
+	} // Line 3193, Address: 0x2e99f0
+	return 0; // Line 3194, Address: 0x2e9a00
+} // Line 3195, Address: 0x2e9a04
 
 // 
 // Start address: 0x2e9a20
