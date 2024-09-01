@@ -1,4 +1,5 @@
 #include "types.h"
+#include "ee.h"
 
 typedef struct _anon0;
 typedef struct _sif_serve_data;
@@ -174,7 +175,7 @@ void(*cb_sifRpc2)(int*);
 _SND_STATUS get_iop_buff;
 _SND_STATUS get_iop_snddata;
 
-void wait_alarm(int thid);
+void wait_alarm(int id, unsigned short time, int thid);
 int SdrDelayThread(int hsync);
 void sdr_initQue();
 int sdr_initDev(_sif_client_data* cd_p, unsigned int dev);
@@ -209,16 +210,11 @@ int makebuff_ext(unsigned int cmd, int n, int limit);
 int sending_req(_anon1* sq_p);
 int get_iopsnd_info();
 
-// 
-// Start address: 0x2e98a0
-void wait_alarm(int thid)
-{
-	// Line 3075, Address: 0x2e98a0, Func Offset: 0
-	// Line 3076, Address: 0x2e98a8, Func Offset: 0x8
-	// Line 3077, Address: 0x2e98b0, Func Offset: 0x10
-	// Line 3078, Address: 0x2e98b8, Func Offset: 0x18
-	// Func End, Address: 0x2e98c4, Func Offset: 0x24
-}
+/* 100% match */
+void wait_alarm(int id, unsigned short time, int thid) { // Line 3075, Address: 0x2e98a0
+	iWakeupThread(thid); // Line 3076, Address: 0x2e98a8
+	ExitHandler(); // Line 3077, Address: 0x2e98b0
+} // Line 3078, Address: 0x2e98b8
 
 // 
 // Start address: 0x2e98d0
