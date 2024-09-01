@@ -216,18 +216,15 @@ void wait_alarm(int id, unsigned short time, int thid) { // Line 3075, Address: 
 	ExitHandler(); // Line 3077, Address: 0x2e98b0
 } // Line 3078, Address: 0x2e98b8
 
-// 
-// Start address: 0x2e98d0
-int SdrDelayThread(int hsync)
-{
-	// Line 3097, Address: 0x2e98d0, Func Offset: 0
-	// Line 3098, Address: 0x2e98dc, Func Offset: 0xc
-	// Line 3100, Address: 0x2e9900, Func Offset: 0x30
-	// Line 3101, Address: 0x2e990c, Func Offset: 0x3c
-	// Line 3103, Address: 0x2e9914, Func Offset: 0x44
-	// Line 3104, Address: 0x2e991c, Func Offset: 0x4c
-	// Func End, Address: 0x2e992c, Func Offset: 0x5c
-}
+/* 99.57% match */
+int SdrDelayThread(int hsync) { // Line 3097, Address: 0x2e98d0
+	if (SetAlarm(hsync, (AlarmCallBack)wait_alarm, (void*)GetThreadId()) < 0) { // Line 3098, Address: 0x2e98dc
+		
+        printf("SDR: SdrDelayThread: Error: SetAlarm faild.\n"); // Line 3100, Address: 0x2e9900
+		return -2; // Line 3101, Address: 0x2e990c
+	}
+	return SleepThread(); // Line 3103, Address: 0x2e9914
+} // Line 3104, Address: 0x2e991c
 
 /* 100% match */
 void sdr_initQue() {
