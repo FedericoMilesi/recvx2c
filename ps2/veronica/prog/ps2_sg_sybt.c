@@ -1,38 +1,105 @@
-typedef struct tag_SYS_BT_SYSTEMID;
-
-
-typedef char type[16];
-
-struct tag_SYS_BT_SYSTEMID
-{
-	int nNo;
-	int nAll;
-	char szProduct[16];
-};
-
+#include "types.h"
 
 void syBtExit();
-int syBtGetBootSystemID(tag_SYS_BT_SYSTEMID* pData);
+int syBtGetBootSystemID(_SYS_BT_SYSTEMID* pData);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* empty */
 void syBtExit() { } // Line 63, Address: 0x2dde90
 
-// 
-// Start address: 0x2ddea0
-int syBtGetBootSystemID(tag_SYS_BT_SYSTEMID* pData)
-{
-	int i;
-	// Line 88, Address: 0x2ddea0, Func Offset: 0
-	// Line 90, Address: 0x2ddea8, Func Offset: 0x8
-	// Line 97, Address: 0x2ddeb0, Func Offset: 0x10
-	// Line 98, Address: 0x2ddeb8, Func Offset: 0x18
-	// Line 99, Address: 0x2ddec0, Func Offset: 0x20
-	// Line 101, Address: 0x2ddec4, Func Offset: 0x24
-	// Line 102, Address: 0x2ddec8, Func Offset: 0x28
-	// Line 101, Address: 0x2ddecc, Func Offset: 0x2c
-	// Line 102, Address: 0x2dded0, Func Offset: 0x30
-	// Line 103, Address: 0x2ddee0, Func Offset: 0x40
-	// Line 105, Address: 0x2ddee4, Func Offset: 0x44
-	// Func End, Address: 0x2ddeec, Func Offset: 0x4c
-}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 100% match */
+int syBtGetBootSystemID(_SYS_BT_SYSTEMID* pData) { // Line 88, Address: 0x2ddea0
+    int i;
+    if (pData == NULL) return 0; // Line 90, Address: 0x2ddea8
+
+
+
+
+
+    
+    pData->nNo = 1; // Line 97, Address: 0x2ddeb0
+    pData->nAll = 2; // Line 98, Address: 0x2ddeb8
+    for (i = 0; i < 16; i++) { // Line 99, Address: 0x2ddec0
+        
+        pData->szProduct[i] = 0; // Line 101, Address: 0x2ddec4, 0x2ddecc
+    } // Line 102, Address: 0x2ddec8, 0x2dded0
+    return 1; // Line 103, Address: 0x2ddee0
+    
+} // Line 105, Address: 0x2ddee4

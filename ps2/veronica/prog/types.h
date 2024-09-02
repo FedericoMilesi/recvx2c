@@ -2,6 +2,13 @@
 
 #define	CheckCmdReq(vol, pan, pitch)	(0x00|0|((vol)&1)|(((pan)&1)<<1)|(((pitch)&1)<<2))
 
+typedef struct _SYS_BT_SYSTEMID
+{
+	int nNo;
+	int nAll;
+	char szProduct[16];
+} _SYS_BT_SYSTEMID;
+
 typedef enum SYE_CBL_TAG
 {
 	SYE_CBL_NTSC,
