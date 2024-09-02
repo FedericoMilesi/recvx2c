@@ -2,6 +2,14 @@
 
 #define	CheckCmdReq(vol, pan, pitch)	(0x00|0|((vol)&1)|(((pan)&1)<<1)|(((pitch)&1)<<2))
 
+typedef enum SYE_CBL_TAG
+{
+	SYE_CBL_NTSC,
+	SYE_CBL_VGA,
+	SYE_CBL_PAL,
+	SYE_CBL_MAX
+} SYE_CBL_TAG;
+
 typedef struct SNDQUE
 {
 	int cmd;
