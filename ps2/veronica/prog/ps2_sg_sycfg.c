@@ -21,13 +21,8 @@ int syCfgGetSoundMode(int* pnMode)
 	// Func End, Address: 0x2ddf24, Func Offset: 0x14
 }
 
-// 
-// Start address: 0x2ddf30
-int syCfgInit()
-{
-	// Line 18, Address: 0x2ddf30, Func Offset: 0
-	// Func End, Address: 0x2ddf38, Func Offset: 0x8
-}
+/* empty */
+int syCfgInit() { } // Line 18, Address: 0x2ddf30
 
 // 
 // Start address: 0x2ddf40
