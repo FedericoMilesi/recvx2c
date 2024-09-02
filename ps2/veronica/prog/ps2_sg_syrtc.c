@@ -32,13 +32,8 @@ void syRtcFinish();
 int syRtcGetDate(_SYS_RTC_DATE* date);
 int syRtcInit();
 
-// 
-// Start address: 0x2ddf80
-void syRtcFinish()
-{
-	// Line 38, Address: 0x2ddf80, Func Offset: 0
-	// Func End, Address: 0x2ddf88, Func Offset: 0x8
-}
+/* empty */
+void syRtcFinish() { } // Line 38, Address: 0x2ddf80
 
 // 
 // Start address: 0x2ddf90
