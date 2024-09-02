@@ -55,11 +55,7 @@ int syRtcGetDate(_SYS_RTC_DATE* date)
 	// Func End, Address: 0x2de0e8, Func Offset: 0x158
 }
 
-// 
-// Start address: 0x2de0f0
-int syRtcInit()
-{
-	// Line 104, Address: 0x2de0f0, Func Offset: 0
-	// Func End, Address: 0x2de0f8, Func Offset: 0x8
+/* 100% match */
+int syRtcInit() { // Line 104, Address: 0x2de0f0
+    return 0;
 }
-
