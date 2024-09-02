@@ -8,13 +8,8 @@ int syCfgGetSoundMode(int* pnMode);
 int syCfgInit();
 int syCfgSetSoundMode(int nMode);
 
-// 
-// Start address: 0x2ddf00
-int syCfgExit()
-{
-	// Line 7, Address: 0x2ddf00, Func Offset: 0
-	// Func End, Address: 0x2ddf08, Func Offset: 0x8
-}
+/* empty */
+int syCfgExit() { } // Line 7, Address: 0x2ddf00
 
 // 
 // Start address: 0x2ddf10
