@@ -353,24 +353,30 @@ int SdrInit()
 	// Func End, Address: 0x2e9d78, Func Offset: 0x358
 }
 
-// 
-// Start address: 0x2e9d80
-int SdrSeReq(int req, char vol, char pan, short pitch)
-{
-	// Line 3418, Address: 0x2e9d80, Func Offset: 0
-	// Line 3422, Address: 0x2e9d88, Func Offset: 0x8
-	// Line 3423, Address: 0x2e9dac, Func Offset: 0x2c
-	// Line 3424, Address: 0x2e9db8, Func Offset: 0x38
-	// Line 3428, Address: 0x2e9dc0, Func Offset: 0x40
-	// Line 3432, Address: 0x2e9e14, Func Offset: 0x94
-	// Line 3433, Address: 0x2e9e4c, Func Offset: 0xcc
-	// Line 3434, Address: 0x2e9e5c, Func Offset: 0xdc
-	// Line 3435, Address: 0x2e9e6c, Func Offset: 0xec
-	// Line 3437, Address: 0x2e9e7c, Func Offset: 0xfc
-	// Line 3439, Address: 0x2e9eac, Func Offset: 0x12c
-	// Line 3440, Address: 0x2e9eb0, Func Offset: 0x130
-	// Func End, Address: 0x2e9ebc, Func Offset: 0x13c
-}
+/* 99.87% match */
+int SdrSeReq(int req, char vol, char pan, short pitch) { // Line 3418, Address: 0x2e9d80
+	char temp; // not originally outputted by dwarf2cpp
+
+    
+	if (sndque_tbl[sque_w_idx].cmd >= 0) { // Line 3422, Address: 0x2e9d88
+		printf("SDR: SdrSeReq: Warning: sndque overflow!\n"); // Line 3423, Address: 0x2e9dac
+		return -1; // Line 3424, Address: 0x2e9db8
+	}
+
+    
+	temp = CheckCmdReq((vol >= 0) ? 1 : 0, (pan >= 0) ? 1 : 0, (pitch >= 0) ? 1 : 0); // Line 3428, Address: 0x2e9dc0
+
+
+    
+    sndque_tbl[sque_w_idx].cmd = (temp << 24) | (req & 0xFFFFFF); // Line 3432, Address: 0x2e9e14
+	sndque_tbl[sque_w_idx].vol = vol; // Line 3433, Address: 0x2e9e4c
+	sndque_tbl[sque_w_idx].pan = pan; // Line 3434, Address: 0x2e9e5c
+	sndque_tbl[sque_w_idx].pitch = pitch; // Line 3435, Address: 0x2e9e6c
+
+	sque_w_idx = ++sque_w_idx % 128; // Line 3437, Address: 0x2e9e7c
+
+	return 0; // Line 3439, Address: 0x2e9eac
+} // Line 3440, Address: 0x2e9eb0
 
 // 
 // Start address: 0x2e9ec0
