@@ -14,13 +14,8 @@ struct tag_SYS_BT_SYSTEMID
 void syBtExit();
 int syBtGetBootSystemID(tag_SYS_BT_SYSTEMID* pData);
 
-// 
-// Start address: 0x2dde90
-void syBtExit()
-{
-	// Line 63, Address: 0x2dde90, Func Offset: 0
-	// Func End, Address: 0x2dde98, Func Offset: 0x8
-}
+/* empty */
+void syBtExit() { } // Line 63, Address: 0x2dde90
 
 // 
 // Start address: 0x2ddea0
