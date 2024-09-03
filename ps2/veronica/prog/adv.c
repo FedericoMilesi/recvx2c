@@ -2148,80 +2148,77 @@ int Adv_BioCvTitle()
 	// Func End, Address: 0x2c4eac, Func Offset: 0xa2c
 }
 
-// 
-// Start address: 0x2c4eb0
-void ResetOptionMenuParam(int Mode)
-{
-	int i;
-	_anon8* ap;
-	// Line 4243, Address: 0x2c4eb0, Func Offset: 0
-	// Line 4244, Address: 0x2c4ebc, Func Offset: 0xc
-	// Line 4247, Address: 0x2c4ec4, Func Offset: 0x14
-	// Line 4249, Address: 0x2c4ee0, Func Offset: 0x30
-	// Line 4259, Address: 0x2c4ef0, Func Offset: 0x40
-	// Line 4261, Address: 0x2c4f00, Func Offset: 0x50
-	// Line 4262, Address: 0x2c4f14, Func Offset: 0x64
-	// Line 4263, Address: 0x2c4f1c, Func Offset: 0x6c
-	// Line 4264, Address: 0x2c4f24, Func Offset: 0x74
-	// Line 4265, Address: 0x2c4f38, Func Offset: 0x88
-	// Line 4266, Address: 0x2c4f40, Func Offset: 0x90
-	// Line 4267, Address: 0x2c4f48, Func Offset: 0x98
-	// Line 4268, Address: 0x2c4f4c, Func Offset: 0x9c
-	// Line 4267, Address: 0x2c4f50, Func Offset: 0xa0
-	// Line 4268, Address: 0x2c4f54, Func Offset: 0xa4
-	// Line 4271, Address: 0x2c4f5c, Func Offset: 0xac
-	// Line 4268, Address: 0x2c4f60, Func Offset: 0xb0
-	// Line 4269, Address: 0x2c4f64, Func Offset: 0xb4
-	// Line 4271, Address: 0x2c4f68, Func Offset: 0xb8
-	// Line 4272, Address: 0x2c4f70, Func Offset: 0xc0
-	// Line 4271, Address: 0x2c4f74, Func Offset: 0xc4
-	// Line 4272, Address: 0x2c4f78, Func Offset: 0xc8
-	// Line 4273, Address: 0x2c4f80, Func Offset: 0xd0
-	// Line 4272, Address: 0x2c4f84, Func Offset: 0xd4
-	// Line 4273, Address: 0x2c4f88, Func Offset: 0xd8
-	// Line 4274, Address: 0x2c4f90, Func Offset: 0xe0
-	// Line 4273, Address: 0x2c4f94, Func Offset: 0xe4
-	// Line 4274, Address: 0x2c4f98, Func Offset: 0xe8
-	// Line 4275, Address: 0x2c4fa0, Func Offset: 0xf0
-	// Line 4277, Address: 0x2c4fac, Func Offset: 0xfc
-	// Line 4279, Address: 0x2c4fb0, Func Offset: 0x100
-	// Line 4280, Address: 0x2c4fb4, Func Offset: 0x104
-	// Line 4278, Address: 0x2c4fb8, Func Offset: 0x108
-	// Line 4279, Address: 0x2c4fbc, Func Offset: 0x10c
-	// Line 4280, Address: 0x2c4fc0, Func Offset: 0x110
-	// Line 4279, Address: 0x2c4fc4, Func Offset: 0x114
-	// Line 4280, Address: 0x2c4fc8, Func Offset: 0x118
-	// Line 4281, Address: 0x2c4fd0, Func Offset: 0x120
-	// Line 4283, Address: 0x2c4fd8, Func Offset: 0x128
-	// Line 4284, Address: 0x2c4fe0, Func Offset: 0x130
-	// Line 4285, Address: 0x2c4ff0, Func Offset: 0x140
-	// Line 4286, Address: 0x2c4ffc, Func Offset: 0x14c
-	// Line 4287, Address: 0x2c5000, Func Offset: 0x150
-	// Line 4288, Address: 0x2c5020, Func Offset: 0x170
-	// Line 4289, Address: 0x2c5028, Func Offset: 0x178
-	// Line 4290, Address: 0x2c5030, Func Offset: 0x180
-	// Line 4291, Address: 0x2c5038, Func Offset: 0x188
-	// Line 4292, Address: 0x2c5044, Func Offset: 0x194
-	// Line 4294, Address: 0x2c5054, Func Offset: 0x1a4
-	// Line 4295, Address: 0x2c5064, Func Offset: 0x1b4
-	// Line 4296, Address: 0x2c5078, Func Offset: 0x1c8
-	// Line 4297, Address: 0x2c5080, Func Offset: 0x1d0
-	// Line 4298, Address: 0x2c5088, Func Offset: 0x1d8
-	// Line 4299, Address: 0x2c509c, Func Offset: 0x1ec
-	// Line 4300, Address: 0x2c50a4, Func Offset: 0x1f4
-	// Line 4301, Address: 0x2c50ac, Func Offset: 0x1fc
-	// Line 4302, Address: 0x2c50b0, Func Offset: 0x200
-	// Line 4301, Address: 0x2c50b4, Func Offset: 0x204
-	// Line 4302, Address: 0x2c50b8, Func Offset: 0x208
-	// Line 4306, Address: 0x2c50cc, Func Offset: 0x21c
-	// Line 4307, Address: 0x2c50d0, Func Offset: 0x220
-	// Line 4310, Address: 0x2c50d4, Func Offset: 0x224
-	// Line 4308, Address: 0x2c50d8, Func Offset: 0x228
-	// Line 4309, Address: 0x2c50dc, Func Offset: 0x22c
-	// Line 4310, Address: 0x2c50e0, Func Offset: 0x230
-	// Line 4311, Address: 0x2c50ec, Func Offset: 0x23c
-	// Func End, Address: 0x2c50fc, Func Offset: 0x24c
-}
+
+/* 100% match */
+void ResetOptionMenuParam(int Mode) { // Line 4243, Address: 0x2c4eb0
+    Unknown21* ap = &AdvWork; // Line 4244, Address: 0x2c4ebc
+    int i;
+
+    switch (Mode) { // Line 4247, Address: 0x2c4ec4
+        case 0:
+            sys->vibration = GetUseVibrationUnit(); // Line 4249, Address: 0x2c4ee0
+
+
+
+
+
+
+
+
+
+            OptionDef[0].Item = GetSoundMode(); // Line 4259, Address: 0x2c4ef0
+
+            OptionDef[1].Item = sys->keytype; // Line 4261, Address: 0x2c4f00
+            OptionDef[2].Item = 0; // Line 4262, Address: 0x2c4f14
+            OptionDef[3].Item = 0; // Line 4263, Address: 0x2c4f1c
+            OptionDef[4].Item = !(sys->vibration != 0); // Line 4264, Address: 0x2c4f24
+            OptionDef[5].Item = 0; // Line 4265, Address: 0x2c4f38
+            OptionDef[6].Item = 0; // Line 4266, Address: 0x2c4f40
+            ap->OptScrX = sys->adjust_x; // Line 4267, Address: 0x2c4f48, 0x2c4f50
+            ap->OptScrY = sys->adjust_y; // Line 4268, Address: 0x2c4f4c, 0x2c4f54, 0x2c4f60
+            ap->OptLevel = 0; // Line 4269, Address: 0x2c4f64
+
+            ap->vibration = sys->vibration; // Line 4271, Address: 0x2c4f5c, 0x2c4f68, 0x2c4f74
+            ap->keytype = sys->keytype; // Line 4272, Address: 0x2c4f70, 0x2c4f78, 0x2c4f84
+            ap->adjust_x = sys->adjust_x; // Line 4273, Address: 0x2c4f80, 0x2c4f88, 0x2c4f94
+            ap->adjust_y = sys->adjust_y; // Line 4274, Address: 0x2c4f90, 0x2c4f98
+            ap->SoundMode = GetSoundMode(); // Line 4275, Address: 0x2c4fa0
+
+            for (i = 0; i < 2; ++i) { // Line 4277, Address: 0x2c4fac
+                ap->ScrollPlatePosX[i][0] = 0.0; // Line 4278, Address: 0x2c4fb8
+                ap->ScrollPlatePosX[i][1] = 672.0; // Line 4279, Address: 0x2c4fb0, 0x2c4fbc, 0x2c4fc4
+            } // Line 4280, Address: 0x2c4fb4, 0x2c4fc0, 0x2c4fc8
+            break; // Line 4281, Address: 0x2c4fd0
+        case 2:
+            sys->keytype = 0; // Line 4283, Address: 0x2c4fd8
+            RequestAdjustDisplay(0, 0); // Line 4284, Address: 0x2c4fe0
+            SetSoundModeEx(0, 0); // Line 4285, Address: 0x2c4ff0
+            ap->SoundMode = 0; // Line 4286, Address: 0x2c4ffc
+            if (CheckVibrationUnit(ap->PortId * 6 + 2) == 0) { // Line 4287, Address: 0x2c5000
+                SetUseVibrationUnit(0); // Line 4288, Address: 0x2c5020
+                sys->vibration = 0; // Line 4289, Address: 0x2c5028
+            } else { // Line 4290, Address: 0x2c5030
+                SetUseVibrationUnit(1); // Line 4291, Address: 0x2c5038
+                sys->vibration = 1; // Line 4292, Address: 0x2c5044
+            }
+            OptionDef[0].Item = GetSoundMode(); // Line 4294, Address: 0x2c5054
+            OptionDef[1].Item = sys->keytype; // Line 4295, Address: 0x2c5064
+            OptionDef[2].Item = 0; // Line 4296, Address: 0x2c5078
+            OptionDef[3].Item = 0; // Line 4297, Address: 0x2c5080
+            OptionDef[4].Item = !(sys->vibration != 0); // Line 4298, Address: 0x2c5088
+            OptionDef[5].Item = 0; // Line 4299, Address: 0x2c509c
+            OptionDef[6].Item = 0; // Line 4300, Address: 0x2c50a4
+            ap->OptScrX = sys->adjust_x; // Line 4301, Address: 0x2c50ac, 0x2c50b4
+            ap->OptScrY = sys->adjust_y; // Line 4302, Address: 0x2c50b0, 0x2c50b8
+            break;
+    }
+
+    for (i = 0; i < 7; ++i) { // Line 4306, Address: 0x2c50cc
+        OptionDef[i].Item2 = 0; // Line 4307, Address: 0x2c50d0
+        OptionDef[i].SelectFlag = 0; // Line 4308, Address: 0x2c50d8
+        OptionDef[i].Switch = 0; // Line 4309, Address: 0x2c50dc
+    } // Line 4310, Address: 0x2c50d4, 0x2c50e0
+} // Line 4311, Address: 0x2c50ec
 
 /* 99,70% match */
 void DisplayOptionScrollPlate(float PosX, float PosY) { // Line 4321, Address: 0x2c5100, 0x2c5118
