@@ -2,6 +2,30 @@
 
 #define	CheckCmdReq(vol, pan, pitch)	(0x00|0|((vol)&1)|(((pan)&1)<<1)|(((pitch)&1)<<2))
 
+typedef struct sceCdCLOCK
+{
+	unsigned char stat;
+	unsigned char second;
+	unsigned char minute;
+	unsigned char hour;
+	unsigned char pad;
+	unsigned char day;
+	unsigned char month;
+	unsigned char year;
+} sceCdCLOCK;
+
+typedef struct _SYS_RTC_DATE
+{
+	unsigned short year;
+	unsigned char month;
+	unsigned char day;
+	unsigned char hour;
+	unsigned char minute;
+	unsigned char second;
+	unsigned char dayofweek;
+	unsigned char ageofmoon;
+} _SYS_RTC_DATE;
+
 typedef struct _SYS_BT_SYSTEMID
 {
 	int nNo;
