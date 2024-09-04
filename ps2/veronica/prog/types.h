@@ -2,6 +2,16 @@
 
 #define	CheckCmdReq(vol, pan, pitch)	(0x00|0|((vol)&1)|(((pan)&1)<<1)|(((pitch)&1)<<2))
 
+typedef float	sceVu0FMATRIX[4][4];
+
+typedef struct Unknown31
+{
+	float x;
+	float y;
+	float z;
+	float w;
+} Unknown31;
+
 typedef struct sceCdCLOCK
 {
 	unsigned char stat;
@@ -1766,3 +1776,22 @@ typedef struct NJS_QUAD_TEXTURE
 	float u2;
 	float v2;
 } NJS_QUAD_TEXTURE;
+
+typedef struct NJS_VIEW
+{
+	float m[16];
+	float px;
+	float py;
+	float pz;
+	float vx;
+	float vy;
+	float vz;
+	int roll;
+	float apx;
+	float apy;
+	float apz;
+	float avx;
+	float avy;
+	float avz;
+	int aroll;
+} NJS_VIEW;

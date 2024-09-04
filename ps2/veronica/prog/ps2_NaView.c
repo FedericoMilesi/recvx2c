@@ -1,55 +1,4 @@
-typedef struct _anon0;
-typedef struct _anon1;
-typedef struct _anon2;
-typedef struct _anon3;
-
-
-typedef float type_0[16];
-typedef float type_1[4];
-typedef float type_2[4][4];
-
-typedef struct NJS_POINT3
-{
-	float x;
-	float y;
-	float z;
-} NJS_POINT3;
-
-struct _anon1
-{
-	float x;
-	float y;
-	float z;
-	float w;
-};
-
-typedef struct NJS_SCREEN
-{
-	float dist;
-	float w;
-	float h;
-	float cx;
-	float cy;
-} NJS_SCREEN;
-
-typedef struct NJS_VIEW
-{
-	float m[16];
-	float px;
-	float py;
-	float pz;
-	float vx;
-	float vy;
-	float vz;
-	int roll;
-	float apx;
-	float apy;
-	float apz;
-	float avx;
-	float avy;
-	float avz;
-	int aroll;
-} NJS_VIEW;
+#include "types.h"
 
 float fNaViwOffsetX;
 float fNaViwOffsetY;
@@ -66,7 +15,7 @@ float NaViewScreenMatrix[16];
 float fNaViwHalfH;
 float fNaViwHalfW;
 float NaViwViewMatrix[16];
-_anon1 ClipVolume;
+Unknown31 ClipVolume;
 float ClipScreenMatrix[4][4];
 float ClipMatrix2[4][4];
 float fVu1Projection;
@@ -80,8 +29,94 @@ void njSetView();
 void njClipZ(float fNear, float fFar);
 int njCalcScreen(NJS_POINT3* pPoint, float* fpScreenX, float* fpScreenY);
 void njViewScreenMatrix(float vs[16]);
-void _Make_ClipMatrix(float sc[4], float scr, float near, float far);
+//void _Make_ClipMatrix(float sc[4], float scr, float near, float far);
+void _Make_ClipMatrix(sceVu0FMATRIX sc, float scr, float near, float far);
 void _Make_ClipVolume(float x, float y);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* 100% match */
 void njSetScreen(NJS_SCREEN* pScreen) { // Line 122, Address: 0x2e2970
@@ -114,6 +149,19 @@ void njSetScreen(NJS_SCREEN* pScreen) { // Line 122, Address: 0x2e2970
     
 } // Line 150, Address: 0x2e2a68
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* 100% match */
 void njSetPerspective(int lAngle) { // Line 166, Address: 0x2e2a94
     lAngle >>= 1; // Line 167, Address: 0x2e2a80
@@ -128,6 +176,16 @@ void njSetPerspective(int lAngle) { // Line 166, Address: 0x2e2a94
     
     vu1SetScreenProjection(_nj_screen_.dist); // Line 177, Address: 0x2e2ae0
 } // Line 178, Address: 0x2e2aec
+
+
+
+
+
+
+
+
+
+
 
 /* 100% match */
 void njSetScreenProjection(float dist) { // Line 191, Address: 0x2e2b00
@@ -144,6 +202,21 @@ void njSetScreenProjection(float dist) { // Line 191, Address: 0x2e2b00
     
 } // Line 203, Address: 0x2e2b2c
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* 100% match */
 void njSetAspect(float fW, float fH) { // Line 221, Address: 0x2e2b40
     fNaViwAspectW = fW; // Line 222, Address: 0x2e2b50
@@ -155,6 +228,26 @@ void njSetAspect(float fW, float fH) { // Line 221, Address: 0x2e2b40
     vu1SetScreenAspect(fW, fH); // Line 228, Address: 0x2e2b74
     
 } // Line 230, Address: 0x2e2b80
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* 100% match */
 void njInitView(NJS_VIEW *pView) {
@@ -186,6 +279,24 @@ void njInitView(NJS_VIEW *pView) {
     ClipDispW = 2047.0f; // Line 279, Address: 0x2e2bd8, 0x2e2be0
     ClipDispH = 2047.0f; // Line 280, Address: 0x2e2bec
 } // Line 281, Address: 0x2e2bf0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* 100% match */
 void njSetView() { // Line 302, Address: 0x2e2c00
@@ -262,6 +373,25 @@ void njSetView() { // Line 302, Address: 0x2e2c00
     
 } // Line 374, Address: 0x2e2c84
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* 100% match */
 void njClipZ(float fNear, float fFar) { // Line 396, Address: 0x2e2c98
     if (-1.0f < fNear) { // Line 397, Address: 0x2e2c90, 0x2e2c9c
@@ -282,6 +412,24 @@ void njClipZ(float fNear, float fFar) { // Line 396, Address: 0x2e2c98
     vu1SetNearFarClip(_fNaViwClipNear, _fNaViwClipFar);
     CalcPs2ZbuffAB();
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* 100% match */
 int njCalcScreen(NJS_POINT3* pPoint, float* fpScreenX, float* fpScreenY) { // Line 435, Address: 0x2e2d30
@@ -308,6 +456,66 @@ int njCalcScreen(NJS_POINT3* pPoint, float* fpScreenX, float* fpScreenY) { // Li
     if (fNaViwHalfH < fSY) return -1; // Line 456, Address: 0x2e2e44
     return 0;
 } // Line 458, Address: 0x2e2e60
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* 100% match */
 void njViewScreenMatrix(float vs[16]) { // Line 521, Address: 0x2e2e80
@@ -348,55 +556,186 @@ void njViewScreenMatrix(float vs[16]) { // Line 521, Address: 0x2e2e80
     
 } // Line 557, Address: 0x2e2ecc
 
-// 
-// Start address: 0x2e2ee0
-void _Make_ClipMatrix(float sc[4], float scr, float near, float far)
-{
-	_anon1* cv;
-	float gsy;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 100% match */
+//void _Make_ClipMatrix(float sc[4], float scr, float near, float far) {
+void _Make_ClipMatrix(sceVu0FMATRIX sc, float scr, float near, float far) { // Line 581, Address: 0x2e2ee0
+    Unknown31* cv;
 	float gsx;
-	// Line 581, Address: 0x2e2ee0, Func Offset: 0
-	// Line 589, Address: 0x2e2f04, Func Offset: 0x24
-	// Line 590, Address: 0x2e2f14, Func Offset: 0x34
-	// Line 607, Address: 0x2e2f1c, Func Offset: 0x3c
-	// Line 608, Address: 0x2e2f20, Func Offset: 0x40
-	// Line 615, Address: 0x2e2f24, Func Offset: 0x44
-	// Line 607, Address: 0x2e2f28, Func Offset: 0x48
-	// Line 608, Address: 0x2e2f34, Func Offset: 0x54
-	// Line 615, Address: 0x2e2f44, Func Offset: 0x64
-	// Line 617, Address: 0x2e2f4c, Func Offset: 0x6c
-	// Line 624, Address: 0x2e2f54, Func Offset: 0x74
-	// Line 617, Address: 0x2e2f58, Func Offset: 0x78
-	// Line 628, Address: 0x2e2f5c, Func Offset: 0x7c
-	// Line 625, Address: 0x2e2f60, Func Offset: 0x80
-	// Line 628, Address: 0x2e2f64, Func Offset: 0x84
-	// Line 617, Address: 0x2e2f68, Func Offset: 0x88
-	// Line 618, Address: 0x2e2f6c, Func Offset: 0x8c
-	// Line 617, Address: 0x2e2f70, Func Offset: 0x90
-	// Line 624, Address: 0x2e2f74, Func Offset: 0x94
-	// Line 617, Address: 0x2e2f78, Func Offset: 0x98
-	// Line 618, Address: 0x2e2f7c, Func Offset: 0x9c
-	// Line 624, Address: 0x2e2f80, Func Offset: 0xa0
-	// Line 618, Address: 0x2e2f84, Func Offset: 0xa4
-	// Line 624, Address: 0x2e2f88, Func Offset: 0xa8
-	// Line 623, Address: 0x2e2f8c, Func Offset: 0xac
-	// Line 624, Address: 0x2e2f98, Func Offset: 0xb8
-	// Line 623, Address: 0x2e2f9c, Func Offset: 0xbc
-	// Line 624, Address: 0x2e2fa0, Func Offset: 0xc0
-	// Line 625, Address: 0x2e2fa4, Func Offset: 0xc4
-	// Line 626, Address: 0x2e2fa8, Func Offset: 0xc8
-	// Line 629, Address: 0x2e2fac, Func Offset: 0xcc
-	// Line 630, Address: 0x2e2fb0, Func Offset: 0xd0
-	// Line 631, Address: 0x2e2fb4, Func Offset: 0xd4
-	// Line 632, Address: 0x2e2fb8, Func Offset: 0xd8
-	// Line 669, Address: 0x2e2fbc, Func Offset: 0xdc
-	// Line 670, Address: 0x2e2fd4, Func Offset: 0xf4
-	// Line 671, Address: 0x2e2fd8, Func Offset: 0xf8
-	// Line 672, Address: 0x2e2fdc, Func Offset: 0xfc
-	// Line 673, Address: 0x2e2fe0, Func Offset: 0x100
-	// Line 681, Address: 0x2e2fe4, Func Offset: 0x104
-	// Func End, Address: 0x2e3004, Func Offset: 0x124
-}
+	float gsy;
+    register float (*mp2)[4]; // not originally outputted by dwarf2cpp
+    float *fM, *fw, *fh; // not originally outputted by dwarf2cpp
+    float (*mp)[4] = sc; // not originally outputted by dwarf2cpp
+    
+    if (mp == NULL) mp = &ClipMatrix2[0]; // Line 589, Address: 0x2e2f04
+    cv = &ClipVolume; // Line 590, Address: 0x2e2f14
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+    gsx = (near * cv->x) / scr; // Line 607, Address: 0x2e2f1c, 0x2e2f28 
+    gsy = (near * cv->y) / scr; // Line 608, Address: 0x2e2f20, 0x2e2f34 
+
+
+
+
+    
+    
+    sceVu0UnitMatrix(mp); // Line 615, Address: 0x2e2f24, 0x2e2f44 
+
+    mp[0][0] = (2.0f * near) / (gsx + gsx); // Line 617, Address: 0x2e2f4c, 0x2e2f58, 0x2e2f68, 0x2e2f70, 0x2e2f78
+    mp[1][1] = (2.0f * near) / (gsy + gsy); // Line 618, Address: 0x2e2f6c, 0x2e2f7c, 0x2e2f84
+    
+    
+    
+    
+    mp[2][2] = (far + near) / (far - near); // Line 623, Address: 0x2e2f8c, 0x2e2f9c
+    mp[3][2] = (-2.0f * far * near) / (far - near); // Line 624, Address: 0x2e2f54, 0x2e2f74, 0x2e2f80, 0x2e2f88, 0x2e2f98, 0x2e2fa0 
+    mp[2][3] = 1.0f; // Line 625, Address: 0x2e2f60, 0x2e2fa4
+    mp[3][3] = 0; // Line 626, Address: 0x2e2fa8
+
+    mp2 = &ClipMatrix2[0]; // Line 628, Address: 0x2e2f5c, 0x2e2f64
+    asm ( lqc2 $vf24, 0x00(mp2); // Line 629, Address: 0x2e2fac
+        lqc2 $vf25, 0x10(mp2); // Line 630, Address: 0x2e2fb0
+        lqc2 $vf26, 0x20(mp2); // Line 631, Address: 0x2e2fb4
+        lqc2 $vf27, 0x30(mp2); // Line 632, Address: 0x2e2fb8
+    );
+
+    
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    fM = ClipScreenMatrix[0]; fw = &ClipDispW; fh = &ClipDispH; // Line 669, Address: 0x2e2fbc
+    asm ("lwc1 $f8, 0(%0)" : : "r"(fw)); // Line 670, Address: 0x2e2fd4
+    asm ("lwc1 $f9, 0(%0)" : : "r"(fh)); // Line 671, Address: 0x2e2fd8
+    asm ("swc1 $f8, 0x2c(%0)" : "=r"(fM)); // Line 672, Address: 0x2e2fdc
+    asm ("swc1 $f9, 0x28(%0)" : "=r"(fM)); // Line 673, Address: 0x2e2fe0
+
+
+
+
+
+
+    
+} // Line 681, Address: 0x2e2fe4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* 100% match */
 void _Make_ClipVolume(float x, float y) { // Line 741, Address: 0x2e3014
@@ -420,4 +759,3 @@ void _Make_ClipVolume(float x, float y) { // Line 741, Address: 0x2e3014
         _Make_ClipMatrix(ClipMatrix2[0], fVu1Projection, _fNaViwClipNear, _fNaViwClipFar); // Line 759, Address: 0x2e30cc
     }
 } // Line 761, Address: 0x2e30f0
-
