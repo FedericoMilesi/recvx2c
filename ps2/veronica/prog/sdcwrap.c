@@ -23,22 +23,20 @@ char SdcGdDaVolume;
 void InitSdcParameter();
 int InitSoundDriver(char* SddFileName, char* MufFileName);
 
-// 
-// Start address: 0x290810
-void InitSdcParameter()
-{
-	// Line 23, Address: 0x290810, Func Offset: 0
-	// Line 24, Address: 0x290818, Func Offset: 0x8
-	// Line 26, Address: 0x290828, Func Offset: 0x18
-	// Line 27, Address: 0x290830, Func Offset: 0x20
-	// Line 28, Address: 0x290838, Func Offset: 0x28
-	// Line 29, Address: 0x290840, Func Offset: 0x30
-	// Line 31, Address: 0x290848, Func Offset: 0x38
-	// Line 32, Address: 0x290850, Func Offset: 0x40
-	// Line 34, Address: 0x290858, Func Offset: 0x48
-	// Line 35, Address: 0x290864, Func Offset: 0x54
-	// Func End, Address: 0x290870, Func Offset: 0x60
-}
+/* 100% match */
+void InitSdcParameter() { // Line 23, Address: 0x290810
+    SetSoundMode(GetSoundMode()); // Line 24, Address: 0x290818
+    
+    SetMasterVolume(15); // Line 26, Address: 0x290828
+    SetGdDaVolume(127); // Line 27, Address: 0x290830
+    SetMidiDefaultVolume(0); // Line 28, Address: 0x290838
+    SetSeDefaultVolume(0); // Line 29, Address: 0x290840
+    
+    InitMidiInfo(); // Line 31, Address: 0x290848
+    InitSeInfo(); // Line 32, Address: 0x290850
+    
+    SddFirstFlag = 1; // Line 34, Address: 0x290858
+} // Line 35, Address: 0x290864
 
 // 
 // Start address: 0x290870
