@@ -2220,7 +2220,7 @@ void ResetOptionMenuParam(int Mode) { // Line 4243, Address: 0x2c4eb0
     } // Line 4310, Address: 0x2c50d4, 0x2c50e0
 } // Line 4311, Address: 0x2c50ec
 
-/* 99,70% match */
+/* 99.70% match */
 void DisplayOptionScrollPlate(float PosX, float PosY) { // Line 4321, Address: 0x2c5100, 0x2c5118
     int i;
     NJS_QUAD_TEXTURE* qp;
