@@ -3005,12 +3005,12 @@ int Adv_ChangeDiscScreen() { // Line 5818, Address: 0x2c83e0
 
     UnmountSoundAfs(); // Line 5896, Address: 0x2c83f0
 
-    sys->ss_flg &= 0xFFFBFFFF; // Line 5898, Address: 0x2c83f8, 0x2c8410, 0x2c8418
-    sys->ss_flg &= 0xFFFEFFFF; // Line 5899, Address: 0x2c8408, 0x2c8414, 0x2c8420, 0x2c842c
-    if (!(sys->ss_flg & 1)) { // Line 5900, Address: 0x2c8428, 0x2c8434
-        sys->ss_flg |= 1; // Line 5901, Address: 0x2c844c
+    sys->ss_flg &= ~0x40000; // Line 5898, Address: 0x2c83f8, 0x2c8410, 0x2c8418
+    sys->ss_flg &= ~0x10000; // Line 5899, Address: 0x2c8408, 0x2c8414, 0x2c8420, 0x2c842c
+    if (!(sys->ss_flg & 0x1)) { // Line 5900, Address: 0x2c8428, 0x2c8434
+        sys->ss_flg |= 0x1; // Line 5901, Address: 0x2c844c
     } else { // Line 5902, Address: 0x2c8454
-        sys->ss_flg &= 0xFFFFFFFE; // Line 5903, Address: 0x2c845c
+        sys->ss_flg &= ~0x1; // Line 5903, Address: 0x2c845c
     }
     ap->NextReturnCode = 1; // Line 5905, Address: 0x2c846c
 
@@ -3018,8 +3018,8 @@ int Adv_ChangeDiscScreen() { // Line 5818, Address: 0x2c83e0
 
 
 
-    sys->ss_flg &= 0xFFFDFFFF; // Line 5971, Address: 0x2c8478, 0x2c8490, 0x2c8498
-    sys->ss_flg &= 0xFFFEFFFF; // Line 5972, Address: 0x2c8488, 0x2c8494, 0x2c84a0
+    sys->ss_flg &= ~0x20000; // Line 5971, Address: 0x2c8478, 0x2c8490, 0x2c8498
+    sys->ss_flg &= ~0x10000; // Line 5972, Address: 0x2c8488, 0x2c8494, 0x2c84a0
     ap->Mode = 0; // Line 5973, Address: 0x2c84b0
     ap->Active = 0; // Line 5974, Address: 0x2c84b4
 
