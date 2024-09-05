@@ -541,7 +541,7 @@ void CheckAdvScreenSaverStopKey(int PortId) { // Line 822, Address: 0x2c17d4, 0x
 /* 99.38% match */
 unsigned int AdvGetOkButton() { // Line 836, Address: 0x2c1850
 
-    // double-check the assigned values
+    // TODO: double-check the assigned values
     unsigned int ButtonDef[3] = {0xC0, 0x60, 0xA0}; // Line 839, Address: 0x2c1840, 0x2c1854, 0x2c185c
 
 
@@ -559,7 +559,7 @@ unsigned int AdvGetOkButton() { // Line 836, Address: 0x2c1850
 /* 99.38% match */
 unsigned int AdvGetCancelButton() { // Line 861, Address: 0x2c1890
 
-    // double-check the assigned values
+    // TODO: double-check the assigned values
     unsigned int ButtonDef[3] = {0x20, 0x80, 0x40}; // Line 864, Address: 0x2c1880, 0x2c1894, 0x2c189c
 
 
