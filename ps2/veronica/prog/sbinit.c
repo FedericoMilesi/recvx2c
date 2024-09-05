@@ -31,19 +31,38 @@ void sbInitSystem(int mode, int frame, int count)
 	// Func End, Address: 0x12b614, Func Offset: 0xe4
 }
 
-// 
-// Start address: 0x12b620
-void sbExitSystem()
-{
-	// Line 179, Address: 0x12b620, Func Offset: 0
-	// Line 183, Address: 0x12b628, Func Offset: 0x8
-	// Line 191, Address: 0x12b630, Func Offset: 0x10
-	// Line 194, Address: 0x12b638, Func Offset: 0x18
-	// Line 197, Address: 0x12b640, Func Offset: 0x20
-	// Line 205, Address: 0x12b648, Func Offset: 0x28
-	// Line 208, Address: 0x12b650, Func Offset: 0x30
-	// Line 211, Address: 0x12b658, Func Offset: 0x38
-	// Line 212, Address: 0x12b660, Func Offset: 0x40
-	// Func End, Address: 0x12b66c, Func Offset: 0x4c
-}
+/* 100% match */
+void sbExitSystem() { // Line 179, Address: 0x12b620
 
+
+    
+    ExitGdSystem(); // Line 183, Address: 0x12b628
+
+
+
+
+
+
+    
+    syRtcFinish(); // Line 191, Address: 0x12b630
+
+    
+    pdExitPeripheral(); // Line 194, Address: 0x12b638
+
+    
+    njExitSystem(); // Line 197, Address: 0x12b640
+
+
+
+
+
+
+    
+    syMallocFinish(); // Line 205, Address: 0x12b648
+
+    
+    syHwFinish(); // Line 208, Address: 0x12b650
+
+    
+    _builtin_set_imask(0xF); // Line 211, Address: 0x12b658
+} // Line 212, Address: 0x12b660
