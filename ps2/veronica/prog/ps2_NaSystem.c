@@ -1607,7 +1607,7 @@ void(*vsync_func)();
 _anon1 Ps2_nj_save_current;
 _anon45 Ps2_gs_save;
 
-void njSetTextureMemorySize();
+void njSetTextureMemorySize(unsigned int size);
 void njSetVertexBuffer();
 void njInitSystem();
 void njInitVertexBuffer();
@@ -1637,7 +1637,7 @@ void njSetBorderColor();
 
 // 
 // Start address: 0x2e1380
-void njSetTextureMemorySize()
+void njSetTextureMemorySize(unsigned int size)
 {
 	// Line 73, Address: 0x2e1380, Func Offset: 0
 	// Func End, Address: 0x2e1388, Func Offset: 0x8
