@@ -1406,9 +1406,9 @@ int Adv_CapcomLogo() { // Line 2512, Address: 0x2c2eb0
         else
         {
             
-            if ((Pad[ap->PortId].press & 0x800)) // Line 2594, Address: 0x2c3020
+            if ((Pad[ap->PortId].press & 0x800)) { // Line 2594, Address: 0x2c3020
                 ap->NextMode = -1;
-            
+            }
             AdvDwawOnePicture(0); // Line 2597, Address: 0x2c3054
         }
         break; // Line 2599, Address: 0x2c3060
