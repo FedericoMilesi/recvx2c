@@ -12,14 +12,14 @@ void BupInitCallback();
 
 
 
-/* Matching - 100% */
+/* 100% match */
 void BupInit() { // Line 16, Address: 0x2c9a60, 0x2c9a70
     memset(gBupInfo, 0, sizeof(gBupInfo)); // Line 17, Address: 0x2c9a64, 0x2c9a74
     buInit(122, 255, 0, &BupInitCallback); // Line 18, Address: 0x2c9a7c
 } // Line 19, Address: 0x2c9a94
 
 
-/* Matching - 100% */
+/* 100% match */
 void BupExit() { // Line 23, Address: 0x2c9aa0
 
     while (buExit() != 0); // Line 25, Address: 0x2c9aa8
@@ -201,7 +201,7 @@ void BupExit() { // Line 23, Address: 0x2c9aa0
 
 
 
-/* Matching - 100% */
+/* 100% match */
 void ClearInfo(int drive) {
     Drive* info = &gBupInfo[drive]; // Line 206, Address: 0x2c9ae0
     info->ProgressCount = 0; // Line 207, Address: 0x2c9af8
@@ -214,7 +214,7 @@ void ClearInfo(int drive) {
 }
 
 
-/* Matching - 99.79% */
+/* 99.79% match */
 int BupComplete(int drive, int op, int stat) { // Line 218, Address: 0x2c9b28, 0x2c9b30, 0x2c9b40
     int ret;
     Drive* info;
@@ -273,7 +273,7 @@ int BupComplete(int drive, int op, int stat) { // Line 218, Address: 0x2c9b28, 0
 
 
 
-/* Matching - 100% */
+/* 100% match */
 int BupProgress(int drive, int op, int count, int max) {
     Drive* info = &gBupInfo[drive]; // Line 278, Address: 0x2c9c40
 
@@ -286,7 +286,7 @@ int BupProgress(int drive, int op, int count, int max) {
     return 0; // Line 286, Address: 0x2c9c64
 }
 
-/* Matching - 100% */
+/* 100% match */
 void BupInitCallback() { // Line 290, Address: 0x2c9c70, 0x2c9c78
 
 

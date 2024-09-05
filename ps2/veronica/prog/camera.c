@@ -54,7 +54,7 @@ void bhGetCameraPosition();
 
 
 
-/* Matching - 100% */
+/* 100% match */
 void bhInitCamera() { // Line 58, Address: 0x279ea0, 0x279eb0
     npSetMemory(cam, 1196, 0); // Line 59, Address: 0x279ea4, 0x279eb4
     cam.flg = 0; // Line 60, Address: 0x279ebc
@@ -73,7 +73,7 @@ void bhInitCamera() { // Line 58, Address: 0x279ea0, 0x279eb0
 
 
 
-/* Matching - 100% */
+/* 100% match */
 void bhControlCamera() { // Line 77, Address: 0x279f50, 0x279f5c
     Vector3 pos = { 0.0, 0.0, -1.0 }, ps; // Line 78, Address: 0x279f54, 0x279f60, 0x279f70
 
@@ -139,7 +139,7 @@ void bhControlCamera() { // Line 77, Address: 0x279f50, 0x279f5c
 
 
 
-/* Matching - 99.76% */
+/* 99.76% match */
 void bhMakeCameraVector() { // Line 143, Address: 0x27a160, 0x27a16c
     Vector3 pos = { 0.0, 0.0, -1.0 }; // Line 144, Address: 0x27a164, 0x27a170
     njUnitMatrix(0); // Line 145, Address: 0x27a180
@@ -154,7 +154,7 @@ void bhMakeCameraVector() { // Line 143, Address: 0x27a160, 0x27a16c
 
 
 
-/* Matching - 100% */
+/* 100% match */
 void bhGetCameraPosition() { // Line 158, Address: 0x27a210
     Vector3 ps;
     njUnitMatrix(0); // Line 160, Address: 0x27a218
