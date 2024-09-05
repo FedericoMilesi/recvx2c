@@ -726,7 +726,7 @@ unsigned int Ps2_vcount;
 void(*VsyncFunc)();
 void(*EorFunc)();
 
-int _builtin_set_imask();
+void _builtin_set_imask(int mask);
 void Ps2Init();
 void Ps2LoadModule(char* p);
 void Snd_init();
@@ -772,7 +772,7 @@ void PS2_Render_Tex_Sub();
 
 // 
 // Start address: 0x2cb060
-int _builtin_set_imask()
+void _builtin_set_imask(int mask)
 {
 	// Line 202, Address: 0x2cb060, Func Offset: 0
 	// Func End, Address: 0x2cb068, Func Offset: 0x8
