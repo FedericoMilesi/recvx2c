@@ -1713,6 +1713,10 @@ System;
 
 /* Dreamcast SDK types */
 
+#define PDD_PLOGIC_ACTIVE 0
+
+#define PDD_PLOGIC_NEGATIVE 1
+
 typedef struct PDS_PERIPHERALINFO
 {
 	unsigned int type;

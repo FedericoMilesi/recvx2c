@@ -1,11 +1,11 @@
+#include "types.h"
+
 unsigned char gMapleSendBuf[49184];
 unsigned char gMapleRecvBuf[49184];
 unsigned char* _BSG_END;
 
 void sbInitSystem(int mode, int frame, int count);
 void sbExitSystem();
-
-
 
 
 
@@ -131,7 +131,7 @@ void sbInitSystem(int mode, int frame, int count) { // Line 99, Address: 0x12b53
     syHwInit2(); // Line 131, Address: 0x12b5b4
 
     
-    pdInitPeripheral(0, &gMapleRecvBuf, &gMapleSendBuf); // Line 134, Address: 0x12b5cc
+    pdInitPeripheral(PDD_PLOGIC_ACTIVE, &gMapleRecvBuf, &gMapleSendBuf); // Line 134, Address: 0x12b5cc
 
     
     syRtcInit(); // Line 137, Address: 0x12b5d4
