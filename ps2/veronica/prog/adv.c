@@ -1323,70 +1323,142 @@ int Adv_FirstWarningMessage()
 	// Func End, Address: 0x2c2eac, Func Offset: 0x4cc
 }
 
-// 
-// Start address: 0x2c2eb0
-int Adv_CapcomLogo()
-{
-	int ReturnCode;
-	_anon8* ap;
-	// Line 2512, Address: 0x2c2eb0, Func Offset: 0
-	// Line 2513, Address: 0x2c2ec0, Func Offset: 0x10
-	// Line 2516, Address: 0x2c2ec8, Func Offset: 0x18
-	// Line 2517, Address: 0x2c2ed0, Func Offset: 0x20
-	// Line 2518, Address: 0x2c2ed8, Func Offset: 0x28
-	// Line 2520, Address: 0x2c2ee0, Func Offset: 0x30
-	// Line 2525, Address: 0x2c2f0c, Func Offset: 0x5c
-	// Line 2529, Address: 0x2c2f14, Func Offset: 0x64
-	// Line 2532, Address: 0x2c2f18, Func Offset: 0x68
-	// Line 2534, Address: 0x2c2f20, Func Offset: 0x70
-	// Line 2535, Address: 0x2c2f28, Func Offset: 0x78
-	// Line 2536, Address: 0x2c2f2c, Func Offset: 0x7c
-	// Line 2538, Address: 0x2c2f34, Func Offset: 0x84
-	// Line 2539, Address: 0x2c2f3c, Func Offset: 0x8c
-	// Line 2541, Address: 0x2c2f44, Func Offset: 0x94
-	// Line 2542, Address: 0x2c2f4c, Func Offset: 0x9c
-	// Line 2543, Address: 0x2c2f54, Func Offset: 0xa4
-	// Line 2544, Address: 0x2c2f68, Func Offset: 0xb8
-	// Line 2545, Address: 0x2c2f6c, Func Offset: 0xbc
-	// Line 2547, Address: 0x2c2f74, Func Offset: 0xc4
-	// Line 2552, Address: 0x2c2f84, Func Offset: 0xd4
-	// Line 2557, Address: 0x2c2f8c, Func Offset: 0xdc
-	// Line 2559, Address: 0x2c2f94, Func Offset: 0xe4
-	// Line 2560, Address: 0x2c2fa0, Func Offset: 0xf0
-	// Line 2562, Address: 0x2c2fa8, Func Offset: 0xf8
-	// Line 2564, Address: 0x2c2fb4, Func Offset: 0x104
-	// Line 2562, Address: 0x2c2fbc, Func Offset: 0x10c
-	// Line 2564, Address: 0x2c2fc0, Func Offset: 0x110
-	// Line 2565, Address: 0x2c2fd0, Func Offset: 0x120
-	// Line 2566, Address: 0x2c2fe4, Func Offset: 0x134
-	// Line 2567, Address: 0x2c2fec, Func Offset: 0x13c
-	// Line 2569, Address: 0x2c2ff4, Func Offset: 0x144
-	// Line 2586, Address: 0x2c2ffc, Func Offset: 0x14c
-	// Line 2588, Address: 0x2c3004, Func Offset: 0x154
-	// Line 2589, Address: 0x2c3014, Func Offset: 0x164
-	// Line 2590, Address: 0x2c3018, Func Offset: 0x168
-	// Line 2594, Address: 0x2c3020, Func Offset: 0x170
-	// Line 2597, Address: 0x2c3054, Func Offset: 0x1a4
-	// Line 2599, Address: 0x2c3060, Func Offset: 0x1b0
-	// Line 2605, Address: 0x2c3068, Func Offset: 0x1b8
-	// Line 2608, Address: 0x2c3078, Func Offset: 0x1c8
-	// Line 2609, Address: 0x2c307c, Func Offset: 0x1cc
-	// Line 2611, Address: 0x2c3084, Func Offset: 0x1d4
-	// Line 2613, Address: 0x2c30c0, Func Offset: 0x210
-	// Line 2614, Address: 0x2c30c4, Func Offset: 0x214
-	// Line 2617, Address: 0x2c30cc, Func Offset: 0x21c
-	// Line 2621, Address: 0x2c30d0, Func Offset: 0x220
-	// Line 2624, Address: 0x2c30d8, Func Offset: 0x228
-	// Line 2628, Address: 0x2c3114, Func Offset: 0x264
-	// Line 2638, Address: 0x2c311c, Func Offset: 0x26c
-	// Line 2639, Address: 0x2c312c, Func Offset: 0x27c
-	// Line 2640, Address: 0x2c3134, Func Offset: 0x284
-	// Line 2642, Address: 0x2c3138, Func Offset: 0x288
-	// Line 2641, Address: 0x2c313c, Func Offset: 0x28c
-	// Line 2645, Address: 0x2c3140, Func Offset: 0x290
-	// Line 2646, Address: 0x2c3144, Func Offset: 0x294
-	// Func End, Address: 0x2c3158, Func Offset: 0x2a8
-}
+/* 99.94% match */
+int Adv_CapcomLogo() { // Line 2512, Address: 0x2c2eb0
+	Unknown21* ap = (Unknown21*)&AdvWork; // Line 2513, Address: 0x2c2ec0
+    int ReturnCode = 0;
+    
+    ap->PortId = AdvGetCurrentPort(); // Line 2516, Address: 0x2c2ec8
+    ExecuteAdvFade(); // Line 2517, Address: 0x2c2ed0
+    AdvCheckSoftReset(0); // Line 2518, Address: 0x2c2ed8
+
+    switch (ap->Mode) { // Line 2520, Address: 0x2c2ee0
+
+
+        
+    case 0:
+        ResetAdvSystem(); // Line 2525, Address: 0x2c2f0c
+
+
+        
+        ap->Mode = 1; // Line 2529, Address: 0x2c2f14
+
+        
+        break; // Line 2532, Address: 0x2c2f18
+    case 1:
+        RequestAdvInsideFile(1); // Line 2534, Address: 0x2c2f20
+        ap->Mode = 2; // Line 2535, Address: 0x2c2f28
+        break; // Line 2536, Address: 0x2c2f2c
+    case 2:
+        CheckReadEndAdvInsideFile2(3); // Line 2538, Address: 0x2c2f34
+        break; // Line 2539, Address: 0x2c2f3c
+    case 3:
+        AdvEasySetupTexture(); // Line 2541, Address: 0x2c2f44
+        AdvEasyTransTexture(); // Line 2542, Address: 0x2c2f4c
+        RequestAdvFade(2, GetSamurai(50)); // Line 2543, Address: 0x2c2f54
+        ap->Mode = 4; // Line 2544, Address: 0x2c2f68
+        break; // Line 2545, Address: 0x2c2f6c
+    case 4:
+        if (CheckAdvFade() == 0) { // Line 2547, Address: 0x2c2f74
+            
+            
+            
+            
+            ap->Timer = 150.0f; // Line 2552, Address: 0x2c2f84
+            
+            
+            
+            
+            ap->Mode = 5; // Line 2557, Address: 0x2c2f8c
+        }
+        AdvDwawOnePicture(0); // Line 2559, Address: 0x2c2f94
+        break; // Line 2560, Address: 0x2c2fa0
+    case 5:
+        ap->Timer--; // Line 2562, Address: 0x2c2fa8, 0x2c2fbc 
+        
+        if (ap->Timer < 0) { // Line 2564, Address: 0x2c2fb4, 0x2c2fc0 
+            RequestAdvFade(3, GetSamurai(50)); // Line 2565, Address: 0x2c2fd0
+            ap->NextMode = 7; // Line 2566, Address: 0x2c2fe4
+            ap->Mode = 6; // Line 2567, Address: 0x2c2fec
+        }
+        AdvDwawOnePicture(0); // Line 2569, Address: 0x2c2ff4
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+        
+
+        break; // Line 2586, Address: 0x2c2ffc
+    case 6:
+        if (CheckAdvFade() == 0) { // Line 2588, Address: 0x2c3004
+            ap->Mode = ap->NextMode; // Line 2589, Address: 0x2c3014
+        } // Line 2590, Address: 0x2c3018
+        else
+        {
+            
+            if ((Pad[ap->PortId].press & 0x800)) // Line 2594, Address: 0x2c3020
+                ap->NextMode = -1;
+            
+            AdvDwawOnePicture(0); // Line 2597, Address: 0x2c3054
+        }
+        break; // Line 2599, Address: 0x2c3060
+    case 7:
+        
+
+
+
+        PlayStartMovieEx(16, 0, 1); // Line 2605, Address: 0x2c3068
+        
+        
+        ap->Mode = 8; // Line 2608, Address: 0x2c3078
+        break; // Line 2609, Address: 0x2c307c
+    case 8:
+        switch (WaitPrePlayMovie(0)) { // Line 2611, Address: 0x2c3084
+        case 0:
+            ap->Mode = 9; // Line 2613, Address: 0x2c30c0
+            break; // Line 2614, Address: 0x2c30c4
+        case 2:
+        case 3:
+            ap->Mode = -1; // Line 2617, Address: 0x2c30cc
+            break;
+        case 1: break;
+        }
+        break; // Line 2621, Address: 0x2c30d0
+    case 9:
+        
+        switch (PlayMovieMain(0)) { // Line 2624, Address: 0x2c30d8
+        case 1:
+        case 2:
+        case 3:
+            ap->Mode =-1; // Line 2628, Address: 0x2c3114
+            break;
+        case 0:
+            break;
+        }
+        break;
+    }
+
+
+    
+    if (ap->Mode == -1) { // Line 2638, Address: 0x2c311c
+        AdvEasyReleaseTexture(); // Line 2639, Address: 0x2c312c
+        ap->Mode = 0; // Line 2640, Address: 0x2c3134
+        ap->Active = 0; // Line 2641, Address: 0x2c313c
+        ReturnCode = 1; // Line 2642, Address: 0x2c3138
+    }
+    
+    return ReturnCode; // Line 2645, Address: 0x2c3140
+} // Line 2646, Address: 0x2c3144
 
 /* 100% match */ 
 void ResetFlushPlate() {
