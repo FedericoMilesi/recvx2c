@@ -83,7 +83,7 @@ void AdvEasyReleaseTextureEx(int ListNo);
 void AdvEasyReleaseTexture();
 void AdvEasyReleaseAllTexture();
 int AdvGetCurrentPort();
-int CheckConnectVmDrive(int SlotNo);
+int CheckConnectVmDrive(int parameter /* UNUSED */, int SlotNo);
 int FindFirstVmDrive();
 float AdvEasyDispMessage(float PosX, float PosY, unsigned int MessageNo);
 float AutoSaveLoadEasyDispMessage(float PosX, float PosY, unsigned char* ucpMsbTop, unsigned int MessageNo);
