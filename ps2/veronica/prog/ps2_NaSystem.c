@@ -1609,7 +1609,7 @@ _anon45 Ps2_gs_save;
 
 void njSetTextureMemorySize(unsigned int size);
 void njSetVertexBuffer();
-void njInitSystem();
+void njInitSystem(int mode, int frame, int count);
 void njInitVertexBuffer();
 void njWaitVSync();
 void null_func();
@@ -1653,7 +1653,7 @@ void njSetVertexBuffer()
 
 // 
 // Start address: 0x2e13a0
-void njInitSystem()
+void njInitSystem(int mode, int frame, int count)
 {
 	// Line 100, Address: 0x2e13a0, Func Offset: 0
 	// Func End, Address: 0x2e13a8, Func Offset: 0x8
