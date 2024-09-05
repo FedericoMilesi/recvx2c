@@ -771,12 +771,9 @@ void SetPanAdx2(unsigned int SlotNo, float Pan)
 	// Func End, Address: 0x292058, Func Offset: 0x18
 }
 
-// 
-// Start address: 0x292060
-void SetPanAdx(unsigned int SlotNo, int Channel, int Pan)
-{
-	// Line 1405, Address: 0x292060, Func Offset: 0
-	// Func End, Address: 0x29206c, Func Offset: 0xc
+/* 100% match */
+void SetPanAdx(unsigned int SlotNo, int Channel, int Pan) { // Line 1405, Address: 0x292060
+    SetPanAdx2(SlotNo, Pan);
 }
 
 // 
