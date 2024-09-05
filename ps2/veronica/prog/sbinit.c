@@ -1,8 +1,3 @@
-
-
-typedef unsigned char type_0[49184];
-typedef unsigned char type_1[49184];
-
 unsigned char gMapleSendBuf[49184];
 unsigned char gMapleRecvBuf[49184];
 unsigned char* _BSG_END;
@@ -10,26 +5,175 @@ unsigned char* _BSG_END;
 void sbInitSystem(int mode, int frame, int count);
 void sbExitSystem();
 
-// 
-// Start address: 0x12b530
-void sbInitSystem(int mode, int frame, int count)
-{
-	// Line 99, Address: 0x12b530, Func Offset: 0
-	// Line 108, Address: 0x12b548, Func Offset: 0x18
-	// Line 111, Address: 0x12b558, Func Offset: 0x28
-	// Line 114, Address: 0x12b560, Func Offset: 0x30
-	// Line 122, Address: 0x12b594, Func Offset: 0x64
-	// Line 125, Address: 0x12b59c, Func Offset: 0x6c
-	// Line 128, Address: 0x12b5ac, Func Offset: 0x7c
-	// Line 131, Address: 0x12b5b4, Func Offset: 0x84
-	// Line 134, Address: 0x12b5cc, Func Offset: 0x9c
-	// Line 137, Address: 0x12b5d4, Func Offset: 0xa4
-	// Line 145, Address: 0x12b5dc, Func Offset: 0xac
-	// Line 146, Address: 0x12b5ec, Func Offset: 0xbc
-	// Line 147, Address: 0x12b5f4, Func Offset: 0xc4
-	// Line 171, Address: 0x12b5fc, Func Offset: 0xcc
-	// Func End, Address: 0x12b614, Func Offset: 0xe4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 100% match */
+void sbInitSystem(int mode, int frame, int count) { // Line 99, Address: 0x12b530
+    int temp; // not originally outputted by dwarf2cpp
+
+
+
+
+
+
+    
+    _builtin_set_imask(0xF); // Line 108, Address: 0x12b548
+
+    
+    syHwInit(); // Line 111, Address: 0x12b558
+
+    
+    temp = (((int)_BSG_END | 0x80000000) & ~0x1F) + 32; // Line 114, Address: 0x12b560
+
+
+
+
+
+
+    
+    syMallocInit(temp, (((int)_BSG_END & ~0x1FFFFFFF) | 0xD000000) - temp, _BSG_END); // Line 122, Address: 0x12b594
+    
+    
+    njSetTextureMemorySize(1310720); // Line 125, Address: 0x12b59c
+
+    
+    njInitSystem(mode, frame, count); // Line 128, Address: 0x12b5ac
+
+    
+    syHwInit2(); // Line 131, Address: 0x12b5b4
+
+    
+    pdInitPeripheral(0, &gMapleRecvBuf, &gMapleSendBuf); // Line 134, Address: 0x12b5cc
+
+    
+    syRtcInit(); // Line 137, Address: 0x12b5d4
+
+
+
+
+
+
+    
+    _builtin_set_imask(0); // Line 145, Address: 0x12b5dc
+    if (InitGdSystemEx(256) != 0) { // Line 146, Address: 0x12b5ec
+        sbExitSystem(); // Line 147, Address: 0x12b5f4
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        syBtExit(); // Line 171, Address: 0x12b5fc
+    }
 }
+
+
+
 
 /* 100% match */
 void sbExitSystem() { // Line 179, Address: 0x12b620
