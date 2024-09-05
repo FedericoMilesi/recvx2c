@@ -2184,8 +2184,8 @@ void PlayStopMovieEx(int Mode);
 void PlayStopMovie();
 int CheckPlayEndMovie();
 int GetTimeMoive();
-int WaitPrePlayMovie();
-int PlayMovieMain();
+int WaitPrePlayMovie(int parameter /* UNUSED */);
+int PlayMovieMain(int parameter /* UNUSED */);
 void SetEventVibrationMode(int Mode);
 void StartVibrationBasic(int PortNo, int AtrbId, int VibNo);
 void StartVibrationEx(int AtrbId, int VibNo);
@@ -4763,7 +4763,7 @@ int GetTimeMoive()
 
 // 
 // Start address: 0x297940
-int WaitPrePlayMovie()
+int WaitPrePlayMovie(int parameter /* UNUSED */)
 {
 	// Line 4678, Address: 0x297940, Func Offset: 0
 	// Line 4679, Address: 0x297948, Func Offset: 0x8
@@ -4789,7 +4789,7 @@ int WaitPrePlayMovie()
 
 // 
 // Start address: 0x297a40
-int PlayMovieMain()
+int PlayMovieMain(int parameter /* UNUSED */)
 {
 	// Line 4727, Address: 0x297a40, Func Offset: 0
 	// Line 4728, Address: 0x297a48, Func Offset: 0x8
