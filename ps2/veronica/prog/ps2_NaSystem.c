@@ -1620,8 +1620,7 @@ void vsync_func();
 void Ps2SetVSyncCounter();
 void njSetVSyncFunction(void(*func)());
 void njExitSystem();
-void njSetBackColor(unsigned int col1, unsigned int col2, unsigned int col3); // modified, originally outputted signature below
-//void njSetBackColor(unsigned int col1);
+void njSetBackColor(unsigned int col1, unsigned int col2, unsigned int col3);
 void njTextureFilterMode(int mode);
 void njPolygonCullingMode();
 void njColorBlendingModeSys(int s_mode, int d_mode);
@@ -1774,7 +1773,6 @@ void njExitSystem()
 	// Func End, Address: 0x2e1628, Func Offset: 0x8
 }
 
-// modified signature from the raw dwarf2cpp output 
 // Start address: 0x2e1630
 void njSetBackColor(unsigned int col1, unsigned int col2, unsigned int col3)
 {
