@@ -116,20 +116,130 @@ int Adv_GameOptionScreen();
 int Adv_ChangeDiscScreen();
 int Adv_SoundMuseum();
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* 100% match */
 void CallPlayerDeadVoice(int PlayerNo) { // Line 211, Address: 0x2c0d40
     PlayBgmEx2(PatId[3], PlayerNo + 8, 1, -45);
 }
+
+
+
+
+
+
+
 
 /* 100% match */
 void CallSystemVoice(int VoiceNo) { // Line 223, Address: 0x2c0d60
     PlayVoiceEx2(PatId[3], VoiceNo + 16, 0, 1, 0, 0);
 }
 
+
+
+
+
+
 /* 100% match */
 float GetSamurai(int Time) { 
     return 1.0f / (((Time / 100) * 30) + (((Time % 100) * 6) / 10)); // Line 234, Address: 0x2c0d80
 } // Line 235, Address: 0x2c0e04
+
+
+
+
+
+
+
 
 /* 100% match */
 void InitAdvSystem() { // Line 245, Address: 0x2c0e10
@@ -144,6 +254,13 @@ void InitAdvSystem() { // Line 245, Address: 0x2c0e10
     
     MountAdvAfs(); // Line 255, Address: 0x2c0e60
 } // Line 256, Address: 0x2c0e68
+
+
+
+
+
+
+
 
 /* 100% match */
 void ResetAdvSystem() { // Line 266, Address: 0x2c0e80
@@ -228,16 +345,55 @@ void ResetAdvSystem() { // Line 266, Address: 0x2c0e80
     StopAdvScreenSaver(1); // Line 345, Address: 0x2c0f84
 } // Line 346, Address: 0x2c0f8c
 
+
+
+
+
+
+
+
+
+
+
+
 /* 100% match */
 void MountAdvAfs() { // Line 360, Address: 0x2c0fa0
     Unknown21* temp = (Unknown21*)&AdvWork; // not originally outputted by dwarf2cpp
     temp->PatId = PatId[3]; // Line 362, Address: 0x2c0fb0
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* 100% match */
 unsigned char* AdvGetResourcePtr(unsigned char* bp, unsigned int ResId) { // Line 389, Address: 0x2c0fc0
     return &bp[((int *)bp)[ResId]]; // Line 390, Address: 0x2c0fcc
 }
+
+
+
+
+
 
 /* 100% match */
 void AdvSetSoundMode() { // Line 399, Address: 0x2c0fe0
@@ -248,6 +404,12 @@ void AdvSetSoundMode() { // Line 399, Address: 0x2c0fe0
         ap->SoundMode = -1; // Line 404, Address: 0x2c1008
     }
 } // Line 406, Address: 0x2c1010
+
+
+
+
+
+
 
 /* 100% match */
 void AdvCheckSoftReset(int Flag) { // Line 415, Address: 0x2c1020
@@ -267,6 +429,12 @@ void AdvCheckSoftReset(int Flag) { // Line 415, Address: 0x2c1020
     
 } // Line 430, Address: 0x2c1094
 
+
+
+
+
+
+
 /* 100% match */
 void AdvPushRoomTexture() { // Line 439, Address: 0x2c10b0
     Unknown21* ap = (Unknown21*)&AdvWork; // Line 440, Address: 0x2c10bc
@@ -283,6 +451,12 @@ void AdvPushRoomTexture() { // Line 439, Address: 0x2c10b0
     
 } // Line 452, Address: 0x2c1154
 
+
+
+
+
+
+
 /* 100% match */
 void AdvPopRoomTexture() { // Line 461, Address: 0x2c1170
     Unknown21* ap = (Unknown21*)&AdvWork; // Line 462, Address: 0x2c117c
@@ -296,6 +470,12 @@ void AdvPopRoomTexture() { // Line 461, Address: 0x2c1170
     ap->TexFlag = 0; // Line 470, Address: 0x2c11c4
 } // Line 471, Address: 0x2c11c8
 
+
+
+
+
+
+
 /* 100% match */
 void AdvPushPaletteData() { // Line 480, Address: 0x2c11e8, 0x2c11f4
 
@@ -305,6 +485,10 @@ void AdvPushPaletteData() { // Line 480, Address: 0x2c11e8, 0x2c11f4
     njMemCopy4(&palbuf[3072], &palbuf, 1024); // Line 485, Address: 0x2c1200
     temp->PalMode = njGetPaletteMode(); // Line 486, Address: 0x2c1214
 }
+
+
+
+
 
 /* 100% match */
 void AdvPopPaletteData() { // temp var not originally outputted by dwarf2cpp
@@ -322,6 +506,13 @@ void AdvPopPaletteData() { // temp var not originally outputted by dwarf2cpp
     sys->gm_flg |= 0x8000; // Line 506, Address: 0x2c1284
 } // Line 507, Address: 0x2c1298
 
+
+
+
+
+
+
+
 /* 100% match */
 void RequestAdvInsideFileEx(int InsideFileId, int MemoryBlockNo) { // Line 517, Address: 0x2c12b0
     Unknown21* ap = (Unknown21*)&AdvWork; // Line 518, Address: 0x2c12c4
@@ -330,10 +521,21 @@ void RequestAdvInsideFileEx(int InsideFileId, int MemoryBlockNo) { // Line 517, 
     RequestReadInsideFile(ap->PatId, InsideFileId, (void*)ap->ptr[MemoryBlockNo]); // Line 521, Address: 0x2c12f8
 } // Line 522, Address: 0x2c1308
 
+
+
+
+
+
+
+
 /* 100% match */
 void RequestAdvInsideFile(int InsideFileId) { // Line 532, Address: 0x2c1320
     RequestAdvInsideFileEx(InsideFileId, 0);
 }
+
+
+
+
 
 /* 100% match */
 void FreeAdvMemoryEx(int MemoryBlockNo) { // temp var not originally outputted by dwarf2cpp
@@ -346,6 +548,12 @@ void FreeAdvMemoryEx(int MemoryBlockNo) { // temp var not originally outputted b
     } 
 } // Line 549, Address: 0x2c1364
 
+
+
+
+
+
+
 /* 100% match */
 void AllFreeAdvMemory() { // Line 558, Address: 0x2c1380
     int i;
@@ -354,6 +562,14 @@ void AllFreeAdvMemory() { // Line 558, Address: 0x2c1380
         FreeAdvMemoryEx(i); // Line 562, Address: 0x2c1390
     } // Line 563, Address: 0x2c1398
 } // Line 564, Address: 0x2c13ac
+
+
+
+
+
+
+
+
 
 /* 100% match */
 int CheckReadEndAdvInsideFile() { // Line 575, Address: 0x2c13c0
@@ -368,6 +584,13 @@ int CheckReadEndAdvInsideFile() { // Line 575, Address: 0x2c13c0
     
     return ReturnCode; // Line 585, Address: 0x2c13e8
 } // Line 586, Address: 0x2c13ec
+
+
+
+
+
+
+
 
 /* 100% match */
 void CheckReadEndAdvInsideFile2Ex(int NextMode, int Flag) { // Line 596, Address: 0x2c1400
@@ -393,10 +616,25 @@ void CheckReadEndAdvInsideFile2Ex(int NextMode, int Flag) { // Line 596, Address
     } // Line 616, Address: 0x2c147c
 }
 
+
+
+
+
+
+
 /* 100% match */
 void CheckReadEndAdvInsideFile2(int NextMode) { // Line 626, Address: 0x2c14a0
     CheckReadEndAdvInsideFile2Ex(NextMode, 0);
 }
+
+
+
+
+
+
+
+
+
 
 /* 100% match */
 void RequestAdvFade(int FadeType, float FadeSpeed) { 
@@ -421,11 +659,28 @@ void RequestAdvFade(int FadeType, float FadeSpeed) {
     }
 }
 
+
+
+
+
+
+
 /* 100% match */
 int CheckAdvFade() { // temp var not originally outputted by dwarf2cpp
     Unknown21* temp = (Unknown21*)&AdvWork; // Line 670, Address: 0x2c1510
     return temp->FadeType; // Line 671, Address: 0x2c1518
 }
+
+
+
+
+
+
+
+
+
+
+
 
 /* 98.40% match */
 void AdvDrawFadePolygon(int Type, float Rate, unsigned int BaseColor) { // Line 686, Address: 0x2c1520
@@ -451,9 +706,14 @@ void AdvDrawFadePolygon(int Type, float Rate, unsigned int BaseColor) { // Line 
     poly[3].y = 482.0f; // Line 706, Address: 0x2c15a0
     poly[0].z = poly[1].z = poly[2].z = poly[3].z = PosZ[Type]; // Line 707, Address: 0x2c155c
     poly[0].col = poly[1].col = poly[2].col = poly[3].col = BaseColor; // Line 708, Address: 0x2c15b4
-    
     njDrawPolygon(poly, 4, 1); // Line 709, Address: 0x2c15c0
 } // Line 710, Address: 0x2c15d4
+
+
+
+
+
+
 
 /* 100% match */
 void ExecuteAdvFadeEx(int Type) { // Line 719, Address: 0x2c15f0, 0x2c15fc
@@ -489,10 +749,24 @@ void ExecuteAdvFadeEx(int Type) { // Line 719, Address: 0x2c15f0, 0x2c15fc
     }
 } // Line 750, Address: 0x2c16a0
 
+
+
+
+
+
+
+
 /* 100% match */
 void ExecuteAdvFade() { // Line 760, Address: 0x2c16b0
     ExecuteAdvFadeEx(0);
 }
+
+
+
+
+
+
+
 
 /* 100% match */
 void StopAdvScreenSaver(int Flag) {
@@ -505,6 +779,12 @@ void StopAdvScreenSaver(int Flag) {
         ap->SaverRate = 0;
     } // Line 780, Address: 0x2c16e0
 }
+
+
+
+
+
+
 
 /* 100% match */
 void ExecuteAdvScreenSaver() { // Line 790, Address: 0x2c16f0
@@ -531,12 +811,26 @@ void ExecuteAdvScreenSaver() { // Line 790, Address: 0x2c16f0
     AdvDrawFadePolygon(2, ap->SaverRate, 0xF);
 } // Line 812, Address: 0x2c17b0
 
+
+
+
+
+
+
+
 /* 100% match */
 void CheckAdvScreenSaverStopKey(int PortId) { // Line 822, Address: 0x2c17d4, 0x2c17dc
     if ((Pad[PortId].on != 0) || (Pad[PortId].x1 != 0) || (Pad[PortId].y1 != 0)) { // Line 823, Address: 0x2c17c0, 0x2c17d8, 0x2c17e0
         StopAdvScreenSaver(0); // Line 824, Address: 0x2c181c
     }
 } // Line 826, Address: 0x2c1828
+
+
+
+
+
+
+
 
 /* 99.38% match */
 unsigned int AdvGetOkButton() { // Line 836, Address: 0x2c1850
@@ -556,6 +850,13 @@ unsigned int AdvGetOkButton() { // Line 836, Address: 0x2c1850
     return ButtonDef[sys->keytype]; // Line 850, Address: 0x2c1858, 0x2c1864
 } // Line 851, Address: 0x2c1878
 
+
+
+
+
+
+
+
 /* 99.38% match */
 unsigned int AdvGetCancelButton() { // Line 861, Address: 0x2c1890
 
@@ -573,6 +874,16 @@ unsigned int AdvGetCancelButton() { // Line 861, Address: 0x2c1890
     
     return ButtonDef[sys->keytype]; // Line 875, Address: 0x2c1898, 0x2c18a4
 } // Line 876, Address: 0x2c18b8
+
+
+
+
+
+
+
+
+
+
 
 /* 100% match */
 void SetPvrInfo(TextureFileLocation* np, TextureInfo* ip, unsigned char* pp) { // Line 889, Address: 0x2c18c0
@@ -628,6 +939,14 @@ void SetPvrInfo(TextureFileLocation* np, TextureInfo* ip, unsigned char* pp) { /
     
 } // Line 940, Address: 0x2c1928
 
+
+
+
+
+
+
+
+
 /* 99.62% match */
 int TransPvpData(unsigned char* pp, int Mode) { // Line 951, Address: 0x2c1950
     Unknown29* pPvp;
@@ -659,6 +978,13 @@ int TransPvpData(unsigned char* pp, int Mode) { // Line 951, Address: 0x2c1950
     return temp2; // Line 978, Address: 0x2c199c
 } // Line 979, Address: 0x2c19a4
 
+
+
+
+
+
+
+
 /* 100% match */
 void AdvTransShadowPalette() { // Line 989, Address: 0x2c19c0
     int i;
@@ -681,6 +1007,16 @@ void AdvTransShadowPalette() { // Line 989, Address: 0x2c19c0
 
     
 } // Line 1009, Address: 0x2c1a28
+
+
+
+
+
+
+
+
+
+
 
 /* 100% match */
 void AdvEasyDrawWindow(Vector3* tlp, Vector3* brp, unsigned int WindowColor, unsigned int BackColor) { // Line 1022, Address: 0x2c1a40
@@ -720,6 +1056,18 @@ void AdvEasyDrawWindow(Vector3* tlp, Vector3* brp, unsigned int WindowColor, uns
     poly[0].col = poly[1].col = poly[2].col = poly[3].col = BackColor; // Line 1056, Address: 0x2c1c74
     njDrawPolygon((NJS_POLYGON_VTX*)&poly, 4, 1); // Line 1057, Address: 0x2c1c08
 } // Line 1058, Address: 0x2c1c98
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* 100% match */
 void AdvEasyDrawTexture(int TexNo, unsigned int BaseColor, NJS_QUAD_TEXTURE* qp, float PosZ, int TransFlag) { // Line 1073, Address: 0x2c1cd0
@@ -768,6 +1116,19 @@ void AdvEasyDrawTexture(int TexNo, unsigned int BaseColor, NJS_QUAD_TEXTURE* qp,
     njQuadTextureEnd(); // Line 1116, Address: 0x2c1d34
 } // Line 1117, Address: 0x2c1d3c
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* 100% match */
 void AdvEasyDrawTextureS(int TexNo, unsigned int BaseColor, NJS_QUAD_TEXTURE* qp, float PosZ, int TransFlag, unsigned int ShadowAlpha) { // Line 1133, Address: 0x2c1d60, 0x2c1d7c
     NJS_QUAD_TEXTURE* sqp = &Qtex[15]; // Line 1134, Address: 0x2c1d78, 0x2c1d80
@@ -789,6 +1150,71 @@ void AdvEasyDrawTextureS(int TexNo, unsigned int BaseColor, NJS_QUAD_TEXTURE* qp
     
 } // Line 1151, Address: 0x2c1e04
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* 100% match */
 void SetQuadPos(float StartX, float StartY, float SizeX, float SizeY, NJS_QUAD_TEXTURE* qp) { // Line 1219, Address: 0x2c1e38
     qp->x1 = StartX; // Line 1220, Address: 0x2c1e40
@@ -796,6 +1222,19 @@ void SetQuadPos(float StartX, float StartY, float SizeX, float SizeY, NJS_QUAD_T
     qp->x2 = StartX + (SizeX - 1.0f); // Line 1222, Address: 0x2c1e4c
     qp->y2 = StartY + (SizeY - 1.0f); // Line 1223, Address: 0x2c1e54
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* 100% match */
 void SetQuadUv2Ex(float u, float v, float SizeX, float SizeY, unsigned int ListNo, unsigned int TexNo, NJS_QUAD_TEXTURE* qp) { // Line 1240, Address: 0x2c1e60
@@ -809,10 +1248,50 @@ void SetQuadUv2Ex(float u, float v, float SizeX, float SizeY, unsigned int ListN
     qp->v2 = (v + (SizeY - 1.0f)) / TexY;
 }
 
+
+
+
+
+
+
+
+
+
+
+
 /* 100% match */
 void SetQuadUv2(float u, float v, float SizeX, float SizeY, unsigned int TexNo, NJS_QUAD_TEXTURE* qp) { // Line 1263, Address: 0x2c1f44
     SetQuadUv2Ex(u, v, SizeX, SizeY, 0, TexNo, qp);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* 99.20% match */
 void AdvDwawOnePictureEx(int TexNo, unsigned int BaseColor) { // Line 1297, Address: 0x2c1f50
@@ -827,10 +1306,45 @@ void AdvDwawOnePictureEx(int TexNo, unsigned int BaseColor) { // Line 1297, Addr
     njTextureFilterMode(0); // Line 1306, Address: 0x2c1fe0
 } // Line 1307, Address: 0x2c1fe8
 
+
+
+
+
+
+
+
 /* 100% match */
 void AdvDwawOnePicture(int TexNo) { // Line 1317, Address: 0x2c2000
     AdvDwawOnePictureEx(TexNo, -1);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* 100% match */
 void AdvEasySetupTextureBasic(unsigned char* xp, int ListNo, int TexNo) { // Line 1350, Address: 0x2c2010
@@ -853,6 +1367,13 @@ void AdvEasySetupTextureBasic(unsigned char* xp, int ListNo, int TexNo) { // Lin
     SetPvrInfo(&AdvTexName[ListNo][TexNo], &AdvTexInfo[ListNo][TexNo], xp + lp[1], -1, ap->PalNo); // Line 1367, Address: 0x2c208c
 } // Line 1368, Address: 0x2c2100
 
+
+
+
+
+
+
+
 /* 100% match */
 void AdvEasySetupTextureEx(int ListNo) { // Line 1378, Address: 0x2c2120
     Unknown21* ap = (Unknown21*)&AdvWork; // Line 1379, Address: 0x2c212c
@@ -861,16 +1382,41 @@ void AdvEasySetupTextureEx(int ListNo) { // Line 1378, Address: 0x2c2120
     ap->Count++; // Line 1382, Address: 0x2c214c
 } // Line 1383, Address: 0x2c2158
 
+
+
+
+
+
+
+
+
 /* 100% match */
 void AdvEasySetupTexture() { // Line 1394, Address: 0x2c2170
     AdvEasySetupTextureEx(0);
 }
+
+
+
+
+
+
 
 /* 100% match */
 void AdvEasySetTextureList(int ListNo) { // Line 1405, Address: 0x2c2188, 0x2c2190
     njSetTexture(&AdvTexList[ListNo]); // Line 1406, Address: 0x2c2180, 0x2c218c, 0x2c2194
     njSetTextureNum(0); // Line 1407, Address: 0x2c219c
 } // Line 1408, Address: 0x2c21a4
+
+
+
+
+
+
+
+
+
+
+
 
 /* 100% match */
 void AdvEasyTransTextureBasic(int ListNo, int TexNum, int Flag) { // Line 1422, Address: 0x2c21b0, 0x2c21cc, 0x2c21d4
@@ -888,16 +1434,38 @@ void AdvEasyTransTextureBasic(int ListNo, int TexNum, int Flag) { // Line 1422, 
     ap->SetTexture[ListNo] = 1; // Line 1434, Address: 0x2c2210, 0x2c221c
 } // Line 1435, Address: 0x2c2220
 
+
+
+
+
+
+
+
+
+
+
 /* 100% match */
 void AdvEasyTransTextureEx(int ListNo) { // Line 1448, Address: 0x2c2240
     Unknown21* temp = (Unknown21*)&AdvWork; // not originally outputted by dwarf2cpp
     AdvEasyTransTextureBasic(ListNo, temp->Count, 0);
 }
 
+
+
+
+
+
+
 /* 100% match */
 void AdvEasyTransTexture() { // Line 1460, Address: 0x2c2260
     AdvEasyTransTextureEx(0);
 }
+
+
+
+
+
+
 
 /* 100% match */
 void AdvEasyReleaseTextureEx(int ListNo) { // Line 1471, Address: 0x2c2274, 0x2c227c, 0x2c2284
@@ -912,10 +1480,24 @@ void AdvEasyReleaseTextureEx(int ListNo) { // Line 1471, Address: 0x2c2274, 0x2c
     
 } // Line 1481, Address: 0x2c22bc
 
+
+
+
+
+
+
+
+
 /* 100% match */
 void AdvEasyReleaseTexture() { // Line 1492, Address: 0x2c22d0
     AdvEasyReleaseTextureEx(0);
 }
+
+
+
+
+
+
 
 /* 100% match */
 void AdvEasyReleaseAllTexture() { // Line 1503, Address: 0x2c22e0, 0x2c22ec
@@ -929,10 +1511,109 @@ void AdvEasyReleaseAllTexture() { // Line 1503, Address: 0x2c22e0, 0x2c22ec
     sys->ss_flg &= ~0x40; // Line 1511, Address: 0x2c2318
 } // Line 1512, Address: 0x2c2330
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* 100% match */
 int AdvGetCurrentPort() { // Line 1554, Address: 0x2c2340
     return CurrentPortId; // Line 1555, Address: 0x2c2344
 } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* 100% match */
 int CheckConnectVmDrive(int parameter /* UNUSED */, int SlotNo) { // Line 1619, Address: 0x2c2350
@@ -987,6 +1668,13 @@ int CheckConnectVmDrive(int parameter /* UNUSED */, int SlotNo) { // Line 1619, 
     return -1;
 } // Line 1669, Address: 0x2c23c0
 
+
+
+
+
+
+
+
 /* 100% match */
 int FindFirstVmDrive() { // Line 1679, Address: 0x2c23d0
     int DriveNo;
@@ -1033,6 +1721,134 @@ int FindFirstVmDrive() { // Line 1679, Address: 0x2c23d0
         
     return -1; // Line 1722, Address: 0x2c2410
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* 100% match */
 float AdvEasyDispMessage(float PosX, float PosY, unsigned int MessageNo) { // Line 1854, Address: 0x2c2420
@@ -1100,6 +1916,21 @@ float AdvEasyDispMessage(float PosX, float PosY, unsigned int MessageNo) { // Li
     }
 } // Line 1917, Address: 0x2c2624
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* 100% match */
 float AutoSaveLoadEasyDispMessage(float PosX, float PosY, unsigned char* ucpMsbTop, unsigned int MessageNo) { // Line 1935, Address: 0x2c2650, 0x2c2674, 0x2c2680 
 	unsigned char* dmp, * smp;
@@ -1108,8 +1939,7 @@ float AutoSaveLoadEasyDispMessage(float PosX, float PosY, unsigned char* ucpMsbT
 	int x, y;
 	int LoopFlag = 1; // Line 1940, Address: 0x2c268c
 	int SearchFlag;
-    float sx;
-	float SizeX;
+    float sx, SizeX;
     float sy = PosY; 
     
     smp = (ucpMsbTop + ((int*)ucpMsbTop)[MessageNo + 1]); // Line 1945, Address: 0x2c2670, 0x2c2678, 0x2c2684, 0x2c2690 
