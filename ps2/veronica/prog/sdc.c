@@ -186,13 +186,9 @@ void TransWaitCallBackFunction()
 	// Func End, Address: 0x28ecf8, Func Offset: 0x28
 }
 
-// 
-// Start address: 0x28ed00
-unsigned int CheckTransComplete()
-{
-	// Line 35, Address: 0x28ed00, Func Offset: 0
-	// Line 36, Address: 0x28ed04, Func Offset: 0x4
-	// Func End, Address: 0x28ed0c, Func Offset: 0xc
+/* 100% match */
+unsigned int CheckTransComplete() { // Line 35, Address: 0x28ed00
+    return TransCompleteFlag; // Line 36, Address: 0x28ed04
 }
 
 // 
