@@ -175,16 +175,11 @@ void RequestMidiPanFunctionEx(int SlotNo, int StartPan, int LastPan, int Frame);
 void RequestSePanFunctionEx(int SlotNo, int StartPan, int LastPan, int Frame);
 int ExecSoundPanManager();
 
-// 
-// Start address: 0x28ecd0
-void TransWaitCallBackFunction()
-{
-	// Line 28, Address: 0x28ecd0, Func Offset: 0
-	// Line 29, Address: 0x28ecd8, Func Offset: 0x8
-	// Line 30, Address: 0x28ece4, Func Offset: 0x14
-	// Line 31, Address: 0x28ecec, Func Offset: 0x1c
-	// Func End, Address: 0x28ecf8, Func Offset: 0x28
-}
+/* 100% match */
+void TransWaitCallBackFunction() { // Line 28, Address: 0x28ecd0
+    sdMemBlkDestroy(SdMemBlk); // Line 29, Address: 0x28ecd8
+    TransCompleteFlag = 0; // Line 30, Address: 0x28ece4
+} // Line 31, Address: 0x28ecec
 
 /* 100% match */
 unsigned int CheckTransComplete() { // Line 35, Address: 0x28ed00
