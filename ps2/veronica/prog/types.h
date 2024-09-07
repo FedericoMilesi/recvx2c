@@ -18,6 +18,149 @@ typedef enum SDE_DATA_TYPE
 	SDE_DATA_TYPE_FX_PRG_WRK = 0x57504653
 } SDE_DATA_TYPE;
 
+typedef struct CONFIGFILE
+{
+	unsigned int ssd_ver;
+	unsigned int ssd_flg;
+	unsigned int ssd_reserve;
+	char keytype;
+	char adjust_x;
+	char adjust_y;
+	char vibration;
+	int best_tm[8];
+	unsigned int Check_Sam;
+} CONFIGFILE;
+
+typedef struct SAVEFILE
+{
+	unsigned int version;
+	int save_ct;
+	char ply_id;
+	char stg_no;
+	char rom_no;
+	char rcase;
+	char pos_no;
+	char cut_no;
+	char flr_no;
+	char reserve0;
+	int gm_mode;
+	unsigned int ev_flg[32];
+	unsigned int it_flg[16];
+	unsigned int ic_flg[16];
+	unsigned int ed_flg[32];
+	unsigned int ky_flg[16];
+	unsigned int mp_flg[8];
+	unsigned int itm[384];
+	unsigned int ply_stflg[4];
+	Vector3 ply_pos;
+	int ply_ang;
+	char ply_wno[4];
+	short ply_hp[4];
+	unsigned char evt_posno[4];
+	int time;
+	int stv_tm;
+	short spray_ct;
+	short retry_ct;
+	short clear_ct;
+	short reserve1;
+	unsigned int CheckSam;
+} SAVEFILE;
+
+typedef struct Unknown33
+{
+	unsigned char Head[4];
+	unsigned short Reserv1;
+	unsigned short OffsLF;
+	unsigned int Reserv2;
+	unsigned int TransRate;
+	int BgColor[4][4];
+	float LightDir[4][3];
+	float LightColor[4][3];
+	float Ambient[4];
+	unsigned char TitleName[68];
+	unsigned char FnameView[64];
+	unsigned char FnameCopy[64];
+	unsigned char FnameDel[64];
+	unsigned char Reserve3[512];
+} Unknown33;
+
+typedef struct ICONINFORMATION
+{
+	Unknown33 icon;
+} ICONINFORMATION;
+
+typedef struct MEMORYCARDPORT
+{
+	int lCrntType;
+	int lPrevType;
+	int lFreeSize;
+	int lFormatType;
+} MEMORYCARDPORT;
+
+typedef struct MEMORYCARDSTATE
+{
+	unsigned int ulState;
+	unsigned int ulError;
+	unsigned int ulMcSubState;
+	unsigned int ulFileSize;
+	int lCurrentPort;
+	int lOpenFileNumber;
+	int lSelectFileNumber;
+	int lOpenMode;
+	unsigned short usMcSysState;
+	void* vpAddr;
+	char cCurrentDir[50];
+	char cOpenFileName[32];
+	char cRetryCount;
+	char cMcCheckFlag;
+	char cCheckMcFlag;
+	MEMORYCARDPORT Port[2];
+} MEMORYCARDSTATE;
+
+typedef struct SELECTFILEINFO
+{
+	int FileNumber;
+	int save_ct;
+	int gm_mode;
+	char ply_id;
+	char saveroom;
+} SELECTFILEINFO;
+
+typedef struct SELECTFILEWINDOW
+{
+	unsigned int ulFileState;
+	SELECTFILEINFO* pRecordTop;
+	int lRecordMax;
+	short slDispTopNumber;
+	short slDispRecordNumber;
+	short sMesCur;
+	short sCursol;
+	short sWaitMesTimer;
+	float slLineNumber;
+	int slDispWriteMesMax;
+	int slDispWriteMes;
+	unsigned int ulfoundationColor;
+} SELECTFILEWINDOW;
+
+typedef struct SYSLOAD_SCREEN
+{
+	unsigned int ulState;
+	unsigned int ulSubState;
+	unsigned int ulMemCheckCountTimer;
+	unsigned int ulFileSize;
+	unsigned short usExitFlag;
+	unsigned short usLoopCount;
+	int lCardState;
+	char cMesFlag;
+	CONFIGFILE* pConfigFile;
+	SAVEFILE* pSaveFile;
+	ICONINFORMATION* pIconInfo;
+	MEMORYCARDSTATE* pMcState;
+	SELECTFILEINFO* pSelectFileInfo;
+	SELECTFILEWINDOW* pSelectFileWindow;
+	void* vpReadBuffer;
+} SYSLOAD_SCREEN;
+
 typedef struct Unknown32
 {
 	float Sx;

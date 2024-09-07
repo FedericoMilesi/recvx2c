@@ -22,8 +22,8 @@ unsigned char FontSz[0];
 float FontScaleCR;
 float FontScaleX;
 _anon31 AdvVmMsgDef[21];
-tagSYSLOAD_SCREEN* pSysLoad;
-tagSYSLOAD_SCREEN SysLoad;
+SYSLOAD_SCREEN* pSysLoad;
+SYSLOAD_SCREEN SysLoad;
 float ColorBarSizeY;
 float RedLinePosY;
 unsigned int ColorBarBright;
@@ -2103,128 +2103,410 @@ void DefaultSetOption() { // Line 2096, Address: 0x2c2970
     SetUseVibrationUnit(sys->vibration); // Line 2103, Address: 0x2c29d4
 }
 
-// 
-// Start address: 0x2c29e0
-int Adv_FirstWarningMessage()
-{
-	int ReturnCode;
-	int TexNoDef[3];
-	_anon8* ap;
-	int LoadCheck;
-	int lState;
-	// Line 2113, Address: 0x2c29e0, Func Offset: 0
-	// Line 2114, Address: 0x2c29f0, Func Offset: 0x10
-	// Line 2118, Address: 0x2c29f8, Func Offset: 0x18
-	// Line 2120, Address: 0x2c2a0c, Func Offset: 0x2c
-	// Line 2118, Address: 0x2c2a10, Func Offset: 0x30
-	// Line 2131, Address: 0x2c2a14, Func Offset: 0x34
-	// Line 2132, Address: 0x2c2a1c, Func Offset: 0x3c
-	// Line 2133, Address: 0x2c2a24, Func Offset: 0x44
-	// Line 2134, Address: 0x2c2a2c, Func Offset: 0x4c
-	// Line 2135, Address: 0x2c2a34, Func Offset: 0x54
-	// Line 2137, Address: 0x2c2a3c, Func Offset: 0x5c
-	// Line 2139, Address: 0x2c2a68, Func Offset: 0x88
-	// Line 2143, Address: 0x2c2a70, Func Offset: 0x90
-	// Line 2144, Address: 0x2c2a74, Func Offset: 0x94
-	// Line 2147, Address: 0x2c2a7c, Func Offset: 0x9c
-	// Line 2148, Address: 0x2c2aa0, Func Offset: 0xc0
-	// Line 2149, Address: 0x2c2ab8, Func Offset: 0xd8
-	// Line 2150, Address: 0x2c2abc, Func Offset: 0xdc
-	// Line 2152, Address: 0x2c2ac4, Func Offset: 0xe4
-	// Line 2153, Address: 0x2c2acc, Func Offset: 0xec
-	// Line 2155, Address: 0x2c2ad4, Func Offset: 0xf4
-	// Line 2156, Address: 0x2c2adc, Func Offset: 0xfc
-	// Line 2157, Address: 0x2c2ae4, Func Offset: 0x104
-	// Line 2161, Address: 0x2c2aec, Func Offset: 0x10c
-	// Line 2162, Address: 0x2c2af8, Func Offset: 0x118
-	// Line 2163, Address: 0x2c2afc, Func Offset: 0x11c
-	// Line 2165, Address: 0x2c2b04, Func Offset: 0x124
-	// Line 2166, Address: 0x2c2b0c, Func Offset: 0x12c
-	// Line 2168, Address: 0x2c2b14, Func Offset: 0x134
-	// Line 2169, Address: 0x2c2b24, Func Offset: 0x144
-	// Line 2170, Address: 0x2c2b40, Func Offset: 0x160
-	// Line 2171, Address: 0x2c2b5c, Func Offset: 0x17c
-	// Line 2172, Address: 0x2c2b74, Func Offset: 0x194
-	// Line 2171, Address: 0x2c2b7c, Func Offset: 0x19c
-	// Line 2172, Address: 0x2c2b80, Func Offset: 0x1a0
-	// Line 2183, Address: 0x2c2b88, Func Offset: 0x1a8
-	// Line 2186, Address: 0x2c2b8c, Func Offset: 0x1ac
-	// Line 2231, Address: 0x2c2b94, Func Offset: 0x1b4
-	// Line 2232, Address: 0x2c2b98, Func Offset: 0x1b8
-	// Line 2270, Address: 0x2c2ba0, Func Offset: 0x1c0
-	// Line 2280, Address: 0x2c2ba4, Func Offset: 0x1c4
-	// Line 2283, Address: 0x2c2bac, Func Offset: 0x1cc
-	// Line 2289, Address: 0x2c2bd0, Func Offset: 0x1f0
-	// Line 2292, Address: 0x2c2be8, Func Offset: 0x208
-	// Line 2291, Address: 0x2c2bf0, Func Offset: 0x210
-	// Line 2294, Address: 0x2c2bf8, Func Offset: 0x218
-	// Line 2296, Address: 0x2c2c00, Func Offset: 0x220
-	// Line 2297, Address: 0x2c2c14, Func Offset: 0x234
-	// Line 2299, Address: 0x2c2c28, Func Offset: 0x248
-	// Line 2300, Address: 0x2c2c30, Func Offset: 0x250
-	// Line 2301, Address: 0x2c2c38, Func Offset: 0x258
-	// Line 2302, Address: 0x2c2c3c, Func Offset: 0x25c
-	// Line 2303, Address: 0x2c2c44, Func Offset: 0x264
-	// Line 2304, Address: 0x2c2c4c, Func Offset: 0x26c
-	// Line 2306, Address: 0x2c2c58, Func Offset: 0x278
-	// Line 2307, Address: 0x2c2c60, Func Offset: 0x280
-	// Line 2308, Address: 0x2c2c68, Func Offset: 0x288
-	// Line 2309, Address: 0x2c2c70, Func Offset: 0x290
-	// Line 2311, Address: 0x2c2c74, Func Offset: 0x294
-	// Line 2314, Address: 0x2c2c98, Func Offset: 0x2b8
-	// Line 2315, Address: 0x2c2ca4, Func Offset: 0x2c4
-	// Line 2317, Address: 0x2c2cac, Func Offset: 0x2cc
-	// Line 2323, Address: 0x2c2cb4, Func Offset: 0x2d4
-	// Line 2408, Address: 0x2c2cbc, Func Offset: 0x2dc
-	// Line 2410, Address: 0x2c2cc0, Func Offset: 0x2e0
-	// Line 2413, Address: 0x2c2cc8, Func Offset: 0x2e8
-	// Line 2432, Address: 0x2c2ccc, Func Offset: 0x2ec
-	// Line 2434, Address: 0x2c2cd4, Func Offset: 0x2f4
-	// Line 2435, Address: 0x2c2cdc, Func Offset: 0x2fc
-	// Line 2436, Address: 0x2c2ce4, Func Offset: 0x304
-	// Line 2438, Address: 0x2c2cec, Func Offset: 0x30c
-	// Line 2439, Address: 0x2c2cf0, Func Offset: 0x310
-	// Line 2441, Address: 0x2c2cf8, Func Offset: 0x318
-	// Line 2442, Address: 0x2c2d04, Func Offset: 0x324
-	// Line 2447, Address: 0x2c2d0c, Func Offset: 0x32c
-	// Line 2449, Address: 0x2c2d24, Func Offset: 0x344
-	// Line 2448, Address: 0x2c2d28, Func Offset: 0x348
-	// Line 2451, Address: 0x2c2d2c, Func Offset: 0x34c
-	// Line 2453, Address: 0x2c2d34, Func Offset: 0x354
-	// Line 2458, Address: 0x2c2d44, Func Offset: 0x364
-	// Line 2463, Address: 0x2c2d4c, Func Offset: 0x36c
-	// Line 2465, Address: 0x2c2d54, Func Offset: 0x374
-	// Line 2466, Address: 0x2c2d60, Func Offset: 0x380
-	// Line 2467, Address: 0x2c2d74, Func Offset: 0x394
-	// Line 2469, Address: 0x2c2d7c, Func Offset: 0x39c
-	// Line 2470, Address: 0x2c2d88, Func Offset: 0x3a8
-	// Line 2469, Address: 0x2c2d90, Func Offset: 0x3b0
-	// Line 2470, Address: 0x2c2d94, Func Offset: 0x3b4
-	// Line 2471, Address: 0x2c2da4, Func Offset: 0x3c4
-	// Line 2472, Address: 0x2c2db8, Func Offset: 0x3d8
-	// Line 2474, Address: 0x2c2dc0, Func Offset: 0x3e0
-	// Line 2475, Address: 0x2c2dc8, Func Offset: 0x3e8
-	// Line 2476, Address: 0x2c2ddc, Func Offset: 0x3fc
-	// Line 2478, Address: 0x2c2de4, Func Offset: 0x404
-	// Line 2479, Address: 0x2c2df4, Func Offset: 0x414
-	// Line 2480, Address: 0x2c2e00, Func Offset: 0x420
-	// Line 2481, Address: 0x2c2e18, Func Offset: 0x438
-	// Line 2482, Address: 0x2c2e1c, Func Offset: 0x43c
-	// Line 2483, Address: 0x2c2e24, Func Offset: 0x444
-	// Line 2484, Address: 0x2c2e3c, Func Offset: 0x45c
-	// Line 2486, Address: 0x2c2e40, Func Offset: 0x460
-	// Line 2487, Address: 0x2c2e48, Func Offset: 0x468
-	// Line 2488, Address: 0x2c2e54, Func Offset: 0x474
-	// Line 2493, Address: 0x2c2e68, Func Offset: 0x488
-	// Line 2494, Address: 0x2c2e78, Func Offset: 0x498
-	// Line 2495, Address: 0x2c2e80, Func Offset: 0x4a0
-	// Line 2496, Address: 0x2c2e88, Func Offset: 0x4a8
-	// Line 2498, Address: 0x2c2e8c, Func Offset: 0x4ac
-	// Line 2497, Address: 0x2c2e90, Func Offset: 0x4b0
-	// Line 2501, Address: 0x2c2e94, Func Offset: 0x4b4
-	// Line 2502, Address: 0x2c2e98, Func Offset: 0x4b8
-	// Func End, Address: 0x2c2eac, Func Offset: 0x4cc
-}
+
+
+
+
+
+
+/* 99.66% match */
+int Adv_FirstWarningMessage() { // Line 2113, Address: 0x2c29e0
+	Unknown21* ap = (Unknown21*)&AdvWork; // Line 2114, Address: 0x2c29f0
+    int ReturnCode;
+	int TexNoDef[3] = {0, 1, -1}; // Line 2118, Address: 0x2c29f8, 0x2c2a10 
+	static int lState;
+	static int LoadCheck;
+    
+    ReturnCode = 0; // Line 2120, Address: 0x2c2a0c
+
+
+
+
+
+
+
+
+
+    
+    ap->PortId = AdvGetCurrentPort(); // Line 2131, Address: 0x2c2a14
+    ExecuteAdvFade(); // Line 2132, Address: 0x2c2a1c
+    ExecuteAdvScreenSaver(); // Line 2133, Address: 0x2c2a24
+    CheckAdvScreenSaverStopKey(ap->PortId); // Line 2134, Address: 0x2c2a2c
+    AdvCheckSoftReset(0); // Line 2135, Address: 0x2c2a34
+
+    switch (ap->Mode) { // Line 2137, Address: 0x2c2a3c
+    case 0:
+        ResetAdvSystem(); // Line 2139, Address: 0x2c2a68
+
+
+        
+        ap->Mode = 1; // Line 2143, Address: 0x2c2a70
+        break; // Line 2144, Address: 0x2c2a74
+    case 1:
+        
+        ap->ptr[0] = bhGetFreeMemory(GetInsideFileSize(sys->sys_partid, 1), 32); // Line 2147, Address: 0x2c2a7c
+        RequestReadInsideFile(sys->sys_partid, 1, ap->ptr[0]); // Line 2148, Address: 0x2c2aa0
+        ap->Mode = 2; // Line 2149, Address: 0x2c2ab8
+        break; // Line 2150, Address: 0x2c2abc
+    case 2:
+        CheckReadEndAdvInsideFile2(3); // Line 2152, Address: 0x2c2ac4
+        break; // Line 2153, Address: 0x2c2acc
+    case 3:
+        bhSetFontTexture(ap->ptr[0]); // Line 2155, Address: 0x2c2ad4
+        AllFreeAdvMemory(); // Line 2156, Address: 0x2c2adc
+        ap->Mode = 4; // Line 2157, Address: 0x2c2ae4
+        
+    case 4:
+        
+        RequestAdvInsideFileEx(0, 0); // Line 2161, Address: 0x2c2aec
+        ap->Mode = 5; // Line 2162, Address: 0x2c2af8
+        break; // Line 2163, Address: 0x2c2afc
+    case 5:
+        CheckReadEndAdvInsideFile2(6); // Line 2165, Address: 0x2c2b04
+        break; // Line 2166, Address: 0x2c2b0c
+    case 6:
+        ap->MsgPtr = AdvGetResourcePtr(ap->ptr[0], 0); // Line 2168, Address: 0x2c2b14
+        AdvEasySetupTextureBasic(AdvGetResourcePtr(ap->ptr[0], 2), 0, 0); // Line 2169, Address: 0x2c2b24
+        AdvEasySetupTextureBasic(AdvGetResourcePtr(ap->ptr[0], 3), 0, 1); // Line 2170, Address: 0x2c2b40
+        ap->PalNo = TransPvpData(AdvGetResourcePtr(ap->ptr[0], 1), ap->PalFlag); // Line 2171, Address: 0x2c2b5c, 0x2c2b7c 
+        AdvEasyTransTextureBasic(0, 2, 1); // Line 2172, Address: 0x2c2b74, 0x2c2b80 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        ap->Mode = 8; // Line 2183, Address: 0x2c2b88
+        
+        
+        break; // Line 2186, Address: 0x2c2b8c
+    case 8:
+    case 9:
+
+
+        
+
+
+
+
+
+
+
+        
+
+
+        
+
+
+
+
+        
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        ap->Mode = 11; // Line 2231, Address: 0x2c2b94
+        break; // Line 2232, Address: 0x2c2b98
+    case 10:
+        
+
+
+
+
+        
+
+
+
+        
+
+
+
+        
+
+
+
+
+
+
+
+        
+
+
+
+
+        
+
+
+        
+
+
+
+
+
+
+        ap->Mode = 11; // Line 2270, Address: 0x2c2ba0
+
+
+        
+
+
+
+
+        
+
+        break; // Line 2280, Address: 0x2c2ba4
+    case 11:
+        
+        switch (lState) { // Line 2283, Address: 0x2c2bac
+        case 0:
+
+
+
+            
+            pSysLoad = CreateSysLoadScreen(&SysLoad, NULL); // Line 2289, Address: 0x2c2bd0
+            
+            lState = 1; // Line 2291, Address: 0x2c2bf0
+            LoadCheck = 0; // Line 2292, Address: 0x2c2be8
+            
+            break;// Line 2294, Address: 0x2c2bf8
+        case 1:
+            LoadCheck = ExecuteSysLoadScreen(pSysLoad); // Line 2296, Address: 0x2c2c00
+            if (LoadCheck == 1) { // Line 2297, Address: 0x2c2c14
+                
+                ap->Mode = 15; // Line 2299, Address: 0x2c2c28
+                lState = 0; // Line 2300, Address: 0x2c2c30
+                LoadCheck = 0; // Line 2301, Address: 0x2c2c38
+                DefaultSetOption(1); // Line 2302, Address: 0x2c2c3c
+            } else { // Line 2303, Address: 0x2c2c44
+                if (LoadCheck == 2) { // Line 2304, Address: 0x2c2c4c
+                    
+                    ap->Mode = 15; // Line 2306, Address: 0x2c2c58
+                    lState = 0; // Line 2307, Address: 0x2c2c60
+                    LoadCheck = 0; // Line 2308, Address: 0x2c2c68
+                    ap->GenFlag = 1; // Line 2309, Address: 0x2c2c70
+                    
+                    switch (sys->ssd_reserve) { // Line 2311, Address: 0x2c2c74
+                    case 0:
+                        
+                        SetSoundMode(0); // Line 2314, Address: 0x2c2c98
+                        break; // Line 2315, Address: 0x2c2ca4
+                    case 1:
+                        SetSoundMode(1); // Line 2317, Address: 0x2c2cac
+                        break;
+                    }
+                }
+            } 
+        }
+        break; // Line 2323, Address: 0x2c2cb4
+    case 12:
+        
+
+
+
+
+
+        
+
+
+
+        
+
+
+        
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+        
+
+
+        
+
+
+
+
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+
+
+
+        
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        ap->Mode = 15; // Line 2408, Address: 0x2c2cbc
+        
+        break; // Line 2410, Address: 0x2c2cc0
+    case 13:
+        
+        ap->Mode = 15; // Line 2413, Address: 0x2c2cc8
+
+
+
+        
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        break; // Line 2432, Address: 0x2c2ccc
+    case 14:
+        CheckAdvScreenSaverStopKey(ap->PortId); // Line 2434, Address: 0x2c2cd4
+        DispVmWarningMessage(ap->MsgNo); // Line 2435, Address: 0x2c2cdc
+        break; // Line 2436, Address: 0x2c2ce4
+    case 15:
+        ap->Mode = 16; // Line 2438, Address: 0x2c2cec
+        break; // Line 2439, Address: 0x2c2cf0
+    case 16:
+        if (ap->GenFlag != 0) { // Line 2441, Address: 0x2c2cf8
+            SetAdjustDisplay(); // Line 2442, Address: 0x2c2d04
+        }
+
+
+        
+        RequestAdvFade(2, GetSamurai(50)); // Line 2447, Address: 0x2c2d0c
+        ap->Count = 0; // Line 2448, Address: 0x2c2d28
+        ap->Mode = 17; // Line 2449, Address: 0x2c2d24
+        
+        break; // Line 2451, Address: 0x2c2d2c
+    case 17:
+        if (CheckAdvFade() == 0) { // Line 2453, Address: 0x2c2d34
+            
+            
+            
+            
+            ap->Timer = 150.0f; // Line 2458, Address: 0x2c2d44
+            
+            
+            
+            
+            ap->Mode = 18; // Line 2463, Address: 0x2c2d4c
+        }
+        AdvEasySetTextureList(0); // Line 2465, Address: 0x2c2d54
+        AdvDwawOnePicture(TexNoDef[ap->Count]); // Line 2466, Address: 0x2c2d60
+        break; // Line 2467, Address: 0x2c2d74
+    case 18:
+        ap->Timer--; // Line 2469, Address: 0x2c2d7c, 0x2c2d90 
+        if (ap->Timer < 0) { // Line 2470, Address: 0x2c2d88, 0x2c2d94 
+            RequestAdvFade(3, GetSamurai(50)); // Line 2471, Address: 0x2c2da4
+            ap->Mode = 19; // Line 2472, Address: 0x2c2db8
+        }
+        AdvEasySetTextureList(0); // Line 2474, Address: 0x2c2dc0
+        AdvDwawOnePicture(TexNoDef[ap->Count]); // Line 2475, Address: 0x2c2dc8
+        break; // Line 2476, Address: 0x2c2ddc
+    case 19:
+        if (CheckAdvFade() == 0) { // Line 2478, Address: 0x2c2de4
+            ap->Count++; // Line 2479, Address: 0x2c2df4
+            if (TexNoDef[ap->Count] < 0) { // Line 2480, Address: 0x2c2e00
+                ap->Mode = -1; // Line 2481, Address: 0x2c2e18
+            } else { // Line 2482, Address: 0x2c2e1c
+                RequestAdvFade(2, GetSamurai(50)); // Line 2483, Address: 0x2c2e24
+                ap->Mode = 17; // Line 2484, Address: 0x2c2e3c
+            }
+        } else { // Line 2486, Address: 0x2c2e40
+            AdvEasySetTextureList(0); // Line 2487, Address: 0x2c2e48
+            AdvDwawOnePicture(TexNoDef[ap->Count]); // Line 2488, Address: 0x2c2e54
+        }
+        break;
+    }
+    
+    if (ap->Mode == -1) { // Line 2493, Address: 0x2c2e68
+        AdvEasyReleaseAllTexture(); // Line 2494, Address: 0x2c2e78
+        AllFreeAdvMemory(); // Line 2495, Address: 0x2c2e80
+        ap->Mode = 0; // Line 2496, Address: 0x2c2e88
+        ap->Active = 0; // Line 2497, Address: 0x2c2e90
+        ReturnCode = 1; // Line 2498, Address: 0x2c2e8c
+    }
+    
+    return ReturnCode; // Line 2501, Address: 0x2c2e94
+} // Line 2502, Address: 0x2c2e98
+
+
+
+
+
+
+
 
 /* 99.94% match */
 int Adv_CapcomLogo() { // Line 2512, Address: 0x2c2eb0
@@ -2363,6 +2645,9 @@ int Adv_CapcomLogo() { // Line 2512, Address: 0x2c2eb0
     return ReturnCode; // Line 2645, Address: 0x2c3140
 } // Line 2646, Address: 0x2c3144
 
+
+
+
 /* 100% match */ 
 void ResetFlushPlate() {
     Unknown21* ap = (Unknown21*)&AdvWork; // Line 2653, Address: 0x2c3160
@@ -2370,6 +2655,8 @@ void ResetFlushPlate() {
     ap->FlushSpeed2 = 0; // Line 2655, Address: 0x2c3168
     ap->FlushCount2 = 0; // Line 2656, Address: 0x2c316c
 }
+
+
 
 /* 100% match */ 
 void FlushPlate() { // Line 2662, Address: 0x2c3180, 0x2c3188 
