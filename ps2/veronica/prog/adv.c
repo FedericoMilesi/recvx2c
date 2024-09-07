@@ -1996,33 +1996,101 @@ float AutoSaveLoadEasyDispMessage(float PosX, float PosY, unsigned char* ucpMsbT
     }
 } // Line 1997, Address: 0x2c2878
 
-// 
-// Start address: 0x2c28b0
-int DispVmWarningMessage(int MsgId)
-{
-	_anon31* mp;
-	_anon8* ap;
-	// Line 2071, Address: 0x2c28b0, Func Offset: 0
-	// Line 2072, Address: 0x2c28b8, Func Offset: 0x8
-	// Line 2070, Address: 0x2c28c0, Func Offset: 0x10
-	// Line 2072, Address: 0x2c28c4, Func Offset: 0x14
-	// Line 2070, Address: 0x2c28cc, Func Offset: 0x1c
-	// Line 2072, Address: 0x2c28d0, Func Offset: 0x20
-	// Line 2070, Address: 0x2c28d4, Func Offset: 0x24
-	// Line 2072, Address: 0x2c28d8, Func Offset: 0x28
-	// Line 2074, Address: 0x2c28dc, Func Offset: 0x2c
-	// Line 2075, Address: 0x2c28e8, Func Offset: 0x38
-	// Line 2076, Address: 0x2c2914, Func Offset: 0x64
-	// Line 2077, Address: 0x2c2918, Func Offset: 0x68
-	// Line 2076, Address: 0x2c291c, Func Offset: 0x6c
-	// Line 2077, Address: 0x2c2920, Func Offset: 0x70
-	// Line 2081, Address: 0x2c2928, Func Offset: 0x78
-	// Line 2082, Address: 0x2c2938, Func Offset: 0x88
-	// Line 2083, Address: 0x2c2944, Func Offset: 0x94
-	// Line 2086, Address: 0x2c295c, Func Offset: 0xac
-	// Line 2087, Address: 0x2c2960, Func Offset: 0xb0
-	// Func End, Address: 0x2c2970, Func Offset: 0xc0
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 100% match */
+int DispVmWarningMessage(int MsgId) { // Line 2070, Address: 0x2c28c0, 0x2c28cc, 0x2c28d4
+    Unknown21* ap = (Unknown21*)&AdvWork; // Line 2071, Address: 0x2c28b0
+    Unknown32* mp = &AdvVmMsgDef[MsgId]; // Line 2072, Address: 0x2c28b8, 0x2c28c4, 0x2c28d0, 0x2c28d8
+    
+    if ((mp->MsgType != 0) && ((Pad[ap->PortId].press & 0x800))) { // Line 2074, Address: 0x2c28dc
+        ap->Mode = ap->Mode2 = ap->NextMode; // Line 2075, Address: 0x2c28e8
+        return 1; // Line 2076, Address: 0x2c2914, 0x2c291c
+    } // Line 2077, Address: 0x2c2918, 0x2c2920
+
+
+    
+    AdvEasyDispMessage(mp->Sx, mp->Sy, mp->StartMsgNo); // Line 2081, Address: 0x2c2928
+    if (mp->NaviMsgNo >= 0) { // Line 2082, Address: 0x2c2938
+        AdvEasyDispMessage(-1.0f, 400.0f, mp->NaviMsgNo); // Line 2083, Address: 0x2c2944
+    }
+
+    return 0; // Line 2086, Address: 0x2c295c
+} // Line 2087, Address: 0x2c2960
+
+
+
+
+
+
 
 /* 100% match */
 void DefaultSetOption() { // Line 2096, Address: 0x2c2970

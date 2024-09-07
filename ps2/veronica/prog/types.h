@@ -18,6 +18,15 @@ typedef enum SDE_DATA_TYPE
 	SDE_DATA_TYPE_FX_PRG_WRK = 0x57504653
 } SDE_DATA_TYPE;
 
+typedef struct Unknown32
+{
+	float Sx;
+	float Sy;
+	int StartMsgNo;
+	int NaviMsgNo;
+	int MsgType;
+} Unknown32;
+
 typedef struct Unknown31
 {
 	float x;
