@@ -18,6 +18,13 @@ typedef enum SDE_DATA_TYPE
 	SDE_DATA_TYPE_FX_PRG_WRK = 0x57504653
 } SDE_DATA_TYPE;
 
+typedef struct Vector3 {
+    float x;
+    float y;
+    float z;
+}
+Vector3;
+
 typedef struct CONFIGFILE
 {
 	unsigned int ssd_ver;
@@ -336,35 +343,6 @@ typedef struct Unknown24
 	unsigned int GsTexClut;
 } Unknown24;
 
-typedef struct MEMORYCARDPORT
-{
-	int lCrntType;
-	int lPrevType;
-	int lFreeSize;
-	int lFormatType;
-} MEMORYCARDPORT;
-
-
-typedef struct MEMORYCARDSTATE
-{
-	unsigned int ulState;
-	unsigned int ulError;
-	unsigned int ulMcSubState;
-	unsigned int ulFileSize;
-	int lCurrentPort;
-	int lOpenFileNumber;
-	int lSelectFileNumber;
-	int lOpenMode;
-	unsigned short usMcSysState;
-	void* vpAddr;
-	char cCurrentDir[50];
-	char cOpenFileName[32];
-	char cRetryCount;
-	char cMcCheckFlag;
-	char cCheckMcFlag;
-	MEMORYCARDPORT Port[2];
-} MEMORYCARDSTATE;
-
 
 typedef struct Unknown22
 {
@@ -387,14 +365,6 @@ typedef struct Unknown22
 	short y2;
 	short Calibrate;
 } Unknown22;
-
-
-typedef struct Vector3 {
-    float x;
-    float y;
-    float z;
-}
-Vector3;
 
 
 typedef struct Vector3Col {
