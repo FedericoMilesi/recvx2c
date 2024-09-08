@@ -4894,14 +4894,10 @@ void SetAdjustDisplay()
 	// Func End, Address: 0x297d50, Func Offset: 0x10
 }
 
-// 
-// Start address: 0x297d50
-void RequestAdjustDisplay(int AdjustX, int AdjustY)
-{
-	// Line 4923, Address: 0x297d50, Func Offset: 0
-	// Line 4924, Address: 0x297d5c, Func Offset: 0xc
-	// Line 4925, Address: 0x297d64, Func Offset: 0x14
-	// Func End, Address: 0x297d6c, Func Offset: 0x1c
+/* 100% match */
+void RequestAdjustDisplay(int AdjustX, int AdjustY) { // Line 4923, Address: 0x297d50
+    sys->adjust_x = AdjustX; sys->adjust_y = AdjustY; // Line 4924, Address: 0x297d5c
+    SetAdjustDisplay(); // Line 4925, Address: 0x297d64
 }
 
 /* 100% match */
