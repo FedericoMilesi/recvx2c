@@ -4932,13 +4932,8 @@ void ExitPlayLogSystem()
 	// Func End, Address: 0x297dd8, Func Offset: 0x8
 }
 
-// 
-// Start address: 0x297de0
-void ReadPlayLog()
-{
-	// Line 4987, Address: 0x297de0, Func Offset: 0
-	// Func End, Address: 0x297de8, Func Offset: 0x8
-}
+/* empty */
+void ReadPlayLog() { } // Line 4987, Address: 0x297de0
 
 /* empty */
 void WritePlayLog() { } // Line 5008, Address: 0x297df0
