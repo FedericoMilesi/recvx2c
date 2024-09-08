@@ -4885,13 +4885,9 @@ void StopVibrationEx()
 	// Func End, Address: 0x297d3c, Func Offset: 0xc
 }
 
-// 
-// Start address: 0x297d40
-void SetAdjustDisplay()
-{
-	// Line 4918, Address: 0x297d40, Func Offset: 0
-	// Line 4919, Address: 0x297d48, Func Offset: 0x8
-	// Func End, Address: 0x297d50, Func Offset: 0x10
+/* 100% match */
+void SetAdjustDisplay() { // Line 4918, Address: 0x297d40
+    SystemAdjustFlag = 1; // Line 4919, Address: 0x297d48
 }
 
 /* 100% match */
