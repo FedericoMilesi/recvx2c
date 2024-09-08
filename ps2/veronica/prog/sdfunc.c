@@ -4619,13 +4619,9 @@ int GetInsideFileSize(unsigned int PartitionId, unsigned int FileId)
 	// Func End, Address: 0x2973e0, Func Offset: 0x50
 }
 
-// 
-// Start address: 0x2973e0
-int GetReadFileStatus()
-{
-	// Line 4415, Address: 0x2973e0, Func Offset: 0
-	// Line 4416, Address: 0x2973e4, Func Offset: 0x4
-	// Func End, Address: 0x2973ec, Func Offset: 0xc
+/* 100% match */
+int GetReadFileStatus() { // Line 4415, Address: 0x2973e0
+    return FileReadStatus; // Line 4416, Address: 0x2973e4
 }
 
 // 
