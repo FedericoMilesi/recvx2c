@@ -2208,12 +2208,9 @@ void bhReleaseFreeMemory(void* mp)
 	// Func End, Address: 0x292428, Func Offset: 0x18
 }
 
-// 
-// Start address: 0x292430
-void ExitApplication()
-{
-	// Line 241, Address: 0x292430, Func Offset: 0
-	// Func End, Address: 0x292438, Func Offset: 0x8
+/* 100% match */
+void ExitApplication() { // Line 241, Address: 0x292430, Func Offset: 0
+    njUserExit();
 }
 
 // 
