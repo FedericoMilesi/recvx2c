@@ -2199,13 +2199,9 @@ void ExitPlayLogSystem();
 void ReadPlayLog();
 void WritePlayLog();
 
-// 
-// Start address: 0x292410
-void bhReleaseFreeMemory(void* mp)
-{
-	// Line 236, Address: 0x292410, Func Offset: 0
-	// Line 237, Address: 0x292420, Func Offset: 0x10
-	// Func End, Address: 0x292428, Func Offset: 0x18
+/* 100% match */
+void bhReleaseFreeMemory(void* mp) { // Line 236, Address: 0x292410, Func Offset: 0
+    sys->memp = mp; // Line 237, Address: 0x292420, Func Offset: 0x10
 }
 
 /* 100% match */
