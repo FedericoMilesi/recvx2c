@@ -4,21 +4,43 @@ import json
 import argparse
 import sys
 
+# ANSI escape codes for colored text
+class Colors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+def colored_output(message, color=Colors.ENDC, brackets=True, bold=False):
+    """Wrapper function to print colored text with optional brackets and bold style."""
+    if brackets:
+        message = f"[{message}]"
+    if bold:
+        message = f"{Colors.BOLD}{message}{Colors.ENDC}"
+    print(f"{color}{message}{Colors.ENDC}")
+
 def load_json(filename):
     """Load JSON data from a file."""
+    colored_output(f"Loading JSON data from: {filename}", color=Colors.OKCYAN)
     with open(filename, 'r') as f:
         return json.load(f)
 
 
 def write_json(filename, data):
     """Write JSON data to a file."""
+    colored_output(f"Writing JSON data to: {filename}", color=Colors.OKCYAN)
     with open(filename, 'w') as f:
         json.dump(data, f, indent=4)
 
 
 def run_command(command, env_vars, log_file='build.log'):
     """Run a shell command with specified environment variables and log output."""
-    print(f"Running: {' '.join(command)}")
+    colored_output(f"Running: {' '.join(command)}", color=Colors.OKBLUE)
 
     env = os.environ.copy()
     env.update(env_vars)
@@ -31,10 +53,12 @@ def run_command(command, env_vars, log_file='build.log'):
         f.write(result.stderr.decode('utf-8'))
 
     if result.returncode != 0:
-        print(f"\nError:\n\n{result.stderr.decode('utf-8')}\n")
+        colored_output("Error:", color=Colors.FAIL, bold=True)
+        colored_output(result.stderr.decode('utf-8'), color=Colors.FAIL, brackets=False)
         return False  # Return False on failure
-    else: 
-        print(f"\nSuccess:\n\n{result.stdout.decode('utf-8')}\n")
+    else:
+        colored_output("Success:", color=Colors.OKGREEN, bold=True)
+        colored_output(result.stdout.decode('utf-8'), color=Colors.OKGREEN, brackets=False)
         return True  # Return True on success
     
 
@@ -43,7 +67,7 @@ def create_compile_command_entry(compiler, source, object_file, include_dirs, de
     valid_include_dirs = [os.path.abspath(inc) for inc in include_dirs if os.path.isdir(inc)]
     invalid_include_dirs = [inc for inc in include_dirs if not os.path.isdir(inc)]
     if invalid_include_dirs:
-        print(f"Warning: Invalid include directories: {invalid_include_dirs}")
+        colored_output(f"Warning: Invalid include directories: {invalid_include_dirs}", color=Colors.WARNING)
 
     return {
         "directory": os.getcwd(),
@@ -110,11 +134,11 @@ def main(args):
     }
 
     if not actions["compile"]:
-        print("Skipping compilation.\n\n\n")
+        colored_output("Skipping compilation.", color=Colors.WARNING, bold=True)
         return
     else: 
         objects, compile_commands, build_failed = compile_source_files(compiler, sources, compiler_flags, include_dirs, defines, compiler_env)
-        print(f"Objects: {objects}\n\n\n")
+        colored_output(f"Objects: {objects}", color=Colors.OKCYAN)
     
     # Even if the compilation fails, we want to generate the compile_commands.json for IDEs
     write_json('compile_commands.json', compile_commands)
@@ -122,8 +146,7 @@ def main(args):
     # If the compilation succeeded, attempt to link the objects
     if not build_failed:
         if not actions["link"]:
-            print("Skipping linking.\n\n\n")
-            return
+            colored_output("Skipping linking.", color=Colors.WARNING, bold=True)
 
         else: 
             linker_env = {
@@ -133,12 +156,11 @@ def main(args):
             output_elf = link_objects(linker, objects, linker_flags, libraries, library_dirs, linker_env)
 
             if output_elf:
-                print(f"Build completed successfully: {output_elf}\n\n\n")
+                colored_output(f"Build completed successfully: {output_elf}", color=Colors.OKGREEN, bold=True)
             else:
-                print("Build failed during linking.\n\n\n")
+                colored_output("Build failed during linking.", color=Colors.FAIL, bold=True)
     else:
-        print("Build failed during compilation.\n\n\n")
-
+        colored_output("Build failed during compilation.", color=Colors.FAIL, bold=True)
 
 if __name__ == "__main__":
     # Argument parser setup
