@@ -21,7 +21,7 @@ typedef struct tagICONINFORMATION;
 typedef struct _anon12;
 typedef struct tagMEMORYCARDSTATE;
 typedef struct _anon13;
-typedef struct _anon14;
+
 typedef struct _anon15;
 typedef struct _anon16;
 typedef struct _anon17;
@@ -576,7 +576,7 @@ struct _anon11
 
 struct tagICONINFORMATION
 {
-	_anon14 icon;
+	sceMcIconSys icon;
 };
 
 struct _anon12
@@ -1013,23 +1013,23 @@ struct _anon13
 	float sfct;
 };
 
-struct _anon14
-{
-	unsigned char Head[4];
-	unsigned short Reserv1;
-	unsigned short OffsLF;
-	unsigned int Reserv2;
-	unsigned int TransRate;
-	int BgColor[4][4];
-	float LightDir[4][3];
-	float LightColor[4][3];
-	float Ambient[4];
-	unsigned char TitleName[68];
-	unsigned char FnameView[64];
-	unsigned char FnameCopy[64];
-	unsigned char FnameDel[64];
-	unsigned char Reserve3[512];
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon15
 {

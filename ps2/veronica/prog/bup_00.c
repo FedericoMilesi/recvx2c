@@ -28,7 +28,7 @@ typedef struct _anon19;
 typedef struct _anon20;
 typedef struct _anon21;
 typedef struct _anon22;
-typedef struct _anon23;
+
 typedef struct _anon24;
 typedef struct _anon25;
 typedef union _anon26;
@@ -1097,23 +1097,23 @@ struct _anon22
 	unsigned char prm3;
 };
 
-struct _anon23
-{
-	unsigned char Head[4];
-	unsigned short Reserv1;
-	unsigned short OffsLF;
-	unsigned int Reserv2;
-	unsigned int TransRate;
-	int BgColor[4][4];
-	float LightDir[4][3];
-	float LightColor[4][3];
-	float Ambient[4];
-	unsigned char TitleName[68];
-	unsigned char FnameView[64];
-	unsigned char FnameCopy[64];
-	unsigned char FnameDel[64];
-	unsigned char Reserve3[512];
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon24
 {
@@ -1208,7 +1208,7 @@ struct _anon30
 
 struct tagICONINFORMATION
 {
-	_anon23 icon;
+	sceMcIconSys icon;
 };
 
 struct tagSAVE_SCREEN

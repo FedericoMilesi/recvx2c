@@ -50,7 +50,7 @@ typedef struct _anon39;
 typedef struct tagSELECTFILEWINDOW;
 typedef struct _anon40;
 typedef struct _anon41;
-typedef struct _anon42;
+
 typedef struct _anon43;
 typedef struct _anon44;
 typedef struct _anon45;
@@ -1057,7 +1057,7 @@ struct _anon34
 
 struct tagICONINFORMATION
 {
-	_anon42 icon;
+	sceMcIconSys icon;
 };
 
 struct _anon35
@@ -1627,23 +1627,23 @@ struct _anon41
 	int param;
 };
 
-struct _anon42
-{
-	unsigned char Head[4];
-	unsigned short Reserv1;
-	unsigned short OffsLF;
-	unsigned int Reserv2;
-	unsigned int TransRate;
-	int BgColor[4][4];
-	float LightDir[4][3];
-	float LightColor[4][3];
-	float Ambient[4];
-	unsigned char TitleName[68];
-	unsigned char FnameView[64];
-	unsigned char FnameCopy[64];
-	unsigned char FnameDel[64];
-	unsigned char Reserve3[512];
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon43
 {

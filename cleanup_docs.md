@@ -8,3 +8,4 @@
 | sceVu0FMATRIX | Found on SCE | `<sce>/ee/include/libvu0.h` |
 | NJS_POINT3 | Found on Katana | `<katana>/ninjastr.h` | 
 | NJS_MATRIX | Found on Katana | `<katana>/ninjadef.h` |
+| sceMcIconSys | Found on SCE | `<sce>/ee/include/libmc.h` |

@@ -22,7 +22,7 @@ typedef struct _anon16;
 typedef struct BH_PWORK;
 typedef struct _anon17;
 typedef struct tagMEMORYCARDSTATE;
-typedef struct _anon18;
+
 typedef struct _anon19;
 typedef struct _anon20;
 typedef struct _anon21;
@@ -367,7 +367,7 @@ struct _anon2
 
 struct tagICONINFORMATION
 {
-	_anon18 icon;
+	sceMcIconSys icon;
 };
 
 struct _anon3
@@ -1116,23 +1116,23 @@ struct tagMEMORYCARDSTATE
 	tagMEMORYCARDPORT Port[2];
 };
 
-struct _anon18
-{
-	unsigned char Head[4];
-	unsigned short Reserv1;
-	unsigned short OffsLF;
-	unsigned int Reserv2;
-	unsigned int TransRate;
-	int BgColor[4][4];
-	float LightDir[4][3];
-	float LightColor[4][3];
-	float Ambient[4];
-	unsigned char TitleName[68];
-	unsigned char FnameView[64];
-	unsigned char FnameCopy[64];
-	unsigned char FnameDel[64];
-	unsigned char Reserve3[512];
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon19
 {

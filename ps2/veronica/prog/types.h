@@ -59,27 +59,27 @@ typedef struct SAVEFILE
 	unsigned int CheckSam;
 } SAVEFILE;
 
-typedef struct Unknown33
-{
-	unsigned char Head[4];
-	unsigned short Reserv1;
-	unsigned short OffsLF;
-	unsigned int Reserv2;
-	unsigned int TransRate;
-	int BgColor[4][4];
-	float LightDir[4][3];
-	float LightColor[4][3];
-	float Ambient[4];
-	unsigned char TitleName[68];
-	unsigned char FnameView[64];
-	unsigned char FnameCopy[64];
-	unsigned char FnameDel[64];
-	unsigned char Reserve3[512];
-} Unknown33;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 typedef struct ICONINFORMATION
 {
-	Unknown33 icon;
+	sceMcIconSys icon;
 } ICONINFORMATION;
 
 typedef struct MEMORYCARDPORT
