@@ -31,11 +31,12 @@ def run_command(command, env_vars, log_file='build.log'):
         f.write(result.stderr.decode('utf-8'))
 
     if result.returncode != 0:
-        print(f"Error: {result.stderr.decode('utf-8')}")
+        print(f"\nError:\n\n{result.stderr.decode('utf-8')}\n")
         return False  # Return False on failure
+    else: 
+        print(f"\nSuccess:\n\n{result.stdout.decode('utf-8')}\n")
+        return True  # Return True on success
     
-    return True  # Return True on success
-
 
 def create_compile_command_entry(compiler, source, object_file, include_dirs, defines):
     """Create a compile command entry for compile_commands.json."""
@@ -100,31 +101,43 @@ def main(args):
     libraries = env_vars["libs"]
     sources = env_vars["source_files"]
     defines = env_vars.get("defines", [])
+    actions = env_vars.get("actions", {"compile": True, "link": True})
 
     # Compile source files
     compiler_env = {
         "MWLibraries": ";".join(library_dirs),
         "MWLibraryFiles": ""
     }
-    objects, compile_commands, build_failed = compile_source_files(compiler, sources, compiler_flags, include_dirs, defines, compiler_env)
 
+    if not actions["compile"]:
+        print("Skipping compilation.\n\n\n")
+        return
+    else: 
+        objects, compile_commands, build_failed = compile_source_files(compiler, sources, compiler_flags, include_dirs, defines, compiler_env)
+        print(f"Objects: {objects}\n\n\n")
+    
     # Even if the compilation fails, we want to generate the compile_commands.json for IDEs
     write_json('compile_commands.json', compile_commands)
 
     # If the compilation succeeded, attempt to link the objects
     if not build_failed:
-        linker_env = {
-            "MWLibraries": ";".join(library_dirs),
-            "MWLibraryFiles": ""
-        }
-        output_elf = link_objects(linker, objects, linker_flags, libraries, library_dirs, linker_env)
+        if not actions["link"]:
+            print("Skipping linking.\n\n\n")
+            return
 
-        if output_elf:
-            print(f"Build completed successfully: {output_elf}")
-        else:
-            print("Build failed during linking.")
+        else: 
+            linker_env = {
+                "MWLibraries": ";".join(library_dirs),
+                "MWLibraryFiles": ""
+            }
+            output_elf = link_objects(linker, objects, linker_flags, libraries, library_dirs, linker_env)
+
+            if output_elf:
+                print(f"Build completed successfully: {output_elf}\n\n\n")
+            else:
+                print("Build failed during linking.\n\n\n")
     else:
-        print("Build failed during compilation.")
+        print("Build failed during compilation.\n\n\n")
 
 
 if __name__ == "__main__":
