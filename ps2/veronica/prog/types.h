@@ -2,7 +2,7 @@
 
 #define	CheckCmdReq(vol, pan, pitch)	(0x00|0|((vol)&1)|(((pan)&1)<<1)|(((pitch)&1)<<2))
 
-typedef float	sceVu0FMATRIX[4][4];
+
 
 typedef struct Vector3 {
     float x;
