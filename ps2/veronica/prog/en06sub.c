@@ -8,7 +8,7 @@ typedef struct _anon4;
 typedef struct _anon5;
 typedef struct _anon6;
 typedef struct _anon7;
-typedef struct _anon8;
+typedef struct NJS_POINT3;
 typedef struct _anon9;
 typedef struct _anon10;
 
@@ -17,8 +17,8 @@ typedef void(*type_12)(BH_PWORK*);
 
 typedef void(*type_1)(BH_PWORK*)[3];
 typedef char type_2[8];
-typedef _anon8 type_3[3];
-typedef _anon8 type_4[3][4];
+typedef NJS_POINT3 type_3[3];
+typedef NJS_POINT3 type_4[3][4];
 typedef void* type_5[2];
 typedef unsigned int type_6[2];
 typedef float type_7[3];
@@ -234,7 +234,7 @@ struct _anon6
 {
 	int* vlist;
 	short* plist;
-	_anon8 center;
+	NJS_POINT3 center;
 	float r;
 };
 
@@ -248,12 +248,12 @@ struct _anon7
 	_anon5* owP;
 };
 
-struct _anon8
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct _anon9
 {
@@ -276,14 +276,14 @@ struct _anon9
 
 struct _anon10
 {
-	_anon8 c1;
-	_anon8 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r;
 };
 
 void(*bhEne06s_Mode0)(BH_PWORK*)[3];
 void(*bhEne06s_MoveMode2)(BH_PWORK*)[2];
-_anon8 CollisionOffset[3][4];
+NJS_POINT3 CollisionOffset[3][4];
 
 void bhEne06s(BH_PWORK* epw);
 void bhEne06s_Init(BH_PWORK* epw);
@@ -348,9 +348,9 @@ void bhEne06s_MV00(BH_PWORK* epw)
 {
 	int ang;
 	float out;
-	_anon8 ov;
-	_anon8 vd;
-	_anon8 v;
+	NJS_POINT3 ov;
+	NJS_POINT3 vd;
+	NJS_POINT3 v;
 	// Line 172, Address: 0x1bf3e0, Func Offset: 0
 	// Line 173, Address: 0x1bf3f8, Func Offset: 0x18
 	// Line 175, Address: 0x1bf424, Func Offset: 0x44
@@ -413,9 +413,9 @@ void bhEne06s_MV01(BH_PWORK* epw)
 {
 	int ang;
 	float out;
-	_anon8 ov;
-	_anon8 vd;
-	_anon8 avec;
+	NJS_POINT3 ov;
+	NJS_POINT3 vd;
+	NJS_POINT3 avec;
 	// Line 248, Address: 0x1bf740, Func Offset: 0
 	// Line 251, Address: 0x1bf754, Func Offset: 0x14
 	// Line 253, Address: 0x1bf784, Func Offset: 0x44
@@ -529,7 +529,7 @@ void bhEne06s_WallCheck(BH_PWORK* epw)
 {
 	_anon9* hp;
 	int i;
-	_anon8 vec;
+	NJS_POINT3 vec;
 	// Line 404, Address: 0x1bfcd0, Func Offset: 0
 	// Line 409, Address: 0x1bfce4, Func Offset: 0x14
 	// Line 411, Address: 0x1bfcf8, Func Offset: 0x28

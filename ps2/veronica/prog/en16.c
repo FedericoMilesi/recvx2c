@@ -14,7 +14,7 @@ typedef struct _anon10;
 typedef struct _anon11;
 typedef struct _anon12;
 typedef struct _anon13;
-typedef struct _anon14;
+typedef struct NJS_POINT3;
 typedef struct _anon15;
 typedef struct _anon16;
 typedef struct _anon17;
@@ -138,7 +138,7 @@ typedef short type_97[4];
 typedef unsigned char type_98[4];
 typedef _anon25 type_99[16];
 typedef unsigned int type_100[32];
-typedef _anon14 type_101[32];
+typedef NJS_POINT3 type_101[32];
 typedef _anon0* type_102[512];
 typedef _anon0* type_103[128];
 typedef _anon0* type_104[512];
@@ -542,9 +542,9 @@ struct _anon10
 	float l;
 	float rn;
 	float rmax;
-	_anon14 wp_fps1;
-	_anon14 wp_fps2;
-	_anon14 wp_cps;
+	NJS_POINT3 wp_fps1;
+	NJS_POINT3 wp_fps2;
+	NJS_POINT3 wp_cps;
 	unsigned char ltp;
 	unsigned char lr;
 	unsigned char lg;
@@ -593,12 +593,12 @@ struct _anon13
 	void* p[2];
 };
 
-struct _anon14
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct _anon15
 {
@@ -723,7 +723,7 @@ struct _anon18
 	unsigned int mp_flg[8];
 	unsigned int itm[384];
 	unsigned int ply_stflg[4];
-	_anon14 ply_pos;
+	NJS_POINT3 ply_pos;
 	int ply_ang;
 	char ply_wno[4];
 	short ply_hp[4];
@@ -948,8 +948,8 @@ struct _anon18
 	BH_PWORK* plp;
 	_anon11* pl_htp;
 	int costume;
-	_anon14 hd_pos;
-	_anon14 apos;
+	NJS_POINT3 hd_pos;
+	NJS_POINT3 apos;
 	_anon11* ahtp;
 	int mwal_n;
 	int metc_n;
@@ -1026,7 +1026,7 @@ struct _anon18
 	unsigned char ufo_md;
 	unsigned char ufo_flg;
 	short ufo_oidx;
-	_anon14 ufo_pos;
+	NJS_POINT3 ufo_pos;
 	unsigned int opt_flg;
 	unsigned short opt_md0;
 	unsigned short opt_md1;
@@ -1053,7 +1053,7 @@ struct _anon18
 	_anon25 gatc[16];
 	int ght_ct;
 	unsigned int ghtc[32];
-	_anon14 ghtp[32];
+	NJS_POINT3 ghtp[32];
 	unsigned short db_md0;
 	unsigned short db_md1;
 	char db_stgno;
@@ -1101,8 +1101,8 @@ struct _anon20
 struct _anon21
 {
 	float mtrx[16];
-	_anon14 pnt;
-	_anon14 vctr;
+	NJS_POINT3 pnt;
+	NJS_POINT3 vctr;
 	int stat;
 	int reserve;
 	_anon26 ltcal;
@@ -1111,7 +1111,7 @@ struct _anon21
 
 struct _anon22
 {
-	_anon14 ps;
+	NJS_POINT3 ps;
 	float nr;
 	float fr;
 	float cr;
@@ -1123,7 +1123,7 @@ struct _anon23
 {
 	int* vlist;
 	short* plist;
-	_anon14 center;
+	NJS_POINT3 center;
 	float r;
 };
 
@@ -1135,8 +1135,8 @@ struct _anon24
 
 struct _anon25
 {
-	_anon14 c1;
-	_anon14 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r1;
 	float r2;
 };
@@ -1155,9 +1155,9 @@ struct _anon26
 	float intns;
 	int exp;
 	int reserve;
-	_anon14 lpnt;
-	_anon14 lvctr;
-	_anon14 lmvctr;
+	NJS_POINT3 lpnt;
+	NJS_POINT3 lvctr;
+	NJS_POINT3 lmvctr;
 	_anon19 atten;
 	_anon19 amb;
 	_anon19 dif;
@@ -1252,14 +1252,14 @@ struct _anon32
 
 struct _anon33
 {
-	_anon14 c;
+	NJS_POINT3 c;
 	float r;
 };
 
 struct _anon34
 {
-	_anon14 c1;
-	_anon14 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r;
 };
 
@@ -1280,8 +1280,8 @@ void bhEne16_MV00(BH_PWORK* epw);
 void bhEne16_MV01(BH_PWORK* epw);
 void bhEne16_MV02(BH_PWORK* epw);
 int bhEne16_GetEffNum(BH_PWORK* epw);
-_anon14* bhEne16_GetEffPos(BH_PWORK* epw);
-void bhEne16_AddEffPos(BH_PWORK* epw, _anon14* pos);
+NJS_POINT3* bhEne16_GetEffPos(BH_PWORK* epw);
+void bhEne16_AddEffPos(BH_PWORK* epw, NJS_POINT3* pos);
 
 // 
 // Start address: 0x1e9cc0
@@ -1407,8 +1407,8 @@ void bhEne16_MV02(BH_PWORK* epw)
 {
 	_anon27 gap;
 	_anon11* hp;
-	_anon14 pos;
-	_anon14 v;
+	NJS_POINT3 pos;
+	NJS_POINT3 v;
 	float spd_now;
 	float spd;
 	float mov;
@@ -1605,7 +1605,7 @@ int bhEne16_GetEffNum(BH_PWORK* epw)
 
 // 
 // Start address: 0x1eaa90
-_anon14* bhEne16_GetEffPos(BH_PWORK* epw)
+NJS_POINT3* bhEne16_GetEffPos(BH_PWORK* epw)
 {
 	// Line 560, Address: 0x1eaa90, Func Offset: 0
 	// Line 561, Address: 0x1eaa94, Func Offset: 0x4
@@ -1614,7 +1614,7 @@ _anon14* bhEne16_GetEffPos(BH_PWORK* epw)
 
 // 
 // Start address: 0x1eaaa0
-void bhEne16_AddEffPos(BH_PWORK* epw, _anon14* pos)
+void bhEne16_AddEffPos(BH_PWORK* epw, NJS_POINT3* pos)
 {
 	int i;
 	// Line 574, Address: 0x1eaaa0, Func Offset: 0

@@ -35,7 +35,7 @@ typedef struct _anon31;
 typedef struct _anon32;
 typedef struct _anon33;
 typedef struct _anon34;
-typedef struct _anon35;
+typedef struct NJS_POINT3;
 typedef struct _anon36;
 typedef struct _anon37;
 typedef struct _anon38;
@@ -198,7 +198,7 @@ typedef unsigned int type_142[32];
 typedef unsigned int type_143[4];
 typedef char type_144[3];
 typedef char type_145[3][2];
-typedef _anon35 type_146[32];
+typedef NJS_POINT3 type_146[32];
 typedef char type_147[3][2][4];
 typedef _anon0* type_148[512];
 typedef _anon0* type_149[128];
@@ -729,7 +729,7 @@ struct _anon11
 	unsigned int mp_flg[8];
 	unsigned int itm[384];
 	unsigned int ply_stflg[4];
-	_anon35 ply_pos;
+	NJS_POINT3 ply_pos;
 	int ply_ang;
 	char ply_wno[4];
 	short ply_hp[4];
@@ -954,8 +954,8 @@ struct _anon11
 	BH_PWORK* plp;
 	_anon22* pl_htp;
 	int costume;
-	_anon35 hd_pos;
-	_anon35 apos;
+	NJS_POINT3 hd_pos;
+	NJS_POINT3 apos;
 	_anon22* ahtp;
 	int mwal_n;
 	int metc_n;
@@ -1032,7 +1032,7 @@ struct _anon11
 	unsigned char ufo_md;
 	unsigned char ufo_flg;
 	short ufo_oidx;
-	_anon35 ufo_pos;
+	NJS_POINT3 ufo_pos;
 	unsigned int opt_flg;
 	unsigned short opt_md0;
 	unsigned short opt_md1;
@@ -1059,7 +1059,7 @@ struct _anon11
 	_anon36 gatc[16];
 	int ght_ct;
 	unsigned int ghtc[32];
-	_anon35 ghtp[32];
+	NJS_POINT3 ghtp[32];
 	unsigned short db_md0;
 	unsigned short db_md1;
 	char db_stgno;
@@ -1268,9 +1268,9 @@ struct _anon20
 	float l;
 	float rn;
 	float rmax;
-	_anon35 wp_fps1;
-	_anon35 wp_fps2;
-	_anon35 wp_cps;
+	NJS_POINT3 wp_fps1;
+	NJS_POINT3 wp_fps2;
+	NJS_POINT3 wp_cps;
 	unsigned char ltp;
 	unsigned char lr;
 	unsigned char lg;
@@ -1413,8 +1413,8 @@ struct _anon29
 struct _anon30
 {
 	float mtrx[16];
-	_anon35 pnt;
-	_anon35 vctr;
+	NJS_POINT3 pnt;
+	NJS_POINT3 vctr;
 	int stat;
 	int reserve;
 	_anon37 ltcal;
@@ -1423,7 +1423,7 @@ struct _anon30
 
 struct _anon31
 {
-	_anon35 ps;
+	NJS_POINT3 ps;
 	float nr;
 	float fr;
 	float cr;
@@ -1435,7 +1435,7 @@ struct _anon32
 {
 	int* vlist;
 	short* plist;
-	_anon35 center;
+	NJS_POINT3 center;
 	float r;
 };
 
@@ -1464,17 +1464,17 @@ struct _anon34
 	float spz;
 };
 
-struct _anon35
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct _anon36
 {
-	_anon35 c1;
-	_anon35 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r1;
 	float r2;
 };
@@ -1493,9 +1493,9 @@ struct _anon37
 	float intns;
 	int exp;
 	int reserve;
-	_anon35 lpnt;
-	_anon35 lvctr;
-	_anon35 lmvctr;
+	NJS_POINT3 lpnt;
+	NJS_POINT3 lvctr;
+	NJS_POINT3 lmvctr;
 	_anon29 atten;
 	_anon29 amb;
 	_anon29 dif;
@@ -1693,14 +1693,14 @@ struct _anon45
 
 struct _anon46
 {
-	_anon35 c;
+	NJS_POINT3 c;
 	float r;
 };
 
 struct _anon47
 {
-	_anon35 c1;
-	_anon35 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r;
 };
 
@@ -2417,7 +2417,7 @@ void bhKaidanPlayerMotion(int flg, int idx)
 // Start address: 0x13a1a0
 void bhFixPositionXYZ(BH_PWORK* ewP, char* datP)
 {
-	_anon35 pos;
+	NJS_POINT3 pos;
 	// Line 510, Address: 0x13a1a0, Func Offset: 0
 	// Line 514, Address: 0x13a1ac, Func Offset: 0xc
 	// Line 516, Address: 0x13a1bc, Func Offset: 0x1c
@@ -2550,9 +2550,9 @@ void bhControlPlayer()
 	_anon22* hp;
 	int bhit;
 	unsigned int stf_bk;
-	_anon35 bps;
-	_anon35 eff1;
-	_anon35 eff0;
+	NJS_POINT3 bps;
+	NJS_POINT3 eff1;
+	NJS_POINT3 eff0;
 	_anon17* owP;
 	int fsnd;
 	float pz;
@@ -3837,8 +3837,8 @@ void bhCPM2_act_kdu()
 	int fsnd;
 	int flr_no;
 	int ang[3];
-	_anon35 pos2;
-	_anon35 pos;
+	NJS_POINT3 pos2;
+	NJS_POINT3 pos;
 	_anon22* htp;
 	// Line 1910, Address: 0x13ea50, Func Offset: 0
 	// Line 1911, Address: 0x13ea5c, Func Offset: 0xc
@@ -4086,8 +4086,8 @@ void bhCPM2_act_kdd()
 	int flr_no;
 	float py;
 	int ang[3];
-	_anon35 pos2;
-	_anon35 pos;
+	NJS_POINT3 pos2;
+	NJS_POINT3 pos;
 	_anon22* htp;
 	// Line 2079, Address: 0x13f660, Func Offset: 0
 	// Line 2080, Address: 0x13f670, Func Offset: 0x10
@@ -5644,10 +5644,10 @@ void bhCPM2_act_suw()
 // Start address: 0x1439f0
 void bhCPM2_act_wpn()
 {
-	_anon35 fpsb;
-	_anon35 fps;
+	NJS_POINT3 fpsb;
+	NJS_POINT3 fps;
 	_anon40* eft;
-	_anon35 pos;
+	NJS_POINT3 pos;
 	short bn;
 	int wno;
 	// Line 3282, Address: 0x1439f0, Func Offset: 0
@@ -6043,7 +6043,7 @@ void bhCPM2_act_atk()
 	short* act_ct;
 	int frm_no;
 	_anon38 gap;
-	_anon35 ps;
+	NJS_POINT3 ps;
 	// Line 3670, Address: 0x144ea0, Func Offset: 0
 	// Line 3679, Address: 0x144ebc, Func Offset: 0x1c
 	// Line 3686, Address: 0x144f20, Func Offset: 0x80
@@ -6871,7 +6871,7 @@ void bhCPM0_die()
 {
 	float* trsz;
 	float gy;
-	_anon35 pos;
+	NJS_POINT3 pos;
 	// Line 4552, Address: 0x148180, Func Offset: 0
 	// Line 4556, Address: 0x148188, Func Offset: 0x8
 	// Line 4558, Address: 0x148190, Func Offset: 0x10
@@ -7693,7 +7693,7 @@ void bhCalcHair(_anon0* op, BH_PWORK* pp)
 	short az;
 	short ay;
 	short ax;
-	_anon35 ps;
+	NJS_POINT3 ps;
 	_anon34* hair;
 	// Line 5218, Address: 0x14a210, Func Offset: 0
 	// Line 5222, Address: 0x14a228, Func Offset: 0x18

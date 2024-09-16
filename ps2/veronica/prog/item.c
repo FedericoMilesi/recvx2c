@@ -1,6 +1,6 @@
 typedef struct _anon0;
 typedef struct _anon1;
-typedef struct _anon2;
+typedef struct NJS_POINT3;
 
 
 typedef short type_0[6];
@@ -8,7 +8,7 @@ typedef short type_1[6][14];
 typedef _anon1 type_2[160];
 typedef short type_3[410];
 typedef unsigned short type_4[16];
-typedef _anon2 type_5[10];
+typedef NJS_POINT3 type_5[10];
 typedef unsigned short type_6[14];
 typedef unsigned short type_7[16];
 typedef unsigned int type_8[4];
@@ -34,12 +34,12 @@ struct _anon1
 	short hide;
 };
 
-struct _anon2
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 short combidata[410];
 _anon0 itemdata[156];
@@ -51,7 +51,7 @@ unsigned char itemflg[8][41];
 unsigned short itemidtbl[16];
 unsigned short getmestbl[16];
 unsigned short idsettbl[16];
-_anon2 hoseipos[10];
+NJS_POINT3 hoseipos[10];
 unsigned int getbulletmax[4][156];
 
 

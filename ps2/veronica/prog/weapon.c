@@ -1,7 +1,7 @@
 typedef struct npobj;
 typedef struct _anon0;
 typedef struct BH_PWORK;
-typedef struct _anon1;
+typedef struct NJS_POINT3;
 typedef struct _anon2;
 typedef struct _anon3;
 typedef struct _anon4;
@@ -176,7 +176,7 @@ typedef _anon38 type_121[16];
 typedef unsigned int type_122[8];
 typedef unsigned int type_123[32];
 typedef unsigned int type_124[4];
-typedef _anon1 type_125[32];
+typedef NJS_POINT3 type_125[32];
 typedef _anon0* type_126[512];
 typedef _anon0* type_127[128];
 typedef short type_128[22];
@@ -461,12 +461,12 @@ struct BH_PWORK
 	unsigned int Dummy2[2];
 };
 
-struct _anon1
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct _anon2
 {
@@ -595,7 +595,7 @@ struct _anon6
 	unsigned int mp_flg[8];
 	unsigned int itm[384];
 	unsigned int ply_stflg[4];
-	_anon1 ply_pos;
+	NJS_POINT3 ply_pos;
 	int ply_ang;
 	char ply_wno[4];
 	short ply_hp[4];
@@ -820,8 +820,8 @@ struct _anon6
 	BH_PWORK* plp;
 	_anon24* pl_htp;
 	int costume;
-	_anon1 hd_pos;
-	_anon1 apos;
+	NJS_POINT3 hd_pos;
+	NJS_POINT3 apos;
 	_anon24* ahtp;
 	int mwal_n;
 	int metc_n;
@@ -898,7 +898,7 @@ struct _anon6
 	unsigned char ufo_md;
 	unsigned char ufo_flg;
 	short ufo_oidx;
-	_anon1 ufo_pos;
+	NJS_POINT3 ufo_pos;
 	unsigned int opt_flg;
 	unsigned short opt_md0;
 	unsigned short opt_md1;
@@ -925,7 +925,7 @@ struct _anon6
 	_anon38 gatc[16];
 	int ght_ct;
 	unsigned int ghtc[32];
-	_anon1 ghtp[32];
+	NJS_POINT3 ghtp[32];
 	unsigned short db_md0;
 	unsigned short db_md1;
 	char db_stgno;
@@ -1295,9 +1295,9 @@ struct _anon22
 	float l;
 	float rn;
 	float rmax;
-	_anon1 wp_fps1;
-	_anon1 wp_fps2;
-	_anon1 wp_cps;
+	NJS_POINT3 wp_fps1;
+	NJS_POINT3 wp_fps2;
+	NJS_POINT3 wp_cps;
 	unsigned char ltp;
 	unsigned char lr;
 	unsigned char lg;
@@ -1448,8 +1448,8 @@ struct _anon32
 struct _anon33
 {
 	float mtrx[16];
-	_anon1 pnt;
-	_anon1 vctr;
+	NJS_POINT3 pnt;
+	NJS_POINT3 vctr;
 	int stat;
 	int reserve;
 	_anon39 ltcal;
@@ -1458,14 +1458,14 @@ struct _anon33
 
 struct _anon34
 {
-	_anon1 c1;
-	_anon1 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r;
 };
 
 struct _anon35
 {
-	_anon1 ps;
+	NJS_POINT3 ps;
 	float nr;
 	float fr;
 	float cr;
@@ -1477,7 +1477,7 @@ struct _anon36
 {
 	int* vlist;
 	short* plist;
-	_anon1 center;
+	NJS_POINT3 center;
 	float r;
 };
 
@@ -1489,8 +1489,8 @@ struct _anon37
 
 struct _anon38
 {
-	_anon1 c1;
-	_anon1 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r1;
 	float r2;
 };
@@ -1509,9 +1509,9 @@ struct _anon39
 	float intns;
 	int exp;
 	int reserve;
-	_anon1 lpnt;
-	_anon1 lvctr;
-	_anon1 lmvctr;
+	NJS_POINT3 lpnt;
+	NJS_POINT3 lvctr;
+	NJS_POINT3 lmvctr;
 	_anon31 atten;
 	_anon31 amb;
 	_anon31 dif;
@@ -1655,7 +1655,7 @@ struct _anon45
 
 struct _anon46
 {
-	_anon1 c;
+	NJS_POINT3 c;
 	float r;
 };
 
@@ -1722,12 +1722,12 @@ int bhCheckGunAtari(_anon21* gap);
 void bhCheckKnifeAtari(_anon21* gap);
 int bhCheckFlyAtari(_anon21* gap, int eidx);
 void bhSetBowDamage();
-void bhCheckBombAtari(_anon1* pos, float ar, int dmax, int dmin);
-int bhCheckCapCol2Capsule(BH_PWORK* pp, _anon34* cap, _anon1* hps);
-void bhSetGunSplash(_anon21* gap, _anon1* pos, int wattr);
-void bhSetExplosion(_anon1* pos);
-void bhSetExplosionEffect(_anon1* pos);
-void bhSetExplosionEffectEx(_anon1* pos, float scl);
+void bhCheckBombAtari(NJS_POINT3* pos, float ar, int dmax, int dmin);
+int bhCheckCapCol2Capsule(BH_PWORK* pp, _anon34* cap, NJS_POINT3* hps);
+void bhSetGunSplash(_anon21* gap, NJS_POINT3* pos, int wattr);
+void bhSetExplosion(NJS_POINT3* pos);
+void bhSetExplosionEffect(NJS_POINT3* pos);
+void bhSetExplosionEffectEx(NJS_POINT3* pos, float scl);
 
 // 
 // Start address: 0x28a300
@@ -1811,7 +1811,7 @@ void bhActionWeapon(_anon0* op)
 	int rr;
 	int ang;
 	npobj* obp;
-	_anon1 pos;
+	NJS_POINT3 pos;
 	// Line 199, Address: 0x28a610, Func Offset: 0
 	// Line 204, Address: 0x28a620, Func Offset: 0x10
 	// Line 205, Address: 0x28a624, Func Offset: 0x14
@@ -1956,8 +1956,8 @@ int bhCountBullet()
 int bhCheckGunAtari(_anon21* gap)
 {
 	_anon43 wtln;
-	_anon1 vec1;
-	_anon1 vec0;
+	NJS_POINT3 vec1;
+	NJS_POINT3 vec0;
 	unsigned int wp_flg;
 	int wno;
 	int watflg;
@@ -1978,11 +1978,11 @@ int bhCheckGunAtari(_anon21* gap)
 	float rmax;
 	float rn;
 	_anon43 gline;
-	_anon1 gvec;
-	_anon1 wps;
-	_anon1 sca;
-	_anon1 ps;
-	_anon1 ap;
+	NJS_POINT3 gvec;
+	NJS_POINT3 wps;
+	NJS_POINT3 sca;
+	NJS_POINT3 ps;
+	NJS_POINT3 ap;
 	_anon34 wal;
 	_anon34 gatr;
 	int igct;
@@ -2387,9 +2387,9 @@ void bhCheckKnifeAtari(_anon21* gap)
 	float len;
 	float ll;
 	float knr;
-	_anon1 wps;
-	_anon1 ps;
-	_anon1 sca;
+	NJS_POINT3 wps;
+	NJS_POINT3 ps;
+	NJS_POINT3 sca;
 	_anon34 cap;
 	_anon43 gline;
 	// Line 870, Address: 0x28c2e0, Func Offset: 0
@@ -2515,8 +2515,8 @@ int bhCheckFlyAtari(_anon21* gap, int eidx)
 	float nr;
 	float ll;
 	float knr;
-	_anon1 ps;
-	_anon1 sca;
+	NJS_POINT3 ps;
+	NJS_POINT3 sca;
 	_anon46 spr;
 	_anon34 wal;
 	// Line 1057, Address: 0x28c940, Func Offset: 0
@@ -2611,7 +2611,7 @@ void bhSetBowDamage()
 	int i;
 	float ll;
 	float knr;
-	_anon1 sca;
+	NJS_POINT3 sca;
 	// Line 1188, Address: 0x28cd60, Func Offset: 0
 	// Line 1196, Address: 0x28cd84, Func Offset: 0x24
 	// Line 1188, Address: 0x28cd88, Func Offset: 0x28
@@ -2670,11 +2670,11 @@ void bhSetBowDamage()
 
 // 
 // Start address: 0x28cfe0
-void bhCheckBombAtari(_anon1* pos, float ar, int dmax, int dmin)
+void bhCheckBombAtari(NJS_POINT3* pos, float ar, int dmax, int dmin)
 {
 	float inn;
-	_anon1 vec1;
-	_anon1 vec0;
+	NJS_POINT3 vec1;
+	NJS_POINT3 vec0;
 	BH_PWORK* pp;
 	int kno;
 	int j;
@@ -2682,8 +2682,8 @@ void bhCheckBombAtari(_anon1* pos, float ar, int dmax, int dmin)
 	float nr;
 	float ll;
 	float knr;
-	_anon1 ps;
-	_anon1 sca;
+	NJS_POINT3 ps;
+	NJS_POINT3 sca;
 	_anon46 spr;
 	_anon34 wal;
 	// Line 1257, Address: 0x28cfe0, Func Offset: 0
@@ -2837,7 +2837,7 @@ void bhCheckBombAtari(_anon1* pos, float ar, int dmax, int dmin)
 
 // 
 // Start address: 0x28d690
-int bhCheckCapCol2Capsule(BH_PWORK* pp, _anon34* cap, _anon1* hps)
+int bhCheckCapCol2Capsule(BH_PWORK* pp, _anon34* cap, NJS_POINT3* hps)
 {
 	float nr;
 	float len;
@@ -2847,9 +2847,9 @@ int bhCheckCapCol2Capsule(BH_PWORK* pp, _anon34* cap, _anon1* hps)
 	int jnt_b;
 	int jnt_a;
 	int jno;
-	_anon1 htp;
-	_anon1 sca;
-	_anon1 ofp;
+	NJS_POINT3 htp;
+	NJS_POINT3 sca;
+	NJS_POINT3 ofp;
 	_anon43 gline;
 	_anon46 sp;
 	_anon34 cp;
@@ -2966,9 +2966,9 @@ int bhCheckCapCol2Capsule(BH_PWORK* pp, _anon34* cap, _anon1* hps)
 
 // 
 // Start address: 0x28da40
-void bhSetGunSplash(_anon21* gap, _anon1* pos, int wattr)
+void bhSetGunSplash(_anon21* gap, NJS_POINT3* pos, int wattr)
 {
-	_anon1 vec;
+	NJS_POINT3 vec;
 	// Line 1634, Address: 0x28da40, Func Offset: 0
 	// Line 1636, Address: 0x28da58, Func Offset: 0x18
 	// Line 1638, Address: 0x28da60, Func Offset: 0x20
@@ -3054,11 +3054,11 @@ void bhSetGunSplash(_anon21* gap, _anon1* pos, int wattr)
 
 // 
 // Start address: 0x28dfe0
-void bhSetExplosion(_anon1* pos)
+void bhSetExplosion(NJS_POINT3* pos)
 {
 	int i;
-	_anon1 vc1;
-	_anon1 vc0;
+	NJS_POINT3 vc1;
+	NJS_POINT3 vc0;
 	_anon7* lp;
 	_anon48 pnt;
 	// Line 1715, Address: 0x28dfe0, Func Offset: 0
@@ -3154,11 +3154,11 @@ void bhSetExplosion(_anon1* pos)
 
 // 
 // Start address: 0x28e470
-void bhSetExplosionEffect(_anon1* pos)
+void bhSetExplosionEffect(NJS_POINT3* pos)
 {
 	int i;
-	_anon1 vc1;
-	_anon1 vc0;
+	NJS_POINT3 vc1;
+	NJS_POINT3 vc0;
 	// Line 1799, Address: 0x28e470, Func Offset: 0
 	// Line 1803, Address: 0x28e47c, Func Offset: 0xc
 	// Line 1811, Address: 0x28e484, Func Offset: 0x14
@@ -3211,7 +3211,7 @@ void bhSetExplosionEffect(_anon1* pos)
 
 // 
 // Start address: 0x28e820
-void bhSetExplosionEffectEx(_anon1* pos, float scl)
+void bhSetExplosionEffectEx(NJS_POINT3* pos, float scl)
 {
 	// Line 1849, Address: 0x28e820, Func Offset: 0
 	// Line 1857, Address: 0x28e828, Func Offset: 0x8

@@ -8,7 +8,7 @@ typedef struct _anon4;
 typedef struct _anon5;
 typedef struct _anon6;
 typedef struct _anon7;
-typedef struct _anon8;
+typedef struct NJS_POINT3;
 typedef struct _anon9;
 typedef struct _anon10;
 
@@ -234,7 +234,7 @@ struct _anon6
 {
 	int* vlist;
 	short* plist;
-	_anon8 center;
+	NJS_POINT3 center;
 	float r;
 };
 
@@ -248,17 +248,17 @@ struct _anon7
 	_anon5* owP;
 };
 
-struct _anon8
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct _anon9
 {
-	_anon8 c1;
-	_anon8 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r;
 };
 
@@ -386,7 +386,7 @@ void bhEne02sub_MV02(BH_PWORK* epw)
 // Start address: 0x1965d0
 void bhEne02sub_MV03(BH_PWORK* epw)
 {
-	_anon8 pos;
+	NJS_POINT3 pos;
 	BH_PWORK* ep;
 	// Line 288, Address: 0x1965d0, Func Offset: 0
 	// Line 289, Address: 0x1965e0, Func Offset: 0x10

@@ -6,7 +6,7 @@ typedef struct _anon3;
 typedef struct BH_PWORK;
 typedef struct _anon4;
 typedef struct _anon5;
-typedef struct _anon6;
+typedef struct NJS_POINT3;
 typedef struct _anon7;
 typedef struct _anon8;
 typedef struct _anon9;
@@ -164,7 +164,7 @@ typedef _anon36 type_110[16];
 typedef unsigned int type_111[8];
 typedef unsigned int type_112[32];
 typedef unsigned int type_113[4];
-typedef _anon6 type_114[32];
+typedef NJS_POINT3 type_114[32];
 typedef _anon0* type_115[512];
 typedef _anon0* type_116[128];
 typedef _anon0* type_117[512];
@@ -490,12 +490,12 @@ struct _anon5
 	_anon47 keyf[16];
 };
 
-struct _anon6
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct _anon7
 {
@@ -887,7 +887,7 @@ struct _anon23
 	unsigned int mp_flg[8];
 	unsigned int itm[384];
 	unsigned int ply_stflg[4];
-	_anon6 ply_pos;
+	NJS_POINT3 ply_pos;
 	int ply_ang;
 	char ply_wno[4];
 	short ply_hp[4];
@@ -1112,8 +1112,8 @@ struct _anon23
 	BH_PWORK* plp;
 	_anon21* pl_htp;
 	int costume;
-	_anon6 hd_pos;
-	_anon6 apos;
+	NJS_POINT3 hd_pos;
+	NJS_POINT3 apos;
 	_anon21* ahtp;
 	int mwal_n;
 	int metc_n;
@@ -1190,7 +1190,7 @@ struct _anon23
 	unsigned char ufo_md;
 	unsigned char ufo_flg;
 	short ufo_oidx;
-	_anon6 ufo_pos;
+	NJS_POINT3 ufo_pos;
 	unsigned int opt_flg;
 	unsigned short opt_md0;
 	unsigned short opt_md1;
@@ -1217,7 +1217,7 @@ struct _anon23
 	_anon36 gatc[16];
 	int ght_ct;
 	unsigned int ghtc[32];
-	_anon6 ghtp[32];
+	NJS_POINT3 ghtp[32];
 	unsigned short db_md0;
 	unsigned short db_md1;
 	char db_stgno;
@@ -1336,8 +1336,8 @@ struct _anon31
 struct _anon32
 {
 	float mtrx[16];
-	_anon6 pnt;
-	_anon6 vctr;
+	NJS_POINT3 pnt;
+	NJS_POINT3 vctr;
 	int stat;
 	int reserve;
 	_anon37 ltcal;
@@ -1346,7 +1346,7 @@ struct _anon32
 
 struct _anon33
 {
-	_anon6 ps;
+	NJS_POINT3 ps;
 	float nr;
 	float fr;
 	float cr;
@@ -1358,7 +1358,7 @@ struct _anon34
 {
 	int* vlist;
 	short* plist;
-	_anon6 center;
+	NJS_POINT3 center;
 	float r;
 };
 
@@ -1370,8 +1370,8 @@ struct _anon35
 
 struct _anon36
 {
-	_anon6 c1;
-	_anon6 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r1;
 	float r2;
 };
@@ -1390,9 +1390,9 @@ struct _anon37
 	float intns;
 	int exp;
 	int reserve;
-	_anon6 lpnt;
-	_anon6 lvctr;
-	_anon6 lmvctr;
+	NJS_POINT3 lpnt;
+	NJS_POINT3 lvctr;
+	NJS_POINT3 lmvctr;
 	_anon30 atten;
 	_anon30 amb;
 	_anon30 dif;
@@ -1412,7 +1412,7 @@ struct _anon38
 
 struct _anon39
 {
-	_anon6 off_pos;
+	NJS_POINT3 off_pos;
 	int srd_dir;
 	float srd_pos;
 	float bld_spd;
@@ -1482,14 +1482,14 @@ struct _anon44
 
 struct _anon45
 {
-	_anon6 c;
+	NJS_POINT3 c;
 	float r;
 };
 
 struct _anon46
 {
-	_anon6 c1;
-	_anon6 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r;
 };
 
@@ -1535,32 +1535,32 @@ _anon10* rom;
 void bhEne_SetMinceEffect(BH_PWORK* epw, int type, int num);
 void bhEne_SetMinceEffect2(BH_PWORK* epw, int type, float size, int num);
 void bhEne_SetBloodEffect(BH_PWORK* epw, int type);
-void bhEne_SetBloodEffect2(BH_PWORK* epw, int type, int jno, _anon6* ofp);
-void bhEne_SetBloodEffect4(_anon6* pos, _anon6* vec, int col, int type1, int type2);
+void bhEne_SetBloodEffect2(BH_PWORK* epw, int type, int jno, NJS_POINT3* ofp);
+void bhEne_SetBloodEffect4(NJS_POINT3* pos, NJS_POINT3* vec, int col, int type1, int type2);
 void bhEne_SetBloodEffect5(BH_PWORK* epw, int type1, int type2);
-void bhEne_SetBloodEffectBurst(BH_PWORK* epw, int type, int jno, _anon6* pos, int flg);
-void bhEne_SetBloodstain(BH_PWORK* epw, int type, int jno, _anon6* ofp);
-void bhEne_SetFireEffect(BH_PWORK* epw, int jno, _anon6* ofp, float size, int len);
-void bhEne_BloodPool(BH_PWORK* epw, _anon6* pos, int ang, _anon39* param);
-void bhEne_SetAcidEffect(BH_PWORK* epw, int jno, _anon6* ofp, float size);
+void bhEne_SetBloodEffectBurst(BH_PWORK* epw, int type, int jno, NJS_POINT3* pos, int flg);
+void bhEne_SetBloodstain(BH_PWORK* epw, int type, int jno, NJS_POINT3* ofp);
+void bhEne_SetFireEffect(BH_PWORK* epw, int jno, NJS_POINT3* ofp, float size, int len);
+void bhEne_BloodPool(BH_PWORK* epw, NJS_POINT3* pos, int ang, _anon39* param);
+void bhEne_SetAcidEffect(BH_PWORK* epw, int jno, NJS_POINT3* ofp, float size);
 int bhEne_DirTarget(BH_PWORK* epw, float x, float z, int w);
 int bhEne_CheckDirTarget(BH_PWORK* epw, float x, float z, int w);
-void bhEne_GetPartsPos(BH_PWORK* epw, char* parts, _anon6* p);
-int bhEne_DirCheck(int ay, _anon6* vec);
+void bhEne_GetPartsPos(BH_PWORK* epw, char* parts, NJS_POINT3* p);
+int bhEne_DirCheck(int ay, NJS_POINT3* vec);
 int bhEne_DGDirCheck(BH_PWORK* epw);
 void bhEne_CallPlayerVoice(int no);
 void bhEne_CheckEnemiesBall(BH_PWORK* epw);
 void bhEne_SetWeponAtr(BH_PWORK* epw, char j1, char j2, float r);
-unsigned char bhEne_AttackHitCheck(BH_PWORK* pl, _anon6* pos, float ar);
-void bhEne_AddNullTrans(BH_PWORK* epw, _anon6* mtn);
-void bhEne_AddNullTransDir(BH_PWORK* epw, int ay, _anon6* mtn);
+unsigned char bhEne_AttackHitCheck(BH_PWORK* pl, NJS_POINT3* pos, float ar);
+void bhEne_AddNullTrans(BH_PWORK* epw, NJS_POINT3* mtn);
+void bhEne_AddNullTransDir(BH_PWORK* epw, int ay, NJS_POINT3* mtn);
 float bhEne_GetShapeCnt(_anon40* p, int key);
 void bhEne_CalcDamage(BH_PWORK* epw, _anon18* CombWepTbl, _anon20* CombJointTbl);
 void bhEne_InitDamage(BH_PWORK* epw);
-void bhEne_CallSE(BH_PWORK* epw, _anon6* pos, int se);
-void bhEne_CallSE_EX(BH_PWORK* epw, _anon6* pos, int se, int fade);
-void bhEne_CallEffectSE(_anon6* pos, int se);
-void bhEne_SetSEPan(_anon6* pos, int se);
+void bhEne_CallSE(BH_PWORK* epw, NJS_POINT3* pos, int se);
+void bhEne_CallSE_EX(BH_PWORK* epw, NJS_POINT3* pos, int se, int fade);
+void bhEne_CallEffectSE(NJS_POINT3* pos, int se);
+void bhEne_SetSEPan(NJS_POINT3* pos, int se);
 int bhEne_CheckPlayEffectSE(int se);
 int bhArcTan2(float y, float x);
 _anon21* bhEne_CheckEventAtr(int flr_no, float px, float pz, int id, int min, int max);
@@ -1668,10 +1668,10 @@ void bhEne_SetBloodEffect(BH_PWORK* epw, int type)
 
 // 
 // Start address: 0x219280
-void bhEne_SetBloodEffect2(BH_PWORK* epw, int type, int jno, _anon6* ofp)
+void bhEne_SetBloodEffect2(BH_PWORK* epw, int type, int jno, NJS_POINT3* ofp)
 {
-	_anon6 vec;
-	_anon6 org;
+	NJS_POINT3 vec;
+	NJS_POINT3 org;
 	// Line 209, Address: 0x219280, Func Offset: 0
 	// Line 210, Address: 0x21929c, Func Offset: 0x1c
 	// Line 214, Address: 0x2192c0, Func Offset: 0x40
@@ -1711,7 +1711,7 @@ void bhEne_SetBloodEffect2(BH_PWORK* epw, int type, int jno, _anon6* ofp)
 
 // 
 // Start address: 0x2194a0
-void bhEne_SetBloodEffect4(_anon6* pos, _anon6* vec, int col, int type1, int type2)
+void bhEne_SetBloodEffect4(NJS_POINT3* pos, NJS_POINT3* vec, int col, int type1, int type2)
 {
 	// Line 259, Address: 0x2194a0, Func Offset: 0
 	// Line 261, Address: 0x2194b0, Func Offset: 0x10
@@ -1743,8 +1743,8 @@ void bhEne_SetBloodEffect4(_anon6* pos, _anon6* vec, int col, int type1, int typ
 // Start address: 0x219630
 void bhEne_SetBloodEffect5(BH_PWORK* epw, int type1, int type2)
 {
-	_anon6 vec;
-	_anon6 ofp;
+	NJS_POINT3 vec;
+	NJS_POINT3 ofp;
 	// Line 291, Address: 0x219630, Func Offset: 0
 	// Line 296, Address: 0x219644, Func Offset: 0x14
 	// Line 297, Address: 0x21967c, Func Offset: 0x4c
@@ -1787,9 +1787,9 @@ void bhEne_SetBloodEffect5(BH_PWORK* epw, int type1, int type2)
 
 // 
 // Start address: 0x2198d0
-void bhEne_SetBloodEffectBurst(BH_PWORK* epw, int type, int jno, _anon6* pos, int flg)
+void bhEne_SetBloodEffectBurst(BH_PWORK* epw, int type, int jno, NJS_POINT3* pos, int flg)
 {
-	_anon6 ofp;
+	NJS_POINT3 ofp;
 	_anon0* op;
 	int eno;
 	// Line 349, Address: 0x2198d0, Func Offset: 0
@@ -1836,10 +1836,10 @@ void bhEne_SetBloodEffectBurst(BH_PWORK* epw, int type, int jno, _anon6* pos, in
 
 // 
 // Start address: 0x219b20
-void bhEne_SetBloodstain(BH_PWORK* epw, int type, int jno, _anon6* ofp)
+void bhEne_SetBloodstain(BH_PWORK* epw, int type, int jno, NJS_POINT3* ofp)
 {
 	float d;
-	_anon6 pos;
+	NJS_POINT3 pos;
 	// Line 416, Address: 0x219b20, Func Offset: 0
 	// Line 420, Address: 0x219b3c, Func Offset: 0x1c
 	// Line 421, Address: 0x219b44, Func Offset: 0x24
@@ -1883,10 +1883,10 @@ void bhEne_SetBloodstain(BH_PWORK* epw, int type, int jno, _anon6* ofp)
 
 // 
 // Start address: 0x219e10
-void bhEne_SetFireEffect(BH_PWORK* epw, int jno, _anon6* ofp, float size, int len)
+void bhEne_SetFireEffect(BH_PWORK* epw, int jno, NJS_POINT3* ofp, float size, int len)
 {
 	int eno;
-	_anon6 org;
+	NJS_POINT3 org;
 	// Line 466, Address: 0x219e10, Func Offset: 0
 	// Line 467, Address: 0x219e20, Func Offset: 0x10
 	// Line 471, Address: 0x219e38, Func Offset: 0x28
@@ -1915,7 +1915,7 @@ void bhEne_SetFireEffect(BH_PWORK* epw, int jno, _anon6* ofp, float size, int le
 
 // 
 // Start address: 0x219f90
-void bhEne_BloodPool(BH_PWORK* epw, _anon6* pos, int ang, _anon39* param)
+void bhEne_BloodPool(BH_PWORK* epw, NJS_POINT3* pos, int ang, _anon39* param)
 {
 	// Line 515, Address: 0x219f90, Func Offset: 0
 	// Func End, Address: 0x219fb0, Func Offset: 0x20
@@ -1923,9 +1923,9 @@ void bhEne_BloodPool(BH_PWORK* epw, _anon6* pos, int ang, _anon39* param)
 
 // 
 // Start address: 0x219fb0
-void bhEne_SetAcidEffect(BH_PWORK* epw, int jno, _anon6* ofp, float size)
+void bhEne_SetAcidEffect(BH_PWORK* epw, int jno, NJS_POINT3* ofp, float size)
 {
-	_anon6 org;
+	NJS_POINT3 org;
 	// Line 529, Address: 0x219fb0, Func Offset: 0
 	// Line 530, Address: 0x219fb8, Func Offset: 0x8
 	// Line 529, Address: 0x219fc0, Func Offset: 0x10
@@ -1981,7 +1981,7 @@ int bhEne_CheckDirTarget(BH_PWORK* epw, float x, float z, int w)
 
 // 
 // Start address: 0x21a200
-void bhEne_GetPartsPos(BH_PWORK* epw, char* parts, _anon6* p)
+void bhEne_GetPartsPos(BH_PWORK* epw, char* parts, NJS_POINT3* p)
 {
 	npobj* objP;
 	_anon12* mlwP;
@@ -2004,9 +2004,9 @@ void bhEne_GetPartsPos(BH_PWORK* epw, char* parts, _anon6* p)
 
 // 
 // Start address: 0x21a2d0
-int bhEne_DirCheck(int ay, _anon6* vec)
+int bhEne_DirCheck(int ay, NJS_POINT3* vec)
 {
-	_anon6 v;
+	NJS_POINT3 v;
 	// Line 653, Address: 0x21a2d0, Func Offset: 0
 	// Line 656, Address: 0x21a2e8, Func Offset: 0x18
 	// Line 657, Address: 0x21a2f0, Func Offset: 0x20
@@ -2120,14 +2120,14 @@ void bhEne_SetWeponAtr(BH_PWORK* epw, char j1, char j2, float r)
 
 // 
 // Start address: 0x21a5d0
-unsigned char bhEne_AttackHitCheck(BH_PWORK* pl, _anon6* pos, float ar)
+unsigned char bhEne_AttackHitCheck(BH_PWORK* pl, NJS_POINT3* pos, float ar)
 {
 	_anon45 sphere;
 	int kno;
 	int i;
 	float knr;
 	float ll;
-	_anon6 vec;
+	NJS_POINT3 vec;
 	// Line 783, Address: 0x21a5d0, Func Offset: 0
 	// Line 789, Address: 0x21a5f8, Func Offset: 0x28
 	// Line 795, Address: 0x21a604, Func Offset: 0x34
@@ -2173,9 +2173,9 @@ unsigned char bhEne_AttackHitCheck(BH_PWORK* pl, _anon6* pos, float ar)
 
 // 
 // Start address: 0x21a770
-void bhEne_AddNullTrans(BH_PWORK* epw, _anon6* mtn)
+void bhEne_AddNullTrans(BH_PWORK* epw, NJS_POINT3* mtn)
 {
-	_anon6 v;
+	NJS_POINT3 v;
 	// Line 833, Address: 0x21a770, Func Offset: 0
 	// Line 836, Address: 0x21a788, Func Offset: 0x18
 	// Line 837, Address: 0x21a790, Func Offset: 0x20
@@ -2188,9 +2188,9 @@ void bhEne_AddNullTrans(BH_PWORK* epw, _anon6* mtn)
 
 // 
 // Start address: 0x21a800
-void bhEne_AddNullTransDir(BH_PWORK* epw, int ay, _anon6* mtn)
+void bhEne_AddNullTransDir(BH_PWORK* epw, int ay, NJS_POINT3* mtn)
 {
-	_anon6 v;
+	NJS_POINT3 v;
 	// Line 853, Address: 0x21a800, Func Offset: 0
 	// Line 856, Address: 0x21a820, Func Offset: 0x20
 	// Line 857, Address: 0x21a828, Func Offset: 0x28
@@ -2290,7 +2290,7 @@ void bhEne_InitDamage(BH_PWORK* epw)
 
 // 
 // Start address: 0x21aba0
-void bhEne_CallSE(BH_PWORK* epw, _anon6* pos, int se)
+void bhEne_CallSE(BH_PWORK* epw, NJS_POINT3* pos, int se)
 {
 	// Line 1005, Address: 0x21aba0, Func Offset: 0
 	// Line 1006, Address: 0x21aba8, Func Offset: 0x8
@@ -2301,7 +2301,7 @@ void bhEne_CallSE(BH_PWORK* epw, _anon6* pos, int se)
 
 // 
 // Start address: 0x21abe0
-void bhEne_CallSE_EX(BH_PWORK* epw, _anon6* pos, int se, int fade)
+void bhEne_CallSE_EX(BH_PWORK* epw, NJS_POINT3* pos, int se, int fade)
 {
 	// Line 1021, Address: 0x21abe0, Func Offset: 0
 	// Line 1022, Address: 0x21abe8, Func Offset: 0x8
@@ -2312,7 +2312,7 @@ void bhEne_CallSE_EX(BH_PWORK* epw, _anon6* pos, int se, int fade)
 
 // 
 // Start address: 0x21ac20
-void bhEne_CallEffectSE(_anon6* pos, int se)
+void bhEne_CallEffectSE(NJS_POINT3* pos, int se)
 {
 	// Line 1037, Address: 0x21ac24, Func Offset: 0x4
 	// Func End, Address: 0x21ac30, Func Offset: 0x10
@@ -2320,7 +2320,7 @@ void bhEne_CallEffectSE(_anon6* pos, int se)
 
 // 
 // Start address: 0x21ac30
-void bhEne_SetSEPan(_anon6* pos, int se)
+void bhEne_SetSEPan(NJS_POINT3* pos, int se)
 {
 	// Line 1051, Address: 0x21ac30, Func Offset: 0
 	// Func End, Address: 0x21ac50, Func Offset: 0x20

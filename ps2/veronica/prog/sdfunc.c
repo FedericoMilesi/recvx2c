@@ -15,7 +15,7 @@ typedef struct _anon12;
 typedef struct _anon13;
 typedef struct _anon14;
 typedef struct _anon15;
-typedef struct _anon16;
+typedef struct NJS_POINT3;
 typedef struct _anon17;
 typedef struct _anon18;
 typedef struct _anon19;
@@ -204,7 +204,7 @@ typedef unsigned int type_125[32];
 typedef unsigned char type_126[32];
 typedef _anon42* type_127[128];
 typedef void* type_128[2];
-typedef _anon16 type_129[32];
+typedef NJS_POINT3 type_129[32];
 typedef _anon42* type_130[128];
 typedef unsigned int type_131[1];
 typedef _anon10* type_132[8];
@@ -279,7 +279,7 @@ struct _anon1
 
 struct _anon2
 {
-	_anon16 Pos;
+	NJS_POINT3 Pos;
 	float Dist;
 	int SeNo;
 	int SeNoV;
@@ -298,7 +298,7 @@ struct _anon3
 {
 	int* vlist;
 	short* plist;
-	_anon16 center;
+	NJS_POINT3 center;
 	float r;
 };
 
@@ -312,8 +312,8 @@ struct _anon4
 struct _anon5
 {
 	float mtrx[16];
-	_anon16 pnt;
-	_anon16 vctr;
+	NJS_POINT3 pnt;
+	NJS_POINT3 vctr;
 	int stat;
 	int reserve;
 	_anon50 ltcal;
@@ -540,7 +540,7 @@ struct _anon7
 
 struct _anon8
 {
-	_anon16 ps;
+	NJS_POINT3 ps;
 	float nr;
 	float fr;
 	float cr;
@@ -625,12 +625,12 @@ struct _anon15
 	int cap_r;
 };
 
-struct _anon16
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct _anon17
 {
@@ -906,7 +906,7 @@ struct _anon34
 
 struct _anon35
 {
-	_anon16 Pos;
+	NJS_POINT3 Pos;
 	float Dist;
 	int SeNo;
 	char ReqFlag;
@@ -1246,9 +1246,9 @@ struct _anon50
 	float intns;
 	int exp;
 	int reserve;
-	_anon16 lpnt;
-	_anon16 lvctr;
-	_anon16 lmvctr;
+	NJS_POINT3 lpnt;
+	NJS_POINT3 lvctr;
+	NJS_POINT3 lmvctr;
 	_anon24 atten;
 	_anon24 amb;
 	_anon24 dif;
@@ -1285,7 +1285,7 @@ struct tag_SYS_BT_SYSTEMID
 
 struct _anon52
 {
-	_anon16 c;
+	NJS_POINT3 c;
 	float r;
 };
 
@@ -1321,8 +1321,8 @@ struct _anon54
 
 struct _anon55
 {
-	_anon16 c1;
-	_anon16 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r;
 };
 
@@ -1375,7 +1375,7 @@ struct _anon56
 	unsigned int mp_flg[8];
 	unsigned int itm[384];
 	unsigned int ply_stflg[4];
-	_anon16 ply_pos;
+	NJS_POINT3 ply_pos;
 	int ply_ang;
 	char ply_wno[4];
 	short ply_hp[4];
@@ -1600,8 +1600,8 @@ struct _anon56
 	BH_PWORK* plp;
 	_anon39* pl_htp;
 	int costume;
-	_anon16 hd_pos;
-	_anon16 apos;
+	NJS_POINT3 hd_pos;
+	NJS_POINT3 apos;
 	_anon39* ahtp;
 	int mwal_n;
 	int metc_n;
@@ -1678,7 +1678,7 @@ struct _anon56
 	unsigned char ufo_md;
 	unsigned char ufo_flg;
 	short ufo_oidx;
-	_anon16 ufo_pos;
+	NJS_POINT3 ufo_pos;
 	unsigned int opt_flg;
 	unsigned short opt_md0;
 	unsigned short opt_md1;
@@ -1705,7 +1705,7 @@ struct _anon56
 	_anon67 gatc[16];
 	int ght_ct;
 	unsigned int ghtc[32];
-	_anon16 ghtp[32];
+	NJS_POINT3 ghtp[32];
 	unsigned short db_md0;
 	unsigned short db_md1;
 	char db_stgno;
@@ -1936,8 +1936,8 @@ struct _anon66
 
 struct _anon67
 {
-	_anon16 c1;
-	_anon16 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r1;
 	float r2;
 };
@@ -2015,12 +2015,12 @@ _anon61* rom;
 char CurrentRoomFxLevel;
 int AngBak;
 _anon34 RequestInfo;
-_anon16 CameraPos;
+NJS_POINT3 CameraPos;
 _anon44 GsSlotInfoAx[2];
 _anon35 ObjectInfo[16];
 _anon44 GsSlotInfoMi[8];
 _anon44 GsSlotInfoSe[20];
-_anon16 PlayerPos;
+NJS_POINT3 PlayerPos;
 int xAng;
 int xVol;
 int xPan;
@@ -2080,15 +2080,15 @@ void SetRoomSoundCaseNo(int CaseNo);
 int GetRoomSoundCaseNo();
 int CustomMidiSlotDef(int ObjectSlot, int EventSlot);
 void ResetRoomSoundEnvParam();
-int wadGetAngle(_anon16* pPos1, int Ang, _anon16* pPos2);
-int CheckCollision4Sound(_anon16* pP2);
-int Get3DSoundParameter(_anon16* pP1, _anon16* pP2, char* pPan, char* pVol, float* pDist, int Mode);
-int SetupSeGenericParm(int SlotNo, int SeNo, _anon16* pPos, int Flag, unsigned int Flag2);
+int wadGetAngle(NJS_POINT3* pPos1, int Ang, NJS_POINT3* pPos2);
+int CheckCollision4Sound(NJS_POINT3* pP2);
+int Get3DSoundParameter(NJS_POINT3* pP1, NJS_POINT3* pP2, char* pPan, char* pVol, float* pDist, int Mode);
+int SetupSeGenericParm(int SlotNo, int SeNo, NJS_POINT3* pPos, int Flag, unsigned int Flag2);
 void Set3dSoundFlag(int Type, int SlotNo, unsigned int Flag);
 void Reset3dSoundFlag();
 void SetUserSoundVolume(int Type, int SlotNo, int StartVol, int LastVol, int Frame);
 void SetUserSoundPan(int Type, int SlotNo, int StartPan, int LastPan, int Frame);
-void PlayGameSe4Event(_anon25* gp, _anon16* pPos, int FloorType, int SeType);
+void PlayGameSe4Event(_anon25* gp, NJS_POINT3* pPos, int FloorType, int SeType);
 void CallSystemSeBasic(int SeNo, int Volume, int FxLevel);
 void CallSystemSeEx(int SeNo, int Volume);
 void CallSystemSe(int SeNo);
@@ -2096,28 +2096,28 @@ void StopSystemSe();
 void SetSyukanModeSoundParam();
 void CallPlayerVoice(int SeNo);
 int GetPlayerActionSeSlotNo(int Type, int Id);
-void CallPlayerFootStepSeEx(int FloorType, int Type, int Flag, int Id, _anon16* pPos);
+void CallPlayerFootStepSeEx(int FloorType, int Type, int Flag, int Id, NJS_POINT3* pPos);
 void CallPlayerFootStepSe(int FloorType, int Type, int Flag);
 void CallPlayerActionSe(int SeNo, int Flag);
-void CallPlayerWeaponSeEx(_anon16* pPos, int SeNo, int SlotNo);
-void CallYakkyouSe(_anon16* pPos, int SeNo);
+void CallPlayerWeaponSeEx(NJS_POINT3* pPos, int SeNo, int SlotNo);
+void CallYakkyouSe(NJS_POINT3* pPos, int SeNo);
 void CallBackGroundSeEx(unsigned int SlotNo, int SeNo, short Timer);
 void CallBackGroundSe(unsigned int SlotNo, int SeNo);
 void CallBackGroundSe2(unsigned int SlotNo, int SeNo);
 void StopBackGroundSeEx(unsigned int SlotNo, short Timer);
 void StopBackGroundSe2(unsigned int SlotNo);
 void CallDoorSe(unsigned int No);
-void RequestEnemySeBasic(int EnemyNo, _anon16* pPos, int SeNo, int Flag, int FadeRate);
-void RequestEnemySe(int EnemyNo, _anon16* pPos, int SeNo);
-void RequestEnemySeEx(int EnemyNo, _anon16* pPos, int SeNo, int FadeRate);
+void RequestEnemySeBasic(int EnemyNo, NJS_POINT3* pPos, int SeNo, int Flag, int FadeRate);
+void RequestEnemySe(int EnemyNo, NJS_POINT3* pPos, int SeNo);
+void RequestEnemySeEx(int EnemyNo, NJS_POINT3* pPos, int SeNo, int FadeRate);
 int ChechPlayEnemySe(int EnemyNo, int SeNo);
 void AllStopEnemySe();
-void CallEnemySe(int SlotNo, _anon16* pPos, int SeNo);
+void CallEnemySe(int SlotNo, NJS_POINT3* pPos, int SeNo);
 void StopEnemySe(int SlotNo);
-int CallNativeEventSe(int SlotNo, _anon16* pPos, int SeNo, int Mode);
+int CallNativeEventSe(int SlotNo, NJS_POINT3* pPos, int SeNo, int Mode);
 int StopNativeEventSe(int SlotNo);
-void RequestObjectSeEx(int ObjectNo, _anon16* pPos, int Type);
-void RegistObjectSe(int ObjectNo, _anon16* pPos, int SeNo, int Prio);
+void RequestObjectSeEx(int ObjectNo, NJS_POINT3* pPos, int Type);
+void RegistObjectSe(int ObjectNo, NJS_POINT3* pPos, int SeNo, int Prio);
 void FreeObjectSe(int ObjectNo);
 void PlayBgmEx2(unsigned int PatId, int BgmNo, int FadeInRate, int Volume);
 void PlayBgmEx(int BgmNo, int FadeInRate, int Volume);
@@ -2125,9 +2125,9 @@ void PlayBgm(int BgmNo, int FadeInRate);
 void PlayBgm2(int BgmNo, int Volume);
 void StopBgm(int FadeOutRate);
 void StopBgm2();
-void PlayVoiceEx2(int PatId, int VoiceNo, _anon16* pPos, int Mode, int FadeInRate, int PauseFlag);
-void PlayVoiceEx(int VoiceNo, _anon16* pPos, int Mode, int FadeInRate, int PauseFlag);
-void PlayVoice(int VoiceNo, _anon16* pPos, int Mode, int FadeInRate);
+void PlayVoiceEx2(int PatId, int VoiceNo, NJS_POINT3* pPos, int Mode, int FadeInRate, int PauseFlag);
+void PlayVoiceEx(int VoiceNo, NJS_POINT3* pPos, int Mode, int FadeInRate, int PauseFlag);
+void PlayVoice(int VoiceNo, NJS_POINT3* pPos, int Mode, int FadeInRate);
 void ContinuePlayVoice();
 void StopVoice(int FadeOutRate);
 int CheckPlayEndAdx(int SlotNo);
@@ -2700,7 +2700,7 @@ void ResetRoomSoundEnvParam()
 
 // 
 // Start address: 0x293540
-int wadGetAngle(_anon16* pPos1, int Ang, _anon16* pPos2)
+int wadGetAngle(NJS_POINT3* pPos1, int Ang, NJS_POINT3* pPos2)
 {
 	// Line 1216, Address: 0x293540, Func Offset: 0
 	// Line 1222, Address: 0x29354c, Func Offset: 0xc
@@ -2712,7 +2712,7 @@ int wadGetAngle(_anon16* pPos1, int Ang, _anon16* pPos2)
 
 // 
 // Start address: 0x2935a0
-int CheckCollision4Sound(_anon16* pP2)
+int CheckCollision4Sound(NJS_POINT3* pP2)
 {
 	int ReturnCode;
 	_anon55 Capsule;
@@ -2737,9 +2737,9 @@ int CheckCollision4Sound(_anon16* pP2)
 
 // 
 // Start address: 0x293640
-int Get3DSoundParameter(_anon16* pP1, _anon16* pP2, char* pPan, char* pVol, float* pDist, int Mode)
+int Get3DSoundParameter(NJS_POINT3* pP1, NJS_POINT3* pP2, char* pPan, char* pVol, float* pDist, int Mode)
 {
-	_anon16 pd;
+	NJS_POINT3 pd;
 	_anon28 ScreenPos;
 	int Ang;
 	int Val;
@@ -2769,7 +2769,7 @@ int Get3DSoundParameter(_anon16* pP1, _anon16* pP2, char* pPan, char* pVol, floa
 
 // 
 // Start address: 0x2937f0
-int SetupSeGenericParm(int SlotNo, int SeNo, _anon16* pPos, int Flag, unsigned int Flag2)
+int SetupSeGenericParm(int SlotNo, int SeNo, NJS_POINT3* pPos, int Flag, unsigned int Flag2)
 {
 	float Distance;
 	int ReturnCode;
@@ -3005,7 +3005,7 @@ void SetUserSoundPan(int Type, int SlotNo, int StartPan, int LastPan, int Frame)
 
 // 
 // Start address: 0x294400
-void PlayGameSe4Event(_anon25* gp, _anon16* pPos, int FloorType, int SeType)
+void PlayGameSe4Event(_anon25* gp, NJS_POINT3* pPos, int FloorType, int SeType)
 {
 	int Flag;
 	// Line 1947, Address: 0x294400, Func Offset: 0
@@ -3154,7 +3154,7 @@ int GetPlayerActionSeSlotNo(int Type, int Id)
 
 // 
 // Start address: 0x294840
-void CallPlayerFootStepSeEx(int FloorType, int Type, int Flag, int Id, _anon16* pPos)
+void CallPlayerFootStepSeEx(int FloorType, int Type, int Flag, int Id, NJS_POINT3* pPos)
 {
 	float Distance;
 	char FootDef[5];
@@ -3245,7 +3245,7 @@ void CallPlayerActionSe(int SeNo, int Flag)
 
 // 
 // Start address: 0x294bd0
-void CallPlayerWeaponSeEx(_anon16* pPos, int SeNo, int SlotNo)
+void CallPlayerWeaponSeEx(NJS_POINT3* pPos, int SeNo, int SlotNo)
 {
 	int NeoSlotNo;
 	int SlotDef[2];
@@ -3276,7 +3276,7 @@ void CallPlayerWeaponSeEx(_anon16* pPos, int SeNo, int SlotNo)
 
 // 
 // Start address: 0x294cc0
-void CallYakkyouSe(_anon16* pPos, int SeNo)
+void CallYakkyouSe(NJS_POINT3* pPos, int SeNo)
 {
 	// Line 2361, Address: 0x294cc0, Func Offset: 0
 	// Line 2362, Address: 0x294ccc, Func Offset: 0xc
@@ -3422,7 +3422,7 @@ void CallDoorSe(unsigned int No)
 
 // 
 // Start address: 0x295110
-void RequestEnemySeBasic(int EnemyNo, _anon16* pPos, int SeNo, int Flag, int FadeRate)
+void RequestEnemySeBasic(int EnemyNo, NJS_POINT3* pPos, int SeNo, int Flag, int FadeRate)
 {
 	char VolDownTbl[8];
 	_anon2* eip;
@@ -3465,7 +3465,7 @@ void RequestEnemySeBasic(int EnemyNo, _anon16* pPos, int SeNo, int Flag, int Fad
 
 // 
 // Start address: 0x295240
-void RequestEnemySe(int EnemyNo, _anon16* pPos, int SeNo)
+void RequestEnemySe(int EnemyNo, NJS_POINT3* pPos, int SeNo)
 {
 	// Line 2588, Address: 0x295240, Func Offset: 0
 	// Func End, Address: 0x29524c, Func Offset: 0xc
@@ -3473,7 +3473,7 @@ void RequestEnemySe(int EnemyNo, _anon16* pPos, int SeNo)
 
 // 
 // Start address: 0x295250
-void RequestEnemySeEx(int EnemyNo, _anon16* pPos, int SeNo, int FadeRate)
+void RequestEnemySeEx(int EnemyNo, NJS_POINT3* pPos, int SeNo, int FadeRate)
 {
 	// Line 2618, Address: 0x295254, Func Offset: 0x4
 	// Func End, Address: 0x29525c, Func Offset: 0xc
@@ -3526,7 +3526,7 @@ void AllStopEnemySe()
 
 // 
 // Start address: 0x295370
-void CallEnemySe(int SlotNo, _anon16* pPos, int SeNo)
+void CallEnemySe(int SlotNo, NJS_POINT3* pPos, int SeNo)
 {
 	int SlotDef[6];
 	// Line 2686, Address: 0x295370, Func Offset: 0
@@ -3557,7 +3557,7 @@ void StopEnemySe(int SlotNo)
 
 // 
 // Start address: 0x295440
-int CallNativeEventSe(int SlotNo, _anon16* pPos, int SeNo, int Mode)
+int CallNativeEventSe(int SlotNo, NJS_POINT3* pPos, int SeNo, int Mode)
 {
 	int SlotDef[5];
 	float Distance;
@@ -3617,7 +3617,7 @@ int StopNativeEventSe(int SlotNo)
 
 // 
 // Start address: 0x2955f0
-void RequestObjectSeEx(int ObjectNo, _anon16* pPos, int Type)
+void RequestObjectSeEx(int ObjectNo, NJS_POINT3* pPos, int Type)
 {
 	_anon35* oip;
 	// Line 2851, Address: 0x2955f0, Func Offset: 0
@@ -3637,7 +3637,7 @@ void RequestObjectSeEx(int ObjectNo, _anon16* pPos, int Type)
 
 // 
 // Start address: 0x2956a0
-void RegistObjectSe(int ObjectNo, _anon16* pPos, int SeNo, int Prio)
+void RegistObjectSe(int ObjectNo, NJS_POINT3* pPos, int SeNo, int Prio)
 {
 	_anon35* oip;
 	int i;
@@ -3779,7 +3779,7 @@ void StopBgm2()
 
 // 
 // Start address: 0x295a20
-void PlayVoiceEx2(int PatId, int VoiceNo, _anon16* pPos, int Mode, int FadeInRate, int PauseFlag)
+void PlayVoiceEx2(int PatId, int VoiceNo, NJS_POINT3* pPos, int Mode, int FadeInRate, int PauseFlag)
 {
 	float Dist;
 	char Vol;
@@ -3813,7 +3813,7 @@ void PlayVoiceEx2(int PatId, int VoiceNo, _anon16* pPos, int Mode, int FadeInRat
 
 // 
 // Start address: 0x295bd0
-void PlayVoiceEx(int VoiceNo, _anon16* pPos, int Mode, int FadeInRate, int PauseFlag)
+void PlayVoiceEx(int VoiceNo, NJS_POINT3* pPos, int Mode, int FadeInRate, int PauseFlag)
 {
 	// Line 3144, Address: 0x295bd4, Func Offset: 0x4
 	// Func End, Address: 0x295bfc, Func Offset: 0x2c
@@ -3821,7 +3821,7 @@ void PlayVoiceEx(int VoiceNo, _anon16* pPos, int Mode, int FadeInRate, int Pause
 
 // 
 // Start address: 0x295c00
-void PlayVoice(int VoiceNo, _anon16* pPos, int Mode, int FadeInRate)
+void PlayVoice(int VoiceNo, NJS_POINT3* pPos, int Mode, int FadeInRate)
 {
 	// Line 3160, Address: 0x295c00, Func Offset: 0
 	// Func End, Address: 0x295c08, Func Offset: 0x8

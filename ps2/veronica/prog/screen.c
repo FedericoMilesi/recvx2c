@@ -26,7 +26,7 @@ typedef struct BH_PWORK;
 typedef struct _anon23;
 typedef struct _anon24;
 typedef struct _anon25;
-typedef struct _anon26;
+typedef struct NJS_POINT3;
 typedef struct _anon27;
 typedef struct _anon28;
 typedef struct _anon29;
@@ -166,7 +166,7 @@ typedef _anon25 type_121[4];
 typedef _anon14 type_122[4];
 typedef unsigned int type_123[32];
 typedef _anon14 type_124[4];
-typedef _anon26 type_125[32];
+typedef NJS_POINT3 type_125[32];
 typedef _anon0* type_126[512];
 typedef _anon25 type_127[4];
 typedef _anon0* type_128[128];
@@ -581,7 +581,7 @@ struct _anon19
 	unsigned int mp_flg[8];
 	unsigned int itm[384];
 	unsigned int ply_stflg[4];
-	_anon26 ply_pos;
+	NJS_POINT3 ply_pos;
 	int ply_ang;
 	char ply_wno[4];
 	short ply_hp[4];
@@ -806,8 +806,8 @@ struct _anon19
 	BH_PWORK* plp;
 	_anon32* pl_htp;
 	int costume;
-	_anon26 hd_pos;
-	_anon26 apos;
+	NJS_POINT3 hd_pos;
+	NJS_POINT3 apos;
 	_anon32* ahtp;
 	int mwal_n;
 	int metc_n;
@@ -884,7 +884,7 @@ struct _anon19
 	unsigned char ufo_md;
 	unsigned char ufo_flg;
 	short ufo_oidx;
-	_anon26 ufo_pos;
+	NJS_POINT3 ufo_pos;
 	unsigned int opt_flg;
 	unsigned short opt_md0;
 	unsigned short opt_md1;
@@ -911,7 +911,7 @@ struct _anon19
 	_anon27 gatc[16];
 	int ght_ct;
 	unsigned int ghtc[32];
-	_anon26 ghtp[32];
+	NJS_POINT3 ghtp[32];
 	unsigned short db_md0;
 	unsigned short db_md1;
 	char db_stgno;
@@ -959,8 +959,8 @@ struct _anon21
 struct _anon22
 {
 	float mtrx[16];
-	_anon26 pnt;
-	_anon26 vctr;
+	NJS_POINT3 pnt;
+	NJS_POINT3 vctr;
 	int stat;
 	int reserve;
 	_anon28 ltcal;
@@ -1110,7 +1110,7 @@ struct BH_PWORK
 
 struct _anon23
 {
-	_anon26 ps;
+	NJS_POINT3 ps;
 	float nr;
 	float fr;
 	float cr;
@@ -1122,7 +1122,7 @@ struct _anon24
 {
 	int* vlist;
 	short* plist;
-	_anon26 center;
+	NJS_POINT3 center;
 	float r;
 };
 
@@ -1132,17 +1132,17 @@ struct _anon25
 	float y;
 };
 
-struct _anon26
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct _anon27
 {
-	_anon26 c1;
-	_anon26 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r1;
 	float r2;
 };
@@ -1161,9 +1161,9 @@ struct _anon28
 	float intns;
 	int exp;
 	int reserve;
-	_anon26 lpnt;
-	_anon26 lvctr;
-	_anon26 lmvctr;
+	NJS_POINT3 lpnt;
+	NJS_POINT3 lvctr;
+	NJS_POINT3 lmvctr;
 	_anon20 atten;
 	_anon20 amb;
 	_anon20 dif;
@@ -1334,14 +1334,14 @@ struct _anon36
 
 struct _anon37
 {
-	_anon26 c;
+	NJS_POINT3 c;
 	float r;
 };
 
 struct _anon38
 {
-	_anon26 c1;
-	_anon26 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r;
 };
 
@@ -1643,8 +1643,8 @@ void bhDrawScope()
 	unsigned int argb;
 	_anon14 uv[4];
 	_anon14 col[4];
-	_anon26 as;
-	_anon26 ps;
+	NJS_POINT3 as;
+	NJS_POINT3 ps;
 	_anon25 p[4];
 	_anon30 p2c;
 	// Line 425, Address: 0x26c710, Func Offset: 0

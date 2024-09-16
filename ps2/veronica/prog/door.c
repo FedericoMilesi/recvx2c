@@ -12,7 +12,7 @@ typedef struct _anon8;
 typedef struct _anon9;
 typedef struct _anon10;
 typedef struct _anon11;
-typedef struct _anon12;
+typedef struct NJS_POINT3;
 typedef struct _anon13;
 typedef struct _anon14;
 typedef struct _anon15;
@@ -81,7 +81,7 @@ typedef unsigned int type_9[32];
 typedef _anon2* type_10[8];
 typedef _anon1* type_11[128];
 typedef int* type_12[16];
-typedef _anon12 type_13[32];
+typedef NJS_POINT3 type_13[32];
 typedef _anon1* type_14[128];
 typedef npobj* type_15[16];
 typedef int type_16[3];
@@ -235,8 +235,8 @@ struct _door_wrk
 	int vew_reg;
 	int vew_tmp;
 	void* vpP;
-	_anon12 vew_pos;
-	_anon12 vew_bak;
+	NJS_POINT3 vew_pos;
+	NJS_POINT3 vew_bak;
 	int vew_ang[3];
 	int vew_ang_speed;
 	int vew_yaw;
@@ -255,7 +255,7 @@ struct _door_wrk
 	void* dpP;
 	_anon14 dor_mdl;
 	npobj* objP;
-	_anon12 dor_bak;
+	NJS_POINT3 dor_bak;
 	int dor_yaw;
 	int dor_pitch;
 	float dor_speed;
@@ -265,8 +265,8 @@ struct _door_wrk
 	int lgt_reg;
 	int lgt_atr[3];
 	void* lpP;
-	_anon12 lgt_amb_off;
-	_anon12 lgt_pnt_rte;
+	NJS_POINT3 lgt_amb_off;
+	NJS_POINT3 lgt_pnt_rte;
 	_anon35 lgt_buf[3];
 	void(*pru_prcP)(void*);
 	int pru_mode;
@@ -471,7 +471,7 @@ struct _anon6
 
 struct _anon7
 {
-	_anon12 pos_low;
+	NJS_POINT3 pos_low;
 	int ang_low[3];
 	int dst_ang_low[3];
 	float ang_rte_low;
@@ -482,7 +482,7 @@ struct _anon7
 	int speed_dx_low;
 	int accel_dx_low;
 	int loop_wait_low;
-	_anon12 pos_high;
+	NJS_POINT3 pos_high;
 	int ang_high[3];
 	int dst_ang_high[3];
 	float ang_rte_high;
@@ -555,12 +555,12 @@ struct _anon11
 	int wait2;
 };
 
-struct _anon12
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct _anon13
 {
@@ -625,9 +625,9 @@ struct _anon16
 
 struct _anon17
 {
-	_anon12 pos_low;
+	NJS_POINT3 pos_low;
 	int ang_low[3];
-	_anon12 pos_high;
+	NJS_POINT3 pos_high;
 	int ang_high[3];
 	int wait0;
 	float fde_rte0;
@@ -657,15 +657,15 @@ struct _anon18
 
 struct _anon19
 {
-	_anon12 pos_low;
-	_anon12 tgt_low;
+	NJS_POINT3 pos_low;
+	NJS_POINT3 tgt_low;
 	int roll_low;
 	int yaw_low;
 	int pitch_low;
 	float speed_low;
 	float accel_low;
-	_anon12 pos_high;
-	_anon12 tgt_high;
+	NJS_POINT3 pos_high;
+	NJS_POINT3 tgt_high;
 	int roll_high;
 	int yaw_high;
 	int pitxh_high;
@@ -685,9 +685,9 @@ struct _anon20
 struct _anon21
 {
 	int wait_push;
-	_anon12 pos_push;
+	NJS_POINT3 pos_push;
 	int wait_pull;
-	_anon12 pos_pull;
+	NJS_POINT3 pos_pull;
 	int ang[3];
 	int vew0_yaw;
 	int vew0_pitch;
@@ -769,7 +769,7 @@ struct _anon25
 	unsigned int mp_flg[8];
 	unsigned int itm[384];
 	unsigned int ply_stflg[4];
-	_anon12 ply_pos;
+	NJS_POINT3 ply_pos;
 	int ply_ang;
 	char ply_wno[4];
 	short ply_hp[4];
@@ -994,8 +994,8 @@ struct _anon25
 	BH_PWORK* plp;
 	_anon55* pl_htp;
 	int costume;
-	_anon12 hd_pos;
-	_anon12 apos;
+	NJS_POINT3 hd_pos;
+	NJS_POINT3 apos;
 	_anon55* ahtp;
 	int mwal_n;
 	int metc_n;
@@ -1072,7 +1072,7 @@ struct _anon25
 	unsigned char ufo_md;
 	unsigned char ufo_flg;
 	short ufo_oidx;
-	_anon12 ufo_pos;
+	NJS_POINT3 ufo_pos;
 	unsigned int opt_flg;
 	unsigned short opt_md0;
 	unsigned short opt_md1;
@@ -1099,7 +1099,7 @@ struct _anon25
 	_anon45 gatc[16];
 	int ght_ct;
 	unsigned int ghtc[32];
-	_anon12 ghtp[32];
+	NJS_POINT3 ghtp[32];
 	unsigned short db_md0;
 	unsigned short db_md1;
 	char db_stgno;
@@ -1143,8 +1143,8 @@ struct _anon27
 struct _anon28
 {
 	float mtrx[16];
-	_anon12 pnt;
-	_anon12 vctr;
+	NJS_POINT3 pnt;
+	NJS_POINT3 vctr;
 	int stat;
 	int reserve;
 	_anon44 ltcal;
@@ -1319,7 +1319,7 @@ struct _anon30
 
 struct _anon31
 {
-	_anon12 ps;
+	NJS_POINT3 ps;
 	float nr;
 	float fr;
 	float cr;
@@ -1346,9 +1346,9 @@ struct _anon33
 
 struct _anon34
 {
-	_anon12 pos_low;
+	NJS_POINT3 pos_low;
 	int ang_low[3];
-	_anon12 pos_high;
+	NJS_POINT3 pos_high;
 	int ang_high[3];
 	int wait;
 	int chg_vew;
@@ -1360,7 +1360,7 @@ struct _anon35
 	float col_r;
 	float col_g;
 	float col_b;
-	_anon12 pos;
+	NJS_POINT3 pos;
 	float n_rang;
 	float f_rang;
 };
@@ -1375,7 +1375,7 @@ struct _anon37
 {
 	int* vlist;
 	short* plist;
-	_anon12 center;
+	NJS_POINT3 center;
 	float r;
 };
 
@@ -1488,9 +1488,9 @@ struct _anon44
 	float intns;
 	int exp;
 	int reserve;
-	_anon12 lpnt;
-	_anon12 lvctr;
-	_anon12 lmvctr;
+	NJS_POINT3 lpnt;
+	NJS_POINT3 lvctr;
+	NJS_POINT3 lmvctr;
 	_anon29 atten;
 	_anon29 amb;
 	_anon29 dif;
@@ -1502,8 +1502,8 @@ struct _anon44
 
 struct _anon45
 {
-	_anon12 c1;
-	_anon12 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r1;
 	float r2;
 };
@@ -1558,14 +1558,14 @@ struct _anon49
 
 struct _anon50
 {
-	_anon12 dst_pos_low;
+	NJS_POINT3 dst_pos_low;
 	int dst_ang_low[3];
-	_anon12 dst_pos_high;
+	NJS_POINT3 dst_pos_high;
 	int dst_ang_high[3];
 	int wait_pos;
 	int wait_ang;
-	_anon12 pos_rte;
-	_anon12 ang_rte;
+	NJS_POINT3 pos_rte;
+	NJS_POINT3 ang_rte;
 	int total_time;
 	int chg_vew;
 };
@@ -1652,14 +1652,14 @@ struct _anon55
 
 struct _anon56
 {
-	_anon12 c;
+	NJS_POINT3 c;
 	float r;
 };
 
 struct _anon57
 {
-	_anon12 c1;
-	_anon12 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r;
 };
 
@@ -1702,9 +1702,9 @@ void LightProc1(_door_wrk* dwP);
 void LightProc2(_door_wrk* dwP);
 int CompareSint32(int val_a, int cmp_typ, int val_b);
 int CompareFloat(float val_a, int cmp_typ, float val_b);
-void VectorMove(_anon12* posP, int yaw, int pitch, float speed);
-void LightSubAmb(_anon12* ambP, _anon12* offP);
-void LightSubPnt(_door_wrk* dwP, int lgt_no, _anon35* ldP, _anon12* rteP);
+void VectorMove(NJS_POINT3* posP, int yaw, int pitch, float speed);
+void LightSubAmb(NJS_POINT3* ambP, NJS_POINT3* offP);
+void LightSubPnt(_door_wrk* dwP, int lgt_no, _anon35* ldP, NJS_POINT3* rteP);
 void ryExcuteFade(float pri, int col, float rate);
 void PuruProc1(_door_wrk* dwP);
 void DokiProcLgt(_door_wrk* dwP);
@@ -1713,8 +1713,8 @@ void DokiProcLgt(_door_wrk* dwP);
 // Start address: 0x2aec30
 void bhInitDoor()
 {
-	_anon12 amb_ini;
-	_anon12 vct_ini;
+	NJS_POINT3 amb_ini;
+	NJS_POINT3 vct_ini;
 	// Line 158, Address: 0x2aec30, Func Offset: 0
 	// Line 177, Address: 0x2aec34, Func Offset: 0x4
 	// Line 158, Address: 0x2aec40, Func Offset: 0x10
@@ -2103,7 +2103,7 @@ void ViewProc1(_door_wrk* dwP)
 // Start address: 0x2afb90
 void ViewProc2(_door_wrk* dwP)
 {
-	_anon12 vct;
+	NJS_POINT3 vct;
 	_anon19* prmP;
 	_anon19* vpP;
 	// Line 970, Address: 0x2afb90, Func Offset: 0
@@ -2784,7 +2784,7 @@ int CompareFloat(float val_a, int cmp_typ, float val_b)
 
 // 
 // Start address: 0x2b19b0
-void VectorMove(_anon12* posP, int yaw, int pitch, float speed)
+void VectorMove(NJS_POINT3* posP, int yaw, int pitch, float speed)
 {
 	// Line 2080, Address: 0x2b19b0, Func Offset: 0
 	// Line 2083, Address: 0x2b19c8, Func Offset: 0x18
@@ -2803,9 +2803,9 @@ void VectorMove(_anon12* posP, int yaw, int pitch, float speed)
 
 // 
 // Start address: 0x2b1a80
-void LightSubAmb(_anon12* ambP, _anon12* offP)
+void LightSubAmb(NJS_POINT3* ambP, NJS_POINT3* offP)
 {
-	_anon12 amb;
+	NJS_POINT3 amb;
 	// Line 2098, Address: 0x2b1a80, Func Offset: 0
 	// Line 2101, Address: 0x2b1a88, Func Offset: 0x8
 	// Line 2103, Address: 0x2b1aa0, Func Offset: 0x20
@@ -2820,9 +2820,9 @@ void LightSubAmb(_anon12* ambP, _anon12* offP)
 
 // 
 // Start address: 0x2b1b50
-void LightSubPnt(_door_wrk* dwP, int lgt_no, _anon35* ldP, _anon12* rteP)
+void LightSubPnt(_door_wrk* dwP, int lgt_no, _anon35* ldP, NJS_POINT3* rteP)
 {
-	_anon12 vct;
+	NJS_POINT3 vct;
 	// Line 2117, Address: 0x2b1b50, Func Offset: 0
 	// Line 2126, Address: 0x2b1b64, Func Offset: 0x14
 	// Line 2128, Address: 0x2b1b8c, Func Offset: 0x3c
@@ -2897,8 +2897,8 @@ void PuruProc1(_door_wrk* dwP)
 void DokiProcLgt(_door_wrk* dwP)
 {
 	int ang;
-	_anon12* offP;
-	_anon12* rteP;
+	NJS_POINT3* offP;
+	NJS_POINT3* rteP;
 	// Line 2232, Address: 0x2b1e40, Func Offset: 0
 	// Line 2234, Address: 0x2b1e4c, Func Offset: 0xc
 	// Line 2237, Address: 0x2b1e6c, Func Offset: 0x2c

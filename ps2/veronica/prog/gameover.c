@@ -27,7 +27,7 @@ typedef struct _anon23;
 typedef struct _anon24;
 typedef struct _anon25;
 typedef struct _anon26;
-typedef struct _anon27;
+typedef struct NJS_POINT3;
 typedef struct _anon28;
 typedef struct _anon29;
 typedef struct _anon30;
@@ -54,7 +54,7 @@ typedef _anon1* type_6[512];
 typedef _anon2* type_7[16][16];
 typedef _anon2* type_8[16][16][100];
 typedef char type_9[8];
-typedef _anon27 type_10[32];
+typedef NJS_POINT3 type_10[32];
 typedef _anon1* type_11[32];
 typedef _anon1* type_12[512];
 typedef _anon2* type_13[1300];
@@ -91,16 +91,16 @@ typedef unsigned char type_43[64];
 typedef float type_44[3][20];
 typedef float type_45[3];
 typedef float type_46[3][20];
-typedef _anon27 type_47[256];
+typedef NJS_POINT3 type_47[256];
 typedef _anon15 type_48[256];
 typedef float type_49[3];
 typedef float type_50[3][20];
 typedef _anon15 type_51[256];
 typedef char type_52[8];
 typedef float type_53[3];
-typedef _anon27 type_54[256];
+typedef NJS_POINT3 type_54[256];
 typedef float type_55[3][20];
-typedef _anon27 type_56[256];
+typedef NJS_POINT3 type_56[256];
 typedef void* type_57[2];
 typedef _anon23 type_58[7];
 typedef _anon2* type_59[256];
@@ -158,7 +158,7 @@ typedef short type_112[4];
 typedef unsigned char type_113[4];
 typedef _anon28 type_114[16];
 typedef unsigned int type_115[32];
-typedef _anon27 type_116[32];
+typedef NJS_POINT3 type_116[32];
 typedef _anon1* type_117[512];
 typedef float type_118[16];
 typedef _anon1* type_119[128];
@@ -169,11 +169,11 @@ typedef _anon1* type_122[512];
 struct _anon0
 {
 	_anon32 p3c;
-	_anon27 pt[256];
+	NJS_POINT3 pt[256];
 	_anon15 cl[256];
 	_anon15 uv[256];
-	_anon27 cp[256];
-	_anon27 op[256];
+	NJS_POINT3 cp[256];
+	NJS_POINT3 op[256];
 	float pz;
 	float scl;
 	float tfn;
@@ -525,7 +525,7 @@ struct _anon4
 	unsigned int mp_flg[8];
 	unsigned int itm[384];
 	unsigned int ply_stflg[4];
-	_anon27 ply_pos;
+	NJS_POINT3 ply_pos;
 	int ply_ang;
 	char ply_wno[4];
 	short ply_hp[4];
@@ -750,8 +750,8 @@ struct _anon4
 	BH_PWORK* plp;
 	_anon33* pl_htp;
 	int costume;
-	_anon27 hd_pos;
-	_anon27 apos;
+	NJS_POINT3 hd_pos;
+	NJS_POINT3 apos;
 	_anon33* ahtp;
 	int mwal_n;
 	int metc_n;
@@ -828,7 +828,7 @@ struct _anon4
 	unsigned char ufo_md;
 	unsigned char ufo_flg;
 	short ufo_oidx;
-	_anon27 ufo_pos;
+	NJS_POINT3 ufo_pos;
 	unsigned int opt_flg;
 	unsigned short opt_md0;
 	unsigned short opt_md1;
@@ -855,7 +855,7 @@ struct _anon4
 	_anon28 gatc[16];
 	int ght_ct;
 	unsigned int ghtc[32];
-	_anon27 ghtp[32];
+	NJS_POINT3 ghtp[32];
 	unsigned short db_md0;
 	unsigned short db_md1;
 	char db_stgno;
@@ -1100,8 +1100,8 @@ struct _anon21
 struct _anon22
 {
 	float mtrx[16];
-	_anon27 pnt;
-	_anon27 vctr;
+	NJS_POINT3 pnt;
+	NJS_POINT3 vctr;
 	int stat;
 	int reserve;
 	_anon29 ltcal;
@@ -1118,7 +1118,7 @@ struct _anon23
 
 struct _anon24
 {
-	_anon27 ps;
+	NJS_POINT3 ps;
 	float nr;
 	float fr;
 	float cr;
@@ -1130,7 +1130,7 @@ struct _anon25
 {
 	int* vlist;
 	short* plist;
-	_anon27 center;
+	NJS_POINT3 center;
 	float r;
 };
 
@@ -1140,17 +1140,17 @@ struct _anon26
 	float y;
 };
 
-struct _anon27
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct _anon28
 {
-	_anon27 c1;
-	_anon27 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r1;
 	float r2;
 };
@@ -1169,9 +1169,9 @@ struct _anon29
 	float intns;
 	int exp;
 	int reserve;
-	_anon27 lpnt;
-	_anon27 lvctr;
-	_anon27 lmvctr;
+	NJS_POINT3 lpnt;
+	NJS_POINT3 lvctr;
+	NJS_POINT3 lmvctr;
 	_anon20 atten;
 	_anon20 amb;
 	_anon20 dif;
@@ -1208,7 +1208,7 @@ struct _anon31
 
 struct _anon32
 {
-	_anon27* p;
+	NJS_POINT3* p;
 	_anon15* col;
 	_anon15* tex;
 	unsigned int num;
@@ -1342,14 +1342,14 @@ struct _anon37
 
 struct _anon38
 {
-	_anon27 c;
+	NJS_POINT3 c;
 	float r;
 };
 
 struct _anon39
 {
-	_anon27 c1;
-	_anon27 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r;
 };
 
@@ -1939,7 +1939,7 @@ void bhDrawGameOver()
 	int x;
 	_anon15 uv[32];
 	_anon15 cl[32];
-	_anon27 pt[32];
+	NJS_POINT3 pt[32];
 	_anon32 p3c;
 	_anon0* gv;
 	// Line 602, Address: 0x2bb070, Func Offset: 0

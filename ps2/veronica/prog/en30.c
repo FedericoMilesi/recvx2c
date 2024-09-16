@@ -3,7 +3,7 @@ typedef struct _anon0;
 typedef struct BH_PWORK;
 typedef struct _anon1;
 typedef struct _anon2;
-typedef struct _anon3;
+typedef struct NJS_POINT3;
 typedef struct _anon4;
 typedef struct _anon5;
 typedef struct _anon6;
@@ -144,7 +144,7 @@ typedef int type_105[3];
 typedef unsigned char type_106[4];
 typedef _anon23 type_107[16];
 typedef unsigned int type_108[32];
-typedef _anon3 type_109[32];
+typedef NJS_POINT3 type_109[32];
 typedef _anon0* type_110[512];
 typedef _anon0* type_111[128];
 typedef int type_112[3];
@@ -444,12 +444,12 @@ struct _anon2
 	unsigned int col;
 };
 
-struct _anon3
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct _anon4
 {
@@ -574,7 +574,7 @@ struct _anon10
 	unsigned int mp_flg[8];
 	unsigned int itm[384];
 	unsigned int ply_stflg[4];
-	_anon3 ply_pos;
+	NJS_POINT3 ply_pos;
 	int ply_ang;
 	char ply_wno[4];
 	short ply_hp[4];
@@ -799,8 +799,8 @@ struct _anon10
 	BH_PWORK* plp;
 	_anon27* pl_htp;
 	int costume;
-	_anon3 hd_pos;
-	_anon3 apos;
+	NJS_POINT3 hd_pos;
+	NJS_POINT3 apos;
 	_anon27* ahtp;
 	int mwal_n;
 	int metc_n;
@@ -877,7 +877,7 @@ struct _anon10
 	unsigned char ufo_md;
 	unsigned char ufo_flg;
 	short ufo_oidx;
-	_anon3 ufo_pos;
+	NJS_POINT3 ufo_pos;
 	unsigned int opt_flg;
 	unsigned short opt_md0;
 	unsigned short opt_md1;
@@ -904,7 +904,7 @@ struct _anon10
 	_anon23 gatc[16];
 	int ght_ct;
 	unsigned int ghtc[32];
-	_anon3 ghtp[32];
+	NJS_POINT3 ghtp[32];
 	unsigned short db_md0;
 	unsigned short db_md1;
 	char db_stgno;
@@ -1054,8 +1054,8 @@ struct _anon18
 struct _anon19
 {
 	float mtrx[16];
-	_anon3 pnt;
-	_anon3 vctr;
+	NJS_POINT3 pnt;
+	NJS_POINT3 vctr;
 	int stat;
 	int reserve;
 	_anon24 ltcal;
@@ -1064,7 +1064,7 @@ struct _anon19
 
 struct _anon20
 {
-	_anon3 ps;
+	NJS_POINT3 ps;
 	float nr;
 	float fr;
 	float cr;
@@ -1076,7 +1076,7 @@ struct _anon21
 {
 	int* vlist;
 	short* plist;
-	_anon3 center;
+	NJS_POINT3 center;
 	float r;
 };
 
@@ -1088,8 +1088,8 @@ struct _anon22
 
 struct _anon23
 {
-	_anon3 c1;
-	_anon3 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r1;
 	float r2;
 };
@@ -1108,9 +1108,9 @@ struct _anon24
 	float intns;
 	int exp;
 	int reserve;
-	_anon3 lpnt;
-	_anon3 lvctr;
-	_anon3 lmvctr;
+	NJS_POINT3 lpnt;
+	NJS_POINT3 lvctr;
+	NJS_POINT3 lmvctr;
 	_anon17 atten;
 	_anon17 amb;
 	_anon17 dif;
@@ -1203,14 +1203,14 @@ struct _anon30
 
 struct _anon31
 {
-	_anon3 c;
+	NJS_POINT3 c;
 	float r;
 };
 
 struct _anon32
 {
-	_anon3 c1;
-	_anon3 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r;
 };
 
@@ -1250,7 +1250,7 @@ void bhEne30_DD01(BH_PWORK* epw);
 void bhEne30_CheckEnemies(BH_PWORK* epw);
 void bhEne30_DamageInit(BH_PWORK* epw);
 void bhEne30_CollisionLine(BH_PWORK* epw);
-void bhEne30_SetFluidEffect(_anon3* pos, _anon3* vec, int type, float size);
+void bhEne30_SetFluidEffect(NJS_POINT3* pos, NJS_POINT3* vec, int type, float size);
 
 // 
 // Start address: 0x213630
@@ -1444,9 +1444,9 @@ void bhEne30_MV01(BH_PWORK* epw)
 	float dist;
 	BH_PWORK* ep;
 	int i;
-	_anon3 vec;
+	NJS_POINT3 vec;
 	_anon27* hp;
-	_anon3 pos;
+	NJS_POINT3 pos;
 	// Line 531, Address: 0x213d30, Func Offset: 0
 	// Line 540, Address: 0x213d50, Func Offset: 0x20
 	// Line 542, Address: 0x213d70, Func Offset: 0x40
@@ -1543,8 +1543,8 @@ void bhEne30_MV02(BH_PWORK* epw)
 	npobj* objB;
 	npobj* objA;
 	float size;
-	_anon3 pos;
-	_anon3 v;
+	NJS_POINT3 pos;
+	NJS_POINT3 v;
 	int i;
 	// Line 639, Address: 0x214190, Func Offset: 0
 	// Line 640, Address: 0x2141b8, Func Offset: 0x28
@@ -1716,7 +1716,7 @@ void bhEne30_MV05(BH_PWORK* epw)
 {
 	_anon18* owk;
 	int i;
-	_anon3 pos;
+	NJS_POINT3 pos;
 	int mtn[3];
 	// Line 828, Address: 0x214910, Func Offset: 0
 	// Line 829, Address: 0x21491c, Func Offset: 0xc
@@ -1792,8 +1792,8 @@ void bhEne30_MV06(BH_PWORK* epw)
 {
 	float size;
 	float spd;
-	_anon3 pos;
-	_anon3 v;
+	NJS_POINT3 pos;
+	NJS_POINT3 v;
 	int i;
 	// Line 923, Address: 0x214c80, Func Offset: 0
 	// Line 924, Address: 0x214ca8, Func Offset: 0x28
@@ -2161,7 +2161,7 @@ void bhEne30_CheckEnemies(BH_PWORK* epw)
 // Start address: 0x215b90
 void bhEne30_DamageInit(BH_PWORK* epw)
 {
-	_anon3 ofp;
+	NJS_POINT3 ofp;
 	int dam;
 	int i;
 	// Line 1355, Address: 0x215b90, Func Offset: 0
@@ -2211,7 +2211,7 @@ void bhEne30_DamageInit(BH_PWORK* epw)
 void bhEne30_CollisionLine(BH_PWORK* epw)
 {
 	_anon27* hp;
-	_anon3 n;
+	NJS_POINT3 n;
 	// Line 1426, Address: 0x215d10, Func Offset: 0
 	// Line 1430, Address: 0x215d20, Func Offset: 0x10
 	// Line 1431, Address: 0x215d2c, Func Offset: 0x1c
@@ -2225,7 +2225,7 @@ void bhEne30_CollisionLine(BH_PWORK* epw)
 
 // 
 // Start address: 0x215da0
-void bhEne30_SetFluidEffect(_anon3* pos, _anon3* vec, int type, float size)
+void bhEne30_SetFluidEffect(NJS_POINT3* pos, NJS_POINT3* vec, int type, float size)
 {
 	int eno;
 	// Line 1470, Address: 0x215da0, Func Offset: 0

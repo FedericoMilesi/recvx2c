@@ -2,7 +2,7 @@ typedef struct _anon0;
 typedef struct _anon1;
 typedef struct _anon2;
 typedef struct _anon3;
-typedef struct _anon4;
+typedef struct NJS_POINT3;
 typedef struct _anon5;
 typedef struct _anon6;
 typedef struct _anon7;
@@ -43,16 +43,16 @@ struct _anon3
 	unsigned short dummy;
 };
 
-struct _anon4
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct _anon5
 {
-	_anon4 p;
+	NJS_POINT3 p;
 	float sx;
 	float sy;
 	int ang;

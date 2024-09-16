@@ -10,7 +10,7 @@ typedef struct _anon8;
 typedef struct npobj;
 typedef struct _anon9;
 typedef struct _anon10;
-typedef struct _anon11;
+typedef struct NJS_POINT3;
 typedef struct _anon12;
 typedef struct _anon13;
 typedef struct _anon14;
@@ -103,7 +103,7 @@ struct _anon9
 {
 	int* vlist;
 	short* plist;
-	_anon11 center;
+	NJS_POINT3 center;
 	float r;
 };
 
@@ -117,23 +117,23 @@ struct _anon10
 	_anon8* owP;
 };
 
-struct _anon11
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct _anon12
 {
-	_anon11* points;
-	_anon11* normals;
+	NJS_POINT3* points;
+	NJS_POINT3* normals;
 	int nbPoint;
 	_anon13* meshsets;
 	_anon14* mats;
 	unsigned short nbMeshset;
 	unsigned short nbMat;
-	_anon11 center;
+	NJS_POINT3 center;
 	float r;
 };
 
@@ -143,7 +143,7 @@ struct _anon13
 	unsigned short nbMesh;
 	short* meshes;
 	unsigned int* attrs;
-	_anon11* normals;
+	NJS_POINT3* normals;
 	_anon6* vertcolor;
 	_anon6* vertuv;
 };

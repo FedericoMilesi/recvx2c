@@ -1,7 +1,7 @@
 typedef struct npobj;
 typedef struct _anon0;
 typedef struct _anon1;
-typedef struct _anon2;
+typedef struct NJS_POINT3;
 typedef struct _anon3;
 typedef struct _anon4;
 typedef struct _anon5;
@@ -95,7 +95,7 @@ typedef int type_45[4];
 typedef unsigned char* type_46[256];
 typedef unsigned int type_47[2];
 typedef short type_48[256];
-typedef _anon2 type_49[8];
+typedef NJS_POINT3 type_49[8];
 typedef _anon30 type_50[4];
 typedef float type_51[3];
 typedef short type_52[256];
@@ -152,8 +152,8 @@ typedef _anon33 type_103[16];
 typedef unsigned int type_104[8];
 typedef unsigned int type_105[32];
 typedef unsigned int type_106[4];
-typedef _anon2 type_107[4];
-typedef _anon2 type_108[32];
+typedef NJS_POINT3 type_107[4];
+typedef NJS_POINT3 type_108[32];
 typedef _anon1* type_109[512];
 typedef _anon1* type_110[128];
 typedef _anon1* type_111[512];
@@ -220,7 +220,7 @@ struct _anon0
 	unsigned int mp_flg[8];
 	unsigned int itm[384];
 	unsigned int ply_stflg[4];
-	_anon2 ply_pos;
+	NJS_POINT3 ply_pos;
 	int ply_ang;
 	char ply_wno[4];
 	short ply_hp[4];
@@ -445,8 +445,8 @@ struct _anon0
 	BH_PWORK* plp;
 	_anon6* pl_htp;
 	int costume;
-	_anon2 hd_pos;
-	_anon2 apos;
+	NJS_POINT3 hd_pos;
+	NJS_POINT3 apos;
 	_anon6* ahtp;
 	int mwal_n;
 	int metc_n;
@@ -523,7 +523,7 @@ struct _anon0
 	unsigned char ufo_md;
 	unsigned char ufo_flg;
 	short ufo_oidx;
-	_anon2 ufo_pos;
+	NJS_POINT3 ufo_pos;
 	unsigned int opt_flg;
 	unsigned short opt_md0;
 	unsigned short opt_md1;
@@ -550,7 +550,7 @@ struct _anon0
 	_anon33 gatc[16];
 	int ght_ct;
 	unsigned int ghtc[32];
-	_anon2 ghtp[32];
+	NJS_POINT3 ghtp[32];
 	unsigned short db_md0;
 	unsigned short db_md1;
 	char db_stgno;
@@ -703,12 +703,12 @@ struct _anon1
 	int Dummy2;
 };
 
-struct _anon2
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct _anon3
 {
@@ -1163,8 +1163,8 @@ struct _anon28
 struct _anon29
 {
 	float mtrx[16];
-	_anon2 pnt;
-	_anon2 vctr;
+	NJS_POINT3 pnt;
+	NJS_POINT3 vctr;
 	int stat;
 	int reserve;
 	_anon34 ltcal;
@@ -1314,7 +1314,7 @@ struct BH_PWORK
 
 struct _anon30
 {
-	_anon2 ps;
+	NJS_POINT3 ps;
 	float nr;
 	float fr;
 	float cr;
@@ -1326,7 +1326,7 @@ struct _anon31
 {
 	int* vlist;
 	short* plist;
-	_anon2 center;
+	NJS_POINT3 center;
 	float r;
 };
 
@@ -1338,8 +1338,8 @@ struct _anon32
 
 struct _anon33
 {
-	_anon2 c1;
-	_anon2 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r1;
 	float r2;
 };
@@ -1358,9 +1358,9 @@ struct _anon34
 	float intns;
 	int exp;
 	int reserve;
-	_anon2 lpnt;
-	_anon2 lvctr;
-	_anon2 lmvctr;
+	NJS_POINT3 lpnt;
+	NJS_POINT3 lvctr;
+	NJS_POINT3 lmvctr;
 	_anon27 atten;
 	_anon27 amb;
 	_anon27 dif;
@@ -1434,14 +1434,14 @@ struct _anon39
 
 struct _anon40
 {
-	_anon2 c;
+	NJS_POINT3 c;
 	float r;
 };
 
 struct _anon41
 {
-	_anon2 c1;
-	_anon2 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r;
 };
 
@@ -1480,23 +1480,23 @@ _anon37 PLANE;
 _anon0* sys;
 _anon12* rom;
 
-_anon6* bhCollisionCheckLine(_anon2* p1, _anon2* p2);
-_anon6* bhCollisionCheckLine2(_anon2* p1, _anon2* p2, unsigned int flg, char flr_no);
-_anon6* bhCollisionCheckLine3(_anon2* p1, _anon2* p2, unsigned int flg, char flr_no);
-int bhCollisionCheckLineMain(_anon6* hp, _anon2* vec, _anon2* p1, _anon2* p2);
-int bhCollisionCheckL2PL(_anon2* p1, _anon2* p2, _anon2* area, int num);
-int bhInOutCheck(_anon2* p, _anon2* area, _anon2* normal, int num);
-int bhCollisionCheckL2MDL(_anon2* p1, _anon2* p2, _anon31* mdl, float mtx[16]);
-int bhCollisionCheckL2XZPL(_anon2* p1, _anon2* p2, _anon2* pos, float w, float d, int flg);
-int bhCollisionCheckL2XYPL(_anon2* p1, _anon2* p2, _anon2* pos, float w, float h, int flg);
-int bhCollisionCheckL2YZPL(_anon2* p1, _anon2* p2, _anon2* pos, float h, float d, int flg);
-void bhGetHitCollisionNormal(_anon2* n);
+_anon6* bhCollisionCheckLine(NJS_POINT3* p1, NJS_POINT3* p2);
+_anon6* bhCollisionCheckLine2(NJS_POINT3* p1, NJS_POINT3* p2, unsigned int flg, char flr_no);
+_anon6* bhCollisionCheckLine3(NJS_POINT3* p1, NJS_POINT3* p2, unsigned int flg, char flr_no);
+int bhCollisionCheckLineMain(_anon6* hp, NJS_POINT3* vec, NJS_POINT3* p1, NJS_POINT3* p2);
+int bhCollisionCheckL2PL(NJS_POINT3* p1, NJS_POINT3* p2, NJS_POINT3* area, int num);
+int bhInOutCheck(NJS_POINT3* p, NJS_POINT3* area, NJS_POINT3* normal, int num);
+int bhCollisionCheckL2MDL(NJS_POINT3* p1, NJS_POINT3* p2, _anon31* mdl, float mtx[16]);
+int bhCollisionCheckL2XZPL(NJS_POINT3* p1, NJS_POINT3* p2, NJS_POINT3* pos, float w, float d, int flg);
+int bhCollisionCheckL2XYPL(NJS_POINT3* p1, NJS_POINT3* p2, NJS_POINT3* pos, float w, float h, int flg);
+int bhCollisionCheckL2YZPL(NJS_POINT3* p1, NJS_POINT3* p2, NJS_POINT3* pos, float h, float d, int flg);
+void bhGetHitCollisionNormal(NJS_POINT3* n);
 
 // 
 // Start address: 0x269370
-_anon6* bhCollisionCheckLine(_anon2* p1, _anon2* p2)
+_anon6* bhCollisionCheckLine(NJS_POINT3* p1, NJS_POINT3* p2)
 {
-	_anon2 vec;
+	NJS_POINT3 vec;
 	int wal_n;
 	int i;
 	_anon6* ret;
@@ -1526,9 +1526,9 @@ _anon6* bhCollisionCheckLine(_anon2* p1, _anon2* p2)
 
 // 
 // Start address: 0x2694c0
-_anon6* bhCollisionCheckLine2(_anon2* p1, _anon2* p2, unsigned int flg, char flr_no)
+_anon6* bhCollisionCheckLine2(NJS_POINT3* p1, NJS_POINT3* p2, unsigned int flg, char flr_no)
 {
-	_anon2 vec;
+	NJS_POINT3 vec;
 	int wal_n;
 	int i;
 	_anon6* ret;
@@ -1561,9 +1561,9 @@ _anon6* bhCollisionCheckLine2(_anon2* p1, _anon2* p2, unsigned int flg, char flr
 
 // 
 // Start address: 0x269690
-_anon6* bhCollisionCheckLine3(_anon2* p1, _anon2* p2, unsigned int flg, char flr_no)
+_anon6* bhCollisionCheckLine3(NJS_POINT3* p1, NJS_POINT3* p2, unsigned int flg, char flr_no)
 {
-	_anon2 vec;
+	NJS_POINT3 vec;
 	int wal_n;
 	int i;
 	_anon6* ret;
@@ -1596,10 +1596,10 @@ _anon6* bhCollisionCheckLine3(_anon2* p1, _anon2* p2, unsigned int flg, char flr
 
 // 
 // Start address: 0x269870
-int bhCollisionCheckLineMain(_anon6* hp, _anon2* vec, _anon2* p1, _anon2* p2)
+int bhCollisionCheckLineMain(_anon6* hp, NJS_POINT3* vec, NJS_POINT3* p1, NJS_POINT3* p2)
 {
-	_anon2 pos;
-	_anon2 area[8];
+	NJS_POINT3 pos;
+	NJS_POINT3 area[8];
 	int j;
 	int ret;
 	// Line 205, Address: 0x269870, Func Offset: 0
@@ -2031,13 +2031,13 @@ int bhCollisionCheckLineMain(_anon6* hp, _anon2* vec, _anon2* p1, _anon2* p2)
 
 // 
 // Start address: 0x26ae90
-int bhCollisionCheckL2PL(_anon2* p1, _anon2* p2, _anon2* area, int num)
+int bhCollisionCheckL2PL(NJS_POINT3* p1, NJS_POINT3* p2, NJS_POINT3* area, int num)
 {
 	float wlen;
 	float len;
 	int ret;
-	_anon2 dv;
-	_anon2 cp;
+	NJS_POINT3 dv;
+	NJS_POINT3 cp;
 	_anon37 ln;
 	_anon37 pl;
 	// Line 638, Address: 0x26ae90, Func Offset: 0
@@ -2094,7 +2094,7 @@ int bhCollisionCheckL2PL(_anon2* p1, _anon2* p2, _anon2* area, int num)
 
 // 
 // Start address: 0x26b0b0
-int bhInOutCheck(_anon2* p, _anon2* area, _anon2* normal, int num)
+int bhInOutCheck(NJS_POINT3* p, NJS_POINT3* area, NJS_POINT3* normal, int num)
 {
 	float v2z;
 	float v2y;
@@ -2102,9 +2102,9 @@ int bhInOutCheck(_anon2* p, _anon2* area, _anon2* normal, int num)
 	float v1z;
 	float v1y;
 	float v1x;
-	_anon2 n;
-	_anon2* p2;
-	_anon2* p1;
+	NJS_POINT3 n;
+	NJS_POINT3* p2;
+	NJS_POINT3* p1;
 	int i;
 	// Line 702, Address: 0x26b0b0, Func Offset: 0
 	// Line 707, Address: 0x26b0c8, Func Offset: 0x18
@@ -2143,12 +2143,12 @@ int bhInOutCheck(_anon2* p, _anon2* area, _anon2* normal, int num)
 
 // 
 // Start address: 0x26b200
-int bhCollisionCheckL2MDL(_anon2* p1, _anon2* p2, _anon31* mdl, float mtx[16])
+int bhCollisionCheckL2MDL(NJS_POINT3* p1, NJS_POINT3* p2, _anon31* mdl, float mtx[16])
 {
 	_anon37 ln;
-	_anon2 center;
-	_anon2 area[4];
-	_anon2* pd;
+	NJS_POINT3 center;
+	NJS_POINT3 area[4];
+	NJS_POINT3* pd;
 	short pnum;
 	int j;
 	int i;
@@ -2192,10 +2192,10 @@ int bhCollisionCheckL2MDL(_anon2* p1, _anon2* p2, _anon31* mdl, float mtx[16])
 
 // 
 // Start address: 0x26b3c0
-int bhCollisionCheckL2XZPL(_anon2* p1, _anon2* p2, _anon2* pos, float w, float d, int flg)
+int bhCollisionCheckL2XZPL(NJS_POINT3* p1, NJS_POINT3* p2, NJS_POINT3* pos, float w, float d, int flg)
 {
 	int ret;
-	_anon2 cp;
+	NJS_POINT3 cp;
 	_anon37 ln;
 	_anon37 pl;
 	// Line 931, Address: 0x26b3c0, Func Offset: 0
@@ -2232,10 +2232,10 @@ int bhCollisionCheckL2XZPL(_anon2* p1, _anon2* p2, _anon2* pos, float w, float d
 
 // 
 // Start address: 0x26b560
-int bhCollisionCheckL2XYPL(_anon2* p1, _anon2* p2, _anon2* pos, float w, float h, int flg)
+int bhCollisionCheckL2XYPL(NJS_POINT3* p1, NJS_POINT3* p2, NJS_POINT3* pos, float w, float h, int flg)
 {
 	int ret;
-	_anon2 cp;
+	NJS_POINT3 cp;
 	_anon37 ln;
 	_anon37 pl;
 	// Line 983, Address: 0x26b560, Func Offset: 0
@@ -2273,10 +2273,10 @@ int bhCollisionCheckL2XYPL(_anon2* p1, _anon2* p2, _anon2* pos, float w, float h
 
 // 
 // Start address: 0x26b700
-int bhCollisionCheckL2YZPL(_anon2* p1, _anon2* p2, _anon2* pos, float h, float d, int flg)
+int bhCollisionCheckL2YZPL(NJS_POINT3* p1, NJS_POINT3* p2, NJS_POINT3* pos, float h, float d, int flg)
 {
 	int ret;
-	_anon2 cp;
+	NJS_POINT3 cp;
 	_anon37 ln;
 	_anon37 pl;
 	// Line 1035, Address: 0x26b700, Func Offset: 0
@@ -2313,7 +2313,7 @@ int bhCollisionCheckL2YZPL(_anon2* p1, _anon2* p2, _anon2* pos, float h, float d
 
 // 
 // Start address: 0x26b8a0
-void bhGetHitCollisionNormal(_anon2* n)
+void bhGetHitCollisionNormal(NJS_POINT3* n)
 {
 	// Line 1083, Address: 0x26b8a0, Func Offset: 0
 	// Line 1084, Address: 0x26b8ac, Func Offset: 0xc

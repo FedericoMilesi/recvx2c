@@ -5,7 +5,7 @@ typedef struct _anon2;
 typedef struct _anon3;
 typedef struct BH_PWORK;
 typedef struct _anon4;
-typedef struct _anon5;
+typedef struct NJS_POINT3;
 typedef struct _anon6;
 typedef struct _anon7;
 typedef struct _anon8;
@@ -124,7 +124,7 @@ typedef int type_79[450];
 typedef void(*type_80)(BH_PWORK*)[2];
 typedef unsigned int type_81[8];
 typedef unsigned char type_82[450];
-typedef _anon5 type_83[5];
+typedef NJS_POINT3 type_83[5];
 typedef char type_84[16];
 typedef char type_85[4];
 typedef void(*type_87)(BH_PWORK*)[6];
@@ -157,7 +157,7 @@ typedef char type_114[3];
 typedef unsigned char type_115[4];
 typedef _anon26 type_116[16];
 typedef unsigned int type_117[32];
-typedef _anon5 type_118[32];
+typedef NJS_POINT3 type_118[32];
 typedef _anon0* type_119[512];
 typedef _anon0* type_120[128];
 typedef void(*type_122)(BH_PWORK*)[9];
@@ -473,12 +473,12 @@ struct _anon4
 	unsigned short* atrP;
 };
 
-struct _anon5
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct _anon6
 {
@@ -598,7 +598,7 @@ struct _anon12
 	unsigned int mp_flg[8];
 	unsigned int itm[384];
 	unsigned int ply_stflg[4];
-	_anon5 ply_pos;
+	NJS_POINT3 ply_pos;
 	int ply_ang;
 	char ply_wno[4];
 	short ply_hp[4];
@@ -823,8 +823,8 @@ struct _anon12
 	BH_PWORK* plp;
 	_anon29* pl_htp;
 	int costume;
-	_anon5 hd_pos;
-	_anon5 apos;
+	NJS_POINT3 hd_pos;
+	NJS_POINT3 apos;
 	_anon29* ahtp;
 	int mwal_n;
 	int metc_n;
@@ -901,7 +901,7 @@ struct _anon12
 	unsigned char ufo_md;
 	unsigned char ufo_flg;
 	short ufo_oidx;
-	_anon5 ufo_pos;
+	NJS_POINT3 ufo_pos;
 	unsigned int opt_flg;
 	unsigned short opt_md0;
 	unsigned short opt_md1;
@@ -928,7 +928,7 @@ struct _anon12
 	_anon26 gatc[16];
 	int ght_ct;
 	unsigned int ghtc[32];
-	_anon5 ghtp[32];
+	NJS_POINT3 ghtp[32];
 	unsigned short db_md0;
 	unsigned short db_md1;
 	char db_stgno;
@@ -1078,8 +1078,8 @@ struct _anon20
 struct _anon21
 {
 	float mtrx[16];
-	_anon5 pnt;
-	_anon5 vctr;
+	NJS_POINT3 pnt;
+	NJS_POINT3 vctr;
 	int stat;
 	int reserve;
 	_anon27 ltcal;
@@ -1088,7 +1088,7 @@ struct _anon21
 
 struct _anon22
 {
-	_anon5 ps;
+	NJS_POINT3 ps;
 	float nr;
 	float fr;
 	float cr;
@@ -1100,7 +1100,7 @@ struct _anon23
 {
 	int* vlist;
 	short* plist;
-	_anon5 center;
+	NJS_POINT3 center;
 	float r;
 };
 
@@ -1112,7 +1112,7 @@ struct _anon24
 
 struct _anon25
 {
-	_anon5 off_pos;
+	NJS_POINT3 off_pos;
 	int srd_dir;
 	float srd_pos;
 	float bld_spd;
@@ -1122,8 +1122,8 @@ struct _anon25
 
 struct _anon26
 {
-	_anon5 c1;
-	_anon5 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r1;
 	float r2;
 };
@@ -1142,9 +1142,9 @@ struct _anon27
 	float intns;
 	int exp;
 	int reserve;
-	_anon5 lpnt;
-	_anon5 lvctr;
-	_anon5 lmvctr;
+	NJS_POINT3 lpnt;
+	NJS_POINT3 lvctr;
+	NJS_POINT3 lmvctr;
 	_anon19 atten;
 	_anon19 amb;
 	_anon19 dif;
@@ -1237,14 +1237,14 @@ struct _anon33
 
 struct _anon34
 {
-	_anon5 c;
+	NJS_POINT3 c;
 	float r;
 };
 
 struct _anon35
 {
-	_anon5 c1;
-	_anon5 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r;
 };
 
@@ -1252,7 +1252,7 @@ int ENE07_HITPOINT[16];
 char junction_tree[6][1];
 char SdwTab[3];
 char AtkPos[5];
-_anon5 AtkOffset[5];
+NJS_POINT3 AtkOffset[5];
 int AtkAngle[5];
 _anon25 BloodParam;
 _anon17 CapColTab[5];
@@ -1303,7 +1303,7 @@ int bhEne07_AvoidWall(BH_PWORK* epw, int dir);
 void bhEne07_PlayerBloodEffect(BH_PWORK* epw, unsigned char size);
 void bhEne07_PlayerControl(BH_PWORK* epw);
 int bhEne07_ObjEdge(BH_PWORK* epw);
-void bhEne07_CalcAtariOffset(BH_PWORK* epw, _anon5* ofp);
+void bhEne07_CalcAtariOffset(BH_PWORK* epw, NJS_POINT3* ofp);
 
 // 
 // Start address: 0x1bfe80
@@ -1335,7 +1335,7 @@ void bhEne07(BH_PWORK* epw)
 // Start address: 0x1bffd0
 void bhEne07_Init(BH_PWORK* epw)
 {
-	_anon5 p;
+	NJS_POINT3 p;
 	int sdw;
 	BH_PWORK* ep;
 	int i;
@@ -1610,7 +1610,7 @@ void bhEne07_MV00(BH_PWORK* epw)
 // Start address: 0x1c0c70
 void bhEne07_MV01(BH_PWORK* epw)
 {
-	_anon5 pos;
+	NJS_POINT3 pos;
 	// Line 730, Address: 0x1c0c70, Func Offset: 0
 	// Line 731, Address: 0x1c0c7c, Func Offset: 0xc
 	// Line 734, Address: 0x1c0ca8, Func Offset: 0x38
@@ -1850,7 +1850,7 @@ void bhEne07_MV07()
 // Start address: 0x1c1b50
 void bhEne07_MV08(BH_PWORK* epw)
 {
-	_anon5 pos;
+	NJS_POINT3 pos;
 	// Line 1067, Address: 0x1c1b50, Func Offset: 0
 	// Line 1070, Address: 0x1c1b60, Func Offset: 0x10
 	// Line 1072, Address: 0x1c1b80, Func Offset: 0x30
@@ -1903,8 +1903,8 @@ void bhEne07_Nage(BH_PWORK* epw)
 // Start address: 0x1c1d10
 void bhEne07_NG00(BH_PWORK* epw)
 {
-	_anon5 v;
-	_anon5 pos;
+	NJS_POINT3 v;
+	NJS_POINT3 pos;
 	// Line 1128, Address: 0x1c1d10, Func Offset: 0
 	// Line 1132, Address: 0x1c1d24, Func Offset: 0x14
 	// Line 1135, Address: 0x1c1d44, Func Offset: 0x34
@@ -2004,9 +2004,9 @@ void bhEne07_NG00(BH_PWORK* epw)
 void bhEne07_NG01(BH_PWORK* epw)
 {
 	_anon20* owk;
-	_anon5 v;
-	_anon5 offset;
-	_anon5 pos;
+	NJS_POINT3 v;
+	NJS_POINT3 offset;
+	NJS_POINT3 pos;
 	// Line 1243, Address: 0x1c2120, Func Offset: 0
 	// Line 1246, Address: 0x1c2130, Func Offset: 0x10
 	// Line 1249, Address: 0x1c2150, Func Offset: 0x30
@@ -2115,8 +2115,8 @@ void bhEne07_NG01(BH_PWORK* epw)
 // Start address: 0x1c25b0
 void bhEne07_Damage(BH_PWORK* epw)
 {
-	_anon5 ofp;
-	_anon5 ofp;
+	NJS_POINT3 ofp;
+	NJS_POINT3 ofp;
 	int dam;
 	int i;
 	// Line 1368, Address: 0x1c25b0, Func Offset: 0
@@ -2211,7 +2211,7 @@ void bhEne07_Die(BH_PWORK* epw)
 // Start address: 0x1c2ab0
 void bhEne07_DD00(BH_PWORK* epw)
 {
-	_anon5 trans;
+	NJS_POINT3 trans;
 	_anon3* mkfP;
 	// Line 1501, Address: 0x1c2ab0, Func Offset: 0
 	// Line 1502, Address: 0x1c2ac4, Func Offset: 0x14
@@ -2324,7 +2324,7 @@ void bhEne07_DD00(BH_PWORK* epw)
 // Start address: 0x1c2f70
 void bhEne07_DD01(BH_PWORK* epw)
 {
-	_anon5 trans;
+	NJS_POINT3 trans;
 	_anon3* mkfP;
 	// Line 1627, Address: 0x1c2f70, Func Offset: 0
 	// Line 1628, Address: 0x1c2f84, Func Offset: 0x14
@@ -2438,9 +2438,9 @@ void bhEne07_DD01(BH_PWORK* epw)
 void bhEne07_DD02(BH_PWORK* epw)
 {
 	_anon9* mkaP;
-	_anon5 trans;
+	NJS_POINT3 trans;
 	_anon3* mkfP;
-	_anon5 pos;
+	NJS_POINT3 pos;
 	// Line 1752, Address: 0x1c3430, Func Offset: 0
 	// Line 1755, Address: 0x1c3444, Func Offset: 0x14
 	// Line 1757, Address: 0x1c3470, Func Offset: 0x40
@@ -2583,9 +2583,9 @@ void bhEne07_DD02(BH_PWORK* epw)
 void bhEne07_DD03(BH_PWORK* epw)
 {
 	_anon9* mkaP;
-	_anon5 trans;
+	NJS_POINT3 trans;
 	_anon3* mkfP;
-	_anon5 pos;
+	NJS_POINT3 pos;
 	// Line 1914, Address: 0x1c3a30, Func Offset: 0
 	// Line 1917, Address: 0x1c3a44, Func Offset: 0x14
 	// Line 1919, Address: 0x1c3a70, Func Offset: 0x40
@@ -2727,9 +2727,9 @@ void bhEne07_DD03(BH_PWORK* epw)
 // Start address: 0x1c4030
 void bhEne07_DD04(BH_PWORK* epw)
 {
-	_anon5 trans;
+	NJS_POINT3 trans;
 	_anon3* mkfP;
-	_anon5 pos;
+	NJS_POINT3 pos;
 	// Line 2076, Address: 0x1c4030, Func Offset: 0
 	// Line 2079, Address: 0x1c4044, Func Offset: 0x14
 	// Line 2081, Address: 0x1c4088, Func Offset: 0x58
@@ -2828,9 +2828,9 @@ void bhEne07_DD04(BH_PWORK* epw)
 // Start address: 0x1c43d0
 void bhEne07_DD05(BH_PWORK* epw)
 {
-	_anon5 trans;
+	NJS_POINT3 trans;
 	_anon3* mkfP;
-	_anon5 pos;
+	NJS_POINT3 pos;
 	// Line 2184, Address: 0x1c43d0, Func Offset: 0
 	// Line 2187, Address: 0x1c43e4, Func Offset: 0x14
 	// Line 2189, Address: 0x1c4428, Func Offset: 0x58
@@ -2947,7 +2947,7 @@ void bhEne07_DD06(BH_PWORK* epw)
 // Start address: 0x1c47f0
 void bhEne07_SearchPlayer(BH_PWORK* epw)
 {
-	_anon5 pos;
+	NJS_POINT3 pos;
 	float dz;
 	float dx;
 	// Line 2323, Address: 0x1c47f0, Func Offset: 0
@@ -2977,7 +2977,7 @@ void bhEne07_SearchPlayer(BH_PWORK* epw)
 // Start address: 0x1c4890
 void bhEne07_CollisionWalls(BH_PWORK* epw)
 {
-	_anon5 ofp;
+	NJS_POINT3 ofp;
 	// Line 2350, Address: 0x1c4890, Func Offset: 0
 	// Line 2354, Address: 0x1c48a0, Func Offset: 0x10
 	// Line 2356, Address: 0x1c48b0, Func Offset: 0x20
@@ -3000,7 +3000,7 @@ void bhEne07_CollisionWalls(BH_PWORK* epw)
 void bhEne07_FloorCollision(BH_PWORK* epw)
 {
 	_anon29* hp;
-	_anon5 n;
+	NJS_POINT3 n;
 	// Line 2373, Address: 0x1c4940, Func Offset: 0
 	// Line 2380, Address: 0x1c4950, Func Offset: 0x10
 	// Line 2381, Address: 0x1c496c, Func Offset: 0x2c
@@ -3035,10 +3035,10 @@ int bhEne07_CheckHangingWall(BH_PWORK* epw)
 	BH_PWORK* ep;
 	_anon3* mkfP;
 	_anon29* hp;
-	_anon5 pos2;
-	_anon5 pos;
-	_anon5 n;
-	_anon5 vec;
+	NJS_POINT3 pos2;
+	NJS_POINT3 pos;
+	NJS_POINT3 n;
+	NJS_POINT3 vec;
 	// Line 2463, Address: 0x1c4a50, Func Offset: 0
 	// Line 2473, Address: 0x1c4a74, Func Offset: 0x24
 	// Line 2472, Address: 0x1c4a78, Func Offset: 0x28
@@ -3115,13 +3115,13 @@ int bhEne07_AvoidWall(BH_PWORK* epw, int dir)
 	BH_PWORK* ep2;
 	BH_PWORK* ep;
 	int i;
-	_anon5 trans;
-	_anon5 vdB;
-	_anon5 body;
+	NJS_POINT3 trans;
+	NJS_POINT3 vdB;
+	NJS_POINT3 body;
 	_anon29* hp2;
 	_anon29* hp1;
-	_anon5 pos2;
-	_anon5 pos1;
+	NJS_POINT3 pos2;
+	NJS_POINT3 pos1;
 	// Line 2538, Address: 0x1c4d20, Func Offset: 0
 	// Line 2551, Address: 0x1c4d4c, Func Offset: 0x2c
 	// Line 2538, Address: 0x1c4d54, Func Offset: 0x34
@@ -3272,8 +3272,8 @@ int bhEne07_AvoidWall(BH_PWORK* epw, int dir)
 // Start address: 0x1c5550
 void bhEne07_PlayerBloodEffect(BH_PWORK* epw, unsigned char size)
 {
-	_anon5 v;
-	_anon5 pos;
+	NJS_POINT3 v;
+	NJS_POINT3 pos;
 	// Line 2706, Address: 0x1c5550, Func Offset: 0
 	// Line 2713, Address: 0x1c5564, Func Offset: 0x14
 	// Line 2716, Address: 0x1c55c4, Func Offset: 0x74
@@ -3436,8 +3436,8 @@ void bhEne07_PlayerControl(BH_PWORK* epw)
 // Start address: 0x1c5b10
 int bhEne07_ObjEdge(BH_PWORK* epw)
 {
-	_anon5 p2;
-	_anon5 p1;
+	NJS_POINT3 p2;
+	NJS_POINT3 p1;
 	_anon29* hp;
 	int ret;
 	// Line 2844, Address: 0x1c5b10, Func Offset: 0
@@ -3497,12 +3497,12 @@ int bhEne07_ObjEdge(BH_PWORK* epw)
 
 // 
 // Start address: 0x1c5e40
-void bhEne07_CalcAtariOffset(BH_PWORK* epw, _anon5* ofp)
+void bhEne07_CalcAtariOffset(BH_PWORK* epw, NJS_POINT3* ofp)
 {
 	npobj* objP;
 	_anon9* mkaP;
-	_anon5 trans;
-	_anon5 body;
+	NJS_POINT3 trans;
+	NJS_POINT3 body;
 	// Line 2916, Address: 0x1c5e40, Func Offset: 0
 	// Line 2919, Address: 0x1c5e50, Func Offset: 0x10
 	// Line 2920, Address: 0x1c5e58, Func Offset: 0x18

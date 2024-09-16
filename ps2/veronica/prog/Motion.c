@@ -10,7 +10,7 @@ typedef struct _anon6;
 typedef struct _anon7;
 typedef struct _anon8;
 typedef struct _anon9;
-typedef struct _anon10;
+typedef struct NJS_POINT3;
 typedef struct _anon11;
 
 
@@ -245,7 +245,7 @@ struct _anon8
 {
 	int* vlist;
 	short* plist;
-	_anon10 center;
+	NJS_POINT3 center;
 	float r;
 };
 
@@ -259,17 +259,17 @@ struct _anon9
 	_anon6* owP;
 };
 
-struct _anon10
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct _anon11
 {
-	_anon10 c1;
-	_anon10 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r;
 };
 
@@ -285,7 +285,7 @@ void SetMtnFastHokan(BH_PWORK* ewP, char* datP, int mode, float rate);
 void SetMtnSlow(BH_PWORK* ewP, char* datP, int mode);
 void SetMtnSlowHokan(BH_PWORK* ewP, char* datP, int mode, float rate);
 void bhFixPosition(BH_PWORK* ewP, char* datP);
-void bhCalcFixOffset(BH_PWORK* ewP, char* datP, _anon10* offP, _anon10* rtnP);
+void bhCalcFixOffset(BH_PWORK* ewP, char* datP, NJS_POINT3* offP, NJS_POINT3* rtnP);
 void bhGetObjMotion(BH_PWORK* ewP, int obj_no, float* pos, int* ang);
 void AngZyxToYzx(int* zyx, int* yzx);
 void AngYzxToZyx(int* yzx, int* zyx);
@@ -809,7 +809,7 @@ void SetMtnSlowHokan(BH_PWORK* ewP, char* datP, int mode, float rate)
 // Start address: 0x130d90
 void bhFixPosition(BH_PWORK* ewP, char* datP)
 {
-	_anon10 pos;
+	NJS_POINT3 pos;
 	// Line 752, Address: 0x130d90, Func Offset: 0
 	// Line 756, Address: 0x130d9c, Func Offset: 0xc
 	// Line 758, Address: 0x130dac, Func Offset: 0x1c
@@ -820,13 +820,13 @@ void bhFixPosition(BH_PWORK* ewP, char* datP)
 
 // 
 // Start address: 0x130de0
-void bhCalcFixOffset(BH_PWORK* ewP, char* datP, _anon10* offP, _anon10* rtnP)
+void bhCalcFixOffset(BH_PWORK* ewP, char* datP, NJS_POINT3* offP, NJS_POINT3* rtnP)
 {
-	_anon10 dst;
-	_anon10 src;
+	NJS_POINT3 dst;
+	NJS_POINT3 src;
 	npobj* objP;
 	_anon9* mlwP;
-	_anon10 off;
+	NJS_POINT3 off;
 	// Line 779, Address: 0x130de0, Func Offset: 0
 	// Line 782, Address: 0x130dfc, Func Offset: 0x1c
 	// Line 785, Address: 0x130e0c, Func Offset: 0x2c

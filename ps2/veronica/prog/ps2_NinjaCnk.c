@@ -10,7 +10,7 @@ typedef struct _anon5;
 typedef struct _anon6;
 typedef struct _anon7;
 typedef struct _anon8;
-typedef struct _anon9;
+typedef struct NJS_POINT3;
 typedef struct tagCNK_PRIM_BUF;
 typedef struct _anon10;
 typedef struct _anon11;
@@ -152,7 +152,7 @@ struct _anon5
 {
 	int* vlist;
 	short* plist;
-	_anon9 center;
+	NJS_POINT3 center;
 	float r;
 };
 
@@ -180,12 +180,12 @@ struct _anon8
 	unsigned short dummy;
 };
 
-struct _anon9
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct tagCNK_PRIM_BUF
 {
@@ -217,12 +217,12 @@ struct _anon11
 	float sx;
 	float sy;
 	float oow;
-	_anon9 point;
+	NJS_POINT3 point;
 	unsigned int reserve;
 	float u;
 	float v;
 	float inten[2];
-	_anon9 vector;
+	NJS_POINT3 vector;
 	unsigned int flag;
 };
 
@@ -261,7 +261,7 @@ struct _anon13
 	unsigned short nbMesh;
 	short* meshes;
 	unsigned int* attrs;
-	_anon9* normals;
+	NJS_POINT3* normals;
 	_anon1* vertcolor;
 	_anon1* vertuv;
 };
@@ -347,14 +347,14 @@ struct _anon17
 
 struct _anon18
 {
-	_anon9* points;
-	_anon9* normals;
+	NJS_POINT3* points;
+	NJS_POINT3* normals;
 	int nbPoint;
 	_anon13* meshsets;
 	_anon12* mats;
 	unsigned short nbMeshset;
 	unsigned short nbMat;
-	_anon9 center;
+	NJS_POINT3 center;
 	float r;
 };
 
@@ -1072,7 +1072,7 @@ int njCnkDrawModelLocal(_anon5* pModel)
 	float fSX;
 	float fRH;
 	float fRW;
-	_anon9 Center;
+	NJS_POINT3 Center;
 	// Line 1651, Address: 0x2cfe30, Func Offset: 0
 	// Line 1659, Address: 0x2cfe44, Func Offset: 0x14
 	// Line 1662, Address: 0x2cfe58, Func Offset: 0x28
@@ -1127,7 +1127,7 @@ int njCnkDrawModelLocalMod(_anon5* pModel)
 	float fSX;
 	float fRH;
 	float fRW;
-	_anon9 Center;
+	NJS_POINT3 Center;
 	// Line 1786, Address: 0x2d00a0, Func Offset: 0
 	// Line 1793, Address: 0x2d00b4, Func Offset: 0x14
 	// Line 1796, Address: 0x2d00c4, Func Offset: 0x24

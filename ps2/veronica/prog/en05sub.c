@@ -8,7 +8,7 @@ typedef struct BH_PWORK;
 typedef struct _anon5;
 typedef struct _anon6;
 typedef struct _anon7;
-typedef struct _anon8;
+typedef struct NJS_POINT3;
 typedef struct _anon9;
 typedef struct _anon10;
 
@@ -232,7 +232,7 @@ struct _anon6
 {
 	int* vlist;
 	short* plist;
-	_anon8 center;
+	NJS_POINT3 center;
 	float r;
 };
 
@@ -246,12 +246,12 @@ struct _anon7
 	_anon5* owP;
 };
 
-struct _anon8
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct _anon9
 {
@@ -274,8 +274,8 @@ struct _anon9
 
 struct _anon10
 {
-	_anon8 c1;
-	_anon8 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r;
 };
 
@@ -294,7 +294,7 @@ void bhEne05s_FloorCollision(BH_PWORK* epw);
 // Start address: 0x1b8fa0
 void bhEne05s(BH_PWORK* epw)
 {
-	_anon8 v;
+	NJS_POINT3 v;
 	// Line 97, Address: 0x1b8fa0, Func Offset: 0
 	// Line 99, Address: 0x1b8fb8, Func Offset: 0x18
 	// Line 102, Address: 0x1b8fd8, Func Offset: 0x38
@@ -355,7 +355,7 @@ void bhEne05s_MV00()
 // Start address: 0x1b9120
 void bhEne05s_MV01(BH_PWORK* epw)
 {
-	_anon8 vec;
+	NJS_POINT3 vec;
 	BH_PWORK* ep;
 	int ang;
 	// Line 179, Address: 0x1b9120, Func Offset: 0
@@ -416,8 +416,8 @@ void bhEne05s_MV01(BH_PWORK* epw)
 // Start address: 0x1b9480
 void bhEne05s_MV02(BH_PWORK* epw)
 {
-	_anon8 vec;
-	_anon8 pos;
+	NJS_POINT3 vec;
+	NJS_POINT3 pos;
 	_anon5* owk;
 	// Line 252, Address: 0x1b9480, Func Offset: 0
 	// Line 259, Address: 0x1b9498, Func Offset: 0x18

@@ -28,7 +28,7 @@ typedef struct _anon23;
 typedef struct _anon24;
 typedef struct _anon25;
 typedef struct _anon26;
-typedef struct _anon27;
+typedef struct NJS_POINT3;
 typedef struct _anon28;
 typedef struct _anon29;
 typedef struct _anon30;
@@ -145,7 +145,7 @@ typedef int type_101[3];
 typedef unsigned char type_102[4];
 typedef _anon28 type_103[16];
 typedef unsigned int type_104[32];
-typedef _anon27 type_105[32];
+typedef NJS_POINT3 type_105[32];
 typedef _anon0* type_106[512];
 typedef _anon0* type_107[128];
 typedef BH_PWORK* type_108[64];
@@ -445,9 +445,9 @@ struct _anon1
 	float l;
 	float rn;
 	float rmax;
-	_anon27 wp_fps1;
-	_anon27 wp_fps2;
-	_anon27 wp_cps;
+	NJS_POINT3 wp_fps1;
+	NJS_POINT3 wp_fps2;
+	NJS_POINT3 wp_cps;
 	unsigned char ltp;
 	unsigned char lr;
 	unsigned char lg;
@@ -620,7 +620,7 @@ struct _anon10
 	unsigned int mp_flg[8];
 	unsigned int itm[384];
 	unsigned int ply_stflg[4];
-	_anon27 ply_pos;
+	NJS_POINT3 ply_pos;
 	int ply_ang;
 	char ply_wno[4];
 	short ply_hp[4];
@@ -845,8 +845,8 @@ struct _anon10
 	BH_PWORK* plp;
 	_anon31* pl_htp;
 	int costume;
-	_anon27 hd_pos;
-	_anon27 apos;
+	NJS_POINT3 hd_pos;
+	NJS_POINT3 apos;
 	_anon31* ahtp;
 	int mwal_n;
 	int metc_n;
@@ -923,7 +923,7 @@ struct _anon10
 	unsigned char ufo_md;
 	unsigned char ufo_flg;
 	short ufo_oidx;
-	_anon27 ufo_pos;
+	NJS_POINT3 ufo_pos;
 	unsigned int opt_flg;
 	unsigned short opt_md0;
 	unsigned short opt_md1;
@@ -950,7 +950,7 @@ struct _anon10
 	_anon28 gatc[16];
 	int ght_ct;
 	unsigned int ghtc[32];
-	_anon27 ghtp[32];
+	NJS_POINT3 ghtp[32];
 	unsigned short db_md0;
 	unsigned short db_md1;
 	char db_stgno;
@@ -1156,8 +1156,8 @@ struct _anon22
 struct _anon23
 {
 	float mtrx[16];
-	_anon27 pnt;
-	_anon27 vctr;
+	NJS_POINT3 pnt;
+	NJS_POINT3 vctr;
 	int stat;
 	int reserve;
 	_anon29 ltcal;
@@ -1166,7 +1166,7 @@ struct _anon23
 
 struct _anon24
 {
-	_anon27 ps;
+	NJS_POINT3 ps;
 	float nr;
 	float fr;
 	float cr;
@@ -1178,7 +1178,7 @@ struct _anon25
 {
 	int* vlist;
 	short* plist;
-	_anon27 center;
+	NJS_POINT3 center;
 	float r;
 };
 
@@ -1188,17 +1188,17 @@ struct _anon26
 	float y;
 };
 
-struct _anon27
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct _anon28
 {
-	_anon27 c1;
-	_anon27 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r1;
 	float r2;
 };
@@ -1217,9 +1217,9 @@ struct _anon29
 	float intns;
 	int exp;
 	int reserve;
-	_anon27 lpnt;
-	_anon27 lvctr;
-	_anon27 lmvctr;
+	NJS_POINT3 lpnt;
+	NJS_POINT3 lvctr;
+	NJS_POINT3 lmvctr;
 	_anon21 atten;
 	_anon21 amb;
 	_anon21 dif;
@@ -1295,14 +1295,14 @@ struct _anon34
 
 struct _anon35
 {
-	_anon27 c;
+	NJS_POINT3 c;
 	float r;
 };
 
 struct _anon36
 {
-	_anon27 c1;
-	_anon27 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r;
 };
 
@@ -1326,7 +1326,7 @@ void bhCPM2_act_wsc_pch();
 void bhCPM2_act_atk_pch();
 _anon14* CheckGunHit(_anon1* wtP, int obj_no, int yaw);
 void bhCPM2_SearchPch();
-void bhArmIkMdk(BH_PWORK* ewP, int bas_no, _anon27* effP, int rot);
+void bhArmIkMdk(BH_PWORK* ewP, int bas_no, NJS_POINT3* effP, int rot);
 
 // 
 // Start address: 0x14a5b0
@@ -1560,8 +1560,8 @@ _search* bhSearchEnemy(BH_PWORK* pwP, int rng, float hgt)
 	float dst;
 	float p_cs;
 	BH_PWORK* ewP;
-	_anon27 vct1;
-	_anon27 vct0;
+	NJS_POINT3 vct1;
+	NJS_POINT3 vct0;
 	_search* prvP;
 	_search* scnP;
 	_search* lstP;
@@ -2062,7 +2062,7 @@ void bhCPM2_act_atk_pch()
 // Start address: 0x14cc70
 _anon14* CheckGunHit(_anon1* wtP, int obj_no, int yaw)
 {
-	_anon27 ps;
+	NJS_POINT3 ps;
 	_anon14 gap;
 	// Line 1143, Address: 0x14cc70, Func Offset: 0
 	// Line 1147, Address: 0x14cc84, Func Offset: 0x14
@@ -2145,19 +2145,19 @@ void bhCPM2_SearchPch()
 
 // 
 // Start address: 0x14cf60
-void bhArmIkMdk(BH_PWORK* ewP, int bas_no, _anon27* effP, int rot)
+void bhArmIkMdk(BH_PWORK* ewP, int bas_no, NJS_POINT3* effP, int rot)
 {
 	npobj* obj1P;
 	npobj* obj0P;
-	_anon27* vtP;
-	_anon27* vb1P;
-	_anon27* vyP;
-	_anon27* vhP;
+	NJS_POINT3* vtP;
+	NJS_POINT3* vb1P;
+	NJS_POINT3* vyP;
+	NJS_POINT3* vhP;
 	float l01;
 	float lb0;
 	float lb1;
 	int Ta;
-	_anon27 vu;
+	NJS_POINT3 vu;
 	// Line 1235, Address: 0x14cf60, Func Offset: 0
 	// Line 1241, Address: 0x14cf8c, Func Offset: 0x2c
 	// Line 1235, Address: 0x14cf90, Func Offset: 0x30

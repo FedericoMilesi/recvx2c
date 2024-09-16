@@ -26,7 +26,7 @@ typedef struct BH_PWORK;
 typedef struct _anon21;
 typedef struct _anon22;
 typedef struct _anon23;
-typedef struct _anon24;
+typedef struct NJS_POINT3;
 typedef struct _anon25;
 typedef struct _anon26;
 typedef struct _anon27;
@@ -110,7 +110,7 @@ typedef _anon1* type_66[256];
 typedef int type_67[4];
 typedef unsigned char* type_68[256];
 typedef _anon3* type_69[6];
-typedef _anon24 type_70[11];
+typedef NJS_POINT3 type_70[11];
 typedef unsigned int type_71[2];
 typedef short type_72[256];
 typedef unsigned char type_73[10];
@@ -189,7 +189,7 @@ typedef _anon3 type_146[7];
 typedef _anon3 type_147[11];
 typedef unsigned int type_148[32];
 typedef _anon3 type_149[8];
-typedef _anon24 type_150[32];
+typedef NJS_POINT3 type_150[32];
 typedef tagEFF0UVWHUC* type_151[3];
 typedef _anon0* type_152[512];
 typedef _anon3 type_153[27];
@@ -409,7 +409,7 @@ struct _anon4
 	unsigned int mp_flg[8];
 	unsigned int itm[384];
 	unsigned int ply_stflg[4];
-	_anon24 ply_pos;
+	NJS_POINT3 ply_pos;
 	int ply_ang;
 	char ply_wno[4];
 	short ply_hp[4];
@@ -634,8 +634,8 @@ struct _anon4
 	BH_PWORK* plp;
 	_anon28* pl_htp;
 	int costume;
-	_anon24 hd_pos;
-	_anon24 apos;
+	NJS_POINT3 hd_pos;
+	NJS_POINT3 apos;
 	_anon28* ahtp;
 	int mwal_n;
 	int metc_n;
@@ -712,7 +712,7 @@ struct _anon4
 	unsigned char ufo_md;
 	unsigned char ufo_flg;
 	short ufo_oidx;
-	_anon24 ufo_pos;
+	NJS_POINT3 ufo_pos;
 	unsigned int opt_flg;
 	unsigned short opt_md0;
 	unsigned short opt_md1;
@@ -739,7 +739,7 @@ struct _anon4
 	_anon25 gatc[16];
 	int ght_ct;
 	unsigned int ghtc[32];
-	_anon24 ghtp[32];
+	NJS_POINT3 ghtp[32];
 	unsigned short db_md0;
 	unsigned short db_md1;
 	char db_stgno;
@@ -994,8 +994,8 @@ struct _anon19
 struct _anon20
 {
 	float mtrx[16];
-	_anon24 pnt;
-	_anon24 vctr;
+	NJS_POINT3 pnt;
+	NJS_POINT3 vctr;
 	int stat;
 	int reserve;
 	_anon26 ltcal;
@@ -1145,7 +1145,7 @@ struct BH_PWORK
 
 struct _anon21
 {
-	_anon24 ps;
+	NJS_POINT3 ps;
 	float nr;
 	float fr;
 	float cr;
@@ -1157,7 +1157,7 @@ struct _anon22
 {
 	int* vlist;
 	short* plist;
-	_anon24 center;
+	NJS_POINT3 center;
 	float r;
 };
 
@@ -1167,17 +1167,17 @@ struct _anon23
 	float y;
 };
 
-struct _anon24
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct _anon25
 {
-	_anon24 c1;
-	_anon24 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r1;
 	float r2;
 };
@@ -1196,9 +1196,9 @@ struct _anon26
 	float intns;
 	int exp;
 	int reserve;
-	_anon24 lpnt;
-	_anon24 lvctr;
-	_anon24 lmvctr;
+	NJS_POINT3 lpnt;
+	NJS_POINT3 lvctr;
+	NJS_POINT3 lmvctr;
 	_anon18 atten;
 	_anon18 amb;
 	_anon18 dif;
@@ -1344,14 +1344,14 @@ struct _anon32
 
 struct _anon33
 {
-	_anon24 c;
+	NJS_POINT3 c;
 	float r;
 };
 
 struct _anon34
 {
-	_anon24 c1;
-	_anon24 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r;
 };
 
@@ -1515,8 +1515,8 @@ void effset(_anon0* op, _anon3* uvp, unsigned short num)
 void getuv(unsigned char type, _anon0* op)
 {
 	unsigned char i;
-	_anon24 vd;
-	_anon24 vs;
+	NJS_POINT3 vd;
+	NJS_POINT3 vs;
 	float tab_type[3][4][2];
 	// Line 250, Address: 0x21f120, Func Offset: 0
 	// Line 251, Address: 0x21f12c, Func Offset: 0xc
@@ -1611,8 +1611,8 @@ void bhEff152(_anon0* op)
 {
 	unsigned short j;
 	unsigned short i;
-	_anon24 vd;
-	_anon24 vs;
+	NJS_POINT3 vd;
+	NJS_POINT3 vs;
 	// Line 409, Address: 0x21f460, Func Offset: 0
 	// Line 413, Address: 0x21f484, Func Offset: 0x24
 	// Line 415, Address: 0x21f494, Func Offset: 0x34
@@ -1761,8 +1761,8 @@ void bhEff156(_anon0* op)
 // Start address: 0x21fd90
 void bhEff157(_anon0* op)
 {
-	_anon24 vd;
-	_anon24 vs;
+	NJS_POINT3 vd;
+	NJS_POINT3 vs;
 	_anon3* uvp;
 	_anon3 uvinfo_mos[13];
 	// Line 700, Address: 0x21fd90, Func Offset: 0
@@ -1890,8 +1890,8 @@ void bhEff160(_anon0* op)
 void bhEff161(_anon0* op)
 {
 	_anon3* uvp;
-	_anon24 vd;
-	_anon24 vs;
+	NJS_POINT3 vd;
+	NJS_POINT3 vs;
 	_anon3 uvinfo_sw_0[11];
 	_anon3 uvinfo_sw_2[11];
 	_anon3 uvinfo_sw_1[16];
@@ -1961,8 +1961,8 @@ void bhEff162(_anon0* op)
 // Start address: 0x2205b0
 void bhEff163(_anon0* op)
 {
-	_anon24 vd;
-	_anon24 vs;
+	NJS_POINT3 vd;
+	NJS_POINT3 vs;
 	_anon3* uvp;
 	_anon3 uvinfo_bub_0[18];
 	_anon3 uvinfo_bub_1[14];
@@ -2042,8 +2042,8 @@ void bhEff164(_anon0* op)
 // Start address: 0x2208f0
 void bhEff165(_anon0* op)
 {
-	_anon24 vd;
-	_anon24 vs;
+	NJS_POINT3 vd;
+	NJS_POINT3 vs;
 	float py;
 	// Line 1248, Address: 0x2208f0, Func Offset: 0
 	// Line 1253, Address: 0x2208fc, Func Offset: 0xc
@@ -2216,8 +2216,8 @@ void bhEff169(_anon0* op)
 // Start address: 0x220f30
 void bhEff170(_anon0* op)
 {
-	_anon24 vd;
-	_anon24 vs;
+	NJS_POINT3 vd;
+	NJS_POINT3 vs;
 	float py;
 	// Line 1534, Address: 0x220f30, Func Offset: 0
 	// Line 1539, Address: 0x220f3c, Func Offset: 0xc
@@ -2439,8 +2439,8 @@ void bhEff177(_anon0* op)
 void bhEff178(_anon0* op)
 {
 	_anon3* uvp;
-	_anon24 vd;
-	_anon24 vs;
+	NJS_POINT3 vd;
+	NJS_POINT3 vs;
 	_anon3 uvinfo_hiko[7];
 	// Line 1870, Address: 0x221700, Func Offset: 0
 	// Line 1893, Address: 0x22170c, Func Offset: 0xc
@@ -2558,8 +2558,8 @@ void bhEff181(_anon0* op)
 void bhEff182(_anon0* op)
 {
 	_anon3* uvp;
-	_anon24 vd;
-	_anon24 vs;
+	NJS_POINT3 vd;
+	NJS_POINT3 vs;
 	unsigned short kcolor;
 	unsigned short ktype;
 	_anon3* uvinfo_kemu[10];
@@ -2618,8 +2618,8 @@ void bhEff183(_anon0* op)
 // Start address: 0x221d90
 void bhEff184(_anon0* op)
 {
-	_anon24 vd;
-	_anon24 vs;
+	NJS_POINT3 vd;
+	NJS_POINT3 vs;
 	_anon3* uvp;
 	_anon3 uvinfo_mizu_0[16];
 	// Line 2379, Address: 0x221d90, Func Offset: 0
@@ -3323,7 +3323,7 @@ void bhEff198(_anon0* op)
 // Start address: 0x223e20
 void bhEff199()
 {
-	_anon24 ptcl[11];
+	NJS_POINT3 ptcl[11];
 	// Line 3534, Address: 0x223e20, Func Offset: 0
 	// Line 3536, Address: 0x223e24, Func Offset: 0x4
 	// Line 3534, Address: 0x223e34, Func Offset: 0x14

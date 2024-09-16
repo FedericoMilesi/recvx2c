@@ -32,7 +32,7 @@ typedef struct _anon28;
 typedef struct _anon29;
 typedef struct _anon30;
 typedef struct _anon31;
-typedef struct _anon32;
+typedef struct NJS_POINT3;
 typedef struct _anon33;
 typedef struct _anon34;
 typedef struct _anon35;
@@ -132,9 +132,9 @@ typedef unsigned char type_79[450];
 typedef int type_80[3];
 typedef unsigned short type_81[0];
 typedef _anon23 type_82[0];
-typedef _anon32 type_83[4];
+typedef NJS_POINT3 type_83[4];
 typedef char type_84[16];
-typedef _anon32 type_85[0];
+typedef NJS_POINT3 type_85[0];
 typedef char type_86[4];
 typedef unsigned int type_88[32];
 typedef float type_89[3];
@@ -170,7 +170,7 @@ typedef int type_118[3];
 typedef unsigned char type_119[4];
 typedef _anon34 type_120[16];
 typedef unsigned int type_121[32];
-typedef _anon32 type_122[32];
+typedef NJS_POINT3 type_122[32];
 typedef _anon0* type_123[512];
 typedef _anon0* type_124[128];
 typedef _anon0* type_125[512];
@@ -316,8 +316,8 @@ struct _anon1
 {
 	float cmat1[16];
 	float rotmat[16];
-	_anon32 pos_0;
-	_anon32 pos_1;
+	NJS_POINT3 pos_0;
+	NJS_POINT3 pos_1;
 	int ax;
 	int ay;
 	int az;
@@ -676,7 +676,7 @@ struct _anon24
 	unsigned int mp_flg[8];
 	unsigned int itm[384];
 	unsigned int ply_stflg[4];
-	_anon32 ply_pos;
+	NJS_POINT3 ply_pos;
 	int ply_ang;
 	char ply_wno[4];
 	short ply_hp[4];
@@ -901,8 +901,8 @@ struct _anon24
 	BH_PWORK* plp;
 	_anon39* pl_htp;
 	int costume;
-	_anon32 hd_pos;
-	_anon32 apos;
+	NJS_POINT3 hd_pos;
+	NJS_POINT3 apos;
 	_anon39* ahtp;
 	int mwal_n;
 	int metc_n;
@@ -979,7 +979,7 @@ struct _anon24
 	unsigned char ufo_md;
 	unsigned char ufo_flg;
 	short ufo_oidx;
-	_anon32 ufo_pos;
+	NJS_POINT3 ufo_pos;
 	unsigned int opt_flg;
 	unsigned short opt_md0;
 	unsigned short opt_md1;
@@ -1006,7 +1006,7 @@ struct _anon24
 	_anon34 gatc[16];
 	int ght_ct;
 	unsigned int ghtc[32];
-	_anon32 ghtp[32];
+	NJS_POINT3 ghtp[32];
 	unsigned short db_md0;
 	unsigned short db_md1;
 	char db_stgno;
@@ -1054,8 +1054,8 @@ struct _anon26
 struct _anon27
 {
 	float mtrx[16];
-	_anon32 pnt;
-	_anon32 vctr;
+	NJS_POINT3 pnt;
+	NJS_POINT3 vctr;
 	int stat;
 	int reserve;
 	_anon35 ltcal;
@@ -1205,7 +1205,7 @@ struct BH_PWORK
 
 struct _anon28
 {
-	_anon32 ps;
+	NJS_POINT3 ps;
 	float nr;
 	float fr;
 	float cr;
@@ -1217,7 +1217,7 @@ struct _anon29
 {
 	int* vlist;
 	short* plist;
-	_anon32 center;
+	NJS_POINT3 center;
 	float r;
 };
 
@@ -1229,7 +1229,7 @@ struct _anon30
 
 struct _anon31
 {
-	_anon32 pos;
+	NJS_POINT3 pos;
 	void* tex_p;
 	void* mdl_p;
 	int ang[3];
@@ -1240,12 +1240,12 @@ struct _anon31
 	unsigned short flg;
 };
 
-struct _anon32
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct _anon33
 {
@@ -1287,8 +1287,8 @@ struct _anon33
 
 struct _anon34
 {
-	_anon32 c1;
-	_anon32 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r1;
 	float r2;
 };
@@ -1307,9 +1307,9 @@ struct _anon35
 	float intns;
 	int exp;
 	int reserve;
-	_anon32 lpnt;
-	_anon32 lvctr;
-	_anon32 lmvctr;
+	NJS_POINT3 lpnt;
+	NJS_POINT3 lvctr;
+	NJS_POINT3 lmvctr;
 	_anon25 atten;
 	_anon25 amb;
 	_anon25 dif;
@@ -1346,7 +1346,7 @@ struct _anon37
 
 struct _anon38
 {
-	_anon32* p;
+	NJS_POINT3* p;
 	_anon18* col;
 	_anon18* tex;
 	unsigned int num;
@@ -1424,14 +1424,14 @@ struct _anon43
 
 struct _anon44
 {
-	_anon32 c;
+	NJS_POINT3 c;
 	float r;
 };
 
 struct _anon45
 {
-	_anon32 c1;
-	_anon32 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r;
 };
 
@@ -1441,10 +1441,10 @@ unsigned char flg[3];
 int ang_00[3];
 int ang_01[3];
 int ang_02[3];
-_anon32 vec_00;
+NJS_POINT3 vec_00;
 float check[16];
 float testf;
-_anon32 whd;
+NJS_POINT3 whd;
 unsigned int ItemViewTypeTbl[168];
 int ViewType;
 _anon33 fvwork;
@@ -1453,7 +1453,7 @@ _anon6 dsptbl[0];
 _anon2 swork;
 _anon24* sys;
 _anon5 sitem;
-_anon32 hoseipos[0];
+NJS_POINT3 hoseipos[0];
 unsigned char itemflg[8][0];
 unsigned short getmestbl[0];
 _anon23 itemdata[0];
@@ -1489,7 +1489,7 @@ void MakeTag(unsigned short flg);
 // Start address: 0x2a9870
 void DrawSubItem(_anon2* st, _anon5* si)
 {
-	_anon32 pos00;
+	NJS_POINT3 pos00;
 	_anon6* dw_a;
 	_anon33* fv;
 	_anon1* sc;
@@ -2326,7 +2326,7 @@ void MakeTag(unsigned short flg)
 	int i;
 	_anon38 p3c;
 	_anon18 col[4];
-	_anon32 p[4];
+	NJS_POINT3 p[4];
 	_anon33* fv;
 	_anon2* st;
 	// Line 1254, Address: 0x2abd20, Func Offset: 0

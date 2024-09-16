@@ -11,7 +11,7 @@ typedef struct _anon7;
 typedef struct _anon8;
 typedef struct _anon9;
 typedef struct _anon10;
-typedef struct _anon11;
+typedef struct NJS_POINT3;
 typedef struct _anon12;
 typedef struct _anon13;
 typedef struct _anon14;
@@ -90,14 +90,14 @@ typedef void(*type_170)(void*);
 typedef void(*type_180)(BH_PWORK*);
 typedef void(*type_216)(BH_PWORK*);
 
-typedef _anon11 type_0[32];
+typedef NJS_POINT3 type_0[32];
 typedef _anon1* type_1[512];
 typedef _anon1* type_3[128];
 typedef void(*type_4)(BH_PWORK*)[0];
 typedef _anon1* type_5[128];
 typedef _anon1* type_6[128];
 typedef _anon20 type_7[22];
-typedef _anon11 type_8[8];
+typedef NJS_POINT3 type_8[8];
 typedef _anon1* type_9[512];
 typedef _anon17 type_11[11];
 typedef void(*type_12)(BH_PWORK*)[16];
@@ -118,7 +118,7 @@ typedef _anon1* type_27[32];
 typedef _anon1* type_28[512];
 typedef _anon7* type_29[16][16];
 typedef _anon7* type_30[16][16][100];
-typedef _anon11 type_31[8];
+typedef NJS_POINT3 type_31[8];
 typedef char type_32[8];
 typedef void(*type_34)(BH_PWORK*)[0];
 typedef _anon1* type_35[32];
@@ -279,7 +279,7 @@ typedef _anon29 type_209[60];
 typedef _anon19 type_210[16];
 typedef _anon38 type_211[17];
 typedef short type_212[4];
-typedef _anon11 type_213[8];
+typedef NJS_POINT3 type_213[8];
 typedef unsigned char type_214[4];
 typedef _anon29* type_215[16];
 typedef void(*type_217)(BH_PWORK*)[0];
@@ -722,12 +722,12 @@ struct _anon10
 	unsigned int* pPhysical;
 };
 
-struct _anon11
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct _anon12
 {
@@ -1032,7 +1032,7 @@ struct _anon27
 	unsigned int mp_flg[8];
 	unsigned int itm[384];
 	unsigned int ply_stflg[4];
-	_anon11 ply_pos;
+	NJS_POINT3 ply_pos;
 	int ply_ang;
 	char ply_wno[4];
 	short ply_hp[4];
@@ -1257,8 +1257,8 @@ struct _anon27
 	BH_PWORK* plp;
 	_anon0* pl_htp;
 	int costume;
-	_anon11 hd_pos;
-	_anon11 apos;
+	NJS_POINT3 hd_pos;
+	NJS_POINT3 apos;
 	_anon0* ahtp;
 	int mwal_n;
 	int metc_n;
@@ -1335,7 +1335,7 @@ struct _anon27
 	unsigned char ufo_md;
 	unsigned char ufo_flg;
 	short ufo_oidx;
-	_anon11 ufo_pos;
+	NJS_POINT3 ufo_pos;
 	unsigned int opt_flg;
 	unsigned short opt_md0;
 	unsigned short opt_md1;
@@ -1362,7 +1362,7 @@ struct _anon27
 	_anon47 gatc[16];
 	int ght_ct;
 	unsigned int ghtc[32];
-	_anon11 ghtp[32];
+	NJS_POINT3 ghtp[32];
 	unsigned short db_md0;
 	unsigned short db_md1;
 	char db_stgno;
@@ -1405,9 +1405,9 @@ struct _anon28
 	float l;
 	float rn;
 	float rmax;
-	_anon11 wp_fps1;
-	_anon11 wp_fps2;
-	_anon11 wp_cps;
+	NJS_POINT3 wp_fps1;
+	NJS_POINT3 wp_fps2;
+	NJS_POINT3 wp_cps;
 	unsigned char ltp;
 	unsigned char lr;
 	unsigned char lg;
@@ -1482,7 +1482,7 @@ struct _anon34
 	int obj;
 	float size;
 	float len;
-	_anon11 ofs;
+	NJS_POINT3 ofs;
 };
 
 struct _anon35
@@ -1563,8 +1563,8 @@ struct _anon41
 struct _anon42
 {
 	float mtrx[16];
-	_anon11 pnt;
-	_anon11 vctr;
+	NJS_POINT3 pnt;
+	NJS_POINT3 vctr;
 	int stat;
 	int reserve;
 	_anon45 ltcal;
@@ -1573,7 +1573,7 @@ struct _anon42
 
 struct _anon43
 {
-	_anon11 ps;
+	NJS_POINT3 ps;
 	float nr;
 	float fr;
 	float cr;
@@ -1585,7 +1585,7 @@ struct _anon44
 {
 	int* vlist;
 	short* plist;
-	_anon11 center;
+	NJS_POINT3 center;
 	float r;
 };
 
@@ -1603,9 +1603,9 @@ struct _anon45
 	float intns;
 	int exp;
 	int reserve;
-	_anon11 lpnt;
-	_anon11 lvctr;
-	_anon11 lmvctr;
+	NJS_POINT3 lpnt;
+	NJS_POINT3 lvctr;
+	NJS_POINT3 lmvctr;
 	_anon33 atten;
 	_anon33 amb;
 	_anon33 dif;
@@ -1617,7 +1617,7 @@ struct _anon45
 
 struct _anon46
 {
-	_anon11 off_pos;
+	NJS_POINT3 off_pos;
 	int srd_dir;
 	float srd_pos;
 	float bld_spd;
@@ -1627,8 +1627,8 @@ struct _anon46
 
 struct _anon47
 {
-	_anon11 c1;
-	_anon11 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r1;
 	float r2;
 };
@@ -1720,14 +1720,14 @@ struct _anon55
 
 struct _anon56
 {
-	_anon11 c;
+	NJS_POINT3 c;
 	float r;
 };
 
 struct _anon57
 {
-	_anon11 c1;
-	_anon11 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r;
 };
 
@@ -1959,7 +1959,7 @@ void bhEne01_NeckBloodEffect(BH_PWORK* epw, int type);
 void bhEne01_NeckBloodEffect2(BH_PWORK* epw, int type);
 void bhEne01_ExpHeadEffect(BH_PWORK* epw);
 void bhEne01_ExpHeadEffect2(BH_PWORK* epw, int type);
-void bhEne01_NikuhenEffect(BH_PWORK* epw, _anon11* ps, int n);
+void bhEne01_NikuhenEffect(BH_PWORK* epw, NJS_POINT3* ps, int n);
 void bhEne01_ExpLegEffect(BH_PWORK* epw, int lnk_obj);
 void bhEne01_ExpWormEffect(BH_PWORK* epw);
 void bhEne01_PoisonEffect(BH_PWORK* epw, int num);
@@ -1970,7 +1970,7 @@ void bhEne01_GetWalkMotion(BH_PWORK* epw);
 int bhEne01_FastCheck(BH_PWORK* epw);
 int bhEne01_CmnFlgCheck(BH_PWORK* epw);
 int bhEne01_FastWalkCheck(BH_PWORK* epw);
-int bhEne01_ZulzulCheck(BH_PWORK* epw, int ang, float len, _anon11* get_pos, int* wang);
+int bhEne01_ZulzulCheck(BH_PWORK* epw, int ang, float len, NJS_POINT3* get_pos, int* wang);
 int bhEne01_GakeotiCheck(BH_PWORK* epw);
 int bhEne01_DansaCheck(BH_PWORK* epw, int ang, float ofs_z);
 int bhEne01_PoisonCheck(BH_PWORK* epw);
@@ -2282,7 +2282,7 @@ BH_PWORK* bhEne01_SetLinkEnemy(BH_PWORK* epw, int lkono, short id)
 // Start address: 0x176ad0
 void bhEne01_Move(BH_PWORK* epw)
 {
-	_anon11 pos;
+	NJS_POINT3 pos;
 	_anon2* owk;
 	// Line 1163, Address: 0x176ad0, Func Offset: 0
 	// Line 1168, Address: 0x176adc, Func Offset: 0xc
@@ -2421,10 +2421,10 @@ void bhEne01_SearchNeck(BH_PWORK* epw)
 void bhEne01_PlayerLink(BH_PWORK* ply, BH_PWORK* epw)
 {
 	int mtn_no;
-	_anon11 pd;
-	_anon11 ps;
-	_anon11 opos;
-	_anon11 pos;
+	NJS_POINT3 pd;
+	NJS_POINT3 ps;
+	NJS_POINT3 opos;
+	NJS_POINT3 pos;
 	_anon29* ply_pos_p;
 	_anon29* ply_pos[16];
 	// Line 1404, Address: 0x1770a0, Func Offset: 0
@@ -2490,7 +2490,7 @@ void bhEne01_PlayerLink(BH_PWORK* ply, BH_PWORK* epw)
 // Start address: 0x177370
 void bhEne01_CalcEnemy(BH_PWORK* epw)
 {
-	_anon11 ps;
+	NJS_POINT3 ps;
 	_anon2* owk;
 	BH_PWORK* epp;
 	// Line 1514, Address: 0x177370, Func Offset: 0
@@ -2669,7 +2669,7 @@ void bhEne01_DmgCheck(BH_PWORK* epw)
 void bhEne01_SetBlood(BH_PWORK* epw, int hp)
 {
 	int obj_no;
-	_anon11 ofp;
+	NJS_POINT3 ofp;
 	BH_PWORK* epp;
 	_anon2* owk;
 	_anon20* wp_tbl;
@@ -3228,12 +3228,12 @@ int bhEne01_EnemyHitChk(BH_PWORK* epw, BH_PWORK* tepw, int rng)
 void bhEne01_CollCheckWall(BH_PWORK* epw)
 {
 	_anon2* owk;
-	_anon11 pd2;
-	_anon11 ops2;
-	_anon11 ps2;
-	_anon11 pd;
-	_anon11 ops;
-	_anon11 ps;
+	NJS_POINT3 pd2;
+	NJS_POINT3 ops2;
+	NJS_POINT3 ps2;
+	NJS_POINT3 pd;
+	NJS_POINT3 ops;
+	NJS_POINT3 ps;
 	// Line 2945, Address: 0x179690, Func Offset: 0
 	// Line 2953, Address: 0x1796ac, Func Offset: 0x1c
 	// Line 2954, Address: 0x1796b4, Func Offset: 0x24
@@ -3602,7 +3602,7 @@ void bhEne01_InitType15(BH_PWORK* epw)
 // Start address: 0x17a3a0
 void bhEne01_EneSearch(BH_PWORK* epw)
 {
-	_anon11 pos;
+	NJS_POINT3 pos;
 	_anon2* neck_owk;
 	npobj* neck_obj;
 	// Line 3431, Address: 0x17a3a0, Func Offset: 0
@@ -3643,7 +3643,7 @@ void bhEne01_EneSearch(BH_PWORK* epw)
 void bhEne01_Brain00(BH_PWORK* epw)
 {
 	unsigned char RutID;
-	_anon11 pos;
+	NJS_POINT3 pos;
 	// Line 3532, Address: 0x17a540, Func Offset: 0
 	// Line 3537, Address: 0x17a54c, Func Offset: 0xc
 	// Line 3539, Address: 0x17a554, Func Offset: 0x14
@@ -3694,8 +3694,8 @@ void bhEne01_Brain00(BH_PWORK* epw)
 // Start address: 0x17a740
 void bhEne01_Brain02(BH_PWORK* epw)
 {
-	_anon11 pos;
-	_anon11 ppos;
+	NJS_POINT3 pos;
+	NJS_POINT3 ppos;
 	unsigned char rid;
 	_anon2* owk;
 	// Line 3630, Address: 0x17a740, Func Offset: 0
@@ -3724,7 +3724,7 @@ void bhEne01_Brain02(BH_PWORK* epw)
 // Start address: 0x17a800
 int bhEne01_ActionModeCheck(BH_PWORK* epw)
 {
-	_anon11 ofp;
+	NJS_POINT3 ofp;
 	_anon2* owk;
 	BH_PWORK* epp;
 	BH_PWORK* cepw;
@@ -4142,7 +4142,7 @@ void bhEne01_MV02(BH_PWORK* epw)
 // Start address: 0x17c040
 void bhEne01_MV03(BH_PWORK* epw)
 {
-	_anon11 ofp;
+	NJS_POINT3 ofp;
 	BH_PWORK* epp;
 	int rot;
 	_anon2* owk;
@@ -4216,10 +4216,10 @@ void bhEne01_MV03(BH_PWORK* epw)
 void bhEne01_MV04(BH_PWORK* epw)
 {
 	_anon2* owk;
-	_anon11 ofp;
+	NJS_POINT3 ofp;
 	BH_PWORK* epp;
 	_anon2* owk;
-	_anon11 ofp;
+	NJS_POINT3 ofp;
 	BH_PWORK* epp;
 	int mtn_no2;
 	int mtn_no1;
@@ -5182,7 +5182,7 @@ void bhEne01_NG00(BH_PWORK* epw)
 {
 	int frm;
 	int ang;
-	_anon11 ps;
+	NJS_POINT3 ps;
 	_anon2* owk;
 	BH_PWORK* pl;
 	BH_PWORK* cepw;
@@ -5552,7 +5552,7 @@ void bhEne01_NG02(BH_PWORK* epw)
 {
 	int ang;
 	int frm;
-	_anon11 ps;
+	NJS_POINT3 ps;
 	BH_PWORK* pl;
 	BH_PWORK* cepw;
 	// Line 7165, Address: 0x180680, Func Offset: 0
@@ -5668,8 +5668,8 @@ void bhEne01_NG02(BH_PWORK* epw)
 void bhEne01_PlyDG00(BH_PWORK* pl, BH_PWORK* epw)
 {
 	unsigned int frm;
-	_anon11 ply_ofs_pos2[8];
-	_anon11 ply_ofs_pos[8];
+	NJS_POINT3 ply_ofs_pos2[8];
+	NJS_POINT3 ply_ofs_pos[8];
 	// Line 7389, Address: 0x180ba0, Func Offset: 0
 	// Line 7415, Address: 0x180bb4, Func Offset: 0x14
 	// Line 7418, Address: 0x180be4, Func Offset: 0x44
@@ -5949,7 +5949,7 @@ void bhEne01_PlyDG01(BH_PWORK* pl, BH_PWORK* epw)
 {
 	unsigned int frm;
 	_anon2* owk;
-	_anon11 ply_ofs_pos[8];
+	NJS_POINT3 ply_ofs_pos[8];
 	// Line 7724, Address: 0x181730, Func Offset: 0
 	// Line 7752, Address: 0x181740, Func Offset: 0x10
 	// Line 7755, Address: 0x181770, Func Offset: 0x40
@@ -6171,7 +6171,7 @@ void bhEne01_EnemyPushChk(BH_PWORK* epw, int mode)
 {
 	int hit;
 	int i;
-	_anon11 vec;
+	NJS_POINT3 vec;
 	BH_PWORK* pl;
 	BH_PWORK* ep;
 	// Line 7992, Address: 0x182020, Func Offset: 0
@@ -7252,8 +7252,8 @@ void bhEne01_DG14(BH_PWORK* epw)
 	int mtn_no2;
 	int mtn_no1;
 	float y_len;
-	_anon11 pd;
-	_anon11 ps;
+	NJS_POINT3 pd;
+	NJS_POINT3 ps;
 	_anon2* owk;
 	BH_PWORK* cepw;
 	// Line 9855, Address: 0x185170, Func Offset: 0
@@ -7478,7 +7478,7 @@ void bhEne01_DD00(BH_PWORK* epw)
 {
 	int ang;
 	BH_PWORK* cepw;
-	_anon11 gpos;
+	NJS_POINT3 gpos;
 	_anon50 line;
 	int mtn_tbl[2][9];
 	// Line 10209, Address: 0x185b40, Func Offset: 0
@@ -7605,7 +7605,7 @@ void bhEne01_DD01(BH_PWORK* epw)
 // Start address: 0x186220
 void bhEne01_DD02(BH_PWORK* epw)
 {
-	_anon11 gpos;
+	NJS_POINT3 gpos;
 	_anon50 line;
 	_anon2* owk;
 	// Line 10442, Address: 0x186220, Func Offset: 0
@@ -7843,9 +7843,9 @@ int bhEne01_SetMtn(BH_PWORK* epw)
 void bhEne01_CheckMtnTbl(BH_PWORK* epw, int frm)
 {
 	int i;
-	_anon11 vec2;
-	_anon11 vec1;
-	_anon11 vec;
+	NJS_POINT3 vec2;
+	NJS_POINT3 vec1;
+	NJS_POINT3 vec;
 	BH_PWORK* epp;
 	_anon39* mtbl3;
 	_anon39* mtbl2;
@@ -7983,7 +7983,7 @@ void bhEne01_KamiEffect(BH_PWORK* epw, int frm)
 {
 	int j;
 	int i;
-	_anon11 pd;
+	NJS_POINT3 pd;
 	_anon17* keff;
 	// Line 11115, Address: 0x187540, Func Offset: 0
 	// Line 11116, Address: 0x18754c, Func Offset: 0xc
@@ -8018,8 +8018,8 @@ void bhEne01_WaterEffect(BH_PWORK* epw, int frm)
 {
 	int j;
 	int i;
-	_anon11 ps;
-	_anon11 pd;
+	NJS_POINT3 ps;
+	NJS_POINT3 pd;
 	_anon2* owk;
 	_anon32* weff;
 	// Line 11168, Address: 0x187620, Func Offset: 0
@@ -8068,8 +8068,8 @@ void bhEne01_WaterEffect(BH_PWORK* epw, int frm)
 void bhEne01_NeckBloodEffect(BH_PWORK* epw, int type)
 {
 	int i;
-	_anon11 v;
-	_anon11 ofs;
+	NJS_POINT3 v;
+	NJS_POINT3 ofs;
 	// Line 11245, Address: 0x187830, Func Offset: 0
 	// Line 11246, Address: 0x187854, Func Offset: 0x24
 	// Line 11245, Address: 0x18785c, Func Offset: 0x2c
@@ -8107,8 +8107,8 @@ void bhEne01_NeckBloodEffect2(BH_PWORK* epw, int type)
 {
 	int i;
 	int ang1;
-	_anon11 v;
-	_anon11 ofs;
+	NJS_POINT3 v;
+	NJS_POINT3 ofs;
 	// Line 11421, Address: 0x1879d0, Func Offset: 0
 	// Line 11422, Address: 0x1879f0, Func Offset: 0x20
 	// Line 11421, Address: 0x1879f8, Func Offset: 0x28
@@ -8175,9 +8175,9 @@ void bhEne01_ExpHeadEffect(BH_PWORK* epw)
 	int i;
 	int ang1;
 	_anon2* owk;
-	_anon11 pd;
-	_anon11 ps;
-	_anon11 v;
+	NJS_POINT3 pd;
+	NJS_POINT3 ps;
+	NJS_POINT3 v;
 	// Line 11504, Address: 0x187ce0, Func Offset: 0
 	// Line 11601, Address: 0x187d00, Func Offset: 0x20
 	// Line 11602, Address: 0x187d04, Func Offset: 0x24
@@ -8201,7 +8201,7 @@ void bhEne01_ExpHeadEffect(BH_PWORK* epw)
 void bhEne01_ExpHeadEffect2(BH_PWORK* epw, int type)
 {
 	int eno;
-	_anon11 ps;
+	NJS_POINT3 ps;
 	_anon2* owk;
 	// Line 11652, Address: 0x187de0, Func Offset: 0
 	// Line 11653, Address: 0x187df0, Func Offset: 0x10
@@ -8235,11 +8235,11 @@ void bhEne01_ExpHeadEffect2(BH_PWORK* epw, int type)
 
 // 
 // Start address: 0x187f50
-void bhEne01_NikuhenEffect(BH_PWORK* epw, _anon11* ps, int n)
+void bhEne01_NikuhenEffect(BH_PWORK* epw, NJS_POINT3* ps, int n)
 {
 	int i;
 	int ang1;
-	_anon11 v;
+	NJS_POINT3 v;
 	// Line 11775, Address: 0x187f50, Func Offset: 0
 	// Line 11780, Address: 0x187f70, Func Offset: 0x20
 	// Line 11782, Address: 0x187f90, Func Offset: 0x40
@@ -8265,9 +8265,9 @@ void bhEne01_ExpLegEffect(BH_PWORK* epw, int lnk_obj)
 	float tmp;
 	int ang1;
 	_anon2* owk;
-	_anon11 pd;
-	_anon11 ps;
-	_anon11 v;
+	NJS_POINT3 pd;
+	NJS_POINT3 ps;
+	NJS_POINT3 v;
 	// Line 11902, Address: 0x188050, Func Offset: 0
 	// Line 11913, Address: 0x188080, Func Offset: 0x30
 	// Line 11914, Address: 0x188090, Func Offset: 0x40
@@ -8351,9 +8351,9 @@ void bhEne01_ExpWormEffect(BH_PWORK* epw)
 	int eno;
 	int ang1;
 	float tmp;
-	_anon11 pd;
-	_anon11 ps;
-	_anon11 v;
+	NJS_POINT3 pd;
+	NJS_POINT3 ps;
+	NJS_POINT3 v;
 	_anon2* owk;
 	BH_PWORK* p_epw;
 	// Line 11999, Address: 0x1884c0, Func Offset: 0
@@ -8501,7 +8501,7 @@ void bhEne01_PoisonEffect(BH_PWORK* epw, int num)
 	int i;
 	int eno;
 	_anon2* owk;
-	_anon11 ps;
+	NJS_POINT3 ps;
 	// Line 12143, Address: 0x188b60, Func Offset: 0
 	// Line 12148, Address: 0x188b7c, Func Offset: 0x1c
 	// Line 12149, Address: 0x188b8c, Func Offset: 0x2c
@@ -8545,7 +8545,7 @@ void bhEne01_LinkFireEffect(BH_PWORK* epw, int type)
 	int time;
 	int i;
 	int eno;
-	_anon11 gpos;
+	NJS_POINT3 gpos;
 	char* ftbl_p;
 	_anon34* eff_p;
 	char fire_tbl[8][12];
@@ -8739,11 +8739,11 @@ int bhEne01_FastWalkCheck(BH_PWORK* epw)
 
 // 
 // Start address: 0x1895d0
-int bhEne01_ZulzulCheck(BH_PWORK* epw, int ang, float len, _anon11* get_pos, int* wang)
+int bhEne01_ZulzulCheck(BH_PWORK* epw, int ang, float len, NJS_POINT3* get_pos, int* wang)
 {
-	_anon11 v;
-	_anon11 pd;
-	_anon11 ps;
+	NJS_POINT3 v;
+	NJS_POINT3 pd;
+	NJS_POINT3 ps;
 	_anon0* hp;
 	// Line 12585, Address: 0x1895d0, Func Offset: 0
 	// Line 12590, Address: 0x1895f4, Func Offset: 0x24
@@ -8783,7 +8783,7 @@ int bhEne01_GakeotiCheck(BH_PWORK* epw)
 {
 	int flg;
 	int ang;
-	_anon11 vec;
+	NJS_POINT3 vec;
 	_anon0* hp;
 	// Line 12632, Address: 0x1897b0, Func Offset: 0
 	// Line 12638, Address: 0x1897c4, Func Offset: 0x14
@@ -8801,7 +8801,7 @@ int bhEne01_GakeotiCheck(BH_PWORK* epw)
 int bhEne01_DansaCheck(BH_PWORK* epw, int ang, float ofs_z)
 {
 	int sang;
-	_anon11 pos;
+	NJS_POINT3 pos;
 	_anon0* hp;
 	// Line 12667, Address: 0x189850, Func Offset: 0
 	// Line 12672, Address: 0x189868, Func Offset: 0x18
@@ -8825,8 +8825,8 @@ int bhEne01_PoisonCheck(BH_PWORK* epw)
 	int i;
 	BH_PWORK* ep;
 	_anon0* hp;
-	_anon11 pos2;
-	_anon11 pos;
+	NJS_POINT3 pos2;
+	NJS_POINT3 pos;
 	// Line 12707, Address: 0x189930, Func Offset: 0
 	// Line 12714, Address: 0x189940, Func Offset: 0x10
 	// Line 12717, Address: 0x189958, Func Offset: 0x28
@@ -8876,8 +8876,8 @@ int bhEne01_PoisonCheck(BH_PWORK* epw)
 int bhEne01_EatCheck(BH_PWORK* epw, int rng, float dist, int mode)
 {
 	float ds;
-	_anon11 eps;
-	_anon11 ps;
+	NJS_POINT3 eps;
+	NJS_POINT3 ps;
 	_anon56 at;
 	_anon2* owk;
 	// Line 12812, Address: 0x189bd0, Func Offset: 0

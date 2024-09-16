@@ -28,7 +28,7 @@ typedef struct _anon24;
 typedef struct _anon25;
 typedef struct _anon26;
 typedef struct _anon27;
-typedef struct _anon28;
+typedef struct NJS_POINT3;
 typedef struct _anon29;
 typedef struct _anon30;
 typedef struct _anon31;
@@ -163,7 +163,7 @@ typedef _anon34 type_113[16];
 typedef unsigned int type_114[8];
 typedef unsigned int type_115[32];
 typedef unsigned int type_116[4];
-typedef _anon28 type_117[32];
+typedef NJS_POINT3 type_117[32];
 typedef _anon0* type_118[512];
 typedef _anon0* type_119[128];
 typedef _anon0* type_120[512];
@@ -953,7 +953,7 @@ struct _anon25
 	unsigned int mp_flg[8];
 	unsigned int itm[384];
 	unsigned int ply_stflg[4];
-	_anon28 ply_pos;
+	NJS_POINT3 ply_pos;
 	int ply_ang;
 	char ply_wno[4];
 	short ply_hp[4];
@@ -1178,8 +1178,8 @@ struct _anon25
 	BH_PWORK* plp;
 	_anon19* pl_htp;
 	int costume;
-	_anon28 hd_pos;
-	_anon28 apos;
+	NJS_POINT3 hd_pos;
+	NJS_POINT3 apos;
 	_anon19* ahtp;
 	int mwal_n;
 	int metc_n;
@@ -1256,7 +1256,7 @@ struct _anon25
 	unsigned char ufo_md;
 	unsigned char ufo_flg;
 	short ufo_oidx;
-	_anon28 ufo_pos;
+	NJS_POINT3 ufo_pos;
 	unsigned int opt_flg;
 	unsigned short opt_md0;
 	unsigned short opt_md1;
@@ -1283,7 +1283,7 @@ struct _anon25
 	_anon34 gatc[16];
 	int ght_ct;
 	unsigned int ghtc[32];
-	_anon28 ghtp[32];
+	NJS_POINT3 ghtp[32];
 	unsigned short db_md0;
 	unsigned short db_md1;
 	char db_stgno;
@@ -1327,12 +1327,12 @@ struct _anon27
 	float b;
 };
 
-struct _anon28
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct _anon29
 {
@@ -1345,8 +1345,8 @@ struct _anon29
 struct _anon30
 {
 	float mtrx[16];
-	_anon28 pnt;
-	_anon28 vctr;
+	NJS_POINT3 pnt;
+	NJS_POINT3 vctr;
 	int stat;
 	int reserve;
 	_anon35 ltcal;
@@ -1355,7 +1355,7 @@ struct _anon30
 
 struct _anon31
 {
-	_anon28 ps;
+	NJS_POINT3 ps;
 	float nr;
 	float fr;
 	float cr;
@@ -1367,7 +1367,7 @@ struct _anon32
 {
 	int* vlist;
 	short* plist;
-	_anon28 center;
+	NJS_POINT3 center;
 	float r;
 };
 
@@ -1379,8 +1379,8 @@ struct _anon33
 
 struct _anon34
 {
-	_anon28 c1;
-	_anon28 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r1;
 	float r2;
 };
@@ -1399,9 +1399,9 @@ struct _anon35
 	float intns;
 	int exp;
 	int reserve;
-	_anon28 lpnt;
-	_anon28 lvctr;
-	_anon28 lmvctr;
+	NJS_POINT3 lpnt;
+	NJS_POINT3 lvctr;
+	NJS_POINT3 lmvctr;
 	_anon27 atten;
 	_anon27 amb;
 	_anon27 dif;
@@ -1545,14 +1545,14 @@ struct _anon41
 
 struct _anon42
 {
-	_anon28 c;
+	NJS_POINT3 c;
 	float r;
 };
 
 struct _anon43
 {
-	_anon28 c1;
-	_anon28 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r;
 };
 
@@ -1581,7 +1581,7 @@ void bhSetEventHideObjLgt(int cno, int kno);
 void bhInitEventCamera();
 void bhControlEventCamera();
 void bhCheckEvtCamLockPosition();
-void bhGetEvtCamLockPosition(_anon17* kfp, _anon28* pos);
+void bhGetEvtCamLockPosition(_anon17* kfp, NJS_POINT3* pos);
 void bhControlPlEyeCamera(unsigned int attr);
 void bhInitPlEyeCamera();
 void bhSetPlEyeCamera();
@@ -2034,7 +2034,7 @@ void bhSetHideObject(int offset)
 // Start address: 0x27b900
 void bhInitActiveCamera(int flg)
 {
-	_anon28 sca;
+	NJS_POINT3 sca;
 	short ay;
 	short ax;
 	int yr;
@@ -2402,7 +2402,7 @@ void bhCheckNearAttrOffCutRange(_anon10* cp, unsigned int sft, float* px, float*
 // Start address: 0x27cb60
 void bhControlActiveCamera()
 {
-	_anon28 sca;
+	NJS_POINT3 sca;
 	short ahkn;
 	float hkn;
 	short aa;
@@ -2787,7 +2787,7 @@ void bhSetEventCamera(int evc_no, int key_no)
 {
 	float pz;
 	float px;
-	_anon28 pos;
+	NJS_POINT3 pos;
 	_anon17* kfp;
 	// Line 1408, Address: 0x27dcc0, Func Offset: 0
 	// Line 1415, Address: 0x27dcd8, Func Offset: 0x18
@@ -3140,7 +3140,7 @@ void bhControlEventCamera()
 	float pz;
 	float px;
 	float ans[3];
-	_anon28 pos;
+	NJS_POINT3 pos;
 	_anon17* kfp;
 	_anon5* ecp;
 	// Line 1709, Address: 0x27e910, Func Offset: 0
@@ -3314,7 +3314,7 @@ void bhCheckEvtCamLockPosition()
 	_anon17* kfp;
 	_anon5* jecp;
 	_anon5* ecp;
-	_anon28 pos;
+	NJS_POINT3 pos;
 	short az;
 	short ay;
 	short ax;
@@ -3489,7 +3489,7 @@ void bhCheckEvtCamLockPosition()
 
 // 
 // Start address: 0x27faa0
-void bhGetEvtCamLockPosition(_anon17* kfp, _anon28* pos)
+void bhGetEvtCamLockPosition(_anon17* kfp, NJS_POINT3* pos)
 {
 	_anon3* psp;
 	BH_PWORK* pwp;
@@ -3782,7 +3782,7 @@ void bhSetPlEyeCamera()
 {
 	short axn;
 	short ay;
-	_anon28 pos;
+	NJS_POINT3 pos;
 	// Line 2349, Address: 0x2808a0, Func Offset: 0
 	// Line 2352, Address: 0x2808ac, Func Offset: 0xc
 	// Line 2354, Address: 0x2808c8, Func Offset: 0x28

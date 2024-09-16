@@ -14,7 +14,7 @@ typedef struct _anon10;
 typedef struct _anon11;
 typedef struct _anon12;
 typedef struct _anon13;
-typedef struct _anon14;
+typedef struct NJS_POINT3;
 typedef struct _anon15;
 typedef struct _anon16;
 typedef struct _anon17;
@@ -146,7 +146,7 @@ typedef short type_105[4];
 typedef unsigned char type_106[4];
 typedef _anon24 type_107[16];
 typedef unsigned int type_108[32];
-typedef _anon14 type_109[32];
+typedef NJS_POINT3 type_109[32];
 typedef _anon0* type_110[512];
 typedef _anon0* type_111[128];
 typedef void(*type_113)(BH_PWORK*)[16];
@@ -569,7 +569,7 @@ struct _anon9
 	unsigned int mp_flg[8];
 	unsigned int itm[384];
 	unsigned int ply_stflg[4];
-	_anon14 ply_pos;
+	NJS_POINT3 ply_pos;
 	int ply_ang;
 	char ply_wno[4];
 	short ply_hp[4];
@@ -794,8 +794,8 @@ struct _anon9
 	BH_PWORK* plp;
 	_anon28* pl_htp;
 	int costume;
-	_anon14 hd_pos;
-	_anon14 apos;
+	NJS_POINT3 hd_pos;
+	NJS_POINT3 apos;
 	_anon28* ahtp;
 	int mwal_n;
 	int metc_n;
@@ -872,7 +872,7 @@ struct _anon9
 	unsigned char ufo_md;
 	unsigned char ufo_flg;
 	short ufo_oidx;
-	_anon14 ufo_pos;
+	NJS_POINT3 ufo_pos;
 	unsigned int opt_flg;
 	unsigned short opt_md0;
 	unsigned short opt_md1;
@@ -899,7 +899,7 @@ struct _anon9
 	_anon24 gatc[16];
 	int ght_ct;
 	unsigned int ghtc[32];
-	_anon14 ghtp[32];
+	NJS_POINT3 ghtp[32];
 	unsigned short db_md0;
 	unsigned short db_md1;
 	char db_stgno;
@@ -963,12 +963,12 @@ struct _anon13
 	unsigned int texaddr;
 };
 
-struct _anon14
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct _anon15
 {
@@ -1056,8 +1056,8 @@ struct _anon18
 struct _anon19
 {
 	float mtrx[16];
-	_anon14 pnt;
-	_anon14 vctr;
+	NJS_POINT3 pnt;
+	NJS_POINT3 vctr;
 	int stat;
 	int reserve;
 	_anon25 ltcal;
@@ -1066,7 +1066,7 @@ struct _anon19
 
 struct _anon20
 {
-	_anon14 ps;
+	NJS_POINT3 ps;
 	float nr;
 	float fr;
 	float cr;
@@ -1078,7 +1078,7 @@ struct _anon21
 {
 	int* vlist;
 	short* plist;
-	_anon14 center;
+	NJS_POINT3 center;
 	float r;
 };
 
@@ -1090,7 +1090,7 @@ struct _anon22
 
 struct _anon23
 {
-	_anon14 off_pos;
+	NJS_POINT3 off_pos;
 	int srd_dir;
 	float srd_pos;
 	float bld_spd;
@@ -1100,8 +1100,8 @@ struct _anon23
 
 struct _anon24
 {
-	_anon14 c1;
-	_anon14 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r1;
 	float r2;
 };
@@ -1120,9 +1120,9 @@ struct _anon25
 	float intns;
 	int exp;
 	int reserve;
-	_anon14 lpnt;
-	_anon14 lvctr;
-	_anon14 lmvctr;
+	NJS_POINT3 lpnt;
+	NJS_POINT3 lvctr;
+	NJS_POINT3 lmvctr;
 	_anon18 atten;
 	_anon18 amb;
 	_anon18 dif;
@@ -1215,14 +1215,14 @@ struct _anon31
 
 struct _anon32
 {
-	_anon14 c;
+	NJS_POINT3 c;
 	float r;
 };
 
 struct _anon33
 {
-	_anon14 c1;
-	_anon14 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r;
 };
 
@@ -1255,8 +1255,8 @@ void bhEne01_DG12B(BH_PWORK* epw);
 void bhEne01_DG13B(BH_PWORK* epw);
 void bhEne01_DD02B(BH_PWORK* epw);
 void bhEne01_RotNeck(BH_PWORK* epw, int neck_no, BH_PWORK* ply, int ply_neck_no);
-int bhEne01_SideRotNeck(BH_PWORK* epw, int neck_no, _anon14* trg, int neck_ry, int neck_ry_max, int ang);
-int bhSearchPlayer2(BH_PWORK* epw, _anon14* pp, int pp_r, int r);
+int bhEne01_SideRotNeck(BH_PWORK* epw, int neck_no, NJS_POINT3* trg, int neck_ry, int neck_ry_max, int ang);
+int bhSearchPlayer2(BH_PWORK* epw, NJS_POINT3* pp, int pp_r, int r);
 
 // 
 // Start address: 0x18a460
@@ -1270,7 +1270,7 @@ void bhEne01_Dummy()
 // Start address: 0x18a470
 void bhEne01_Brain02B(BH_PWORK* epw)
 {
-	_anon14 pos;
+	NJS_POINT3 pos;
 	unsigned char rid;
 	// Line 257, Address: 0x18a470, Func Offset: 0
 	// Line 264, Address: 0x18a47c, Func Offset: 0xc
@@ -1474,7 +1474,7 @@ void bhEne01_DDType02B(BH_PWORK* epw)
 void bhEne01_DG05B(BH_PWORK* epw)
 {
 	int frm;
-	_anon14 ps;
+	NJS_POINT3 ps;
 	_anon17* owk;
 	BH_PWORK* epp;
 	// Line 663, Address: 0x18abc0, Func Offset: 0
@@ -1561,9 +1561,9 @@ void bhEne01_DG05B(BH_PWORK* epw)
 // Start address: 0x18af10
 void bhEne01_DG09B(BH_PWORK* epw)
 {
-	_anon14 ps;
+	NJS_POINT3 ps;
 	int frm;
-	_anon14 ps;
+	NJS_POINT3 ps;
 	_anon17* owk;
 	BH_PWORK* epp;
 	// Line 777, Address: 0x18af10, Func Offset: 0
@@ -1738,8 +1738,8 @@ void bhEne01_DG13B(BH_PWORK* epw)
 void bhEne01_DD02B(BH_PWORK* epw)
 {
 	_anon29 line;
-	_anon14 pd;
-	_anon14 ps;
+	NJS_POINT3 pd;
+	NJS_POINT3 ps;
 	_anon17* owk;
 	// Line 1034, Address: 0x18b630, Func Offset: 0
 	// Line 1039, Address: 0x18b640, Func Offset: 0x10
@@ -1810,7 +1810,7 @@ void bhEne01_RotNeck(BH_PWORK* epw, int neck_no, BH_PWORK* ply, int ply_neck_no)
 	int rot;
 	_anon17* trg_owk;
 	npobj* obj;
-	_anon14 pos;
+	NJS_POINT3 pos;
 	// Line 1143, Address: 0x18b9f0, Func Offset: 0
 	// Line 1160, Address: 0x18b9fc, Func Offset: 0xc
 	// Line 1176, Address: 0x18ba20, Func Offset: 0x30
@@ -1833,7 +1833,7 @@ void bhEne01_RotNeck(BH_PWORK* epw, int neck_no, BH_PWORK* ply, int ply_neck_no)
 
 // 
 // Start address: 0x18baa0
-int bhEne01_SideRotNeck(BH_PWORK* epw, int neck_no, _anon14* trg, int neck_ry, int neck_ry_max, int ang)
+int bhEne01_SideRotNeck(BH_PWORK* epw, int neck_no, NJS_POINT3* trg, int neck_ry, int neck_ry_max, int ang)
 {
 	int rot;
 	_anon17* owk;
@@ -1864,7 +1864,7 @@ int bhEne01_SideRotNeck(BH_PWORK* epw, int neck_no, _anon14* trg, int neck_ry, i
 
 // 
 // Start address: 0x18bbe0
-int bhSearchPlayer2(BH_PWORK* epw, _anon14* pp, int pp_r, int r)
+int bhSearchPlayer2(BH_PWORK* epw, NJS_POINT3* pp, int pp_r, int r)
 {
 	int ret;
 	int ay;

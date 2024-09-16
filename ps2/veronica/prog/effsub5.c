@@ -6,7 +6,7 @@ typedef struct _anon2;
 typedef struct tagEFF5SNOWGRP;
 typedef struct tagEFF5UV;
 typedef struct tagEFF5UVWH;
-typedef struct _anon3;
+typedef struct NJS_POINT3;
 typedef struct _anon4;
 typedef struct _anon5;
 typedef struct tagEFF5SNOWRECT;
@@ -188,9 +188,9 @@ typedef tagEFF5UV type_126[2];
 typedef char type_127[4];
 typedef _anon23 type_129[2];
 typedef unsigned int type_130[32];
-typedef _anon3 type_131[48];
+typedef NJS_POINT3 type_131[48];
 typedef tagEFF5UV type_132[16];
-typedef _anon3 type_133[48];
+typedef NJS_POINT3 type_133[48];
 typedef unsigned char type_134[256];
 typedef unsigned int type_135[16];
 typedef tagEFF5UV* type_136[2];
@@ -235,7 +235,7 @@ typedef unsigned int type_177[32];
 typedef tagEFF5UV type_178[16];
 typedef unsigned int type_179[4];
 typedef tagEFF5UV type_180[4];
-typedef _anon3 type_181[32];
+typedef NJS_POINT3 type_181[32];
 typedef _anon0* type_182[512];
 typedef _anon0* type_183[128];
 typedef tagEFF5UV type_184[6];
@@ -405,7 +405,7 @@ struct _anon2
 
 struct tagEFF5SNOWGRP
 {
-	_anon3* pPointTop;
+	NJS_POINT3* pPointTop;
 	int lPointMax;
 };
 
@@ -423,12 +423,12 @@ struct tagEFF5UVWH
 	short h;
 };
 
-struct _anon3
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct _anon4
 {
@@ -487,7 +487,7 @@ struct _anon5
 	unsigned int mp_flg[8];
 	unsigned int itm[384];
 	unsigned int ply_stflg[4];
-	_anon3 ply_pos;
+	NJS_POINT3 ply_pos;
 	int ply_ang;
 	char ply_wno[4];
 	short ply_hp[4];
@@ -712,8 +712,8 @@ struct _anon5
 	BH_PWORK* plp;
 	_anon21* pl_htp;
 	int costume;
-	_anon3 hd_pos;
-	_anon3 apos;
+	NJS_POINT3 hd_pos;
+	NJS_POINT3 apos;
 	_anon21* ahtp;
 	int mwal_n;
 	int metc_n;
@@ -790,7 +790,7 @@ struct _anon5
 	unsigned char ufo_md;
 	unsigned char ufo_flg;
 	short ufo_oidx;
-	_anon3 ufo_pos;
+	NJS_POINT3 ufo_pos;
 	unsigned int opt_flg;
 	unsigned short opt_md0;
 	unsigned short opt_md1;
@@ -817,7 +817,7 @@ struct _anon5
 	_anon34 gatc[16];
 	int ght_ct;
 	unsigned int ghtc[32];
-	_anon3 ghtp[32];
+	NJS_POINT3 ghtp[32];
 	unsigned short db_md0;
 	unsigned short db_md1;
 	char db_stgno;
@@ -850,7 +850,7 @@ struct tagEFF5SNOWRECT
 {
 	unsigned int flg;
 	unsigned int ulFrame;
-	_anon3 AreaCenter;
+	NJS_POINT3 AreaCenter;
 	float fAreaSizeX;
 	float fAreaSizeY;
 	float fAreaSizeZ;
@@ -863,7 +863,7 @@ struct tagEFF5SNOWRECT
 	int lSnowTotalMax;
 	tagEFF5SNOWGRP SnowGrp[20];
 	int lSnowGrpMax;
-	_anon3* pSnowVector;
+	NJS_POINT3* pSnowVector;
 	int lSnowExistPrev;
 	int lSnowExistCrnt;
 	int lSnowExistNext;
@@ -1472,8 +1472,8 @@ struct _anon29
 struct _anon30
 {
 	float mtrx[16];
-	_anon3 pnt;
-	_anon3 vctr;
+	NJS_POINT3 pnt;
+	NJS_POINT3 vctr;
 	int stat;
 	int reserve;
 	_anon35 ltcal;
@@ -1482,7 +1482,7 @@ struct _anon30
 
 struct _anon31
 {
-	_anon3 ps;
+	NJS_POINT3 ps;
 	float nr;
 	float fr;
 	float cr;
@@ -1494,7 +1494,7 @@ struct _anon32
 {
 	int* vlist;
 	short* plist;
-	_anon3 center;
+	NJS_POINT3 center;
 	float r;
 };
 
@@ -1506,8 +1506,8 @@ struct _anon33
 
 struct _anon34
 {
-	_anon3 c1;
-	_anon3 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r1;
 	float r2;
 };
@@ -1526,9 +1526,9 @@ struct _anon35
 	float intns;
 	int exp;
 	int reserve;
-	_anon3 lpnt;
-	_anon3 lvctr;
-	_anon3 lmvctr;
+	NJS_POINT3 lpnt;
+	NJS_POINT3 lvctr;
+	NJS_POINT3 lmvctr;
 	_anon28 atten;
 	_anon28 amb;
 	_anon28 dif;
@@ -1625,8 +1625,8 @@ struct _anon38
 	int num;
 	_anon1* txp;
 	int tex_id;
-	_anon3 pos[48];
-	_anon3 vec[48];
+	NJS_POINT3 pos[48];
+	NJS_POINT3 vec[48];
 };
 
 struct _anon39
@@ -1676,14 +1676,14 @@ struct _anon42
 
 struct _anon43
 {
-	_anon3 c;
+	NJS_POINT3 c;
 	float r;
 };
 
 struct _anon44
 {
-	_anon3 c1;
-	_anon3 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r;
 };
 
@@ -1797,7 +1797,7 @@ void ArrangeEff5SnowRectParticle(tagEFF5SNOWRECT* pSnow);
 void SetEff5SnowRectParticleTexture(tagEFF5SNOWRECT* pSnow, _anon1* pTexList, unsigned int ulTexNum, float fU0, float fV0, float fU1, float fV1, float fU2, float fV2, float fU3, float fV3);
 void SetEff5SnowRectParticleColor(tagEFF5SNOWRECT* pSnow, unsigned int ulColor0, unsigned int ulColor1, unsigned int ulColor2, unsigned int ulColor3);
 void SetEff5SnowRectParticleSize(tagEFF5SNOWRECT* pSnow, float fWidth, float fHeight);
-_anon3* GetEff5SnowRectCurrentWindVector(_anon3* pVector);
+NJS_POINT3* GetEff5SnowRectCurrentWindVector(NJS_POINT3* pVector);
 
 // 
 // Start address: 0x251b40
@@ -1901,7 +1901,7 @@ void bhEff202(_anon0* op)
 {
 	unsigned short usType[4];
 	int lNumber;
-	_anon3 Offset;
+	NJS_POINT3 Offset;
 	_anon10* pEffect;
 	// Line 337, Address: 0x251fa0, Func Offset: 0
 	// Line 341, Address: 0x251fb0, Func Offset: 0x10
@@ -1982,7 +1982,7 @@ void bhEff202(_anon0* op)
 void bhEff203(_anon0* op)
 {
 	_anon0* opp;
-	_anon3 Vector;
+	NJS_POINT3 Vector;
 	tagEFF5UV* pInfo;
 	tagEFF5UV Eff203UvInfo[4];
 	// Line 467, Address: 0x2525b0, Func Offset: 0
@@ -2747,8 +2747,8 @@ void bhEff217(_anon0* op)
 	float fAngleDev;
 	unsigned int col[3];
 	int i;
-	_anon3* v;
-	_anon3* p;
+	NJS_POINT3* v;
+	NJS_POINT3* p;
 	_anon38* pp;
 	// Line 1778, Address: 0x254960, Func Offset: 0
 	// Line 1783, Address: 0x25497c, Func Offset: 0x1c
@@ -2938,8 +2938,8 @@ void bhEff220(_anon0* op)
 	int ct;
 	int j;
 	int i;
-	_anon3 vc1;
-	_anon3 vc0;
+	NJS_POINT3 vc1;
+	NJS_POINT3 vc0;
 	// Line 2222, Address: 0x255580, Func Offset: 0
 	// Line 2229, Address: 0x2555ac, Func Offset: 0x2c
 	// Line 2230, Address: 0x2555cc, Func Offset: 0x4c
@@ -3020,7 +3020,7 @@ void bhEff221(_anon0* op)
 	float u;
 	int pt;
 	_anon9* tvp;
-	_anon3 vc0;
+	NJS_POINT3 vc0;
 	// Line 2286, Address: 0x255a40, Func Offset: 0
 	// Line 2292, Address: 0x255a50, Func Offset: 0x10
 	// Line 2296, Address: 0x255a70, Func Offset: 0x30
@@ -3191,8 +3191,8 @@ void bhDrawEff221(_anon0* op)
 {
 	int pt;
 	float it;
-	_anon3 vc1;
-	_anon3 vc0;
+	NJS_POINT3 vc1;
+	NJS_POINT3 vc0;
 	_anon9* tvp;
 	// Line 2448, Address: 0x2560a0, Func Offset: 0
 	// Line 2456, Address: 0x2560b0, Func Offset: 0x10
@@ -4181,7 +4181,7 @@ void bhEff235(_anon0* op)
 // Start address: 0x258d60
 void bhEff236(_anon0* op)
 {
-	_anon3 Tmp;
+	NJS_POINT3 Tmp;
 	BH_PWORK* pp;
 	int lType;
 	tagEFF5UV* pInfo;
@@ -4521,8 +4521,8 @@ void bhEff240(_anon0* op)
 	int ct;
 	int j;
 	int i;
-	_anon3 vc1;
-	_anon3 vc0;
+	NJS_POINT3 vc1;
+	NJS_POINT3 vc0;
 	// Line 4410, Address: 0x259b60, Func Offset: 0
 	// Line 4417, Address: 0x259b8c, Func Offset: 0x2c
 	// Line 4418, Address: 0x259bac, Func Offset: 0x4c
@@ -4779,8 +4779,8 @@ void bhEff242(_anon0* op)
 // Start address: 0x25aa10
 void bhEff243(_anon0* op)
 {
-	_anon3 VecZ;
-	_anon3 VecY;
+	NJS_POINT3 VecZ;
+	NJS_POINT3 VecY;
 	int lType;
 	tagEFF5UV* pInfo;
 	tagEFF5UV* pEff243UvInfoTop[2];
@@ -5352,7 +5352,7 @@ tagEFF5SNOWRECT* CreateEff5SnowRect(int lSnowMax)
 {
 	int lCnt;
 	int lSnowRest;
-	_anon3* pVector;
+	NJS_POINT3* pVector;
 	tagEFF5SNOWGRP* pSnowGrp;
 	tagEFF5SNOWRECT* pSnow;
 	// Line 5593, Address: 0x25c900, Func Offset: 0
@@ -5438,9 +5438,9 @@ void ExecEff5SnowRect(tagEFF5SNOWRECT* pSnow)
 	float fSizeX;
 	float fMaxX;
 	float fMinX;
-	_anon3 Vector;
-	_anon3* pVector;
-	_anon3* pPoint;
+	NJS_POINT3 Vector;
+	NJS_POINT3* pVector;
+	NJS_POINT3* pPoint;
 	int lDrawMax;
 	int lDrawCnt;
 	int lDrawRest;
@@ -5491,11 +5491,11 @@ void ExecEff5SnowRect(tagEFF5SNOWRECT* pSnow)
 // Start address: 0x25cef0
 void DrawEff5SnowRect(_anon0* op)
 {
-	_anon3 Vector;
+	NJS_POINT3 Vector;
 	int aAngleZ;
 	_anon2* pModel;
 	float Matrix[16];
-	_anon3* pPoint;
+	NJS_POINT3* pPoint;
 	int lDrawMax;
 	int lDrawCnt;
 	int lDrawRest;
@@ -5625,7 +5625,7 @@ void MovEff5SnowRectParticleMax(tagEFF5SNOWRECT* pSnow, int lSnowMax, int lTimeM
 // Start address: 0x25d320
 void ArrangeEff5SnowRectParticle(tagEFF5SNOWRECT* pSnow)
 {
-	_anon3* pPoint;
+	NJS_POINT3* pPoint;
 	int lCnt;
 	int lGrpCnt;
 	tagEFF5SNOWGRP* pSnowGrp;
@@ -5693,7 +5693,7 @@ void SetEff5SnowRectParticleSize(tagEFF5SNOWRECT* pSnow, float fWidth, float fHe
 
 // 
 // Start address: 0x25d4e0
-_anon3* GetEff5SnowRectCurrentWindVector(_anon3* pVector)
+NJS_POINT3* GetEff5SnowRectCurrentWindVector(NJS_POINT3* pVector)
 {
 	// Line 6334, Address: 0x25d4e0, Func Offset: 0
 	// Line 6335, Address: 0x25d4ec, Func Offset: 0xc

@@ -32,7 +32,7 @@ typedef struct _anon28;
 typedef struct _anon29;
 typedef struct _anon30;
 typedef struct _anon31;
-typedef struct _anon32;
+typedef struct NJS_POINT3;
 typedef struct _anon33;
 typedef struct _anon34;
 typedef struct _anon35;
@@ -171,7 +171,7 @@ typedef short type_118[4];
 typedef unsigned char type_119[4];
 typedef unsigned int type_120[32];
 typedef unsigned int type_121[8];
-typedef _anon32 type_122[32];
+typedef NJS_POINT3 type_122[32];
 typedef unsigned int type_123[4];
 typedef _anon0* type_124[128];
 
@@ -348,7 +348,7 @@ struct _anon1
 	unsigned int mp_flg[8];
 	unsigned int itm[384];
 	unsigned int ply_stflg[4];
-	_anon32 ply_pos;
+	NJS_POINT3 ply_pos;
 	int ply_ang;
 	char ply_wno[4];
 	short ply_hp[4];
@@ -573,8 +573,8 @@ struct _anon1
 	BH_PWORK* plp;
 	_anon22* pl_htp;
 	int costume;
-	_anon32 hd_pos;
-	_anon32 apos;
+	NJS_POINT3 hd_pos;
+	NJS_POINT3 apos;
 	_anon22* ahtp;
 	int mwal_n;
 	int metc_n;
@@ -651,7 +651,7 @@ struct _anon1
 	unsigned char ufo_md;
 	unsigned char ufo_flg;
 	short ufo_oidx;
-	_anon32 ufo_pos;
+	NJS_POINT3 ufo_pos;
 	unsigned int opt_flg;
 	unsigned short opt_md0;
 	unsigned short opt_md1;
@@ -678,7 +678,7 @@ struct _anon1
 	_anon37 gatc[16];
 	int ght_ct;
 	unsigned int ghtc[32];
-	_anon32 ghtp[32];
+	NJS_POINT3 ghtp[32];
 	unsigned short db_md0;
 	unsigned short db_md1;
 	char db_stgno;
@@ -1019,7 +1019,7 @@ struct _anon5
 {
 	int* vlist;
 	short* plist;
-	_anon32 center;
+	NJS_POINT3 center;
 	float r;
 };
 
@@ -1334,24 +1334,24 @@ struct _anon30
 struct _anon31
 {
 	float mtrx[16];
-	_anon32 pnt;
-	_anon32 vctr;
+	NJS_POINT3 pnt;
+	NJS_POINT3 vctr;
 	int stat;
 	int reserve;
 	_anon34 ltcal;
 	_anon43 attr;
 };
 
-struct _anon32
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct _anon33
 {
-	_anon32 ps;
+	NJS_POINT3 ps;
 	float nr;
 	float fr;
 	float cr;
@@ -1373,9 +1373,9 @@ struct _anon34
 	float intns;
 	int exp;
 	int reserve;
-	_anon32 lpnt;
-	_anon32 lvctr;
-	_anon32 lmvctr;
+	NJS_POINT3 lpnt;
+	NJS_POINT3 lvctr;
+	NJS_POINT3 lmvctr;
 	_anon24 atten;
 	_anon24 amb;
 	_anon24 dif;
@@ -1416,8 +1416,8 @@ struct _anon36
 
 struct _anon37
 {
-	_anon32 c1;
-	_anon32 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r1;
 	float r2;
 };
@@ -1556,14 +1556,14 @@ struct _anon43
 
 struct _anon44
 {
-	_anon32 c;
+	NJS_POINT3 c;
 	float r;
 };
 
 struct _anon45
 {
-	_anon32 c1;
-	_anon32 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r;
 };
 
@@ -1863,7 +1863,7 @@ void bhDrawGeneralPurposeWater()
 void bhDrawObjItm()
 {
 	float its;
-	_anon32 vec;
+	NJS_POINT3 vec;
 	int i;
 	_anon0* op;
 	// Line 389, Address: 0x283ba0, Func Offset: 0
@@ -1964,7 +1964,7 @@ void bhDrawObject(_anon0* op)
 // Start address: 0x284440
 void bhDrawSpObject(_anon0* op)
 {
-	_anon32 vec;
+	NJS_POINT3 vec;
 	_anon3* lp;
 	// Line 611, Address: 0x284440, Func Offset: 0
 	// Line 620, Address: 0x284454, Func Offset: 0x14
@@ -2082,7 +2082,7 @@ void bhObj001(_anon0* op)
 {
 	int pcflg;
 	_anon22* hp;
-	_anon32 pos;
+	NJS_POINT3 pos;
 	// Line 781, Address: 0x2848e0, Func Offset: 0
 	// Line 786, Address: 0x2848f8, Func Offset: 0x18
 	// Line 788, Address: 0x284918, Func Offset: 0x38
@@ -2625,8 +2625,8 @@ void bhObj006(_anon0* op)
 	_anon3* lp;
 	float len;
 	_anon39 line;
-	_anon32 ps0;
-	_anon32 ps;
+	NJS_POINT3 ps0;
+	NJS_POINT3 ps;
 	npobj* obp;
 	// Line 2074, Address: 0x285db0, Func Offset: 0
 	// Line 2082, Address: 0x285ddc, Func Offset: 0x2c
@@ -2718,9 +2718,9 @@ void bhObj007(_anon0* op)
 	float len2;
 	float len1;
 	float len0;
-	_anon32 ps2;
-	_anon32 ps1;
-	_anon32 ps0;
+	NJS_POINT3 ps2;
+	NJS_POINT3 ps1;
+	NJS_POINT3 ps0;
 	_anon39 lin;
 	// Line 2165, Address: 0x286160, Func Offset: 0
 	// Line 2169, Address: 0x286194, Func Offset: 0x34
@@ -2917,7 +2917,7 @@ void bhObj008(_anon0* op)
 void bhObj009(_anon0* op)
 {
 	float ln;
-	_anon32 vec;
+	NJS_POINT3 vec;
 	_anon9* ptp;
 	// Line 2371, Address: 0x286b70, Func Offset: 0
 	// Line 2375, Address: 0x286b88, Func Offset: 0x18
@@ -3082,14 +3082,14 @@ void bhObjClpn(_anon0* op)
 	float ln;
 	float pz;
 	float py;
-	_anon32 ps5;
-	_anon32 ps4;
-	_anon32 ps3;
-	_anon32 ps2;
-	_anon32 ps1;
-	_anon32* psp;
-	_anon32* g3p;
-	_anon32* p3p;
+	NJS_POINT3 ps5;
+	NJS_POINT3 ps4;
+	NJS_POINT3 ps3;
+	NJS_POINT3 ps2;
+	NJS_POINT3 ps1;
+	NJS_POINT3* psp;
+	NJS_POINT3* g3p;
+	NJS_POINT3* p3p;
 	short ry;
 	short rx;
 	short ay;

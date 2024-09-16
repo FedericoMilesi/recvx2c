@@ -1,24 +1,24 @@
-typedef struct _anon0;
+typedef struct NJS_POINT3;
 typedef struct _anon1;
 typedef struct _anon2;
 typedef struct _anon3;
 typedef struct _anon4;
 
 
-typedef _anon0 type_0[6];
+typedef NJS_POINT3 type_0[6];
 typedef unsigned int type_1[4];
 typedef unsigned int type_2[4][6];
-typedef _anon0 type_3[6];
-typedef _anon0 type_4[8];
+typedef NJS_POINT3 type_3[6];
+typedef NJS_POINT3 type_4[8];
 typedef unsigned int type_5[4];
 typedef unsigned int type_6[4][6];
 
-struct _anon0
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct _anon1
 {
@@ -32,40 +32,40 @@ struct _anon1
 
 struct _anon2
 {
-	_anon0 c1;
-	_anon0 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r;
 };
 
 struct _anon3
 {
-	_anon0 v[8];
+	NJS_POINT3 v[8];
 };
 
 struct _anon4
 {
-	_anon0 c;
+	NJS_POINT3 c;
 	float r;
 };
 
 
 int njIsParalellL2L(_anon1* pLine1, _anon1* pLine2);
 int njIsParalellL2PL(_anon1* pLine, _anon1* pPlane);
-float njDistanceP2P(_anon0* pPoint1, _anon0* pPoint2);
-float njDistanceP2L(_anon0* pPoint, _anon1* pLine, _anon0* pCross);
-float njDistanceP2PL(_anon0* pPoint, _anon1* pPlane, _anon0* pCross);
-float njDistanceL2L(_anon1* pLine1, _anon1* pLine2, _anon0* pCross1, _anon0* pCross2);
-float njDistanceL2PL(_anon1* pLine, _anon1* pPlane, _anon0* pCross);
-void njGetPlaneNormal(_anon0* pPoint, _anon0* pVector);
-void njGetPlaneNormal2(_anon0* pP1, _anon0* pP2, _anon0* pP3, _anon0* pVector);
+float njDistanceP2P(NJS_POINT3* pPoint1, NJS_POINT3* pPoint2);
+float njDistanceP2L(NJS_POINT3* pPoint, _anon1* pLine, NJS_POINT3* pCross);
+float njDistanceP2PL(NJS_POINT3* pPoint, _anon1* pPlane, NJS_POINT3* pCross);
+float njDistanceL2L(_anon1* pLine1, _anon1* pLine2, NJS_POINT3* pCross1, NJS_POINT3* pCross2);
+float njDistanceL2PL(_anon1* pLine, _anon1* pPlane, NJS_POINT3* pCross);
+void njGetPlaneNormal(NJS_POINT3* pPoint, NJS_POINT3* pVector);
+void njGetPlaneNormal2(NJS_POINT3* pP1, NJS_POINT3* pP2, NJS_POINT3* pP3, NJS_POINT3* pVector);
 int njCollisionCheckSS(_anon4* pSphere1, _anon4* pSphere2);
 int njCollisionCheckCC(_anon2* pCap1, _anon2* pCap2);
 int njCollisionCheckSC(_anon4* pSphere, _anon2* pCapsule);
 int njCollisionCheckBS(_anon3* pBox, _anon4* pSphere);
 int njCollisionCheckBC(_anon3* pBox, _anon2* pCapsule);
-int njCheckPlane4AndLine(_anon0* pP1, _anon0* pP2, _anon0* pP3, _anon0* pP4, _anon0* pPN, _anon1* pLine);
+int njCheckPlane4AndLine(NJS_POINT3* pP1, NJS_POINT3* pP2, NJS_POINT3* pP3, NJS_POINT3* pP4, NJS_POINT3* pPN, _anon1* pLine);
 int njCollisionCheckBC2(_anon3* pBox, _anon2* pCapsule);
-int njCheckPlane4IncludePoint(_anon0* pP1, _anon0* pP2, _anon0* pP3, _anon0* pP4, _anon0* pPC);
+int njCheckPlane4IncludePoint(NJS_POINT3* pP1, NJS_POINT3* pP2, NJS_POINT3* pP3, NJS_POINT3* pP4, NJS_POINT3* pPC);
 
 // 
 // Start address: 0x2e3160
@@ -133,7 +133,7 @@ int njIsParalellL2PL(_anon1* pLine, _anon1* pPlane)
 
 // 
 // Start address: 0x2e3340
-float njDistanceP2P(_anon0* pPoint1, _anon0* pPoint2)
+float njDistanceP2P(NJS_POINT3* pPoint1, NJS_POINT3* pPoint2)
 {
 	float fDeltaZ;
 	float fDeltaY;
@@ -150,7 +150,7 @@ float njDistanceP2P(_anon0* pPoint1, _anon0* pPoint2)
 
 // 
 // Start address: 0x2e3380
-float njDistanceP2L(_anon0* pPoint, _anon1* pLine, _anon0* pCross)
+float njDistanceP2L(NJS_POINT3* pPoint, _anon1* pLine, NJS_POINT3* pCross)
 {
 	float fDl;
 	float fDz;
@@ -195,7 +195,7 @@ float njDistanceP2L(_anon0* pPoint, _anon1* pLine, _anon0* pCross)
 
 // 
 // Start address: 0x2e34c0
-float njDistanceP2PL(_anon0* pPoint, _anon1* pPlane, _anon0* pCross)
+float njDistanceP2PL(NJS_POINT3* pPoint, _anon1* pPlane, NJS_POINT3* pCross)
 {
 	float fVz;
 	float fVy;
@@ -222,7 +222,7 @@ float njDistanceP2PL(_anon0* pPoint, _anon1* pPlane, _anon0* pCross)
 
 // 
 // Start address: 0x2e35b0
-float njDistanceL2L(_anon1* pLine1, _anon1* pLine2, _anon0* pCross1, _anon0* pCross2)
+float njDistanceL2L(_anon1* pLine1, _anon1* pLine2, NJS_POINT3* pCross1, NJS_POINT3* pCross2)
 {
 	float fDz;
 	float fDy;
@@ -299,7 +299,7 @@ float njDistanceL2L(_anon1* pLine1, _anon1* pLine2, _anon0* pCross1, _anon0* pCr
 
 // 
 // Start address: 0x2e3850
-float njDistanceL2PL(_anon1* pLine, _anon1* pPlane, _anon0* pCross)
+float njDistanceL2PL(_anon1* pLine, _anon1* pPlane, NJS_POINT3* pCross)
 {
 	float fT;
 	float fZ;
@@ -349,10 +349,10 @@ float njDistanceL2PL(_anon1* pLine, _anon1* pPlane, _anon0* pCross)
 
 // 
 // Start address: 0x2e39e0
-void njGetPlaneNormal(_anon0* pPoint, _anon0* pVector)
+void njGetPlaneNormal(NJS_POINT3* pPoint, NJS_POINT3* pVector)
 {
-	_anon0* pP3;
-	_anon0* pP2;
+	NJS_POINT3* pP3;
+	NJS_POINT3* pP2;
 	// Line 518, Address: 0x2e39e0, Func Offset: 0
 	// Line 519, Address: 0x2e3a14, Func Offset: 0x34
 	// Line 520, Address: 0x2e3a48, Func Offset: 0x68
@@ -362,7 +362,7 @@ void njGetPlaneNormal(_anon0* pPoint, _anon0* pVector)
 
 // 
 // Start address: 0x2e3a80
-void njGetPlaneNormal2(_anon0* pP1, _anon0* pP2, _anon0* pP3, _anon0* pVector)
+void njGetPlaneNormal2(NJS_POINT3* pP1, NJS_POINT3* pP2, NJS_POINT3* pP3, NJS_POINT3* pVector)
 {
 	// Line 544, Address: 0x2e3a80, Func Offset: 0
 	// Line 545, Address: 0x2e3ab4, Func Offset: 0x34
@@ -379,8 +379,8 @@ int njCollisionCheckSS(_anon4* pSphere1, _anon4* pSphere2)
 	float fDz;
 	float fDy;
 	float fDx;
-	_anon0* pCenter2;
-	_anon0* pCenter1;
+	NJS_POINT3* pCenter2;
+	NJS_POINT3* pCenter1;
 	// Line 576, Address: 0x2e3b20, Func Offset: 0
 	// Line 578, Address: 0x2e3b28, Func Offset: 0x8
 	// Line 577, Address: 0x2e3b30, Func Offset: 0x10
@@ -400,13 +400,13 @@ int njCollisionCheckSS(_anon4* pSphere1, _anon4* pSphere2)
 int njCollisionCheckCC(_anon2* pCap1, _anon2* pCap2)
 {
 	_anon4 Sphere;
-	_anon0 Point2;
-	_anon0 Point1;
+	NJS_POINT3 Point2;
+	NJS_POINT3 Point1;
 	float fLength;
 	_anon1 Line2;
 	_anon1 Line1;
-	_anon0* pP22;
-	_anon0* pP12;
+	NJS_POINT3* pP22;
+	NJS_POINT3* pP12;
 	// Line 613, Address: 0x2e3b90, Func Offset: 0
 	// Line 626, Address: 0x2e3bb0, Func Offset: 0x20
 	// Line 622, Address: 0x2e3bc0, Func Offset: 0x30
@@ -464,10 +464,10 @@ int njCollisionCheckCC(_anon2* pCap1, _anon2* pCap2)
 // Start address: 0x2e3e70
 int njCollisionCheckSC(_anon4* pSphere, _anon2* pCapsule)
 {
-	_anon0 Point;
+	NJS_POINT3 Point;
 	float fLength;
 	_anon1 Line;
-	_anon0* pP2;
+	NJS_POINT3* pP2;
 	// Line 698, Address: 0x2e3e70, Func Offset: 0
 	// Line 709, Address: 0x2e3e88, Func Offset: 0x18
 	// Line 716, Address: 0x2e3e94, Func Offset: 0x24
@@ -619,7 +619,7 @@ int njCollisionCheckBC(_anon3* pBox, _anon2* pCapsule)
 	_anon1 Line;
 	_anon2 Capsule;
 	unsigned int ulVertex[4][6];
-	_anon0 Normal[6];
+	NJS_POINT3 Normal[6];
 	// Line 855, Address: 0x2e4450, Func Offset: 0
 	// Line 882, Address: 0x2e448c, Func Offset: 0x3c
 	// Line 885, Address: 0x2e4490, Func Offset: 0x40
@@ -745,7 +745,7 @@ int njCollisionCheckBC(_anon3* pBox, _anon2* pCapsule)
 
 // 
 // Start address: 0x2e4bc0
-int njCheckPlane4AndLine(_anon0* pP1, _anon0* pP2, _anon0* pP3, _anon0* pP4, _anon0* pPN, _anon1* pLine)
+int njCheckPlane4AndLine(NJS_POINT3* pP1, NJS_POINT3* pP2, NJS_POINT3* pP3, NJS_POINT3* pP4, NJS_POINT3* pPN, _anon1* pLine)
 {
 	float fT4;
 	float fT3;
@@ -875,12 +875,12 @@ int njCollisionCheckBC2(_anon3* pBox, _anon2* pCapsule)
 	float fZ1;
 	float fY1;
 	float fX1;
-	_anon0 Cross;
+	NJS_POINT3 Cross;
 	_anon1 Plane;
 	_anon1 Line;
 	_anon2 Capsule;
 	unsigned int ulVertex[4][6];
-	_anon0 Normal[6];
+	NJS_POINT3 Normal[6];
 	// Line 1172, Address: 0x2e5090, Func Offset: 0
 	// Line 1199, Address: 0x2e50d0, Func Offset: 0x40
 	// Line 1200, Address: 0x2e50d4, Func Offset: 0x44
@@ -1101,7 +1101,7 @@ int njCollisionCheckBC2(_anon3* pBox, _anon2* pCapsule)
 
 // 
 // Start address: 0x2e5ae0
-int njCheckPlane4IncludePoint(_anon0* pP1, _anon0* pP2, _anon0* pP3, _anon0* pP4, _anon0* pPC)
+int njCheckPlane4IncludePoint(NJS_POINT3* pP1, NJS_POINT3* pP2, NJS_POINT3* pP3, NJS_POINT3* pP4, NJS_POINT3* pPC)
 {
 	float fT4;
 	float fT3;

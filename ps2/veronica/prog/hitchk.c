@@ -20,7 +20,7 @@ typedef struct _anon16;
 typedef struct _anon17;
 typedef struct _anon18;
 typedef struct _anon19;
-typedef struct _anon20;
+typedef struct NJS_POINT3;
 typedef struct _anon21;
 typedef struct _anon22;
 typedef struct _anon23;
@@ -129,7 +129,7 @@ typedef unsigned int type_77[8];
 typedef _anon36 type_78[4];
 typedef _anon3 type_79[4];
 typedef int type_80[450];
-typedef _anon20 type_81[128];
+typedef NJS_POINT3 type_81[128];
 typedef unsigned int type_82[8];
 typedef unsigned char type_83[450];
 typedef float type_84[128];
@@ -161,13 +161,13 @@ typedef _anon2* type_110[16];
 typedef char type_111[4];
 typedef _anon14 type_112[16];
 typedef short type_113[4];
-typedef _anon20 type_114[8];
+typedef NJS_POINT3 type_114[8];
 typedef unsigned char type_115[4];
 typedef _anon34 type_116[16];
 typedef unsigned int type_117[8];
 typedef unsigned int type_118[32];
 typedef unsigned int type_119[4];
-typedef _anon20 type_120[32];
+typedef NJS_POINT3 type_120[32];
 typedef _anon1* type_121[512];
 typedef _anon1* type_122[128];
 typedef _anon1* type_123[512];
@@ -534,7 +534,7 @@ struct _anon4
 	unsigned int mp_flg[8];
 	unsigned int itm[384];
 	unsigned int ply_stflg[4];
-	_anon20 ply_pos;
+	NJS_POINT3 ply_pos;
 	int ply_ang;
 	char ply_wno[4];
 	short ply_hp[4];
@@ -759,8 +759,8 @@ struct _anon4
 	BH_PWORK* plp;
 	_anon0* pl_htp;
 	int costume;
-	_anon20 hd_pos;
-	_anon20 apos;
+	NJS_POINT3 hd_pos;
+	NJS_POINT3 apos;
 	_anon0* ahtp;
 	int mwal_n;
 	int metc_n;
@@ -837,7 +837,7 @@ struct _anon4
 	unsigned char ufo_md;
 	unsigned char ufo_flg;
 	short ufo_oidx;
-	_anon20 ufo_pos;
+	NJS_POINT3 ufo_pos;
 	unsigned int opt_flg;
 	unsigned short opt_md0;
 	unsigned short opt_md1;
@@ -864,7 +864,7 @@ struct _anon4
 	_anon34 gatc[16];
 	int ght_ct;
 	unsigned int ghtc[32];
-	_anon20 ghtp[32];
+	NJS_POINT3 ghtp[32];
 	unsigned short db_md0;
 	unsigned short db_md1;
 	char db_stgno;
@@ -913,7 +913,7 @@ struct _anon6
 
 struct _anon7
 {
-	_anon20 c;
+	NJS_POINT3 c;
 	float r;
 };
 
@@ -1204,12 +1204,12 @@ struct _anon19
 	int ct3;
 };
 
-struct _anon20
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct _anon21
 {
@@ -1324,8 +1324,8 @@ struct _anon29
 struct _anon30
 {
 	float mtrx[16];
-	_anon20 pnt;
-	_anon20 vctr;
+	NJS_POINT3 pnt;
+	NJS_POINT3 vctr;
 	int stat;
 	int reserve;
 	_anon35 ltcal;
@@ -1334,7 +1334,7 @@ struct _anon30
 
 struct _anon31
 {
-	_anon20 ps;
+	NJS_POINT3 ps;
 	float nr;
 	float fr;
 	float cr;
@@ -1346,7 +1346,7 @@ struct _anon32
 {
 	int* vlist;
 	short* plist;
-	_anon20 center;
+	NJS_POINT3 center;
 	float r;
 };
 
@@ -1358,8 +1358,8 @@ struct _anon33
 
 struct _anon34
 {
-	_anon20 c1;
-	_anon20 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r1;
 	float r2;
 };
@@ -1378,9 +1378,9 @@ struct _anon35
 	float intns;
 	int exp;
 	int reserve;
-	_anon20 lpnt;
-	_anon20 lvctr;
-	_anon20 lmvctr;
+	NJS_POINT3 lpnt;
+	NJS_POINT3 lvctr;
+	NJS_POINT3 lmvctr;
 	_anon28 atten;
 	_anon28 amb;
 	_anon28 dif;
@@ -1524,8 +1524,8 @@ struct _anon41
 
 struct _anon42
 {
-	_anon20 c1;
-	_anon20 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r;
 };
 
@@ -1562,7 +1562,7 @@ struct _anon43
 
 struct _anon44
 {
-	_anon20 v[8];
+	NJS_POINT3 v[8];
 };
 
 _anon4* sys;
@@ -1573,18 +1573,18 @@ _anon38 cam;
 BH_PWORK ene[0];
 
 void bhCheckWall(BH_PWORK* pw);
-int bhCheckWallEx(BH_PWORK* pw, _anon20* npos, _anon20* opos, float par, float pah);
+int bhCheckWallEx(BH_PWORK* pw, NJS_POINT3* npos, NJS_POINT3* opos, float par, float pah);
 void bhCheckWall2Box(BH_PWORK* pw);
-_anon0* bhCheckWallType(_anon20* pos, unsigned int flg, float ar, float ah);
-_anon0* bhCheckWallType2(_anon20* pos, unsigned int flg, float aw, float ad, float ah, int idx_ct);
-_anon0* bhCheckWallRefAngle(_anon20* pos, unsigned int flg, float ar, float ah, int* ay);
-void bhSetWallRefAngle(_anon0* hp, _anon20* pos, float ar, float ah, int* ay);
-float bhGetGroundPosition(_anon20* pos);
-int bhCheckInnerTriangle(_anon0* hp, _anon20* pos, float ar, float ah);
-int bhCheckInnerTriangle2(_anon0* hp, _anon20* pos, float aw, float ad, float ah);
-int bhCheckInnerTriangle3(_anon0* hp, _anon20* pos);
-int bhCheckBox(_anon0* hp, _anon20* pos, float ar, float ah, unsigned int aflg);
-int bhCheckBox2Box(_anon0* hp, _anon20* pos, float aw, float ad, float ah);
+_anon0* bhCheckWallType(NJS_POINT3* pos, unsigned int flg, float ar, float ah);
+_anon0* bhCheckWallType2(NJS_POINT3* pos, unsigned int flg, float aw, float ad, float ah, int idx_ct);
+_anon0* bhCheckWallRefAngle(NJS_POINT3* pos, unsigned int flg, float ar, float ah, int* ay);
+void bhSetWallRefAngle(_anon0* hp, NJS_POINT3* pos, float ar, float ah, int* ay);
+float bhGetGroundPosition(NJS_POINT3* pos);
+int bhCheckInnerTriangle(_anon0* hp, NJS_POINT3* pos, float ar, float ah);
+int bhCheckInnerTriangle2(_anon0* hp, NJS_POINT3* pos, float aw, float ad, float ah);
+int bhCheckInnerTriangle3(_anon0* hp, NJS_POINT3* pos);
+int bhCheckBox(_anon0* hp, NJS_POINT3* pos, float ar, float ah, unsigned int aflg);
+int bhCheckBox2Box(_anon0* hp, NJS_POINT3* pos, float aw, float ad, float ah);
 int bhCheckInnerP4(_anon33* pos, _anon33* p0, _anon33* p1, _anon33* p2, _anon33* p3);
 void bhCheckExmAtari(BH_PWORK* pp);
 void bhSetUseKaidanFlag(BH_PWORK* pp, _anon0* exp, int idx);
@@ -1596,8 +1596,8 @@ void bhCheckDansa(BH_PWORK* pp);
 int bhCheckFloorSound(BH_PWORK* pp, int flr_no, float px, float pz);
 _anon0* bhCheckFloorEnemy(int flr_no, float px, float pz);
 _anon0* bhCheckFloorEffect(int flr_no, float px, float pz);
-_anon0* bhCheckWater(_anon20* pos);
-_anon0* bhCheckL2Water(_anon39* lp, _anon20* pos);
+_anon0* bhCheckWater(NJS_POINT3* pos);
+_anon0* bhCheckL2Water(_anon39* lp, NJS_POINT3* pos);
 void bhResetAtariAttr();
 void bhCheckPlayer(BH_PWORK* pp);
 void bhCheckEnemies(BH_PWORK* pp);
@@ -1608,8 +1608,8 @@ int bhCheckWallAttrB89(_anon0* hp);
 void bhCheckWall(BH_PWORK* pw)
 {
 	float inn;
-	_anon20 vec1;
-	_anon20 vec0;
+	NJS_POINT3 vec1;
+	NJS_POINT3 vec0;
 	int r;
 	float abz;
 	float abx;
@@ -1637,8 +1637,8 @@ void bhCheckWall(BH_PWORK* pw)
 	_anon0 ht;
 	_anon0* hp;
 	_anon39 l;
-	_anon20 pd;
-	_anon20* npos;
+	NJS_POINT3 pd;
+	NJS_POINT3* npos;
 	// Line 102, Address: 0x25d590, Func Offset: 0
 	// Line 120, Address: 0x25d5ec, Func Offset: 0x5c
 	// Line 117, Address: 0x25d608, Func Offset: 0x78
@@ -2001,11 +2001,11 @@ void bhCheckWall(BH_PWORK* pw)
 
 // 
 // Start address: 0x25e930
-int bhCheckWallEx(BH_PWORK* pw, _anon20* npos, _anon20* opos, float par, float pah)
+int bhCheckWallEx(BH_PWORK* pw, NJS_POINT3* npos, NJS_POINT3* opos, float par, float pah)
 {
 	float inn;
-	_anon20 vec1;
-	_anon20 vec0;
+	NJS_POINT3 vec1;
+	NJS_POINT3 vec0;
 	int ayp;
 	int r;
 	float pzz;
@@ -2035,7 +2035,7 @@ int bhCheckWallEx(BH_PWORK* pw, _anon20* npos, _anon20* opos, float par, float p
 	_anon0 ht;
 	_anon0* hp;
 	_anon39 l;
-	_anon20 pd;
+	NJS_POINT3 pd;
 	// Line 622, Address: 0x25e930, Func Offset: 0
 	// Line 636, Address: 0x25e98c, Func Offset: 0x5c
 	// Line 638, Address: 0x25e9b8, Func Offset: 0x88
@@ -2397,7 +2397,7 @@ void bhCheckWall2Box(BH_PWORK* pw)
 	_anon0 ht;
 	_anon0* hp;
 	_anon39 l;
-	_anon20 pd;
+	NJS_POINT3 pd;
 	// Line 1154, Address: 0x25fbf0, Func Offset: 0
 	// Line 1168, Address: 0x25fc38, Func Offset: 0x48
 	// Line 1167, Address: 0x25fc40, Func Offset: 0x50
@@ -2815,7 +2815,7 @@ void bhCheckWall2Box(BH_PWORK* pw)
 
 // 
 // Start address: 0x261340
-_anon0* bhCheckWallType(_anon20* pos, unsigned int flg, float ar, float ah)
+_anon0* bhCheckWallType(NJS_POINT3* pos, unsigned int flg, float ar, float ah)
 {
 	float h;
 	float ln;
@@ -2874,7 +2874,7 @@ _anon0* bhCheckWallType(_anon20* pos, unsigned int flg, float ar, float ah)
 
 // 
 // Start address: 0x261830
-_anon0* bhCheckWallType2(_anon20* pos, unsigned int flg, float aw, float ad, float ah, int idx_ct)
+_anon0* bhCheckWallType2(NJS_POINT3* pos, unsigned int flg, float aw, float ad, float ah, int idx_ct)
 {
 	float h;
 	float zn;
@@ -2961,7 +2961,7 @@ _anon0* bhCheckWallType2(_anon20* pos, unsigned int flg, float aw, float ad, flo
 
 // 
 // Start address: 0x261eb0
-_anon0* bhCheckWallRefAngle(_anon20* pos, unsigned int flg, float ar, float ah, int* ay)
+_anon0* bhCheckWallRefAngle(NJS_POINT3* pos, unsigned int flg, float ar, float ah, int* ay)
 {
 	int r;
 	float abz;
@@ -2982,7 +2982,7 @@ _anon0* bhCheckWallRefAngle(_anon20* pos, unsigned int flg, float ar, float ah, 
 	_anon0 ht;
 	_anon0* hp;
 	_anon39 l;
-	_anon20 pd;
+	NJS_POINT3 pd;
 	// Line 1865, Address: 0x261eb0, Func Offset: 0
 	// Line 1875, Address: 0x261f08, Func Offset: 0x58
 	// Line 1876, Address: 0x261f3c, Func Offset: 0x8c
@@ -3401,7 +3401,7 @@ _anon0* bhCheckWallRefAngle(_anon20* pos, unsigned int flg, float ar, float ah, 
 
 // 
 // Start address: 0x2632e0
-void bhSetWallRefAngle(_anon0* hp, _anon20* pos, float ar, float ah, int* ay)
+void bhSetWallRefAngle(_anon0* hp, NJS_POINT3* pos, float ar, float ah, int* ay)
 {
 	int r;
 	float abz;
@@ -3419,7 +3419,7 @@ void bhSetWallRefAngle(_anon0* hp, _anon20* pos, float ar, float ah, int* ay)
 	float px;
 	_anon0 ht;
 	_anon39 l;
-	_anon20 pd;
+	NJS_POINT3 pd;
 	// Line 2378, Address: 0x2632e0, Func Offset: 0
 	// Line 2388, Address: 0x2632e4, Func Offset: 0x4
 	// Line 2378, Address: 0x2632e8, Func Offset: 0x8
@@ -3831,7 +3831,7 @@ void bhSetWallRefAngle(_anon0* hp, _anon20* pos, float ar, float ah, int* ay)
 
 // 
 // Start address: 0x264310
-float bhGetGroundPosition(_anon20* pos)
+float bhGetGroundPosition(NJS_POINT3* pos)
 {
 	float nr;
 	float yn;
@@ -3843,7 +3843,7 @@ float bhGetGroundPosition(_anon20* pos)
 	int wal_n;
 	int i;
 	_anon0* hp;
-	_anon20 pd;
+	NJS_POINT3 pd;
 	// Line 2834, Address: 0x264310, Func Offset: 0
 	// Line 2843, Address: 0x264340, Func Offset: 0x30
 	// Line 2844, Address: 0x264348, Func Offset: 0x38
@@ -3941,7 +3941,7 @@ float bhGetGroundPosition(_anon20* pos)
 
 // 
 // Start address: 0x2648c0
-int bhCheckInnerTriangle(_anon0* hp, _anon20* pos, float ar, float ah)
+int bhCheckInnerTriangle(_anon0* hp, NJS_POINT3* pos, float ar, float ah)
 {
 	float h;
 	float pz;
@@ -4074,7 +4074,7 @@ int bhCheckInnerTriangle(_anon0* hp, _anon20* pos, float ar, float ah)
 
 // 
 // Start address: 0x264e50
-int bhCheckInnerTriangle2(_anon0* hp, _anon20* pos, float aw, float ad, float ah)
+int bhCheckInnerTriangle2(_anon0* hp, NJS_POINT3* pos, float aw, float ad, float ah)
 {
 	float h;
 	float pz;
@@ -4207,7 +4207,7 @@ int bhCheckInnerTriangle2(_anon0* hp, _anon20* pos, float aw, float ad, float ah
 
 // 
 // Start address: 0x265400
-int bhCheckInnerTriangle3(_anon0* hp, _anon20* pos)
+int bhCheckInnerTriangle3(_anon0* hp, NJS_POINT3* pos)
 {
 	float h;
 	// Line 3190, Address: 0x265400, Func Offset: 0
@@ -4233,7 +4233,7 @@ int bhCheckInnerTriangle3(_anon0* hp, _anon20* pos)
 
 // 
 // Start address: 0x2655b0
-int bhCheckBox(_anon0* hp, _anon20* pos, float ar, float ah, unsigned int aflg)
+int bhCheckBox(_anon0* hp, NJS_POINT3* pos, float ar, float ah, unsigned int aflg)
 {
 	int r;
 	float abz;
@@ -4363,7 +4363,7 @@ int bhCheckBox(_anon0* hp, _anon20* pos, float ar, float ah, unsigned int aflg)
 
 // 
 // Start address: 0x265ba0
-int bhCheckBox2Box(_anon0* hp, _anon20* pos, float aw, float ad, float ah)
+int bhCheckBox2Box(_anon0* hp, NJS_POINT3* pos, float aw, float ad, float ah)
 {
 	float abz;
 	float abx;
@@ -4537,7 +4537,7 @@ void bhCheckExmAtari(BH_PWORK* pp)
 	_anon1* op;
 	_anon0* ckp;
 	_anon0* exp;
-	_anon20 ps;
+	NJS_POINT3 ps;
 	// Line 3599, Address: 0x266270, Func Offset: 0
 	// Line 3610, Address: 0x266288, Func Offset: 0x18
 	// Line 3612, Address: 0x266298, Func Offset: 0x28
@@ -5238,7 +5238,7 @@ _anon0* bhCheckFloorEffect(int flr_no, float px, float pz)
 
 // 
 // Start address: 0x268540
-_anon0* bhCheckWater(_anon20* pos)
+_anon0* bhCheckWater(NJS_POINT3* pos)
 {
 	int flr_n;
 	int i;
@@ -5258,16 +5258,16 @@ _anon0* bhCheckWater(_anon20* pos)
 
 // 
 // Start address: 0x2686a0
-_anon0* bhCheckL2Water(_anon39* lp, _anon20* pos)
+_anon0* bhCheckL2Water(_anon39* lp, NJS_POINT3* pos)
 {
 	int flr_n;
 	int i;
 	float sca;
 	float pz;
 	float px;
-	_anon20 ll;
-	_anon20 pt;
-	_anon20 ps;
+	NJS_POINT3 ll;
+	NJS_POINT3 pt;
+	NJS_POINT3 ps;
 	_anon39 pl;
 	_anon0* fp;
 	// Line 4499, Address: 0x2686a0, Func Offset: 0
@@ -5384,7 +5384,7 @@ void bhCheckPlayer(BH_PWORK* pp)
 	float ey;
 	float pz;
 	float px;
-	_anon20 vec;
+	NJS_POINT3 vec;
 	// Line 4609, Address: 0x268ce0, Func Offset: 0
 	// Line 4617, Address: 0x268d08, Func Offset: 0x28
 	// Line 4620, Address: 0x268d44, Func Offset: 0x64
@@ -5453,7 +5453,7 @@ void bhCheckPlayer(BH_PWORK* pp)
 // Start address: 0x268fb0
 void bhCheckEnemies(BH_PWORK* pp)
 {
-	_anon20 ps[128];
+	NJS_POINT3 ps[128];
 	int hct;
 	int i;
 	int r;

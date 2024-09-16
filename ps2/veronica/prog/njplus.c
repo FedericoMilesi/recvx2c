@@ -1,6 +1,6 @@
 typedef struct npobj;
 typedef struct _anon0;
-typedef struct _anon1;
+typedef struct NJS_POINT3;
 typedef struct _anon2;
 typedef struct _anon3;
 typedef struct _anon4;
@@ -24,71 +24,71 @@ typedef struct _anon20;
 typedef struct _anon21;
 
 
-typedef _anon1 type_0[8];
-typedef _anon1 type_1[4];
+typedef NJS_POINT3 type_0[8];
+typedef NJS_POINT3 type_1[4];
 typedef _anon10 type_2[8];
 typedef unsigned char type_3[64];
 typedef float type_4[16];
 typedef char type_5[8];
-typedef _anon1 type_6[8];
+typedef NJS_POINT3 type_6[8];
 typedef float type_7[10];
-typedef _anon1 type_8[8];
+typedef NJS_POINT3 type_8[8];
 typedef _anon10 type_9[16];
 typedef float type_10[16][0];
-typedef _anon1 type_11[4];
+typedef NJS_POINT3 type_11[4];
 typedef unsigned char type_12[64];
-typedef _anon1 type_13[3];
-typedef _anon1 type_14[2];
+typedef NJS_POINT3 type_13[3];
+typedef NJS_POINT3 type_14[2];
 typedef _anon10 type_15[3];
 typedef _anon10 type_16[2];
 typedef _anon10 type_17[8];
 typedef unsigned char type_18[64];
 typedef void* type_19[2];
 typedef unsigned int type_20[2];
-typedef _anon1 type_21[16];
+typedef NJS_POINT3 type_21[16];
 typedef float type_22[3];
 typedef int type_23[3];
-typedef _anon1 type_24[16];
+typedef NJS_POINT3 type_24[16];
 typedef float type_25[3];
-typedef _anon1 type_26[4];
-typedef _anon1 type_27[4];
-typedef _anon1 type_28[4];
+typedef NJS_POINT3 type_26[4];
+typedef NJS_POINT3 type_27[4];
+typedef NJS_POINT3 type_28[4];
 typedef float type_29[3];
 typedef _anon10 type_30[4];
 typedef _anon10 type_31[4];
 typedef int type_32[64];
-typedef _anon1 type_33[4];
+typedef NJS_POINT3 type_33[4];
 typedef _anon10 type_34[16];
-typedef _anon1 type_35[4];
+typedef NJS_POINT3 type_35[4];
 typedef _anon10 type_36[4];
 typedef float type_37[16][0];
 typedef _anon10 type_38[4];
 typedef unsigned char type_39[64];
 typedef unsigned char type_40[56];
 typedef int* type_41[128];
-typedef _anon1 type_42[128];
+typedef NJS_POINT3 type_42[128];
 typedef npobj* type_43[128];
 typedef int* type_44[128];
 typedef int* type_45[128];
 typedef float type_46[16][10];
 typedef float type_47[10];
 typedef float type_48[16][10][128];
-typedef _anon1 type_49[8];
+typedef NJS_POINT3 type_49[8];
 typedef unsigned int type_50[1];
-typedef _anon1 type_51[8];
+typedef NJS_POINT3 type_51[8];
 typedef _anon17 type_52[128];
 typedef unsigned int type_53[2];
 typedef int* type_54[16];
-typedef _anon1 type_55[4];
+typedef NJS_POINT3 type_55[4];
 typedef int* type_56[128];
 typedef npobj* type_57[16];
 typedef char type_58[256];
 typedef _anon12* type_59[16];
 typedef float type_60[10];
 typedef _anon15 type_61[16];
-typedef _anon1 type_62[8];
-typedef _anon1 type_63[8];
-typedef _anon1 type_64[8];
+typedef NJS_POINT3 type_62[8];
+typedef NJS_POINT3 type_63[8];
+typedef NJS_POINT3 type_64[8];
 
 struct npobj
 {
@@ -109,12 +109,12 @@ struct _anon0
 	float w;
 };
 
-struct _anon1
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct _anon2
 {
@@ -137,8 +137,8 @@ struct _anon3
 
 struct _anon4
 {
-	_anon1 c1;
-	_anon1 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r;
 };
 
@@ -154,7 +154,7 @@ struct _anon5
 
 struct _anon6
 {
-	_anon1 c;
+	NJS_POINT3 c;
 	float r;
 };
 
@@ -367,7 +367,7 @@ struct _anon16
 {
 	int* vlist;
 	short* plist;
-	_anon1 center;
+	NJS_POINT3 center;
 	float r;
 };
 
@@ -380,15 +380,15 @@ struct _anon17
 
 struct _anon18
 {
-	_anon1 c1;
-	_anon1 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r1;
 	float r2;
 };
 
 struct _anon19
 {
-	_anon1* p;
+	NJS_POINT3* p;
 	_anon10* col;
 	_anon10* tex;
 	unsigned int num;
@@ -402,7 +402,7 @@ struct _anon20
 	unsigned char* buff;
 	unsigned char* bp;
 	int* vlist[128];
-	_anon1 op[128];
+	NJS_POINT3 op[128];
 	npobj* cobj[128];
 	int* sktp[128];
 	int* vlp[128];
@@ -432,10 +432,10 @@ float lcmat[16][0];
 
 void npPlusInit();
 int npCollisionCheckCC(_anon4* cpa, _anon4* cpb);
-int npCollisionCheckCCEx(_anon4* cpa, _anon4* cpb, _anon1* pos);
+int npCollisionCheckCCEx(_anon4* cpa, _anon4* cpb, NJS_POINT3* pos);
 int npCollisionCheckSC(_anon6* sa, _anon4* cpb);
-void npDistanceP2C(_anon1* pos, _anon4* cap, _anon1* htp);
-void npDrawPlane(_anon1* ps0, _anon1* ps1, _anon1* ps2, _anon1* ps3, unsigned int argb);
+void npDistanceP2C(NJS_POINT3* pos, _anon4* cap, NJS_POINT3* htp);
+void npDrawPlane(NJS_POINT3* ps0, NJS_POINT3* ps1, NJS_POINT3* ps2, NJS_POINT3* ps3, unsigned int argb);
 void npCalcMorphing(npobj* obj_a, npobj* obj_b, float no, int obj_n);
 void npTransform(npobj* srcobj, npobj* dstobj, float no, int ono);
 void npPushMdlstr(npobj* objp, int obj_n);
@@ -447,8 +447,8 @@ void npClrTranslate();
 void npSetMemory(unsigned char* memp, unsigned int size, char dat);
 void npSetMemoryL(unsigned int* memp, unsigned int size, int dat);
 void npCopyMemory(unsigned char* dst, unsigned char* src, unsigned int size);
-void npGetWHDSizeSub(npobj* objp, _anon1* whd);
-void npGetWHDSize(npobj* objp, _anon1* whd);
+void npGetWHDSizeSub(npobj* objp, NJS_POINT3* whd);
+void npGetWHDSize(npobj* objp, NJS_POINT3* whd);
 void npSkinConvPreparation(npobj* objp);
 void npSkinConvSub(npobj* objp);
 void npSkinConvMain(npobj* objp);
@@ -499,7 +499,7 @@ int npCollisionCheckCC(_anon4* cpa, _anon4* cpb)
 	float lenb;
 	float lena;
 	float inn;
-	_anon1 vec;
+	NJS_POINT3 vec;
 	_anon6 sb;
 	_anon6 sa;
 	_anon4* capb;
@@ -651,16 +651,16 @@ int npCollisionCheckCC(_anon4* cpa, _anon4* cpb)
 
 // 
 // Start address: 0x12bc70
-int npCollisionCheckCCEx(_anon4* cpa, _anon4* cpb, _anon1* pos)
+int npCollisionCheckCCEx(_anon4* cpa, _anon4* cpb, NJS_POINT3* pos)
 {
-	_anon1 scl;
-	_anon1 scl;
-	_anon1 scl;
+	NJS_POINT3 scl;
+	NJS_POINT3 scl;
+	NJS_POINT3 scl;
 	float sca;
 	float lenb;
 	float lena;
 	float inn;
-	_anon1 vec;
+	NJS_POINT3 vec;
 	_anon6 sb;
 	_anon6 sa;
 	_anon4* capb;
@@ -873,7 +873,7 @@ int npCollisionCheckSC(_anon6* sa, _anon4* cpb)
 	float lenb;
 	float lr;
 	float inn;
-	_anon1 vec;
+	NJS_POINT3 vec;
 	_anon6 sb;
 	_anon21 lnb;
 	// Line 493, Address: 0x12c440, Func Offset: 0
@@ -925,12 +925,12 @@ int npCollisionCheckSC(_anon6* sa, _anon4* cpb)
 
 // 
 // Start address: 0x12c640
-void npDistanceP2C(_anon1* pos, _anon4* cap, _anon1* htp)
+void npDistanceP2C(NJS_POINT3* pos, _anon4* cap, NJS_POINT3* htp)
 {
 	float sca;
 	float len;
 	float inn;
-	_anon1 vec;
+	NJS_POINT3 vec;
 	_anon21 ln;
 	// Line 549, Address: 0x12c640, Func Offset: 0
 	// Line 553, Address: 0x12c670, Func Offset: 0x30
@@ -988,10 +988,10 @@ void npDistanceP2C(_anon1* pos, _anon4* cap, _anon1* htp)
 
 // 
 // Start address: 0x12c890
-void npDrawPlane(_anon1* ps0, _anon1* ps1, _anon1* ps2, _anon1* ps3, unsigned int argb)
+void npDrawPlane(NJS_POINT3* ps0, NJS_POINT3* ps1, NJS_POINT3* ps2, NJS_POINT3* ps3, unsigned int argb)
 {
 	_anon10 col[4];
-	_anon1 p3[4];
+	NJS_POINT3 p3[4];
 	_anon19 p3c;
 	// Line 1112, Address: 0x12c890, Func Offset: 0
 	// Line 1117, Address: 0x12c894, Func Offset: 0x4
@@ -1283,15 +1283,15 @@ void npCopyMemory(unsigned char* dst, unsigned char* src, unsigned int size)
 
 // 
 // Start address: 0x12cff0
-void npGetWHDSizeSub(npobj* objp, _anon1* whd)
+void npGetWHDSizeSub(npobj* objp, NJS_POINT3* whd)
 {
 	_anon3* pHdrPs;
 	_anon2* pHdrCv;
 	int i;
 	_anon0 pd4;
 	_anon0* ps4;
-	_anon1 pd3;
-	_anon1* ps3;
+	NJS_POINT3 pd3;
+	NJS_POINT3* ps3;
 	// Line 2389, Address: 0x12cff0, Func Offset: 0
 	// Line 2397, Address: 0x12d010, Func Offset: 0x20
 	// Line 2398, Address: 0x12d01c, Func Offset: 0x2c
@@ -1329,7 +1329,7 @@ void npGetWHDSizeSub(npobj* objp, _anon1* whd)
 
 // 
 // Start address: 0x12d250
-void npGetWHDSize(npobj* objp, _anon1* whd)
+void npGetWHDSize(npobj* objp, NJS_POINT3* whd)
 {
 	// Line 2529, Address: 0x12d250, Func Offset: 0
 	// Line 2530, Address: 0x12d260, Func Offset: 0x10
@@ -1346,7 +1346,7 @@ void npSkinConvPreparation(npobj* objp)
 	int nb;
 	int mno;
 	int flg;
-	_anon1 ps;
+	NJS_POINT3 ps;
 	// Line 2539, Address: 0x12d2a0, Func Offset: 0
 	// Line 2540, Address: 0x12d2b0, Func Offset: 0x10
 	// Line 2539, Address: 0x12d2b4, Func Offset: 0x14

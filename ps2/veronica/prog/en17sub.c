@@ -9,7 +9,7 @@ typedef struct _anon5;
 typedef struct _anon6;
 typedef struct _anon7;
 typedef struct _anon8;
-typedef struct _anon9;
+typedef struct NJS_POINT3;
 typedef struct _anon10;
 
 typedef void(*type_3)(BH_PWORK*);
@@ -241,7 +241,7 @@ struct _anon7
 {
 	int* vlist;
 	short* plist;
-	_anon9 center;
+	NJS_POINT3 center;
 	float r;
 };
 
@@ -255,17 +255,17 @@ struct _anon8
 	_anon2* owP;
 };
 
-struct _anon9
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct _anon10
 {
-	_anon9 c1;
-	_anon9 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r;
 };
 
@@ -390,8 +390,8 @@ void bhEne17_AxsCheck(BH_PWORK* epw)
 	_anon1 attr;
 	float idata[3][6];
 	int i;
-	_anon9 pd;
-	_anon9 ps;
+	NJS_POINT3 pd;
+	NJS_POINT3 ps;
 	_anon2* owk;
 	BH_PWORK* epp;
 	// Line 291, Address: 0x1ee910, Func Offset: 0

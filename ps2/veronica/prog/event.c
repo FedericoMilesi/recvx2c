@@ -39,7 +39,7 @@ typedef struct _anon35;
 typedef struct _anon36;
 typedef struct _anon37;
 typedef struct _anon38;
-typedef struct _anon39;
+typedef struct NJS_POINT3;
 typedef struct _anon40;
 typedef struct _anon41;
 typedef struct _anon42;
@@ -240,7 +240,7 @@ typedef float type_180[3];
 typedef unsigned int type_181[8];
 typedef unsigned int type_182[32];
 typedef unsigned int type_183[4];
-typedef _anon39 type_184[32];
+typedef NJS_POINT3 type_184[32];
 typedef _anon0* type_185[512];
 typedef _anon0* type_186[128];
 typedef float type_187[3];
@@ -848,7 +848,7 @@ struct _anon15
 	unsigned int mp_flg[8];
 	unsigned int itm[384];
 	unsigned int ply_stflg[4];
-	_anon39 ply_pos;
+	NJS_POINT3 ply_pos;
 	int ply_ang;
 	char ply_wno[4];
 	short ply_hp[4];
@@ -1073,8 +1073,8 @@ struct _anon15
 	BH_PWORK* plp;
 	_anon6* pl_htp;
 	int costume;
-	_anon39 hd_pos;
-	_anon39 apos;
+	NJS_POINT3 hd_pos;
+	NJS_POINT3 apos;
 	_anon6* ahtp;
 	int mwal_n;
 	int metc_n;
@@ -1151,7 +1151,7 @@ struct _anon15
 	unsigned char ufo_md;
 	unsigned char ufo_flg;
 	short ufo_oidx;
-	_anon39 ufo_pos;
+	NJS_POINT3 ufo_pos;
 	unsigned int opt_flg;
 	unsigned short opt_md0;
 	unsigned short opt_md1;
@@ -1178,7 +1178,7 @@ struct _anon15
 	_anon41 gatc[16];
 	int ght_ct;
 	unsigned int ghtc[32];
-	_anon39 ghtp[32];
+	NJS_POINT3 ghtp[32];
 	unsigned short db_md0;
 	unsigned short db_md1;
 	char db_stgno;
@@ -1381,9 +1381,9 @@ struct _anon24
 	float l;
 	float rn;
 	float rmax;
-	_anon39 wp_fps1;
-	_anon39 wp_fps2;
-	_anon39 wp_cps;
+	NJS_POINT3 wp_fps1;
+	NJS_POINT3 wp_fps2;
+	NJS_POINT3 wp_cps;
 	unsigned char ltp;
 	unsigned char lr;
 	unsigned char lg;
@@ -1532,8 +1532,8 @@ struct _anon34
 struct _anon35
 {
 	float mtrx[16];
-	_anon39 pnt;
-	_anon39 vctr;
+	NJS_POINT3 pnt;
+	NJS_POINT3 vctr;
 	int stat;
 	int reserve;
 	_anon42 ltcal;
@@ -1542,7 +1542,7 @@ struct _anon35
 
 struct _anon36
 {
-	_anon39 ps;
+	NJS_POINT3 ps;
 	float nr;
 	float fr;
 	float cr;
@@ -1554,7 +1554,7 @@ struct _anon37
 {
 	int* vlist;
 	short* plist;
-	_anon39 center;
+	NJS_POINT3 center;
 	float r;
 };
 
@@ -1564,12 +1564,12 @@ struct _anon38
 	float y;
 };
 
-struct _anon39
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct _anon40
 {
@@ -1619,8 +1619,8 @@ struct _anon40
 
 struct _anon41
 {
-	_anon39 c1;
-	_anon39 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r1;
 	float r2;
 };
@@ -1639,9 +1639,9 @@ struct _anon42
 	float intns;
 	int exp;
 	int reserve;
-	_anon39 lpnt;
-	_anon39 lvctr;
-	_anon39 lmvctr;
+	NJS_POINT3 lpnt;
+	NJS_POINT3 lvctr;
+	NJS_POINT3 lmvctr;
 	_anon33 atten;
 	_anon33 amb;
 	_anon33 dif;
@@ -1785,14 +1785,14 @@ struct _anon48
 
 struct _anon49
 {
-	_anon39 c;
+	NJS_POINT3 c;
 	float r;
 };
 
 struct _anon50
 {
-	_anon39 c1;
-	_anon39 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r;
 };
 
@@ -1829,7 +1829,7 @@ struct _anon51
 
 struct _anon52
 {
-	_anon39 off_pos;
+	NJS_POINT3 off_pos;
 	int srd_dir;
 	float srd_pos;
 	float bld_spd;
@@ -2694,7 +2694,7 @@ unsigned int bhBgmOff()
 unsigned int bhSeOn()
 {
 	BH_PWORK* e_ep;
-	_anon39 pPos;
+	NJS_POINT3 pPos;
 	unsigned int v4;
 	unsigned int v3;
 	unsigned int v2;
@@ -2949,7 +2949,7 @@ unsigned int bhMovieStop()
 unsigned int bhVoiceOn()
 {
 	BH_PWORK* e_ep;
-	_anon39 pPos;
+	NJS_POINT3 pPos;
 	unsigned int v4;
 	unsigned int v3;
 	unsigned int v2;
@@ -5014,7 +5014,7 @@ unsigned int bhFogColorSet()
 // Start address: 0x15caf0
 unsigned int bhEffectSandSet()
 {
-	_anon39 pos;
+	NJS_POINT3 pos;
 	BH_PWORK* epw;
 	unsigned int v2;
 	unsigned int v1;
@@ -5129,7 +5129,7 @@ unsigned int bhPlItemBlockCk()
 // Start address: 0x15d300
 unsigned int bhEffBloodSet()
 {
-	_anon39 ofp;
+	NJS_POINT3 ofp;
 	BH_PWORK* epw;
 	int v2;
 	int v1;
@@ -5189,7 +5189,7 @@ unsigned int bhEffBloodSet()
 unsigned int bhEffBloodPoolSet()
 {
 	int ang;
-	_anon39 gpos;
+	NJS_POINT3 gpos;
 	BH_PWORK* epw;
 	int v2;
 	int v1;
@@ -5250,7 +5250,7 @@ unsigned int bhEffBloodPoolSet()
 unsigned int bhEffBloodPoolSet2()
 {
 	int ang;
-	_anon39 gpos;
+	NJS_POINT3 gpos;
 	int v3;
 	int v2;
 	int v1;
@@ -5700,8 +5700,8 @@ unsigned int bhObjAlphaSet()
 unsigned int bhCyodanSet()
 {
 	int wp_hef;
-	_anon39 wps;
-	_anon39 ps;
+	NJS_POINT3 wps;
+	NJS_POINT3 ps;
 	int v5;
 	int v4;
 	int v3;
@@ -6264,7 +6264,7 @@ unsigned int bhLightParameterSet()
 unsigned int bhEneSeOn()
 {
 	BH_PWORK* epw;
-	_anon39 pPos;
+	NJS_POINT3 pPos;
 	unsigned int v3;
 	unsigned int v2;
 	unsigned int v1;
@@ -6825,7 +6825,7 @@ unsigned int bhPlayerPoisonCk()
 // Start address: 0x1619b0
 unsigned int bhAddObjSe()
 {
-	_anon39 pPos;
+	NJS_POINT3 pPos;
 	int v3;
 	int v2;
 	int v1;
@@ -8543,8 +8543,8 @@ unsigned int bhCyodanSetEx()
 {
 	BH_PWORK* e_ep;
 	int wp_hef;
-	_anon39 wps;
-	_anon39 ps;
+	NJS_POINT3 wps;
+	NJS_POINT3 ps;
 	int w7;
 	int w6;
 	int w5;
@@ -8767,7 +8767,7 @@ unsigned int bhEffectSandSetMatsumoto()
 unsigned int bhVoiceWait()
 {
 	BH_PWORK* e_ep;
-	_anon39 pPos;
+	NJS_POINT3 pPos;
 	unsigned int v4;
 	unsigned int v3;
 	unsigned int v2;
@@ -8874,7 +8874,7 @@ unsigned int bhPlItemChangeM()
 // Start address: 0x166680
 unsigned int bhEffBakuDrmSet()
 {
-	_anon39 pPos;
+	NJS_POINT3 pPos;
 	int v2;
 	// Line 8100, Address: 0x166680, Func Offset: 0
 	// Line 8104, Address: 0x166688, Func Offset: 0x8

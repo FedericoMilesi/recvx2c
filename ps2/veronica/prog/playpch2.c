@@ -23,7 +23,7 @@ typedef struct _anon19;
 typedef struct _anon20;
 typedef struct _anon21;
 typedef struct _anon22;
-typedef struct _anon23;
+typedef struct NJS_POINT3;
 typedef struct _anon24;
 typedef struct _anon25;
 typedef struct _anon26;
@@ -143,7 +143,7 @@ typedef short type_101[4];
 typedef unsigned char type_102[4];
 typedef _anon25 type_103[16];
 typedef unsigned int type_104[32];
-typedef _anon23 type_105[32];
+typedef NJS_POINT3 type_105[32];
 typedef _anon0* type_106[512];
 typedef _anon0* type_107[128];
 typedef _anon0* type_108[512];
@@ -535,7 +535,7 @@ struct _anon7
 	unsigned int mp_flg[8];
 	unsigned int itm[384];
 	unsigned int ply_stflg[4];
-	_anon23 ply_pos;
+	NJS_POINT3 ply_pos;
 	int ply_ang;
 	char ply_wno[4];
 	short ply_hp[4];
@@ -760,8 +760,8 @@ struct _anon7
 	BH_PWORK* plp;
 	_anon29* pl_htp;
 	int costume;
-	_anon23 hd_pos;
-	_anon23 apos;
+	NJS_POINT3 hd_pos;
+	NJS_POINT3 apos;
 	_anon29* ahtp;
 	int mwal_n;
 	int metc_n;
@@ -838,7 +838,7 @@ struct _anon7
 	unsigned char ufo_md;
 	unsigned char ufo_flg;
 	short ufo_oidx;
-	_anon23 ufo_pos;
+	NJS_POINT3 ufo_pos;
 	unsigned int opt_flg;
 	unsigned short opt_md0;
 	unsigned short opt_md1;
@@ -865,7 +865,7 @@ struct _anon7
 	_anon25 gatc[16];
 	int ght_ct;
 	unsigned int ghtc[32];
-	_anon23 ghtp[32];
+	NJS_POINT3 ghtp[32];
 	unsigned short db_md0;
 	unsigned short db_md1;
 	char db_stgno;
@@ -955,9 +955,9 @@ struct _anon11
 	float l;
 	float rn;
 	float rmax;
-	_anon23 wp_fps1;
-	_anon23 wp_fps2;
-	_anon23 wp_cps;
+	NJS_POINT3 wp_fps1;
+	NJS_POINT3 wp_fps2;
+	NJS_POINT3 wp_cps;
 	unsigned char ltp;
 	unsigned char lr;
 	unsigned char lg;
@@ -1080,8 +1080,8 @@ struct _anon18
 struct _anon19
 {
 	float mtrx[16];
-	_anon23 pnt;
-	_anon23 vctr;
+	NJS_POINT3 pnt;
+	NJS_POINT3 vctr;
 	int stat;
 	int reserve;
 	_anon26 ltcal;
@@ -1090,7 +1090,7 @@ struct _anon19
 
 struct _anon20
 {
-	_anon23 ps;
+	NJS_POINT3 ps;
 	float nr;
 	float fr;
 	float cr;
@@ -1102,7 +1102,7 @@ struct _anon21
 {
 	int* vlist;
 	short* plist;
-	_anon23 center;
+	NJS_POINT3 center;
 	float r;
 };
 
@@ -1112,12 +1112,12 @@ struct _anon22
 	float y;
 };
 
-struct _anon23
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct _anon24
 {
@@ -1138,8 +1138,8 @@ struct _anon24
 
 struct _anon25
 {
-	_anon23 c1;
-	_anon23 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r1;
 	float r2;
 };
@@ -1158,9 +1158,9 @@ struct _anon26
 	float intns;
 	int exp;
 	int reserve;
-	_anon23 lpnt;
-	_anon23 lvctr;
-	_anon23 lmvctr;
+	NJS_POINT3 lpnt;
+	NJS_POINT3 lvctr;
+	NJS_POINT3 lmvctr;
 	_anon17 atten;
 	_anon17 amb;
 	_anon17 dif;
@@ -1327,14 +1327,14 @@ struct _anon33
 
 struct _anon34
 {
-	_anon23 c;
+	NJS_POINT3 c;
 	float r;
 };
 
 struct _anon35
 {
-	_anon23 c1;
-	_anon23 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r;
 };
 
@@ -1351,13 +1351,13 @@ void bhCPM2_act_scp();
 // Start address: 0x14d250
 void bhCPM2_act_scp()
 {
-	_anon23 fpsb;
-	_anon23 fps;
+	NJS_POINT3 fpsb;
+	NJS_POINT3 fps;
 	_anon24* eft;
-	_anon23 pos;
+	NJS_POINT3 pos;
 	short bn;
 	_anon27 gap;
-	_anon23 ps;
+	NJS_POINT3 ps;
 	// Line 44, Address: 0x14d250, Func Offset: 0
 	// Line 50, Address: 0x14d264, Func Offset: 0x14
 	// Line 52, Address: 0x14d2a4, Func Offset: 0x54

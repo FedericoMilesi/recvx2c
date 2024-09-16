@@ -1,4 +1,4 @@
-typedef struct _anon0;
+typedef struct NJS_POINT3;
 typedef struct cnkobj;
 typedef struct _anon1;
 typedef struct _anon2;
@@ -49,15 +49,15 @@ typedef float type_29[4];
 typedef npobj* type_30[256];
 typedef cnkobj* type_31[256];
 typedef cnkobj* type_32[256];
-typedef _anon0* type_33[32];
+typedef NJS_POINT3* type_33[32];
 typedef float type_34[32];
 
-struct _anon0
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct cnkobj
 {
@@ -74,7 +74,7 @@ struct _anon1
 {
 	int* vlist;
 	short* plist;
-	_anon0 center;
+	NJS_POINT3 center;
 	float r;
 };
 
@@ -84,7 +84,7 @@ struct _anon2
 	_anon1* dst;
 	_anon7* list;
 	_anon6* vlist;
-	_anon0** nvpt;
+	NJS_POINT3** nvpt;
 	int lnum;
 	cnkobj* obj;
 	_anon3* jaw;
@@ -132,7 +132,7 @@ struct _anon4
 	float muscle[32];
 	float jawang;
 	float jawtrans;
-	_anon0 eye;
+	NJS_POINT3 eye;
 	float tangx;
 	float tangy;
 	float tangz;
@@ -160,7 +160,7 @@ struct _anon6
 struct _anon7
 {
 	int id;
-	_anon0 vec;
+	NJS_POINT3 vec;
 	float scal;
 };
 
@@ -836,9 +836,9 @@ void _fmCnkCalcMuscle(_anon2* fm)
 	float rate;
 	float sum;
 	float* mrp;
-	_anon0** mvp;
+	NJS_POINT3** mvp;
 	float mrate[32];
-	_anon0* mvec[32];
+	NJS_POINT3* mvec[32];
 	float* param;
 	_anon6* list;
 	_anon7* con;
@@ -1068,9 +1068,9 @@ void _fmCnkCalcJaw(_anon2* fm)
 void _fmCnkCalcEye(_anon2* fm)
 {
 	int i;
-	_anon0 r3;
-	_anon0 q3;
-	_anon0 t3;
+	NJS_POINT3 r3;
+	NJS_POINT3 q3;
+	NJS_POINT3 t3;
 	cnkobj* obj;
 	float dz;
 	float dy;
@@ -1216,11 +1216,11 @@ void _fmCnkCalcTang(_anon2* fm)
 void _fmCnkCalcNormal(_anon2* fm)
 {
 	unsigned int vofs;
-	_anon0** nvp;
+	NJS_POINT3** nvp;
 	_anon6* list;
-	_anon0 norm;
-	_anon0* dnp1;
-	_anon0* dvp1;
+	NJS_POINT3 norm;
+	NJS_POINT3* dnp1;
+	NJS_POINT3* dvp1;
 	float* dnp;
 	float* dvp;
 	int n;

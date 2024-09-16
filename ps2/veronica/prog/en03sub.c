@@ -9,7 +9,7 @@ typedef struct _anon5;
 typedef struct _anon6;
 typedef struct _anon7;
 typedef struct _anon8;
-typedef struct _anon9;
+typedef struct NJS_POINT3;
 typedef struct _anon10;
 
 typedef void(*type_1)(BH_PWORK*);
@@ -20,12 +20,12 @@ typedef void(*type_2)(BH_PWORK*)[1];
 typedef void(*type_4)(BH_PWORK*)[3];
 typedef void* type_5[2];
 typedef unsigned int type_6[2];
-typedef _anon9 type_7[3];
+typedef NJS_POINT3 type_7[3];
 typedef float type_8[3];
 typedef int type_9[3];
 typedef int type_10[3];
 typedef float type_11[3];
-typedef _anon9 type_12[3];
+typedef NJS_POINT3 type_12[3];
 typedef int type_13[64];
 typedef float type_14[16];
 typedef unsigned int type_15[1];
@@ -235,7 +235,7 @@ struct _anon6
 {
 	int* vlist;
 	short* plist;
-	_anon9 center;
+	NJS_POINT3 center;
 	float r;
 };
 
@@ -268,17 +268,17 @@ struct _anon8
 	unsigned char prm3;
 };
 
-struct _anon9
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct _anon10
 {
-	_anon9 c1;
-	_anon9 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r;
 };
 
@@ -347,10 +347,10 @@ void bhEne03s_MV00(BH_PWORK* epw)
 	int ang;
 	float spd;
 	float out;
-	_anon9 ov;
-	_anon9 vd;
-	_anon9 v;
-	_anon9 c;
+	NJS_POINT3 ov;
+	NJS_POINT3 vd;
+	NJS_POINT3 v;
+	NJS_POINT3 c;
 	// Line 167, Address: 0x1a3d70, Func Offset: 0
 	// Line 174, Address: 0x1a3d88, Func Offset: 0x18
 	// Line 177, Address: 0x1a3dc0, Func Offset: 0x50
@@ -477,7 +477,7 @@ void bhEne03s_Dummy()
 // Start address: 0x1a4420
 void bhEne03s_WallCheck(BH_PWORK* epw)
 {
-	_anon9 p[3];
+	NJS_POINT3 p[3];
 	int last;
 	int flgZ;
 	int flgY;
@@ -485,8 +485,8 @@ void bhEne03s_WallCheck(BH_PWORK* epw)
 	_anon8* hp;
 	int flg[3];
 	int i;
-	_anon9 n[3];
-	_anon9 v;
+	NJS_POINT3 n[3];
+	NJS_POINT3 v;
 	// Line 321, Address: 0x1a4420, Func Offset: 0
 	// Line 328, Address: 0x1a4450, Func Offset: 0x30
 	// Line 331, Address: 0x1a4454, Func Offset: 0x34
@@ -595,8 +595,8 @@ void bhEne03s_WallCheck(BH_PWORK* epw)
 void bhEne03s_WallCheck2(BH_PWORK* epw)
 {
 	_anon8* hp;
-	_anon9 n;
-	_anon9 v;
+	NJS_POINT3 n;
+	NJS_POINT3 v;
 	// Line 456, Address: 0x1a4970, Func Offset: 0
 	// Line 460, Address: 0x1a4984, Func Offset: 0x14
 	// Line 464, Address: 0x1a498c, Func Offset: 0x1c
@@ -633,7 +633,7 @@ void bhEne03s_WallCheck2(BH_PWORK* epw)
 // Start address: 0x1a4af0
 void bhEne03s_InitCollision(BH_PWORK* epw)
 {
-	_anon9 pos;
+	NJS_POINT3 pos;
 	int i;
 	_anon5* owk;
 	// Line 497, Address: 0x1a4af0, Func Offset: 0

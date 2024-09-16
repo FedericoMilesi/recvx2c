@@ -9,7 +9,7 @@ typedef struct _anon5;
 typedef struct _anon6;
 typedef struct _anon7;
 typedef struct _anon8;
-typedef struct _anon9;
+typedef struct NJS_POINT3;
 typedef struct _anon10;
 
 typedef void(*type_1)(BH_PWORK*);
@@ -253,7 +253,7 @@ struct _anon7
 {
 	int* vlist;
 	short* plist;
-	_anon9 center;
+	NJS_POINT3 center;
 	float r;
 };
 
@@ -267,17 +267,17 @@ struct _anon8
 	_anon6* owP;
 };
 
-struct _anon9
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct _anon10
 {
-	_anon9 c1;
-	_anon9 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r;
 };
 
@@ -356,10 +356,10 @@ void bhEne08_Move(BH_PWORK* epw) { // Line 218, Address: 0x1c60e0
 // Start address: 0x1c6100
 void bhEne08_MV00(BH_PWORK* epw)
 {
-	_anon9 vec;
+	NJS_POINT3 vec;
 	_anon1* hp;
 	float dy;
-	_anon9 pos;
+	NJS_POINT3 pos;
 	// Line 229, Address: 0x1c6100, Func Offset: 0
 	// Line 235, Address: 0x1c6114, Func Offset: 0x14
 	// Line 238, Address: 0x1c6134, Func Offset: 0x34
@@ -426,10 +426,10 @@ void bhEne08_MV00(BH_PWORK* epw)
 // Start address: 0x1c64f0
 void bhEne08_MV01(BH_PWORK* epw)
 {
-	_anon9 vec;
+	NJS_POINT3 vec;
 	_anon1* hp;
 	float dy;
-	_anon9 pos;
+	NJS_POINT3 pos;
 	// Line 309, Address: 0x1c64f0, Func Offset: 0
 	// Line 316, Address: 0x1c6504, Func Offset: 0x14
 	// Line 319, Address: 0x1c6524, Func Offset: 0x34

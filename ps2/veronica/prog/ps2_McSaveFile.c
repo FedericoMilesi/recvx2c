@@ -47,7 +47,7 @@ typedef struct _anon30;
 typedef struct _anon31;
 typedef struct _anon32;
 typedef struct _anon33;
-typedef struct _anon34;
+typedef struct NJS_POINT3;
 typedef struct _anon35;
 typedef struct _anon36;
 typedef struct _anon37;
@@ -198,7 +198,7 @@ typedef _anon35 type_140[64];
 typedef unsigned int type_141[32];
 typedef _anon0* type_142[128];
 typedef _anon35 type_143[64];
-typedef _anon34 type_144[32];
+typedef NJS_POINT3 type_144[32];
 typedef unsigned int type_145[3];
 typedef _anon0* type_146[512];
 typedef unsigned char type_147[64];
@@ -357,9 +357,9 @@ struct _anon1
 	float intns;
 	int exp;
 	int reserve;
-	_anon34 lpnt;
-	_anon34 lvctr;
-	_anon34 lmvctr;
+	NJS_POINT3 lpnt;
+	NJS_POINT3 lvctr;
+	NJS_POINT3 lmvctr;
 	_anon30 atten;
 	_anon30 amb;
 	_anon30 dif;
@@ -477,7 +477,7 @@ struct GDS_FS_HANDLE
 
 struct _anon5
 {
-	_anon34 c;
+	NJS_POINT3 c;
 	float r;
 };
 
@@ -506,8 +506,8 @@ struct GDS_FS_WORK
 
 struct _anon6
 {
-	_anon34 c1;
-	_anon34 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r;
 };
 
@@ -551,7 +551,7 @@ struct tagSAVEFILE
 	unsigned int mp_flg[8];
 	unsigned int itm[384];
 	unsigned int ply_stflg[4];
-	_anon34 ply_pos;
+	NJS_POINT3 ply_pos;
 	int ply_ang;
 	char ply_wno[4];
 	short ply_hp[4];
@@ -698,7 +698,7 @@ struct _anon13
 	unsigned int mp_flg[8];
 	unsigned int itm[384];
 	unsigned int ply_stflg[4];
-	_anon34 ply_pos;
+	NJS_POINT3 ply_pos;
 	int ply_ang;
 	char ply_wno[4];
 	short ply_hp[4];
@@ -923,8 +923,8 @@ struct _anon13
 	BH_PWORK* plp;
 	_anon35* pl_htp;
 	int costume;
-	_anon34 hd_pos;
-	_anon34 apos;
+	NJS_POINT3 hd_pos;
+	NJS_POINT3 apos;
 	_anon35* ahtp;
 	int mwal_n;
 	int metc_n;
@@ -1001,7 +1001,7 @@ struct _anon13
 	unsigned char ufo_md;
 	unsigned char ufo_flg;
 	short ufo_oidx;
-	_anon34 ufo_pos;
+	NJS_POINT3 ufo_pos;
 	unsigned int opt_flg;
 	unsigned short opt_md0;
 	unsigned short opt_md1;
@@ -1028,7 +1028,7 @@ struct _anon13
 	_anon19 gatc[16];
 	int ght_ct;
 	unsigned int ghtc[32];
-	_anon34 ghtp[32];
+	NJS_POINT3 ghtp[32];
 	unsigned short db_md0;
 	unsigned short db_md1;
 	char db_stgno;
@@ -1061,15 +1061,15 @@ struct _anon14
 {
 	int* vlist;
 	short* plist;
-	_anon34 center;
+	NJS_POINT3 center;
 	float r;
 };
 
 struct _anon15
 {
 	float mtrx[16];
-	_anon34 pnt;
-	_anon34 vctr;
+	NJS_POINT3 pnt;
+	NJS_POINT3 vctr;
 	int stat;
 	int reserve;
 	_anon1 ltcal;
@@ -1219,7 +1219,7 @@ struct BH_PWORK
 
 struct _anon16
 {
-	_anon34 ps;
+	NJS_POINT3 ps;
 	float nr;
 	float fr;
 	float cr;
@@ -1261,8 +1261,8 @@ struct _anon18
 
 struct _anon19
 {
-	_anon34 c1;
-	_anon34 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r1;
 	float r2;
 };
@@ -1453,12 +1453,12 @@ struct _anon33
 	float y;
 };
 
-struct _anon34
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct _anon35
 {

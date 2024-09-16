@@ -3,7 +3,7 @@ typedef struct tagVU1_PRIM_BUF;
 typedef struct _anon0;
 typedef struct _anon1;
 typedef struct _anon2;
-typedef struct _anon3;
+typedef struct NJS_POINT3;
 typedef struct _anon4;
 typedef struct _anon5;
 typedef struct _anon6;
@@ -91,12 +91,12 @@ struct _anon2
 	unsigned int flipflag;
 };
 
-struct _anon3
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct _anon4
 {
@@ -164,7 +164,7 @@ int _Clip_ViewVolume(float* clip, float local_clip[4], float* vertex);
 void PushTriangleNodeArray(_anon2* scissor);
 void ResetNodeArraySet(_anon2* scissor);
 void ScissorTriangle(_anon2* scissor, _anon5* plane_set);
-int _Check_DisplayAreaPoint(_anon3* vec);
+int _Check_DisplayAreaPoint(NJS_POINT3* vec);
 void DrawScissorPolygonOpaque(_anon2* scissor, unsigned long ulType);
 void vu1DrawTriangleStripOpaqueSingle(unsigned long ulType, tagVU1_STRIP_BUF* pStripTop, unsigned short usStripMax, unsigned short usMode);
 void vu1DrawTriangleStripOpaqueDouble(unsigned long ulType, tagVU1_STRIP_BUF* pS, unsigned short usStripMax, unsigned short usMode);
@@ -182,7 +182,7 @@ void vu1GetVertexColorDifSpe3(tagVU1_STRIP_BUF* pStrip, tagVU1_PRIM_BUF* pPrim);
 void vu1GetVertexColorDifSpe1Amb(tagVU1_STRIP_BUF* pStrip, tagVU1_PRIM_BUF* pPrim);
 void vu1GetVertexColorDifSpe2Amb(tagVU1_STRIP_BUF* pStrip, tagVU1_PRIM_BUF* pPrim);
 void vu1GetVertexColorDifSpe3Amb(tagVU1_STRIP_BUF* pStrip, tagVU1_PRIM_BUF* pPrim);
-void vu1RotTransStripBuf(float pMatrix[16], _anon3* pVector, tagVU1_STRIP_BUF* pBuf);
+void vu1RotTransStripBuf(float pMatrix[16], NJS_POINT3* pVector, tagVU1_STRIP_BUF* pBuf);
 void vu1DrawTriangleStripTransDoubleI(unsigned long ulType, tagVU1_STRIP_BUF* pS, unsigned short usStripMax, unsigned short usMode);
 void DrawScissorPolygonTrans1P(_anon2* scissor, unsigned long ulType);
 void vu1DrawTriangleStripTransDouble1P(unsigned long ulType, tagVU1_STRIP_BUF* pS, unsigned short usStripMax, unsigned short usMode);
@@ -657,7 +657,7 @@ void ScissorTriangle(_anon2* scissor, _anon5* plane_set)
 
 // 
 // Start address: 0x2d4650
-int _Check_DisplayAreaPoint(_anon3* vec)
+int _Check_DisplayAreaPoint(NJS_POINT3* vec)
 {
 	// Line 1206, Address: 0x2d4650, Func Offset: 0
 	// Line 1212, Address: 0x2d46e8, Func Offset: 0x98
@@ -1418,7 +1418,7 @@ void vu1GetVertexColorDifSpe3Amb(tagVU1_STRIP_BUF* pStrip, tagVU1_PRIM_BUF* pPri
 
 // 
 // Start address: 0x2d5930
-void vu1RotTransStripBuf(float pMatrix[16], _anon3* pVector, tagVU1_STRIP_BUF* pBuf)
+void vu1RotTransStripBuf(float pMatrix[16], NJS_POINT3* pVector, tagVU1_STRIP_BUF* pBuf)
 {
 	float fIz;
 	float fZ;

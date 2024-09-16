@@ -15,7 +15,7 @@ typedef struct _anon11;
 typedef struct _anon12;
 typedef struct _anon13;
 typedef struct _anon14;
-typedef struct _anon15;
+typedef struct NJS_POINT3;
 typedef struct _anon16;
 typedef struct _anon17;
 typedef struct _anon18;
@@ -70,7 +70,7 @@ typedef void(*type_125)(BH_PWORK*);
 typedef void(*type_130)(BH_PWORK*);
 typedef void(*type_151)(BH_PWORK*);
 
-typedef _anon15 type_0[32];
+typedef NJS_POINT3 type_0[32];
 typedef _anon1* type_1[512];
 typedef _anon1* type_2[128];
 typedef _anon1* type_3[128];
@@ -658,7 +658,7 @@ struct _anon8
 	unsigned int mp_flg[8];
 	unsigned int itm[384];
 	unsigned int ply_stflg[4];
-	_anon15 ply_pos;
+	NJS_POINT3 ply_pos;
 	int ply_ang;
 	char ply_wno[4];
 	short ply_hp[4];
@@ -883,8 +883,8 @@ struct _anon8
 	BH_PWORK* plp;
 	_anon29* pl_htp;
 	int costume;
-	_anon15 hd_pos;
-	_anon15 apos;
+	NJS_POINT3 hd_pos;
+	NJS_POINT3 apos;
 	_anon29* ahtp;
 	int mwal_n;
 	int metc_n;
@@ -961,7 +961,7 @@ struct _anon8
 	unsigned char ufo_md;
 	unsigned char ufo_flg;
 	short ufo_oidx;
-	_anon15 ufo_pos;
+	NJS_POINT3 ufo_pos;
 	unsigned int opt_flg;
 	unsigned short opt_md0;
 	unsigned short opt_md1;
@@ -988,7 +988,7 @@ struct _anon8
 	_anon41 gatc[16];
 	int ght_ct;
 	unsigned int ghtc[32];
-	_anon15 ghtp[32];
+	NJS_POINT3 ghtp[32];
 	unsigned short db_md0;
 	unsigned short db_md1;
 	char db_stgno;
@@ -1151,12 +1151,12 @@ struct _anon14
 	int e_frm;
 };
 
-struct _anon15
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct _anon16
 {
@@ -1420,8 +1420,8 @@ struct _anon36
 struct _anon37
 {
 	float mtrx[16];
-	_anon15 pnt;
-	_anon15 vctr;
+	NJS_POINT3 pnt;
+	NJS_POINT3 vctr;
 	int stat;
 	int reserve;
 	_anon40 ltcal;
@@ -1430,7 +1430,7 @@ struct _anon37
 
 struct _anon38
 {
-	_anon15 ps;
+	NJS_POINT3 ps;
 	float nr;
 	float fr;
 	float cr;
@@ -1442,7 +1442,7 @@ struct _anon39
 {
 	int* vlist;
 	short* plist;
-	_anon15 center;
+	NJS_POINT3 center;
 	float r;
 };
 
@@ -1460,9 +1460,9 @@ struct _anon40
 	float intns;
 	int exp;
 	int reserve;
-	_anon15 lpnt;
-	_anon15 lvctr;
-	_anon15 lmvctr;
+	NJS_POINT3 lpnt;
+	NJS_POINT3 lvctr;
+	NJS_POINT3 lmvctr;
 	_anon30 atten;
 	_anon30 amb;
 	_anon30 dif;
@@ -1474,8 +1474,8 @@ struct _anon40
 
 struct _anon41
 {
-	_anon15 c1;
-	_anon15 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r1;
 	float r2;
 };
@@ -1614,14 +1614,14 @@ struct _anon47
 
 struct _anon48
 {
-	_anon15 c;
+	NJS_POINT3 c;
 	float r;
 };
 
 struct _anon49
 {
-	_anon15 c1;
-	_anon15 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r;
 };
 
@@ -1752,11 +1752,11 @@ void bhEne17_PlyDG01(BH_PWORK* pl, BH_PWORK* epw);
 int bhEne17_PlayerDGCheck(BH_PWORK* epw, BH_PWORK* pl);
 void bhEne17_SePlay(BH_PWORK* epw, int no);
 int bhEne17_CameraControl(BH_PWORK* epw);
-void bhEne17_AfterimageAxEffect(BH_PWORK* epw, float mtx[16], _anon15* ofs, unsigned int argb);
-void bhEne17_SetSmokeEffect(BH_PWORK* epw, int lnk_onj, _anon15* ofs);
-void bhEne17_SetSmokeEffect2(BH_PWORK* epw, _anon15* ofs, int rot);
-void bhEne17_SetSmokeEffect3(BH_PWORK* epw, _anon15* ofs, int rot);
-void bhEne17_SetLight(_anon15* ofs);
+void bhEne17_AfterimageAxEffect(BH_PWORK* epw, float mtx[16], NJS_POINT3* ofs, unsigned int argb);
+void bhEne17_SetSmokeEffect(BH_PWORK* epw, int lnk_onj, NJS_POINT3* ofs);
+void bhEne17_SetSmokeEffect2(BH_PWORK* epw, NJS_POINT3* ofs, int rot);
+void bhEne17_SetSmokeEffect3(BH_PWORK* epw, NJS_POINT3* ofs, int rot);
+void bhEne17_SetLight(NJS_POINT3* ofs);
 
 // 
 // Start address: 0x1eab30
@@ -1770,8 +1770,8 @@ void bhEne17_DmmyBrain()
 // Start address: 0x1eab40
 void bhEne17(BH_PWORK* epw)
 {
-	_anon15 pd;
-	_anon15 ps;
+	NJS_POINT3 pd;
+	NJS_POINT3 ps;
 	_anon0* owk;
 	int i;
 	// Line 241, Address: 0x1eab40, Func Offset: 0
@@ -1815,7 +1815,7 @@ void bhEne17(BH_PWORK* epw)
 // Start address: 0x1ead40
 void bhEne17_EneToPlyDist(BH_PWORK* epw)
 {
-	_anon15 pos;
+	NJS_POINT3 pos;
 	_anon0* owk;
 	// Line 327, Address: 0x1ead40, Func Offset: 0
 	// Line 332, Address: 0x1ead4c, Func Offset: 0xc
@@ -1936,12 +1936,12 @@ void bhEne17_DamageAdd(BH_PWORK* epw)
 int bhEne17_SetMtn(BH_PWORK* epw)
 {
 	_anon0* owk;
-	_anon15 ps;
+	NJS_POINT3 ps;
 	int i;
-	_anon15 ofs;
+	NJS_POINT3 ofs;
 	int sfrm_no;
 	int i;
-	_anon15 ps;
+	NJS_POINT3 ps;
 	_anon0* owk;
 	BH_PWORK* armp;
 	int lnk_obj;
@@ -2068,9 +2068,9 @@ int bhEne17_SetMtn(BH_PWORK* epw)
 void bhEne17_MtnTblPlay(BH_PWORK* epw, int frm)
 {
 	int i;
-	_anon15 vec2;
-	_anon15 vec1;
-	_anon15 vec;
+	NJS_POINT3 vec2;
+	NJS_POINT3 vec1;
+	NJS_POINT3 vec;
 	_anon31* mtbl2;
 	_anon22* mtbl;
 	// Line 1053, Address: 0x1eb650, Func Offset: 0
@@ -2340,7 +2340,7 @@ void bhEne17_Die()
 // Start address: 0x1ebea0
 void bhEne17_Brain(BH_PWORK* epw)
 {
-	_anon15 pos;
+	NJS_POINT3 pos;
 	// Line 1492, Address: 0x1ebea0, Func Offset: 0
 	// Line 1495, Address: 0x1ebeac, Func Offset: 0xc
 	// Line 1498, Address: 0x1ebeb8, Func Offset: 0x18
@@ -2476,7 +2476,7 @@ void bhEne17_MV03(BH_PWORK* epw)
 {
 	int i;
 	int frm;
-	_anon15 ofs;
+	NJS_POINT3 ofs;
 	_anon0* owk;
 	// Line 1910, Address: 0x1ec480, Func Offset: 0
 	// Line 1916, Address: 0x1ec4a0, Func Offset: 0x20
@@ -2571,7 +2571,7 @@ void bhEne17_MV05(BH_PWORK* epw)
 {
 	int frm;
 	int i;
-	_anon15 ofs;
+	NJS_POINT3 ofs;
 	_anon0* owk;
 	// Line 2066, Address: 0x1ec8a0, Func Offset: 0
 	// Line 2072, Address: 0x1ec8c0, Func Offset: 0x20
@@ -2724,8 +2724,8 @@ void bhEne17_DG00(BH_PWORK* epw)
 void bhEne17_PlyDG00(BH_PWORK* pl, BH_PWORK* epw)
 {
 	int ang;
-	_anon15 ps;
-	_anon15 dv;
+	NJS_POINT3 ps;
+	NJS_POINT3 dv;
 	_anon0* owk;
 	// Line 2340, Address: 0x1ecf40, Func Offset: 0
 	// Line 2348, Address: 0x1ecf58, Func Offset: 0x18
@@ -2814,8 +2814,8 @@ void bhEne17_PlyDG01(BH_PWORK* pl, BH_PWORK* epw)
 	int frm;
 	int i;
 	int rot;
-	_anon15 dv;
-	_anon15 key;
+	NJS_POINT3 dv;
+	NJS_POINT3 key;
 	_anon0* owk;
 	npobj* obj;
 	_anon4* pos_p;
@@ -2924,9 +2924,9 @@ void bhEne17_PlyDG01(BH_PWORK* pl, BH_PWORK* epw)
 // Start address: 0x1ed640
 int bhEne17_PlayerDGCheck(BH_PWORK* epw, BH_PWORK* pl)
 {
-	_anon15 v;
-	_anon15 pd;
-	_anon15 ps;
+	NJS_POINT3 v;
+	NJS_POINT3 pd;
+	NJS_POINT3 ps;
 	_anon0* owk;
 	int i;
 	_anon49 cap;
@@ -3044,7 +3044,7 @@ int bhEne17_CameraControl(BH_PWORK* epw)
 
 // 
 // Start address: 0x1edaf0
-void bhEne17_AfterimageAxEffect(BH_PWORK* epw, float mtx[16], _anon15* ofs, unsigned int argb)
+void bhEne17_AfterimageAxEffect(BH_PWORK* epw, float mtx[16], NJS_POINT3* ofs, unsigned int argb)
 {
 	int eno;
 	// Line 2842, Address: 0x1edaf0, Func Offset: 0
@@ -3084,12 +3084,12 @@ void bhEne17_AfterimageAxEffect(BH_PWORK* epw, float mtx[16], _anon15* ofs, unsi
 
 // 
 // Start address: 0x1edd60
-void bhEne17_SetSmokeEffect(BH_PWORK* epw, int lnk_onj, _anon15* ofs)
+void bhEne17_SetSmokeEffect(BH_PWORK* epw, int lnk_onj, NJS_POINT3* ofs)
 {
 	int j;
 	int i;
 	int eno;
-	_anon15 ps;
+	NJS_POINT3 ps;
 	_anon0* owk;
 	// Line 2877, Address: 0x1edd60, Func Offset: 0
 	// Line 2884, Address: 0x1edd80, Func Offset: 0x20
@@ -3157,7 +3157,7 @@ void bhEne17_SetSmokeEffect(BH_PWORK* epw, int lnk_onj, _anon15* ofs)
 
 // 
 // Start address: 0x1ee0b0
-void bhEne17_SetSmokeEffect2(BH_PWORK* epw, _anon15* ofs, int rot)
+void bhEne17_SetSmokeEffect2(BH_PWORK* epw, NJS_POINT3* ofs, int rot)
 {
 	int i;
 	int eno;
@@ -3206,7 +3206,7 @@ void bhEne17_SetSmokeEffect2(BH_PWORK* epw, _anon15* ofs, int rot)
 
 // 
 // Start address: 0x1ee370
-void bhEne17_SetSmokeEffect3(BH_PWORK* epw, _anon15* ofs, int rot)
+void bhEne17_SetSmokeEffect3(BH_PWORK* epw, NJS_POINT3* ofs, int rot)
 {
 	int eno;
 	// Line 2965, Address: 0x1ee370, Func Offset: 0
@@ -3260,7 +3260,7 @@ void bhEne17_SetSmokeEffect3(BH_PWORK* epw, _anon15* ofs, int rot)
 
 // 
 // Start address: 0x1ee680
-void bhEne17_SetLight(_anon15* ofs)
+void bhEne17_SetLight(NJS_POINT3* ofs)
 {
 	_anon3* lp;
 	// Line 3017, Address: 0x1ee680, Func Offset: 0

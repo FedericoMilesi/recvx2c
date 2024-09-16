@@ -4,7 +4,7 @@ typedef struct _anon2;
 typedef struct _anon3;
 typedef struct _anon4;
 typedef struct _anon5;
-typedef struct _anon6;
+typedef struct NJS_POINT3;
 typedef struct _anon7;
 typedef struct _anon8;
 typedef struct _anon9;
@@ -165,12 +165,12 @@ struct _anon3
 	float sx;
 	float sy;
 	float oow;
-	_anon6 point;
+	NJS_POINT3 point;
 	unsigned int reserve;
 	float u;
 	float v;
 	float inten[2];
-	_anon6 vector;
+	NJS_POINT3 vector;
 	unsigned int flag;
 };
 
@@ -195,12 +195,12 @@ struct _anon5
 	};
 };
 
-struct _anon6
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct _anon7
 {

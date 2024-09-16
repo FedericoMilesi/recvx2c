@@ -2,7 +2,7 @@ typedef union _anon0;
 typedef struct _anon1;
 typedef struct tagVU1_STRIP_BUF;
 typedef struct _anon2;
-typedef struct _anon3;
+typedef struct NJS_POINT3;
 typedef struct tagNJS_SCRVECTOR;
 typedef struct _anon4;
 typedef struct _anon5;
@@ -54,18 +54,18 @@ struct tagVU1_STRIP_BUF
 
 struct _anon2
 {
-	_anon3* p;
+	NJS_POINT3* p;
 	_anon0* col;
 	_anon0* tex;
 	unsigned int num;
 };
 
-struct _anon3
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct tagNJS_SCRVECTOR
 {

@@ -32,7 +32,7 @@ typedef struct _anon28;
 typedef struct _anon29;
 typedef struct _anon30;
 typedef struct _anon31;
-typedef struct _anon32;
+typedef struct NJS_POINT3;
 typedef struct _anon33;
 typedef struct _anon34;
 typedef struct _anon35;
@@ -124,7 +124,7 @@ typedef _anon8 type_68[256];
 typedef _anon22 type_69[450];
 typedef int type_70[8];
 typedef int type_71[8][3];
-typedef _anon32 type_72[3];
+typedef NJS_POINT3 type_72[3];
 typedef _anon31 type_73[16];
 typedef short type_74[256];
 typedef char type_75[3];
@@ -136,9 +136,9 @@ typedef char type_80[4];
 typedef _anon36 type_81[4];
 typedef int type_82[3];
 typedef _anon2 type_83[4];
-typedef _anon32* type_84[3];
+typedef NJS_POINT3* type_84[3];
 typedef int type_85[450];
-typedef _anon32* type_86[3][3];
+typedef NJS_POINT3* type_86[3][3];
 typedef unsigned int type_87[8];
 typedef unsigned char type_88[450];
 typedef float type_89[128];
@@ -179,7 +179,7 @@ typedef void(*type_127)(BH_PWORK*)[4];
 typedef unsigned int type_128[8];
 typedef unsigned int type_129[32];
 typedef unsigned int type_130[4];
-typedef _anon32 type_131[32];
+typedef NJS_POINT3 type_131[32];
 typedef _anon0* type_132[512];
 typedef _anon0* type_133[128];
 typedef _anon0* type_134[512];
@@ -938,7 +938,7 @@ struct _anon24
 	unsigned int mp_flg[8];
 	unsigned int itm[384];
 	unsigned int ply_stflg[4];
-	_anon32 ply_pos;
+	NJS_POINT3 ply_pos;
 	int ply_ang;
 	char ply_wno[4];
 	short ply_hp[4];
@@ -1163,8 +1163,8 @@ struct _anon24
 	BH_PWORK* plp;
 	_anon18* pl_htp;
 	int costume;
-	_anon32 hd_pos;
-	_anon32 apos;
+	NJS_POINT3 hd_pos;
+	NJS_POINT3 apos;
 	_anon18* ahtp;
 	int mwal_n;
 	int metc_n;
@@ -1241,7 +1241,7 @@ struct _anon24
 	unsigned char ufo_md;
 	unsigned char ufo_flg;
 	short ufo_oidx;
-	_anon32 ufo_pos;
+	NJS_POINT3 ufo_pos;
 	unsigned int opt_flg;
 	unsigned short opt_md0;
 	unsigned short opt_md1;
@@ -1268,7 +1268,7 @@ struct _anon24
 	_anon34 gatc[16];
 	int ght_ct;
 	unsigned int ghtc[32];
-	_anon32 ghtp[32];
+	NJS_POINT3 ghtp[32];
 	unsigned short db_md0;
 	unsigned short db_md1;
 	char db_stgno;
@@ -1323,8 +1323,8 @@ struct _anon27
 struct _anon28
 {
 	float mtrx[16];
-	_anon32 pnt;
-	_anon32 vctr;
+	NJS_POINT3 pnt;
+	NJS_POINT3 vctr;
 	int stat;
 	int reserve;
 	_anon35 ltcal;
@@ -1333,7 +1333,7 @@ struct _anon28
 
 struct _anon29
 {
-	_anon32 ps;
+	NJS_POINT3 ps;
 	float nr;
 	float fr;
 	float cr;
@@ -1345,7 +1345,7 @@ struct _anon30
 {
 	int* vlist;
 	short* plist;
-	_anon32 center;
+	NJS_POINT3 center;
 	float r;
 };
 
@@ -1355,12 +1355,12 @@ struct _anon31
 	float y;
 };
 
-struct _anon32
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct _anon33
 {
@@ -1372,8 +1372,8 @@ struct _anon33
 
 struct _anon34
 {
-	_anon32 c1;
-	_anon32 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r1;
 	float r2;
 };
@@ -1392,9 +1392,9 @@ struct _anon35
 	float intns;
 	int exp;
 	int reserve;
-	_anon32 lpnt;
-	_anon32 lvctr;
-	_anon32 lmvctr;
+	NJS_POINT3 lpnt;
+	NJS_POINT3 lvctr;
+	NJS_POINT3 lmvctr;
 	_anon26 atten;
 	_anon26 amb;
 	_anon26 dif;
@@ -1548,14 +1548,14 @@ struct _anon42
 
 struct _anon43
 {
-	_anon32 c;
+	NJS_POINT3 c;
 	float r;
 };
 
 struct _anon44
 {
-	_anon32 c1;
-	_anon32 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r;
 };
 
@@ -1620,8 +1620,8 @@ void bhEne13_Die(BH_PWORK* epw);
 void bhEne13_InitDamage(BH_PWORK* epw);
 void bhEne13_Finish(BH_PWORK* epw);
 void bhEne13_ScaleModel(npobj* pObj, float sx, float sy, float sz);
-int bhEne13_StoreObject(BH_PWORK* epw, _anon32* pos, _anon32** v, int no);
-int bhEne13_RestoreObject(BH_PWORK* epw, _anon32* pos, _anon32** v, int no);
+int bhEne13_StoreObject(BH_PWORK* epw, NJS_POINT3* pos, NJS_POINT3** v, int no);
+int bhEne13_RestoreObject(BH_PWORK* epw, NJS_POINT3* pos, NJS_POINT3** v, int no);
 void bhEne13_PutAttacker(BH_PWORK* epw, int no);
 void bhEne13_Tentacle(BH_PWORK* epw, int no);
 int bhEne13_GetHatchNo(BH_PWORK* epw);
@@ -2283,7 +2283,7 @@ void bhEne13_ScaleModel(npobj* pObj, float sx, float sy, float sz)
 
 // 
 // Start address: 0x1dbdb0
-int bhEne13_StoreObject(BH_PWORK* epw, _anon32* pos, _anon32** v, int no)
+int bhEne13_StoreObject(BH_PWORK* epw, NJS_POINT3* pos, NJS_POINT3** v, int no)
 {
 	_anon39* pHdr;
 	_anon33* pd;
@@ -2330,7 +2330,7 @@ int bhEne13_StoreObject(BH_PWORK* epw, _anon32* pos, _anon32** v, int no)
 
 // 
 // Start address: 0x1dbf00
-int bhEne13_RestoreObject(BH_PWORK* epw, _anon32* pos, _anon32** v, int no)
+int bhEne13_RestoreObject(BH_PWORK* epw, NJS_POINT3* pos, NJS_POINT3** v, int no)
 {
 	_anon39* pHdr;
 	_anon33* pd;
@@ -2376,8 +2376,8 @@ int bhEne13_RestoreObject(BH_PWORK* epw, _anon32* pos, _anon32** v, int no)
 void bhEne13_PutAttacker(BH_PWORK* epw, int no)
 {
 	int ang[3];
-	_anon32 pos[3];
-	_anon32 wp;
+	NJS_POINT3 pos[3];
+	NJS_POINT3 wp;
 	int i;
 	BH_PWORK* ep;
 	// Line 1337, Address: 0x1dbfe0, Func Offset: 0
@@ -2509,7 +2509,7 @@ int bhEne13_SelectTentacle(BH_PWORK* epw)
 // Start address: 0x1dc510
 void bhEne13_PlayerControl(BH_PWORK* epw)
 {
-	_anon32* trans[3][3];
+	NJS_POINT3* trans[3][3];
 	int mtn[8][3];
 	// Line 1503, Address: 0x1dc510, Func Offset: 0
 	// Line 1504, Address: 0x1dc514, Func Offset: 0x4

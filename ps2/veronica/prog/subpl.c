@@ -8,7 +8,7 @@ typedef struct _anon4;
 typedef struct _anon5;
 typedef struct _anon6;
 typedef struct _anon7;
-typedef struct _anon8;
+typedef struct NJS_POINT3;
 typedef struct _anon9;
 
 typedef void(*type_1)(BH_PWORK*);
@@ -237,7 +237,7 @@ struct _anon6
 {
 	int* vlist;
 	short* plist;
-	_anon8 center;
+	NJS_POINT3 center;
 	float r;
 };
 
@@ -251,17 +251,17 @@ struct _anon7
 	_anon5* owP;
 };
 
-struct _anon8
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct _anon9
 {
-	_anon8 c1;
-	_anon8 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r;
 };
 

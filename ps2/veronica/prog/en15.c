@@ -1,6 +1,6 @@
 typedef struct _anon0;
 typedef struct _anon1;
-typedef struct _anon2;
+typedef struct NJS_POINT3;
 typedef struct _anon3;
 typedef struct BH_PWORK;
 typedef struct _anon4;
@@ -65,7 +65,7 @@ typedef void(*type_98)(BH_PWORK*);
 typedef void(*type_114)(void*);
 typedef void(*type_155)(BH_PWORK*);
 
-typedef _anon2 type_0[32];
+typedef NJS_POINT3 type_0[32];
 typedef _anon1* type_1[512];
 typedef _anon1* type_2[128];
 typedef _anon1* type_3[128];
@@ -200,7 +200,7 @@ typedef unsigned int type_134[8];
 typedef int type_135[4];
 typedef unsigned int type_136[1];
 typedef unsigned int type_137[384];
-typedef _anon2 type_138[8];
+typedef NJS_POINT3 type_138[8];
 typedef unsigned int type_139[2];
 typedef int type_140[3];
 typedef unsigned int type_141[4];
@@ -225,7 +225,7 @@ typedef _anon1* type_160[128];
 
 struct _anon0
 {
-	_anon2 c;
+	NJS_POINT3 c;
 	float r;
 };
 
@@ -353,12 +353,12 @@ struct _anon1
 	int Dummy2;
 };
 
-struct _anon2
-{
-	float x;
-	float y;
-	float z;
-};
+
+
+
+
+
+
 
 struct _anon3
 {
@@ -649,7 +649,7 @@ struct _MTN_RELAY_RELAY
 
 struct _anon11
 {
-	_anon2 v[8];
+	NJS_POINT3 v[8];
 };
 
 struct _COMBO_EFF
@@ -994,8 +994,8 @@ struct _anon27
 
 struct _anon28
 {
-	_anon2 c1;
-	_anon2 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r;
 };
 
@@ -1063,7 +1063,7 @@ struct _anon31
 	unsigned int mp_flg[8];
 	unsigned int itm[384];
 	unsigned int ply_stflg[4];
-	_anon2 ply_pos;
+	NJS_POINT3 ply_pos;
 	int ply_ang;
 	char ply_wno[4];
 	short ply_hp[4];
@@ -1288,8 +1288,8 @@ struct _anon31
 	BH_PWORK* plp;
 	_anon24* pl_htp;
 	int costume;
-	_anon2 hd_pos;
-	_anon2 apos;
+	NJS_POINT3 hd_pos;
+	NJS_POINT3 apos;
 	_anon24* ahtp;
 	int mwal_n;
 	int metc_n;
@@ -1366,7 +1366,7 @@ struct _anon31
 	unsigned char ufo_md;
 	unsigned char ufo_flg;
 	short ufo_oidx;
-	_anon2 ufo_pos;
+	NJS_POINT3 ufo_pos;
 	unsigned int opt_flg;
 	unsigned short opt_md0;
 	unsigned short opt_md1;
@@ -1393,7 +1393,7 @@ struct _anon31
 	_anon39 gatc[16];
 	int ght_ct;
 	unsigned int ghtc[32];
-	_anon2 ghtp[32];
+	NJS_POINT3 ghtp[32];
 	unsigned short db_md0;
 	unsigned short db_md1;
 	char db_stgno;
@@ -1448,8 +1448,8 @@ struct _UVINFO
 struct _anon34
 {
 	float mtrx[16];
-	_anon2 pnt;
-	_anon2 vctr;
+	NJS_POINT3 pnt;
+	NJS_POINT3 vctr;
 	int stat;
 	int reserve;
 	_anon38 ltcal;
@@ -1458,7 +1458,7 @@ struct _anon34
 
 struct _anon35
 {
-	_anon2 ps;
+	NJS_POINT3 ps;
 	float nr;
 	float fr;
 	float cr;
@@ -1470,7 +1470,7 @@ struct _anon36
 {
 	int* vlist;
 	short* plist;
-	_anon2 center;
+	NJS_POINT3 center;
 	float r;
 };
 
@@ -1500,9 +1500,9 @@ struct _anon38
 	float intns;
 	int exp;
 	int reserve;
-	_anon2 lpnt;
-	_anon2 lvctr;
-	_anon2 lmvctr;
+	NJS_POINT3 lpnt;
+	NJS_POINT3 lvctr;
+	NJS_POINT3 lmvctr;
 	_anon25 atten;
 	_anon25 amb;
 	_anon25 dif;
@@ -1520,8 +1520,8 @@ struct _EFF_INFO
 
 struct _anon39
 {
-	_anon2 c1;
-	_anon2 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r1;
 	float r2;
 };
@@ -1715,7 +1715,7 @@ void Stand(BH_PWORK* epw);
 void __attack(BH_PWORK* epw);
 void CloseTurn(BH_PWORK* epw);
 void Chase(BH_PWORK* epw);
-void __goalAng(BH_PWORK* epw, _anon2* vec, _anon2* ans);
+void __goalAng(BH_PWORK* epw, NJS_POINT3* vec, NJS_POINT3* ans);
 int _goalAng(BH_PWORK* epw);
 int _goalAng2(BH_PWORK* epw);
 void KeepFar(BH_PWORK* epw);
@@ -1723,21 +1723,21 @@ void Attack(BH_PWORK* epw);
 void Throw(BH_PWORK* epw);
 void Damage(BH_PWORK* epw);
 void Die(BH_PWORK* epw);
-int NearestCapsule(BH_PWORK* epw, _anon2* pos, _anon28* dest, short* jnt);
+int NearestCapsule(BH_PWORK* epw, NJS_POINT3* pos, _anon28* dest, short* jnt);
 void CheckDamage(BH_PWORK* epw);
 int GetRelay(BH_PWORK* epw, _MTN_RELAY** ret);
 void SetMtn(BH_PWORK* epw);
 void ReqMtn(BH_PWORK* epw, unsigned int mtn_no);
 void SetPlyMtn(unsigned int mtn_no);
-int VacumeToPoint(BH_PWORK* pw, _anon2* pos);
+int VacumeToPoint(BH_PWORK* pw, NJS_POINT3* pos);
 void LockLeg(BH_PWORK* epw);
-int bhEne15_AttackPlayerCC(_anon28* cap, _anon2* attack_v, int damage);
-int bhEne15_AttackPlayerBC(_anon11* box, _anon2* attack_v, int damage);
-int bhEne15_AttackPlayerSS(_anon0* spr, _anon2* attack_v, int damage);
-void SetSmoke(_anon2* pos);
-void SpecialAttack(BH_PWORK* epw, _anon2* splash_v);
-void _bhEne_SetPoison(BH_PWORK* epw, _anon2* ofp, short ry);
-void _bhEne_SetPoison2(_anon1* op, int type, _anon2* ofp);
+int bhEne15_AttackPlayerCC(_anon28* cap, NJS_POINT3* attack_v, int damage);
+int bhEne15_AttackPlayerBC(_anon11* box, NJS_POINT3* attack_v, int damage);
+int bhEne15_AttackPlayerSS(_anon0* spr, NJS_POINT3* attack_v, int damage);
+void SetSmoke(NJS_POINT3* pos);
+void SpecialAttack(BH_PWORK* epw, NJS_POINT3* splash_v);
+void _bhEne_SetPoison(BH_PWORK* epw, NJS_POINT3* ofp, short ry);
+void _bhEne_SetPoison2(_anon1* op, int type, NJS_POINT3* ofp);
 void bhEne_SetPoison(BH_PWORK* epw, _anon37* bt);
 void PoisonAttack(_anon1* op);
 void AddWindForce(_anon1* op, float reg);
@@ -1781,7 +1781,7 @@ int target_direction(BH_PWORK* epw)
 float target_distance(BH_PWORK* epw)
 {
 	_anon30* owk;
-	_anon2 epos;
+	NJS_POINT3 epos;
 	// Line 958, Address: 0x1e0f80, Func Offset: 0
 	// Line 961, Address: 0x1e0f88, Func Offset: 0x8
 	// Line 965, Address: 0x1e0f8c, Func Offset: 0xc
@@ -2044,9 +2044,9 @@ void Chase(BH_PWORK* epw)
 
 // 
 // Start address: 0x1e20f0
-void __goalAng(BH_PWORK* epw, _anon2* vec, _anon2* ans)
+void __goalAng(BH_PWORK* epw, NJS_POINT3* vec, NJS_POINT3* ans)
 {
-	_anon2 v;
+	NJS_POINT3 v;
 	// Line 1740, Address: 0x1e20f0, Func Offset: 0
 	// Line 1741, Address: 0x1e2104, Func Offset: 0x14
 	// Line 1742, Address: 0x1e2118, Func Offset: 0x28
@@ -2062,8 +2062,8 @@ void __goalAng(BH_PWORK* epw, _anon2* vec, _anon2* ans)
 // Start address: 0x1e2180
 int _goalAng(BH_PWORK* epw)
 {
-	_anon2 ans;
-	_anon2 vec;
+	NJS_POINT3 ans;
+	NJS_POINT3 vec;
 	// Line 1748, Address: 0x1e2180, Func Offset: 0
 	// Line 1750, Address: 0x1e2184, Func Offset: 0x4
 	// Line 1748, Address: 0x1e2188, Func Offset: 0x8
@@ -2077,8 +2077,8 @@ int _goalAng(BH_PWORK* epw)
 // Start address: 0x1e21c0
 int _goalAng2(BH_PWORK* epw)
 {
-	_anon2 ans;
-	_anon2 vec;
+	NJS_POINT3 ans;
+	NJS_POINT3 vec;
 	// Line 1755, Address: 0x1e21c0, Func Offset: 0
 	// Line 1757, Address: 0x1e21c4, Func Offset: 0x4
 	// Line 1755, Address: 0x1e21c8, Func Offset: 0x8
@@ -2113,28 +2113,28 @@ void KeepFar(BH_PWORK* epw)
 // Start address: 0x1e2340
 void Attack(BH_PWORK* epw)
 {
-	_anon2 _p;
-	_anon2 _p;
-	_anon2 _p;
-	_anon2 splash_v;
-	_anon2 axis;
-	_anon2 vec;
+	NJS_POINT3 _p;
+	NJS_POINT3 _p;
+	NJS_POINT3 _p;
+	NJS_POINT3 splash_v;
+	NJS_POINT3 axis;
+	NJS_POINT3 vec;
 	float mat[16];
-	_anon2 vec1;
-	_anon2 vec0;
-	_anon2 vec;
+	NJS_POINT3 vec1;
+	NJS_POINT3 vec0;
+	NJS_POINT3 vec;
 	float mat[16];
-	_anon2 _p;
-	_anon2 _p;
-	_anon2 _p;
+	NJS_POINT3 _p;
+	NJS_POINT3 _p;
+	NJS_POINT3 _p;
 	char* b_idx;
 	char* f_idx;
 	float vane_width;
-	_anon2 _p;
-	_anon2 _p;
-	_anon2 _p;
+	NJS_POINT3 _p;
+	NJS_POINT3 _p;
+	NJS_POINT3 _p;
 	_anon12 col;
-	_anon2 attack_v;
+	NJS_POINT3 attack_v;
 	int i;
 	char left_idx[4];
 	char right_idx[4];
@@ -2264,11 +2264,11 @@ void Attack(BH_PWORK* epw)
 // Start address: 0x1e3b90
 void Throw(BH_PWORK* epw)
 {
-	_anon2 vec;
-	_anon2 attack_v;
+	NJS_POINT3 vec;
+	NJS_POINT3 attack_v;
 	float mat[16];
-	_anon2 _p;
-	_anon2 pos;
+	NJS_POINT3 _p;
+	NJS_POINT3 pos;
 	// Line 1976, Address: 0x1e3b90, Func Offset: 0
 	// Line 1977, Address: 0x1e3ba0, Func Offset: 0x10
 	// Line 1978, Address: 0x1e3bd0, Func Offset: 0x40
@@ -2341,7 +2341,7 @@ void Damage(BH_PWORK* epw)
 // Start address: 0x1e4390
 void Die(BH_PWORK* epw)
 {
-	_anon2 vec;
+	NJS_POINT3 vec;
 	// Line 2104, Address: 0x1e4390, Func Offset: 0
 	// Line 2105, Address: 0x1e43a0, Func Offset: 0x10
 	// Line 2108, Address: 0x1e43b0, Func Offset: 0x20
@@ -2377,9 +2377,9 @@ void Die(BH_PWORK* epw)
 
 // 
 // Start address: 0x1e4560
-int NearestCapsule(BH_PWORK* epw, _anon2* pos, _anon28* dest, short* jnt)
+int NearestCapsule(BH_PWORK* epw, NJS_POINT3* pos, _anon28* dest, short* jnt)
 {
-	_anon2 p;
+	NJS_POINT3 p;
 	short _jnt;
 	float dis;
 	_anon28 cap;
@@ -2454,9 +2454,9 @@ void CheckDamage(BH_PWORK* epw)
 {
 	short jnt;
 	_anon28 cap;
-	_anon2 ofp;
-	_anon2 pos;
-	_anon2 ofs;
+	NJS_POINT3 ofp;
+	NJS_POINT3 pos;
+	NJS_POINT3 ofs;
 	int is_core_damage;
 	// Line 2347, Address: 0x1e4890, Func Offset: 0
 	// Line 2348, Address: 0x1e48a0, Func Offset: 0x10
@@ -2659,9 +2659,9 @@ void SetPlyMtn(unsigned int mtn_no)
 
 // 
 // Start address: 0x1e55a0
-int VacumeToPoint(BH_PWORK* pw, _anon2* pos)
+int VacumeToPoint(BH_PWORK* pw, NJS_POINT3* pos)
 {
-	_anon2 v;
+	NJS_POINT3 v;
 	// Line 2652, Address: 0x1e55a0, Func Offset: 0
 	// Line 2654, Address: 0x1e55b0, Func Offset: 0x10
 	// Line 2655, Address: 0x1e55d0, Func Offset: 0x30
@@ -2710,11 +2710,11 @@ void LockLeg(BH_PWORK* epw)
 
 // 
 // Start address: 0x1e57d0
-int bhEne15_AttackPlayerCC(_anon28* cap, _anon2* attack_v, int damage)
+int bhEne15_AttackPlayerCC(_anon28* cap, NJS_POINT3* attack_v, int damage)
 {
-	_anon2 tar_p;
+	NJS_POINT3 tar_p;
 	float distance;
-	_anon2 hit_p;
+	NJS_POINT3 hit_p;
 	float latest;
 	int kno;
 	int j;
@@ -2765,11 +2765,11 @@ int bhEne15_AttackPlayerCC(_anon28* cap, _anon2* attack_v, int damage)
 
 // 
 // Start address: 0x1e5a60
-int bhEne15_AttackPlayerBC(_anon11* box, _anon2* attack_v, int damage)
+int bhEne15_AttackPlayerBC(_anon11* box, NJS_POINT3* attack_v, int damage)
 {
-	_anon2 tar_p;
+	NJS_POINT3 tar_p;
 	float distance;
-	_anon2 hit_p;
+	NJS_POINT3 hit_p;
 	float latest;
 	int kno;
 	int j;
@@ -2820,7 +2820,7 @@ int bhEne15_AttackPlayerBC(_anon11* box, _anon2* attack_v, int damage)
 
 // 
 // Start address: 0x1e5d20
-int bhEne15_AttackPlayerSS(_anon0* spr, _anon2* attack_v, int damage)
+int bhEne15_AttackPlayerSS(_anon0* spr, NJS_POINT3* attack_v, int damage)
 {
 	_anon0 plcol;
 	// Line 2807, Address: 0x1e5d20, Func Offset: 0
@@ -2858,7 +2858,7 @@ int bhEne15_AttackPlayerSS(_anon0* spr, _anon2* attack_v, int damage)
 
 // 
 // Start address: 0x1e5ea0
-void SetSmoke(_anon2* pos)
+void SetSmoke(NJS_POINT3* pos)
 {
 	// Line 2845, Address: 0x1e5ea0, Func Offset: 0
 	// Line 2846, Address: 0x1e5eac, Func Offset: 0xc
@@ -2876,9 +2876,9 @@ void SetSmoke(_anon2* pos)
 
 // 
 // Start address: 0x1e5f80
-void SpecialAttack(BH_PWORK* epw, _anon2* splash_v)
+void SpecialAttack(BH_PWORK* epw, NJS_POINT3* splash_v)
 {
-	_anon2 _p;
+	NJS_POINT3 _p;
 	int eno;
 	// Line 2992, Address: 0x1e5f80, Func Offset: 0
 	// Line 2995, Address: 0x1e5f90, Func Offset: 0x10
@@ -2929,7 +2929,7 @@ void SpecialAttack(BH_PWORK* epw, _anon2* splash_v)
 
 // 
 // Start address: 0x1e6160
-void _bhEne_SetPoison(BH_PWORK* epw, _anon2* ofp, short ry)
+void _bhEne_SetPoison(BH_PWORK* epw, NJS_POINT3* ofp, short ry)
 {
 	int eno;
 	// Line 3021, Address: 0x1e6160, Func Offset: 0
@@ -3067,7 +3067,7 @@ void _bhEne_SetPoison(BH_PWORK* epw, _anon2* ofp, short ry)
 
 // 
 // Start address: 0x1e6830
-void _bhEne_SetPoison2(_anon1* op, int type, _anon2* ofp)
+void _bhEne_SetPoison2(_anon1* op, int type, NJS_POINT3* ofp)
 {
 	int eno;
 	// Line 3105, Address: 0x1e6830, Func Offset: 0
@@ -3109,8 +3109,8 @@ void _bhEne_SetPoison2(_anon1* op, int type, _anon2* ofp)
 void bhEne_SetPoison(BH_PWORK* epw, _anon37* bt)
 {
 	int fhit;
-	_anon2 ps;
-	_anon2 ofp;
+	NJS_POINT3 ps;
+	NJS_POINT3 ofp;
 	_anon30* owk;
 	// Line 3153, Address: 0x1e6a70, Func Offset: 0
 	// Line 3158, Address: 0x1e6a88, Func Offset: 0x18
@@ -3146,7 +3146,7 @@ void bhEne_SetPoison(BH_PWORK* epw, _anon37* bt)
 // Start address: 0x1e6c50
 void PoisonAttack(_anon1* op)
 {
-	_anon2 attack_v;
+	NJS_POINT3 attack_v;
 	_anon0 col;
 	// Line 3192, Address: 0x1e6c50, Func Offset: 0
 	// Line 3203, Address: 0x1e6c5c, Func Offset: 0xc
@@ -3185,8 +3185,8 @@ void PoisonAttack(_anon1* op)
 // Start address: 0x1e6e50
 void AddWindForce(_anon1* op, float reg)
 {
-	_anon2 vec2;
-	_anon2 vec1;
+	NJS_POINT3 vec2;
+	NJS_POINT3 vec1;
 	// Line 3242, Address: 0x1e6e50, Func Offset: 0
 	// Line 3245, Address: 0x1e6e60, Func Offset: 0x10
 	// Line 3247, Address: 0x1e6e9c, Func Offset: 0x4c
@@ -3213,9 +3213,9 @@ void AddWindForce(_anon1* op, float reg)
 // Start address: 0x1e6f80
 void bhEff_E15_Poison(_anon1* op)
 {
-	_anon2 pos;
-	_anon2 pos;
-	_anon2 pos;
+	NJS_POINT3 pos;
+	NJS_POINT3 pos;
+	NJS_POINT3 pos;
 	_UVINFO* uvp;
 	// Line 3271, Address: 0x1e6f80, Func Offset: 0
 	// Line 3272, Address: 0x1e6f90, Func Offset: 0x10
@@ -3516,7 +3516,7 @@ void FallingPlayer(BH_PWORK* epw)
 void SlidePlayer(BH_PWORK* epw)
 {
 	int _mtnno;
-	_anon2 delta;
+	NJS_POINT3 delta;
 	int _mtnno;
 	// Line 3628, Address: 0x1e83f0, Func Offset: 0
 	// Line 3629, Address: 0x1e8404, Func Offset: 0x14
@@ -3568,9 +3568,9 @@ void StandupPlayer(BH_PWORK* epw)
 void HoldPlayer(BH_PWORK* epw)
 {
 	_anon30* owk;
-	_anon2 pos;
-	_anon2 _v;
-	_anon2 _v;
+	NJS_POINT3 pos;
+	NJS_POINT3 _v;
+	NJS_POINT3 _v;
 	// Line 3682, Address: 0x1e8a50, Func Offset: 0
 	// Line 3683, Address: 0x1e8a64, Func Offset: 0x14
 	// Line 3684, Address: 0x1e8a7c, Func Offset: 0x2c
@@ -3600,11 +3600,11 @@ void HoldPlayer(BH_PWORK* epw)
 // Start address: 0x1e8b80
 void FlyingPlayer(BH_PWORK* epw)
 {
-	_anon2 _p;
+	NJS_POINT3 _p;
 	_anon30* owk;
-	_anon2 pos3;
-	_anon2 pos2;
-	_anon2 pos1;
+	NJS_POINT3 pos3;
+	NJS_POINT3 pos2;
+	NJS_POINT3 pos1;
 	// Line 3714, Address: 0x1e8b80, Func Offset: 0
 	// Line 3718, Address: 0x1e8b84, Func Offset: 0x4
 	// Line 3714, Address: 0x1e8b8c, Func Offset: 0xc
