@@ -22,7 +22,7 @@ typedef float type_4[3];
 typedef int type_5[3];
 typedef float type_6[3];
 typedef int type_7[64];
-typedef float type_8[16];
+
 typedef void(*type_10)(BH_PWORK*)[3];
 typedef unsigned int type_11[1];
 typedef unsigned int type_12[2];
@@ -141,7 +141,7 @@ struct BH_PWORK
 	unsigned char* exp2;
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
-	float mtx[16];
+	NJS_MATRIX mtx;
 	npobj* obj_a;
 	npobj* obj_b;
 	float shp_ct;
@@ -225,7 +225,7 @@ struct _anon5
 	unsigned int flg;
 	int dmy;
 	unsigned int dummy[2];
-	float mtx[16];
+	NJS_MATRIX mtx;
 };
 
 struct _anon6

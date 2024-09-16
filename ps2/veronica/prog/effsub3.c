@@ -98,7 +98,7 @@ typedef void(*type_186)(_anon24*);
 typedef void(*type_187)(_anon24*);
 typedef void(*type_200)(_anon24*);
 
-typedef float type_0[16];
+
 typedef float* type_1[6];
 typedef unsigned int type_2[4];
 typedef _anon1* type_3[512];
@@ -284,7 +284,7 @@ typedef char type_191[192];
 typedef _rap_tex_typ type_192[6];
 typedef unsigned int type_193[8];
 typedef unsigned int type_194[32];
-typedef float type_195[16][0];
+
 typedef unsigned int type_196[4];
 typedef int type_197[18];
 typedef int type_198[6];
@@ -386,7 +386,7 @@ struct _anon1
 	unsigned char* exp2;
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
-	float mtx[16];
+	NJS_MATRIX mtx;
 	npobj* obj_a;
 	npobj* obj_b;
 	float shp_ct;
@@ -1271,7 +1271,7 @@ struct BH_PWORK
 	unsigned char* exp2;
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
-	float mtx[16];
+	NJS_MATRIX mtx;
 	npobj* obj_a;
 	npobj* obj_b;
 	float shp_ct;
@@ -1589,7 +1589,7 @@ struct _anon37
 
 struct _anon38
 {
-	float vtx_mtxP[16];
+	NJS_MATRIX vtx_mtxP;
 	NJS_POINT3 vtx_pos;
 	NJS_POINT3 vtx_dir;
 };
@@ -1716,7 +1716,7 @@ struct _anon49
 
 struct _anon50
 {
-	float vtx_mtxP[16];
+	NJS_MATRIX vtx_mtxP;
 	NJS_POINT3 vtx_pos;
 	NJS_POINT3 vtx_dir;
 };
@@ -1755,12 +1755,12 @@ struct _anon53
 	unsigned int flg;
 	int dmy;
 	unsigned int dummy[2];
-	float mtx[16];
+	NJS_MATRIX mtx;
 };
 
 struct _anon54
 {
-	float mtrx[16];
+	NJS_MATRIX mtrx;
 	NJS_POINT3 pnt;
 	NJS_POINT3 vctr;
 	int stat;
@@ -1840,7 +1840,7 @@ struct _anon61
 	_anon65 prm;
 	int mode;
 	int erase;
-	float mtxP[16];
+	NJS_MATRIX mtxP;
 	char mtx_buf[64];
 };
 
@@ -1888,7 +1888,7 @@ struct _anon64
 
 struct _anon65
 {
-	float mtxP[16];
+	NJS_MATRIX mtxP;
 	_anon5* texP;
 	_anon68* mdlP;
 	float pos[3];
@@ -1984,8 +1984,8 @@ struct _anon70
 	int ocut;
 	unsigned int ocflg;
 	unsigned int attr;
-	float mtx[16];
-	float mtxb[16];
+	NJS_MATRIX mtx;
+	NJS_MATRIX mtxb;
 	int evc_no;
 	int hct;
 	int ct0;
@@ -2053,7 +2053,7 @@ struct _anon74
 
 struct _anon75
 {
-	float mtxP[16];
+	NJS_MATRIX mtxP;
 	NJS_POINT3 src;
 	NJS_POINT3 dst;
 	float frm_inc;
@@ -2184,7 +2184,7 @@ _anon2 PtclDat18[1];
 _anon34 PtclTbl[19];
 void(*FuncTbl)(_anon1*)[4];
 _anon7 Eff302Prm[20];
-float lcmat[16][0];
+NJS_MATRIX lcmat[];
 void(*bhEff307Drw)(_anon24*);
 _anon15* rom;
 void(*bhEff308Drw)(_anon24*);
@@ -2217,7 +2217,7 @@ void bhSetEffSpark(NJS_POINT3* posP, NJS_POINT3* dirP, unsigned int src_col, uns
 void bhEff308(_anon24* orP);
 void bhEff308Drw(_anon24* orP);
 int ryLinerColor(int src_col, int dst_col, float rate);
-_anon24* rySetEffBlood(float mtxP[16], NJS_POINT3* posP, NJS_POINT3* dirP, int typ_no);
+_anon24* rySetEffBlood(NJS_MATRIX mtxP, NJS_POINT3* posP, NJS_POINT3* dirP, int typ_no);
 void bhEff309(_anon24* orP);
 void bhEff309Drw(_anon24* orP);
 void ryRapTexDrw(_anon5* texP, int tex_id, _rap_tex_typ* rtP);
@@ -2226,7 +2226,7 @@ void ryRapDspSet(NJS_POINT3* posP, _anon21* dspP, float scl);
 void ryRapAnmColSet(_anon20* anmP, int src_col, int dst_col, int col_cnt);
 void bhEff30a(_anon24* orP);
 void bhEff349(_anon24* orP);
-_anon24* rySetEffBlood2(float mtxP[16], NJS_POINT3* posP, NJS_POINT3* dirP, int typ_no);
+_anon24* rySetEffBlood2(NJS_MATRIX mtxP, NJS_POINT3* posP, NJS_POINT3* dirP, int typ_no);
 void bhEff30b(_anon24* orP);
 void bhEff30bDrw(_anon24* orP);
 void bhEff30c(_anon24* orP);
@@ -4110,7 +4110,7 @@ int ryLinerColor(int src_col, int dst_col, float rate)
 
 // 
 // Start address: 0x24b440
-_anon24* rySetEffBlood(float mtxP[16], NJS_POINT3* posP, NJS_POINT3* dirP, int typ_no)
+_anon24* rySetEffBlood(NJS_MATRIX mtxP, NJS_POINT3* posP, NJS_POINT3* dirP, int typ_no)
 {
 	_anon56* r09P;
 	int mode;
@@ -4410,7 +4410,7 @@ void bhEff349(_anon24* orP)
 
 // 
 // Start address: 0x24bf40
-_anon24* rySetEffBlood2(float mtxP[16], NJS_POINT3* posP, NJS_POINT3* dirP, int typ_no)
+_anon24* rySetEffBlood2(NJS_MATRIX mtxP, NJS_POINT3* posP, NJS_POINT3* dirP, int typ_no)
 {
 	_anon19* r0bP;
 	int mode;

@@ -64,7 +64,7 @@ typedef short type_19[32];
 typedef _anon18 type_20[1];
 typedef _anon0* type_21[128];
 typedef unsigned int type_22[1];
-typedef float type_23[16];
+
 typedef _anon7 type_24[256];
 typedef _anon2* type_25[8];
 typedef int* type_26[16];
@@ -151,7 +151,7 @@ typedef _anon0* type_107[128];
 typedef BH_PWORK* type_108[64];
 typedef _anon0* type_109[512];
 typedef unsigned char type_110[64];
-typedef float type_111[16][0];
+
 typedef _search type_112[64];
 typedef _anon0* type_113[512];
 
@@ -228,7 +228,7 @@ struct _anon0
 	unsigned char* exp2;
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
-	float mtx[16];
+	NJS_MATRIX mtx;
 	npobj* obj_a;
 	npobj* obj_b;
 	float shp_ct;
@@ -352,7 +352,7 @@ struct BH_PWORK
 	unsigned char* exp2;
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
-	float mtx[16];
+	NJS_MATRIX mtx;
 	npobj* obj_a;
 	npobj* obj_b;
 	float shp_ct;
@@ -1150,12 +1150,12 @@ struct _anon22
 	unsigned int flg;
 	int dmy;
 	unsigned int dummy[2];
-	float mtx[16];
+	NJS_MATRIX mtx;
 };
 
 struct _anon23
 {
-	float mtrx[16];
+	NJS_MATRIX mtrx;
 	NJS_POINT3 pnt;
 	NJS_POINT3 vctr;
 	int stat;
@@ -1309,7 +1309,7 @@ struct _anon36
 BH_PWORK* plp;
 _anon10* sys;
 _anon1 WpnTab[0];
-float lcmat[16][0];
+NJS_MATRIX lcmat[];
 BH_PWORK ene[0];
 unsigned short PlMtnWpn[0];
 _anon5 WpnEffTab[4][0];
@@ -1442,8 +1442,8 @@ void PlyPchMain(BH_PWORK* ewP)
 void MixSetToJointRot(npobj* basP, char* rutP, npobj* objP, int yaw)
 {
 	npobj* tmpP;
-	float mtx1P[16];
-	float mtx0P[16];
+	NJS_MATRIX mtx1P;
+	NJS_MATRIX mtx0P;
 	// Line 231, Address: 0x14aaa0, Func Offset: 0
 	// Line 232, Address: 0x14aac0, Func Offset: 0x20
 	// Line 233, Address: 0x14aac8, Func Offset: 0x28

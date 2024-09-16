@@ -1,6 +1,6 @@
 #include "types.h"
 
-float cmat[16]; /* UNUSED */
+NJS_MATRIX cmat; /* UNUSED */
 float BHD_ASPECT_X;
 float BHD_ASPECT_Y;
 int pd_port; /* UNUSED */
@@ -12,7 +12,7 @@ typedef void(*fn)(System*); // not originally outputted by dwarf2cpp
 fn bhSysTaskJumpTab[23]; // modified, below is the original definition 
 //void(*bhSysTaskJumpTab)()[23];
 _anon24 tbuf[256];
-float crmat[16];
+NJS_MATRIX crmat;
 _anon45 view;
 float mbuf[128][16];
 unsigned char* vwbmemp;

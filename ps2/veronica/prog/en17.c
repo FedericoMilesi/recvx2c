@@ -78,7 +78,7 @@ typedef _anon1* type_4[128];
 typedef _anon1* type_5[512];
 typedef _anon1* type_6[512];
 typedef unsigned char type_7[64];
-typedef float type_8[16];
+
 typedef _anon4* type_9[4];
 typedef _anon1* type_10[512];
 typedef unsigned int type_11[4];
@@ -285,7 +285,7 @@ struct BH_PWORK
 	unsigned char* exp2;
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
-	float mtx[16];
+	NJS_MATRIX mtx;
 	npobj* obj_a;
 	npobj* obj_b;
 	float shp_ct;
@@ -369,7 +369,7 @@ struct _anon0
 	unsigned int flg;
 	int dmy;
 	unsigned int dummy[2];
-	float mtx[16];
+	NJS_MATRIX mtx;
 };
 
 struct _anon1
@@ -434,7 +434,7 @@ struct _anon1
 	unsigned char* exp2;
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
-	float mtx[16];
+	NJS_MATRIX mtx;
 	npobj* obj_a;
 	npobj* obj_b;
 	float shp_ct;
@@ -1419,7 +1419,7 @@ struct _anon36
 
 struct _anon37
 {
-	float mtrx[16];
+	NJS_MATRIX mtrx;
 	NJS_POINT3 pnt;
 	NJS_POINT3 vctr;
 	int stat;
@@ -1559,8 +1559,8 @@ struct _anon45
 	int ocut;
 	unsigned int ocflg;
 	unsigned int attr;
-	float mtx[16];
-	float mtxb[16];
+	NJS_MATRIX mtx;
+	NJS_MATRIX mtxb;
 	int evc_no;
 	int hct;
 	int ct0;
@@ -1752,7 +1752,7 @@ void bhEne17_PlyDG01(BH_PWORK* pl, BH_PWORK* epw);
 int bhEne17_PlayerDGCheck(BH_PWORK* epw, BH_PWORK* pl);
 void bhEne17_SePlay(BH_PWORK* epw, int no);
 int bhEne17_CameraControl(BH_PWORK* epw);
-void bhEne17_AfterimageAxEffect(BH_PWORK* epw, float mtx[16], NJS_POINT3* ofs, unsigned int argb);
+void bhEne17_AfterimageAxEffect(BH_PWORK* epw, NJS_MATRIX mtx, NJS_POINT3* ofs, unsigned int argb);
 void bhEne17_SetSmokeEffect(BH_PWORK* epw, int lnk_onj, NJS_POINT3* ofs);
 void bhEne17_SetSmokeEffect2(BH_PWORK* epw, NJS_POINT3* ofs, int rot);
 void bhEne17_SetSmokeEffect3(BH_PWORK* epw, NJS_POINT3* ofs, int rot);
@@ -3044,7 +3044,7 @@ int bhEne17_CameraControl(BH_PWORK* epw)
 
 // 
 // Start address: 0x1edaf0
-void bhEne17_AfterimageAxEffect(BH_PWORK* epw, float mtx[16], NJS_POINT3* ofs, unsigned int argb)
+void bhEne17_AfterimageAxEffect(BH_PWORK* epw, NJS_MATRIX mtx, NJS_POINT3* ofs, unsigned int argb)
 {
 	int eno;
 	// Line 2842, Address: 0x1edaf0, Func Offset: 0

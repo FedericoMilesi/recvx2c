@@ -115,7 +115,7 @@ typedef _anon0* type_14[32];
 typedef int type_15[3];
 typedef _anon0* type_16[512];
 typedef _anon2* type_17[1300];
-typedef float type_18[16];
+
 typedef char type_19[32];
 typedef float type_20[32];
 typedef _anon0* type_22[512];
@@ -152,7 +152,7 @@ typedef unsigned char type_54[64];
 typedef unsigned int type_55[2];
 typedef char type_56[192];
 typedef _anon11 type_57[32];
-typedef float type_58[16][0];
+
 typedef char type_60[8];
 typedef void* type_61[2];
 typedef int type_62[1];
@@ -323,7 +323,7 @@ struct _anon0
 	unsigned char* exp2;
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
-	float mtx[16];
+	NJS_MATRIX mtx;
 	npobj* obj_a;
 	npobj* obj_b;
 	float shp_ct;
@@ -921,7 +921,7 @@ struct BH_PWORK
 	unsigned char* exp2;
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
-	float mtx[16];
+	NJS_MATRIX mtx;
 	npobj* obj_a;
 	npobj* obj_b;
 	float shp_ct;
@@ -1601,12 +1601,12 @@ struct _anon47
 	unsigned int flg;
 	int dmy;
 	unsigned int dummy[2];
-	float mtx[16];
+	NJS_MATRIX mtx;
 };
 
 struct _anon48
 {
-	float mtrx[16];
+	NJS_MATRIX mtrx;
 	NJS_POINT3 pnt;
 	NJS_POINT3 vctr;
 	int stat;
@@ -1863,16 +1863,16 @@ struct _map_wrk
 	float vew_zom;
 	NJS_POINT3 vew_max;
 	NJS_POINT3 vew_min;
-	float vew_mtxP[16];
+	NJS_MATRIX vew_mtxP;
 	char Vew_Mtx[64];
 	NJS_POINT3 vew_pos_bak;
 	float vew_zom_bak;
 	int cur_rom;
 	int chk_rom;
 	npobj* cur_objP;
-	float cur_mtxP[16];
-	float rom_mtxP[16];
-	float tmp_mtxP[16];
+	NJS_MATRIX cur_mtxP;
+	NJS_MATRIX rom_mtxP;
+	NJS_MATRIX tmp_mtxP;
 	unsigned int Dummy2[2];
 	char Rom_Mtx[192];
 	short* map_cdeP;
@@ -2014,7 +2014,7 @@ int(*FtskMapWait)(_anon35*);
 int(*FsubZoomScreen)(_anon30*);
 int(*FsubBackDraw)(_func_wrk_typ*);
 _anon9 _nj_screen_;
-float lcmat[16][0];
+NJS_MATRIX lcmat[];
 int(*FsubTaskMain)(_anon56*);
 int(*FsubGaugeDraw)(_anon3*);
 int(*FsubZoomInfomation)(_anon21*);
@@ -2061,7 +2061,7 @@ int FsubGaugeDrawZ(_anon3* fgP);
 int FsubGaugeDrawX(_anon3* fgP);
 int FsubGaugeDraw(_anon3* fgP);
 void MapTagInit(int tag_num);
-void MapTagEntry(float basP[16], int rom_no, NJS_POINT3* posP);
+void MapTagEntry(NJS_MATRIX basP, int rom_no, NJS_POINT3* posP);
 _tag_wrk_typ* MapTagConnect(int rom_no);
 _tag_wrk_typ* MapTagCenter();
 void MapDrawLine2(_anon5* srcP, _anon5* dstP, float pri, int pal);
@@ -2472,7 +2472,7 @@ void MapPadMain()
 // Start address: 0x2b2fe0
 void MapViewMain()
 {
-	float mtxP[16];
+	NJS_MATRIX mtxP;
 	// Line 1103, Address: 0x2b2fe0, Func Offset: 0
 	// Line 1104, Address: 0x2b2fec, Func Offset: 0xc
 	// Line 1107, Address: 0x2b2ff8, Func Offset: 0x18
@@ -2982,7 +2982,7 @@ int MapGetFloorNo(void* datP, int rom_no, float pos_y)
 void MapPurgeTree(_anon19* mlwP)
 {
 	int obj_num;
-	float mtxP[16];
+	NJS_MATRIX mtxP;
 	npobj* objP;
 	// Line 1791, Address: 0x2b43a0, Func Offset: 0
 	// Line 1792, Address: 0x2b43b4, Func Offset: 0x14
@@ -3750,7 +3750,7 @@ void MapTagInit(int tag_num)
 
 // 
 // Start address: 0x2b5e80
-void MapTagEntry(float basP[16], int rom_no, NJS_POINT3* posP)
+void MapTagEntry(NJS_MATRIX basP, int rom_no, NJS_POINT3* posP)
 {
 	_tag_wrk_typ* twP;
 	// Line 2942, Address: 0x2b5e80, Func Offset: 0

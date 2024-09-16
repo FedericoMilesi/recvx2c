@@ -86,7 +86,7 @@ typedef float type_32[4];
 typedef float type_33[4];
 typedef _anon7* type_34[128];
 typedef unsigned char type_35[64];
-typedef float type_36[16];
+
 typedef int type_37[3];
 typedef char type_38[8];
 typedef _anon30 type_39[2];
@@ -250,7 +250,7 @@ struct _anon0
 	unsigned char* exp2;
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
-	float mtx[16];
+	NJS_MATRIX mtx;
 	npobj* obj_a;
 	npobj* obj_b;
 	float shp_ct;
@@ -314,8 +314,8 @@ struct _anon0
 
 struct _anon1
 {
-	float cmat1[16];
-	float rotmat[16];
+	NJS_MATRIX cmat1;
+	NJS_MATRIX rotmat;
 	NJS_POINT3 pos_0;
 	NJS_POINT3 pos_1;
 	int ax;
@@ -1048,12 +1048,12 @@ struct _anon26
 	unsigned int flg;
 	int dmy;
 	unsigned int dummy[2];
-	float mtx[16];
+	NJS_MATRIX mtx;
 };
 
 struct _anon27
 {
-	float mtrx[16];
+	NJS_MATRIX mtrx;
 	NJS_POINT3 pnt;
 	NJS_POINT3 vctr;
 	int stat;
@@ -1124,7 +1124,7 @@ struct BH_PWORK
 	unsigned char* exp2;
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
-	float mtx[16];
+	NJS_MATRIX mtx;
 	npobj* obj_a;
 	npobj* obj_b;
 	float shp_ct;
@@ -1442,7 +1442,7 @@ int ang_00[3];
 int ang_01[3];
 int ang_02[3];
 NJS_POINT3 vec_00;
-float check[16];
+NJS_MATRIX check;
 float testf;
 NJS_POINT3 whd;
 unsigned int ItemViewTypeTbl[168];
@@ -1493,7 +1493,7 @@ void DrawSubItem(_anon2* st, _anon5* si)
 	_anon6* dw_a;
 	_anon33* fv;
 	_anon1* sc;
-	float testtest[16];
+	NJS_MATRIX testtest;
 	// Line 173, Address: 0x2a9870, Func Offset: 0
 	// Line 184, Address: 0x2a988c, Func Offset: 0x1c
 	// Line 187, Address: 0x2a9894, Func Offset: 0x24

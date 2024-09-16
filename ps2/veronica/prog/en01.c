@@ -104,7 +104,7 @@ typedef void(*type_12)(BH_PWORK*)[16];
 typedef _anon1* type_13[512];
 typedef int type_14[4];
 typedef unsigned char type_15[64];
-typedef float type_17[16];
+
 typedef _anon1* type_18[512];
 typedef void(*type_19)(BH_PWORK*)[0];
 typedef _anon29 type_20[60];
@@ -112,7 +112,7 @@ typedef _anon28 type_21[0];
 typedef unsigned int type_22[4];
 typedef _anon1* type_23[32];
 typedef _anon1* type_24[512];
-typedef float type_25[16][0];
+
 typedef _anon7* type_26[16];
 typedef _anon1* type_27[32];
 typedef _anon1* type_28[512];
@@ -370,7 +370,7 @@ struct BH_PWORK
 	unsigned char* exp2;
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
-	float mtx[16];
+	NJS_MATRIX mtx;
 	npobj* obj_a;
 	npobj* obj_b;
 	float shp_ct;
@@ -511,7 +511,7 @@ struct _anon1
 	unsigned char* exp2;
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
-	float mtx[16];
+	NJS_MATRIX mtx;
 	npobj* obj_a;
 	npobj* obj_b;
 	float shp_ct;
@@ -589,7 +589,7 @@ struct _anon2
 	unsigned int flg;
 	int dmy;
 	unsigned int dummy[2];
-	float mtx[16];
+	NJS_MATRIX mtx;
 };
 
 struct _anon3
@@ -1562,7 +1562,7 @@ struct _anon41
 
 struct _anon42
 {
-	float mtrx[16];
+	NJS_MATRIX mtrx;
 	NJS_POINT3 pnt;
 	NJS_POINT3 vctr;
 	int stat;
@@ -1864,7 +1864,7 @@ void(*bhEne01_DamageTypeB)(BH_PWORK*)[0];
 void(*bhEne01_DieTypeB)(BH_PWORK*)[0];
 _anon28 WpnTab[0];
 BH_PWORK ene[0];
-float lcmat[16][0];
+NJS_MATRIX lcmat[];
 _anon1 eff[0];
 
 void bhEne01_DmgCheckTypeDmmy();

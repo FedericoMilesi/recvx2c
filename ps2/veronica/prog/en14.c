@@ -72,7 +72,7 @@ typedef _anon1* type_22[8];
 typedef int* type_23[16];
 typedef _anon0* type_24[128];
 typedef npobj* type_25[16];
-typedef float type_26[16][0];
+
 typedef _anon0* type_27[128];
 typedef int type_28[4];
 typedef _anon1* type_29[16];
@@ -87,7 +87,7 @@ typedef void(*type_38)(BH_PWORK*)[1];
 typedef float type_39[4];
 typedef _anon3* type_40[128];
 typedef unsigned char type_41[64];
-typedef float type_42[16];
+
 typedef void(*type_44)(BH_PWORK*)[6];
 typedef unsigned short type_45[3];
 typedef char type_46[8];
@@ -247,7 +247,7 @@ struct _anon0
 	unsigned char* exp2;
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
-	float mtx[16];
+	NJS_MATRIX mtx;
 	npobj* obj_a;
 	npobj* obj_b;
 	float shp_ct;
@@ -387,7 +387,7 @@ struct BH_PWORK
 	unsigned char* exp2;
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
-	float mtx[16];
+	NJS_MATRIX mtx;
 	npobj* obj_a;
 	npobj* obj_b;
 	float shp_ct;
@@ -481,7 +481,7 @@ struct _anon4
 	unsigned int flg;
 	int dmy;
 	unsigned int dummy[2];
-	float mtx[16];
+	NJS_MATRIX mtx;
 };
 
 struct _anon5
@@ -1082,7 +1082,7 @@ struct _anon19
 
 struct _anon20
 {
-	float mtrx[16];
+	NJS_MATRIX mtrx;
 	NJS_POINT3 pnt;
 	NJS_POINT3 vctr;
 	int stat;
@@ -1297,7 +1297,7 @@ _anon0 eff[0];
 _anon18* sys;
 BH_PWORK ene[0];
 BH_PWORK* plp;
-float lcmat[16][0];
+NJS_MATRIX lcmat[];
 
 void bhEne14(BH_PWORK* epw);
 void bhEne14_Init(BH_PWORK* epw);

@@ -7,8 +7,8 @@ typedef struct _anon4;
 typedef struct _anon5;
 
 
-typedef float type_0[16];
-typedef float type_1[16];
+
+
 
 
 
@@ -61,57 +61,57 @@ struct _anon4
 
 struct _anon5
 {
-	float m[16];
+	NJS_MATRIX m;
 };
 
 _anon5 TempMatrix0;
 _anon5 TempMatrix1;
-float pNaMatMatrixStuckTop[16];
-float pNaMatMatrixStuckPtr[16];
+NJS_MATRIX pNaMatMatrixStuckTop;
+NJS_MATRIX pNaMatMatrixStuckPtr;
 int lNaMatMatrixStuckCnt;
 int lNaMatMatrixStuckMax;
 int lNaMatIsUnitMatrix;
-float NaViwViewMatrix[16];
+NJS_MATRIX NaViwViewMatrix;
 _anon4 _nj_screen_;
-float NaViewScreenMatrix[16];
+NJS_MATRIX NaViewScreenMatrix;
 
-void njInitMatrix(float pMatrix[16], int lSize, int lFlag);
-void njCalcPoints(float pMatrix[16], NJS_POINT3* pSrcPoints, NJS_POINT3* pDstPoints, int lNum);
-void njGetTranslation(float pMatrix[16], NJS_POINT3* pPoint);
-void njUnitTransPortion(float pMatrix[16]);
-void njUnitRotPortion(float pMatrix[16]);
+void njInitMatrix(NJS_MATRIX pMatrix, int lSize, int lFlag);
+void njCalcPoints(NJS_MATRIX pMatrix, NJS_POINT3* pSrcPoints, NJS_POINT3* pDstPoints, int lNum);
+void njGetTranslation(NJS_MATRIX pMatrix, NJS_POINT3* pPoint);
+void njUnitTransPortion(NJS_MATRIX pMatrix);
+void njUnitRotPortion(NJS_MATRIX pMatrix);
 void njClearMatrix();
-int njPushMatrix(float pMatrix[16]);
+int njPushMatrix(NJS_MATRIX pMatrix);
 int njPopMatrix(unsigned int ulNumber);
-void njUnitMatrix(float pMatrix[16]);
-void njSetMatrix(float pDst[16], float pSrc[16]);
-void njSetMatrixCN(float pMat[16]);
-void njGetMatrix(float pMatrix[16]);
-void njMultiMatrix(float pDstMat[16], float pSrcMat[16]);
-void njTranslate(float pMatrix[16], float fX, float fY, float fZ);
-void njTranslateV(float pMatrix[16], NJS_POINT3* pVector);
-void njRotateX(float pMatrix[16], int lAngle);
-void njRotateY(float pMatrix[16], int lAngle);
-void njRotateZ(float pMatrix[16], int lAngle);
-void njRotateXYZ(float pMatrix[16], int lAngleX, int lAngleY, int lAngleZ);
-void njRotXYZ(float pMatrix[16], int lAngleX, int lAngleY, int lAngleZ);
-void njRotate(float pMatrix[16], NJS_POINT3* pAxis, int lAngle);
-void njScale(float pMatrix[16], float fScaleX, float fScaleY, float fScaleZ);
-void njScaleV(float pMatrix[16], NJS_POINT3* pScale);
-int njInvertMatrix(float pMatrix[16]);
-void njTransposeMatrix(float pMatrix[16]);
+void njUnitMatrix(NJS_MATRIX pMatrix);
+void njSetMatrix(NJS_MATRIX pDst, NJS_MATRIX pSrc);
+void njSetMatrixCN(NJS_MATRIX pMat);
+void njGetMatrix(NJS_MATRIX pMatrix);
+void njMultiMatrix(NJS_MATRIX pDstMat, NJS_MATRIX pSrcMat);
+void njTranslate(NJS_MATRIX pMatrix, float fX, float fY, float fZ);
+void njTranslateV(NJS_MATRIX pMatrix, NJS_POINT3* pVector);
+void njRotateX(NJS_MATRIX pMatrix, int lAngle);
+void njRotateY(NJS_MATRIX pMatrix, int lAngle);
+void njRotateZ(NJS_MATRIX pMatrix, int lAngle);
+void njRotateXYZ(NJS_MATRIX pMatrix, int lAngleX, int lAngleY, int lAngleZ);
+void njRotXYZ(NJS_MATRIX pMatrix, int lAngleX, int lAngleY, int lAngleZ);
+void njRotate(NJS_MATRIX pMatrix, NJS_POINT3* pAxis, int lAngle);
+void njScale(NJS_MATRIX pMatrix, float fScaleX, float fScaleY, float fScaleZ);
+void njScaleV(NJS_MATRIX pMatrix, NJS_POINT3* pScale);
+int njInvertMatrix(NJS_MATRIX pMatrix);
+void njTransposeMatrix(NJS_MATRIX pMatrix);
 float njAtan2b(float a, float b);
-void njMirror(float pMatrix[16], _anon3* pPlane);
-void njCalcPoint(float pMatrix[16], NJS_POINT3* pSrcPoint, NJS_POINT3* pDstPoint);
-void njCalcPoint4(float pMatrix[16], _anon1* pSrcPoint, _anon1* pDstPoint);
+void njMirror(NJS_MATRIX pMatrix, _anon3* pPlane);
+void njCalcPoint(NJS_MATRIX pMatrix, NJS_POINT3* pSrcPoint, NJS_POINT3* pDstPoint);
+void njCalcPoint4(NJS_MATRIX pMatrix, _anon1* pSrcPoint, _anon1* pDstPoint);
 void njCalcPointCN(NJS_POINT3* pSrcPoint, NJS_POINT3* pDstPoint);
 void njAddVector(NJS_POINT3* pDstVec, NJS_POINT3* pSrcVec);
 void njSubVector(NJS_POINT3* pDstVec, NJS_POINT3* pSrcVec);
-void njCalcVector(float pMatrix[16], NJS_POINT3* pSrcVec, NJS_POINT3* pDstVec);
+void njCalcVector(NJS_MATRIX pMatrix, NJS_POINT3* pSrcVec, NJS_POINT3* pDstVec);
 float njUnitVector(NJS_POINT3* pVector);
 float njScalor(NJS_POINT3* pVector);
 float njScalor2(NJS_POINT3* pVector);
-void njProjectScreen(float pMatrix[16], NJS_POINT3* pPoint, _anon2* pScreen);
+void njProjectScreen(NJS_MATRIX pMatrix, NJS_POINT3* pPoint, _anon2* pScreen);
 float njOuterProduct(NJS_POINT3* pSrcVec1, NJS_POINT3* pSrcVec2, NJS_POINT3* pDstVec);
 float njInnerProduct(NJS_POINT3* pVec1, NJS_POINT3* pVec2);
 void njTranslateEx(NJS_POINT3* pVector);
@@ -122,12 +122,12 @@ int njPopMatrixEx();
 void njRotTransPers(NJS_POINT3* pPoint, tagNJS_SCRVECTOR* pScreen);
 void njRotTrans(NJS_POINT3* pPoint, NJS_POINT3* pOut);
 void njPers(tagNJS_SCRVECTOR* pScreen);
-void njCopyMatrix(float pDstMat[16], float pSrcMat[16]);
-void njMulMatrixCN(float pSrcMat1[16], float pSrcMat2[16]);
+void njCopyMatrix(NJS_MATRIX pDstMat, NJS_MATRIX pSrcMat);
+void njMulMatrixCN(NJS_MATRIX pSrcMat1, NJS_MATRIX pSrcMat2);
 
 // 
 // Start address: 0x2d66b0
-void njInitMatrix(float pMatrix[16], int lSize, int lFlag)
+void njInitMatrix(NJS_MATRIX pMatrix, int lSize, int lFlag)
 {
 	float pi;
 	// Line 127, Address: 0x2d66b0, Func Offset: 0
@@ -177,7 +177,7 @@ void njInitMatrix(float pMatrix[16], int lSize, int lFlag)
 
 // 
 // Start address: 0x2d6780
-void njCalcPoints(float pMatrix[16], NJS_POINT3* pSrcPoints, NJS_POINT3* pDstPoints, int lNum)
+void njCalcPoints(NJS_MATRIX pMatrix, NJS_POINT3* pSrcPoints, NJS_POINT3* pDstPoints, int lNum)
 {
 	// Line 206, Address: 0x2d6780, Func Offset: 0
 	// Line 243, Address: 0x2d6784, Func Offset: 0x4
@@ -216,7 +216,7 @@ void njCalcPoints(float pMatrix[16], NJS_POINT3* pSrcPoints, NJS_POINT3* pDstPoi
 
 // 
 // Start address: 0x2d6820
-void njGetTranslation(float pMatrix[16], NJS_POINT3* pPoint)
+void njGetTranslation(NJS_MATRIX pMatrix, NJS_POINT3* pPoint)
 {
 	// Line 471, Address: 0x2d6820, Func Offset: 0
 	// Line 482, Address: 0x2d6834, Func Offset: 0x14
@@ -231,7 +231,7 @@ void njGetTranslation(float pMatrix[16], NJS_POINT3* pPoint)
 
 // 
 // Start address: 0x2d6860
-void njUnitTransPortion(float pMatrix[16])
+void njUnitTransPortion(NJS_MATRIX pMatrix)
 {
 	// Line 556, Address: 0x2d6860, Func Offset: 0
 	// Line 582, Address: 0x2d6874, Func Offset: 0x14
@@ -241,7 +241,7 @@ void njUnitTransPortion(float pMatrix[16])
 
 // 
 // Start address: 0x2d6880
-void njUnitRotPortion(float pMatrix[16])
+void njUnitRotPortion(NJS_MATRIX pMatrix)
 {
 	// Line 618, Address: 0x2d6880, Func Offset: 0
 	// Line 664, Address: 0x2d6894, Func Offset: 0x14
@@ -269,7 +269,7 @@ void njClearMatrix()
 
 // 
 // Start address: 0x2d68f0
-int njPushMatrix(float pMatrix[16])
+int njPushMatrix(NJS_MATRIX pMatrix)
 {
 	float* fpDst;
 	float* fpSrc;
@@ -307,7 +307,7 @@ int njPopMatrix(unsigned int ulNumber)
 
 // 
 // Start address: 0x2d69d0
-void njUnitMatrix(float pMatrix[16])
+void njUnitMatrix(NJS_MATRIX pMatrix)
 {
 	// Line 839, Address: 0x2d69d0, Func Offset: 0
 	// Line 891, Address: 0x2d69e4, Func Offset: 0x14
@@ -324,7 +324,7 @@ void njUnitMatrix(float pMatrix[16])
 
 // 
 // Start address: 0x2d6a10
-void njSetMatrix(float pDst[16], float pSrc[16])
+void njSetMatrix(NJS_MATRIX pDst, NJS_MATRIX pSrc)
 {
 	float* fpDst;
 	float* fpSrc;
@@ -344,7 +344,7 @@ void njSetMatrix(float pDst[16], float pSrc[16])
 
 // 
 // Start address: 0x2d6a60
-void njSetMatrixCN(float pMat[16])
+void njSetMatrixCN(NJS_MATRIX pMat)
 {
 	// Line 1030, Address: 0x2d6a60, Func Offset: 0
 	// Line 1031, Address: 0x2d6a64, Func Offset: 0x4
@@ -356,7 +356,7 @@ void njSetMatrixCN(float pMat[16])
 
 // 
 // Start address: 0x2d6a80
-void njGetMatrix(float pMatrix[16])
+void njGetMatrix(NJS_MATRIX pMatrix)
 {
 	float* fpDst;
 	float* fpSrc;
@@ -375,7 +375,7 @@ void njGetMatrix(float pMatrix[16])
 
 // 
 // Start address: 0x2d6ac0
-void njMultiMatrix(float pDstMat[16], float pSrcMat[16])
+void njMultiMatrix(NJS_MATRIX pDstMat, NJS_MATRIX pSrcMat)
 {
 	// Line 1220, Address: 0x2d6ac0, Func Offset: 0
 	// Line 1324, Address: 0x2d6ad4, Func Offset: 0x14
@@ -409,7 +409,7 @@ void njMultiMatrix(float pDstMat[16], float pSrcMat[16])
 
 // 
 // Start address: 0x2d6b40
-void njTranslate(float pMatrix[16], float fX, float fY, float fZ)
+void njTranslate(NJS_MATRIX pMatrix, float fX, float fY, float fZ)
 {
 	// Line 1473, Address: 0x2d6b40, Func Offset: 0
 	// Line 1535, Address: 0x2d6b54, Func Offset: 0x14
@@ -433,7 +433,7 @@ void njTranslate(float pMatrix[16], float fX, float fY, float fZ)
 
 // 
 // Start address: 0x2d6ba0
-void njTranslateV(float pMatrix[16], NJS_POINT3* pVector)
+void njTranslateV(NJS_MATRIX pMatrix, NJS_POINT3* pVector)
 {
 	// Line 1611, Address: 0x2d6ba0, Func Offset: 0
 	// Line 1667, Address: 0x2d6bb4, Func Offset: 0x14
@@ -456,7 +456,7 @@ void njTranslateV(float pMatrix[16], NJS_POINT3* pVector)
 
 // 
 // Start address: 0x2d6c00
-void njRotateX(float pMatrix[16], int lAngle)
+void njRotateX(NJS_MATRIX pMatrix, int lAngle)
 {
 	float fCos;
 	float fSin;
@@ -486,7 +486,7 @@ void njRotateX(float pMatrix[16], int lAngle)
 
 // 
 // Start address: 0x2d6c90
-void njRotateY(float pMatrix[16], int lAngle)
+void njRotateY(NJS_MATRIX pMatrix, int lAngle)
 {
 	float fCos;
 	float fSin;
@@ -516,7 +516,7 @@ void njRotateY(float pMatrix[16], int lAngle)
 
 // 
 // Start address: 0x2d6d20
-void njRotateZ(float pMatrix[16], int lAngle)
+void njRotateZ(NJS_MATRIX pMatrix, int lAngle)
 {
 	float fCos;
 	float fSin;
@@ -546,7 +546,7 @@ void njRotateZ(float pMatrix[16], int lAngle)
 
 // 
 // Start address: 0x2d6db0
-void njRotateXYZ(float pMatrix[16], int lAngleX, int lAngleY, int lAngleZ)
+void njRotateXYZ(NJS_MATRIX pMatrix, int lAngleX, int lAngleY, int lAngleZ)
 {
 	// Line 2246, Address: 0x2d6db0, Func Offset: 0
 	// Line 2247, Address: 0x2d6dcc, Func Offset: 0x1c
@@ -559,7 +559,7 @@ void njRotateXYZ(float pMatrix[16], int lAngleX, int lAngleY, int lAngleZ)
 
 // 
 // Start address: 0x2d6e20
-void njRotXYZ(float pMatrix[16], int lAngleX, int lAngleY, int lAngleZ)
+void njRotXYZ(NJS_MATRIX pMatrix, int lAngleX, int lAngleY, int lAngleZ)
 {
 	float fCos;
 	float fSin;
@@ -603,7 +603,7 @@ void njRotXYZ(float pMatrix[16], int lAngleX, int lAngleY, int lAngleZ)
 
 // 
 // Start address: 0x2d6f00
-void njRotate(float pMatrix[16], NJS_POINT3* pAxis, int lAngle)
+void njRotate(NJS_MATRIX pMatrix, NJS_POINT3* pAxis, int lAngle)
 {
 	float fCos;
 	float fSin;
@@ -683,7 +683,7 @@ void njRotate(float pMatrix[16], NJS_POINT3* pAxis, int lAngle)
 
 // 
 // Start address: 0x2d7060
-void njScale(float pMatrix[16], float fScaleX, float fScaleY, float fScaleZ)
+void njScale(NJS_MATRIX pMatrix, float fScaleX, float fScaleY, float fScaleZ)
 {
 	// Line 2923, Address: 0x2d7060, Func Offset: 0
 	// Line 2996, Address: 0x2d7074, Func Offset: 0x14
@@ -707,7 +707,7 @@ void njScale(float pMatrix[16], float fScaleX, float fScaleY, float fScaleZ)
 
 // 
 // Start address: 0x2d70c0
-void njScaleV(float pMatrix[16], NJS_POINT3* pScale)
+void njScaleV(NJS_MATRIX pMatrix, NJS_POINT3* pScale)
 {
 	// Line 3059, Address: 0x2d70c0, Func Offset: 0
 	// Line 3132, Address: 0x2d70d4, Func Offset: 0x14
@@ -730,7 +730,7 @@ void njScaleV(float pMatrix[16], NJS_POINT3* pScale)
 
 // 
 // Start address: 0x2d7120
-int njInvertMatrix(float pMatrix[16])
+int njInvertMatrix(NJS_MATRIX pMatrix)
 {
 	// Line 3277, Address: 0x2d7120, Func Offset: 0
 	// Line 3355, Address: 0x2d7134, Func Offset: 0x14
@@ -765,7 +765,7 @@ int njInvertMatrix(float pMatrix[16])
 
 // 
 // Start address: 0x2d71b0
-void njTransposeMatrix(float pMatrix[16])
+void njTransposeMatrix(NJS_MATRIX pMatrix)
 {
 	// Line 3473, Address: 0x2d71b0, Func Offset: 0
 	// Line 3533, Address: 0x2d71c4, Func Offset: 0x14
@@ -797,11 +797,11 @@ float njAtan2b(float a, float b)
 
 // 
 // Start address: 0x2d7260
-void njMirror(float pMatrix[16], _anon3* pPlane)
+void njMirror(NJS_MATRIX pMatrix, _anon3* pPlane)
 {
 	int lAngleZ;
 	int lAngleX;
-	float mat[16];
+	NJS_MATRIX mat;
 	// Line 3662, Address: 0x2d7260, Func Offset: 0
 	// Line 3698, Address: 0x2d7278, Func Offset: 0x18
 	// Line 4005, Address: 0x2d728c, Func Offset: 0x2c
@@ -919,7 +919,7 @@ void njMirror(float pMatrix[16], _anon3* pPlane)
 
 // 
 // Start address: 0x2d74d0
-void njCalcPoint(float pMatrix[16], NJS_POINT3* pSrcPoint, NJS_POINT3* pDstPoint)
+void njCalcPoint(NJS_MATRIX pMatrix, NJS_POINT3* pSrcPoint, NJS_POINT3* pDstPoint)
 {
 	// Line 4173, Address: 0x2d74d0, Func Offset: 0
 	// Line 4226, Address: 0x2d74e4, Func Offset: 0x14
@@ -946,7 +946,7 @@ void njCalcPoint(float pMatrix[16], NJS_POINT3* pSrcPoint, NJS_POINT3* pDstPoint
 
 // 
 // Start address: 0x2d7540
-void njCalcPoint4(float pMatrix[16], _anon1* pSrcPoint, _anon1* pDstPoint)
+void njCalcPoint4(NJS_MATRIX pMatrix, _anon1* pSrcPoint, _anon1* pDstPoint)
 {
 	// Line 4261, Address: 0x2d7540, Func Offset: 0
 	// Line 4266, Address: 0x2d7554, Func Offset: 0x14
@@ -1027,7 +1027,7 @@ void njSubVector(NJS_POINT3* pDstVec, NJS_POINT3* pSrcVec)
 
 // 
 // Start address: 0x2d7650
-void njCalcVector(float pMatrix[16], NJS_POINT3* pSrcVec, NJS_POINT3* pDstVec)
+void njCalcVector(NJS_MATRIX pMatrix, NJS_POINT3* pSrcVec, NJS_POINT3* pDstVec)
 {
 	// Line 4484, Address: 0x2d7650, Func Offset: 0
 	// Line 4531, Address: 0x2d7664, Func Offset: 0x14
@@ -1121,7 +1121,7 @@ float njScalor2(NJS_POINT3* pVector)
 
 // 
 // Start address: 0x2d7780
-void njProjectScreen(float pMatrix[16], NJS_POINT3* pPoint, _anon2* pScreen)
+void njProjectScreen(NJS_MATRIX pMatrix, NJS_POINT3* pPoint, _anon2* pScreen)
 {
 	NJS_POINT3 Point;
 	// Line 4861, Address: 0x2d7780, Func Offset: 0
@@ -1363,7 +1363,7 @@ void njPers(tagNJS_SCRVECTOR* pScreen)
 
 // 
 // Start address: 0x2d7bb0
-void njCopyMatrix(float pDstMat[16], float pSrcMat[16])
+void njCopyMatrix(NJS_MATRIX pDstMat, NJS_MATRIX pSrcMat)
 {
 	// Line 5984, Address: 0x2d7bb0, Func Offset: 0
 	// Line 5985, Address: 0x2d7bb4, Func Offset: 0x4
@@ -1379,7 +1379,7 @@ void njCopyMatrix(float pDstMat[16], float pSrcMat[16])
 
 // 
 // Start address: 0x2d7be0
-void njMulMatrixCN(float pSrcMat1[16], float pSrcMat2[16])
+void njMulMatrixCN(NJS_MATRIX pSrcMat1, NJS_MATRIX pSrcMat2)
 {
 	// Line 6278, Address: 0x2d7be0, Func Offset: 0
 	// Line 6356, Address: 0x2d7bf4, Func Offset: 0x14

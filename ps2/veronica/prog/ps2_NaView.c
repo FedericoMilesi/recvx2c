@@ -11,10 +11,10 @@ float _fNaViwClipFar;
 float ClipDispW;
 float ClipDispH;
 NJS_SCREEN _nj_screen_;
-float NaViewScreenMatrix[16];
+NJS_MATRIX NaViewScreenMatrix;
 float fNaViwHalfH;
 float fNaViwHalfW;
-float NaViwViewMatrix[16];
+NJS_MATRIX NaViwViewMatrix;
 Unknown31 ClipVolume;
 float ClipScreenMatrix[4][4];
 float ClipMatrix2[4][4];
@@ -28,7 +28,7 @@ void njInitView(NJS_VIEW* pView);
 void njSetView();
 void njClipZ(float fNear, float fFar);
 int njCalcScreen(NJS_POINT3* pPoint, float* fpScreenX, float* fpScreenY);
-void njViewScreenMatrix(float vs[16]);
+void njViewScreenMatrix(NJS_MATRIX vs);
 //void _Make_ClipMatrix(float sc[4], float scr, float near, float far);
 void _Make_ClipMatrix(sceVu0FMATRIX sc, float scr, float near, float far);
 void _Make_ClipVolume(float x, float y);
@@ -518,7 +518,7 @@ int njCalcScreen(NJS_POINT3* pPoint, float* fpScreenX, float* fpScreenY) { // Li
 
 
 /* 100% match */
-void njViewScreenMatrix(float vs[16]) { // Line 521, Address: 0x2e2e80
+void njViewScreenMatrix(NJS_MATRIX vs) { // Line 521, Address: 0x2e2e80
     
     
     

@@ -93,7 +93,7 @@ typedef _anon20 type_34[8];
 typedef _anon14 type_35[16];
 typedef _anon0* type_36[512];
 typedef float type_37[4];
-typedef float type_38[16];
+
 typedef char type_39[256];
 typedef float type_40[4];
 typedef _anon20 type_41[8];
@@ -286,7 +286,7 @@ struct _anon0
 	unsigned char* exp2;
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
-	float mtx[16];
+	NJS_MATRIX mtx;
 	npobj* obj_a;
 	npobj* obj_b;
 	float shp_ct;
@@ -1307,12 +1307,12 @@ struct _anon33
 	unsigned int flg;
 	int dmy;
 	unsigned int dummy[2];
-	float mtx[16];
+	NJS_MATRIX mtx;
 };
 
 struct _anon34
 {
-	float mtrx[16];
+	NJS_MATRIX mtrx;
 	NJS_POINT3 pnt;
 	NJS_POINT3 vctr;
 	int stat;
@@ -1383,7 +1383,7 @@ struct BH_PWORK
 	unsigned char* exp2;
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
-	float mtx[16];
+	NJS_MATRIX mtx;
 	npobj* obj_a;
 	npobj* obj_b;
 	float shp_ct;
@@ -1681,7 +1681,7 @@ _anon11* sys;
 unsigned int palbuf[0];
 _anon12* rom;
 float fNaViwClipFar;
-float cmat[16];
+NJS_MATRIX cmat;
 BH_PWORK ene[0];
 float fNaViwClipNear;
 

@@ -96,7 +96,7 @@ typedef _anon1* type_25[32];
 typedef int type_26[11];
 typedef unsigned char type_27[64];
 typedef _anon1* type_28[32];
-typedef float type_29[16];
+
 typedef int type_30[3];
 typedef int type_31[3];
 typedef char type_32[32];
@@ -163,7 +163,7 @@ typedef unsigned int type_97[16];
 typedef _anon35 type_98[3];
 typedef BH_PWORK* type_99[16];
 typedef unsigned int type_100[8];
-typedef float type_101[16][0];
+typedef NJS_MATRIX type_101[0];
 typedef unsigned int type_102[384];
 typedef unsigned int type_103[1];
 typedef int type_104[3];
@@ -340,7 +340,7 @@ struct _anon1
 	unsigned char* exp2;
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
-	float mtx[16];
+	NJS_MATRIX mtx;
 	npobj* obj_a;
 	npobj* obj_b;
 	float shp_ct;
@@ -1142,7 +1142,7 @@ struct _anon27
 
 struct _anon28
 {
-	float mtrx[16];
+	NJS_MATRIX mtrx;
 	NJS_POINT3 pnt;
 	NJS_POINT3 vctr;
 	int stat;
@@ -1221,7 +1221,7 @@ struct BH_PWORK
 	unsigned char* exp2;
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
-	float mtx[16];
+	NJS_MATRIX mtx;
 	npobj* obj_a;
 	npobj* obj_b;
 	float shp_ct;
@@ -1332,7 +1332,7 @@ struct _anon32
 	unsigned int flg;
 	int dmy;
 	unsigned int dummy[2];
-	float mtx[16];
+	NJS_MATRIX mtx;
 };
 
 struct _anon33
@@ -1672,7 +1672,7 @@ _door_wrk DoorWrk;
 _anon25* sys;
 float BHD_ASPECT_Y;
 float BHD_ASPECT_X;
-float lcmat[16][0];
+NJS_MATRIX lcmat[];
 int PruSndTbl[1];
 
 void bhInitDoor();

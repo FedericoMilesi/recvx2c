@@ -50,11 +50,11 @@ typedef _anon16 type_3[64];
 typedef unsigned long type_4[2];
 typedef _anon31 type_5[64];
 typedef unsigned long type_6[2];
-typedef float type_7[16];
-typedef float type_8[16][2];
-typedef float type_9[16][12];
+
+
+
 typedef void* type_10[4];
-typedef float type_11[16][128];
+
 typedef unsigned int type_12[4];
 typedef unsigned char type_13[2];
 typedef float type_14[4];
@@ -709,10 +709,10 @@ float Ps2_shadow_vec[4];
 int Ps2_shadow_z;
 int ViewType;
 unsigned int palbuf[4096];
-float mbuf[16][128];
-float lcmat[16][12];
-float cmmat[16][2];
-float crmat[16];
+NJS_MATRIX mbuf[128];
+NJS_MATRIX lcmat[12]; // ORIGIN
+NJS_MATRIX cmmat[2];
+NJS_MATRIX crmat;
 unsigned char* _BSG_END;
 int _nj_tex_count;
 _anon3* _nj_vertex_buf_;

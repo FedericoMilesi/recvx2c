@@ -43,7 +43,7 @@ typedef struct _anon38;
 typedef void(*type_87)(void*);
 
 typedef _anon14 type_0[4];
-typedef float type_1[16];
+
 typedef unsigned int type_2[4];
 typedef _anon0* type_3[512];
 typedef _anon0* type_4[32];
@@ -110,7 +110,7 @@ typedef _anon0 type_64[0];
 typedef _anon1* type_65[256];
 typedef _anon7 type_66[256];
 typedef _anon16 type_67[450];
-typedef float type_68[16][0];
+
 typedef _anon25 type_69[16];
 typedef short type_70[256];
 typedef char type_71[3];
@@ -248,7 +248,7 @@ struct _anon0
 	unsigned char* exp2;
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
-	float mtx[16];
+	NJS_MATRIX mtx;
 	npobj* obj_a;
 	npobj* obj_b;
 	float shp_ct;
@@ -953,12 +953,12 @@ struct _anon21
 	unsigned int flg;
 	int dmy;
 	unsigned int dummy[2];
-	float mtx[16];
+	NJS_MATRIX mtx;
 };
 
 struct _anon22
 {
-	float mtrx[16];
+	NJS_MATRIX mtrx;
 	NJS_POINT3 pnt;
 	NJS_POINT3 vctr;
 	int stat;
@@ -1029,7 +1029,7 @@ struct BH_PWORK
 	unsigned char* exp2;
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
-	float mtx[16];
+	NJS_MATRIX mtx;
 	npobj* obj_a;
 	npobj* obj_b;
 	float shp_ct;
@@ -1269,8 +1269,8 @@ struct _anon33
 	int ocut;
 	unsigned int ocflg;
 	unsigned int attr;
-	float mtx[16];
-	float mtxb[16];
+	NJS_MATRIX mtx;
+	NJS_MATRIX mtxb;
 	int evc_no;
 	int hct;
 	int ct0;
@@ -1351,7 +1351,7 @@ _anon4 _nj_screen_;
 float BHD_ASPECT_Y;
 float BHD_ASPECT_X;
 unsigned int Ps2_rendertex_initflag;
-float lcmat[16][0];
+NJS_MATRIX lcmat[];
 _anon0 eff[0];
 unsigned int PS2_Render_tex_sub_flag;
 

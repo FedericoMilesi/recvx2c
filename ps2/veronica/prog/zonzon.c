@@ -91,7 +91,7 @@ typedef float type_37[4];
 typedef float type_38[4];
 typedef _anon7* type_39[128];
 typedef unsigned char type_40[64];
-typedef float type_41[16];
+
 typedef float type_42[3];
 typedef char type_43[8];
 typedef void* type_44[2];
@@ -241,7 +241,7 @@ struct _anon0
 	unsigned char* exp2;
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
-	float mtx[16];
+	NJS_MATRIX mtx;
 	npobj* obj_a;
 	npobj* obj_b;
 	float shp_ct;
@@ -365,7 +365,7 @@ struct BH_PWORK
 	unsigned char* exp2;
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
-	float mtx[16];
+	NJS_MATRIX mtx;
 	npobj* obj_a;
 	npobj* obj_b;
 	float shp_ct;
@@ -773,7 +773,7 @@ struct _anon20
 	unsigned int flg;
 	int dmy;
 	unsigned int dummy[2];
-	float mtx[16];
+	NJS_MATRIX mtx;
 };
 
 struct _anon21
@@ -1343,7 +1343,7 @@ struct _anon32
 
 struct _anon33
 {
-	float mtrx[16];
+	NJS_MATRIX mtrx;
 	NJS_POINT3 pnt;
 	NJS_POINT3 vctr;
 	int stat;
@@ -1532,7 +1532,7 @@ int bhDGCdirCheck3(NJS_POINT3* dv, int rot);
 int bhEne_AngleCheck(NJS_POINT3* vec, int rot, int chk_ang);
 void bhEne_GetTranslateMtn(BH_PWORK* epw, int frm, int mode);
 void bhEne_GetTranslateMtn2(BH_PWORK* epw, int frm, int mode);
-void bhEne_CalcPartsPos(BH_PWORK* epw, float mtx[16], NJS_POINT3* pos, char* tree, int parts_num, int clr_flg);
+void bhEne_CalcPartsPos(BH_PWORK* epw, NJS_MATRIX mtx, NJS_POINT3* pos, char* tree, int parts_num, int clr_flg);
 _anon23* bhKaidanAtrCheck(BH_PWORK* epw, float len, int* idx);
 _anon23* bhEne_EnemyAtariCheck(NJS_POINT3* pos, int flr_no, unsigned char id, unsigned char type);
 int bhEne_PosCheck(float px, float pz, float x, float z, float w, float h);
@@ -1789,7 +1789,7 @@ void bhEne_GetTranslateMtn2(BH_PWORK* epw, int frm, int mode)
 
 // 
 // Start address: 0x216650
-void bhEne_CalcPartsPos(BH_PWORK* epw, float mtx[16], NJS_POINT3* pos, char* tree, int parts_num, int clr_flg)
+void bhEne_CalcPartsPos(BH_PWORK* epw, NJS_MATRIX mtx, NJS_POINT3* pos, char* tree, int parts_num, int clr_flg)
 {
 	int i;
 	npobj* obj;

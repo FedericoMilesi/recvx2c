@@ -21,7 +21,7 @@ typedef unsigned int type_1[2];
 typedef float type_2[3];
 typedef int type_3[3];
 typedef float type_4[3];
-typedef float type_5[16];
+
 
 struct _anon0
 {
@@ -85,7 +85,7 @@ struct _anon8
 	unsigned int flg;
 	int dmy;
 	unsigned int dummy[2];
-	float mtx[16];
+	NJS_MATRIX mtx;
 };
 
 struct npobj

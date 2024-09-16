@@ -28,13 +28,13 @@ typedef NJS_POINT3 type_0[8];
 typedef NJS_POINT3 type_1[4];
 typedef _anon10 type_2[8];
 typedef unsigned char type_3[64];
-typedef float type_4[16];
+
 typedef char type_5[8];
 typedef NJS_POINT3 type_6[8];
 typedef float type_7[10];
 typedef NJS_POINT3 type_8[8];
 typedef _anon10 type_9[16];
-typedef float type_10[16][0];
+
 typedef NJS_POINT3 type_11[4];
 typedef unsigned char type_12[64];
 typedef NJS_POINT3 type_13[3];
@@ -61,7 +61,7 @@ typedef NJS_POINT3 type_33[4];
 typedef _anon10 type_34[16];
 typedef NJS_POINT3 type_35[4];
 typedef _anon10 type_36[4];
-typedef float type_37[16][0];
+
 typedef _anon10 type_38[4];
 typedef unsigned char type_39[64];
 typedef unsigned char type_40[56];
@@ -70,9 +70,9 @@ typedef NJS_POINT3 type_42[128];
 typedef npobj* type_43[128];
 typedef int* type_44[128];
 typedef int* type_45[128];
-typedef float type_46[16][10];
+
 typedef float type_47[10];
-typedef float type_48[16][10][128];
+
 typedef NJS_POINT3 type_49[8];
 typedef unsigned int type_50[1];
 typedef NJS_POINT3 type_51[8];
@@ -177,7 +177,7 @@ struct _anon9
 	unsigned int flg;
 	int dmy;
 	unsigned int dummy[2];
-	float mtx[16];
+	NJS_MATRIX mtx;
 };
 
 union _anon10
@@ -274,7 +274,7 @@ struct BH_PWORK
 	unsigned char* exp2;
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
-	float mtx[16];
+	NJS_MATRIX mtx;
 	npobj* obj_a;
 	npobj* obj_b;
 	float shp_ct;
@@ -406,7 +406,7 @@ struct _anon20
 	npobj* cobj[128];
 	int* sktp[128];
 	int* vlp[128];
-	float mxp[16][10][128];
+	NJS_MATRIX mxp[128][10]; // Swapped order of array dimensions to match the order of the array in the original code
 	void* wkp;
 	unsigned char* buff2;
 	unsigned char* bp2;
@@ -427,8 +427,8 @@ struct _anon21
 
 _anon20 np;
 unsigned char* njpmemp;
-float lcmat[16][0];
-float lcmat[16][0];
+NJS_MATRIX lcmat[];
+
 
 void npPlusInit();
 int npCollisionCheckCC(_anon4* cpa, _anon4* cpb);
@@ -1824,7 +1824,7 @@ void npInitCalcSkin(void* pwp, int obj_n, int* sknp)
 	int i;
 	npobj* op;
 	_anon9* owp;
-	float mat[16];
+	NJS_MATRIX mat;
 	unsigned char matb[64];
 	// Line 3687, Address: 0x12e0a0, Func Offset: 0
 	// Line 3704, Address: 0x12e0c0, Func Offset: 0x20
@@ -2028,7 +2028,7 @@ void npInitCalcSkinFM(void* pwp, int obj_n, int* sknp)
 	int i;
 	npobj* op;
 	_anon9* owp;
-	float mat[16];
+	NJS_MATRIX mat;
 	unsigned char matb[64];
 	// Line 4150, Address: 0x12e600, Func Offset: 0
 	// Line 4168, Address: 0x12e620, Func Offset: 0x20

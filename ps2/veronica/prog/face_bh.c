@@ -20,7 +20,7 @@ typedef float type_0[3];
 typedef int type_1[3];
 typedef float type_2[3];
 typedef unsigned char type_3[64];
-typedef float type_4[16];
+
 typedef char type_5[4];
 typedef unsigned short type_6[2];
 typedef unsigned int type_7[3];
@@ -32,7 +32,7 @@ typedef int type_12[3];
 typedef int type_13[3][9];
 typedef unsigned int type_14[4];
 typedef unsigned int type_15[3];
-typedef float type_16[16][9];
+
 typedef unsigned char type_17[64];
 typedef unsigned char type_18[64];
 typedef char type_19[9];
@@ -90,15 +90,15 @@ struct _anon2
 	_anon3* jaw;
 	int jnum;
 	unsigned int Dummy[3];
-	float jmat1[16];
-	float jmat2[16];
+	NJS_MATRIX jmat1;
+	NJS_MATRIX jmat2;
 	_anon4 param;
 	cnkobj eye[9];
 	cnkobj* eyesrc[9];
 	float eyepos[3][9];
 	int eyeang[3][9];
 	unsigned int Dummy2[3];
-	float eyemat[16][9];
+	NJS_MATRIX eyemat[9];
 	_anon3* tang;
 	int tnum;
 	_anon1* tangsrc;
@@ -212,7 +212,7 @@ struct _anon12
 	unsigned int flg;
 	int dmy;
 	unsigned int dummy[2];
-	float mtx[16];
+	NJS_MATRIX mtx;
 };
 
 struct npobj
@@ -946,14 +946,14 @@ void _fmCnkCalcJaw(_anon2* fm)
 {
 	float jawtrans;
 	float jawang;
-	float jmat2[16];
-	float jmat1[16];
+	NJS_MATRIX jmat2;
+	NJS_MATRIX jmat1;
 	unsigned int vofs;
 	_anon13 vec;
 	_anon13* dvp1;
 	float* dvp;
-	float mat2[16];
-	float mat[16];
+	NJS_MATRIX mat2;
+	NJS_MATRIX mat;
 	unsigned char mt2[64];
 	unsigned char mt1[64];
 	_anon3* jaw;
@@ -1154,7 +1154,7 @@ void _fmCnkCalcTang(_anon2* fm)
 	unsigned int vofs;
 	float* dvp;
 	float* svp;
-	float mat[16];
+	NJS_MATRIX mat;
 	unsigned char mt1[64];
 	_anon3* tang;
 	int i;

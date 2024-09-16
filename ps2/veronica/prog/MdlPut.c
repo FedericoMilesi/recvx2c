@@ -38,7 +38,7 @@ typedef struct _anon33;
 typedef void(*type_73)(void*);
 typedef void(*type_104)();
 
-typedef float type_0[16];
+
 typedef unsigned int type_1[4];
 typedef _anon0* type_2[512];
 typedef _anon0* type_3[32];
@@ -219,7 +219,7 @@ struct _anon0
 	unsigned char* exp2;
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
-	float mtx[16];
+	NJS_MATRIX mtx;
 	npobj* obj_a;
 	npobj* obj_b;
 	float shp_ct;
@@ -450,7 +450,7 @@ struct BH_PWORK
 	unsigned char* exp2;
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
-	float mtx[16];
+	NJS_MATRIX mtx;
 	npobj* obj_a;
 	npobj* obj_b;
 	float shp_ct;
@@ -534,7 +534,7 @@ struct _anon10
 	unsigned int flg;
 	int dmy;
 	unsigned int dummy[2];
-	float mtx[16];
+	NJS_MATRIX mtx;
 };
 
 struct _anon11
@@ -1040,7 +1040,7 @@ struct _anon17
 
 struct _anon18
 {
-	float mtrx[16];
+	NJS_MATRIX mtrx;
 	NJS_POINT3 pnt;
 	NJS_POINT3 vctr;
 	int stat;
@@ -1202,8 +1202,8 @@ struct _anon28
 	int ocut;
 	unsigned int ocflg;
 	unsigned int attr;
-	float mtx[16];
-	float mtxb[16];
+	NJS_MATRIX mtx;
+	NJS_MATRIX mtxb;
 	int evc_no;
 	int hct;
 	int ct0;
@@ -1290,7 +1290,7 @@ void SimpleMultiDrawTreeCnk(BH_PWORK* ewP, npobj* objP, _anon10* owP, int obj_nu
 void EasyDrawTreeCnk(BH_PWORK* ewP, npobj* objP, _anon10* owP, int obj_num);
 void SimpleDrawTreeCnk(BH_PWORK* ewP, npobj* objP, _anon10* owP, int obj_num);
 void bhCalcModel(BH_PWORK* ewP);
-void bhCalcTree(float basP[16], _anon7* mlwP);
+void bhCalcTree(NJS_MATRIX basP, _anon7* mlwP);
 
 // 
 // Start address: 0x12ebb0
@@ -1464,7 +1464,7 @@ void bhCalcModel(BH_PWORK* ewP)
 
 // 
 // Start address: 0x12f400
-void bhCalcTree(float basP[16], _anon7* mlwP)
+void bhCalcTree(NJS_MATRIX basP, _anon7* mlwP)
 {
 	int obj_num;
 	npobj* objP;

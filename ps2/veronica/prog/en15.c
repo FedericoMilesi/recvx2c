@@ -75,7 +75,7 @@ typedef _anon1* type_6[512];
 typedef _WPNDG_TBL type_7[21];
 typedef _anon1* type_8[512];
 typedef unsigned char type_9[64];
-typedef float type_10[16];
+
 typedef _anon1* type_11[512];
 typedef unsigned int type_12[4];
 typedef _anon1* type_13[32];
@@ -212,7 +212,7 @@ typedef _anon6* type_146[16];
 typedef char type_147[4];
 typedef _anon16 type_148[16];
 typedef short type_149[4];
-typedef float type_150[16][0];
+
 typedef _LEGLOCK_TAB type_151[11];
 typedef unsigned char type_152[4];
 typedef _anon37 type_153[24];
@@ -291,7 +291,7 @@ struct _anon1
 	unsigned char* exp2;
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
-	float mtx[16];
+	NJS_MATRIX mtx;
 	npobj* obj_a;
 	npobj* obj_b;
 	float shp_ct;
@@ -432,7 +432,7 @@ struct BH_PWORK
 	unsigned char* exp2;
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
-	float mtx[16];
+	NJS_MATRIX mtx;
 	npobj* obj_a;
 	npobj* obj_b;
 	float shp_ct;
@@ -1011,7 +1011,7 @@ struct _anon30
 	unsigned int flg;
 	int dmy;
 	unsigned int dummy[2];
-	float mtx[16];
+	NJS_MATRIX mtx;
 };
 
 struct _anon31
@@ -1447,7 +1447,7 @@ struct _UVINFO
 
 struct _anon34
 {
-	float mtrx[16];
+	NJS_MATRIX mtrx;
 	NJS_POINT3 pnt;
 	NJS_POINT3 vctr;
 	int stat;
@@ -1701,7 +1701,7 @@ _UVINFO uvinfo2_1[30];
 _UVINFO uvinfo2_2[16];
 _EFF_INFO eff_info[5];
 _anon1 eff[0];
-float lcmat[16][0];
+NJS_MATRIX lcmat[];
 _anon14* rom;
 
 int target_direction(BH_PWORK* epw);
@@ -2119,11 +2119,11 @@ void Attack(BH_PWORK* epw)
 	NJS_POINT3 splash_v;
 	NJS_POINT3 axis;
 	NJS_POINT3 vec;
-	float mat[16];
+	NJS_MATRIX mat;
 	NJS_POINT3 vec1;
 	NJS_POINT3 vec0;
 	NJS_POINT3 vec;
-	float mat[16];
+	NJS_MATRIX mat;
 	NJS_POINT3 _p;
 	NJS_POINT3 _p;
 	NJS_POINT3 _p;
@@ -2266,7 +2266,7 @@ void Throw(BH_PWORK* epw)
 {
 	NJS_POINT3 vec;
 	NJS_POINT3 attack_v;
-	float mat[16];
+	NJS_MATRIX mat;
 	NJS_POINT3 _p;
 	NJS_POINT3 pos;
 	// Line 1976, Address: 0x1e3b90, Func Offset: 0

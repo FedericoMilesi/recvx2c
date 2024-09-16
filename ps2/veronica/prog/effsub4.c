@@ -49,7 +49,7 @@ typedef void(*type_67)(_anon1*);
 typedef void(*type_80)(_anon1*);
 typedef void(*type_121)(void*);
 
-typedef float type_0[16];
+
 typedef unsigned int type_1[4];
 typedef _anon1* type_2[512];
 typedef _anon31* type_3[11];
@@ -92,7 +92,7 @@ typedef unsigned int type_39[4];
 typedef _anon14 type_40[16];
 typedef _anon23 type_41[11];
 typedef _anon1* type_42[512];
-typedef float type_44[16];
+
 typedef char type_45[256];
 typedef float type_46[2];
 typedef NJS_POINT3 type_47[16];
@@ -289,7 +289,7 @@ struct _anon1
 	unsigned char* exp2;
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
-	float mtx[16];
+	NJS_MATRIX mtx;
 	npobj* obj_a;
 	npobj* obj_b;
 	float shp_ct;
@@ -811,7 +811,7 @@ struct _anon8
 struct _anon9
 {
 	_anon2 dtbl;
-	float g[16];
+	NJS_MATRIX g;
 	NJS_POINT3 add_vec[16];
 	NJS_POINT3 vtx_pos[16];
 	NJS_POINT3 vtx_pos2[16];
@@ -833,7 +833,7 @@ struct _anon11
 	unsigned int flg;
 	int dmy;
 	unsigned int dummy[2];
-	float mtx[16];
+	NJS_MATRIX mtx;
 };
 
 struct _anon12
@@ -968,7 +968,7 @@ struct BH_PWORK
 	unsigned char* exp2;
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
-	float mtx[16];
+	NJS_MATRIX mtx;
 	npobj* obj_a;
 	npobj* obj_b;
 	float shp_ct;
@@ -1164,7 +1164,7 @@ struct _anon24
 
 struct _anon25
 {
-	float mtrx[16];
+	NJS_MATRIX mtrx;
 	NJS_POINT3 pnt;
 	NJS_POINT3 vctr;
 	int stat;
@@ -1327,8 +1327,8 @@ struct _anon35
 	int ocut;
 	unsigned int ocflg;
 	unsigned int attr;
-	float mtx[16];
-	float mtxb[16];
+	NJS_MATRIX mtx;
+	NJS_MATRIX mtxb;
 	int evc_no;
 	int hct;
 	int ct0;
@@ -1424,7 +1424,7 @@ void(*bhEff_ModelDraw)(_anon1*);
 
 void bhEff_SetPtcl(BH_PWORK* epw, NJS_POINT3* pos, int tex_id);
 void bhEff_SetPtcl1(BH_PWORK* epw, NJS_POINT3* pos, int tex_id, int wcnt);
-void bhEff_SetPtcl2(NJS_POINT3* pos, float mtx[16]);
+void bhEff_SetPtcl2(NJS_POINT3* pos, NJS_MATRIX mtx);
 void bhEff_SetPtcl2V(NJS_POINT3* pos, NJS_POINT3* dv, int wcnt);
 void bhEff_SetBlood5(NJS_POINT3* pos, NJS_POINT3* vec, float size, int col);
 void bhEff_Sub350(_anon1* op);
@@ -1545,7 +1545,7 @@ void bhEff_SetPtcl1(BH_PWORK* epw, NJS_POINT3* pos, int tex_id, int wcnt)
 
 // 
 // Start address: 0x24cb70
-void bhEff_SetPtcl2(NJS_POINT3* pos, float mtx[16])
+void bhEff_SetPtcl2(NJS_POINT3* pos, NJS_MATRIX mtx)
 {
 	float spd;
 	int ang2;

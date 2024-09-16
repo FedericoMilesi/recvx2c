@@ -989,7 +989,7 @@ Unknown12;
 
 
 typedef struct Unknown11 {
-    float mtrx[16];
+    NJS_MATRIX mtrx;
     Vector3 pnt;
     Vector3 vctr;
     int stat;
@@ -1112,7 +1112,7 @@ typedef struct Unknown5 {
     unsigned int flg;
     int dmy;
     unsigned int dummy[2];
-    float mtx[16];
+    NJS_MATRIX mtx;
 }
 Unknown5;
 
@@ -1205,7 +1205,7 @@ typedef struct Unknown1 {
     unsigned char* exp2;
     unsigned char* exp3;
     unsigned char mtxbuf[64];
-    float mtx[16];
+    NJS_MATRIX mtx;
     npobj* obj_a;
     npobj* obj_b;
     float shp_ct;
@@ -1330,7 +1330,7 @@ typedef struct BH_PWORK {
     unsigned char* exp2;
     unsigned char* exp3;
     unsigned char mtxbuf[64];
-    float mtx[16];
+    NJS_MATRIX mtx;
     npobj* obj_a;
     npobj* obj_b;
     float shp_ct;
@@ -1905,7 +1905,7 @@ typedef struct NJS_QUAD_TEXTURE
 
 typedef struct NJS_VIEW
 {
-	float m[16];
+	NJS_MATRIX m;
 	float px;
 	float py;
 	float pz;

@@ -78,7 +78,7 @@ typedef _anon0* type_4[128];
 typedef _anon0* type_5[512];
 typedef _anon0* type_6[512];
 typedef unsigned char type_7[64];
-typedef float type_8[16];
+
 typedef _anon0* type_9[512];
 typedef unsigned int type_10[4];
 typedef _anon10 type_11[4];
@@ -210,7 +210,7 @@ typedef char type_148[64];
 typedef _anon26 type_149[64];
 typedef BH_PWORK* type_150[16];
 typedef unsigned int type_151[8];
-typedef float type_152[16][0];
+
 typedef unsigned int type_153[1];
 typedef unsigned int type_154[384];
 typedef unsigned int type_155[2];
@@ -293,7 +293,7 @@ struct BH_PWORK
 	unsigned char* exp2;
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
-	float mtx[16];
+	NJS_MATRIX mtx;
 	npobj* obj_a;
 	npobj* obj_b;
 	float shp_ct;
@@ -434,7 +434,7 @@ struct _anon0
 	unsigned char* exp2;
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
-	float mtx[16];
+	NJS_MATRIX mtx;
 	npobj* obj_a;
 	npobj* obj_b;
 	float shp_ct;
@@ -812,7 +812,7 @@ struct _anon17
 	unsigned int flg;
 	int dmy;
 	unsigned int dummy[2];
-	float mtx[16];
+	NJS_MATRIX mtx;
 };
 
 struct _anon18
@@ -1408,7 +1408,7 @@ struct _anon32
 
 struct _anon33
 {
-	float mtrx[16];
+	NJS_MATRIX mtrx;
 	NJS_POINT3 pnt;
 	NJS_POINT3 vctr;
 	int stat;
@@ -1675,7 +1675,7 @@ BH_PWORK* plp;
 _anon13* rom;
 _anon22* sys;
 float en22_mogmog[20];
-float lcmat[16][0];
+NJS_MATRIX lcmat[];
 _anon0 eff[0];
 
 void bhEne22_DmmyBrain();

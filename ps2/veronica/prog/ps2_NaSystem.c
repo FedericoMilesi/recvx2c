@@ -84,7 +84,7 @@ typedef float type_17[4];
 typedef short type_18[256];
 typedef int type_19[8];
 typedef _anon9* type_20[256];
-typedef float type_21[16];
+
 typedef _anon54 type_22[256];
 typedef char type_23[192];
 typedef _anon3 type_24[450];
@@ -727,7 +727,7 @@ struct _anon13
 
 struct _anon14
 {
-	float mtrx[16];
+	NJS_MATRIX mtrx;
 	NJS_POINT3 pnt;
 	NJS_POINT3 vctr;
 	int stat;
@@ -804,7 +804,7 @@ struct BH_PWORK
 	unsigned char* exp2;
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
-	float mtx[16];
+	NJS_MATRIX mtx;
 	npobj* obj_a;
 	npobj* obj_b;
 	float shp_ct;
@@ -1190,7 +1190,7 @@ struct _anon37
 	unsigned int flg;
 	int dmy;
 	unsigned int dummy[2];
-	float mtx[16];
+	NJS_MATRIX mtx;
 };
 
 struct _anon38
@@ -1266,7 +1266,7 @@ struct _anon39
 	unsigned char* exp2;
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
-	float mtx[16];
+	NJS_MATRIX mtx;
 	npobj* obj_a;
 	npobj* obj_b;
 	float shp_ct;

@@ -1,7 +1,7 @@
 #include "types.h"
 
 extern Camera cam;
-extern float cmmat[0][16];
+extern NJS_MATRIX cmmat[2];
 extern float* cmat;
 
 void bhInitCamera();

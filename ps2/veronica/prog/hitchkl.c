@@ -87,7 +87,7 @@ typedef float type_37[4];
 typedef float type_38[4];
 typedef _anon7* type_39[128];
 typedef unsigned char type_40[64];
-typedef float type_41[16];
+
 typedef char type_42[8];
 typedef void* type_43[2];
 typedef _anon3* type_44[256];
@@ -641,7 +641,7 @@ struct _anon1
 	unsigned char* exp2;
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
-	float mtx[16];
+	NJS_MATRIX mtx;
 	npobj* obj_a;
 	npobj* obj_b;
 	float shp_ct;
@@ -1157,12 +1157,12 @@ struct _anon28
 	unsigned int flg;
 	int dmy;
 	unsigned int dummy[2];
-	float mtx[16];
+	NJS_MATRIX mtx;
 };
 
 struct _anon29
 {
-	float mtrx[16];
+	NJS_MATRIX mtrx;
 	NJS_POINT3 pnt;
 	NJS_POINT3 vctr;
 	int stat;
@@ -1233,7 +1233,7 @@ struct BH_PWORK
 	unsigned char* exp2;
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
-	float mtx[16];
+	NJS_MATRIX mtx;
 	npobj* obj_a;
 	npobj* obj_b;
 	float shp_ct;
@@ -1486,7 +1486,7 @@ _anon6* bhCollisionCheckLine3(NJS_POINT3* p1, NJS_POINT3* p2, unsigned int flg, 
 int bhCollisionCheckLineMain(_anon6* hp, NJS_POINT3* vec, NJS_POINT3* p1, NJS_POINT3* p2);
 int bhCollisionCheckL2PL(NJS_POINT3* p1, NJS_POINT3* p2, NJS_POINT3* area, int num);
 int bhInOutCheck(NJS_POINT3* p, NJS_POINT3* area, NJS_POINT3* normal, int num);
-int bhCollisionCheckL2MDL(NJS_POINT3* p1, NJS_POINT3* p2, _anon31* mdl, float mtx[16]);
+int bhCollisionCheckL2MDL(NJS_POINT3* p1, NJS_POINT3* p2, _anon31* mdl, NJS_MATRIX mtx);
 int bhCollisionCheckL2XZPL(NJS_POINT3* p1, NJS_POINT3* p2, NJS_POINT3* pos, float w, float d, int flg);
 int bhCollisionCheckL2XYPL(NJS_POINT3* p1, NJS_POINT3* p2, NJS_POINT3* pos, float w, float h, int flg);
 int bhCollisionCheckL2YZPL(NJS_POINT3* p1, NJS_POINT3* p2, NJS_POINT3* pos, float h, float d, int flg);
@@ -2143,7 +2143,7 @@ int bhInOutCheck(NJS_POINT3* p, NJS_POINT3* area, NJS_POINT3* normal, int num)
 
 // 
 // Start address: 0x26b200
-int bhCollisionCheckL2MDL(NJS_POINT3* p1, NJS_POINT3* p2, _anon31* mdl, float mtx[16])
+int bhCollisionCheckL2MDL(NJS_POINT3* p1, NJS_POINT3* p2, _anon31* mdl, NJS_MATRIX mtx)
 {
 	_anon37 ln;
 	NJS_POINT3 center;

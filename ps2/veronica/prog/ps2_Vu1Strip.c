@@ -18,7 +18,7 @@ typedef void(*type_18)(tagVU1_STRIP_BUF*, tagVU1_PRIM_BUF*);
 
 typedef float type_1[4][2];
 typedef void(*type_3)(tagVU1_STRIP_BUF*, tagVU1_PRIM_BUF*)[11];
-typedef float type_4[16];
+
 typedef _anon4 type_5[12];
 typedef float type_6[3];
 typedef _anon0 type_7[2];
@@ -182,7 +182,7 @@ void vu1GetVertexColorDifSpe3(tagVU1_STRIP_BUF* pStrip, tagVU1_PRIM_BUF* pPrim);
 void vu1GetVertexColorDifSpe1Amb(tagVU1_STRIP_BUF* pStrip, tagVU1_PRIM_BUF* pPrim);
 void vu1GetVertexColorDifSpe2Amb(tagVU1_STRIP_BUF* pStrip, tagVU1_PRIM_BUF* pPrim);
 void vu1GetVertexColorDifSpe3Amb(tagVU1_STRIP_BUF* pStrip, tagVU1_PRIM_BUF* pPrim);
-void vu1RotTransStripBuf(float pMatrix[16], NJS_POINT3* pVector, tagVU1_STRIP_BUF* pBuf);
+void vu1RotTransStripBuf(NJS_MATRIX pMatrix, NJS_POINT3* pVector, tagVU1_STRIP_BUF* pBuf);
 void vu1DrawTriangleStripTransDoubleI(unsigned long ulType, tagVU1_STRIP_BUF* pS, unsigned short usStripMax, unsigned short usMode);
 void DrawScissorPolygonTrans1P(_anon2* scissor, unsigned long ulType);
 void vu1DrawTriangleStripTransDouble1P(unsigned long ulType, tagVU1_STRIP_BUF* pS, unsigned short usStripMax, unsigned short usMode);
@@ -1418,7 +1418,7 @@ void vu1GetVertexColorDifSpe3Amb(tagVU1_STRIP_BUF* pStrip, tagVU1_PRIM_BUF* pPri
 
 // 
 // Start address: 0x2d5930
-void vu1RotTransStripBuf(float pMatrix[16], NJS_POINT3* pVector, tagVU1_STRIP_BUF* pBuf)
+void vu1RotTransStripBuf(NJS_MATRIX pMatrix, NJS_POINT3* pVector, tagVU1_STRIP_BUF* pBuf)
 {
 	float fIz;
 	float fZ;

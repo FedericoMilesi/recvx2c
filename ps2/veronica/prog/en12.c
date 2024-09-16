@@ -51,7 +51,7 @@ typedef void(*type_116)(BH_PWORK*);
 
 typedef unsigned int type_0[4];
 typedef _anon0* type_1[512];
-typedef float type_2[16][0];
+
 typedef _anon0* type_3[32];
 typedef _anon2* type_4[16];
 typedef _anon0* type_5[32];
@@ -92,7 +92,7 @@ typedef float type_41[4];
 typedef float type_42[4];
 typedef _anon4* type_43[128];
 typedef unsigned char type_44[64];
-typedef float type_45[16];
+
 typedef unsigned short type_46[3];
 typedef char type_47[8];
 typedef void* type_48[2];
@@ -253,7 +253,7 @@ struct _anon0
 	unsigned char* exp2;
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
-	float mtx[16];
+	NJS_MATRIX mtx;
 	npobj* obj_a;
 	npobj* obj_b;
 	float shp_ct;
@@ -377,7 +377,7 @@ struct BH_PWORK
 	unsigned char* exp2;
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
-	float mtx[16];
+	NJS_MATRIX mtx;
 	npobj* obj_a;
 	npobj* obj_b;
 	float shp_ct;
@@ -461,7 +461,7 @@ struct _anon1
 	unsigned int flg;
 	int dmy;
 	unsigned int dummy[2];
-	float mtx[16];
+	NJS_MATRIX mtx;
 };
 
 struct _anon2
@@ -1098,7 +1098,7 @@ struct _anon19
 
 struct _anon20
 {
-	float mtrx[16];
+	NJS_MATRIX mtrx;
 	NJS_POINT3 pnt;
 	NJS_POINT3 vctr;
 	int stat;
@@ -1315,7 +1315,7 @@ void(*bhEne12_DieMode2)(BH_PWORK*)[1];
 _anon18* sys;
 _anon0 eff[0];
 BH_PWORK* plp;
-float lcmat[16][0];
+NJS_MATRIX lcmat[];
 
 void bhEne12(BH_PWORK* epw);
 void bhEne12_Init(BH_PWORK* epw);

@@ -49,7 +49,7 @@ typedef float type_2[3];
 typedef _anon6 type_4[5];
 typedef tagCHUNK_HEAD*(*type_6)(tagCHUNK_HEAD*)[76];
 typedef int type_7[8];
-typedef float type_8[16];
+
 typedef tagCNK_LIGHT type_9[6];
 typedef unsigned short type_10[8];
 typedef int type_12[8];
@@ -500,7 +500,7 @@ float fNaViwAspectW;
 _anon21 _nj_screen_;
 float _fNaViwClipFar;
 float _fNaViwClipNear;
-float pNaMatMatrixStuckPtr[16];
+NJS_MATRIX pNaMatMatrixStuckPtr;
 int Ps2_shadow_z;
 float Ps2_shadow_fog;
 float Ps2_shadow_vec[4];

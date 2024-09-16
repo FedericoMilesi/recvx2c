@@ -100,10 +100,10 @@ typedef float type_38[4];
 typedef float type_39[4];
 typedef _anon6* type_40[128];
 typedef unsigned char type_41[64];
-typedef float type_42[16];
+
 typedef int type_43[4];
 typedef int type_44[4][9];
-typedef float type_45[16][0];
+
 typedef char type_46[8];
 typedef void* type_48[2];
 typedef _anon40 type_49[21];
@@ -253,7 +253,7 @@ struct BH_PWORK
 	unsigned char* exp2;
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
-	float mtx[16];
+	NJS_MATRIX mtx;
 	npobj* obj_a;
 	npobj* obj_b;
 	float shp_ct;
@@ -394,7 +394,7 @@ struct _anon0
 	unsigned char* exp2;
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
-	float mtx[16];
+	NJS_MATRIX mtx;
 	npobj* obj_a;
 	npobj* obj_b;
 	float shp_ct;
@@ -1214,12 +1214,12 @@ struct _anon22
 	unsigned int flg;
 	int dmy;
 	unsigned int dummy[2];
-	float mtx[16];
+	NJS_MATRIX mtx;
 };
 
 struct _anon23
 {
-	float mtrx[16];
+	NJS_MATRIX mtrx;
 	NJS_POINT3 pnt;
 	NJS_POINT3 vctr;
 	int stat;
@@ -1519,7 +1519,7 @@ _anon5* sys;
 BH_PWORK* plp;
 _anon30 E29OffTbl[20];
 int E29EffTbl[4][9];
-float lcmat[16][0];
+NJS_MATRIX lcmat[];
 
 void bhEne29(BH_PWORK* ewP);
 void bhEne29_Init(BH_PWORK* ewP);
@@ -2450,7 +2450,7 @@ void bhEne29_SetDmgEffect(BH_PWORK* ewP, int eff_typ)
 	int djnt_no;
 	NJS_POINT3 off;
 	int i;
-	float mtxP[16];
+	NJS_MATRIX mtxP;
 	NJS_POINT3 off;
 	int djnt_no;
 	NJS_POINT3 dir;

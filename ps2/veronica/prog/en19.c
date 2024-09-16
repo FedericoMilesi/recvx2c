@@ -86,7 +86,7 @@ typedef _anon0* type_5[32];
 typedef char type_6[26];
 typedef int type_7[3];
 typedef _anon3* type_8[16];
-typedef float type_9[16];
+
 typedef _anon0* type_10[32];
 typedef _anon0* type_11[512];
 typedef _anon3* type_12[16][16];
@@ -160,7 +160,7 @@ typedef float type_84[3];
 typedef _anon16 type_85[256];
 typedef _anon10 type_86[3];
 typedef float type_87[3][2];
-typedef float type_88[16][0];
+
 typedef _anon28 type_89[450];
 typedef char type_90[10];
 typedef _anon37 type_91[16];
@@ -308,7 +308,7 @@ struct BH_PWORK
 	unsigned char* exp2;
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
-	float mtx[16];
+	NJS_MATRIX mtx;
 	npobj* obj_a;
 	npobj* obj_b;
 	float shp_ct;
@@ -449,7 +449,7 @@ struct _anon0
 	unsigned char* exp2;
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
-	float mtx[16];
+	NJS_MATRIX mtx;
 	npobj* obj_a;
 	npobj* obj_b;
 	float shp_ct;
@@ -549,7 +549,7 @@ struct _anon3
 
 struct _anon4
 {
-	float mtx_bak[16];
+	NJS_MATRIX mtx_bak;
 	int status;
 	int act_flg;
 	void(*prgP)(BH_PWORK*, _en19_freework*, int);
@@ -1121,7 +1121,7 @@ struct _anon13
 	_anon41 prm;
 	int mode;
 	int erase;
-	float mtxP[16];
+	NJS_MATRIX mtxP;
 	char mtx_buf[64];
 };
 
@@ -1130,7 +1130,7 @@ struct _anon14
 	unsigned int flg;
 	int dmy;
 	unsigned int dummy[2];
-	float mtx[16];
+	NJS_MATRIX mtx;
 };
 
 enum _enum_0
@@ -1394,7 +1394,7 @@ struct _anon33
 
 struct _anon34
 {
-	float mtrx[16];
+	NJS_MATRIX mtrx;
 	NJS_POINT3 pnt;
 	NJS_POINT3 vctr;
 	int stat;
@@ -1519,7 +1519,7 @@ enum _enum_4
 
 struct _anon41
 {
-	float mtxP[16];
+	NJS_MATRIX mtxP;
 	_anon3* texP;
 	_anon5* mdlP;
 	float pos[3];
@@ -1609,7 +1609,7 @@ struct _anon48
 
 struct _anon49
 {
-	float mtxP[16];
+	NJS_MATRIX mtxP;
 	NJS_POINT3 src;
 	NJS_POINT3 dst;
 	float frm_inc;
@@ -1725,7 +1725,7 @@ _anon10* Eff30aTbl[3];
 void(*bhEne19_TyBloodSet)(_anon21*);
 _anon9* sys;
 BH_PWORK* plp;
-float lcmat[16][0];
+NJS_MATRIX lcmat[];
 
 void bhEne19(BH_PWORK* ewP);
 void bhEne19_Init(BH_PWORK* ewP);
@@ -1768,7 +1768,7 @@ int bhEne19_AttackHitCheck(BH_PWORK* ewP, _enum_2 arm_no, float ar, int* angP);
 void bhEne19_CalcEnemy(BH_PWORK* ewP, _anon4* fwP);
 void bhEne19_DmgCheck(BH_PWORK* ewP, _anon4* fwP);
 void bhEne19_SetDmgEffect(BH_PWORK* ewP, int set_obj, int eff_typ, NJS_POINT3* dirP);
-int bhEne19_CollisionCircle2Oval(float basP[16], float ra, float rb, NJS_POINT3* posP, float rc);
+int bhEne19_CollisionCircle2Oval(NJS_MATRIX basP, float ra, float rb, NJS_POINT3* posP, float rc);
 void bhEne19_TyBloodSet(_anon21* ebP);
 void bhEne19_ClawReset(BH_PWORK* ewP, _anon4* fwP);
 void bhEne19_SoundSet(BH_PWORK* ewP, _anon4* fwP);
@@ -1794,7 +1794,7 @@ _enum_4 bhEne19_CheckDmgLvl0(BH_PWORK* ewP, _anon4* fwP);
 _enum_4 bhEne19_CheckDmgLvl1(BH_PWORK* ewP, _anon4* fwP);
 _enum_4 bhEne19_CheckDmgLvl2(BH_PWORK* ewP, _anon4* fwP);
 _anon13* bhEne19_SetLeftClaw(_anon17* mlwP, _enum_6 tgt_bas, _enum_6 tgt_obj);
-void bhEne19_SetClawPlane(BH_PWORK* ewP, float mtxP[16], int col, int tim, float src_x, float dst_x);
+void bhEne19_SetClawPlane(BH_PWORK* ewP, NJS_MATRIX mtxP, int col, int tim, float src_x, float dst_x);
 
 // 
 // Start address: 0x1f0450
@@ -1970,7 +1970,7 @@ void bhEne19_Move(BH_PWORK* ewP)
 {
 	float ar_bak;
 	float ah_bak;
-	float mtxP[16];
+	NJS_MATRIX mtxP;
 	NJS_POINT3 pos;
 	npobj* objP;
 	int* stsP;
@@ -2722,7 +2722,7 @@ void bhEne19_Mv07(BH_PWORK* ewP, _anon4* fwP, int count)
 // Start address: 0x1f27b0
 void bhEne19_Mv08(BH_PWORK* ewP, _anon4* fwP)
 {
-	float mtxP[16];
+	NJS_MATRIX mtxP;
 	NJS_POINT3 pos;
 	NJS_POINT3 dir;
 	int* stsP;
@@ -2765,7 +2765,7 @@ void bhEne19_Mv08(BH_PWORK* ewP, _anon4* fwP)
 // Start address: 0x1f2960
 void bhEne19_Mv09(BH_PWORK* ewP, _anon4* fwP)
 {
-	float mtxP[16];
+	NJS_MATRIX mtxP;
 	NJS_POINT3 pos;
 	NJS_POINT3 dir;
 	int* stsP;
@@ -2808,12 +2808,12 @@ void bhEne19_Mv09(BH_PWORK* ewP, _anon4* fwP)
 // Start address: 0x1f2b10
 void bhEne19_Mv10(BH_PWORK* ewP, _anon4* fwP, int count)
 {
-	float mtxP[16];
+	NJS_MATRIX mtxP;
 	NJS_POINT3 dir;
 	NJS_POINT3 dir;
 	NJS_POINT3 pos;
-	float mtx2P[16];
-	float mtx0P[16];
+	NJS_MATRIX mtx2P;
+	NJS_MATRIX mtx0P;
 	int* stsP;
 	int* flgP;
 	NJS_POINT3 off;
@@ -2891,7 +2891,7 @@ void bhEne19_Mv12(BH_PWORK* ewP, _anon4* fwP)
 void bhEne19_Mv13(BH_PWORK* ewP, _anon4* fwP, int count)
 {
 	NJS_POINT3* posP;
-	float mtxP[16];
+	NJS_MATRIX mtxP;
 	NJS_POINT3 dir;
 	int ang;
 	float spd;
@@ -2902,8 +2902,8 @@ void bhEne19_Mv13(BH_PWORK* ewP, _anon4* fwP, int count)
 	_enum_6 obj_no;
 	NJS_POINT3 dir;
 	NJS_POINT3 pos;
-	float mtx2P[16];
-	float mtx0P[16];
+	NJS_MATRIX mtx2P;
+	NJS_MATRIX mtx0P;
 	int* flgP;
 	int* stsP;
 	NJS_POINT3 off;
@@ -2988,7 +2988,7 @@ void bhEne19_Mv13(BH_PWORK* ewP, _anon4* fwP, int count)
 void bhEne19_Mv14(BH_PWORK* ewP, _anon4* fwP, int count)
 {
 	NJS_POINT3* posP;
-	float mtxP[16];
+	NJS_MATRIX mtxP;
 	NJS_POINT3 dir;
 	int ang;
 	float spd;
@@ -2999,8 +2999,8 @@ void bhEne19_Mv14(BH_PWORK* ewP, _anon4* fwP, int count)
 	_enum_6 obj_no;
 	NJS_POINT3 dir;
 	NJS_POINT3 pos;
-	float mtx2P[16];
-	float mtx0P[16];
+	NJS_MATRIX mtx2P;
+	NJS_MATRIX mtx0P;
 	int* flgP;
 	int* stsP;
 	NJS_POINT3 off;
@@ -3274,7 +3274,7 @@ int bhEne19_ActionMain(BH_PWORK* ewP, _anon4* fwP)
 // Start address: 0x1f3be0
 void bhEne19_TargetAnalyze(BH_PWORK* ewP, _anon4* fwP)
 {
-	float mtxP[16];
+	NJS_MATRIX mtxP;
 	NJS_POINT3 pos;
 	int dlt;
 	int ang;
@@ -3527,9 +3527,9 @@ void bhEne19_SetDmgEffect(BH_PWORK* ewP, int set_obj, int eff_typ, NJS_POINT3* d
 	NJS_POINT3 off;
 	_anon33* eoP;
 	int i;
-	float mtxP[16];
+	NJS_MATRIX mtxP;
 	int i;
-	float mtxP[16];
+	NJS_MATRIX mtxP;
 	NJS_POINT3* posP;
 	NJS_POINT3 dir;
 	float scl;
@@ -3646,13 +3646,13 @@ void bhEne19_SetDmgEffect(BH_PWORK* ewP, int set_obj, int eff_typ, NJS_POINT3* d
 
 // 
 // Start address: 0x1f4e40
-int bhEne19_CollisionCircle2Oval(float basP[16], float ra, float rb, NJS_POINT3* posP, float rc)
+int bhEne19_CollisionCircle2Oval(NJS_MATRIX basP, float ra, float rb, NJS_POINT3* posP, float rc)
 {
 	float dr;
 	NJS_POINT3 dlt;
 	NJS_POINT3 vct;
 	float dst;
-	float UniMtx[16];
+	NJS_MATRIX UniMtx;
 	// Line 3524, Address: 0x1f4e40, Func Offset: 0
 	// Line 3548, Address: 0x1f4e78, Func Offset: 0x38
 	// Line 3553, Address: 0x1f4e88, Func Offset: 0x48
@@ -4578,7 +4578,7 @@ _anon13* bhEne19_SetLeftClaw(_anon17* mlwP, _enum_6 tgt_bas, _enum_6 tgt_obj)
 
 // 
 // Start address: 0x1f7430
-void bhEne19_SetClawPlane(BH_PWORK* ewP, float mtxP[16], int col, int tim, float src_x, float dst_x)
+void bhEne19_SetClawPlane(BH_PWORK* ewP, NJS_MATRIX mtxP, int col, int tim, float src_x, float dst_x)
 {
 	_anon49 Dat307;
 	// Line 4768, Address: 0x1f7430, Func Offset: 0
