@@ -31,7 +31,7 @@ typedef struct _anon28;
 typedef struct _anon29;
 typedef struct _anon30;
 typedef struct _anon31;
-typedef enum SDE_DATA_TYPE;
+
 typedef struct _anon32;
 typedef struct _anon33;
 typedef struct _anon34;
@@ -857,20 +857,6 @@ struct _anon31
 	float ian[3][20];
 	float ipf[3][20];
 	float icr[3][20];
-};
-
-enum SDE_DATA_TYPE
-{
-	SDE_DATA_TYPE_SND_DRV = 0x56524453,
-	SDE_DATA_TYPE_MULTI_UNIT = 0x544c4d53,
-	SDE_DATA_TYPE_MIDI_DRM_BANK = 0x42444d53,
-	SDE_DATA_TYPE_MIDI_SEQ_BANK = 0x42534d53,
-	SDE_DATA_TYPE_MIDI_PRG_BANK = 0x42504d53,
-	SDE_DATA_TYPE_SHOT_BANK = 0x42534f53,
-	SDE_DATA_TYPE_PSTM_RING_BUF = 0x52535053,
-	SDE_DATA_TYPE_FX_OUT_BANK = 0x424f4653,
-	SDE_DATA_TYPE_FX_PRG_BANK = 0x42504653,
-	SDE_DATA_TYPE_FX_PRG_WRK = 0x57504653
 };
 
 struct _anon32

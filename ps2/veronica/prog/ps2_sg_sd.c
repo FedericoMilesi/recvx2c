@@ -3,7 +3,7 @@ typedef struct _anon0;
 typedef struct SDS_MEMBLK;
 typedef struct SDS_MIDI_STAT;
 typedef struct _anon1;
-typedef enum SDE_DATA_TYPE;
+
 typedef struct SDS_SHOT_STAT;
 typedef enum SDE_PAN_MODE;
 typedef struct _SND_STATUS;
@@ -85,19 +85,7 @@ struct _anon1
 	unsigned int mode;
 };
 
-enum SDE_DATA_TYPE
-{
-	SDE_DATA_TYPE_SND_DRV = 0x56524453,
-	SDE_DATA_TYPE_MULTI_UNIT = 0x544c4d53,
-	SDE_DATA_TYPE_MIDI_DRM_BANK = 0x42444d53,
-	SDE_DATA_TYPE_MIDI_SEQ_BANK = 0x42534d53,
-	SDE_DATA_TYPE_MIDI_PRG_BANK = 0x42504d53,
-	SDE_DATA_TYPE_SHOT_BANK = 0x42534f53,
-	SDE_DATA_TYPE_PSTM_RING_BUF = 0x52535053,
-	SDE_DATA_TYPE_FX_OUT_BANK = 0x424f4653,
-	SDE_DATA_TYPE_FX_PRG_BANK = 0x42504653,
-	SDE_DATA_TYPE_FX_PRG_WRK = 0x57504653
-};
+
 
 struct SDS_SHOT_STAT
 {
