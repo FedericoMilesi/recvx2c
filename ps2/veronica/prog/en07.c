@@ -11,7 +11,7 @@ typedef struct _anon7;
 typedef struct _anon8;
 typedef struct _anon9;
 typedef struct _anon10;
-typedef struct _anon11;
+
 typedef struct _anon12;
 typedef struct _anon13;
 typedef struct _anon14;
@@ -529,25 +529,25 @@ struct _anon10
 	_anon20* owP;
 };
 
-struct _anon11
-{
-	unsigned int id;
-	unsigned int support;
-	unsigned int on;
-	unsigned int off;
-	unsigned int press;
-	unsigned int release;
-	unsigned short r;
-	unsigned short l;
-	short x1;
-	short y1;
-	short x2;
-	short y2;
-	char* name;
-	void* extend;
-	unsigned int old;
-	_anon32* info;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon12
 {
@@ -623,11 +623,11 @@ struct _anon12
 	int loop_ct;
 	int loop_now;
 	int cng_pid;
-	_anon11* p1per;
-	_anon11* p2per;
-	_anon11* kbper;
-	_anon11* msper;
-	_anon11 ms_per;
+	PDS_PERIPHERAL* p1per;
+	PDS_PERIPHERAL* p2per;
+	PDS_PERIPHERAL* kbper;
+	PDS_PERIPHERAL* msper;
+	PDS_PERIPHERAL ms_per;
 	int pad_port;
 	unsigned int pad_on;
 	unsigned int pad_oncpy;

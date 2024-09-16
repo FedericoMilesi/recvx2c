@@ -6,7 +6,7 @@ typedef struct _anon2;
 typedef struct tagICONINFORMATION;
 typedef struct _anon3;
 typedef struct _anon4;
-typedef struct _anon5;
+
 typedef struct _anon6;
 typedef struct _anon7;
 typedef struct _anon8;
@@ -386,25 +386,25 @@ struct _anon4
 	float r;
 };
 
-struct _anon5
-{
-	unsigned int id;
-	unsigned int support;
-	unsigned int on;
-	unsigned int off;
-	unsigned int press;
-	unsigned int release;
-	unsigned short r;
-	unsigned short l;
-	short x1;
-	short y1;
-	short x2;
-	short y2;
-	char* name;
-	void* extend;
-	unsigned int old;
-	_anon10* info;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon6
 {
@@ -570,11 +570,11 @@ struct _anon13
 	int loop_ct;
 	int loop_now;
 	int cng_pid;
-	_anon5* p1per;
-	_anon5* p2per;
-	_anon5* kbper;
-	_anon5* msper;
-	_anon5 ms_per;
+	PDS_PERIPHERAL* p1per;
+	PDS_PERIPHERAL* p2per;
+	PDS_PERIPHERAL* kbper;
+	PDS_PERIPHERAL* msper;
+	PDS_PERIPHERAL ms_per;
 	int pad_port;
 	unsigned int pad_on;
 	unsigned int pad_oncpy;

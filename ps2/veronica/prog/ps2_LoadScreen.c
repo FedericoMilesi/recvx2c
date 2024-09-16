@@ -6,7 +6,7 @@ typedef struct _anon2;
 typedef struct _anon3;
 typedef struct tagSELECTFILEWINDOW;
 typedef struct tagMEMORYCARDPORT;
-typedef struct _anon4;
+
 typedef struct _anon5;
 typedef struct _anon6;
 typedef struct _anon7;
@@ -395,25 +395,25 @@ struct tagMEMORYCARDPORT
 	int lFormatType;
 };
 
-struct _anon4
-{
-	unsigned int id;
-	unsigned int support;
-	unsigned int on;
-	unsigned int off;
-	unsigned int press;
-	unsigned int release;
-	unsigned short r;
-	unsigned short l;
-	short x1;
-	short y1;
-	short x2;
-	short y2;
-	char* name;
-	void* extend;
-	unsigned int old;
-	_anon10* info;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon5
 {
@@ -560,11 +560,11 @@ struct _anon11
 	int loop_ct;
 	int loop_now;
 	int cng_pid;
-	_anon4* p1per;
-	_anon4* p2per;
-	_anon4* kbper;
-	_anon4* msper;
-	_anon4 ms_per;
+	PDS_PERIPHERAL* p1per;
+	PDS_PERIPHERAL* p2per;
+	PDS_PERIPHERAL* kbper;
+	PDS_PERIPHERAL* msper;
+	PDS_PERIPHERAL ms_per;
 	int pad_port;
 	unsigned int pad_on;
 	unsigned int pad_oncpy;

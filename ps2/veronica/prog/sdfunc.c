@@ -56,7 +56,7 @@ typedef struct _anon50;
 typedef struct _anon51;
 typedef struct tag_SYS_BT_SYSTEMID;
 typedef struct _anon52;
-typedef struct _anon53;
+
 typedef struct _anon54;
 typedef struct _anon55;
 typedef struct _anon56;
@@ -1289,25 +1289,25 @@ struct _anon52
 	float r;
 };
 
-struct _anon53
-{
-	unsigned int id;
-	unsigned int support;
-	unsigned int on;
-	unsigned int off;
-	unsigned int press;
-	unsigned int release;
-	unsigned short r;
-	unsigned short l;
-	short x1;
-	short y1;
-	short x2;
-	short y2;
-	char* name;
-	void* extend;
-	unsigned int old;
-	_anon45* info;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon54
 {
@@ -1400,11 +1400,11 @@ struct _anon56
 	int loop_ct;
 	int loop_now;
 	int cng_pid;
-	_anon53* p1per;
-	_anon53* p2per;
-	_anon53* kbper;
-	_anon53* msper;
-	_anon53 ms_per;
+	PDS_PERIPHERAL* p1per;
+	PDS_PERIPHERAL* p2per;
+	PDS_PERIPHERAL* kbper;
+	PDS_PERIPHERAL* msper;
+	PDS_PERIPHERAL ms_per;
 	int pad_port;
 	unsigned int pad_on;
 	unsigned int pad_oncpy;

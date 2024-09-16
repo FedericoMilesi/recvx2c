@@ -20,7 +20,7 @@ typedef struct _anon13;
 typedef struct _anon14;
 typedef struct _anon15;
 typedef struct _anon16;
-typedef struct _anon17;
+
 typedef struct _LEGLOCK_LIST;
 typedef struct _anon18;
 typedef struct MTN_SE_TBL;
@@ -794,25 +794,25 @@ struct _anon16
 	_anon30* owP;
 };
 
-struct _anon17
-{
-	unsigned int id;
-	unsigned int support;
-	unsigned int on;
-	unsigned int off;
-	unsigned int press;
-	unsigned int release;
-	unsigned short r;
-	unsigned short l;
-	short x1;
-	short y1;
-	short x2;
-	short y2;
-	char* name;
-	void* extend;
-	unsigned int old;
-	_anon43* info;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _LEGLOCK_LIST
 {
@@ -1088,11 +1088,11 @@ struct _anon31
 	int loop_ct;
 	int loop_now;
 	int cng_pid;
-	_anon17* p1per;
-	_anon17* p2per;
-	_anon17* kbper;
-	_anon17* msper;
-	_anon17 ms_per;
+	PDS_PERIPHERAL* p1per;
+	PDS_PERIPHERAL* p2per;
+	PDS_PERIPHERAL* kbper;
+	PDS_PERIPHERAL* msper;
+	PDS_PERIPHERAL ms_per;
 	int pad_port;
 	unsigned int pad_on;
 	unsigned int pad_oncpy;

@@ -1,5 +1,5 @@
 typedef struct _anon0;
-typedef struct _anon1;
+
 typedef struct _anon2;
 typedef struct _anon3;
 typedef struct _anon4;
@@ -55,25 +55,25 @@ struct _anon0
 	unsigned char ar2;
 };
 
-struct _anon1
-{
-	unsigned int id;
-	unsigned int support;
-	unsigned int on;
-	unsigned int off;
-	unsigned int press;
-	unsigned int release;
-	unsigned short r;
-	unsigned short l;
-	short x1;
-	short y1;
-	short x2;
-	short y2;
-	char* name;
-	void* extend;
-	unsigned int old;
-	_anon2* info;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon2
 {
@@ -152,11 +152,11 @@ _anon6 Pad_status2;
 
 void pdInitPeripheral();
 void pdExitPeripheral();
-_anon1* pdGetPeripheral(unsigned int port);
+PDS_PERIPHERAL* pdGetPeripheral(unsigned int port);
 _anon2* pdGetPeripheralInfo();
 void pdSetMode();
 void Ps2_pad_read();
-void Ps2_Read_Key(_anon1* per, _anon0* pad_wk);
+void Ps2_Read_Key(PDS_PERIPHERAL* per, _anon0* pad_wk);
 void Ps2_MakeRepeatKey(unsigned int Id, _anon0* pad_wk);
 void Pad_set(_anon0* pbt, unsigned short pad_num);
 void Pad_init();
@@ -193,11 +193,11 @@ void pdExitPeripheral()
 
 // 
 // Start address: 0x2d9cf0
-_anon1* pdGetPeripheral(unsigned int port)
+PDS_PERIPHERAL* pdGetPeripheral(unsigned int port)
 {
 	unsigned char* pad_data;
 	_anon0* pad_wk;
-	_anon1 pp;
+	PDS_PERIPHERAL pp;
 	_anon2 pp_info;
 	// Line 104, Address: 0x2d9cf0, Func Offset: 0
 	// Line 107, Address: 0x2d9d00, Func Offset: 0x10
@@ -385,7 +385,7 @@ void Ps2_pad_read()
 
 // 
 // Start address: 0x2da400
-void Ps2_Read_Key(_anon1* per, _anon0* pad_wk)
+void Ps2_Read_Key(PDS_PERIPHERAL* per, _anon0* pad_wk)
 {
 	_anon3* pp;
 	unsigned int j;
