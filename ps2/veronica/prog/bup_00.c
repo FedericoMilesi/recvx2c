@@ -63,7 +63,7 @@ typedef struct _anon50;
 typedef struct _anon51;
 typedef struct _anon52;
 typedef struct _anon53;
-typedef struct _anon54;
+
 
 typedef void(*type_136)();
 typedef void(*type_142)(void*);
@@ -1923,15 +1923,15 @@ struct _anon53
 	unsigned char* recp;
 };
 
-struct _anon54
-{
-	unsigned int filesize;
-	unsigned short blocks;
-	unsigned char type;
-	unsigned char copyflag;
-	unsigned short headerofs;
-	BUS_TIME time;
-};
+
+
+
+
+
+
+
+
+
 
 char vmssyscmttbl[16];
 int old_data_flg;
@@ -1968,7 +1968,7 @@ unsigned char* vwbmemp;
 tagSAVE_SCREEN Save;
 int ErrorCode;
 _anon44 hdr01;
-_anon54 Info;
+BUS_FILEINFO Info;
 char bootcommentbuf[32][15];
 
 void ControlTypewriter();

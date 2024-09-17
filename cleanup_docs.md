@@ -22,4 +22,5 @@
 | NJS_PLANE NJS_LINE | Found on Katana | `<katana>/ninjastr.h` |
 | NJS_CLIP_BUF | Found on Katana | `<katana>/ninjastr.h` |
 | NJS_VERTEX_BUF | Found on Katana | `<katana>/ninjastr.h` |
-| NJS_VERTEX_BUF | Found on Katana | `<katana>/sg_bup.h` |
+| BUS_TIME | Found on Katana | `<katana>/sg_bup.h` |
+| BUS_FILEINFO | Found on Katana | `<katana>/sg_bup.h` |

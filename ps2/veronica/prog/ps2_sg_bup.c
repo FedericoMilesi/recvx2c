@@ -1,4 +1,4 @@
-typedef struct _anon0;
+
 typedef struct _anon1;
 typedef struct _anon2;
 typedef struct _anon3;
@@ -15,15 +15,15 @@ typedef char type_4[34];
 typedef unsigned char type_5[16];
 typedef unsigned char type_7[32];
 
-struct _anon0
-{
-	unsigned int filesize;
-	unsigned short blocks;
-	unsigned char type;
-	unsigned char copyflag;
-	unsigned short headerofs;
-	BUS_TIME time;
-};
+
+
+
+
+
+
+
+
+
 
 struct _anon1
 {
