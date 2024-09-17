@@ -671,7 +671,7 @@ KeyRepeatInfo;
 
 
 
-typedef struct GDS_FS_WORK GDS_FS_WORK;
+
 typedef struct GDS_FS_HANDLE {
 	/*  0 */ GDS_FS_WORK* wk;
 	/*  4 */ int fid;
@@ -711,28 +711,28 @@ typedef struct GDS_FS_DIRREC_TBL {
 GDS_FS_DIRREC_TBL;
 
 
-typedef struct GDS_FS_WORK {
-	/*    0 */ int max_open;
-	/*    4 */ int pathtbl_fad;
-	/*    8 */ int pathtbl_size;
-	/*   12 */ GDS_DCF* dcf;
-	/*   16 */ GDS_FS_DIRREC_TBL* curdir;
-	/*   20 */ GDS_FS_HANDLE* syshdl;
-	/*   24 */ GDS_FS_HANDLE* hndtbl;
-	/*   28 */ GDS_FS_HANDLE* now_work;
-	/*   32 */ int f_svr;
-	/*   36 */ void(*g_errcb)(void*, int);
-	/*   40 */ void* g_errcb_1st;
-	/*   44 */ int gdc_ver;
-	/*   48 */ int errstat;
-	/*   52 */ int istray;
-	/*   56 */ short f_init;
-	/*   58 */ short daplayed;
-	/*   60 */ GDS_FS_LIF* liftbl;
-	/*   64 */ unsigned int sctbuf[1040];
-	/* 4224 */ GDS_FS_HANDLE hndlist[1];
-}
-GDS_FS_WORK;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 typedef struct LfOpen {

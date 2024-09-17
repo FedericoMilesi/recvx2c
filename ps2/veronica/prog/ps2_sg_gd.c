@@ -1,6 +1,6 @@
 
 typedef struct _anon0;
-typedef struct GDS_FS_WORK;
+
 
 typedef struct GDS_FS_HANDLE;
 typedef struct _anon1;
@@ -40,28 +40,28 @@ struct _anon0
 	unsigned char pad;
 };
 
-struct GDS_FS_WORK
-{
-	int max_open;
-	int pathtbl_fad;
-	int pathtbl_size;
-	GDS_DCF* dcf;
-	GDS_FS_DIRREC_TBL* curdir;
-	GDS_FS_HANDLE* syshdl;
-	GDS_FS_HANDLE* hndtbl;
-	GDS_FS_HANDLE* now_work;
-	int f_svr;
-	void(*g_errcb)(void*, int);
-	void* g_errcb_1st;
-	int gdc_ver;
-	int errstat;
-	int istray;
-	short f_init;
-	short daplayed;
-	GDS_FS_LIF* liftbl;
-	unsigned int sctbuf[1040];
-	GDS_FS_HANDLE hndlist[1];
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
