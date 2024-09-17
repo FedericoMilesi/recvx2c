@@ -31,7 +31,7 @@ typedef struct _anon28;
 typedef struct _anon29;
 typedef struct _anon30;
 typedef struct _anon31;
-typedef struct _anon32;
+
 typedef struct _anon33;
 typedef struct _anon34;
 typedef struct _anon35;
@@ -104,7 +104,7 @@ struct _anon0
 	unsigned short ImageWidth;
 	unsigned short ImageHeight;
 	sceGsTex0 GsTex0;
-	_anon32 GsTex1;
+	sceGsTex1 GsTex1;
 	unsigned int GsRegs;
 	unsigned int GsTexClut;
 	_anon12 admin;
@@ -558,23 +558,23 @@ struct _anon31
 	unsigned int clt_addr;
 };
 
-struct _anon32
-{
-	struct
-	{
-		unsigned long LCM : 1;
-		unsigned long pad01 : 1;
-		unsigned long MXL : 3;
-		unsigned long MMAG : 1;
-		unsigned long MMIN : 3;
-		unsigned long MTBA : 1;
-		unsigned long pad10 : 9;
-		unsigned long L : 2;
-		unsigned long pad21 : 11;
-		unsigned long K : 12;
-		unsigned long pad44 : 20;
-	};
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon33
 {

@@ -259,24 +259,24 @@ typedef struct Unknown27
 	void* after;
 } Unknown27;
 
-// SCE_GS_TEX1
-typedef struct Unknown28
-{
-	struct
-	{
-		unsigned long LCM : 1;
-		unsigned long pad01 : 1;
-		unsigned long MXL : 3;
-		unsigned long MMAG : 1;
-		unsigned long MMIN : 3;
-		unsigned long MTBA : 1;
-		unsigned long pad10 : 9;
-		unsigned long L : 2;
-		unsigned long pad21 : 11;
-		unsigned long K : 12;
-		unsigned long pad44 : 20;
-	};
-} Unknown28;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 typedef struct Unknown25
 {
@@ -302,7 +302,7 @@ typedef struct Unknown25
 	unsigned short ImageWidth;
 	unsigned short ImageHeight;
 	sceGsTex0 GsTex0;
-	Unknown28 GsTex1;
+	sceGsTex1 GsTex1;
 	unsigned int GsRegs;
 	unsigned int GsTexClut;
 	Unknown27 admin;

@@ -15,3 +15,4 @@
 | SYS_BT_SYSTEMID | Found on Katana | `<katana>/sg_sybt.h` |
 | SYE_CBL_TAG | Found on Katana | `<katana>/sg_sycbl.h` |
 | sceGsTex0 | Found on SCE | `<sce>/ee/include/eestruct.h` |
+| sceGsTex1 | Found on SCE | `<sce>/ee/include/eestruct.h` |

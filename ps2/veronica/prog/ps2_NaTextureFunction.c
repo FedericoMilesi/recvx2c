@@ -7,7 +7,7 @@ typedef struct _anon5;
 
 typedef struct _anon7;
 typedef struct _anon8;
-typedef struct _anon9;
+
 typedef struct _anon10;
 
 typedef char*(*type_3)(char*, int);
@@ -72,7 +72,7 @@ struct _anon4
 	unsigned short ImageWidth;
 	unsigned short ImageHeight;
 	sceGsTex0 GsTex0;
-	_anon9 GsTex1;
+	sceGsTex1 GsTex1;
 	unsigned int GsRegs;
 	unsigned int GsTexClut;
 	_anon8 admin;
@@ -127,23 +127,23 @@ struct _anon8
 	void* after;
 };
 
-struct _anon9
-{
-	struct
-	{
-		unsigned long LCM : 1;
-		unsigned long pad01 : 1;
-		unsigned long MXL : 3;
-		unsigned long MMAG : 1;
-		unsigned long MMIN : 3;
-		unsigned long MTBA : 1;
-		unsigned long pad10 : 9;
-		unsigned long L : 2;
-		unsigned long pad21 : 11;
-		unsigned long K : 12;
-		unsigned long pad44 : 20;
-	};
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon10
 {

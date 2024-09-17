@@ -24,7 +24,7 @@ typedef struct _anon15;
 typedef struct _anon17;
 typedef struct _anon18;
 typedef struct tagCNK_LIGHTING;
-typedef struct _anon19;
+
 typedef union _anon20;
 typedef struct _anon21;
 typedef struct _anon22;
@@ -337,7 +337,7 @@ struct _anon17
 	unsigned short ImageWidth;
 	unsigned short ImageHeight;
 	sceGsTex0 GsTex0;
-	_anon19 GsTex1;
+	sceGsTex1 GsTex1;
 	unsigned int GsRegs;
 	unsigned int GsTexClut;
 	_anon14 admin;
@@ -368,23 +368,23 @@ struct tagCNK_LIGHTING
 	unsigned int pad[11];
 };
 
-struct _anon19
-{
-	struct
-	{
-		unsigned long LCM : 1;
-		unsigned long pad01 : 1;
-		unsigned long MXL : 3;
-		unsigned long MMAG : 1;
-		unsigned long MMIN : 3;
-		unsigned long MTBA : 1;
-		unsigned long pad10 : 9;
-		unsigned long L : 2;
-		unsigned long pad21 : 11;
-		unsigned long K : 12;
-		unsigned long pad44 : 20;
-	};
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 union _anon20
 {
