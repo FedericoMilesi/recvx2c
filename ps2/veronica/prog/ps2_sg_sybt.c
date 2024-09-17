@@ -1,7 +1,7 @@
 #include "types.h"
 
 void syBtExit();
-int syBtGetBootSystemID(_SYS_BT_SYSTEMID* pData);
+int syBtGetBootSystemID(SYS_BT_SYSTEMID* pData);
 
 
 
@@ -85,7 +85,7 @@ void syBtExit() { } // Line 63, Address: 0x2dde90
 
 
 /* 100% match */
-int syBtGetBootSystemID(_SYS_BT_SYSTEMID* pData) { // Line 88, Address: 0x2ddea0
+int syBtGetBootSystemID(SYS_BT_SYSTEMID* pData) { // Line 88, Address: 0x2ddea0
     int i;
     if (pData == NULL) return 0; // Line 90, Address: 0x2ddea8
 

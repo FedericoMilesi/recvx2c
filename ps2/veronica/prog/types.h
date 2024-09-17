@@ -195,12 +195,12 @@ typedef struct Unknown31
 
 
 
-typedef struct _SYS_BT_SYSTEMID
-{
-	int nNo;
-	int nAll;
-	char szProduct[16];
-} _SYS_BT_SYSTEMID;
+
+
+
+
+
+
 
 typedef enum SYE_CBL_TAG
 {

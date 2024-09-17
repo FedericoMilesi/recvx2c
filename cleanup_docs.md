@@ -12,3 +12,4 @@
 | PDS_PERIPHERAL | Found on Katana | `<katana>/sg_pad.h` - `<katana>/ninjapad.h` |
 | SYS_RTC_DATE | Found on Katana | `<katana>/sg_syrtc.h` |
 | sceCdCLOCK | Found on SCE | `<sce>/common/include/libcdvd.h` |
+| SYS_BT_SYSTEMID | Found on Katana | `<katana>/sg_sybt.h` |
