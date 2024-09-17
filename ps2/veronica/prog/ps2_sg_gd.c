@@ -7,7 +7,7 @@ typedef struct _anon1;
 typedef struct _anon2;
 
 typedef struct GDS_FS_DIRREC_TBL;
-typedef struct GDS_FS_DIRINFO;
+
 
 typedef void(*type_1)(void*);
 typedef void(*type_4)(void*);
@@ -128,13 +128,13 @@ struct GDS_FS_DIRREC_TBL
 	GDS_FS_DIRREC_ENT dirrec_tbl[1];
 };
 
-struct GDS_FS_DIRINFO
-{
-	int fad;
-	int fsize;
-	unsigned char flag;
-	unsigned char pad[3];
-};
+
+
+
+
+
+
+
 
 GDS_FS_HANDLE* __file_handle;
 GDS_FS_WORK* __gds_fs_work;

@@ -662,13 +662,13 @@ KeyRepeatInfo;
 
 
 
-typedef struct GDS_FS_DIRINFO {
-	/*  0 */ int fad;
-	/*  4 */ int fsize;
-	/*  8 */ unsigned char flag;
-	/*  9 */ unsigned char pad[3];
-}
-GDS_FS_DIRINFO;
+
+
+
+
+
+
+
 
 
 typedef struct GDS_FS_WORK GDS_FS_WORK;
