@@ -1,8 +1,8 @@
-typedef struct _anon0;
+
 typedef struct tagMEMORYCARDSTATE;
 typedef struct _anon1;
 typedef struct tagMEMORYCARDPORT;
-typedef struct _anon2;
+
 
 
 typedef char type_0[32];
@@ -12,16 +12,16 @@ typedef char type_3[32];
 typedef tagMEMORYCARDPORT type_4[2];
 typedef _anon1 type_5[21];
 
-struct _anon0
-{
-	unsigned char Resv2;
-	unsigned char Sec;
-	unsigned char Min;
-	unsigned char Hour;
-	unsigned char Day;
-	unsigned char Month;
-	unsigned short Year;
-};
+
+
+
+
+
+
+
+
+
+
 
 struct tagMEMORYCARDSTATE
 {
@@ -45,8 +45,8 @@ struct tagMEMORYCARDSTATE
 
 struct _anon1
 {
-	_anon2 _Create;
-	_anon0 _Modify;
+	sceMcStDateTime _Create;
+	sceMcStDateTime _Modify;
 	unsigned int FileSizeByte;
 	unsigned short AttrFile;
 	unsigned short Reserve1;
@@ -63,16 +63,16 @@ struct tagMEMORYCARDPORT
 	int lFormatType;
 };
 
-struct _anon2
-{
-	unsigned char Resv2;
-	unsigned char Sec;
-	unsigned char Min;
-	unsigned char Hour;
-	unsigned char Day;
-	unsigned char Month;
-	unsigned short Year;
-};
+
+
+
+
+
+
+
+
+
+
 
 
 tagMEMORYCARDSTATE* CreateMemoryCard(tagMEMORYCARDSTATE* pCard);

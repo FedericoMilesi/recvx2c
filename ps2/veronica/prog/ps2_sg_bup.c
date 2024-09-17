@@ -1,8 +1,8 @@
 
 typedef struct _anon1;
 typedef struct _anon2;
-typedef struct _anon3;
-typedef struct _anon4;
+
+
 
 
 typedef int(*type_0)(int, int, int, unsigned int);
@@ -43,8 +43,8 @@ struct _anon1
 
 struct _anon2
 {
-	_anon3 _Create;
-	_anon4 _Modify;
+	sceMcStDateTime _Create;
+	sceMcStDateTime _Modify;
 	unsigned int FileSizeByte;
 	unsigned short AttrFile;
 	unsigned short Reserve1;
@@ -53,27 +53,27 @@ struct _anon2
 	unsigned char EntryName[32];
 };
 
-struct _anon3
-{
-	unsigned char Resv2;
-	unsigned char Sec;
-	unsigned char Min;
-	unsigned char Hour;
-	unsigned char Day;
-	unsigned char Month;
-	unsigned short Year;
-};
 
-struct _anon4
-{
-	unsigned char Resv2;
-	unsigned char Sec;
-	unsigned char Min;
-	unsigned char Hour;
-	unsigned char Day;
-	unsigned char Month;
-	unsigned short Year;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
