@@ -648,7 +648,7 @@ KeyRepeatInfo;
 
 
 
-typedef struct GDS_FS_LIF GDS_FS_LIF;
+
 
 
 typedef struct GDS_FS_DIRREC_ENT {

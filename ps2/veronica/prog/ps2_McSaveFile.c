@@ -4,7 +4,7 @@ typedef struct npobj;
 typedef struct _anon1;
 typedef struct _anon2;
 typedef struct tagSELECTFILEINFO;
-typedef struct GDS_FS_LIF;
+
 typedef struct _anon3;
 typedef struct tagCONFIGFILE;
 
@@ -384,9 +384,9 @@ struct tagSELECTFILEINFO
 	char saveroom;
 };
 
-struct GDS_FS_LIF
-{
-};
+
+
+
 
 struct _anon3
 {

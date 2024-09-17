@@ -1,7 +1,7 @@
 
 typedef struct _anon0;
 typedef struct GDS_FS_WORK;
-typedef struct GDS_FS_LIF;
+
 typedef struct GDS_FS_HANDLE;
 typedef struct _anon1;
 typedef struct _anon2;
@@ -63,9 +63,9 @@ struct GDS_FS_WORK
 	GDS_FS_HANDLE hndlist[1];
 };
 
-struct GDS_FS_LIF
-{
-};
+
+
+
 
 struct GDS_FS_HANDLE
 {
