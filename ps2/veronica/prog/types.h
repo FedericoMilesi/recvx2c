@@ -771,25 +771,25 @@ LfOpen;
 
 
 
-typedef struct Peripheral {
-	/*  0 */ unsigned int id;
-	/*  4 */ unsigned int support;
-	/*  8 */ unsigned int on;
-	/* 12 */ unsigned int off;
-	/* 16 */ unsigned int press;
-	/* 20 */ unsigned int release;
-	/* 24 */ unsigned short r;
-	/* 26 */ unsigned short l;
-	/* 28 */ short x1;
-	/* 30 */ short y1;
-	/* 32 */ short x2;
-	/* 34 */ short y2;
-	/* 36 */ char* name;
-	/* 40 */ void* extend;
-	/* 44 */ unsigned int old;
-	/* 48 */ PDS_PERIPHERALINFO* info;
-}
-Peripheral;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 typedef struct Model {
@@ -1484,11 +1484,11 @@ typedef struct System {
 	int loop_ct;
 	int loop_now;
 	int cng_pid;
-	Peripheral* p1per;
-	Peripheral* p2per;
-	Peripheral* kbper;
-	Peripheral* msper;
-	Peripheral ms_per;
+	PDS_PERIPHERAL* p1per;
+	PDS_PERIPHERAL* p2per;
+	PDS_PERIPHERAL* kbper;
+	PDS_PERIPHERAL* msper;
+	PDS_PERIPHERAL ms_per;
 	int pad_port;
 	unsigned int pad_on;
 	unsigned int pad_oncpy;
