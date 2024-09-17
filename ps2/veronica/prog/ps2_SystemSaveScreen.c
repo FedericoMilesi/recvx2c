@@ -40,7 +40,7 @@ typedef struct tagMEMORYCARDPORT;
 typedef struct _anon30;
 
 typedef struct tagSAVEFILE;
-typedef struct NJS_POINT3;
+
 typedef struct _anon33;
 typedef struct _anon34;
 
@@ -166,7 +166,7 @@ typedef _anon0* type_117[128];
 typedef unsigned int type_118[32];
 typedef _anon33 type_119[64];
 typedef unsigned int type_120[3];
-typedef NJS_POINT3 type_121[32];
+
 typedef unsigned int type_122[16];
 typedef _anon0* type_123[512];
 typedef unsigned int type_124[8];

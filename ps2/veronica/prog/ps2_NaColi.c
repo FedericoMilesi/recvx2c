@@ -1,15 +1,15 @@
-typedef struct NJS_POINT3;
+
 typedef struct _anon1;
 typedef struct _anon2;
 typedef struct _anon3;
 typedef struct _anon4;
 
 
-typedef NJS_POINT3 type_0[6];
+
 typedef unsigned int type_1[4];
 typedef unsigned int type_2[4][6];
-typedef NJS_POINT3 type_3[6];
-typedef NJS_POINT3 type_4[8];
+
+
 typedef unsigned int type_5[4];
 typedef unsigned int type_6[4][6];
 

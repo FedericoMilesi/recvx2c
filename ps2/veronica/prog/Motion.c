@@ -10,7 +10,7 @@ typedef struct _anon6;
 typedef struct _anon7;
 typedef struct _anon8;
 typedef struct _anon9;
-typedef struct NJS_POINT3;
+
 typedef struct _anon11;
 
 

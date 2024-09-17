@@ -9,7 +9,7 @@ typedef struct _anon5;
 typedef struct _anon6;
 typedef struct _anon7;
 typedef struct _anon8;
-typedef struct NJS_POINT3;
+
 typedef struct _anon10;
 
 typedef void(*type_3)(BH_PWORK*);

@@ -20,7 +20,7 @@ typedef struct _anon16;
 typedef struct _anon17;
 typedef struct _anon18;
 typedef struct _anon19;
-typedef struct NJS_POINT3;
+
 typedef struct _anon21;
 typedef struct _anon22;
 typedef struct _anon23;
@@ -129,7 +129,7 @@ typedef unsigned int type_77[8];
 
 
 typedef int type_80[450];
-typedef NJS_POINT3 type_81[128];
+
 typedef unsigned int type_82[8];
 typedef unsigned char type_83[450];
 typedef float type_84[128];
@@ -161,13 +161,13 @@ typedef _anon2* type_110[16];
 typedef char type_111[4];
 typedef _anon14 type_112[16];
 typedef short type_113[4];
-typedef NJS_POINT3 type_114[8];
+
 typedef unsigned char type_115[4];
 typedef _anon34 type_116[16];
 typedef unsigned int type_117[8];
 typedef unsigned int type_118[32];
 typedef unsigned int type_119[4];
-typedef NJS_POINT3 type_120[32];
+
 typedef _anon1* type_121[512];
 typedef _anon1* type_122[128];
 typedef _anon1* type_123[512];

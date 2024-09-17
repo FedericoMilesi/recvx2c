@@ -18,7 +18,7 @@ typedef struct _anon12;
 typedef struct _func_wrk_typ;
 typedef enum _enum_1;
 typedef struct _anon13;
-typedef struct NJS_POINT3;
+
 typedef struct _anon15;
 typedef struct _anon16;
 typedef struct _anon17;
@@ -241,7 +241,7 @@ typedef _anon53 type_154[16];
 typedef unsigned int type_156[8];
 typedef unsigned int type_157[32];
 typedef unsigned int type_158[4];
-typedef NJS_POINT3 type_159[32];
+
 typedef _anon0* type_162[512];
 
 typedef _anon0* type_164[128];

@@ -8,7 +8,7 @@ typedef struct _anon4;
 typedef struct _anon5;
 typedef struct _anon6;
 typedef struct _anon7;
-typedef struct NJS_POINT3;
+
 typedef struct _anon9;
 
 typedef void(*type_1)(BH_PWORK*);

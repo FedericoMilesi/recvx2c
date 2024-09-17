@@ -1,4 +1,4 @@
-typedef struct NJS_POINT3;
+
 typedef struct tagNJS_SCRVECTOR;
 typedef struct _anon1;
 

@@ -3,7 +3,7 @@ typedef struct tagVU1_PRIM_BUF;
 typedef struct _anon0;
 typedef struct _anon1;
 typedef struct _anon2;
-typedef struct NJS_POINT3;
+
 typedef struct _anon4;
 typedef struct _anon5;
 typedef struct _anon6;

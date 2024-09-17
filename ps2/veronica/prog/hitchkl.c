@@ -1,7 +1,7 @@
 typedef struct npobj;
 typedef struct _anon0;
 typedef struct _anon1;
-typedef struct NJS_POINT3;
+
 typedef struct _anon3;
 
 typedef struct _anon5;
@@ -95,7 +95,7 @@ typedef int type_45[4];
 typedef unsigned char* type_46[256];
 typedef unsigned int type_47[2];
 typedef short type_48[256];
-typedef NJS_POINT3 type_49[8];
+
 typedef _anon30 type_50[4];
 typedef float type_51[3];
 typedef short type_52[256];
@@ -152,8 +152,8 @@ typedef _anon33 type_103[16];
 typedef unsigned int type_104[8];
 typedef unsigned int type_105[32];
 typedef unsigned int type_106[4];
-typedef NJS_POINT3 type_107[4];
-typedef NJS_POINT3 type_108[32];
+
+
 typedef _anon1* type_109[512];
 typedef _anon1* type_110[128];
 typedef _anon1* type_111[512];

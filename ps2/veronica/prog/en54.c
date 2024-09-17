@@ -20,7 +20,7 @@ typedef struct _anon16;
 typedef struct _anon17;
 
 typedef struct _anon19;
-typedef struct NJS_POINT3;
+
 typedef struct _anon21;
 typedef struct _anon22;
 typedef struct _anon23;
@@ -41,7 +41,7 @@ typedef void(*type_65)(BH_PWORK*);
 typedef void(*type_75)(BH_PWORK*);
 typedef void(*type_82)(void*);
 
-typedef NJS_POINT3 type_0[32];
+
 typedef _anon0* type_1[512];
 typedef _anon0* type_2[128];
 typedef _anon0* type_3[128];

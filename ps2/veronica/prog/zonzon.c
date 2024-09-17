@@ -4,7 +4,7 @@ typedef struct BH_PWORK;
 typedef struct _anon1;
 typedef struct _anon2;
 
-typedef struct NJS_POINT3;
+
 typedef struct _anon5;
 typedef struct _anon6;
 typedef struct _anon7;
@@ -161,7 +161,7 @@ typedef _anon37 type_108[16];
 typedef unsigned int type_109[8];
 typedef unsigned int type_110[32];
 typedef unsigned int type_111[4];
-typedef NJS_POINT3 type_112[32];
+
 typedef _anon0* type_113[512];
 typedef _anon0* type_114[128];
 typedef _anon0* type_115[512];

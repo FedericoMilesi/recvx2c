@@ -1,7 +1,7 @@
 typedef struct npobj;
 typedef struct _anon0;
 typedef struct BH_PWORK;
-typedef struct NJS_POINT3;
+
 typedef struct _anon2;
 
 typedef struct _anon4;
@@ -176,7 +176,7 @@ typedef _anon38 type_121[16];
 typedef unsigned int type_122[8];
 typedef unsigned int type_123[32];
 typedef unsigned int type_124[4];
-typedef NJS_POINT3 type_125[32];
+
 typedef _anon0* type_126[512];
 typedef _anon0* type_127[128];
 typedef short type_128[22];

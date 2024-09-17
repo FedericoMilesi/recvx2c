@@ -22,7 +22,7 @@ typedef struct _anon18;
 typedef struct _anon19;
 typedef struct _anon20;
 
-typedef struct NJS_POINT3;
+
 typedef struct _anon23;
 typedef struct _anon24;
 
@@ -134,7 +134,7 @@ typedef unsigned char type_94[4];
 typedef _anon23 type_95[16];
 typedef unsigned int type_96[32];
 typedef float type_97[5];
-typedef NJS_POINT3 type_98[32];
+
 typedef int type_99[5];
 typedef _anon0* type_100[512];
 typedef _anon0* type_101[128];

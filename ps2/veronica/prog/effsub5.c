@@ -6,7 +6,7 @@ typedef struct _anon1;
 typedef struct tagEFF5SNOWGRP;
 typedef struct tagEFF5UV;
 typedef struct tagEFF5UVWH;
-typedef struct NJS_POINT3;
+
 typedef struct _anon4;
 typedef struct _anon5;
 typedef struct tagEFF5SNOWRECT;
@@ -188,9 +188,9 @@ typedef tagEFF5UV type_126[2];
 typedef char type_127[4];
 typedef _anon23 type_129[2];
 typedef unsigned int type_130[32];
-typedef NJS_POINT3 type_131[48];
+
 typedef tagEFF5UV type_132[16];
-typedef NJS_POINT3 type_133[48];
+
 typedef unsigned char type_134[256];
 typedef unsigned int type_135[16];
 typedef tagEFF5UV* type_136[2];
@@ -235,7 +235,7 @@ typedef unsigned int type_177[32];
 typedef tagEFF5UV type_178[16];
 typedef unsigned int type_179[4];
 typedef tagEFF5UV type_180[4];
-typedef NJS_POINT3 type_181[32];
+
 typedef _anon0* type_182[512];
 typedef _anon0* type_183[128];
 typedef tagEFF5UV type_184[6];

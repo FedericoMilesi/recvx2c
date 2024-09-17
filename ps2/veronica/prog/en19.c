@@ -6,7 +6,7 @@ typedef struct _anon2;
 typedef struct _anon3;
 typedef struct _anon4;
 typedef struct _anon5;
-typedef struct NJS_POINT3;
+
 
 typedef struct _anon8;
 typedef struct _anon9;
@@ -119,7 +119,7 @@ typedef char* type_39[4][2];
 typedef npobj* type_40[16];
 typedef _anon0* type_41[128];
 typedef int type_42[4];
-typedef NJS_POINT3 type_43[2];
+
 typedef int type_44[4];
 typedef _anon3* type_45[16];
 typedef int type_46[4][12];
@@ -181,7 +181,7 @@ typedef unsigned int type_105[8];
 typedef char type_106[12];
 typedef unsigned char type_107[450];
 typedef char type_108[24];
-typedef NJS_POINT3 type_109[4];
+
 typedef char type_110[1092];
 typedef char type_111[64];
 typedef char type_112[16];
@@ -225,7 +225,7 @@ typedef _anon39 type_154[16];
 typedef int type_155[3];
 typedef unsigned int type_156[32];
 typedef _anon2 type_157[17];
-typedef NJS_POINT3 type_158[32];
+
 typedef _anon0* type_159[512];
 typedef _anon55 type_160[26];
 typedef _anon0* type_161[128];

@@ -36,7 +36,7 @@ typedef struct _anon32;
 typedef struct _anon33;
 typedef struct _anon34;
 
-typedef struct NJS_POINT3;
+
 typedef struct _anon37;
 typedef struct _anon38;
 typedef struct _anon39;
@@ -67,7 +67,7 @@ typedef void(*type_141)(BH_PWORK*);
 typedef void(*type_153)(BH_PWORK*);
 
 typedef void(*type_0)(BH_PWORK*)[1];
-typedef NJS_POINT3 type_1[10];
+
 typedef unsigned int type_2[4];
 typedef _anon0* type_3[512];
 typedef _anon0* type_5[32];
@@ -116,7 +116,7 @@ typedef char type_48[6];
 typedef float type_49[4];
 typedef float type_50[4];
 typedef _anon5* type_51[128];
-typedef NJS_POINT3 type_52[4];
+
 typedef unsigned char type_53[64];
 typedef int type_54[16];
 
@@ -213,7 +213,7 @@ typedef _anon38 type_156[16];
 typedef unsigned int type_157[8];
 typedef unsigned int type_158[32];
 typedef unsigned int type_159[4];
-typedef NJS_POINT3 type_160[32];
+
 typedef _anon0* type_161[512];
 typedef _anon0* type_162[128];
 typedef _anon0* type_163[512];

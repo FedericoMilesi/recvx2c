@@ -1,4 +1,4 @@
-typedef struct NJS_POINT3;
+
 typedef struct cnkobj;
 typedef struct _anon1;
 typedef struct _anon2;

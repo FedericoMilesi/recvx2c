@@ -35,7 +35,7 @@ typedef struct _anon28;
 typedef struct tagCONFIGFILE;
 typedef struct _anon30;
 typedef struct _anon31;
-typedef struct NJS_POINT3;
+
 typedef struct _anon33;
 typedef struct tagSAVEFILE;
 typedef struct _anon34;
@@ -106,7 +106,7 @@ typedef char type_33[7];
 typedef unsigned int type_34[32];
 typedef _anon1* type_35[128];
 typedef char type_36[3];
-typedef NJS_POINT3 type_37[32];
+
 typedef char type_38[3];
 typedef _anon1* type_39[128];
 typedef unsigned char type_40[64];
