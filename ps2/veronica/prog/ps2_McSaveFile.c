@@ -37,7 +37,7 @@ typedef struct _anon21;
 typedef struct _anon22;
 typedef struct _anon23;
 
-typedef struct GDS_FS_DIRREC_TBL;
+
 typedef struct _anon25;
 typedef union _anon26;
 typedef struct _anon27;
@@ -1370,14 +1370,14 @@ struct _anon23
 
 
 
-struct GDS_FS_DIRREC_TBL
-{
-	int dir_num;
-	int max_ent;
-	int dir_fad;
-	int pad;
-	GDS_FS_DIRREC_ENT dirrec_tbl[1];
-};
+
+
+
+
+
+
+
+
 
 struct _anon25
 {

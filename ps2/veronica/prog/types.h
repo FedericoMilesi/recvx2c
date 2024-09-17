@@ -701,14 +701,14 @@ KeyRepeatInfo;
 
 
 
-typedef struct GDS_FS_DIRREC_TBL {
-	/*  0 */ int dir_num;
-	/*  4 */ int max_ent;
-	/*  8 */ int dir_fad;
-	/* 12 */ int pad;
-	/* 16 */ GDS_FS_DIRREC_ENT dirrec_tbl[1];
-}
-GDS_FS_DIRREC_TBL;
+
+
+
+
+
+
+
+
 
 
 

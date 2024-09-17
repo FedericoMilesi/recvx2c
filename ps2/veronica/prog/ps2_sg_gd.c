@@ -6,7 +6,7 @@ typedef struct _anon0;
 typedef struct _anon1;
 typedef struct _anon2;
 
-typedef struct GDS_FS_DIRREC_TBL;
+
 
 
 typedef void(*type_1)(void*);
@@ -119,14 +119,14 @@ struct _anon2
 
 
 
-struct GDS_FS_DIRREC_TBL
-{
-	int dir_num;
-	int max_ent;
-	int dir_fad;
-	int pad;
-	GDS_FS_DIRREC_ENT dirrec_tbl[1];
-};
+
+
+
+
+
+
+
+
 
 
 
