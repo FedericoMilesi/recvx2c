@@ -57,7 +57,7 @@ typedef struct _anon44;
 typedef struct _anon45;
 
 
-typedef struct _anon48;
+
 typedef struct _anon49;
 typedef struct _anon50;
 typedef struct _anon51;
@@ -1046,7 +1046,7 @@ struct _anon20
 	unsigned int ProgressCount;
 	unsigned int ProgressMax;
 	unsigned int Operation;
-	_anon48 DiskInfo;
+	BUS_DISKINFO DiskInfo;
 	unsigned int Connect;
 	void* Work;
 	unsigned int WorkSize;
@@ -1838,19 +1838,19 @@ struct _anon45
 
 
 
-struct _anon48
-{
-	unsigned char volume[32];
-	unsigned short total_blocks;
-	unsigned short total_user_blocks;
-	unsigned short free_blocks;
-	unsigned short free_user_blocks;
-	unsigned short total_exe_blocks;
-	unsigned short free_exe_blocks;
-	unsigned short block_size;
-	unsigned short icon_no;
-	BUS_TIME time;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon49
 {

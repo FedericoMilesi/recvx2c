@@ -566,19 +566,19 @@ Camera;
 
 
 
-typedef struct Disk {
-	/*  0 */ unsigned char volume[32];
-	/* 32 */ unsigned short total_blocks;
-	/* 34 */ unsigned short total_user_blocks;
-	/* 36 */ unsigned short free_blocks;
-	/* 38 */ unsigned short free_user_blocks;
-	/* 40 */ unsigned short total_exe_blocks;
-	/* 42 */ unsigned short free_exe_blocks;
-	/* 44 */ unsigned short block_size;
-	/* 46 */ unsigned short icon_no;
-	/* 48 */ BUS_TIME time;
-}
-Disk;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 typedef struct Drive {
@@ -588,7 +588,7 @@ typedef struct Drive {
 	/*  8 */ unsigned int ProgressCount;
 	/* 12 */ unsigned int ProgressMax;
 	/* 16 */ unsigned int Operation;
-	/* 20 */ Disk DiskInfo;
+	/* 20 */ BUS_DISKINFO DiskInfo;
 	/* 76 */ unsigned int Connect;
 	/* 80 */ void* Work;
 	/* 84 */ unsigned int WorkSize;

@@ -27,3 +27,4 @@
 | NJS_CAPSULE | Found on Katana | `<katana>/ninjastr.h` |
 | sceMcStDateTime | Found on SCE | `<sce>/ee/include/libmc.h` |
 | sceMcTblGetDir | Found on SCE | `<sce>/ee/include/libmc.h` |
+| BUS_DISKINFO | Found on Katana | `<katana>/sg_bup.h` |
