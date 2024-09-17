@@ -1,7 +1,7 @@
 #include "types.h"
 
 void syRtcFinish();
-int syRtcGetDate(_SYS_RTC_DATE* date);
+int syRtcGetDate(SYS_RTC_DATE* date);
 int syRtcInit();
 
 
@@ -58,7 +58,7 @@ void syRtcFinish() { } // Line 38, Address: 0x2ddf80
 
 
 /* 100% match */
-int syRtcGetDate(_SYS_RTC_DATE* date) { // Line 61, Address: 0x2ddf90
+int syRtcGetDate(SYS_RTC_DATE* date) { // Line 61, Address: 0x2ddf90
     sceCdCLOCK get_rtc;
     int temp; // not originally outputted by dwarf2cpp
 

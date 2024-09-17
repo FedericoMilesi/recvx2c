@@ -183,17 +183,17 @@ typedef struct sceCdCLOCK
 	unsigned char year;
 } sceCdCLOCK;
 
-typedef struct _SYS_RTC_DATE
-{
-	unsigned short year;
-	unsigned char month;
-	unsigned char day;
-	unsigned char hour;
-	unsigned char minute;
-	unsigned char second;
-	unsigned char dayofweek;
-	unsigned char ageofmoon;
-} _SYS_RTC_DATE;
+
+
+
+
+
+
+
+
+
+
+
 
 typedef struct _SYS_BT_SYSTEMID
 {

@@ -10,3 +10,4 @@
 | NJS_MATRIX | Found on Katana | `<katana>/ninjadef.h` |
 | sceMcIconSys | Found on SCE | `<sce>/ee/include/libmc.h` |
 | PDS_PERIPHERAL | Found on Katana | `<katana>/sg_pad.h` - `<katana>/ninjapad.h` |
+| SYS_RTC_DATE | Found on Katana | `<katana>/sg_syrtc.h` |

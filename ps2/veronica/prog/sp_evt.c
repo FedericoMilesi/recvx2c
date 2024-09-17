@@ -39,7 +39,7 @@ typedef struct _anon35;
 typedef struct _anon36;
 typedef struct _anon37;
 typedef struct NJS_POINT3;
-typedef struct _SYS_RTC_DATE;
+
 typedef struct _anon39;
 typedef struct _anon40;
 typedef struct _anon41;
@@ -1493,17 +1493,17 @@ struct _anon37
 
 
 
-struct _SYS_RTC_DATE
-{
-	unsigned short year;
-	unsigned char month;
-	unsigned char day;
-	unsigned char hour;
-	unsigned char minute;
-	unsigned char second;
-	unsigned char dayofweek;
-	unsigned char ageofmoon;
-};
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon39
 {
@@ -2475,7 +2475,7 @@ void bhDrawSpEvtComTime()
 	int sec;
 	int min;
 	int hour;
-	_SYS_RTC_DATE date;
+	SYS_RTC_DATE date;
 	// Line 807, Address: 0x2beff0, Func Offset: 0
 	// Line 811, Address: 0x2bf004, Func Offset: 0x14
 	// Line 812, Address: 0x2bf024, Func Offset: 0x34
