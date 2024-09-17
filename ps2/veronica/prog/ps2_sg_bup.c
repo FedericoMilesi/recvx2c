@@ -3,7 +3,7 @@ typedef struct _anon1;
 typedef struct _anon2;
 typedef struct _anon3;
 typedef struct _anon4;
-typedef struct _anon5;
+
 
 typedef int(*type_0)(int, int, int, unsigned int);
 typedef int(*type_1)(int, int, int, int);
@@ -22,7 +22,7 @@ struct _anon0
 	unsigned char type;
 	unsigned char copyflag;
 	unsigned short headerofs;
-	_anon5 time;
+	BUS_TIME time;
 };
 
 struct _anon1
@@ -75,16 +75,16 @@ struct _anon4
 	unsigned short Year;
 };
 
-struct _anon5
-{
-	unsigned short year;
-	unsigned char month;
-	unsigned char day;
-	unsigned char hour;
-	unsigned char minute;
-	unsigned char second;
-	unsigned char dayofweek;
-};
+
+
+
+
+
+
+
+
+
+
 
 unsigned short visula_size[4];
 int(*__bu_completecallback_func)(int, int, int, unsigned int);

@@ -55,7 +55,7 @@ typedef struct _anon41;
 typedef struct _anon43;
 typedef struct _anon44;
 typedef struct _anon45;
-typedef struct _anon46;
+
 
 typedef struct _anon48;
 typedef struct _anon49;
@@ -1817,16 +1817,16 @@ struct _anon45
 	short ax;
 };
 
-struct _anon46
-{
-	unsigned short year;
-	unsigned char month;
-	unsigned char day;
-	unsigned char hour;
-	unsigned char minute;
-	unsigned char second;
-	unsigned char dayofweek;
-};
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1849,7 +1849,7 @@ struct _anon48
 	unsigned short free_exe_blocks;
 	unsigned short block_size;
 	unsigned short icon_no;
-	_anon46 time;
+	BUS_TIME time;
 };
 
 struct _anon49
@@ -1930,7 +1930,7 @@ struct _anon54
 	unsigned char type;
 	unsigned char copyflag;
 	unsigned short headerofs;
-	_anon46 time;
+	BUS_TIME time;
 };
 
 char vmssyscmttbl[16];
