@@ -57,7 +57,7 @@ typedef struct _anon51;
 typedef struct tag_SYS_BT_SYSTEMID;
 typedef struct _anon52;
 
-typedef struct _anon54;
+
 
 typedef struct _anon56;
 typedef struct _anon57;
@@ -1310,15 +1310,15 @@ struct _anon52
 
 
 
-struct _anon54
-{
-	unsigned char unit;
-	unsigned char flag;
-	char power;
-	unsigned char freq;
-	unsigned char inc;
-	unsigned char reserved[3];
-};
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4806,7 +4806,7 @@ void SetEventVibrationMode(int Mode) { // Line 4840, Address: 0x297c10
 // Start address: 0x297c20
 void StartVibrationBasic(int PortNo, int AtrbId, int VibNo)
 {
-	_anon54 VibPrm;
+	PDS_VIBPARAM VibPrm;
 	// Line 4855, Address: 0x297c20, Func Offset: 0
 	// Line 4858, Address: 0x297c28, Func Offset: 0x8
 	// Line 4862, Address: 0x297c44, Func Offset: 0x24

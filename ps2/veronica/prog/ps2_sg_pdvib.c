@@ -1,5 +1,5 @@
 typedef struct _anon0;
-typedef struct _anon1;
+
 
 
 typedef char type_0[2];
@@ -21,15 +21,15 @@ struct _anon0
 	char data[2];
 };
 
-struct _anon1
-{
-	unsigned char unit;
-	unsigned char flag;
-	char power;
-	unsigned char freq;
-	unsigned char inc;
-	unsigned char reserved[3];
-};
+
+
+
+
+
+
+
+
+
 
 unsigned char Pad_vibe_call_num;
 unsigned char Ps2_pad_motor[6];
@@ -37,7 +37,7 @@ _anon0 Pad_act[20];
 
 int pdVibMxIsReady();
 int pdVibMxSetStopTime();
-int pdVibMxStart(_anon1* param);
+int pdVibMxStart(PDS_VIBPARAM* param);
 int pdVibMxStop();
 void Ps2_pad_actuater();
 void Ps2_pad_act_start(_anon0* pPact);
@@ -79,7 +79,7 @@ int pdVibMxSetStopTime()
 
 // 
 // Start address: 0x2dab80
-int pdVibMxStart(_anon1* param)
+int pdVibMxStart(PDS_VIBPARAM* param)
 {
 	_anon0* pPact;
 	unsigned char cnt;
