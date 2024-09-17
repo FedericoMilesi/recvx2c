@@ -1,6 +1,6 @@
 typedef struct npobj;
 typedef struct _anon0;
-typedef struct _anon1;
+
 typedef struct _anon2;
 
 
@@ -304,18 +304,18 @@ struct _anon0
 	int Dummy2;
 };
 
-struct _anon1
-{
-	unsigned int type;
-	unsigned int reserved[3];
-	unsigned char is_root;
-	unsigned char area_code;
-	unsigned char connector_dir[2];
-	char product_name[32];
-	char license[64];
-	unsigned short stdby_pow;
-	unsigned short max_pow;
-};
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon2
 {

@@ -17,7 +17,7 @@ typedef union _anon14;
 typedef struct _anon15;
 typedef struct _anon16;
 typedef struct _anon17;
-typedef struct _anon18;
+
 typedef struct _anon19;
 typedef struct _anon20;
 typedef struct _anon21;
@@ -728,18 +728,18 @@ struct _anon17
 	_anon57 keyf[16];
 };
 
-struct _anon18
-{
-	unsigned int type;
-	unsigned int reserved[3];
-	unsigned char is_root;
-	unsigned char area_code;
-	unsigned char connector_dir[2];
-	char product_name[32];
-	char license[64];
-	unsigned short stdby_pow;
-	unsigned short max_pow;
-};
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon19
 {

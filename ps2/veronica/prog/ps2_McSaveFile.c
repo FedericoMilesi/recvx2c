@@ -18,7 +18,7 @@ typedef struct _anon8;
 typedef struct tagSAVEFILE;
 typedef struct tagMEMORYCARDPORT;
 typedef struct _anon9;
-typedef struct _anon10;
+
 typedef struct tagMEMORYCARDSTATE;
 typedef struct _anon11;
 typedef struct tagICONINFORMATION;
@@ -590,18 +590,18 @@ struct _anon9
 	int ct3;
 };
 
-struct _anon10
-{
-	unsigned int type;
-	unsigned int reserved[3];
-	unsigned char is_root;
-	unsigned char area_code;
-	unsigned char connector_dir[2];
-	char product_name[32];
-	char license[64];
-	unsigned short stdby_pow;
-	unsigned short max_pow;
-};
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct tagMEMORYCARDSTATE
 {

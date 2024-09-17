@@ -26,7 +26,7 @@ typedef struct _anon21;
 typedef struct _anon23;
 
 typedef struct _anon25;
-typedef struct _anon26;
+
 
 typedef struct _anon28;
 typedef struct _anon29;
@@ -1053,18 +1053,18 @@ struct _anon25
 	short ax;
 };
 
-struct _anon26
-{
-	unsigned int type;
-	unsigned int reserved[3];
-	unsigned char is_root;
-	unsigned char area_code;
-	unsigned char connector_dir[2];
-	char product_name[32];
-	char license[64];
-	unsigned short stdby_pow;
-	unsigned short max_pow;
-};
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,6 +1,6 @@
 typedef struct _anon0;
 
-typedef struct _anon2;
+
 typedef struct _anon3;
 typedef struct _anon4;
 typedef struct _anon5;
@@ -75,18 +75,18 @@ struct _anon0
 
 
 
-struct _anon2
-{
-	unsigned int type;
-	unsigned int reserved[3];
-	unsigned char is_root;
-	unsigned char area_code;
-	unsigned char connector_dir[2];
-	char product_name[32];
-	char license[64];
-	unsigned short stdby_pow;
-	unsigned short max_pow;
-};
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon3
 {
@@ -142,7 +142,7 @@ unsigned char Pad_rdata2[32];
 unsigned char Pad_rdata1[32];
 unsigned char ChkCnt;
 unsigned char PadCnt;
-_anon2 pgp_info;
+PDS_PERIPHERALINFO pgp_info;
 unsigned int Pad_state[2];
 int SoftResetFlag;
 _anon3 Pad[0];
@@ -153,7 +153,7 @@ _anon6 Pad_status2;
 void pdInitPeripheral();
 void pdExitPeripheral();
 PDS_PERIPHERAL* pdGetPeripheral(unsigned int port);
-_anon2* pdGetPeripheralInfo();
+PDS_PERIPHERALINFO* pdGetPeripheralInfo();
 void pdSetMode();
 void Ps2_pad_read();
 void Ps2_Read_Key(PDS_PERIPHERAL* per, _anon0* pad_wk);
@@ -198,7 +198,7 @@ PDS_PERIPHERAL* pdGetPeripheral(unsigned int port)
 	unsigned char* pad_data;
 	_anon0* pad_wk;
 	PDS_PERIPHERAL pp;
-	_anon2 pp_info;
+	PDS_PERIPHERALINFO pp_info;
 	// Line 104, Address: 0x2d9cf0, Func Offset: 0
 	// Line 107, Address: 0x2d9d00, Func Offset: 0x10
 	// Line 108, Address: 0x2d9d08, Func Offset: 0x18
@@ -247,7 +247,7 @@ PDS_PERIPHERAL* pdGetPeripheral(unsigned int port)
 
 // 
 // Start address: 0x2d9e70
-_anon2* pdGetPeripheralInfo()
+PDS_PERIPHERALINFO* pdGetPeripheralInfo()
 {
 	int md;
 	int st;

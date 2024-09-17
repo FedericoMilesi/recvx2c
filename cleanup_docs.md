@@ -37,3 +37,4 @@
 | GDS_FS_DIRREC_TBL | Found on Katana | `<katana>/sg_gd.h` |
 | NJS_TEXNAME | Found on Katana | `<katana>/ninjastr.h` |
 | NJS_TEXLIST | Found on Katana | `<katana>/ninjastr.h` |
+| PDS_PERIPHERALINFO | Found on Katana | `<katana>/sg_pad.h` |

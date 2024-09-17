@@ -25,7 +25,7 @@ typedef struct _anon21;
 typedef struct _anon23;
 
 typedef struct _anon25;
-typedef struct _anon26;
+
 typedef struct _anon27;
 typedef struct _anon28;
 typedef struct _anon29;
@@ -741,18 +741,18 @@ struct _anon25
 	int param;
 };
 
-struct _anon26
-{
-	unsigned int type;
-	unsigned int reserved[3];
-	unsigned char is_root;
-	unsigned char area_code;
-	unsigned char connector_dir[2];
-	char product_name[32];
-	char license[64];
-	unsigned short stdby_pow;
-	unsigned short max_pow;
-};
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon27
 {
@@ -1720,7 +1720,7 @@ void bhControlEOR()
 // Start address: 0x2cad20
 void bhCheckPadPort()
 {
-	_anon26* info;
+	PDS_PERIPHERALINFO* info;
 	// Line 437, Address: 0x2cad20, Func Offset: 0
 	// Line 441, Address: 0x2cad28, Func Offset: 0x8
 	// Line 443, Address: 0x2cad30, Func Offset: 0x10

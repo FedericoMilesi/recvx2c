@@ -51,7 +51,7 @@ typedef struct _anon39;
 
 
 typedef struct _anon42;
-typedef struct _anon43;
+
 typedef struct _JOINT_PARE;
 typedef struct _anon44;
 typedef struct _ATTACK_COL_TBL;
@@ -1562,18 +1562,18 @@ struct _anon42
 	short ax;
 };
 
-struct _anon43
-{
-	unsigned int type;
-	unsigned int reserved[3];
-	unsigned char is_root;
-	unsigned char area_code;
-	unsigned char connector_dir[2];
-	char product_name[32];
-	char license[64];
-	unsigned short stdby_pow;
-	unsigned short max_pow;
-};
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _JOINT_PARE
 {

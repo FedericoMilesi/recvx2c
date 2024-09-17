@@ -757,18 +757,18 @@ LfOpen;
 
 
 
-typedef struct PeripheralInfo {
-	/*   0 */ unsigned int type;
-	/*   4 */ unsigned int reserved[3];
-	/*  16 */ unsigned char is_root;
-	/*  17 */ unsigned char area_code;
-	/*  18 */ unsigned char connector_dir[2];
-	/*  20 */ char product_name[32];
-	/*  52 */ char license[64];
-	/* 116 */ unsigned short stdby_pow;
-	/* 118 */ unsigned short max_pow;
-}
-PeripheralInfo;
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 typedef struct Peripheral {
@@ -787,7 +787,7 @@ typedef struct Peripheral {
 	/* 36 */ char* name;
 	/* 40 */ void* extend;
 	/* 44 */ unsigned int old;
-	/* 48 */ PeripheralInfo* info;
+	/* 48 */ PDS_PERIPHERALINFO* info;
 }
 Peripheral;
 
@@ -1825,18 +1825,18 @@ System;
 
 #define PDD_PLOGIC_NEGATIVE 1
 
-typedef struct PDS_PERIPHERALINFO
-{
-	unsigned int type;
-	unsigned int reserved[3];
-	unsigned char is_root;
-	unsigned char area_code;
-	unsigned char connector_dir[2];
-	char product_name[32];
-	char license[64];
-	unsigned short stdby_pow;
-	unsigned short max_pow;
-} PDS_PERIPHERALINFO;
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

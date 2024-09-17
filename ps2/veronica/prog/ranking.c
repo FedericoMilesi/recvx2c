@@ -41,7 +41,7 @@ typedef struct _anon28;
 typedef struct _anon30;
 typedef struct _anon31;
 
-typedef struct _anon33;
+
 typedef struct _anon34;
 typedef struct _anon35;
 
@@ -1410,18 +1410,18 @@ struct _anon31
 
 
 
-struct _anon33
-{
-	unsigned int type;
-	unsigned int reserved[3];
-	unsigned char is_root;
-	unsigned char area_code;
-	unsigned char connector_dir[2];
-	char product_name[32];
-	char license[64];
-	unsigned short stdby_pow;
-	unsigned short max_pow;
-};
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon34
 {
