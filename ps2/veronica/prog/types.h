@@ -750,11 +750,11 @@ LfOpen;
 
 
 
-typedef struct TextureList {
-	NJS_TEXNAME* textures;
-	unsigned int nbTexture;
-}
-TextureList;
+
+
+
+
+
 
 
 typedef struct PeripheralInfo {

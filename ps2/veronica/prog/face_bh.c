@@ -10,7 +10,7 @@ typedef struct _anon7;
 typedef struct _anon8;
 typedef struct _anon9;
 
-typedef struct _anon11;
+
 typedef struct _anon12;
 typedef struct npobj;
 typedef struct _anon13;
@@ -146,7 +146,7 @@ struct _anon5
 	unsigned int obj_num;
 	void* datP;
 	npobj* objP;
-	_anon11* texP;
+	NJS_TEXLIST* texP;
 	_anon12* owP;
 };
 
@@ -201,11 +201,11 @@ struct _anon9
 
 
 
-struct _anon11
-{
-	NJS_TEXNAME* textures;
-	unsigned int nbTexture;
-};
+
+
+
+
+
 
 struct _anon12
 {

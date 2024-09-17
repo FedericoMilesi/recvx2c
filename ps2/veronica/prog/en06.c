@@ -1,7 +1,7 @@
 typedef struct npobj;
 typedef struct _anon0;
 typedef struct BH_PWORK;
-typedef struct _anon1;
+
 
 typedef struct _anon3;
 typedef struct _anon4;
@@ -61,23 +61,23 @@ typedef void(*type_108)(void*);
 typedef unsigned int type_0[4];
 typedef _anon0* type_1[512];
 typedef _anon0* type_2[32];
-typedef _anon1* type_3[16];
+
 typedef _anon0* type_4[32];
 typedef _anon0* type_5[512];
-typedef _anon1* type_6[16][16];
-typedef _anon1* type_7[16][16][100];
+
+
 typedef char type_8[8];
 typedef _anon0* type_9[32];
 typedef _anon0* type_11[512];
 typedef void(*type_12)(BH_PWORK*)[1];
 typedef char type_13[8];
-typedef _anon1* type_14[1300];
+
 typedef char type_15[8][8];
 typedef char type_16[32];
 typedef float type_17[32];
 typedef _anon0* type_18[512];
 typedef int type_19[2];
-typedef _anon1* type_20[200];
+
 typedef char type_21[3];
 typedef short type_22[32];
 
@@ -86,14 +86,14 @@ typedef _anon0* type_26[128];
 typedef char type_27[3];
 typedef unsigned int type_28[1];
 typedef _anon9 type_29[256];
-typedef _anon1* type_30[8];
+
 typedef int* type_31[16];
 typedef _anon0* type_32[128];
 typedef _anon47 type_33[16];
 typedef npobj* type_34[16];
 typedef _anon0* type_35[128];
 typedef int type_36[4];
-typedef _anon1* type_37[16];
+
 typedef _anon7 type_38[21];
 typedef unsigned int type_39[4];
 typedef float type_40[4];
@@ -118,7 +118,7 @@ typedef char type_60[4];
 typedef int type_61[16];
 typedef unsigned int type_62[3];
 typedef void* type_63[2];
-typedef _anon1* type_64[256];
+
 typedef int type_65[4];
 typedef unsigned char* type_66[256];
 typedef unsigned int type_67[2];
@@ -132,7 +132,7 @@ typedef int type_74[3];
 typedef int type_75[8];
 typedef float type_76[3];
 typedef char type_77[2];
-typedef _anon1* type_78[256];
+
 typedef _anon11 type_79[256];
 
 typedef void(*type_82)(BH_PWORK*)[11];
@@ -182,7 +182,7 @@ typedef int* type_128[16];
 typedef char type_129[32];
 typedef npobj* type_130[16];
 typedef char type_131[64];
-typedef _anon1* type_132[16];
+
 typedef char type_133[4];
 typedef _anon14 type_134[16];
 typedef short type_135[4];
@@ -260,7 +260,7 @@ struct _anon0
 	unsigned int Dummy[1];
 	int* skp[16];
 	npobj* mbp[16];
-	_anon1* txp[16];
+	NJS_TEXLIST* txp[16];
 	_anon14 mdl[16];
 	_anon14* mlwP;
 	unsigned int mdl_no;
@@ -384,7 +384,7 @@ struct BH_PWORK
 	unsigned int Dummy[1];
 	int* skp[16];
 	npobj* mbp[16];
-	_anon1* txp[16];
+	NJS_TEXLIST* txp[16];
 	_anon14 mdl[16];
 	_anon14* mlwP;
 	unsigned int mdl_no;
@@ -474,11 +474,11 @@ struct BH_PWORK
 	unsigned int Dummy2[2];
 };
 
-struct _anon1
-{
-	NJS_TEXNAME* textures;
-	unsigned int nbTexture;
-};
+
+
+
+
+
 
 
 
@@ -680,7 +680,7 @@ struct _anon14
 	unsigned int obj_num;
 	void* datP;
 	npobj* objP;
-	_anon1* texP;
+	NJS_TEXLIST* texP;
 	_anon4* owP;
 };
 
@@ -929,11 +929,11 @@ struct _anon23
 	char pos_nob;
 	char rcase_b;
 	unsigned int en_flg[4];
-	_anon1* et_lp[16][16][100];
-	_anon1* ot_lp[1300];
-	_anon1* it_lp[200];
+	NJS_TEXLIST* et_lp[16][16][100];
+	NJS_TEXLIST* ot_lp[1300];
+	NJS_TEXLIST* it_lp[200];
 	int eft_n;
-	_anon1* eft_lp[8];
+	NJS_TEXLIST* eft_lp[8];
 	int loop_ct;
 	int loop_now;
 	int cng_pid;
@@ -1028,17 +1028,17 @@ struct _anon23
 	void* mes_tp;
 	short txr_n;
 	short txr_ct;
-	_anon1* txlp[256];
+	NJS_TEXLIST* txlp[256];
 	unsigned char* txdp[256];
 	short txloff[256];
 	short txb_ct;
 	short txb_n;
 	short txb[256];
-	_anon1* txblp[256];
+	NJS_TEXLIST* txblp[256];
 	_anon11 txbp[256];
 	unsigned char* ef_psp;
 	NJS_TEXNAME ef_tex[450];
-	_anon1 ef_tlist;
+	NJS_TEXLIST ef_tlist;
 	_anon41 ef;
 	short efid[256];
 	_anon14 efm[450];
@@ -1094,7 +1094,7 @@ struct _anon23
 	unsigned int ren_gid;
 	_anon24 ren_info;
 	NJS_TEXNAME ren_tex[1];
-	_anon1 ren_tlist;
+	NJS_TEXLIST ren_tlist;
 	_anon9 rpb[256];
 	int ren_n;
 	int ren_idx[4];
@@ -1194,7 +1194,7 @@ struct _anon23
 	void* sb_rdp;
 	void* sb_mlb;
 	void* sb_ppp;
-	_anon1* sb_tlist;
+	NJS_TEXLIST* sb_tlist;
 	int ddmd;
 	_anon19 door;
 	int mpmd;

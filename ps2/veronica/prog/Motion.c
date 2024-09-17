@@ -7,7 +7,7 @@ typedef struct _anon3;
 
 typedef struct _anon5;
 typedef struct _anon6;
-typedef struct _anon7;
+
 typedef struct _anon8;
 typedef struct _anon9;
 
@@ -32,7 +32,7 @@ typedef unsigned int type_14[1];
 typedef unsigned int type_15[2];
 typedef int* type_16[16];
 typedef npobj* type_17[16];
-typedef _anon7* type_18[16];
+
 typedef _anon9 type_19[16];
 typedef unsigned char type_20[64];
 
@@ -103,7 +103,7 @@ struct BH_PWORK
 	unsigned int Dummy[1];
 	int* skp[16];
 	npobj* mbp[16];
-	_anon7* txp[16];
+	NJS_TEXLIST* txp[16];
 	_anon9 mdl[16];
 	_anon9* mlwP;
 	unsigned int mdl_no;
@@ -235,11 +235,11 @@ struct _anon6
 	NJS_MATRIX mtx;
 };
 
-struct _anon7
-{
-	NJS_TEXNAME* textures;
-	unsigned int nbTexture;
-};
+
+
+
+
+
 
 struct _anon8
 {
@@ -255,7 +255,7 @@ struct _anon9
 	unsigned int obj_num;
 	void* datP;
 	npobj* objP;
-	_anon7* texP;
+	NJS_TEXLIST* texP;
 	_anon6* owP;
 };
 

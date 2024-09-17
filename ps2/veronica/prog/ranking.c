@@ -2,7 +2,7 @@ typedef struct npobj;
 typedef struct _anon0;
 typedef struct tagSYSSAVE_SCREEN;
 typedef struct tagCONFIGFILE;
-typedef struct _anon1;
+
 
 typedef struct _anon3;
 typedef struct _anon4;
@@ -53,19 +53,19 @@ typedef unsigned int type_0[4];
 typedef _anon0* type_1[512];
 typedef char type_2[50];
 typedef _anon0* type_3[32];
-typedef _anon1* type_4[16];
+
 typedef _anon0* type_5[32];
 typedef _anon0* type_6[512];
-typedef _anon1* type_7[16][16];
-typedef _anon1* type_8[16][16][100];
+
+
 typedef char type_9[8];
 typedef char type_10[32];
 typedef _anon0* type_11[32];
 typedef _anon0* type_12[512];
-typedef _anon1* type_13[1300];
+
 typedef char type_14[32];
 typedef _anon0* type_15[512];
-typedef _anon1* type_16[200];
+
 typedef short type_17[32];
 
 typedef int type_19[8];
@@ -73,13 +73,13 @@ typedef _anon0* type_20[128];
 typedef tagMEMORYCARDPORT type_21[2];
 typedef unsigned int type_22[1];
 typedef _anon4 type_23[256];
-typedef _anon1* type_24[8];
+
 typedef int* type_25[16];
 typedef _anon0* type_26[128];
 typedef npobj* type_27[16];
 typedef _anon0* type_28[128];
 typedef int type_29[4];
-typedef _anon1* type_30[16];
+
 typedef unsigned int type_31[4];
 typedef _anon9 type_32[16];
 typedef _anon0* type_33[512];
@@ -98,7 +98,7 @@ typedef char type_46[8];
 typedef void* type_47[2];
 typedef int type_48[4][4];
 typedef float type_49[4][3];
-typedef _anon1* type_50[256];
+
 typedef float type_51[4][3];
 typedef int type_52[4];
 typedef unsigned char* type_53[256];
@@ -121,7 +121,7 @@ typedef unsigned int type_69[16];
 typedef float type_70[3];
 typedef unsigned char type_71[512];
 typedef unsigned int type_72[8];
-typedef _anon1* type_73[256];
+
 typedef unsigned int type_74[384];
 typedef _anon8 type_75[256];
 typedef unsigned int type_76[4];
@@ -168,7 +168,7 @@ typedef unsigned int type_117[4];
 typedef char type_118[32];
 typedef npobj* type_119[16];
 typedef char type_120[64];
-typedef _anon1* type_121[16];
+
 typedef char type_122[4];
 typedef _anon9 type_123[16];
 typedef short type_124[4];
@@ -248,7 +248,7 @@ struct _anon0
 	unsigned int Dummy[1];
 	int* skp[16];
 	npobj* mbp[16];
-	_anon1* txp[16];
+	NJS_TEXLIST* txp[16];
 	_anon9 mdl[16];
 	_anon9* mlwP;
 	unsigned int mdl_no;
@@ -356,11 +356,11 @@ struct tagCONFIGFILE
 	unsigned int Check_Sam;
 };
 
-struct _anon1
-{
-	NJS_TEXNAME* textures;
-	unsigned int nbTexture;
-};
+
+
+
+
+
 
 
 
@@ -396,7 +396,7 @@ struct _anon4
 struct _anon5
 {
 	NJS_TEXNAME rktx[2];
-	_anon1 rktx_list;
+	NJS_TEXLIST rktx_list;
 	int hour;
 	int min;
 	int sec;
@@ -489,7 +489,7 @@ struct _anon9
 	unsigned int obj_num;
 	void* datP;
 	npobj* objP;
-	_anon1* texP;
+	NJS_TEXLIST* texP;
 	_anon21* owP;
 };
 
@@ -671,11 +671,11 @@ struct _anon13
 	char pos_nob;
 	char rcase_b;
 	unsigned int en_flg[4];
-	_anon1* et_lp[16][16][100];
-	_anon1* ot_lp[1300];
-	_anon1* it_lp[200];
+	NJS_TEXLIST* et_lp[16][16][100];
+	NJS_TEXLIST* ot_lp[1300];
+	NJS_TEXLIST* it_lp[200];
 	int eft_n;
-	_anon1* eft_lp[8];
+	NJS_TEXLIST* eft_lp[8];
 	int loop_ct;
 	int loop_now;
 	int cng_pid;
@@ -770,17 +770,17 @@ struct _anon13
 	void* mes_tp;
 	short txr_n;
 	short txr_ct;
-	_anon1* txlp[256];
+	NJS_TEXLIST* txlp[256];
 	unsigned char* txdp[256];
 	short txloff[256];
 	short txb_ct;
 	short txb_n;
 	short txb[256];
-	_anon1* txblp[256];
+	NJS_TEXLIST* txblp[256];
 	_anon8 txbp[256];
 	unsigned char* ef_psp;
 	NJS_TEXNAME ef_tex[450];
-	_anon1 ef_tlist;
+	NJS_TEXLIST ef_tlist;
 	_anon30 ef;
 	short efid[256];
 	_anon9 efm[450];
@@ -836,7 +836,7 @@ struct _anon13
 	unsigned int ren_gid;
 	_anon15 ren_info;
 	NJS_TEXNAME ren_tex[1];
-	_anon1 ren_tlist;
+	NJS_TEXLIST ren_tlist;
 	_anon4 rpb[256];
 	int ren_n;
 	int ren_idx[4];
@@ -936,7 +936,7 @@ struct _anon13
 	void* sb_rdp;
 	void* sb_mlb;
 	void* sb_ppp;
-	_anon1* sb_tlist;
+	NJS_TEXLIST* sb_tlist;
 	int ddmd;
 	_anon11 door;
 	int mpmd;
@@ -1194,7 +1194,7 @@ struct BH_PWORK
 	unsigned int Dummy[1];
 	int* skp[16];
 	npobj* mbp[16];
-	_anon1* txp[16];
+	NJS_TEXLIST* txp[16];
 	_anon9 mdl[16];
 	_anon9* mlwP;
 	unsigned int mdl_no;

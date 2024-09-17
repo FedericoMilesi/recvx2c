@@ -2,7 +2,7 @@ typedef struct npobj;
 typedef struct _anon0;
 typedef struct _anon1;
 typedef struct _anon2;
-typedef struct _anon3;
+
 
 typedef struct _anon5;
 typedef struct _anon6;
@@ -53,30 +53,30 @@ typedef void(*type_87)(void*);
 typedef unsigned int type_0[4];
 typedef _anon0* type_1[512];
 typedef _anon0* type_2[32];
-typedef _anon3* type_3[16];
+
 typedef _anon0* type_4[32];
 typedef _anon0* type_5[512];
-typedef _anon3* type_6[16][16];
-typedef _anon3* type_7[16][16][100];
+
+
 typedef char type_8[8];
 typedef _anon0* type_9[32];
 typedef _anon0* type_10[512];
-typedef _anon3* type_11[1300];
+
 typedef char type_12[32];
 typedef _anon0* type_13[512];
-typedef _anon3* type_14[200];
+
 typedef short type_15[32];
 
 typedef _anon0* type_17[128];
 typedef unsigned int type_18[1];
 typedef _anon9 type_19[256];
-typedef _anon3* type_20[8];
+
 typedef int* type_21[16];
 typedef _anon0* type_22[128];
 typedef npobj* type_23[16];
 typedef _anon0* type_24[128];
 typedef int type_25[4];
-typedef _anon3* type_26[16];
+
 typedef unsigned int type_27[4];
 typedef _anon12 type_28[16];
 typedef _anon0* type_29[512];
@@ -92,7 +92,7 @@ typedef char type_38[8];
 
 typedef void* type_40[2];
 typedef _anon41 type_41[0];
-typedef _anon3* type_42[256];
+
 typedef int type_43[4];
 typedef unsigned char* type_44[256];
 typedef unsigned int type_45[2];
@@ -104,7 +104,7 @@ typedef short type_50[256];
 typedef int type_51[3];
 typedef int type_52[8];
 typedef float type_53[3];
-typedef _anon3* type_54[256];
+
 typedef _anon11 type_55[256];
 typedef int type_56[3];
 typedef _anon6 type_57[0];
@@ -161,7 +161,7 @@ typedef unsigned int type_109[4];
 typedef char type_110[32];
 typedef npobj* type_111[16];
 typedef char type_112[64];
-typedef _anon3* type_113[16];
+
 typedef char type_114[4];
 typedef _anon12 type_115[16];
 typedef short type_116[4];
@@ -239,7 +239,7 @@ struct _anon0
 	unsigned int Dummy[1];
 	int* skp[16];
 	npobj* mbp[16];
-	_anon3* txp[16];
+	NJS_TEXLIST* txp[16];
 	_anon12 mdl[16];
 	_anon12* mlwP;
 	unsigned int mdl_no;
@@ -331,7 +331,7 @@ struct _anon1
 struct _anon2
 {
 	NJS_TEXNAME subtx[5];
-	_anon3 subtx_list;
+	NJS_TEXLIST subtx_list;
 	unsigned short subscreenmode;
 	unsigned int statusflg;
 	unsigned short testmode;
@@ -382,11 +382,11 @@ struct _anon2
 	unsigned char* subp;
 };
 
-struct _anon3
-{
-	NJS_TEXNAME* textures;
-	unsigned int nbTexture;
-};
+
+
+
+
+
 
 
 
@@ -473,7 +473,7 @@ struct _anon12
 	unsigned int obj_num;
 	void* datP;
 	npobj* objP;
-	_anon3* texP;
+	NJS_TEXLIST* texP;
 	_anon26* owP;
 };
 
@@ -693,11 +693,11 @@ struct _anon24
 	char pos_nob;
 	char rcase_b;
 	unsigned int en_flg[4];
-	_anon3* et_lp[16][16][100];
-	_anon3* ot_lp[1300];
-	_anon3* it_lp[200];
+	NJS_TEXLIST* et_lp[16][16][100];
+	NJS_TEXLIST* ot_lp[1300];
+	NJS_TEXLIST* it_lp[200];
 	int eft_n;
-	_anon3* eft_lp[8];
+	NJS_TEXLIST* eft_lp[8];
 	int loop_ct;
 	int loop_now;
 	int cng_pid;
@@ -792,17 +792,17 @@ struct _anon24
 	void* mes_tp;
 	short txr_n;
 	short txr_ct;
-	_anon3* txlp[256];
+	NJS_TEXLIST* txlp[256];
 	unsigned char* txdp[256];
 	short txloff[256];
 	short txb_ct;
 	short txb_n;
 	short txb[256];
-	_anon3* txblp[256];
+	NJS_TEXLIST* txblp[256];
 	_anon11 txbp[256];
 	unsigned char* ef_psp;
 	NJS_TEXNAME ef_tex[450];
-	_anon3 ef_tlist;
+	NJS_TEXLIST ef_tlist;
 	_anon37 ef;
 	short efid[256];
 	_anon12 efm[450];
@@ -858,7 +858,7 @@ struct _anon24
 	unsigned int ren_gid;
 	_anon17 ren_info;
 	NJS_TEXNAME ren_tex[1];
-	_anon3 ren_tlist;
+	NJS_TEXLIST ren_tlist;
 	_anon9 rpb[256];
 	int ren_n;
 	int ren_idx[4];
@@ -958,7 +958,7 @@ struct _anon24
 	void* sb_rdp;
 	void* sb_mlb;
 	void* sb_ppp;
-	_anon3* sb_tlist;
+	NJS_TEXLIST* sb_tlist;
 	int ddmd;
 	_anon14 door;
 	int mpmd;
@@ -1113,7 +1113,7 @@ struct BH_PWORK
 	unsigned int Dummy[1];
 	int* skp[16];
 	npobj* mbp[16];
-	_anon3* txp[16];
+	NJS_TEXLIST* txp[16];
 	_anon12 mdl[16];
 	_anon12* mlwP;
 	unsigned int mdl_no;
@@ -1251,9 +1251,9 @@ struct _anon33
 {
 	_anon25 col;
 	NJS_TEXNAME fstx[1];
-	_anon3 fstx_list;
+	NJS_TEXLIST fstx_list;
 	NJS_TEXNAME fbtx[1];
-	_anon3 fbtx_list;
+	NJS_TEXLIST fbtx_list;
 	int afsmode;
 	int ang00;
 	int mode_00;
