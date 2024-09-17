@@ -208,7 +208,7 @@ typedef void* type_128[2];
 typedef _anon42* type_130[128];
 typedef unsigned int type_131[1];
 typedef _anon10* type_132[8];
-typedef SDE_DATA_TYPE type_133[5];
+
 typedef int type_134[2];
 typedef int* type_135[16];
 typedef _anon42* type_136[512];
