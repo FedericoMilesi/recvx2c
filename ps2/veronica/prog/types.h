@@ -651,15 +651,15 @@ KeyRepeatInfo;
 
 
 
-typedef struct GDS_FS_DIRREC_ENT {
-	/*  0 */ int fad;
-	/*  4 */ int fsize;
-	/*  8 */ unsigned char flag;
-	/*  9 */ unsigned char sid;
-	/* 10 */ char fname[32];
-	/* 42 */ char pad[2];
-}
-GDS_FS_DIRREC_ENT;
+
+
+
+
+
+
+
+
+
 
 
 typedef struct GDS_FS_DIRINFO {

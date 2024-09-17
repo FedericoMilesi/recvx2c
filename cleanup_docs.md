@@ -31,3 +31,4 @@
 | PDS_VIBPARAM | Found on Katana | `<katana>/sg_pdvib.h` |
 | GDS_DCF | Found on Katana | `<katana>/sg_gd.h` |
 | GDS_FS_LIF | Found on Katana | `<katana>/sg_gd.h` |
+| GDS_FS_DIRREC_ENT | Found on Katana | `<katana>/sg_gd.h` |

@@ -31,7 +31,7 @@ typedef struct _anon16;
 
 typedef struct _anon18;
 typedef struct _anon19;
-typedef struct GDS_FS_DIRREC_ENT;
+
 
 typedef struct _anon21;
 typedef struct _anon22;
@@ -162,7 +162,7 @@ typedef float type_102[4][3];
 typedef unsigned int type_103[8];
 typedef unsigned char type_104[450];
 typedef _anon16 type_105[4];
-typedef GDS_FS_DIRREC_ENT type_106[1];
+
 typedef void* type_107[2];
 typedef char type_108[16];
 typedef char type_109[4];
@@ -1267,15 +1267,15 @@ struct _anon19
 	float r2;
 };
 
-struct GDS_FS_DIRREC_ENT
-{
-	int fad;
-	int fsize;
-	unsigned char flag;
-	unsigned char sid;
-	char fname[32];
-	char pad[2];
-};
+
+
+
+
+
+
+
+
+
 
 
 

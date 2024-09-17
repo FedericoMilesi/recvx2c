@@ -5,7 +5,7 @@ typedef struct GDS_FS_WORK;
 typedef struct GDS_FS_HANDLE;
 typedef struct _anon1;
 typedef struct _anon2;
-typedef struct GDS_FS_DIRREC_ENT;
+
 typedef struct GDS_FS_DIRREC_TBL;
 typedef struct GDS_FS_DIRINFO;
 
@@ -23,7 +23,7 @@ typedef _anon1 type_8[0];
 typedef char type_9[256];
 typedef char type_10[32];
 typedef char type_11[2];
-typedef GDS_FS_DIRREC_ENT type_12[1];
+
 typedef unsigned char type_13[3];
 typedef char type_14[256];
 typedef unsigned int type_16[1040];
@@ -109,15 +109,15 @@ struct _anon2
 	unsigned char date[8];
 };
 
-struct GDS_FS_DIRREC_ENT
-{
-	int fad;
-	int fsize;
-	unsigned char flag;
-	unsigned char sid;
-	char fname[32];
-	char pad[2];
-};
+
+
+
+
+
+
+
+
+
 
 struct GDS_FS_DIRREC_TBL
 {
