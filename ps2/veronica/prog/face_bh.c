@@ -49,7 +49,7 @@ typedef float type_29[4];
 typedef npobj* type_30[256];
 typedef cnkobj* type_31[256];
 typedef cnkobj* type_32[256];
-typedef NJS_POINT3* type_33[32];
+
 typedef float type_34[32];
 
 

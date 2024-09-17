@@ -176,7 +176,7 @@ typedef void* type_74[2];
 typedef _anon57 type_75[8];
 
 
-typedef NJS_POINT3 type_78[2][16];
+
 typedef _anon2 type_79[1];
 typedef unsigned int type_80[2];
 typedef unsigned int type_81[2][16];
@@ -294,7 +294,7 @@ typedef _anon1* type_202[512];
 typedef int type_203[6];
 
 typedef _anon1* type_205[128];
-typedef NJS_POINT3* type_206[6];
+
 
 typedef _anon2 type_208[1];
 

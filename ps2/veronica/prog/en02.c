@@ -120,8 +120,8 @@ typedef float type_59[3];
 typedef float type_60[3][20];
 typedef float type_61[3];
 typedef float type_62[3][20];
-typedef NJS_POINT3* type_63[3];
-typedef NJS_POINT3* type_64[3][3];
+
+
 typedef char type_65[8];
 typedef float type_66[3];
 

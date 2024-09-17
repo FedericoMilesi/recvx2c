@@ -136,9 +136,9 @@ typedef char type_80[4];
 
 typedef int type_82[3];
 
-typedef NJS_POINT3* type_84[3];
+
 typedef int type_85[450];
-typedef NJS_POINT3* type_86[3][3];
+
 typedef unsigned int type_87[8];
 typedef unsigned char type_88[450];
 typedef float type_89[128];

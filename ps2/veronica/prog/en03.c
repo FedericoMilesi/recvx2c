@@ -90,7 +90,7 @@ typedef _anon47 type_27[16];
 typedef npobj* type_28[16];
 
 typedef _anon1* type_30[128];
-typedef NJS_POINT3 type_31[2][4];
+
 typedef int type_32[4];
 typedef _anon3* type_33[16];
 typedef unsigned int type_34[4];
@@ -184,7 +184,7 @@ typedef void(*type_127)(BH_PWORK*)[3];
 typedef unsigned int type_128[1];
 typedef unsigned int type_129[384];
 
-typedef NJS_POINT3 type_131[2][4];
+
 typedef unsigned int type_132[2];
 typedef int type_133[3];
 typedef unsigned char type_134[2];

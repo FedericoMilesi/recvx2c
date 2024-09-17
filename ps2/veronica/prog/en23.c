@@ -120,14 +120,14 @@ typedef char type_57[8];
 typedef char type_58[2];
 typedef char type_59[2][2];
 typedef int type_60[2];
-typedef NJS_POINT3* type_61[3];
-typedef NJS_POINT3* type_62[3][3];
+
+
 typedef void* type_63[2];
 typedef int type_64[2];
 typedef int type_65[2];
 typedef float type_66[2];
 typedef int type_67[2][2];
-typedef NJS_POINT3* type_68[2];
+
 typedef _anon1* type_69[256];
 typedef int type_70[4];
 typedef unsigned char* type_71[256];
