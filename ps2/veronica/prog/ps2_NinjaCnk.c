@@ -13,7 +13,7 @@ typedef struct _anon8;
 
 typedef struct tagCNK_PRIM_BUF;
 typedef struct _anon10;
-typedef struct _anon11;
+
 typedef struct tagCNK_LIGHT;
 typedef struct _anon12;
 typedef struct _anon13;
@@ -211,20 +211,20 @@ struct _anon10
 	float w;
 };
 
-struct _anon11
-{
-	NJS_CLIP_BUF a;
-	float sx;
-	float sy;
-	float oow;
-	NJS_POINT3 point;
-	unsigned int reserve;
-	float u;
-	float v;
-	float inten[2];
-	NJS_POINT3 vector;
-	unsigned int flag;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct tagCNK_LIGHT
 {
@@ -534,7 +534,7 @@ void(*vu1DrawTriangleStripTransDouble)(unsigned long, tagVU1_STRIP_BUF*, unsigne
 unsigned int ulDrawGeneralPurposeWater;
 unsigned int njCnkConvTest;
 
-void njInit3D(_anon11* pBufferTop, int iBufferMax);
+void njInit3D(NJS_VERTEX_BUF* pBufferTop, int iBufferMax);
 void njDrawModel(_anon18* pModel);
 void njControl3D(unsigned int ulFlag);
 void njSetConstantAttr(unsigned int ulAnd, unsigned int ulOr);

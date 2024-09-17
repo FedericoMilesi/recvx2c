@@ -1,7 +1,7 @@
 typedef struct _anon0;
 typedef struct _anon1;
 typedef struct _anon2;
-typedef struct _anon3;
+
 typedef struct _anon4;
 typedef struct _anon5;
 
@@ -159,20 +159,20 @@ struct _anon2
 	};
 };
 
-struct _anon3
-{
-	NJS_CLIP_BUF a;
-	float sx;
-	float sy;
-	float oow;
-	NJS_POINT3 point;
-	unsigned int reserve;
-	float u;
-	float v;
-	float inten[2];
-	NJS_POINT3 vector;
-	unsigned int flag;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon4
 {
@@ -715,7 +715,7 @@ NJS_MATRIX cmmat[2];
 NJS_MATRIX crmat;
 unsigned char* _BSG_END;
 int _nj_tex_count;
-_anon3* _nj_vertex_buf_;
+NJS_VERTEX_BUF* _nj_vertex_buf_;
 unsigned int _nj_control_3d_flag_;
 _anon28 _nj_screen_;
 unsigned char Ps2_DRAW_TMP[16384];

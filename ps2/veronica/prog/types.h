@@ -467,20 +467,20 @@ typedef struct Unknown21
 
 
 
-typedef struct VertexBuffer {
-	/*  0 */ NJS_CLIP_BUF a;
-    /*  4 */ float sx;
-    /*  8 */ float sy;
-    /* 12 */ float oow;
-    /* 16 */ Vector3 point;
-    /* 28 */ unsigned int reserve;
-    /* 32 */ float u;
-    /* 36 */ float v;
-    /* 40 */ float inten[2];
-    /* 48 */ Vector3 vector;
-    /* 60 */ unsigned int flag;
-}
-VertexBuffer;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 typedef struct Camera {
