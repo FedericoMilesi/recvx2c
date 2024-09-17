@@ -202,13 +202,13 @@ typedef struct Unknown31
 
 
 
-typedef enum SYE_CBL_TAG
-{
-	SYE_CBL_NTSC,
-	SYE_CBL_VGA,
-	SYE_CBL_PAL,
-	SYE_CBL_MAX
-} SYE_CBL_TAG;
+
+
+
+
+
+
+
 
 typedef struct SNDQUE
 {
