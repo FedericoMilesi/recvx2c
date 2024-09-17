@@ -171,17 +171,17 @@ typedef struct Unknown31
 	float w;
 } Unknown31;
 
-typedef struct sceCdCLOCK
-{
-	unsigned char stat;
-	unsigned char second;
-	unsigned char minute;
-	unsigned char hour;
-	unsigned char pad;
-	unsigned char day;
-	unsigned char month;
-	unsigned char year;
-} sceCdCLOCK;
+
+
+
+
+
+
+
+
+
+
+
 
 
 
