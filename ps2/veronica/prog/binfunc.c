@@ -5,7 +5,7 @@ typedef struct _anon3;
 typedef struct _anon4;
 typedef struct _anon5;
 typedef union _anon6;
-typedef struct _anon7;
+
 typedef struct _anon8;
 typedef struct npobj;
 typedef struct _anon9;
@@ -74,11 +74,11 @@ union _anon6
 	_anon5 argb;
 };
 
-struct _anon7
-{
-	NJS_TEXNAME* textures;
-	unsigned int nbTexture;
-};
+
+
+
+
+
 
 struct _anon8
 {
@@ -113,7 +113,7 @@ struct _anon10
 	unsigned int obj_num;
 	void* datP;
 	npobj* objP;
-	_anon7* texP;
+	NJS_TEXLIST* texP;
 	_anon8* owP;
 };
 

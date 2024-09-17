@@ -1,6 +1,6 @@
 typedef struct _anon0;
 typedef struct _anon1;
-typedef struct _anon2;
+
 
 typedef struct _anon4;
 
@@ -35,11 +35,11 @@ struct _anon1
 	unsigned short dummy;
 };
 
-struct _anon2
-{
-	NJS_TEXNAME* textures;
-	unsigned int nbTexture;
-};
+
+
+
+
+
 
 
 
@@ -173,7 +173,7 @@ _anon4 Ps2_tm_list_last;
 _anon4 Ps2_tm_list_1st;
 void* Ps2_tex_buff;
 unsigned int Ps2_current_texno;
-_anon2* Ps2_current_texlist;
+NJS_TEXLIST* Ps2_current_texlist;
 _anon1* Ps2_current_texmemlist;
 char*(*index)(char*, int);
 unsigned int Ps2_render_width;
@@ -189,7 +189,7 @@ int Ps2_3DEx_trans;
 unsigned int Ps2_quad_color;
 int Ps2_quad_trans;
 unsigned int Ps2_current_texno_bk;
-_anon2* Ps2_current_texlist_bk;
+NJS_TEXLIST* Ps2_current_texlist_bk;
 
 void Ps2MemCopy4(void* vpDst, void* vpSrc, int lNum);
 void njInitTextureBuffer();
@@ -197,13 +197,13 @@ void njInitTexture(_anon1* addr, unsigned int n);
 void njExitTexture();
 int SearchNumber(unsigned int global_index, unsigned int bank);
 int SearchNullNumber();
-int njLoadTexture(_anon2* texlist);
-int njSetTexture(_anon2* texlist);
+int njLoadTexture(NJS_TEXLIST* texlist);
+int njSetTexture(NJS_TEXLIST* texlist);
 int njSetTextureNum(unsigned int n);
 int njSetTextureNumG(unsigned int globalIndex);
 int njSetTextureNumSys(unsigned int n);
 void njReleaseTextureAll();
-int njReleaseTexture(_anon2* texlist);
+int njReleaseTexture(NJS_TEXLIST* texlist);
 unsigned int njCalcTexture();
 void njSetTextureInfo(_anon0* info, unsigned short* tex, int Type, int nWidth, int nHeight);
 void njSetTextureName(NJS_TEXNAME* texname, void* addr, unsigned int globalIndex, unsigned int attr);
@@ -352,7 +352,7 @@ int SearchNullNumber()
 
 // 
 // Start address: 0x2e1e40
-int njLoadTexture(_anon2* texlist)
+int njLoadTexture(NJS_TEXLIST* texlist)
 {
 	_anon1* addr;
 	unsigned int attr;
@@ -431,7 +431,7 @@ int njLoadTexture(_anon2* texlist)
 
 // 
 // Start address: 0x2e2150
-int njSetTexture(_anon2* texlist)
+int njSetTexture(NJS_TEXLIST* texlist)
 {
 	// Line 409, Address: 0x2e2150, Func Offset: 0
 	// Line 410, Address: 0x2e2158, Func Offset: 0x8
@@ -490,7 +490,7 @@ void njReleaseTextureAll()
 
 // 
 // Start address: 0x2e22b0
-int njReleaseTexture(_anon2* texlist)
+int njReleaseTexture(NJS_TEXLIST* texlist)
 {
 	_anon1* p;
 	unsigned int tex_num;

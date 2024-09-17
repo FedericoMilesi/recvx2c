@@ -1,6 +1,6 @@
 typedef struct _anon0;
 
-typedef struct _anon2;
+
 
 typedef struct _anon4;
 
@@ -38,11 +38,11 @@ struct _anon0
 
 
 
-struct _anon2
-{
-	NJS_TEXNAME* textures;
-	unsigned int nbTexture;
-};
+
+
+
+
+
 
 
 
@@ -112,8 +112,8 @@ int Ps2_tex3DEx_count;
 NJS_TEXTURE_VTX* Ps2_tex3DEx_p;
 unsigned int Ps2_current_texno_bk;
 unsigned int Ps2_current_texno;
-_anon2* Ps2_current_texlist_bk;
-_anon2* Ps2_current_texlist;
+NJS_TEXLIST* Ps2_current_texlist_bk;
+NJS_TEXLIST* Ps2_current_texlist;
 int Ps2_quad_trans;
 unsigned int Ps2_quad_color;
 

@@ -4,7 +4,7 @@ typedef struct _anon0;
 typedef struct _anon1;
 typedef struct _anon2;
 typedef struct _anon3;
-typedef struct _anon4;
+
 
 typedef struct _anon6;
 typedef struct _anon7;
@@ -64,30 +64,30 @@ typedef int type_2[5];
 typedef _anon0* type_3[512];
 typedef _anon0* type_4[32];
 typedef _anon2* type_5[10];
-typedef _anon4* type_7[16];
+
 typedef unsigned int(*type_8)()[256];
 typedef _anon0* type_9[32];
 typedef _anon0* type_10[512];
-typedef _anon4* type_11[16][16];
-typedef _anon4* type_12[16][16][100];
+
+
 typedef char type_13[8];
 typedef _anon0* type_14[32];
 typedef float type_15[3];
 typedef float type_16[3][4];
 typedef _anon0* type_17[512];
-typedef _anon4* type_18[1300];
+
 typedef float type_19[3];
 typedef float type_20[3][4];
 typedef char type_21[32];
 typedef float type_22[32];
 typedef _anon0* type_23[512];
-typedef _anon4* type_24[200];
+
 typedef short type_25[32];
 
 typedef _anon0* type_27[128];
 typedef unsigned int type_28[1];
 typedef _anon10 type_29[256];
-typedef _anon4* type_30[8];
+
 typedef int* type_31[16];
 typedef float type_32[5];
 typedef _anon0* type_33[128];
@@ -96,7 +96,7 @@ typedef _anon51 type_35[16];
 typedef npobj* type_36[16];
 typedef _anon0* type_37[128];
 typedef int type_38[4];
-typedef _anon4* type_39[16];
+
 typedef unsigned int type_40[4];
 typedef float type_41[4];
 typedef _anon17 type_42[16];
@@ -139,7 +139,7 @@ typedef unsigned char type_78[16];
 typedef float type_79[3];
 typedef void* type_80[2];
 typedef unsigned short type_81[2];
-typedef _anon4* type_82[256];
+
 typedef int type_83[4];
 typedef unsigned char* type_84[256];
 typedef float type_85[3];
@@ -157,7 +157,7 @@ typedef int type_96[3];
 typedef char type_97[2];
 typedef int type_98[8];
 typedef float type_99[3];
-typedef _anon4* type_100[256];
+
 typedef float type_101[3];
 typedef _anon13 type_102[256];
 
@@ -226,7 +226,7 @@ typedef char type_166[32];
 typedef npobj* type_167[16];
 typedef char type_168[64];
 typedef _anon2* type_169[10];
-typedef _anon4* type_170[16];
+
 typedef char type_171[4];
 typedef float type_172[3];
 typedef _anon17 type_173[16];
@@ -302,7 +302,7 @@ struct BH_PWORK
 	unsigned int Dummy[1];
 	int* skp[16];
 	npobj* mbp[16];
-	_anon4* txp[16];
+	NJS_TEXLIST* txp[16];
 	_anon17 mdl[16];
 	_anon17* mlwP;
 	unsigned int mdl_no;
@@ -454,7 +454,7 @@ struct _anon0
 	unsigned int Dummy[1];
 	int* skp[16];
 	npobj* mbp[16];
-	_anon4* txp[16];
+	NJS_TEXLIST* txp[16];
 	_anon17 mdl[16];
 	_anon17* mlwP;
 	unsigned int mdl_no;
@@ -556,11 +556,11 @@ struct _anon3
 	int ay;
 };
 
-struct _anon4
-{
-	NJS_TEXNAME* textures;
-	unsigned int nbTexture;
-};
+
+
+
+
+
 
 
 
@@ -865,11 +865,11 @@ struct _anon15
 	char pos_nob;
 	char rcase_b;
 	unsigned int en_flg[4];
-	_anon4* et_lp[16][16][100];
-	_anon4* ot_lp[1300];
-	_anon4* it_lp[200];
+	NJS_TEXLIST* et_lp[16][16][100];
+	NJS_TEXLIST* ot_lp[1300];
+	NJS_TEXLIST* it_lp[200];
 	int eft_n;
-	_anon4* eft_lp[8];
+	NJS_TEXLIST* eft_lp[8];
 	int loop_ct;
 	int loop_now;
 	int cng_pid;
@@ -964,17 +964,17 @@ struct _anon15
 	void* mes_tp;
 	short txr_n;
 	short txr_ct;
-	_anon4* txlp[256];
+	NJS_TEXLIST* txlp[256];
 	unsigned char* txdp[256];
 	short txloff[256];
 	short txb_ct;
 	short txb_n;
 	short txb[256];
-	_anon4* txblp[256];
+	NJS_TEXLIST* txblp[256];
 	_anon13 txbp[256];
 	unsigned char* ef_psp;
 	NJS_TEXNAME ef_tex[450];
-	_anon4 ef_tlist;
+	NJS_TEXLIST ef_tlist;
 	_anon44 ef;
 	short efid[256];
 	_anon17 efm[450];
@@ -1030,7 +1030,7 @@ struct _anon15
 	unsigned int ren_gid;
 	_anon27 ren_info;
 	NJS_TEXNAME ren_tex[1];
-	_anon4 ren_tlist;
+	NJS_TEXLIST ren_tlist;
 	_anon10 rpb[256];
 	int ren_n;
 	int ren_idx[4];
@@ -1130,7 +1130,7 @@ struct _anon15
 	void* sb_rdp;
 	void* sb_mlb;
 	void* sb_ppp;
-	_anon4* sb_tlist;
+	NJS_TEXLIST* sb_tlist;
 	int ddmd;
 	_anon22 door;
 	int mpmd;
@@ -1230,7 +1230,7 @@ struct _anon17
 	unsigned int obj_num;
 	void* datP;
 	npobj* objP;
-	_anon4* texP;
+	NJS_TEXLIST* texP;
 	_anon34* owP;
 };
 
@@ -1257,7 +1257,7 @@ struct _anon17
 struct _anon19
 {
 	NJS_TEXNAME subtx[5];
-	_anon4 subtx_list;
+	NJS_TEXLIST subtx_list;
 	unsigned short subscreenmode;
 	unsigned int statusflg;
 	unsigned short testmode;

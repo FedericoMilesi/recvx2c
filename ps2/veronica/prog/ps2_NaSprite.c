@@ -1,6 +1,6 @@
 typedef struct _anon0;
 
-typedef struct _anon2;
+
 typedef struct _anon3;
 
 typedef struct _anon5;
@@ -25,11 +25,11 @@ struct _anon0
 
 
 
-struct _anon2
-{
-	NJS_TEXNAME* textures;
-	unsigned int nbTexture;
-};
+
+
+
+
+
 
 struct _anon3
 {
@@ -56,7 +56,7 @@ struct _anon5
 	float sx;
 	float sy;
 	int ang;
-	_anon2* tlist;
+	NJS_TEXLIST* tlist;
 	_anon6* tanim;
 };
 

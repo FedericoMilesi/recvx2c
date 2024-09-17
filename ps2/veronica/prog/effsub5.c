@@ -1,7 +1,7 @@
 typedef struct _anon0;
 typedef struct npobj;
 typedef struct tagEFF5UVWHUC;
-typedef struct _anon1;
+
 
 typedef struct tagEFF5SNOWGRP;
 typedef struct tagEFF5UV;
@@ -68,29 +68,29 @@ typedef _anon0* type_3[512];
 typedef float type_4[3];
 typedef tagEFF5UVWHUC* type_5[4];
 typedef _anon0* type_6[32];
-typedef _anon1* type_7[16];
+
 typedef _anon0* type_8[32];
 typedef _anon0* type_9[512];
-typedef _anon1* type_10[16][16];
-typedef _anon1* type_11[16][16][100];
+
+
 typedef tagEFF5UV* type_12[3];
 typedef char type_13[8];
 typedef _anon0* type_14[32];
 typedef tagEFF5UV type_15[13];
 typedef _anon0* type_16[512];
-typedef _anon1* type_17[1300];
+
 typedef tagEFF5UV type_18[16];
 typedef char type_19[32];
 typedef float type_20[32];
 typedef _anon0* type_21[512];
-typedef _anon1* type_22[200];
+
 typedef short type_23[32];
 
 typedef _anon0* type_25[128];
 typedef float type_26[3];
 typedef unsigned int type_27[1];
 typedef _anon9 type_28[256];
-typedef _anon1* type_29[8];
+
 typedef int* type_30[16];
 typedef _anon0* type_31[128];
 typedef _anon45 type_32[16];
@@ -98,7 +98,7 @@ typedef tagEFF5UV* type_33[2];
 typedef npobj* type_34[16];
 typedef _anon0* type_35[128];
 typedef int type_36[4];
-typedef _anon1* type_37[16];
+
 typedef unsigned int type_38[4];
 typedef float type_39[4];
 typedef _anon14 type_40[16];
@@ -134,7 +134,7 @@ typedef tagEFF5UV type_69[18][2];
 typedef tagEFF5SNOWGRP type_70[20];
 typedef tagEFF5UV type_71[15];
 typedef void* type_72[2];
-typedef _anon1* type_73[256];
+
 typedef int type_74[4];
 typedef unsigned char* type_75[256];
 typedef unsigned int type_76[3];
@@ -152,7 +152,7 @@ typedef int type_87[8];
 typedef float type_88[3];
 typedef tagEFF5UV type_89[20];
 
-typedef _anon1* type_91[256];
+
 typedef tagEFF5UV type_92[8];
 typedef _anon12 type_93[256];
 typedef unsigned short type_94[4];
@@ -218,7 +218,7 @@ typedef char type_160[32];
 typedef npobj* type_161[16];
 typedef tagEFF5UV type_162[12];
 typedef char type_163[64];
-typedef _anon1* type_164[16];
+
 typedef char type_165[4];
 typedef int type_166[2];
 typedef _anon14 type_167[16];
@@ -295,7 +295,7 @@ struct _anon0
 	unsigned int Dummy[1];
 	int* skp[16];
 	npobj* mbp[16];
-	_anon1* txp[16];
+	NJS_TEXLIST* txp[16];
 	_anon14 mdl[16];
 	_anon14* mlwP;
 	unsigned int mdl_no;
@@ -387,11 +387,11 @@ struct tagEFF5UVWHUC
 	unsigned char h;
 };
 
-struct _anon1
-{
-	NJS_TEXNAME* textures;
-	unsigned int nbTexture;
-};
+
+
+
+
+
 
 
 
@@ -504,11 +504,11 @@ struct _anon5
 	char pos_nob;
 	char rcase_b;
 	unsigned int en_flg[4];
-	_anon1* et_lp[16][16][100];
-	_anon1* ot_lp[1300];
-	_anon1* it_lp[200];
+	NJS_TEXLIST* et_lp[16][16][100];
+	NJS_TEXLIST* ot_lp[1300];
+	NJS_TEXLIST* it_lp[200];
 	int eft_n;
-	_anon1* eft_lp[8];
+	NJS_TEXLIST* eft_lp[8];
 	int loop_ct;
 	int loop_now;
 	int cng_pid;
@@ -603,17 +603,17 @@ struct _anon5
 	void* mes_tp;
 	short txr_n;
 	short txr_ct;
-	_anon1* txlp[256];
+	NJS_TEXLIST* txlp[256];
 	unsigned char* txdp[256];
 	short txloff[256];
 	short txb_ct;
 	short txb_n;
 	short txb[256];
-	_anon1* txblp[256];
+	NJS_TEXLIST* txblp[256];
 	_anon12 txbp[256];
 	unsigned char* ef_psp;
 	NJS_TEXNAME ef_tex[450];
-	_anon1 ef_tlist;
+	NJS_TEXLIST ef_tlist;
 	_anon10 ef;
 	short efid[256];
 	_anon14 efm[450];
@@ -669,7 +669,7 @@ struct _anon5
 	unsigned int ren_gid;
 	_anon22 ren_info;
 	NJS_TEXNAME ren_tex[1];
-	_anon1 ren_tlist;
+	NJS_TEXLIST ren_tlist;
 	_anon9 rpb[256];
 	int ren_n;
 	int ren_idx[4];
@@ -769,7 +769,7 @@ struct _anon5
 	void* sb_rdp;
 	void* sb_mlb;
 	void* sb_ppp;
-	_anon1* sb_tlist;
+	NJS_TEXLIST* sb_tlist;
 	int ddmd;
 	_anon19 door;
 	int mpmd;
@@ -869,7 +869,7 @@ struct tagEFF5SNOWRECT
 	int lSnowExistNext;
 	int lSnowTimerCnt;
 	int lSnowTimerMax;
-	_anon1* pSnowTexList;
+	NJS_TEXLIST* pSnowTexList;
 	unsigned int ulSnowTexNum;
 	NJS_TEXTURE_VTX SnowModel[4];
 };
@@ -1053,7 +1053,7 @@ struct _anon14
 	unsigned int obj_num;
 	void* datP;
 	npobj* objP;
-	_anon1* texP;
+	NJS_TEXLIST* texP;
 	_anon29* owP;
 };
 
@@ -1239,7 +1239,7 @@ struct BH_PWORK
 	unsigned int Dummy[1];
 	int* skp[16];
 	npobj* mbp[16];
-	_anon1* txp[16];
+	NJS_TEXLIST* txp[16];
 	_anon14 mdl[16];
 	_anon14* mlwP;
 	unsigned int mdl_no;
@@ -1624,7 +1624,7 @@ struct _anon38
 	float sx;
 	float sy;
 	int num;
-	_anon1* txp;
+	NJS_TEXLIST* txp;
 	int tex_id;
 	NJS_POINT3 pos[48];
 	NJS_POINT3 vec[48];
@@ -1795,7 +1795,7 @@ void SetEff5SnowRectAreaCenterAndSize(tagEFF5SNOWRECT* pSnow, float fCenterX, fl
 void SetEff5SnowRectParticleMax(tagEFF5SNOWRECT* pSnow, int lSnowMax);
 void MovEff5SnowRectParticleMax(tagEFF5SNOWRECT* pSnow, int lSnowMax, int lTimeMax);
 void ArrangeEff5SnowRectParticle(tagEFF5SNOWRECT* pSnow);
-void SetEff5SnowRectParticleTexture(tagEFF5SNOWRECT* pSnow, _anon1* pTexList, unsigned int ulTexNum, float fU0, float fV0, float fU1, float fV1, float fU2, float fV2, float fU3, float fV3);
+void SetEff5SnowRectParticleTexture(tagEFF5SNOWRECT* pSnow, NJS_TEXLIST* pTexList, unsigned int ulTexNum, float fU0, float fV0, float fU1, float fV1, float fU2, float fV2, float fU3, float fV3);
 void SetEff5SnowRectParticleColor(tagEFF5SNOWRECT* pSnow, unsigned int ulColor0, unsigned int ulColor1, unsigned int ulColor2, unsigned int ulColor3);
 void SetEff5SnowRectParticleSize(tagEFF5SNOWRECT* pSnow, float fWidth, float fHeight);
 NJS_POINT3* GetEff5SnowRectCurrentWindVector(NJS_POINT3* pVector);
@@ -5646,7 +5646,7 @@ void ArrangeEff5SnowRectParticle(tagEFF5SNOWRECT* pSnow)
 
 // 
 // Start address: 0x25d430
-void SetEff5SnowRectParticleTexture(tagEFF5SNOWRECT* pSnow, _anon1* pTexList, unsigned int ulTexNum, float fU0, float fV0, float fU1, float fV1, float fU2, float fV2, float fU3, float fV3)
+void SetEff5SnowRectParticleTexture(tagEFF5SNOWRECT* pSnow, NJS_TEXLIST* pTexList, unsigned int ulTexNum, float fU0, float fV0, float fU1, float fV1, float fU2, float fV2, float fU3, float fV3)
 {
 	NJS_TEXTURE_VTX* pTex;
 	// Line 6241, Address: 0x25d430, Func Offset: 0
