@@ -10,7 +10,7 @@ typedef struct npobj;
 
 typedef struct _anon9;
 typedef struct _anon10;
-typedef struct _anon11;
+
 typedef struct _anon12;
 typedef struct _anon13;
 typedef union _anon14;
@@ -80,7 +80,7 @@ typedef short type_12[16];
 typedef NJS_POINT3 type_13[32];
 typedef unsigned int type_14[4][0];
 typedef _anon7 type_15[16];
-typedef _anon11 type_16[4];
+
 typedef _anon0* type_17[128];
 typedef short type_18[16];
 typedef _anon0* type_19[512];
@@ -92,7 +92,7 @@ typedef unsigned char type_24[8];
 typedef _anon7 type_25[4];
 typedef unsigned char type_26[8][0];
 
-typedef _anon11 type_28[4];
+
 typedef _anon0* type_29[512];
 typedef int type_30[3];
 typedef _anon14 type_31[4];
@@ -118,7 +118,7 @@ typedef float type_50[6];
 typedef _anon0* type_51[32];
 typedef float type_52[6][12];
 typedef unsigned short type_53[4];
-typedef _anon11 type_54[2];
+
 typedef unsigned int type_55[1];
 typedef _anon3 type_56[16];
 typedef char type_57[32];
@@ -138,7 +138,7 @@ typedef _anon7 type_70[8];
 typedef _anon49 type_71[256];
 typedef float type_72[4];
 typedef _anon24 type_73[16];
-typedef _anon11 type_74[4];
+
 typedef float type_75[4];
 typedef _anon14 type_76[4];
 typedef int type_77[4];
@@ -200,23 +200,23 @@ typedef unsigned char type_132[4];
 typedef unsigned char type_133[4][3];
 typedef _anon3 type_134[10];
 typedef _anon7 type_135[4];
-typedef _anon11 type_136[5];
+
 typedef int type_137[32];
 typedef _anon50 type_138[450];
 typedef int type_139[32][2];
-typedef _anon11 type_140[5];
+
 typedef _anon3 type_141[8];
 typedef _anon3 type_142[24];
-typedef _anon11 type_143[5];
+
 typedef short type_144[256];
 typedef int type_145[64];
 typedef _anon24 type_146[450];
 typedef unsigned int type_147[16];
-typedef _anon11 type_148[16];
+
 typedef _anon14 type_149[5];
 typedef char type_150[4];
 typedef unsigned int type_151[8];
-typedef _anon11 type_152[4];
+
 typedef char type_153[3];
 typedef _anon14 type_154[5];
 
@@ -280,11 +280,11 @@ typedef _anon31 type_213[64];
 typedef _anon7 type_214[5];
 typedef unsigned int type_215[2];
 typedef _anon58 type_216[0];
-typedef _anon11 type_217[2];
+
 typedef int* type_218[16];
 typedef unsigned int type_219[4];
 typedef short type_220[5];
-typedef _anon11 type_221[4];
+
 typedef unsigned int type_222[10];
 typedef float type_223[3];
 typedef npobj* type_224[16];
@@ -296,7 +296,7 @@ typedef float type_229[3];
 typedef _anon7* type_230[23];
 typedef _anon10* type_231[16];
 typedef _anon3 type_232[16];
-typedef _anon11 type_233[4];
+
 typedef char type_234[4];
 typedef _anon7 type_235[4];
 typedef _anon14 type_236[4];
@@ -312,7 +312,7 @@ typedef _anon56 type_245[6];
 typedef _anon60 type_246[0];
 typedef unsigned int type_247[8];
 typedef _anon3 type_248[24];
-typedef _anon11 type_249[6];
+
 typedef unsigned int type_250[4];
 typedef _anon1 type_251[16];
 typedef unsigned char type_252[2];
@@ -529,7 +529,7 @@ struct _anon4
 	unsigned char boxwait;
 	short actioncount;
 	_anon33 scr;
-	_anon11 clip[2];
+	NJS_POINT2 clip[2];
 	unsigned char flgchk;
 	unsigned char flgtest;
 	unsigned char* sspb;
@@ -673,11 +673,11 @@ struct _anon10
 	unsigned int nbTexture;
 };
 
-struct _anon11
-{
-	float x;
-	float y;
-};
+
+
+
+
+
 
 struct _anon12
 {
@@ -984,11 +984,11 @@ struct _anon28
 
 struct _anon29
 {
-	_anon11 pos_00[5];
-	_anon11 pos_01[5];
-	_anon11 pos_02[5];
-	_anon11 heal_pos00;
-	_anon11 heal_pos01;
+	NJS_POINT2 pos_00[5];
+	NJS_POINT2 pos_01[5];
+	NJS_POINT2 pos_02[5];
+	NJS_POINT2 heal_pos00;
+	NJS_POINT2 heal_pos01;
 	_anon14 uv_00[5];
 	_anon14 uv_01[5];
 	_anon14 col00[5];
@@ -1389,7 +1389,7 @@ struct _anon38
 	int mes_fls;
 	int mes_sel;
 	int mes_seln;
-	_anon11 mes_sps[16];
+	NJS_POINT2 mes_sps[16];
 	int rt_sp;
 	unsigned char* rt_wp;
 	unsigned char* rt_dp;
@@ -1891,7 +1891,7 @@ struct _anon55
 
 struct _anon56
 {
-	_anon11* p;
+	NJS_POINT2* p;
 	_anon14* col;
 	_anon14* tex;
 	unsigned int num;
@@ -2102,12 +2102,12 @@ void PulseInit();
 void PulseMain();
 void PulseAnim();
 void PulseFadeAnim();
-void PulseHealAnim(_anon11* pos);
-void PulsePoisonHealAnim(_anon11* pos);
-void Pulse00(_anon11* pos, _anon14* texuv);
+void PulseHealAnim(NJS_POINT2* pos);
+void PulsePoisonHealAnim(NJS_POINT2* pos);
+void Pulse00(NJS_POINT2* pos, _anon14* texuv);
 void MultiWindowBack();
 void KazariAnim();
-void DrawPoly2D(_anon11* pos00, _anon14* col00, _anon14* uv00, float pri, unsigned int atr, int texnum);
+void DrawPoly2D(NJS_POINT2* pos00, _anon14* col00, _anon14* uv00, float pri, unsigned int atr, int texnum);
 void DispFadeInit();
 void FadePolyDisp();
 void StatusMapFlagInit();
@@ -3431,7 +3431,7 @@ void StatusMain()
 	unsigned short num4;
 	unsigned short num3;
 	unsigned short num1;
-	_anon11 clip[2];
+	NJS_POINT2 clip[2];
 	_anon51 col;
 	_anon7* parts;
 	_anon3 spr_t;
@@ -6405,7 +6405,7 @@ void BorderLineSet(_anon4* st, unsigned char border, float ypos)
 {
 	unsigned char num1;
 	_anon14 col[6];
-	_anon11 p[6];
+	NJS_POINT2 p[6];
 	_anon56 p2c[6];
 	unsigned char colset;
 	unsigned char flg2;
@@ -6531,8 +6531,8 @@ void SpriteOnOff(_anon4* st)
 	unsigned char num1;
 	unsigned short itemid;
 	_anon3* pb;
-	_anon11 ipos;
-	_anon11 mpos;
+	NJS_POINT2 ipos;
+	NJS_POINT2 mpos;
 	// Line 6393, Address: 0x2a63f0, Func Offset: 0
 	// Line 6403, Address: 0x2a640c, Func Offset: 0x1c
 	// Line 6404, Address: 0x2a6420, Func Offset: 0x30
@@ -7255,9 +7255,9 @@ void PulseMain()
 {
 	_anon14 uv_[4];
 	_anon14 col[4];
-	_anon11 p[4];
+	NJS_POINT2 p[4];
 	_anon14 uv;
-	_anon11 pos;
+	NJS_POINT2 pos;
 	float y;
 	float x;
 	_anon29* pw;
@@ -7598,7 +7598,7 @@ void PulseFadeAnim()
 
 // 
 // Start address: 0x2a8b30
-void PulseHealAnim(_anon11* pos)
+void PulseHealAnim(NJS_POINT2* pos)
 {
 	_anon49 poly[4];
 	_anon29* pw;
@@ -7672,7 +7672,7 @@ void PulseHealAnim(_anon11* pos)
 
 // 
 // Start address: 0x2a8d40
-void PulsePoisonHealAnim(_anon11* pos)
+void PulsePoisonHealAnim(NJS_POINT2* pos)
 {
 	_anon49 poly[4];
 	_anon29* pw;
@@ -7750,7 +7750,7 @@ void PulsePoisonHealAnim(_anon11* pos)
 
 // 
 // Start address: 0x2a8f60
-void Pulse00(_anon11* pos, _anon14* texuv)
+void Pulse00(NJS_POINT2* pos, _anon14* texuv)
 {
 	unsigned short i;
 	_anon49 poly[4];
@@ -7812,7 +7812,7 @@ void MultiWindowBack()
 	float x;
 	_anon14 uv[4];
 	_anon14 col[4];
-	_anon11 p[4];
+	NJS_POINT2 p[4];
 	// Line 7848, Address: 0x2a91b0, Func Offset: 0
 	// Line 7857, Address: 0x2a91b8, Func Offset: 0x8
 	// Line 7863, Address: 0x2a91c8, Func Offset: 0x18
@@ -7858,7 +7858,7 @@ void KazariAnim()
 	float x;
 	_anon14 uv[4];
 	_anon14 col[4];
-	_anon11 p[4];
+	NJS_POINT2 p[4];
 	unsigned short flg01;
 	unsigned short flg03;
 	unsigned short flg00;
@@ -7931,12 +7931,12 @@ void KazariAnim()
 
 // 
 // Start address: 0x2a9510
-void DrawPoly2D(_anon11* pos00, _anon14* col00, _anon14* uv00, float pri, unsigned int atr, int texnum)
+void DrawPoly2D(NJS_POINT2* pos00, _anon14* col00, _anon14* uv00, float pri, unsigned int atr, int texnum)
 {
 	short i;
 	_anon14 uv[4];
 	_anon14 col[4];
-	_anon11 p[4];
+	NJS_POINT2 p[4];
 	_anon56 p2c;
 	// Line 8027, Address: 0x2a9510, Func Offset: 0
 	// Line 8034, Address: 0x2a9534, Func Offset: 0x24
@@ -7986,7 +7986,7 @@ void DispFadeInit()
 void FadePolyDisp()
 {
 	_anon14 col[4];
-	_anon11 p[4];
+	NJS_POINT2 p[4];
 	_anon56 p2c;
 	_anon55* sfe;
 	// Line 8080, Address: 0x2a9690, Func Offset: 0

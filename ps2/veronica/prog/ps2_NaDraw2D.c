@@ -1,5 +1,5 @@
 typedef union _anon0;
-typedef struct _anon1;
+
 typedef struct _anon2;
 typedef struct _anon3;
 typedef struct _anon4;
@@ -17,15 +17,15 @@ union _anon0
 	_anon4 argb;
 };
 
-struct _anon1
-{
-	float x;
-	float y;
-};
+
+
+
+
+
 
 struct _anon2
 {
-	_anon1* p;
+	NJS_POINT2* p;
 	_anon0* col;
 	_anon0* tex;
 	unsigned int num;

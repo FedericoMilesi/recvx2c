@@ -26,7 +26,7 @@ typedef struct _anon22;
 typedef struct _anon23;
 typedef struct _anon24;
 typedef struct _anon25;
-typedef struct _anon26;
+
 typedef struct NJS_POINT3;
 typedef struct _anon28;
 typedef struct _anon29;
@@ -118,7 +118,7 @@ typedef _anon2* type_70[256];
 typedef void(*type_72)()[4];
 typedef _anon8 type_73[256];
 typedef _anon17 type_74[450];
-typedef _anon26 type_75[16];
+
 typedef short type_76[256];
 typedef char type_77[3];
 typedef int type_78[64];
@@ -740,7 +740,7 @@ struct _anon4
 	int mes_fls;
 	int mes_sel;
 	int mes_seln;
-	_anon26 mes_sps[16];
+	NJS_POINT2 mes_sps[16];
 	int rt_sp;
 	unsigned char* rt_wp;
 	unsigned char* rt_dp;
@@ -1134,11 +1134,11 @@ struct _anon25
 	float r;
 };
 
-struct _anon26
-{
-	float x;
-	float y;
-};
+
+
+
+
+
 
 
 
@@ -1551,7 +1551,7 @@ void bhMainGameOver()
 	float ar;
 	float scn;
 	float scl;
-	_anon26 cpos;
+	NJS_POINT2 cpos;
 	_anon0* gv;
 	// Line 282, Address: 0x2ba0f0, Func Offset: 0
 	// Line 283, Address: 0x2ba12c, Func Offset: 0x3c

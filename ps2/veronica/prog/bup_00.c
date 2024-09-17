@@ -6,7 +6,7 @@ typedef struct _anon1;
 typedef struct _anon2;
 
 typedef struct _anon4;
-typedef struct _anon5;
+
 typedef struct tagSELECTFILEINFO;
 typedef struct _anon6;
 typedef struct _anon7;
@@ -105,7 +105,7 @@ typedef _anon0* type_33[128];
 typedef _anon53 type_34[16];
 typedef npobj* type_35[16];
 typedef int type_36[15];
-typedef _anon5 type_37[4];
+
 typedef _anon0* type_38[128];
 typedef int type_39[4];
 typedef _anon1* type_40[16];
@@ -142,7 +142,7 @@ typedef void* type_70[2];
 typedef unsigned int type_71[16];
 typedef int type_72[4][4];
 typedef unsigned int type_73[32];
-typedef _anon5 type_74[4];
+
 typedef unsigned int type_75[16];
 typedef float type_76[4][3];
 typedef unsigned int type_77[8];
@@ -187,7 +187,7 @@ typedef char type_115[16];
 typedef _anon29 type_116[450];
 typedef char type_117[128];
 typedef char type_118[16];
-typedef _anon5 type_119[16];
+
 typedef unsigned char type_120[1536];
 typedef short type_121[256];
 typedef char type_122[3];
@@ -521,11 +521,11 @@ struct _anon4
 	int ay;
 };
 
-struct _anon5
-{
-	float x;
-	float y;
-};
+
+
+
+
+
 
 struct tagSELECTFILEINFO
 {
@@ -1519,7 +1519,7 @@ struct _anon31
 	int mes_fls;
 	int mes_sel;
 	int mes_seln;
-	_anon5 mes_sps[16];
+	NJS_POINT2 mes_sps[16];
 	int rt_sp;
 	unsigned char* rt_wp;
 	unsigned char* rt_dp;
@@ -1778,7 +1778,7 @@ struct _anon41
 
 struct _anon43
 {
-	_anon5* p;
+	NJS_POINT2* p;
 	_anon26* col;
 	_anon26* tex;
 	unsigned int num;
@@ -1973,7 +1973,7 @@ char bootcommentbuf[32][15];
 
 void ControlTypewriter();
 void TypewriterKeepMemory();
-void CountDisplay(int disppoint, _anon5* pos, unsigned int col);
+void CountDisplay(int disppoint, NJS_POINT2* pos, unsigned int col);
 unsigned int RoomNameSwitch(unsigned int name);
 void TypeWriterTextureInit();
 void TypewriterInit();
@@ -2002,11 +2002,11 @@ void TypewriterKeepMemory()
 
 // 
 // Start address: 0x2c8b80
-void CountDisplay(int disppoint, _anon5* pos, unsigned int col)
+void CountDisplay(int disppoint, NJS_POINT2* pos, unsigned int col)
 {
 	_anon26 uv[4];
 	_anon26 col_[4];
-	_anon5 p[4];
+	NJS_POINT2 p[4];
 	_anon43 p2c;
 	// Line 2757, Address: 0x2c8b80, Func Offset: 0
 	// Line 2764, Address: 0x2c8b94, Func Offset: 0x14

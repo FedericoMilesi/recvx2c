@@ -39,7 +39,7 @@ typedef struct _anon28;
 typedef struct _anon29;
 typedef struct tagMEMORYCARDPORT;
 typedef struct _anon30;
-typedef struct _anon31;
+
 typedef struct NJS_POINT3;
 typedef struct _anon33;
 typedef struct _anon34;
@@ -135,7 +135,7 @@ typedef unsigned char type_85[5];
 typedef unsigned char type_86[5][3];
 typedef char type_87[4];
 typedef unsigned int type_89[32];
-typedef _anon31 type_90[16];
+
 typedef unsigned char type_91[5];
 typedef unsigned char type_92[5][1];
 typedef unsigned int type_93[16];
@@ -633,7 +633,7 @@ struct _anon3
 	int mes_fls;
 	int mes_sel;
 	int mes_seln;
-	_anon31 mes_sps[16];
+	NJS_POINT2 mes_sps[16];
 	int rt_sp;
 	unsigned char* rt_wp;
 	unsigned char* rt_dp;
@@ -1364,11 +1364,11 @@ struct _anon30
 	NJS_MATRIX mtx;
 };
 
-struct _anon31
-{
-	float x;
-	float y;
-};
+
+
+
+
+
 
 
 

@@ -5,7 +5,7 @@ typedef struct _anon2;
 typedef struct _anon3;
 
 typedef struct _cnc_wrk_typ;
-typedef struct _anon5;
+
 typedef struct _anon6;
 typedef struct _anon7;
 typedef struct _anon8;
@@ -100,7 +100,7 @@ typedef int(*type_167)(_anon49*);
 typedef unsigned int type_0[4];
 typedef _anon0* type_1[512];
 typedef _anon13 type_2[22];
-typedef _anon5 type_3[2];
+
 typedef _anon0* type_4[32];
 typedef _anon39 type_5[2];
 typedef _anon2* type_6[16];
@@ -123,8 +123,8 @@ typedef _anon2* type_23[200];
 typedef short type_24[32];
 typedef _anon42 type_25[1];
 typedef _anon0* type_27[128];
-typedef _anon5 type_28[4];
-typedef _anon5 type_29[2];
+
+
 typedef unsigned int type_30[1];
 typedef _anon12 type_31[256];
 typedef _anon2* type_32[8];
@@ -174,7 +174,7 @@ typedef _anon52 type_77[6];
 
 typedef _anon42 type_79[450];
 typedef _anon11 type_80[32];
-typedef _anon5 type_81[16];
+
 typedef _anon39 type_82[3];
 typedef short type_83[256];
 typedef char type_84[3];
@@ -192,14 +192,14 @@ typedef _anon39 type_96[2];
 typedef unsigned int type_98[8];
 typedef unsigned char type_99[450];
 typedef float type_100[128];
-typedef _anon5 type_101[4];
-typedef _anon5 type_102[2];
+
+
 typedef _anon39 type_103[3];
 typedef _anon39 type_104[2];
-typedef _anon5 type_107[2];
+
 typedef char type_108[16];
 typedef char type_109[4];
-typedef _anon5 type_110[4];
+
 typedef unsigned int* type_111[10];
 typedef _anon40 type_114[2];
 typedef unsigned int type_115[32];
@@ -215,7 +215,7 @@ typedef _anon33 type_126[64];
 typedef unsigned short type_127[49];
 typedef unsigned int type_128[16];
 typedef unsigned int type_129[3];
-typedef _anon5 type_130[4];
+
 typedef BH_PWORK* type_131[16];
 typedef unsigned int type_132[8];
 typedef _anon39 type_133[2];
@@ -229,10 +229,10 @@ typedef _anon39 type_141[4];
 typedef char type_142[32];
 typedef npobj* type_143[16];
 typedef char type_144[64];
-typedef _anon5 type_145[4];
+
 typedef _anon2* type_146[16];
 typedef char type_147[4];
-typedef _anon5 type_148[2];
+
 typedef _anon19 type_149[16];
 typedef short type_150[4];
 typedef unsigned int type_151[2];
@@ -243,7 +243,7 @@ typedef unsigned int type_157[32];
 typedef unsigned int type_158[4];
 typedef NJS_POINT3 type_159[32];
 typedef _anon0* type_162[512];
-typedef _anon5 type_163[2];
+
 typedef _anon0* type_164[128];
 typedef _anon0* type_166[512];
 typedef unsigned char type_168[64];
@@ -431,11 +431,11 @@ struct _cnc_wrk_typ
 	_cnc_wrk_typ* map_prevP;
 };
 
-struct _anon5
-{
-	float x;
-	float y;
-};
+
+
+
+
+
 
 struct _anon6
 {
@@ -459,11 +459,11 @@ struct _anon8
 {
 	int mode;
 	int time;
-	_anon5* dstP;
-	_anon5 pos_a0;
-	_anon5 pos_a1;
-	_anon5 pos_b0;
-	_anon5 pos_b1;
+	NJS_POINT2* dstP;
+	NJS_POINT2 pos_a0;
+	NJS_POINT2 pos_a1;
+	NJS_POINT2 pos_b0;
+	NJS_POINT2 pos_b1;
 };
 
 struct _anon9
@@ -728,7 +728,7 @@ struct _anon21
 {
 	int mode;
 	NJS_POINT3 pos0;
-	_anon5 pos1;
+	NJS_POINT2 pos1;
 	int time;
 };
 
@@ -1015,8 +1015,8 @@ struct _anon29
 struct _anon30
 {
 	int mode;
-	_anon5 pos0;
-	_anon5 pos1;
+	NJS_POINT2 pos0;
+	NJS_POINT2 pos1;
 	float rad;
 	int ang;
 };
@@ -1285,7 +1285,7 @@ struct _anon31
 	int mes_fls;
 	int mes_sel;
 	int mes_seln;
-	_anon5 mes_sps[16];
+	NJS_POINT2 mes_sps[16];
 	int rt_sp;
 	unsigned char* rt_wp;
 	unsigned char* rt_dp;
@@ -1701,7 +1701,7 @@ struct _anon56
 
 struct _anon57
 {
-	_anon5* p;
+	NJS_POINT2* p;
 	_anon39* col;
 	_anon39* tex;
 	unsigned int num;
@@ -1878,8 +1878,8 @@ struct _map_wrk
 	char Rom_Mtx[192];
 	short* map_cdeP;
 	int cde_bol;
-	_anon5 bck_p0;
-	_anon5 bck_p1;
+	NJS_POINT2 bck_p0;
+	NJS_POINT2 bck_p1;
 	float bck_depth;
 	float map_scale;
 	float lgt_scale;
@@ -2034,7 +2034,7 @@ void MapPaletteMain();
 void MapCodeProcess();
 void MapBoolSet(int bol, int mod);
 void MapDrawMarker(int mrk_no, NJS_POINT3* posP, int pal_no);
-void MapDrawBackground(float depth, _anon5* p0P, _anon5* p1P);
+void MapDrawBackground(float depth, NJS_POINT2* p0P, NJS_POINT2* p1P);
 void MapDrawSprite(NJS_POINT3* posP, int col, _enum_4 spr_no);
 int MapGetFloorNo(void* datP, int rom_no, float pos_y);
 void MapPurgeTree(_anon19* mlwP);
@@ -2065,10 +2065,10 @@ void MapTagInit(int tag_num);
 void MapTagEntry(NJS_MATRIX basP, int rom_no, NJS_POINT3* posP);
 _tag_wrk_typ* MapTagConnect(int rom_no);
 _tag_wrk_typ* MapTagCenter();
-void MapDrawLine2(_anon5* srcP, _anon5* dstP, float pri, int pal);
-void MapDrawLine(_anon5* srcP, _anon5* dstP, float pri, int pal);
-void MapDrawFill(_anon5* srcP, _anon5* dstP, float pri, int pal);
-void MapDrawPolyFill(_anon5* pnt, float pri, int pal);
+void MapDrawLine2(NJS_POINT2* srcP, NJS_POINT2* dstP, float pri, int pal);
+void MapDrawLine(NJS_POINT2* srcP, NJS_POINT2* dstP, float pri, int pal);
+void MapDrawFill(NJS_POINT2* srcP, NJS_POINT2* dstP, float pri, int pal);
+void MapDrawPolyFill(NJS_POINT2* pnt, float pri, int pal);
 void MapDrawMessage();
 int FsubZoomCursor(_anon8* fzP);
 int FsubZoomInfomation(_anon21* fiP);
@@ -2890,11 +2890,11 @@ void MapDrawMarker(int mrk_no, NJS_POINT3* posP, int pal_no)
 
 // 
 // Start address: 0x2b3f70
-void MapDrawBackground(float depth, _anon5* p0P, _anon5* p1P)
+void MapDrawBackground(float depth, NJS_POINT2* p0P, NJS_POINT2* p1P)
 {
 	float dst;
-	_anon5 p1;
-	_anon5 p0;
+	NJS_POINT2 p1;
+	NJS_POINT2 p0;
 	// Line 1607, Address: 0x2b3f70, Func Offset: 0
 	// Line 1610, Address: 0x2b3f90, Func Offset: 0x20
 	// Line 1617, Address: 0x2b3fac, Func Offset: 0x3c
@@ -3527,7 +3527,7 @@ int FsubGaugeDrawZ(_anon3* fgP)
 	float dsp;
 	float pos;
 	int cnt;
-	_anon5 pnt[2];
+	NJS_POINT2 pnt[2];
 	_anon39 col[2];
 	float scl;
 	_anon57 p2c;
@@ -3611,7 +3611,7 @@ int FsubGaugeDrawX(_anon3* fgP)
 	float dsp;
 	float pos;
 	int cnt;
-	_anon5 pnt[2];
+	NJS_POINT2 pnt[2];
 	_anon39 col[2];
 	float scl;
 	_anon57 p2c;
@@ -3854,11 +3854,11 @@ _tag_wrk_typ* MapTagCenter()
 
 // 
 // Start address: 0x2b6120
-void MapDrawLine2(_anon5* srcP, _anon5* dstP, float pri, int pal)
+void MapDrawLine2(NJS_POINT2* srcP, NJS_POINT2* dstP, float pri, int pal)
 {
 	_anon57 p2c;
 	_anon39 col[2];
-	_anon5 pnt[2];
+	NJS_POINT2 pnt[2];
 	// Line 3068, Address: 0x2b6120, Func Offset: 0
 	// Line 3073, Address: 0x2b6128, Func Offset: 0x8
 	// Line 3068, Address: 0x2b612c, Func Offset: 0xc
@@ -3874,11 +3874,11 @@ void MapDrawLine2(_anon5* srcP, _anon5* dstP, float pri, int pal)
 
 // 
 // Start address: 0x2b6180
-void MapDrawLine(_anon5* srcP, _anon5* dstP, float pri, int pal)
+void MapDrawLine(NJS_POINT2* srcP, NJS_POINT2* dstP, float pri, int pal)
 {
 	_anon57 p2c;
 	_anon39 col[2];
-	_anon5 pnt[2];
+	NJS_POINT2 pnt[2];
 	// Line 3084, Address: 0x2b6180, Func Offset: 0
 	// Line 3089, Address: 0x2b619c, Func Offset: 0x1c
 	// Line 3090, Address: 0x2b61c4, Func Offset: 0x44
@@ -3898,9 +3898,9 @@ void MapDrawLine(_anon5* srcP, _anon5* dstP, float pri, int pal)
 
 // 
 // Start address: 0x2b6260
-void MapDrawFill(_anon5* srcP, _anon5* dstP, float pri, int pal)
+void MapDrawFill(NJS_POINT2* srcP, NJS_POINT2* dstP, float pri, int pal)
 {
-	_anon5 pnt[4];
+	NJS_POINT2 pnt[4];
 	// Line 3109, Address: 0x2b6260, Func Offset: 0
 	// Line 3113, Address: 0x2b6268, Func Offset: 0x8
 	// Line 3109, Address: 0x2b626c, Func Offset: 0xc
@@ -3915,7 +3915,7 @@ void MapDrawFill(_anon5* srcP, _anon5* dstP, float pri, int pal)
 
 // 
 // Start address: 0x2b62d0
-void MapDrawPolyFill(_anon5* pnt, float pri, int pal)
+void MapDrawPolyFill(NJS_POINT2* pnt, float pri, int pal)
 {
 	_anon57 p2c;
 	_anon39 col[4];
@@ -3937,9 +3937,9 @@ void MapDrawMessage()
 // Start address: 0x2b6320
 int FsubZoomCursor(_anon8* fzP)
 {
-	_anon5 dst_pos2[4];
-	_anon5 dst_pos1[4];
-	_anon5 dst_pos0[4];
+	NJS_POINT2 dst_pos2[4];
+	NJS_POINT2 dst_pos1[4];
+	NJS_POINT2 dst_pos0[4];
 	// Line 3165, Address: 0x2b6320, Func Offset: 0
 	// Line 3182, Address: 0x2b6330, Func Offset: 0x10
 	// Line 3186, Address: 0x2b635c, Func Offset: 0x3c
@@ -4096,9 +4096,9 @@ int FsubZoomScreen(_anon30* fsP)
 {
 	int tmp;
 	int ang;
-	_anon5 pnt[4];
-	_anon5 ScrOut[2];
-	_anon5 ScrIn[2];
+	NJS_POINT2 pnt[4];
+	NJS_POINT2 ScrOut[2];
+	NJS_POINT2 ScrIn[2];
 	// Line 3343, Address: 0x2b6970, Func Offset: 0
 	// Line 3353, Address: 0x2b6984, Func Offset: 0x14
 	// Line 3356, Address: 0x2b69a4, Func Offset: 0x34

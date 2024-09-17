@@ -35,7 +35,7 @@ typedef struct _anon31;
 typedef struct _anon32;
 typedef struct _anon33;
 typedef struct _anon34;
-typedef struct _anon35;
+
 typedef struct _anon36;
 typedef struct _anon37;
 
@@ -128,7 +128,7 @@ typedef _anon10 type_73[256];
 typedef _anon13 type_74[4];
 typedef _anon13 type_75[4][0];
 typedef _anon27 type_76[450];
-typedef _anon35 type_77[16];
+
 typedef short type_78[256];
 typedef char type_79[3];
 typedef int type_80[64];
@@ -912,7 +912,7 @@ struct _anon12
 	int mes_fls;
 	int mes_sel;
 	int mes_seln;
-	_anon35 mes_sps[16];
+	NJS_POINT2 mes_sps[16];
 	int rt_sp;
 	unsigned char* rt_wp;
 	unsigned char* rt_dp;
@@ -1412,11 +1412,11 @@ struct _anon34
 	float r;
 };
 
-struct _anon35
-{
-	float x;
-	float y;
-};
+
+
+
+
+
 
 struct _anon36
 {
@@ -3868,7 +3868,7 @@ int bhCheckClipModel(BH_PWORK* pp)
 	int jno;
 	int i;
 	NJS_POINT3 p3;
-	_anon35 p2;
+	NJS_POINT2 p2;
 	_anon15* mlwP;
 	// Line 2439, Address: 0x153210, Func Offset: 0
 	// Line 2440, Address: 0x153228, Func Offset: 0x18
@@ -3890,7 +3890,7 @@ int bhCheckClipModel(BH_PWORK* pp)
 int bhCheckClipPoint(NJS_POINT3* pos)
 {
 	NJS_POINT3 p3;
-	_anon35 p2;
+	NJS_POINT2 p2;
 	// Line 2466, Address: 0x153360, Func Offset: 0
 	// Line 2469, Address: 0x153370, Func Offset: 0x10
 	// Line 2470, Address: 0x153384, Func Offset: 0x24

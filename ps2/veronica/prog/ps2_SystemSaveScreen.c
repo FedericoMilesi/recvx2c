@@ -38,7 +38,7 @@ typedef struct _anon29;
 typedef struct tagSELECTFILEWINDOW;
 typedef struct tagMEMORYCARDPORT;
 typedef struct _anon30;
-typedef struct _anon31;
+
 typedef struct tagSAVEFILE;
 typedef struct NJS_POINT3;
 typedef struct _anon33;
@@ -135,7 +135,7 @@ typedef void* type_85[2];
 typedef char type_86[16];
 typedef char type_87[4];
 typedef unsigned int type_89[32];
-typedef _anon31 type_90[16];
+
 typedef unsigned int type_91[16];
 typedef unsigned int type_92[2];
 typedef unsigned int type_93[16];
@@ -760,7 +760,7 @@ struct _anon13
 	int mes_fls;
 	int mes_sel;
 	int mes_seln;
-	_anon31 mes_sps[16];
+	NJS_POINT2 mes_sps[16];
 	int rt_sp;
 	unsigned char* rt_wp;
 	unsigned char* rt_dp;
@@ -1330,11 +1330,11 @@ struct _anon30
 	NJS_MATRIX mtx;
 };
 
-struct _anon31
-{
-	float x;
-	float y;
-};
+
+
+
+
+
 
 struct tagSAVEFILE
 {

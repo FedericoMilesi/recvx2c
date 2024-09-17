@@ -31,7 +31,7 @@ typedef struct _anon25;
 typedef struct _anon26;
 typedef struct _anon27;
 typedef struct _anon28;
-typedef struct _anon29;
+
 typedef struct tagCONFIGFILE;
 typedef struct _anon30;
 typedef struct _anon31;
@@ -227,7 +227,7 @@ typedef short type_154[256];
 typedef int type_155[64];
 typedef _anon10 type_156[450];
 typedef unsigned int type_157[16];
-typedef _anon29 type_158[16];
+
 typedef float type_159[4];
 typedef float type_160[12];
 typedef char type_161[4];
@@ -258,7 +258,7 @@ typedef char type_185[16];
 typedef char type_186[4];
 typedef _anon53 type_187[7];
 typedef char type_188[4];
-typedef _anon29 type_189[4];
+
 typedef _anon6 type_191[2];
 typedef _anon44 type_192[2];
 typedef unsigned int type_193[32];
@@ -882,11 +882,11 @@ struct _anon28
 	unsigned int col2;
 };
 
-struct _anon29
-{
-	float x;
-	float y;
-};
+
+
+
+
+
 
 struct tagCONFIGFILE
 {
@@ -1459,7 +1459,7 @@ struct _anon40
 	int mes_fls;
 	int mes_sel;
 	int mes_seln;
-	_anon29 mes_sps[16];
+	NJS_POINT2 mes_sps[16];
 	int rt_sp;
 	unsigned char* rt_wp;
 	unsigned char* rt_dp;
@@ -1647,7 +1647,7 @@ struct _anon41
 
 struct _anon43
 {
-	_anon29* p;
+	NJS_POINT2* p;
 	_anon18* col;
 	_anon18* tex;
 	unsigned int num;

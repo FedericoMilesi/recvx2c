@@ -18,7 +18,7 @@ typedef struct tagSELECTFILEINFO;
 typedef struct tagSAVEFILE;
 typedef struct _anon11;
 typedef struct tagICONINFORMATION;
-typedef struct _anon12;
+
 typedef struct tagMEMORYCARDSTATE;
 typedef struct _anon13;
 
@@ -130,7 +130,7 @@ typedef char type_78[4];
 typedef _anon17 type_79[450];
 typedef short type_80[4];
 typedef unsigned char type_81[4];
-typedef _anon12 type_82[16];
+
 typedef short type_83[256];
 typedef char type_84[3];
 typedef int type_85[64];
@@ -143,7 +143,7 @@ typedef unsigned char type_91[450];
 typedef _anon23 type_92[4];
 typedef unsigned int type_93[4];
 typedef char type_94[16];
-typedef _anon12 type_95[4];
+
 typedef char type_96[4];
 typedef unsigned int type_98[32];
 typedef unsigned int type_99[16];
@@ -416,7 +416,7 @@ struct _anon5
 	int mesalpha;
 	int mescol;
 	unsigned int mesnum[4];
-	_anon12 mespos[4];
+	NJS_POINT2 mespos[4];
 	unsigned short mesloop;
 	unsigned char alpha;
 	unsigned char gameest00;
@@ -579,11 +579,11 @@ struct tagICONINFORMATION
 	sceMcIconSys icon;
 };
 
-struct _anon12
-{
-	float x;
-	float y;
-};
+
+
+
+
+
 
 struct tagMEMORYCARDSTATE
 {
@@ -869,7 +869,7 @@ struct _anon13
 	int mes_fls;
 	int mes_sel;
 	int mes_seln;
-	_anon12 mes_sps[16];
+	NJS_POINT2 mes_sps[16];
 	int rt_sp;
 	unsigned char* rt_wp;
 	unsigned char* rt_dp;
@@ -1468,11 +1468,11 @@ void RankingMain();
 void RankingExit();
 void RankingTextureInit();
 void WallPaperDisp();
-void DispRank(_anon12* pos, unsigned int color, int rank);
+void DispRank(NJS_POINT2* pos, unsigned int color, int rank);
 void DispRankingData00();
 void DispRankingData01();
-void DispNumber(_anon12* pos, int num, unsigned int col);
-void DispTime(_anon12* pos, int time, unsigned int col, unsigned int mode);
+void DispNumber(NJS_POINT2* pos, int num, unsigned int col);
+void DispTime(NJS_POINT2* pos, int time, unsigned int col, unsigned int mode);
 int AllRanking(int score, unsigned int mode);
 int GameClearScore(int time);
 int RodorigoEventScore();
@@ -1481,7 +1481,7 @@ int MapScore();
 int HealItemUseScore();
 int SaveCountScore();
 int RetryCountScore();
-void GetMessage(unsigned int mesnum, _anon12* pos);
+void GetMessage(unsigned int mesnum, NJS_POINT2* pos);
 void RankingBgmSet();
 
 // 
@@ -1931,7 +1931,7 @@ void WallPaperDisp()
 
 // 
 // Start address: 0x2bc2a0
-void DispRank(_anon12* pos, unsigned int color, int rank)
+void DispRank(NJS_POINT2* pos, unsigned int color, int rank)
 {
 	int code;
 	// Line 887, Address: 0x2bc2a0, Func Offset: 0
@@ -1955,7 +1955,7 @@ void DispRank(_anon12* pos, unsigned int color, int rank)
 void DispRankingData00()
 {
 	unsigned int argb;
-	_anon12 pos;
+	NJS_POINT2 pos;
 	// Line 914, Address: 0x2bc350, Func Offset: 0
 	// Line 917, Address: 0x2bc360, Func Offset: 0x10
 	// Line 919, Address: 0x2bc370, Func Offset: 0x20
@@ -1988,7 +1988,7 @@ void DispRankingData01()
 	unsigned int argb;
 	int ranking;
 	int score;
-	_anon12 pos;
+	NJS_POINT2 pos;
 	_anon5* rk;
 	// Line 957, Address: 0x2bc510, Func Offset: 0
 	// Line 958, Address: 0x2bc524, Func Offset: 0x14
@@ -2037,7 +2037,7 @@ void DispRankingData01()
 
 // 
 // Start address: 0x2bc820
-void DispNumber(_anon12* pos, int num, unsigned int col)
+void DispNumber(NJS_POINT2* pos, int num, unsigned int col)
 {
 	// Line 1039, Address: 0x2bc820, Func Offset: 0
 	// Line 1045, Address: 0x2bc824, Func Offset: 0x4
@@ -2055,7 +2055,7 @@ void DispNumber(_anon12* pos, int num, unsigned int col)
 
 // 
 // Start address: 0x2bc8e0
-void DispTime(_anon12* pos, int time, unsigned int col, unsigned int mode)
+void DispTime(NJS_POINT2* pos, int time, unsigned int col, unsigned int mode)
 {
 	// Line 1057, Address: 0x2bc8e4, Func Offset: 0x4
 	// Func End, Address: 0x2bc900, Func Offset: 0x20
@@ -2221,7 +2221,7 @@ int RetryCountScore()
 
 // 
 // Start address: 0x2bcf60
-void GetMessage(unsigned int mesnum, _anon12* pos)
+void GetMessage(unsigned int mesnum, NJS_POINT2* pos)
 {
 	// Line 1350, Address: 0x2bcf60, Func Offset: 0
 	// Func End, Address: 0x2bcf9c, Func Offset: 0x3c

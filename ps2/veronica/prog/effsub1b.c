@@ -34,7 +34,7 @@ typedef struct _anon31;
 typedef struct BH_PWORK;
 typedef struct _anon32;
 typedef struct _anon33;
-typedef struct _anon34;
+
 typedef struct NJS_POINT3;
 typedef struct _anon36;
 typedef struct _anon37;
@@ -59,7 +59,7 @@ typedef void(*type_132)(_anon0*);
 
 typedef unsigned int type_1[4];
 typedef _anon0* type_2[512];
-typedef _anon34 type_3[4];
+
 typedef _anon0* type_4[32];
 typedef _anon1* type_5[16];
 typedef _anon23 type_6[4];
@@ -133,7 +133,7 @@ typedef _anon48 type_75[1];
 typedef char type_76[2];
 typedef char type_77[2][3];
 typedef _anon26 type_78[450];
-typedef _anon34 type_79[16];
+
 typedef short type_80[256];
 typedef char type_81[3];
 typedef int type_82[64];
@@ -148,7 +148,7 @@ typedef int type_90[450];
 typedef unsigned int type_91[8];
 typedef unsigned char type_92[450];
 typedef float type_93[128];
-typedef _anon34 type_94[4];
+
 typedef _anon23 type_95[4];
 typedef char type_96[16];
 typedef _anon23 type_97[4];
@@ -190,7 +190,7 @@ typedef unsigned int type_135[4];
 typedef NJS_POINT3 type_136[32];
 typedef _anon48 type_137[9];
 typedef _anon0* type_138[512];
-typedef _anon34 type_139[4];
+
 typedef _anon0* type_140[128];
 typedef _anon18 type_141[4];
 typedef _anon23 type_142[4];
@@ -621,7 +621,7 @@ struct _anon4
 	int mes_fls;
 	int mes_sel;
 	int mes_seln;
-	_anon34 mes_sps[16];
+	NJS_POINT2 mes_sps[16];
 	int rt_sp;
 	unsigned char* rt_wp;
 	unsigned char* rt_dp;
@@ -1382,11 +1382,11 @@ struct _anon33
 	float r;
 };
 
-struct _anon34
-{
-	float x;
-	float y;
-};
+
+
+
+
+
 
 
 
@@ -1440,7 +1440,7 @@ struct _anon37
 
 struct _anon39
 {
-	_anon34* p;
+	NJS_POINT2* p;
 	_anon23* col;
 	_anon23* tex;
 	unsigned int num;
@@ -1710,7 +1710,7 @@ void bhDraw134(_anon0* op)
 	int i;
 	unsigned int argb;
 	_anon23 col[4];
-	_anon34 p[4];
+	NJS_POINT2 p[4];
 	_anon39 p2c;
 	_anon48 ef134tb[8];
 	// Line 122, Address: 0x239250, Func Offset: 0
@@ -2214,7 +2214,7 @@ void bhDraw137(_anon0* op)
 	float px;
 	_anon23 uv[4];
 	_anon23 col[4];
-	_anon34 p[4];
+	NJS_POINT2 p[4];
 	_anon39 p2c;
 	_anon48 ef137tb[9];
 	// Line 722, Address: 0x23ac80, Func Offset: 0
@@ -2523,7 +2523,7 @@ void bhDraw138(_anon0* op)
 	unsigned int argb;
 	_anon23 uv[4];
 	_anon23 col[4];
-	_anon34 p[4];
+	NJS_POINT2 p[4];
 	_anon39 p2c;
 	_anon48 ef138cur[1];
 	_anon48 ef138ledl[4];

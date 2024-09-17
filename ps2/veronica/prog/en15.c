@@ -39,7 +39,7 @@ typedef struct _anon29;
 typedef struct _anon30;
 typedef struct _anon31;
 typedef struct _anon32;
-typedef struct _anon33;
+
 typedef struct _UVINFO;
 typedef struct _anon34;
 typedef struct _anon35;
@@ -151,7 +151,7 @@ typedef _anon13 type_83[256];
 typedef _anon23 type_84[450];
 typedef _LEGLOCK_LIST type_85[1];
 typedef char type_86[3];
-typedef _anon33 type_87[16];
+
 typedef short type_88[256];
 typedef char type_89[4];
 typedef float type_90[128];
@@ -1278,7 +1278,7 @@ struct _anon31
 	int mes_fls;
 	int mes_sel;
 	int mes_seln;
-	_anon33 mes_sps[16];
+	NJS_POINT2 mes_sps[16];
 	int rt_sp;
 	unsigned char* rt_wp;
 	unsigned char* rt_dp;
@@ -1429,11 +1429,11 @@ struct _anon32
 	unsigned short* evd;
 };
 
-struct _anon33
-{
-	float x;
-	float y;
-};
+
+
+
+
+
 
 struct _UVINFO
 {

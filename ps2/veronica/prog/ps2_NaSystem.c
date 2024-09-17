@@ -14,7 +14,7 @@ typedef struct _anon11;
 typedef struct _anon12;
 typedef struct _anon13;
 typedef struct _anon14;
-typedef struct _anon15;
+
 typedef struct BH_PWORK;
 typedef struct _anon16;
 typedef struct _anon17;
@@ -104,7 +104,7 @@ typedef unsigned char type_37[2];
 typedef char type_38[4];
 typedef char type_39[32];
 typedef unsigned int type_40[32];
-typedef _anon15 type_42[16];
+
 typedef char type_43[64];
 typedef unsigned int type_44[16];
 typedef unsigned int type_45[16];
@@ -516,7 +516,7 @@ struct _anon8
 	int mes_fls;
 	int mes_sel;
 	int mes_seln;
-	_anon15 mes_sps[16];
+	NJS_POINT2 mes_sps[16];
 	int rt_sp;
 	unsigned char* rt_wp;
 	unsigned char* rt_dp;
@@ -736,11 +736,11 @@ struct _anon14
 	_anon46 attr;
 };
 
-struct _anon15
-{
-	float x;
-	float y;
-};
+
+
+
+
+
 
 struct BH_PWORK
 {
@@ -1628,7 +1628,7 @@ void njColorBlendingModeSys(int s_mode, int d_mode);
 void njColorBlendingMode(int target, int mode);
 void njTextureShadingMode();
 void njSetCheapShadowMode();
-void njUserClipping(int mode, _anon15* np);
+void njUserClipping(int mode, NJS_POINT2* np);
 void njGetSystemAttr(char attr[192]);
 void njSetSystemAttr(char attr[192]);
 void njChangeSystem();
@@ -1873,7 +1873,7 @@ void njSetCheapShadowMode()
 
 // 
 // Start address: 0x2e18c0
-void njUserClipping(int mode, _anon15* np)
+void njUserClipping(int mode, NJS_POINT2* np)
 {
 	int posi[4];
 	float posf[4];

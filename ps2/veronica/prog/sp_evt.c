@@ -37,7 +37,7 @@ typedef struct _anon34;
 typedef struct BH_PWORK;
 typedef struct _anon35;
 typedef struct _anon36;
-typedef struct _anon37;
+
 typedef struct NJS_POINT3;
 
 typedef struct _anon39;
@@ -130,13 +130,13 @@ typedef int type_72[8];
 typedef float type_73[3];
 typedef unsigned char type_74[140];
 typedef _anon1* type_75[256];
-typedef _anon37 type_76[4];
+
 typedef _anon10 type_77[256];
 typedef void* type_78[8];
 typedef _anon26 type_79[4];
 typedef void* type_80[8];
 typedef _anon29 type_81[450];
-typedef _anon37 type_82[16];
+
 typedef char* type_83[17];
 typedef short type_84[256];
 typedef char type_85[3];
@@ -199,12 +199,12 @@ typedef float type_142[3][3];
 typedef unsigned int type_143[8];
 typedef unsigned int type_144[32];
 typedef int type_145[3];
-typedef _anon37 type_146[2];
+
 typedef unsigned int type_147[4];
 typedef unsigned char type_148[181];
 typedef NJS_POINT3 type_149[32];
 typedef _anon0* type_150[512];
-typedef _anon37 type_151[4];
+
 typedef _anon0* type_152[128];
 typedef _anon26 type_153[4];
 typedef unsigned char type_154[83];
@@ -760,7 +760,7 @@ struct _anon11
 	int mes_fls;
 	int mes_sel;
 	int mes_seln;
-	_anon37 mes_sps[16];
+	NJS_POINT2 mes_sps[16];
 	int rt_sp;
 	unsigned char* rt_wp;
 	unsigned char* rt_dp;
@@ -1480,11 +1480,11 @@ struct _anon36
 	float r;
 };
 
-struct _anon37
-{
-	float x;
-	float y;
-};
+
+
+
+
+
 
 
 
@@ -1559,7 +1559,7 @@ struct _anon41
 
 struct _anon43
 {
-	_anon37* p;
+	NJS_POINT2* p;
 	_anon26* col;
 	_anon26* tex;
 	unsigned int num;
@@ -2359,7 +2359,7 @@ void bhDrawSpEvtComputer()
 	_anon7* ce;
 	unsigned int* qtbcol;
 	_anon20* qt;
-	_anon37 sp[2];
+	NJS_POINT2 sp[2];
 	// Line 665, Address: 0x2bea90, Func Offset: 0
 	// Line 669, Address: 0x2beac0, Func Offset: 0x30
 	// Line 672, Address: 0x2bead4, Func Offset: 0x44
@@ -2736,7 +2736,7 @@ void bhCalcSpEvtComFade()
 void bhDrawSpEvtComFade()
 {
 	_anon26 col[4];
-	_anon37 p[4];
+	NJS_POINT2 p[4];
 	_anon43 p2c;
 	_anon7* ce;
 	// Line 1033, Address: 0x2bf8e0, Func Offset: 0
@@ -2807,7 +2807,7 @@ void bhDrawSpEvtBoxLine()
 	unsigned int argb;
 	int i;
 	_anon26 col[4];
-	_anon37 p[4];
+	NJS_POINT2 p[4];
 	_anon43 p2c;
 	_anon7* ce;
 	// Line 1083, Address: 0x2bfa50, Func Offset: 0

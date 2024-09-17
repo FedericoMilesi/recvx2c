@@ -373,11 +373,11 @@ typedef struct Unknown22
 
 
 
-typedef struct Point {
-    float x;
-    float y;
-}
-Point;
+
+
+
+
+
 
 
 typedef struct PositionVelocity {

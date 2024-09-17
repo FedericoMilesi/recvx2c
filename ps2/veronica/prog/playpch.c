@@ -27,7 +27,7 @@ typedef struct _anon22;
 typedef struct _anon23;
 typedef struct _anon24;
 typedef struct _anon25;
-typedef struct _anon26;
+
 typedef struct NJS_POINT3;
 typedef struct _anon28;
 typedef struct _anon29;
@@ -102,7 +102,7 @@ typedef _anon9 type_57[256];
 typedef int type_58[3];
 typedef char type_59[64];
 typedef _anon18 type_60[450];
-typedef _anon26 type_61[16];
+
 typedef short type_62[256];
 typedef char type_63[3];
 typedef int type_64[3];
@@ -835,7 +835,7 @@ struct _anon10
 	int mes_fls;
 	int mes_sel;
 	int mes_seln;
-	_anon26 mes_sps[16];
+	NJS_POINT2 mes_sps[16];
 	int rt_sp;
 	unsigned char* rt_wp;
 	unsigned char* rt_dp;
@@ -1182,11 +1182,11 @@ struct _anon25
 	float r;
 };
 
-struct _anon26
-{
-	float x;
-	float y;
-};
+
+
+
+
+
 
 
 

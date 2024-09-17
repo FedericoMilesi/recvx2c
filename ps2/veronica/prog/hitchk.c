@@ -33,7 +33,7 @@ typedef struct _anon29;
 typedef struct _anon30;
 typedef struct _anon31;
 typedef struct _anon32;
-typedef struct _anon33;
+
 typedef struct _anon34;
 typedef struct _anon35;
 
@@ -118,7 +118,7 @@ typedef float type_66[5];
 typedef _anon2* type_67[256];
 typedef _anon11 type_68[256];
 typedef _anon25 type_69[450];
-typedef _anon33 type_70[16];
+
 typedef short type_71[256];
 typedef char type_72[3];
 typedef int type_73[64];
@@ -749,7 +749,7 @@ struct _anon4
 	int mes_fls;
 	int mes_sel;
 	int mes_seln;
-	_anon33 mes_sps[16];
+	NJS_POINT2 mes_sps[16];
 	int rt_sp;
 	unsigned char* rt_wp;
 	unsigned char* rt_dp;
@@ -1350,11 +1350,11 @@ struct _anon32
 	float r;
 };
 
-struct _anon33
-{
-	float x;
-	float y;
-};
+
+
+
+
+
 
 struct _anon34
 {
@@ -1586,7 +1586,7 @@ int bhCheckInnerTriangle2(_anon0* hp, NJS_POINT3* pos, float aw, float ad, float
 int bhCheckInnerTriangle3(_anon0* hp, NJS_POINT3* pos);
 int bhCheckBox(_anon0* hp, NJS_POINT3* pos, float ar, float ah, unsigned int aflg);
 int bhCheckBox2Box(_anon0* hp, NJS_POINT3* pos, float aw, float ad, float ah);
-int bhCheckInnerP4(_anon33* pos, _anon33* p0, _anon33* p1, _anon33* p2, _anon33* p3);
+int bhCheckInnerP4(NJS_POINT2* pos, NJS_POINT2* p0, NJS_POINT2* p1, NJS_POINT2* p2, NJS_POINT2* p3);
 void bhCheckExmAtari(BH_PWORK* pp);
 void bhSetUseKaidanFlag(BH_PWORK* pp, _anon0* exp, int idx);
 void bhClrUseKaidanFlag(BH_PWORK* pp);
@@ -3947,11 +3947,11 @@ int bhCheckInnerTriangle(_anon0* hp, NJS_POINT3* pos, float ar, float ah)
 	float h;
 	float pz;
 	float px;
-	_anon33 pd;
-	_anon33 pc;
-	_anon33 pb;
-	_anon33 pa;
-	_anon33 ps;
+	NJS_POINT2 pd;
+	NJS_POINT2 pc;
+	NJS_POINT2 pb;
+	NJS_POINT2 pa;
+	NJS_POINT2 ps;
 	// Line 2961, Address: 0x2648c0, Func Offset: 0
 	// Line 2966, Address: 0x2648c4, Func Offset: 0x4
 	// Line 2961, Address: 0x2648c8, Func Offset: 0x8
@@ -4080,11 +4080,11 @@ int bhCheckInnerTriangle2(_anon0* hp, NJS_POINT3* pos, float aw, float ad, float
 	float h;
 	float pz;
 	float px;
-	_anon33 pd;
-	_anon33 pc;
-	_anon33 pb;
-	_anon33 pa;
-	_anon33 ps;
+	NJS_POINT2 pd;
+	NJS_POINT2 pc;
+	NJS_POINT2 pb;
+	NJS_POINT2 pa;
+	NJS_POINT2 ps;
 	// Line 3077, Address: 0x264e50, Func Offset: 0
 	// Line 3082, Address: 0x264e54, Func Offset: 0x4
 	// Line 3077, Address: 0x264e58, Func Offset: 0x8
@@ -4426,7 +4426,7 @@ int bhCheckBox2Box(_anon0* hp, NJS_POINT3* pos, float aw, float ad, float ah)
 
 // 
 // Start address: 0x265e10
-int bhCheckInnerP4(_anon33* pos, _anon33* p0, _anon33* p1, _anon33* p2, _anon33* p3)
+int bhCheckInnerP4(NJS_POINT2* pos, NJS_POINT2* p0, NJS_POINT2* p1, NJS_POINT2* p2, NJS_POINT2* p3)
 {
 	float y3;
 	float y2;

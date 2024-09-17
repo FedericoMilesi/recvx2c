@@ -46,7 +46,7 @@ typedef struct _anon29;
 typedef struct _anon30;
 typedef struct _anon31;
 typedef struct _anon32;
-typedef struct _anon33;
+
 typedef struct NJS_POINT3;
 typedef struct _anon35;
 typedef struct _anon36;
@@ -167,7 +167,7 @@ typedef void* type_107[2];
 typedef char type_108[16];
 typedef char type_109[4];
 typedef unsigned int type_111[32];
-typedef _anon33 type_112[16];
+
 typedef unsigned int type_113[16];
 typedef unsigned int type_114[2];
 typedef unsigned int type_115[16];
@@ -188,7 +188,7 @@ typedef char type_129[4];
 typedef _anon8 type_130[16];
 typedef short type_131[4];
 typedef unsigned char type_133[4];
-typedef _anon33 type_134[4];
+
 typedef _anon26 type_135[4];
 typedef char type_136[13];
 typedef _anon19 type_137[16];
@@ -913,7 +913,7 @@ struct _anon13
 	int mes_fls;
 	int mes_sel;
 	int mes_seln;
-	_anon33 mes_sps[16];
+	NJS_POINT2 mes_sps[16];
 	int rt_sp;
 	unsigned char* rt_wp;
 	unsigned char* rt_dp;
@@ -1448,11 +1448,11 @@ struct _anon32
 	NJS_MATRIX mtx;
 };
 
-struct _anon33
-{
-	float x;
-	float y;
-};
+
+
+
+
+
 
 
 
@@ -1482,7 +1482,7 @@ struct _anon35
 
 struct _anon36
 {
-	_anon33* p;
+	NJS_POINT2* p;
 	_anon26* col;
 	_anon26* tex;
 	unsigned int num;
@@ -2084,7 +2084,7 @@ void mcDisplaySelectFileInfoMesCount(tagSELECTFILEINFO* pFileInfo, float fx, flo
 	unsigned int ulMesPlace;
 	unsigned int ulMesIncrease;
 	unsigned int col;
-	_anon33 pos;
+	NJS_POINT2 pos;
 	// Line 1338, Address: 0x272740, Func Offset: 0
 	// Line 1344, Address: 0x272764, Func Offset: 0x24
 	// Line 1346, Address: 0x272778, Func Offset: 0x38
@@ -2161,7 +2161,7 @@ void mcDispFileNumber(tagSELECTFILEINFO* pFileInfo, float fx, float fy)
 {
 	unsigned int col;
 	unsigned int ulTenfigure;
-	_anon33 pos;
+	NJS_POINT2 pos;
 	// Line 1592, Address: 0x272bd0, Func Offset: 0
 	// Line 1596, Address: 0x272be4, Func Offset: 0x14
 	// Line 1598, Address: 0x272c18, Func Offset: 0x48
@@ -2190,7 +2190,7 @@ void mcDispFileNumber(tagSELECTFILEINFO* pFileInfo, float fx, float fy)
 void mcDispFileName(tagSELECTFILEINFO* pFileInfo, float fy)
 {
 	unsigned int col;
-	_anon33 pos;
+	NJS_POINT2 pos;
 	// Line 1649, Address: 0x272d20, Func Offset: 0
 	// Line 1653, Address: 0x272d34, Func Offset: 0x14
 	// Line 1655, Address: 0x272d68, Func Offset: 0x48
@@ -2295,7 +2295,7 @@ void DispCursolTexture(float pos_x, float pos_y, unsigned int color)
 void DispUpDownCursol(float fx, float fy, unsigned int mode)
 {
 	_anon26 col[4];
-	_anon33 p[4];
+	NJS_POINT2 p[4];
 	_anon36 p2c;
 	// Line 1862, Address: 0x2730c0, Func Offset: 0
 	// Line 1869, Address: 0x2730c4, Func Offset: 0x4

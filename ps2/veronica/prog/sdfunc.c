@@ -27,7 +27,7 @@ typedef struct _anon24;
 typedef struct _anon25;
 typedef struct _anon26;
 typedef struct _anon27;
-typedef struct _anon28;
+
 typedef struct _anon29;
 typedef struct _anon30;
 typedef struct _anon31;
@@ -121,7 +121,7 @@ typedef int type_41[3];
 typedef _anon40 type_42[2];
 typedef char type_43[68];
 typedef char type_44[16];
-typedef _anon28 type_45[16];
+
 
 typedef short type_47[5];
 typedef char type_48[4];
@@ -758,11 +758,11 @@ struct _anon27
 	unsigned char exd[256];
 };
 
-struct _anon28
-{
-	float x;
-	float y;
-};
+
+
+
+
+
 
 struct _anon29
 {
@@ -1591,7 +1591,7 @@ struct _anon56
 	int mes_fls;
 	int mes_sel;
 	int mes_seln;
-	_anon28 mes_sps[16];
+	NJS_POINT2 mes_sps[16];
 	int rt_sp;
 	unsigned char* rt_wp;
 	unsigned char* rt_dp;
@@ -2741,7 +2741,7 @@ int CheckCollision4Sound(NJS_POINT3* pP2)
 int Get3DSoundParameter(NJS_POINT3* pP1, NJS_POINT3* pP2, char* pPan, char* pVol, float* pDist, int Mode)
 {
 	NJS_POINT3 pd;
-	_anon28 ScreenPos;
+	NJS_POINT2 ScreenPos;
 	int Ang;
 	int Val;
 	int ReturnCode;

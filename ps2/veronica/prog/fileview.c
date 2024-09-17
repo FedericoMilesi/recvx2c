@@ -26,7 +26,7 @@ typedef struct BH_PWORK;
 typedef struct _anon23;
 typedef struct _anon24;
 typedef struct _anon25;
-typedef struct _anon26;
+
 typedef struct _anon27;
 typedef struct NJS_POINT3;
 typedef struct _anon29;
@@ -81,7 +81,7 @@ typedef float type_33[4];
 typedef _anon3* type_34[128];
 typedef unsigned char type_35[64];
 
-typedef _anon26 type_37[2];
+
 typedef char type_38[8];
 typedef void* type_39[2];
 typedef unsigned int type_40[24];
@@ -101,7 +101,7 @@ typedef _anon7 type_53[256];
 typedef int type_54[3];
 typedef _anon35 type_55[0];
 typedef _anon16 type_56[450];
-typedef _anon26 type_57[16];
+
 typedef short type_58[256];
 typedef char type_59[3];
 typedef int type_60[64];
@@ -494,7 +494,7 @@ struct _anon12
 	unsigned char boxwait;
 	short actioncount;
 	_anon4 scr;
-	_anon26 clip[2];
+	NJS_POINT2 clip[2];
 	unsigned char flgchk;
 	unsigned char flgtest;
 	unsigned char* sspb;
@@ -865,7 +865,7 @@ struct _anon19
 	int mes_fls;
 	int mes_sel;
 	int mes_seln;
-	_anon26 mes_sps[16];
+	NJS_POINT2 mes_sps[16];
 	int rt_sp;
 	unsigned char* rt_wp;
 	unsigned char* rt_dp;
@@ -1207,11 +1207,11 @@ struct _anon25
 	float r;
 };
 
-struct _anon26
-{
-	float x;
-	float y;
-};
+
+
+
+
+
 
 struct _anon27
 {
@@ -1852,7 +1852,7 @@ void SelectTag()
 	int title;
 	int tagbak;
 	short i;
-	_anon26 mpos;
+	NJS_POINT2 mpos;
 	_anon14* si;
 	_anon11* fv;
 	_anon12* st;

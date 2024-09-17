@@ -1,7 +1,7 @@
 typedef struct NJS_POINT3;
 typedef struct tagNJS_SCRVECTOR;
 typedef struct _anon1;
-typedef struct _anon2;
+
 typedef struct _anon3;
 typedef struct _anon4;
 typedef struct _anon5;
@@ -34,11 +34,11 @@ struct _anon1
 	float w;
 };
 
-struct _anon2
-{
-	float x;
-	float y;
-};
+
+
+
+
+
 
 struct _anon3
 {
@@ -111,7 +111,7 @@ void njCalcVector(NJS_MATRIX pMatrix, NJS_POINT3* pSrcVec, NJS_POINT3* pDstVec);
 float njUnitVector(NJS_POINT3* pVector);
 float njScalor(NJS_POINT3* pVector);
 float njScalor2(NJS_POINT3* pVector);
-void njProjectScreen(NJS_MATRIX pMatrix, NJS_POINT3* pPoint, _anon2* pScreen);
+void njProjectScreen(NJS_MATRIX pMatrix, NJS_POINT3* pPoint, NJS_POINT2* pScreen);
 float njOuterProduct(NJS_POINT3* pSrcVec1, NJS_POINT3* pSrcVec2, NJS_POINT3* pDstVec);
 float njInnerProduct(NJS_POINT3* pVec1, NJS_POINT3* pVec2);
 void njTranslateEx(NJS_POINT3* pVector);
@@ -1121,7 +1121,7 @@ float njScalor2(NJS_POINT3* pVector)
 
 // 
 // Start address: 0x2d7780
-void njProjectScreen(NJS_MATRIX pMatrix, NJS_POINT3* pPoint, _anon2* pScreen)
+void njProjectScreen(NJS_MATRIX pMatrix, NJS_POINT3* pPoint, NJS_POINT2* pScreen)
 {
 	NJS_POINT3 Point;
 	// Line 4861, Address: 0x2d7780, Func Offset: 0

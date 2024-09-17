@@ -1,7 +1,7 @@
 typedef struct npobj;
 typedef struct _anon0;
 typedef struct _anon1;
-typedef struct _anon2;
+
 
 typedef struct _anon4;
 typedef struct _anon5;
@@ -69,7 +69,7 @@ typedef _anon0* type_15[512];
 typedef _anon1* type_16[200];
 typedef short type_17[32];
 typedef _anon26 type_18[1];
-typedef _anon2 type_19[4];
+
 typedef _anon0* type_20[128];
 typedef unsigned int type_21[1];
 typedef _anon23 type_22[4];
@@ -113,7 +113,7 @@ typedef float type_59[3];
 typedef _anon1* type_60[256];
 typedef _anon9 type_61[256];
 typedef _anon26 type_62[450];
-typedef _anon2 type_63[16];
+
 typedef short type_64[256];
 typedef char type_65[3];
 typedef int type_66[64];
@@ -166,7 +166,7 @@ typedef unsigned int type_113[4];
 typedef NJS_POINT3 type_114[32];
 typedef _anon0* type_115[512];
 typedef _anon0* type_116[128];
-typedef _anon2 type_117[4];
+
 typedef _anon0* type_118[512];
 typedef _anon23 type_119[4];
 typedef unsigned char type_120[64];
@@ -314,11 +314,11 @@ struct _anon1
 	unsigned int nbTexture;
 };
 
-struct _anon2
-{
-	float x;
-	float y;
-};
+
+
+
+
+
 
 
 
@@ -1026,7 +1026,7 @@ struct _anon28
 	int mes_fls;
 	int mes_sel;
 	int mes_seln;
-	_anon2 mes_sps[16];
+	NJS_POINT2 mes_sps[16];
 	int rt_sp;
 	unsigned char* rt_wp;
 	unsigned char* rt_dp;
@@ -1415,7 +1415,7 @@ struct _anon37
 
 struct _anon39
 {
-	_anon2* p;
+	NJS_POINT2* p;
 	_anon23* col;
 	_anon23* tex;
 	unsigned int num;
@@ -1529,13 +1529,13 @@ float FontScaleY;
 
 void bhSetMessage(int mes_typ, int mes_idx);
 void bhControlMessage(int mode);
-void bhDispFont(_anon2* pos, int code, int color, float pri);
-void bhDispFontEx(_anon2* pos, int code, unsigned int argb, float pri);
-int bhDispItemName(_anon2* pos, int id, int color, int count, float pri);
+void bhDispFont(NJS_POINT2* pos, int code, int color, float pri);
+void bhDispFontEx(NJS_POINT2* pos, int code, unsigned int argb, float pri);
+int bhDispItemName(NJS_POINT2* pos, int id, int color, int count, float pri);
 int bhDispMessage(float px, float py, float pri, int mes_typ, int mes_idx, int color, int count);
 int bhDispMessageEx(float px, float py, float pri, int mes_typ, int mes_idx, unsigned int argb, int count);
-void bhDispTime(_anon2* pos, unsigned int flg, int time, int color, float pri);
-void bhDispTimeEx(_anon2* pos, unsigned int flg, int time, unsigned int argb, float pri);
+void bhDispTime(NJS_POINT2* pos, unsigned int flg, int time, int color, float pri);
+void bhDispTimeEx(NJS_POINT2* pos, unsigned int flg, int time, unsigned int argb, float pri);
 float bhGetFontSize(unsigned short code);
 float bhMesLen(unsigned short* dp);
 void bhFontScaleSet(float ScaleX, float ScaleY, float ScaleCR);
@@ -1583,7 +1583,7 @@ void bhControlMessage(int mode)
 	unsigned short id;
 	unsigned short cd;
 	unsigned short* dt;
-	_anon2 pos;
+	NJS_POINT2 pos;
 	// Line 160, Address: 0x2b7670, Func Offset: 0
 	// Line 164, Address: 0x2b7698, Func Offset: 0x28
 	// Line 165, Address: 0x2b76ac, Func Offset: 0x3c
@@ -1767,11 +1767,11 @@ void bhControlMessage(int mode)
 
 // 
 // Start address: 0x2b8190
-void bhDispFont(_anon2* pos, int code, int color, float pri)
+void bhDispFont(NJS_POINT2* pos, int code, int color, float pri)
 {
 	_anon23 uv[4];
 	_anon23 col[4];
-	_anon2 p[4];
+	NJS_POINT2 p[4];
 	_anon39 p2c;
 	// Line 407, Address: 0x2b8190, Func Offset: 0
 	// Line 415, Address: 0x2b81b8, Func Offset: 0x28
@@ -1852,11 +1852,11 @@ void bhDispFont(_anon2* pos, int code, int color, float pri)
 
 // 
 // Start address: 0x2b8430
-void bhDispFontEx(_anon2* pos, int code, unsigned int argb, float pri)
+void bhDispFontEx(NJS_POINT2* pos, int code, unsigned int argb, float pri)
 {
 	_anon23 uv[4];
 	_anon23 col[4];
-	_anon2 p[4];
+	NJS_POINT2 p[4];
 	_anon39 p2c;
 	// Line 488, Address: 0x2b8430, Func Offset: 0
 	// Line 496, Address: 0x2b8458, Func Offset: 0x28
@@ -1922,7 +1922,7 @@ void bhDispFontEx(_anon2* pos, int code, unsigned int argb, float pri)
 
 // 
 // Start address: 0x2b8620
-int bhDispItemName(_anon2* pos, int id, int color, int count, float pri)
+int bhDispItemName(NJS_POINT2* pos, int id, int color, int count, float pri)
 {
 	int num;
 	int cflg;
@@ -1960,7 +1960,7 @@ int bhDispMessage(float px, float py, float pri, int mes_typ, int mes_idx, int c
 	int cflg;
 	unsigned short cd;
 	unsigned short* dp;
-	_anon2 pos;
+	NJS_POINT2 pos;
 	// Line 591, Address: 0x2b8750, Func Offset: 0
 	// Line 597, Address: 0x2b877c, Func Offset: 0x2c
 	// Line 599, Address: 0x2b87a4, Func Offset: 0x54
@@ -2014,7 +2014,7 @@ int bhDispMessageEx(float px, float py, float pri, int mes_typ, int mes_idx, uns
 	int cflg;
 	unsigned short cd;
 	unsigned short* dp;
-	_anon2 pos;
+	NJS_POINT2 pos;
 	// Line 688, Address: 0x2b89e0, Func Offset: 0
 	// Line 694, Address: 0x2b8a0c, Func Offset: 0x2c
 	// Line 696, Address: 0x2b8a34, Func Offset: 0x54
@@ -2061,14 +2061,14 @@ int bhDispMessageEx(float px, float py, float pri, int mes_typ, int mes_idx, uns
 
 // 
 // Start address: 0x2b8c80
-void bhDispTime(_anon2* pos, unsigned int flg, int time, int color, float pri)
+void bhDispTime(NJS_POINT2* pos, unsigned int flg, int time, int color, float pri)
 {
 	unsigned short cd;
 	int msc;
 	int sec;
 	int min;
 	int hour;
-	_anon2 dps;
+	NJS_POINT2 dps;
 	int ntb[10];
 	// Line 784, Address: 0x2b8c80, Func Offset: 0
 	// Line 800, Address: 0x2b8ca8, Func Offset: 0x28
@@ -2172,14 +2172,14 @@ void bhDispTime(_anon2* pos, unsigned int flg, int time, int color, float pri)
 
 // 
 // Start address: 0x2b9260
-void bhDispTimeEx(_anon2* pos, unsigned int flg, int time, unsigned int argb, float pri)
+void bhDispTimeEx(NJS_POINT2* pos, unsigned int flg, int time, unsigned int argb, float pri)
 {
 	unsigned short cd;
 	int msc;
 	int sec;
 	int min;
 	int hour;
-	_anon2 dps;
+	NJS_POINT2 dps;
 	int ntb[10];
 	// Line 937, Address: 0x2b9260, Func Offset: 0
 	// Line 953, Address: 0x2b9288, Func Offset: 0x28

@@ -25,7 +25,7 @@ typedef struct _anon22;
 typedef struct BH_PWORK;
 typedef struct _anon23;
 typedef struct _anon24;
-typedef struct _anon25;
+
 typedef struct NJS_POINT3;
 typedef struct _anon27;
 typedef struct _anon28;
@@ -73,7 +73,7 @@ typedef _anon0* type_27[128];
 typedef int type_28[4];
 typedef _anon1* type_29[16];
 typedef unsigned int type_30[4];
-typedef _anon25 type_31[4];
+
 typedef _anon8 type_32[16];
 typedef _anon0* type_33[512];
 typedef _anon14 type_34[4];
@@ -93,7 +93,7 @@ typedef char type_47[8];
 typedef float type_48[3];
 typedef float type_49[3][20];
 typedef void* type_50[2];
-typedef _anon25 type_51[4];
+
 typedef _anon14 type_52[4];
 typedef _anon1* type_53[256];
 typedef int type_54[4];
@@ -111,7 +111,7 @@ typedef _anon1* type_65[256];
 typedef _anon7 type_66[256];
 typedef _anon16 type_67[450];
 
-typedef _anon25 type_69[16];
+
 typedef short type_70[256];
 typedef char type_71[3];
 typedef int type_72[64];
@@ -123,14 +123,14 @@ typedef short type_75[8][18];
 typedef int type_78[450];
 typedef unsigned int type_79[8];
 typedef unsigned char type_80[450];
-typedef _anon25 type_81[4];
+
 
 typedef _anon14 type_83[4];
 typedef _anon14 type_84[4];
 typedef char type_85[16];
 typedef char type_86[4];
 typedef unsigned int type_88[32];
-typedef _anon25 type_89[4];
+
 typedef unsigned int type_90[16];
 typedef _anon32 type_91[64];
 typedef unsigned int type_92[16];
@@ -151,7 +151,7 @@ typedef unsigned int type_106[2];
 typedef unsigned char type_107[2];
 typedef int* type_108[16];
 typedef unsigned int type_109[4];
-typedef _anon25 type_110[4];
+
 typedef char type_111[32];
 typedef npobj* type_112[16];
 typedef _anon14 type_113[4];
@@ -162,13 +162,13 @@ typedef _anon8 type_117[16];
 typedef short type_118[4];
 typedef unsigned char type_119[4];
 typedef _anon27 type_120[16];
-typedef _anon25 type_121[4];
+
 typedef _anon14 type_122[4];
 typedef unsigned int type_123[32];
 typedef _anon14 type_124[4];
 typedef NJS_POINT3 type_125[32];
 typedef _anon0* type_126[512];
-typedef _anon25 type_127[4];
+
 typedef _anon0* type_128[128];
 typedef _anon0* type_129[512];
 typedef unsigned char type_130[64];
@@ -796,7 +796,7 @@ struct _anon19
 	int mes_fls;
 	int mes_sel;
 	int mes_seln;
-	_anon25 mes_sps[16];
+	NJS_POINT2 mes_sps[16];
 	int rt_sp;
 	unsigned char* rt_wp;
 	unsigned char* rt_dp;
@@ -1126,11 +1126,11 @@ struct _anon24
 	float r;
 };
 
-struct _anon25
-{
-	float x;
-	float y;
-};
+
+
+
+
+
 
 
 
@@ -1184,7 +1184,7 @@ struct _anon28
 
 struct _anon30
 {
-	_anon25* p;
+	NJS_POINT2* p;
 	_anon14* col;
 	_anon14* tex;
 	unsigned int num;
@@ -1448,7 +1448,7 @@ void bhDrawScreenFade()
 {
 	unsigned int argb;
 	_anon14 col[4];
-	_anon25 p[4];
+	NJS_POINT2 p[4];
 	_anon30 p2c;
 	// Line 153, Address: 0x26c070, Func Offset: 0
 	// Line 158, Address: 0x26c080, Func Offset: 0x10
@@ -1585,7 +1585,7 @@ void bhDrawCinesco()
 {
 	unsigned int argb;
 	_anon14 col[4];
-	_anon25 p[4];
+	NJS_POINT2 p[4];
 	_anon30 p2c;
 	// Line 376, Address: 0x26c590, Func Offset: 0
 	// Line 382, Address: 0x26c5ac, Func Offset: 0x1c
@@ -1646,7 +1646,7 @@ void bhDrawScope()
 	_anon14 col[4];
 	NJS_POINT3 as;
 	NJS_POINT3 ps;
-	_anon25 p[4];
+	NJS_POINT2 p[4];
 	_anon30 p2c;
 	// Line 425, Address: 0x26c710, Func Offset: 0
 	// Line 434, Address: 0x26c748, Func Offset: 0x38
@@ -1872,7 +1872,7 @@ void bhDrawScopeNumber(float px, float py, int num)
 {
 	_anon14 uv[4];
 	_anon14 col[4];
-	_anon25 p[4];
+	NJS_POINT2 p[4];
 	_anon30 p2c;
 	short uv_tab[8][18];
 	// Line 572, Address: 0x26ce60, Func Offset: 0
@@ -1947,7 +1947,7 @@ void bhDrawThermometer()
 	unsigned int argb;
 	_anon14 uv[4];
 	_anon14 col[4];
-	_anon25 p[4];
+	NJS_POINT2 p[4];
 	_anon30 p2c;
 	int ten;
 	// Line 632, Address: 0x26cfb0, Func Offset: 0
@@ -2113,7 +2113,7 @@ void bhDrawThermoNumber(float px, float py, int num, unsigned int argb)
 {
 	_anon14 uv[4];
 	_anon14 col[4];
-	_anon25 p[4];
+	NJS_POINT2 p[4];
 	_anon30 p2c;
 	short uv_tab[8][10];
 	// Line 755, Address: 0x26d520, Func Offset: 0

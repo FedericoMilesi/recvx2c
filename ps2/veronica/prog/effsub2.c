@@ -38,7 +38,7 @@ typedef struct _anon34;
 typedef struct _anon35;
 typedef struct _anon36;
 typedef struct _anon37;
-typedef struct _anon38;
+
 typedef struct _anon39;
 typedef struct _anon40;
 typedef struct _anon41;
@@ -155,7 +155,7 @@ typedef _anon39 type_89[16];
 typedef _anon14 type_90[256];
 
 typedef _anon30 type_93[450];
-typedef _anon38 type_94[16];
+
 typedef short type_95[256];
 typedef char type_96[3];
 typedef int type_98[64];
@@ -658,7 +658,7 @@ struct _anon5
 	int mes_fls;
 	int mes_sel;
 	int mes_seln;
-	_anon38 mes_sps[16];
+	NJS_POINT2 mes_sps[16];
 	int rt_sp;
 	unsigned char* rt_wp;
 	unsigned char* rt_dp;
@@ -1448,11 +1448,11 @@ struct _anon37
 	float r;
 };
 
-struct _anon38
-{
-	float x;
-	float y;
-};
+
+
+
+
+
 
 struct _anon39
 {
@@ -4691,7 +4691,7 @@ void bhEff_DamagePoint(_anon0* op)
 // Start address: 0x2461b0
 void bhEff_DamagePointDraw(_anon0* op)
 {
-	_anon38 pos;
+	NJS_POINT2 pos;
 	// Line 4683, Address: 0x2461b0, Func Offset: 0
 	// Line 4686, Address: 0x2461b4, Func Offset: 0x4
 	// Line 4683, Address: 0x2461b8, Func Offset: 0x8

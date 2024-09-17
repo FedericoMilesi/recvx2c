@@ -40,7 +40,7 @@ typedef struct _anon36;
 typedef struct _anon37;
 typedef struct _anon38;
 typedef struct _anon39;
-typedef struct _anon40;
+
 typedef struct NJS_POINT3;
 typedef struct _anon42;
 typedef struct _anon43;
@@ -173,7 +173,7 @@ typedef unsigned int type_103[2];
 typedef short type_104[256];
 typedef _anon8 type_105[9];
 typedef _anon38 type_106[4];
-typedef _anon40 type_107[4];
+
 typedef float type_108[3];
 typedef short type_109[256];
 typedef int type_110[3];
@@ -188,7 +188,7 @@ typedef _anon8 type_118[9];
 typedef _anon15 type_119[256];
 typedef _anon8 type_120[9];
 typedef _anon30 type_121[450];
-typedef _anon40 type_122[16];
+
 typedef _anon8 type_123[4];
 typedef _anon8 type_124[4][2];
 typedef _anon8 type_125[11];
@@ -749,7 +749,7 @@ struct _anon7
 	int mes_fls;
 	int mes_sel;
 	int mes_seln;
-	_anon40 mes_sps[16];
+	NJS_POINT2 mes_sps[16];
 	int rt_sp;
 	unsigned char* rt_wp;
 	unsigned char* rt_dp;
@@ -1553,11 +1553,11 @@ struct _anon39
 	float r;
 };
 
-struct _anon40
-{
-	float x;
-	float y;
-};
+
+
+
+
+
 
 
 
@@ -1632,7 +1632,7 @@ struct _anon44
 
 struct _anon46
 {
-	_anon40* p;
+	NJS_POINT2* p;
 	_anon27* col;
 	_anon27* tex;
 	unsigned int num;
@@ -4945,7 +4945,7 @@ void bhEff019(_anon0* op)
 void bhDraw021()
 {
 	_anon27 col[4];
-	_anon40 p[4];
+	NJS_POINT2 p[4];
 	_anon46 p2c;
 	// Line 3685, Address: 0x22c540, Func Offset: 0
 	// Line 3691, Address: 0x22c558, Func Offset: 0x18

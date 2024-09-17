@@ -32,7 +32,7 @@ typedef struct _anon28;
 typedef struct _anon29;
 typedef struct _anon30;
 typedef struct _anon31;
-typedef struct _anon32;
+
 typedef struct _anon33;
 typedef struct _anon34;
 
@@ -116,7 +116,7 @@ typedef float type_64[3];
 typedef _anon1* type_65[256];
 typedef _anon11 type_66[256];
 typedef _anon24 type_67[450];
-typedef _anon32 type_68[16];
+
 typedef short type_69[256];
 typedef char type_70[3];
 typedef int type_71[64];
@@ -1155,7 +1155,7 @@ struct _anon26
 	int mes_fls;
 	int mes_sel;
 	int mes_seln;
-	_anon32 mes_sps[16];
+	NJS_POINT2 mes_sps[16];
 	int rt_sp;
 	unsigned char* rt_wp;
 	unsigned char* rt_dp;
@@ -1341,11 +1341,11 @@ struct _anon31
 	float r;
 };
 
-struct _anon32
-{
-	float x;
-	float y;
-};
+
+
+
+
+
 
 struct _anon33
 {
@@ -1724,7 +1724,7 @@ void bhSetEasyDirLight(float it)
 void bhControlLight()
 {
 	float clp;
-	_anon32 lpos;
+	NJS_POINT2 lpos;
 	NJS_POINT3 npos;
 	float fl;
 	int dirf;
