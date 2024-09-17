@@ -26,7 +26,7 @@ typedef struct _anon23;
 typedef struct _anon25;
 typedef struct _anon26;
 typedef struct PS2_OT_LIST;
-typedef union _anon27;
+
 typedef struct _anon28;
 typedef struct _anon29;
 typedef struct _anon30;
@@ -161,7 +161,7 @@ struct _anon2
 
 struct _anon3
 {
-	_anon27 a;
+	NJS_CLIP_BUF a;
 	float sx;
 	float sy;
 	float oow;
@@ -505,11 +505,11 @@ struct PS2_OT_LIST
 {
 };
 
-union _anon27
-{
-	unsigned int work;
-	unsigned int clip;
-};
+
+
+
+
+
 
 struct _anon28
 {

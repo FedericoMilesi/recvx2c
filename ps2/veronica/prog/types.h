@@ -460,15 +460,15 @@ typedef struct Unknown21
 } Unknown21;
 
 
-typedef union Unknown20 {
-    unsigned int work;
-    unsigned int clip;
-}
-Unknown20;
+
+
+
+
+
 
 
 typedef struct VertexBuffer {
-    /*  0 */ Unknown20 a;
+	/*  0 */ NJS_CLIP_BUF a;
     /*  4 */ float sx;
     /*  8 */ float sy;
     /* 12 */ float oow;

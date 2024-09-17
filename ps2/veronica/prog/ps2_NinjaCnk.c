@@ -25,7 +25,7 @@ typedef struct _anon17;
 typedef struct _anon18;
 typedef struct tagCNK_LIGHTING;
 
-typedef union _anon20;
+
 typedef struct _anon21;
 typedef struct _anon22;
 typedef struct _anon23;
@@ -213,7 +213,7 @@ struct _anon10
 
 struct _anon11
 {
-	_anon20 a;
+	NJS_CLIP_BUF a;
 	float sx;
 	float sy;
 	float oow;
@@ -386,11 +386,11 @@ struct tagCNK_LIGHTING
 
 
 
-union _anon20
-{
-	unsigned int work;
-	unsigned int clip;
-};
+
+
+
+
+
 
 struct _anon21
 {

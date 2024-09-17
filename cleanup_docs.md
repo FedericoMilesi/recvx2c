@@ -20,3 +20,4 @@
 | NJS_TEXTURE_VTX | Found on Katana | `<katana>/ninjastr.h` |
 | NJS_POINT2 | Found on Katana | `<katana>/ninjastr.h` |
 | NJS_PLANE NJS_LINE | Found on Katana | `<katana>/ninjastr.h` |
+| NJS_CLIP_BUF | Found on Katana | `<katana>/ninjastr.h` |
