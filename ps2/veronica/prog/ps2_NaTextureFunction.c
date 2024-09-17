@@ -4,7 +4,7 @@ typedef struct _anon2;
 typedef struct _anon3;
 typedef struct _anon4;
 typedef struct _anon5;
-typedef struct _anon6;
+
 typedef struct _anon7;
 typedef struct _anon8;
 typedef struct _anon9;
@@ -71,7 +71,7 @@ struct _anon4
 	unsigned char ImageType;
 	unsigned short ImageWidth;
 	unsigned short ImageHeight;
-	_anon6 GsTex0;
+	sceGsTex0 GsTex0;
 	_anon9 GsTex1;
 	unsigned int GsRegs;
 	unsigned int GsTexClut;
@@ -88,24 +88,24 @@ struct _anon5
 	unsigned int col;
 };
 
-struct _anon6
-{
-	struct
-	{
-		unsigned long TBP0 : 14;
-		unsigned long TBW : 6;
-		unsigned long PSM : 6;
-		unsigned long TW : 4;
-		unsigned long TH : 4;
-		unsigned long TCC : 1;
-		unsigned long TFX : 2;
-		unsigned long CBP : 14;
-		unsigned long CPSM : 4;
-		unsigned long CSM : 1;
-		unsigned long CSA : 5;
-		unsigned long CLD : 3;
-	};
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon7
 {

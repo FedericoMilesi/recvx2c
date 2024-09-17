@@ -22,7 +22,7 @@ typedef struct _anon20;
 typedef struct _anon21;
 typedef struct _anon22;
 typedef struct _anon23;
-typedef struct _anon24;
+
 typedef struct _anon25;
 typedef struct _anon26;
 typedef struct PS2_OT_LIST;
@@ -103,7 +103,7 @@ struct _anon0
 	unsigned char ImageType;
 	unsigned short ImageWidth;
 	unsigned short ImageHeight;
-	_anon24 GsTex0;
+	sceGsTex0 GsTex0;
 	_anon32 GsTex1;
 	unsigned int GsRegs;
 	unsigned int GsTexClut;
@@ -456,24 +456,24 @@ struct _anon23
 	};
 };
 
-struct _anon24
-{
-	struct
-	{
-		unsigned long TBP0 : 14;
-		unsigned long TBW : 6;
-		unsigned long PSM : 6;
-		unsigned long TW : 4;
-		unsigned long TH : 4;
-		unsigned long TCC : 1;
-		unsigned long TFX : 2;
-		unsigned long CBP : 14;
-		unsigned long CPSM : 4;
-		unsigned long CSM : 1;
-		unsigned long CSA : 5;
-		unsigned long CLD : 3;
-	};
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon25
 {

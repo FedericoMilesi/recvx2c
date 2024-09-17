@@ -228,25 +228,25 @@ typedef struct Unknown29
 	unsigned short ppEntryCount;
 } Unknown29;
 
-// SCE_GS_TEX0
-typedef struct Unknown26
-{
-	struct
-	{
-		unsigned long TBP0 : 14;
-		unsigned long TBW : 6;
-		unsigned long PSM : 6;
-		unsigned long TW : 4;
-		unsigned long TH : 4;
-		unsigned long TCC : 1;
-		unsigned long TFX : 2;
-		unsigned long CBP : 14;
-		unsigned long CPSM : 4;
-		unsigned long CSM : 1;
-		unsigned long CSA : 5;
-		unsigned long CLD : 3;
-	};
-} Unknown26;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 typedef struct Unknown27
@@ -301,7 +301,7 @@ typedef struct Unknown25
 	unsigned char ImageType;
 	unsigned short ImageWidth;
 	unsigned short ImageHeight;
-	Unknown26 GsTex0;
+	sceGsTex0 GsTex0;
 	Unknown28 GsTex1;
 	unsigned int GsRegs;
 	unsigned int GsTexClut;

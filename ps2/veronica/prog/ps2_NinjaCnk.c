@@ -20,7 +20,7 @@ typedef struct _anon13;
 typedef struct _anon14;
 typedef struct tagVU1_COLOR;
 typedef struct _anon15;
-typedef struct _anon16;
+
 typedef struct _anon17;
 typedef struct _anon18;
 typedef struct tagCNK_LIGHTING;
@@ -294,24 +294,24 @@ struct _anon15
 	unsigned char ucPadding[56];
 };
 
-struct _anon16
-{
-	struct
-	{
-		unsigned long TBP0 : 14;
-		unsigned long TBW : 6;
-		unsigned long PSM : 6;
-		unsigned long TW : 4;
-		unsigned long TH : 4;
-		unsigned long TCC : 1;
-		unsigned long TFX : 2;
-		unsigned long CBP : 14;
-		unsigned long CPSM : 4;
-		unsigned long CSM : 1;
-		unsigned long CSA : 5;
-		unsigned long CLD : 3;
-	};
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon17
 {
@@ -336,7 +336,7 @@ struct _anon17
 	unsigned char ImageType;
 	unsigned short ImageWidth;
 	unsigned short ImageHeight;
-	_anon16 GsTex0;
+	sceGsTex0 GsTex0;
 	_anon19 GsTex1;
 	unsigned int GsRegs;
 	unsigned int GsTexClut;
