@@ -3,7 +3,7 @@ typedef struct _anon1;
 typedef struct _anon2;
 typedef struct _anon3;
 typedef struct _anon4;
-typedef struct _anon5;
+
 
 typedef struct _anon7;
 typedef struct _anon8;
@@ -80,13 +80,13 @@ struct _anon4
 	unsigned int ClampFlag;
 };
 
-struct _anon5
-{
-	float x;
-	float y;
-	float z;
-	unsigned int col;
-};
+
+
+
+
+
+
+
 
 
 
@@ -184,7 +184,7 @@ int Ps2_tex3DEx_count;
 _anon7* Ps2_tex3DEx_p;
 int Ps2_tex3DEx_trans;
 int Ps2_3DEx_count;
-_anon5* Ps2_3DEx_p;
+NJS_POLYGON_VTX* Ps2_3DEx_p;
 int Ps2_3DEx_trans;
 unsigned int Ps2_quad_color;
 int Ps2_quad_trans;

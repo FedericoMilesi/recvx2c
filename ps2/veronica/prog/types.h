@@ -353,13 +353,13 @@ typedef struct Unknown22
 } Unknown22;
 
 
-typedef struct Vector3Col {
-    /*  0 */ float x;
-    /*  4 */ float y;
-    /*  8 */ float z;
-    /* 12 */ unsigned int col;
-}
-Vector3Col;
+
+
+
+
+
+
+
 
 
 typedef struct Vector5Col {
@@ -1249,9 +1249,9 @@ typedef struct Unknown1 {
     unsigned char* objbak;
     Unknown6 cspr;
     int pn;
-    Vector3Col* pvp;
+    NJS_POLYGON_VTX* pvp;
     Vector5Col* tvp;
-    Vector3Col pv[4];
+    NJS_POLYGON_VTX pv[4];
     Vector5Col tv[4];
     int bl_src;
     int bl_dst;
@@ -1883,13 +1883,13 @@ typedef struct NJS_SCREEN
 	float cy;
 } NJS_SCREEN;
 
-typedef struct NJS_POLYGON_VTX
-{
-	float x;
-	float y;
-	float z;
-	unsigned int col;
-} NJS_POLYGON_VTX;
+
+
+
+
+
+
+
 
 typedef struct NJS_QUAD_TEXTURE
 {

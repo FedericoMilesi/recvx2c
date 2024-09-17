@@ -27,7 +27,7 @@ typedef struct _anon23;
 typedef struct NJS_POINT3;
 typedef struct _anon25;
 typedef struct _anon26;
-typedef struct _anon27;
+
 typedef struct _anon28;
 typedef struct _anon29;
 typedef struct _anon30;
@@ -121,7 +121,7 @@ typedef int type_74[4];
 typedef int type_75[64];
 typedef _anon8 type_76[450];
 typedef _anon38 type_77[22];
-typedef _anon27 type_78[4];
+
 typedef _anon2 type_79[4];
 typedef int type_80[450];
 typedef unsigned int type_81[8];
@@ -291,9 +291,9 @@ struct _anon0
 	unsigned char* objbak;
 	_anon36 cspr;
 	int pn;
-	_anon27* pvp;
+	NJS_POLYGON_VTX* pvp;
 	_anon2* tvp;
-	_anon27 pv[4];
+	NJS_POLYGON_VTX pv[4];
 	_anon2 tv[4];
 	int bl_src;
 	int bl_dst;
@@ -1156,13 +1156,14 @@ struct _anon26
 	_anon19 mspc;
 };
 
-struct _anon27
-{
-	float x;
-	float y;
-	float z;
-	unsigned int col;
-};
+
+
+
+
+
+
+
+
 
 struct _anon28
 {

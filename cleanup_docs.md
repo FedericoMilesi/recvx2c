@@ -16,3 +16,4 @@
 | SYE_CBL_TAG | Found on Katana | `<katana>/sg_sycbl.h` |
 | sceGsTex0 | Found on SCE | `<sce>/ee/include/eestruct.h` |
 | sceGsTex1 | Found on SCE | `<sce>/ee/include/eestruct.h` |
+| NJS_POLYGON_VTX | Found on Katana | `<katana>/ninjastr.h` |

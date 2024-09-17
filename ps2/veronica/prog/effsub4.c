@@ -32,7 +32,7 @@ typedef struct _anon28;
 typedef struct _anon29;
 typedef struct _anon30;
 typedef struct _anon31;
-typedef struct _anon32;
+
 typedef struct _anon33;
 typedef struct _anon34;
 typedef struct _anon35;
@@ -156,7 +156,7 @@ typedef _anon14 type_107[450];
 typedef _anon4* type_108[1];
 typedef _anon31 type_109[48];
 typedef _anon4* type_110[11];
-typedef _anon32 type_111[4];
+
 typedef _anon5 type_112[4];
 typedef _anon4 type_113[15];
 typedef int type_114[450];
@@ -191,7 +191,7 @@ typedef float type_143[2][11];
 typedef char type_144[64];
 typedef _anon3* type_145[16];
 typedef char type_146[4];
-typedef _anon32 type_147[3];
+typedef NJS_POLYGON_VTX type_147[3];
 typedef _anon14 type_148[16];
 typedef short type_149[4];
 typedef _anon31* type_150[2];
@@ -333,9 +333,9 @@ struct _anon1
 	unsigned char* objbak;
 	_anon39 cspr;
 	int pn;
-	_anon32* pvp;
+	NJS_POLYGON_VTX* pvp;
 	_anon5* tvp;
-	_anon32 pv[4];
+	NJS_POLYGON_VTX pv[4];
 	_anon5 tv[4];
 	int bl_src;
 	int bl_dst;
@@ -1239,13 +1239,14 @@ struct _anon31
 	float ys;
 };
 
-struct _anon32
-{
-	float x;
-	float y;
-	float z;
-	unsigned int col;
-};
+
+
+
+
+
+
+
+
 
 struct _anon33
 {
@@ -3337,7 +3338,7 @@ void bhEff_PtclSpriteDraw(_anon1* op)
 // Start address: 0x251230
 void bhEff_LineDraw(_anon1* op)
 {
-	_anon32 poly[3];
+	NJS_POLYGON_VTX poly[3];
 	int i;
 	char atr[192];
 	NJS_POINT3* vtx_p2;

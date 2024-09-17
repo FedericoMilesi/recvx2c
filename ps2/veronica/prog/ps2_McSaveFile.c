@@ -32,7 +32,7 @@ typedef struct _anon16;
 typedef struct _anon18;
 typedef struct _anon19;
 typedef struct GDS_FS_DIRREC_ENT;
-typedef struct _anon20;
+
 typedef struct _anon21;
 typedef struct _anon22;
 typedef struct _anon23;
@@ -151,9 +151,9 @@ typedef unsigned char type_91[4];
 typedef char type_92[2];
 typedef unsigned char type_93[64];
 typedef char type_94[3];
-typedef _anon20 type_95[4];
+
 typedef unsigned char type_96[64];
-typedef _anon20 type_97[4];
+
 typedef _anon24 type_98[4];
 typedef int type_99[450];
 typedef _anon37 type_100[18];
@@ -310,9 +310,9 @@ struct _anon0
 	unsigned char* objbak;
 	_anon5 cspr;
 	int pn;
-	_anon20* pvp;
+	NJS_POLYGON_VTX* pvp;
 	_anon24* tvp;
-	_anon20 pv[4];
+	NJS_POLYGON_VTX pv[4];
 	_anon24 tv[4];
 	int bl_src;
 	int bl_dst;
@@ -1277,13 +1277,14 @@ struct GDS_FS_DIRREC_ENT
 	char pad[2];
 };
 
-struct _anon20
-{
-	float x;
-	float y;
-	float z;
-	unsigned int col;
-};
+
+
+
+
+
+
+
+
 
 struct _anon21
 {
@@ -2445,7 +2446,7 @@ void DispMemoryCardTexture(float fx, float fy, unsigned int type, unsigned int m
 // Start address: 0x273530
 void mcDispWindowFoundtion(float fx, float fy, float fSizeW, float fSizeH, unsigned int Argb)
 {
-	_anon20 poly[4];
+	NJS_POLYGON_VTX poly[4];
 	// Line 2065, Address: 0x273530, Func Offset: 0
 	// Line 2070, Address: 0x273538, Func Offset: 0x8
 	// Line 2069, Address: 0x27353c, Func Offset: 0xc

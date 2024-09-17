@@ -13,7 +13,7 @@ typedef struct _anon9;
 typedef struct _anon10;
 typedef struct _anon11;
 typedef struct _anon12;
-typedef struct _anon13;
+
 typedef struct _anon14;
 typedef struct _anon15;
 typedef struct _anon16;
@@ -128,7 +128,7 @@ typedef _anon1* type_55[32];
 typedef void* type_56[2];
 typedef float type_57[32];
 typedef _anon6* type_58[200];
-typedef _anon13 type_59[4];
+
 typedef unsigned int type_60[3];
 typedef _anon1* type_61[32];
 typedef unsigned int type_62[1];
@@ -180,7 +180,7 @@ typedef _anon27 type_107[0];
 typedef float type_108[12];
 typedef int type_109[8];
 typedef tagMEMORYCARDPORT type_110[2];
-typedef _anon13 type_111[4];
+
 typedef int type_112[4][4];
 typedef float type_113[4][3];
 typedef float type_114[2];
@@ -188,7 +188,7 @@ typedef unsigned int type_115[0];
 typedef unsigned char type_116[2];
 typedef float type_117[4][3];
 typedef _anon6* type_118[256];
-typedef _anon13 type_119[4];
+
 typedef unsigned int type_120[3];
 typedef unsigned char* type_121[256];
 typedef int type_122[4];
@@ -221,7 +221,7 @@ typedef float type_148[4][2];
 typedef float type_149[12];
 typedef _anon20 type_150[450];
 typedef _anon47 type_151[0];
-typedef _anon13 type_152[4];
+
 typedef int type_153[3];
 typedef short type_154[256];
 typedef int type_155[64];
@@ -235,7 +235,7 @@ typedef unsigned int type_162[8];
 typedef float type_163[4][2];
 typedef float type_164[2];
 typedef float type_165[2][2];
-typedef _anon13 type_166[4];
+
 typedef char type_167[3];
 typedef _anon15 type_168[4];
 typedef int type_169[450];
@@ -518,9 +518,9 @@ struct _anon1
 	unsigned char* objbak;
 	_anon52 cspr;
 	int pn;
-	_anon13* pvp;
+	NJS_POLYGON_VTX* pvp;
 	_anon15* tvp;
-	_anon13 pv[4];
+	NJS_POLYGON_VTX pv[4];
 	_anon15 tv[4];
 	int bl_src;
 	int bl_dst;
@@ -669,13 +669,13 @@ struct _anon12
 	short v;
 };
 
-struct _anon13
-{
-	float x;
-	float y;
-	float z;
-	unsigned int col;
-};
+
+
+
+
+
+
+
 
 struct _anon14
 {

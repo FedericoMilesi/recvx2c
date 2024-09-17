@@ -48,7 +48,7 @@ typedef struct _anon37;
 typedef struct _anon38;
 typedef struct _EFF_INFO;
 typedef struct _anon39;
-typedef struct _anon40;
+
 typedef struct _anon41;
 typedef struct _anon42;
 typedef struct _anon43;
@@ -164,7 +164,7 @@ typedef char type_96[4];
 typedef unsigned int type_97[8];
 typedef void(*type_99)(BH_PWORK*)[6];
 typedef unsigned char type_100[24];
-typedef _anon40 type_101[4];
+
 typedef _ATTACK_COL_TBL type_102[3];
 typedef _anon3 type_103[4];
 typedef int type_104[450];
@@ -335,9 +335,9 @@ struct _anon1
 	unsigned char* objbak;
 	_anon0 cspr;
 	int pn;
-	_anon40* pvp;
+	NJS_POLYGON_VTX* pvp;
 	_anon3* tvp;
-	_anon40 pv[4];
+	NJS_POLYGON_VTX pv[4];
 	_anon3 tv[4];
 	int bl_src;
 	int bl_dst;
@@ -1526,13 +1526,14 @@ struct _anon39
 	float r2;
 };
 
-struct _anon40
-{
-	float x;
-	float y;
-	float z;
-	unsigned int col;
-};
+
+
+
+
+
+
+
+
 
 struct _anon41
 {

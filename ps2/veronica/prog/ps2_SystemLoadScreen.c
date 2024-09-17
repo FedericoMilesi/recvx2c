@@ -26,7 +26,7 @@ typedef struct _anon19;
 typedef struct tagCONFIGFILE;
 typedef struct tagSAVEFILE;
 typedef struct _anon20;
-typedef struct _anon21;
+
 typedef struct _anon22;
 typedef struct tagSELECTFILEINFO;
 typedef struct tagSELECTFILEWINDOW;
@@ -117,7 +117,7 @@ typedef _anon9 type_67[450];
 typedef unsigned char type_68[64];
 typedef unsigned char type_69[64];
 typedef char type_70[50];
-typedef _anon21 type_71[4];
+
 typedef unsigned char type_72[64];
 typedef char type_73[3];
 typedef char type_74[32];
@@ -284,9 +284,9 @@ struct _anon0
 	unsigned char* objbak;
 	_anon5 cspr;
 	int pn;
-	_anon21* pvp;
+	NJS_POLYGON_VTX* pvp;
 	_anon23* tvp;
-	_anon21 pv[4];
+	NJS_POLYGON_VTX pv[4];
 	_anon23 tv[4];
 	int bl_src;
 	int bl_dst;
@@ -1190,13 +1190,14 @@ struct _anon20
 	float r2;
 };
 
-struct _anon21
-{
-	float x;
-	float y;
-	float z;
-	unsigned int col;
-};
+
+
+
+
+
+
+
+
 
 struct _anon22
 {

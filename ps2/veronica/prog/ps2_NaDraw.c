@@ -3,7 +3,7 @@ typedef struct _anon1;
 typedef struct _anon2;
 typedef struct _anon3;
 typedef struct _anon4;
-typedef struct _anon5;
+
 typedef struct tagVU1_STRIP_BUF;
 typedef struct tagNJS_SCRVECTOR;
 
@@ -66,13 +66,14 @@ struct _anon4
 	float v2;
 };
 
-struct _anon5
-{
-	float x;
-	float y;
-	float z;
-	unsigned int col;
-};
+
+
+
+
+
+
+
+
 
 struct tagVU1_STRIP_BUF
 {
@@ -105,7 +106,7 @@ struct tagNJS_SCRVECTOR
 
 int Ps2_3DEx_trans;
 int Ps2_3DEx_count;
-_anon5* Ps2_3DEx_p;
+NJS_POLYGON_VTX* Ps2_3DEx_p;
 int Ps2_tex3DEx_trans;
 int Ps2_tex3DEx_count;
 _anon3* Ps2_tex3DEx_p;
@@ -116,15 +117,15 @@ _anon2* Ps2_current_texlist;
 int Ps2_quad_trans;
 unsigned int Ps2_quad_color;
 
-void njDrawPolygon(_anon5* polygon, int count, int trans);
+void njDrawPolygon(NJS_POLYGON_VTX* polygon, int count, int trans);
 void njDrawTextureSub(_anon3* polygon, int count, int flag);
 void njDrawTexture(_anon3* polygon, int count, int tex, int flag);
 void njDrawTextureSubH(_anon0* polygon, int count, int flag);
 void njDrawTextureH(_anon0* polygon, int count, int tex, int flag);
-void njDrawPolygon3DEx(_anon5* p, int count, int trans);
+void njDrawPolygon3DEx(NJS_POLYGON_VTX* p, int count, int trans);
 void njDrawPolygon3DExStart(int trans);
-void njDrawPolygonSub3D(_anon5* polygon, int count, int flag);
-void njDrawPolygon3DExSetData(_anon5* p, int count);
+void njDrawPolygonSub3D(NJS_POLYGON_VTX* polygon, int count, int flag);
+void njDrawPolygon3DExSetData(NJS_POLYGON_VTX* p, int count);
 void njDrawPolygon3DExEnd();
 void njDrawTexture3DEx(_anon3* p, int count, int trans);
 void njDrawTexture3DEx1P(_anon3* p, int count, int trans);
@@ -143,7 +144,7 @@ void njDrawQuadTexture(_anon4* q, float z);
 
 // 
 // Start address: 0x2de160
-void njDrawPolygon(_anon5* polygon, int count, int trans)
+void njDrawPolygon(NJS_POLYGON_VTX* polygon, int count, int trans)
 {
 	unsigned int i;
 	float bp[4];
@@ -326,7 +327,7 @@ void njDrawTextureH(_anon0* polygon, int count, int tex, int flag)
 
 // 
 // Start address: 0x2de740
-void njDrawPolygon3DEx(_anon5* p, int count, int trans)
+void njDrawPolygon3DEx(NJS_POLYGON_VTX* p, int count, int trans)
 {
 	// Line 360, Address: 0x2de740, Func Offset: 0
 	// Line 361, Address: 0x2de758, Func Offset: 0x18
@@ -346,7 +347,7 @@ void njDrawPolygon3DExStart(int trans)
 
 // 
 // Start address: 0x2de790
-void njDrawPolygonSub3D(_anon5* polygon, int count, int flag)
+void njDrawPolygonSub3D(NJS_POLYGON_VTX* polygon, int count, int flag)
 {
 	tagNJS_SCRVECTOR scr;
 	unsigned int i;
@@ -386,7 +387,7 @@ void njDrawPolygonSub3D(_anon5* polygon, int count, int flag)
 
 // 
 // Start address: 0x2de8b0
-void njDrawPolygon3DExSetData(_anon5* p, int count)
+void njDrawPolygon3DExSetData(NJS_POLYGON_VTX* p, int count)
 {
 	// Line 440, Address: 0x2de8b0, Func Offset: 0
 	// Line 441, Address: 0x2de8b8, Func Offset: 0x8

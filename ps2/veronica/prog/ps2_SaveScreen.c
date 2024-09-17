@@ -26,7 +26,7 @@ typedef struct _anon16;
 typedef struct _anon18;
 typedef struct _anon19;
 typedef struct tagICONINFORMATION;
-typedef struct _anon20;
+
 typedef struct _anon21;
 typedef struct _anon22;
 typedef struct tagCONFIGFILE;
@@ -137,7 +137,7 @@ typedef unsigned char type_88[64];
 typedef char type_89[9];
 typedef unsigned char type_90[64];
 typedef char type_91[3];
-typedef _anon20 type_92[4];
+
 typedef unsigned char type_93[64];
 typedef _anon22 type_94[4];
 typedef int type_95[450];
@@ -296,9 +296,9 @@ struct _anon0
 	unsigned char* objbak;
 	_anon5 cspr;
 	int pn;
-	_anon20* pvp;
+	NJS_POLYGON_VTX* pvp;
 	_anon22* tvp;
-	_anon20 pv[4];
+	NJS_POLYGON_VTX pv[4];
 	_anon22 tv[4];
 	int bl_src;
 	int bl_dst;
@@ -1185,13 +1185,14 @@ struct tagICONINFORMATION
 	sceMcIconSys icon;
 };
 
-struct _anon20
-{
-	float x;
-	float y;
-	float z;
-	unsigned int col;
-};
+
+
+
+
+
+
+
+
 
 struct _anon21
 {

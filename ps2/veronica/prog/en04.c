@@ -40,7 +40,7 @@ typedef struct NJS_POINT3;
 typedef struct _anon37;
 typedef struct _anon38;
 typedef struct _anon39;
-typedef struct _anon40;
+
 typedef struct _anon41;
 typedef struct _anon42;
 typedef struct _anon43;
@@ -161,7 +161,7 @@ typedef float type_100[5];
 typedef char type_101[4];
 typedef unsigned int type_102[8];
 typedef int type_103[5];
-typedef _anon40 type_104[4];
+
 typedef _anon2 type_105[4];
 typedef int type_107[450];
 typedef void(*type_108)(BH_PWORK*)[6];
@@ -478,9 +478,9 @@ struct _anon0
 	unsigned char* objbak;
 	_anon47 cspr;
 	int pn;
-	_anon40* pvp;
+	NJS_POLYGON_VTX* pvp;
 	_anon2* tvp;
-	_anon40 pv[4];
+	NJS_POLYGON_VTX pv[4];
 	_anon2 tv[4];
 	int bl_src;
 	int bl_dst;
@@ -1502,13 +1502,14 @@ struct _anon39
 	_anon30 mspc;
 };
 
-struct _anon40
-{
-	float x;
-	float y;
-	float z;
-	unsigned int col;
-};
+
+
+
+
+
+
+
+
 
 struct _anon41
 {

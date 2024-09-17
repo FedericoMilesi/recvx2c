@@ -43,7 +43,7 @@ typedef struct _anon39;
 typedef struct _anon40;
 typedef struct _anon41;
 typedef struct _anon42;
-typedef struct _anon43;
+
 typedef struct _anon44;
 typedef struct _anon45;
 typedef struct _anon46;
@@ -177,7 +177,7 @@ typedef float type_108[5];
 typedef unsigned int type_109[8];
 typedef char type_110[4];
 typedef int type_111[5];
-typedef _anon43 type_112[4];
+
 typedef int type_113[4];
 typedef _anon3 type_114[4];
 typedef int type_115[450];
@@ -505,9 +505,9 @@ struct _anon0
 	unsigned char* objbak;
 	_anon50 cspr;
 	int pn;
-	_anon43* pvp;
+	NJS_POLYGON_VTX* pvp;
 	_anon3* tvp;
-	_anon43 pv[4];
+	NJS_POLYGON_VTX pv[4];
 	_anon3 tv[4];
 	int bl_src;
 	int bl_dst;
@@ -1547,13 +1547,14 @@ struct _anon42
 	_anon34 mspc;
 };
 
-struct _anon43
-{
-	float x;
-	float y;
-	float z;
-	unsigned int col;
-};
+
+
+
+
+
+
+
+
 
 struct _anon44
 {

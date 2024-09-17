@@ -40,7 +40,7 @@ typedef struct _anon36;
 typedef struct NJS_POINT3;
 typedef struct _anon38;
 typedef struct _anon39;
-typedef struct _anon40;
+
 typedef struct _anon41;
 typedef struct _anon42;
 typedef struct _anon43;
@@ -140,19 +140,19 @@ typedef _anon12 type_80[450];
 typedef unsigned int type_81[16];
 typedef char type_82[4];
 typedef unsigned int type_83[8];
-typedef _anon40 type_84[4];
+
 typedef _anon2 type_85[4];
 typedef _anon45 type_86[21];
 typedef int type_87[450];
 typedef unsigned int type_88[8];
 typedef unsigned char type_89[450];
 typedef float type_90[128];
-typedef _anon40 type_91[4];
+
 typedef char type_92[16];
 typedef char type_93[4];
 typedef _anon25 type_95[2];
 typedef unsigned int type_96[32];
-typedef _anon40 type_97[4];
+
 typedef NJS_POINT3 type_98[2];
 typedef unsigned char type_99[256];
 typedef unsigned int type_100[16];
@@ -312,9 +312,9 @@ struct _anon0
 	unsigned char* objbak;
 	_anon48 cspr;
 	int pn;
-	_anon40* pvp;
+	NJS_POLYGON_VTX* pvp;
 	_anon2* tvp;
-	_anon40 pv[4];
+	NJS_POLYGON_VTX pv[4];
 	_anon2 tv[4];
 	int bl_src;
 	int bl_dst;
@@ -1453,13 +1453,14 @@ struct _anon39
 	_anon30 mspc;
 };
 
-struct _anon40
-{
-	float x;
-	float y;
-	float z;
-	unsigned int col;
-};
+
+
+
+
+
+
+
+
 
 struct _anon41
 {
@@ -2855,9 +2856,9 @@ void bhDrawTrsEffect2D(unsigned int* owp, int ct)
 void bhDrawThunder()
 {
 	int i;
-	_anon40* p;
-	_anon40 p1[4];
-	_anon40 p2[4];
+	NJS_POLYGON_VTX* p;
+	NJS_POLYGON_VTX p1[4];
+	NJS_POLYGON_VTX p2[4];
 	// Line 2125, Address: 0x21ed60, Func Offset: 0
 	// Line 2142, Address: 0x21ed6c, Func Offset: 0xc
 	// Line 2181, Address: 0x21ed94, Func Offset: 0x34

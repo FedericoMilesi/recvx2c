@@ -25,7 +25,7 @@ typedef struct _anon21;
 typedef struct _anon22;
 typedef struct _anon23;
 typedef struct _anon24;
-typedef struct _anon25;
+
 typedef struct _anon26;
 typedef struct _anon27;
 typedef struct _anon28;
@@ -109,7 +109,7 @@ typedef short type_68[256];
 typedef int type_69[64];
 typedef _anon10 type_70[450];
 typedef char type_71[3];
-typedef _anon25 type_72[4];
+
 typedef _anon2 type_73[4];
 typedef int type_74[450];
 typedef void(*type_76)(BH_PWORK*)[1];
@@ -393,9 +393,9 @@ struct _anon0
 	unsigned char* objbak;
 	_anon31 cspr;
 	int pn;
-	_anon25* pvp;
+	NJS_POLYGON_VTX* pvp;
 	_anon2* tvp;
-	_anon25 pv[4];
+	NJS_POLYGON_VTX pv[4];
 	_anon2 tv[4];
 	int bl_src;
 	int bl_dst;
@@ -1114,13 +1114,14 @@ struct _anon24
 	float r2;
 };
 
-struct _anon25
-{
-	float x;
-	float y;
-	float z;
-	unsigned int col;
-};
+
+
+
+
+
+
+
+
 
 struct _anon26
 {

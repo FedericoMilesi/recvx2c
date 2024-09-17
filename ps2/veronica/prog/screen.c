@@ -29,7 +29,7 @@ typedef struct _anon25;
 typedef struct NJS_POINT3;
 typedef struct _anon27;
 typedef struct _anon28;
-typedef struct _anon29;
+
 typedef struct _anon30;
 typedef struct _anon31;
 typedef struct _anon32;
@@ -118,13 +118,13 @@ typedef int type_72[64];
 typedef _anon8 type_73[450];
 typedef short type_74[8];
 typedef short type_75[8][18];
-typedef _anon29 type_76[4];
+
 typedef _anon2 type_77[4];
 typedef int type_78[450];
 typedef unsigned int type_79[8];
 typedef unsigned char type_80[450];
 typedef _anon25 type_81[4];
-typedef _anon29 type_82[4];
+
 typedef _anon14 type_83[4];
 typedef _anon14 type_84[4];
 typedef char type_85[16];
@@ -292,9 +292,9 @@ struct _anon0
 	unsigned char* objbak;
 	_anon37 cspr;
 	int pn;
-	_anon29* pvp;
+	NJS_POLYGON_VTX* pvp;
 	_anon2* tvp;
-	_anon29 pv[4];
+	NJS_POLYGON_VTX pv[4];
 	_anon2 tv[4];
 	int bl_src;
 	int bl_dst;
@@ -1173,13 +1173,14 @@ struct _anon28
 	_anon20 mspc;
 };
 
-struct _anon29
-{
-	float x;
-	float y;
-	float z;
-	unsigned int col;
-};
+
+
+
+
+
+
+
+
 
 struct _anon30
 {
@@ -1532,7 +1533,7 @@ void bhControlScreenSaver()
 void bhDrawScreenSaver()
 {
 	unsigned int argb;
-	_anon29 pol[4];
+	NJS_POLYGON_VTX pol[4];
 	// Line 323, Address: 0x26c3f0, Func Offset: 0
 	// Line 328, Address: 0x26c3f4, Func Offset: 0x4
 	// Line 323, Address: 0x26c3f8, Func Offset: 0x8

@@ -60,7 +60,7 @@ typedef struct _anon51;
 typedef struct _anon52;
 typedef struct _anon53;
 typedef struct _anon54;
-typedef struct _anon55;
+
 typedef struct _anon56;
 typedef struct _anon57;
 typedef enum _enum_2;
@@ -171,7 +171,7 @@ typedef float type_74[3];
 typedef _anon2* type_75[256];
 typedef _anon16 type_76[256];
 typedef _anon52 type_77[6];
-typedef _anon55 type_78[4];
+
 typedef _anon42 type_79[450];
 typedef _anon11 type_80[32];
 typedef _anon5 type_81[16];
@@ -184,7 +184,7 @@ typedef unsigned int type_87[16];
 typedef int type_88[9];
 typedef char type_89[4];
 typedef unsigned int type_90[8];
-typedef _anon55 type_92[4];
+
 typedef _tag_wrk_typ* type_93[4];
 typedef _anon4 type_94[4];
 typedef int type_95[450];
@@ -367,9 +367,9 @@ struct _anon0
 	unsigned char* objbak;
 	_anon62 cspr;
 	int pn;
-	_anon55* pvp;
+	NJS_POLYGON_VTX* pvp;
 	_anon4* tvp;
-	_anon55 pv[4];
+	NJS_POLYGON_VTX pv[4];
 	_anon4 tv[4];
 	int bl_src;
 	int bl_dst;
@@ -1681,13 +1681,14 @@ struct _anon54
 	_anon11 mspc;
 };
 
-struct _anon55
-{
-	float x;
-	float y;
-	float z;
-	unsigned int col;
-};
+
+
+
+
+
+
+
+
 
 struct _anon56
 {
@@ -4250,7 +4251,7 @@ int FsubZoomScreen(_anon30* fsP)
 // Start address: 0x2b6f40
 int FsubCompass(_anon38* fcP)
 {
-	_anon55 CmpArw[4];
+	NJS_POLYGON_VTX CmpArw[4];
 	// Line 3447, Address: 0x2b6f40, Func Offset: 0
 	// Line 3461, Address: 0x2b6f4c, Func Offset: 0xc
 	// Line 3464, Address: 0x2b6f6c, Func Offset: 0x2c
