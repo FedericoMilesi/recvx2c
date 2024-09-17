@@ -1,6 +1,6 @@
 typedef struct _anon0;
 typedef struct npobj;
-typedef struct GDS_DCF;
+
 typedef struct _anon1;
 typedef struct _anon2;
 typedef struct tagSELECTFILEINFO;
@@ -339,9 +339,9 @@ struct npobj
 	npobj* sibling;
 };
 
-struct GDS_DCF
-{
-};
+
+
+
 
 struct _anon1
 {

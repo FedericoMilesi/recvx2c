@@ -29,3 +29,4 @@
 | sceMcTblGetDir | Found on SCE | `<sce>/ee/include/libmc.h` |
 | BUS_DISKINFO | Found on Katana | `<katana>/sg_bup.h` |
 | PDS_VIBPARAM | Found on Katana | `<katana>/sg_pdvib.h` |
+| GDS_DCF | Found on Katana | `<katana>/sg_gd.h` |

@@ -1,4 +1,4 @@
-typedef struct GDS_DCF;
+
 typedef struct _anon0;
 typedef struct GDS_FS_WORK;
 typedef struct GDS_FS_LIF;
@@ -28,9 +28,9 @@ typedef unsigned char type_13[3];
 typedef char type_14[256];
 typedef unsigned int type_16[1040];
 
-struct GDS_DCF
-{
-};
+
+
+
 
 struct _anon0
 {

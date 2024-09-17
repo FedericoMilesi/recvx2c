@@ -647,7 +647,7 @@ KeyRepeatInfo;
 
 
 
-typedef struct GDS_DCF GDS_DCF;
+
 typedef struct GDS_FS_LIF GDS_FS_LIF;
 
 
