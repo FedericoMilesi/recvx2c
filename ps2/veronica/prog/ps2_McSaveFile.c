@@ -9,7 +9,7 @@ typedef struct _anon3;
 typedef struct tagCONFIGFILE;
 
 typedef struct tagSELECTFILEWINDOW;
-typedef struct GDS_FS_HANDLE;
+
 typedef struct _anon5;
 
 
@@ -64,7 +64,7 @@ typedef unsigned int type_1[1040];
 typedef unsigned int type_2[4];
 typedef int type_3[4];
 typedef _anon0* type_4[512];
-typedef GDS_FS_HANDLE type_5[1];
+
 typedef char type_6[32];
 typedef _anon2* type_7[16];
 typedef float type_8[4];
@@ -447,33 +447,33 @@ struct tagSELECTFILEWINDOW
 	unsigned int ulfoundationColor;
 };
 
-struct GDS_FS_HANDLE
-{
-	GDS_FS_WORK* wk;
-	int fid;
-	int fad;
-	int fsize;
-	int fsctsize;
-	int ofs;
-	int trnsed;
-	int rsize;
-	int trsize;
-	void(*rdendcb)(void*);
-	void* rdcb_1st;
-	void(*trendcb)(void*);
-	void* trcb_1st;
-	void(*errcb)(void*, int);
-	void* errcb_1st;
-	int gdchn;
-	int gdchn_wait;
-	int ex_errcode;
-	short act;
-	short trflag;
-	short used;
-	short tmode;
-	short stat;
-	short err;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon5
 {

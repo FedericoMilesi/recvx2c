@@ -2,7 +2,7 @@
 typedef struct _anon0;
 
 
-typedef struct GDS_FS_HANDLE;
+
 typedef struct _anon1;
 typedef struct _anon2;
 
@@ -14,7 +14,7 @@ typedef void(*type_4)(void*);
 typedef void(*type_6)(void*, int);
 typedef void(*type_15)(void*, int);
 
-typedef GDS_FS_HANDLE type_0[1];
+
 typedef char type_2[16];
 typedef unsigned char type_3[8];
 typedef char type_5[2048];
@@ -67,33 +67,33 @@ struct _anon0
 
 
 
-struct GDS_FS_HANDLE
-{
-	GDS_FS_WORK* wk;
-	int fid;
-	int fad;
-	int fsize;
-	int fsctsize;
-	int ofs;
-	int trnsed;
-	int rsize;
-	int trsize;
-	void(*rdendcb)(void*);
-	void* rdcb_1st;
-	void(*trendcb)(void*);
-	void* trcb_1st;
-	void(*errcb)(void*, int);
-	void* errcb_1st;
-	int gdchn;
-	int gdchn_wait;
-	int ex_errcode;
-	short act;
-	short trflag;
-	short used;
-	short tmode;
-	short stat;
-	short err;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon1
 {

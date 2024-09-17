@@ -672,33 +672,33 @@ KeyRepeatInfo;
 
 
 
-typedef struct GDS_FS_HANDLE {
-	/*  0 */ GDS_FS_WORK* wk;
-	/*  4 */ int fid;
-	/*  8 */ int fad;
-	/* 12 */ int fsize;
-	/* 16 */ int fsctsize;
-	/* 20 */ int ofs;
-	/* 24 */ int trnsed;
-	/* 28 */ int rsize;
-	/* 32 */ int trsize;
-	/* 36 */ void(*rdendcb)(void*);
-	/* 40 */ void* rdcb_1st;
-	/* 44 */ void(*trendcb)(void*);
-	/* 48 */ void* trcb_1st;
-	/* 52 */ void(*errcb)(void*, int);
-	/* 56 */ void* errcb_1st;
-	/* 60 */ int gdchn;
-	/* 64 */ int gdchn_wait;
-	/* 68 */ int ex_errcode;
-	/* 72 */ short act;
-	/* 74 */ short trflag;
-	/* 76 */ short used;
-	/* 78 */ short tmode;
-	/* 80 */ short stat;
-	/* 82 */ short err;
-}
-GDS_FS_HANDLE;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 typedef struct GDS_FS_DIRREC_TBL {

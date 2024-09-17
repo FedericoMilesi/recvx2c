@@ -33,3 +33,4 @@
 | GDS_FS_LIF | Found on Katana | `<katana>/sg_gd.h` |
 | GDS_FS_DIRREC_ENT | Found on Katana | `<katana>/sg_gd.h` |
 | GDS_FS_DIRINFO | Found on Katana | `<katana>/sg_gd.h` |
+| GDS_FS_HANDLE | Found on Katana | `<katana>/sg_gd.h` |
