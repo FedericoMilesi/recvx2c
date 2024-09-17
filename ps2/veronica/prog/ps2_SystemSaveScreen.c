@@ -32,7 +32,7 @@ typedef struct tagSELECTFILEINFO;
 typedef struct _anon24;
 typedef struct _anon25;
 typedef struct _anon26;
-typedef struct _anon27;
+
 typedef struct _anon28;
 typedef struct _anon29;
 typedef struct tagSELECTFILEWINDOW;
@@ -88,7 +88,7 @@ typedef _anon0* type_38[32];
 typedef tagSELECTFILEINFO type_39[15];
 typedef float type_40[4];
 typedef char type_41[8];
-typedef _anon27 type_42[1];
+
 typedef _anon25 type_43[256];
 typedef int type_44[4];
 typedef _anon1* type_45[256];
@@ -109,7 +109,7 @@ typedef _anon6 type_59[256];
 typedef unsigned char type_60[10956];
 typedef int type_61[4][4];
 typedef float type_62[4][3];
-typedef _anon27 type_63[450];
+
 typedef float type_64[4][3];
 typedef short type_65[256];
 typedef unsigned char type_66[68];
@@ -335,7 +335,7 @@ struct tagSYSSAVE_SCREEN
 
 struct _anon1
 {
-	_anon27* textures;
+	NJS_TEXNAME* textures;
 	unsigned int nbTexture;
 };
 
@@ -670,7 +670,7 @@ struct _anon13
 	_anon1* txblp[256];
 	_anon6 txbp[256];
 	unsigned char* ef_psp;
-	_anon27 ef_tex[450];
+	NJS_TEXNAME ef_tex[450];
 	_anon1 ef_tlist;
 	_anon26 ef;
 	short efid[256];
@@ -726,7 +726,7 @@ struct _anon13
 	_anon0* ob_spc[32];
 	unsigned int ren_gid;
 	_anon24 ren_info;
-	_anon27 ren_tex[1];
+	NJS_TEXNAME ren_tex[1];
 	_anon1 ren_tlist;
 	_anon25 rpb[256];
 	int ren_n;
@@ -1278,12 +1278,12 @@ struct _anon26
 	short ax;
 };
 
-struct _anon27
-{
-	void* filename;
-	unsigned int attr;
-	unsigned int texaddr;
-};
+
+
+
+
+
+
 
 struct _anon28
 {

@@ -1,7 +1,7 @@
 typedef struct _anon0;
 typedef struct _anon1;
 typedef struct _anon2;
-typedef struct _anon3;
+
 typedef struct _anon4;
 
 
@@ -37,16 +37,16 @@ struct _anon1
 
 struct _anon2
 {
-	_anon3* textures;
+	NJS_TEXNAME* textures;
 	unsigned int nbTexture;
 };
 
-struct _anon3
-{
-	void* filename;
-	unsigned int attr;
-	unsigned int texaddr;
-};
+
+
+
+
+
+
 
 struct _anon4
 {
@@ -206,7 +206,7 @@ void njReleaseTextureAll();
 int njReleaseTexture(_anon2* texlist);
 unsigned int njCalcTexture();
 void njSetTextureInfo(_anon0* info, unsigned short* tex, int Type, int nWidth, int nHeight);
-void njSetTextureName(_anon3* texname, void* addr, unsigned int globalIndex, unsigned int attr);
+void njSetTextureName(NJS_TEXNAME* texname, void* addr, unsigned int globalIndex, unsigned int attr);
 void njRenderTextureNum();
 void njRenderTextureNumG(unsigned int globalIndex);
 void njSetRenderWidth(unsigned int nWidth);
@@ -548,7 +548,7 @@ void njSetTextureInfo(_anon0* info, unsigned short* tex, int Type, int nWidth, i
 
 // 
 // Start address: 0x2e23e0
-void njSetTextureName(_anon3* texname, void* addr, unsigned int globalIndex, unsigned int attr)
+void njSetTextureName(NJS_TEXNAME* texname, void* addr, unsigned int globalIndex, unsigned int attr)
 {
 	// Line 679, Address: 0x2e23e0, Func Offset: 0
 	// Line 680, Address: 0x2e23e4, Func Offset: 0x4

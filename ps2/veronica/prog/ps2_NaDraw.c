@@ -1,5 +1,5 @@
 typedef struct _anon0;
-typedef struct _anon1;
+
 typedef struct _anon2;
 
 typedef struct _anon4;
@@ -31,16 +31,16 @@ struct _anon0
 	unsigned int ocol;
 };
 
-struct _anon1
-{
-	void* filename;
-	unsigned int attr;
-	unsigned int texaddr;
-};
+
+
+
+
+
+
 
 struct _anon2
 {
-	_anon1* textures;
+	NJS_TEXNAME* textures;
 	unsigned int nbTexture;
 };
 

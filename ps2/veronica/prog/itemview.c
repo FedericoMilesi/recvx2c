@@ -19,7 +19,7 @@ typedef struct _anon16;
 typedef struct _anon17;
 typedef union _anon18;
 typedef struct _anon19;
-typedef struct _anon20;
+
 typedef struct _anon21;
 typedef struct _anon22;
 typedef struct _anon23;
@@ -66,7 +66,7 @@ typedef char type_12[32];
 typedef _anon0* type_13[512];
 typedef _anon3* type_14[200];
 typedef short type_15[32];
-typedef _anon20 type_16[1];
+
 typedef _anon0* type_17[128];
 typedef unsigned int type_18[1];
 typedef _anon9 type_19[256];
@@ -108,7 +108,7 @@ typedef _anon3* type_54[256];
 typedef _anon11 type_55[256];
 typedef int type_56[3];
 typedef _anon6 type_57[0];
-typedef _anon20 type_58[450];
+
 typedef short type_59[6];
 typedef short type_60[6][0];
 typedef unsigned char type_61[3];
@@ -120,9 +120,9 @@ typedef char type_67[3];
 typedef unsigned char type_68[8][0];
 typedef int type_69[64];
 typedef _anon12 type_70[450];
-typedef _anon20 type_71[1];
+
 typedef unsigned short type_72[0];
-typedef _anon20 type_73[1];
+
 
 
 typedef int type_76[450];
@@ -165,7 +165,7 @@ typedef _anon3* type_113[16];
 typedef char type_114[4];
 typedef _anon12 type_115[16];
 typedef short type_116[4];
-typedef _anon20 type_117[5];
+
 typedef int type_118[3];
 typedef unsigned char type_119[4];
 typedef _anon34 type_120[16];
@@ -330,7 +330,7 @@ struct _anon1
 
 struct _anon2
 {
-	_anon20 subtx[5];
+	NJS_TEXNAME subtx[5];
 	_anon3 subtx_list;
 	unsigned short subscreenmode;
 	unsigned int statusflg;
@@ -384,7 +384,7 @@ struct _anon2
 
 struct _anon3
 {
-	_anon20* textures;
+	NJS_TEXNAME* textures;
 	unsigned int nbTexture;
 };
 
@@ -546,12 +546,12 @@ struct _anon19
 	void* p[2];
 };
 
-struct _anon20
-{
-	void* filename;
-	unsigned int attr;
-	unsigned int texaddr;
-};
+
+
+
+
+
+
 
 struct _anon21
 {
@@ -801,7 +801,7 @@ struct _anon24
 	_anon3* txblp[256];
 	_anon11 txbp[256];
 	unsigned char* ef_psp;
-	_anon20 ef_tex[450];
+	NJS_TEXNAME ef_tex[450];
 	_anon3 ef_tlist;
 	_anon37 ef;
 	short efid[256];
@@ -857,7 +857,7 @@ struct _anon24
 	_anon0* ob_spc[32];
 	unsigned int ren_gid;
 	_anon17 ren_info;
-	_anon20 ren_tex[1];
+	NJS_TEXNAME ren_tex[1];
 	_anon3 ren_tlist;
 	_anon9 rpb[256];
 	int ren_n;
@@ -1250,9 +1250,9 @@ struct _anon31
 struct _anon33
 {
 	_anon25 col;
-	_anon20 fstx[1];
+	NJS_TEXNAME fstx[1];
 	_anon3 fstx_list;
-	_anon20 fbtx[1];
+	NJS_TEXNAME fbtx[1];
 	_anon3 fbtx_list;
 	int afsmode;
 	int ang00;

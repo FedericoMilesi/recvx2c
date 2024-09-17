@@ -20,7 +20,7 @@ typedef struct BH_PWORK;
 typedef struct _anon17;
 typedef struct _anon18;
 typedef struct _anon19;
-typedef struct _anon20;
+
 typedef struct _anon21;
 typedef struct _anon22;
 typedef struct _anon23;
@@ -70,7 +70,7 @@ typedef char type_17[32];
 typedef _anon1* type_18[512];
 typedef _anon3* type_19[200];
 typedef short type_20[32];
-typedef _anon20 type_21[1];
+
 typedef float type_22[2];
 typedef _anon1* type_23[128];
 typedef unsigned int type_24[1];
@@ -143,7 +143,7 @@ typedef float type_94[3];
 typedef _anon3* type_95[256];
 typedef _anon31 type_96[12];
 typedef _anon13 type_97[256];
-typedef _anon20 type_98[450];
+
 typedef _anon4* type_99[2];
 
 typedef _anon4* type_101[4];
@@ -362,7 +362,7 @@ struct _anon2
 
 struct _anon3
 {
-	_anon20* textures;
+	NJS_TEXNAME* textures;
 	unsigned int nbTexture;
 };
 
@@ -564,7 +564,7 @@ struct _anon7
 	_anon3* txblp[256];
 	_anon13 txbp[256];
 	unsigned char* ef_psp;
-	_anon20 ef_tex[450];
+	NJS_TEXNAME ef_tex[450];
 	_anon3 ef_tlist;
 	_anon33 ef;
 	short efid[256];
@@ -620,7 +620,7 @@ struct _anon7
 	_anon1* ob_spc[32];
 	unsigned int ren_gid;
 	_anon18 ren_info;
-	_anon20 ren_tex[1];
+	NJS_TEXNAME ren_tex[1];
 	_anon3 ren_tlist;
 	_anon10 rpb[256];
 	int ren_n;
@@ -1069,12 +1069,12 @@ struct _anon19
 	void* p[2];
 };
 
-struct _anon20
-{
-	void* filename;
-	unsigned int attr;
-	unsigned int texaddr;
-};
+
+
+
+
+
+
 
 struct _anon21
 {
@@ -3498,7 +3498,7 @@ void bhEff_3DSpriteDraw(_anon1* op)
 void bhEff_ModelDraw(_anon1* op)
 {
 	_anon14* mlp;
-	_anon20* tnp;
+	NJS_TEXNAME* tnp;
 	// Line 4487, Address: 0x251850, Func Offset: 0
 	// Line 4494, Address: 0x251854, Func Offset: 0x4
 	// Line 4487, Address: 0x25185c, Func Offset: 0xc

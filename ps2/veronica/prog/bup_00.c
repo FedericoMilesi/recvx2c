@@ -35,7 +35,7 @@ typedef union _anon26;
 typedef struct _anon27;
 typedef struct _anon28;
 typedef struct tagCONFIGFILE;
-typedef struct _anon29;
+
 typedef struct _anon30;
 typedef struct tagICONINFORMATION;
 typedef struct tagSAVE_SCREEN;
@@ -91,7 +91,7 @@ typedef _anon0* type_19[512];
 typedef int type_20[15];
 typedef _anon1* type_21[200];
 typedef short type_22[32];
-typedef _anon29 type_23[1];
+
 typedef int type_24[15];
 typedef _anon0* type_25[128];
 typedef char type_26[32];
@@ -184,7 +184,7 @@ typedef unsigned char type_112[2];
 typedef unsigned char type_113[2][4];
 typedef _anon10 type_114[256];
 typedef char type_115[16];
-typedef _anon29 type_116[450];
+
 typedef char type_117[128];
 typedef char type_118[16];
 
@@ -247,7 +247,7 @@ typedef char type_177[128];
 typedef unsigned char type_178[4];
 typedef _anon40 type_179[16];
 typedef int type_180[8];
-typedef _anon29 type_181[3];
+
 typedef int type_182[8][18];
 typedef unsigned int type_183[8];
 typedef unsigned int type_184[32];
@@ -428,13 +428,13 @@ struct tagMEMORYCARDPORT
 
 struct _anon1
 {
-	_anon29* textures;
+	NJS_TEXNAME* textures;
 	unsigned int nbTexture;
 };
 
 struct _anon2
 {
-	_anon29 twtx[3];
+	NJS_TEXNAME twtx[3];
 	_anon1 twtx_list;
 	int mode_00;
 	int mode_02;
@@ -1192,12 +1192,12 @@ struct tagCONFIGFILE
 	unsigned int Check_Sam;
 };
 
-struct _anon29
-{
-	void* filename;
-	unsigned int attr;
-	unsigned int texaddr;
-};
+
+
+
+
+
+
 
 struct _anon30
 {
@@ -1429,7 +1429,7 @@ struct _anon31
 	_anon1* txblp[256];
 	_anon10 txbp[256];
 	unsigned char* ef_psp;
-	_anon29 ef_tex[450];
+	NJS_TEXNAME ef_tex[450];
 	_anon1 ef_tlist;
 	_anon45 ef;
 	short efid[256];
@@ -1485,7 +1485,7 @@ struct _anon31
 	_anon0* ob_spc[32];
 	unsigned int ren_gid;
 	_anon25 ren_info;
-	_anon29 ren_tex[1];
+	NJS_TEXNAME ren_tex[1];
 	_anon1 ren_tlist;
 	_anon8 rpb[256];
 	int ren_n;

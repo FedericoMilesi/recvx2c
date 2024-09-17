@@ -1,7 +1,7 @@
 typedef struct npobj;
 typedef struct _anon0;
 typedef struct _anon1;
-typedef struct _anon2;
+
 typedef struct _anon3;
 typedef struct _anon4;
 typedef struct BH_PWORK;
@@ -59,12 +59,12 @@ struct _anon1
 	void* p[2];
 };
 
-struct _anon2
-{
-	void* filename;
-	unsigned int attr;
-	unsigned int texaddr;
-};
+
+
+
+
+
+
 
 struct _anon3
 {
@@ -75,7 +75,7 @@ struct _anon3
 
 struct _anon4
 {
-	_anon2* textures;
+	NJS_TEXNAME* textures;
 	unsigned int nbTexture;
 };
 

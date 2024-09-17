@@ -4,7 +4,7 @@ typedef struct _anon0;
 typedef struct _anon1;
 typedef struct _anon2;
 typedef struct _anon3;
-typedef struct _anon4;
+
 typedef struct _anon5;
 typedef struct _anon6;
 typedef struct _anon7;
@@ -217,12 +217,12 @@ struct _anon3
 	void* p[2];
 };
 
-struct _anon4
-{
-	void* filename;
-	unsigned int attr;
-	unsigned int texaddr;
-};
+
+
+
+
+
+
 
 struct _anon5
 {
@@ -233,7 +233,7 @@ struct _anon5
 
 struct _anon6
 {
-	_anon4* textures;
+	NJS_TEXNAME* textures;
 	unsigned int nbTexture;
 };
 

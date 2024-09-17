@@ -9,7 +9,7 @@ typedef struct _anon6;
 typedef struct _anon7;
 typedef struct _anon8;
 typedef struct _anon9;
-typedef struct _anon10;
+
 typedef struct _anon11;
 typedef struct _anon12;
 typedef struct npobj;
@@ -194,16 +194,16 @@ struct _anon9
 	unsigned short flag;
 };
 
-struct _anon10
-{
-	void* filename;
-	unsigned int attr;
-	unsigned int texaddr;
-};
+
+
+
+
+
+
 
 struct _anon11
 {
-	_anon10* textures;
+	NJS_TEXNAME* textures;
 	unsigned int nbTexture;
 };
 

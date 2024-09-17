@@ -742,16 +742,16 @@ typedef struct LfOpen {
 LfOpen;
 
 
-typedef struct TextureFileLocation {
-	void* filename;
-	unsigned int attr;
-	unsigned int texaddr;
-}
-TextureFileLocation;
+
+
+
+
+
+
 
 
 typedef struct TextureList {
-	TextureFileLocation* textures;
+	NJS_TEXNAME* textures;
 	unsigned int nbTexture;
 }
 TextureList;
@@ -1584,7 +1584,7 @@ typedef struct System {
 	TextureList* txblp[256];
 	Unknown7 txbp[256];
 	unsigned char* ef_psp;
-	TextureFileLocation ef_tex[450];
+	NJS_TEXNAME ef_tex[450];
 	TextureList ef_tlist;
 	Unknown8 ef;
 	short efid[256];
@@ -1640,7 +1640,7 @@ typedef struct System {
 	Unknown1* ob_spc[32];
 	unsigned int ren_gid;
 	TextureInfo ren_info;
-	TextureFileLocation ren_tex[1];
+	NJS_TEXNAME ren_tex[1];
 	TextureList ren_tlist;
 	Unknown9 rpb[256];
 	int ren_n;

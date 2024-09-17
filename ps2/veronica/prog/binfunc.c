@@ -1,6 +1,6 @@
 typedef struct _anon0;
 typedef struct _anon1;
-typedef struct _anon2;
+
 typedef struct _anon3;
 typedef struct _anon4;
 typedef struct _anon5;
@@ -41,12 +41,12 @@ struct _anon1
 	unsigned short inp_fn;
 };
 
-struct _anon2
-{
-	void* filename;
-	unsigned int attr;
-	unsigned int texaddr;
-};
+
+
+
+
+
+
 
 struct _anon3
 {
@@ -76,7 +76,7 @@ union _anon6
 
 struct _anon7
 {
-	_anon2* textures;
+	NJS_TEXNAME* textures;
 	unsigned int nbTexture;
 };
 
@@ -167,7 +167,7 @@ int bhMnbBinRealize(void* bin_datP, _anon0* mnwP);
 // Start address: 0x2c8720
 int bhMlbBinRealize(void* bin_datP, _anon10* mlwP)
 {
-	_anon2* namP;
+	NJS_TEXNAME* namP;
 	unsigned int tex_num;
 	npobj* objP;
 	unsigned int status;

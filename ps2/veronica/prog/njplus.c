@@ -10,7 +10,7 @@ typedef struct _anon7;
 typedef struct _anon8;
 typedef struct _anon9;
 typedef union _anon10;
-typedef struct _anon11;
+
 typedef struct _anon12;
 typedef struct _anon13;
 typedef struct _anon14;
@@ -187,16 +187,16 @@ union _anon10
 	_anon8 argb;
 };
 
-struct _anon11
-{
-	void* filename;
-	unsigned int attr;
-	unsigned int texaddr;
-};
+
+
+
+
+
+
 
 struct _anon12
 {
-	_anon11* textures;
+	NJS_TEXNAME* textures;
 	unsigned int nbTexture;
 };
 

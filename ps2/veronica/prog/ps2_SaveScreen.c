@@ -34,7 +34,7 @@ typedef struct _anon23;
 typedef struct _anon24;
 typedef struct _anon25;
 typedef struct tagMEMORYCARDSTATE;
-typedef struct _anon26;
+
 typedef struct _anon27;
 typedef struct _anon28;
 typedef struct _anon29;
@@ -91,7 +91,7 @@ typedef _anon0* type_42[32];
 typedef float type_43[4];
 typedef char type_44[12];
 typedef char type_45[8];
-typedef _anon26 type_46[1];
+
 typedef _anon24 type_47[256];
 typedef char type_48[12];
 typedef char type_49[13];
@@ -125,7 +125,7 @@ typedef tagSELECTFILEINFO type_76[15];
 typedef int type_77[4][4];
 typedef unsigned char type_78[4];
 typedef float type_79[4][3];
-typedef _anon26 type_80[450];
+
 typedef char type_81[12];
 typedef char type_82[12];
 typedef float type_83[4][3];
@@ -377,7 +377,7 @@ struct _anon1
 
 struct _anon2
 {
-	_anon26* textures;
+	NJS_TEXNAME* textures;
 	unsigned int nbTexture;
 };
 
@@ -680,7 +680,7 @@ struct _anon11
 	_anon2* txblp[256];
 	_anon7 txbp[256];
 	unsigned char* ef_psp;
-	_anon26 ef_tex[450];
+	NJS_TEXNAME ef_tex[450];
 	_anon2 ef_tlist;
 	_anon25 ef;
 	short efid[256];
@@ -736,7 +736,7 @@ struct _anon11
 	_anon0* ob_spc[32];
 	unsigned int ren_gid;
 	_anon23 ren_info;
-	_anon26 ren_tex[1];
+	NJS_TEXNAME ren_tex[1];
 	_anon2 ren_tlist;
 	_anon24 rpb[256];
 	int ren_n;
@@ -1331,12 +1331,12 @@ struct tagMEMORYCARDSTATE
 	tagMEMORYCARDPORT Port[2];
 };
 
-struct _anon26
-{
-	void* filename;
-	unsigned int attr;
-	unsigned int texaddr;
-};
+
+
+
+
+
+
 
 struct _anon27
 {

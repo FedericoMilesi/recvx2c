@@ -15,7 +15,7 @@ typedef struct _anon12;
 typedef struct _anon13;
 typedef union _anon14;
 typedef struct _anon15;
-typedef struct _anon16;
+
 typedef struct _anon17;
 typedef struct _anon18;
 typedef struct _anon19;
@@ -61,7 +61,7 @@ typedef char type_15[32];
 typedef _anon0* type_16[512];
 typedef _anon1* type_17[200];
 typedef short type_18[32];
-typedef _anon16 type_19[1];
+
 typedef _anon0* type_20[128];
 typedef unsigned int type_21[1];
 typedef _anon5 type_22[256];
@@ -109,7 +109,7 @@ typedef float type_63[3];
 typedef _anon0 type_64[0];
 typedef _anon1* type_65[256];
 typedef _anon7 type_66[256];
-typedef _anon16 type_67[450];
+
 
 
 typedef short type_70[256];
@@ -312,7 +312,7 @@ struct _anon0
 
 struct _anon1
 {
-	_anon16* textures;
+	NJS_TEXNAME* textures;
 	unsigned int nbTexture;
 };
 
@@ -458,12 +458,12 @@ struct _anon15
 	void* p[2];
 };
 
-struct _anon16
-{
-	void* filename;
-	unsigned int attr;
-	unsigned int texaddr;
-};
+
+
+
+
+
+
 
 struct _anon17
 {
@@ -706,7 +706,7 @@ struct _anon19
 	_anon1* txblp[256];
 	_anon7 txbp[256];
 	unsigned char* ef_psp;
-	_anon16 ef_tex[450];
+	NJS_TEXNAME ef_tex[450];
 	_anon1 ef_tlist;
 	_anon31 ef;
 	short efid[256];
@@ -762,7 +762,7 @@ struct _anon19
 	_anon0* ob_spc[32];
 	unsigned int ren_gid;
 	_anon13 ren_info;
-	_anon16 ren_tex[1];
+	NJS_TEXNAME ren_tex[1];
 	_anon1 ren_tlist;
 	_anon5 rpb[256];
 	int ren_n;
