@@ -4,7 +4,7 @@ typedef struct cnkobj;
 
 typedef struct _anon2;
 
-typedef struct _anon4;
+typedef struct NJS_CNK_MODEL;
 typedef struct _anon5;
 typedef struct _anon6;
 typedef struct _anon7;
@@ -167,7 +167,7 @@ typedef _anon0* type_119[512];
 struct npobj
 {
 	unsigned int evalflags;
-	_anon4* model;
+	NJS_CNK_MODEL* model;
 	float pos[3];
 	int ang[3];
 	float scl[3];
@@ -302,7 +302,7 @@ struct _anon0
 struct cnkobj
 {
 	unsigned int evalflags;
-	_anon4* model;
+	NJS_CNK_MODEL* model;
 	float pos[3];
 	int ang[3];
 	float scl[3];
@@ -318,8 +318,8 @@ struct cnkobj
 
 struct _anon2
 {
-	_anon4* src;
-	_anon4* dst;
+	NJS_CNK_MODEL* src;
+	NJS_CNK_MODEL* dst;
 	_anon8* list;
 	_anon10* vlist;
 	NJS_POINT3** nvpt;
@@ -339,8 +339,8 @@ struct _anon2
 	NJS_MATRIX eyemat[9];
 	_anon16* tang;
 	int tnum;
-	_anon4* tangsrc;
-	_anon4* tangdst;
+	NJS_CNK_MODEL* tangsrc;
+	NJS_CNK_MODEL* tangdst;
 	cnkobj tangobj;
 	cnkobj* tangorg;
 	float tangpos[3];
@@ -369,13 +369,13 @@ struct _anon2
 
 
 
-struct _anon4
-{
-	int* vlist;
-	short* plist;
-	NJS_POINT3 center;
-	float r;
-};
+
+
+
+
+
+
+
 
 struct _anon5
 {

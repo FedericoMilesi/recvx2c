@@ -29,7 +29,7 @@ typedef struct _anon26;
 typedef struct _anon27;
 typedef struct BH_PWORK;
 typedef struct _anon28;
-typedef struct _anon29;
+typedef struct NJS_CNK_MODEL;
 
 typedef struct _anon31;
 
@@ -180,7 +180,7 @@ typedef _anon0* type_127[512];
 struct npobj
 {
 	unsigned int evalflags;
-	_anon29* model;
+	NJS_CNK_MODEL* model;
 	float pos[3];
 	int ang[3];
 	float scl[3];
@@ -1213,13 +1213,13 @@ struct _anon28
 	float cb;
 };
 
-struct _anon29
-{
-	int* vlist;
-	short* plist;
-	NJS_POINT3 center;
-	float r;
-};
+
+
+
+
+
+
+
 
 
 

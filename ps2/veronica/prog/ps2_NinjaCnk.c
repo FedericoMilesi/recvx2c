@@ -6,7 +6,7 @@ typedef struct cnkobj;
 typedef struct _anon3;
 typedef struct tagVU1_STRIP_BUF;
 typedef struct _anon4;
-typedef struct _anon5;
+typedef struct NJS_CNK_MODEL;
 typedef struct _anon6;
 typedef struct _anon7;
 typedef struct _anon8;
@@ -103,7 +103,7 @@ struct _anon2
 struct cnkobj
 {
 	unsigned int evalflags;
-	_anon5* model;
+	NJS_CNK_MODEL* model;
 	float pos[3];
 	int ang[3];
 	float scl[3];
@@ -148,13 +148,13 @@ struct _anon4
 	float b;
 };
 
-struct _anon5
-{
-	int* vlist;
-	short* plist;
-	NJS_POINT3 center;
-	float r;
-};
+
+
+
+
+
+
+
 
 struct _anon6
 {
@@ -540,7 +540,7 @@ void njControl3D(unsigned int ulFlag);
 void njSetConstantAttr(unsigned int ulAnd, unsigned int ulOr);
 void njSetConstantMaterial(_anon4* pMaterial);
 void njSetCnkBlendMode(unsigned int ulAttr);
-void njCnkModDrawModel(_anon5* pModel);
+void njCnkModDrawModel(NJS_CNK_MODEL* pModel);
 void njCnkSetEasyLight(float fX, float fY, float fZ);
 void njCnkSetEasyLightIntensity(float fDiffuse, float fAmbient);
 void njCnkSetEasyLightColor(float fR, float fG, float fB);
@@ -563,15 +563,15 @@ void njCnkSetSimpleMultiLightVector(float fX, float fY, float fZ);
 void njCnkSetSimpleMultiLightPoint(int iLightNum, float fX, float fY, float fZ);
 void njCnkSetSimpleMultiLightRange(int iLightNum, float fNear, float fFar);
 void njCnkSetSimpleMultiLightMatrices();
-void njCnkEasyDrawModel(_anon5* pModel);
+void njCnkEasyDrawModel(NJS_CNK_MODEL* pModel);
 void njCnkEasyDrawObject(cnkobj* pObject);
-void njCnkEasyMultiDrawModel(_anon5* pModel);
+void njCnkEasyMultiDrawModel(NJS_CNK_MODEL* pModel);
 void njCnkEasyMultiDrawObject(cnkobj* pObject);
-void njCnkSimpleDrawModel(_anon5* pModel);
-void njCnkSimpleMultiDrawModel(_anon5* pModel);
+void njCnkSimpleDrawModel(NJS_CNK_MODEL* pModel);
+void njCnkSimpleMultiDrawModel(NJS_CNK_MODEL* pModel);
 void njCnkSetCurrentDrawMode(unsigned int ulMode);
-int njCnkDrawModelLocal(_anon5* pModel);
-int njCnkDrawModelLocalMod(_anon5* pModel);
+int njCnkDrawModelLocal(NJS_CNK_MODEL* pModel);
+int njCnkDrawModelLocalMod(NJS_CNK_MODEL* pModel);
 tagCHUNK_HEAD* njCnkCn(tagCHUNK_HEAD* pCnk);
 tagCHUNK_HEAD* njCnkCbBa(tagCHUNK_HEAD* pCnk);
 tagCHUNK_HEAD* njCnkCbDa(tagCHUNK_HEAD* pCnk);
@@ -672,7 +672,7 @@ void njSetCnkBlendMode(unsigned int ulAttr)
 
 // 
 // Start address: 0x2cf4e0
-void njCnkModDrawModel(_anon5* pModel)
+void njCnkModDrawModel(NJS_CNK_MODEL* pModel)
 {
 	// Line 709, Address: 0x2cf4e0, Func Offset: 0
 	// Func End, Address: 0x2cf4e8, Func Offset: 0x8
@@ -961,7 +961,7 @@ void njCnkSetSimpleMultiLightMatrices()
 
 // 
 // Start address: 0x2cfb50
-void njCnkEasyDrawModel(_anon5* pModel)
+void njCnkEasyDrawModel(NJS_CNK_MODEL* pModel)
 {
 	// Line 1336, Address: 0x2cfb50, Func Offset: 0
 	// Line 1339, Address: 0x2cfb60, Func Offset: 0x10
@@ -994,7 +994,7 @@ void njCnkEasyDrawObject(cnkobj* pObject)
 
 // 
 // Start address: 0x2cfc70
-void njCnkEasyMultiDrawModel(_anon5* pModel)
+void njCnkEasyMultiDrawModel(NJS_CNK_MODEL* pModel)
 {
 	// Line 1409, Address: 0x2cfc70, Func Offset: 0
 	// Line 1412, Address: 0x2cfc80, Func Offset: 0x10
@@ -1027,7 +1027,7 @@ void njCnkEasyMultiDrawObject(cnkobj* pObject)
 
 // 
 // Start address: 0x2cfd90
-void njCnkSimpleDrawModel(_anon5* pModel)
+void njCnkSimpleDrawModel(NJS_CNK_MODEL* pModel)
 {
 	// Line 1480, Address: 0x2cfd90, Func Offset: 0
 	// Line 1483, Address: 0x2cfda0, Func Offset: 0x10
@@ -1038,7 +1038,7 @@ void njCnkSimpleDrawModel(_anon5* pModel)
 
 // 
 // Start address: 0x2cfdc0
-void njCnkSimpleMultiDrawModel(_anon5* pModel)
+void njCnkSimpleMultiDrawModel(NJS_CNK_MODEL* pModel)
 {
 	// Line 1551, Address: 0x2cfdc0, Func Offset: 0
 	// Line 1554, Address: 0x2cfdd0, Func Offset: 0x10
@@ -1063,7 +1063,7 @@ void njCnkSetCurrentDrawMode(unsigned int ulMode)
 
 // 
 // Start address: 0x2cfe30
-int njCnkDrawModelLocal(_anon5* pModel)
+int njCnkDrawModelLocal(NJS_CNK_MODEL* pModel)
 {
 	unsigned int modelclipflag;
 	tagCHUNK_HEAD* pCnk;
@@ -1119,7 +1119,7 @@ int njCnkDrawModelLocal(_anon5* pModel)
 
 // 
 // Start address: 0x2d00a0
-int njCnkDrawModelLocalMod(_anon5* pModel)
+int njCnkDrawModelLocalMod(NJS_CNK_MODEL* pModel)
 {
 	tagCHUNK_HEAD* pCnk;
 	float fZ;

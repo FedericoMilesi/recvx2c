@@ -6,7 +6,7 @@ typedef struct _anon3;
 
 typedef struct BH_PWORK;
 typedef struct _anon5;
-typedef struct _anon6;
+typedef struct NJS_CNK_MODEL;
 typedef struct _anon7;
 
 typedef struct _anon9;
@@ -36,7 +36,7 @@ typedef void(*type_18)(BH_PWORK*)[2];
 struct npobj
 {
 	unsigned int evalflags;
-	_anon6* model;
+	NJS_CNK_MODEL* model;
 	float pos[3];
 	int ang[3];
 	float scl[3];
@@ -228,13 +228,13 @@ struct _anon5
 	NJS_MATRIX mtx;
 };
 
-struct _anon6
-{
-	int* vlist;
-	short* plist;
-	NJS_POINT3 center;
-	float r;
-};
+
+
+
+
+
+
+
 
 struct _anon7
 {

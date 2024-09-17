@@ -38,3 +38,4 @@
 | NJS_TEXNAME | Found on Katana | `<katana>/ninjastr.h` |
 | NJS_TEXLIST | Found on Katana | `<katana>/ninjastr.h` |
 | PDS_PERIPHERALINFO | Found on Katana | `<katana>/sg_pad.h` |
+| PDS_PERIPHERAL | Found on Katana | `<katana>/sg_pad.h` |

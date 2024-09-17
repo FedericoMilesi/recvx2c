@@ -5,7 +5,7 @@ typedef struct _anon3;
 typedef struct _anon4;
 typedef struct npobj;
 typedef struct BH_PWORK;
-typedef struct _anon5;
+typedef struct NJS_CNK_MODEL;
 typedef struct _anon6;
 typedef struct _anon7;
 
@@ -866,7 +866,7 @@ struct _anon4
 struct npobj
 {
 	unsigned int evalflags;
-	_anon5* model;
+	NJS_CNK_MODEL* model;
 	float pos[3];
 	int ang[3];
 	float scl[3];
@@ -1015,13 +1015,13 @@ struct BH_PWORK
 	unsigned int Dummy2[2];
 };
 
-struct _anon5
-{
-	int* vlist;
-	short* plist;
-	NJS_POINT3 center;
-	float r;
-};
+
+
+
+
+
+
+
 
 struct _anon6
 {
@@ -2423,7 +2423,7 @@ void bhObj005(_anon0* op)
 	int i;
 	_anon7* pp;
 	_anon7* ps;
-	_anon5* cmd;
+	NJS_CNK_MODEL* cmd;
 	// Line 1072, Address: 0x285680, Func Offset: 0
 	// Line 1089, Address: 0x2856a0, Func Offset: 0x20
 	// Line 1091, Address: 0x2856c0, Func Offset: 0x40

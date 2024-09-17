@@ -1,7 +1,7 @@
 typedef struct _anon0;
 typedef struct _anon1;
 typedef struct _anon2;
-typedef struct _anon3;
+typedef struct NJS_CNK_MODEL;
 typedef struct _anon4;
 typedef struct _anon5;
 typedef struct BH_PWORK;
@@ -294,13 +294,13 @@ struct _anon2
 	unsigned char VolType;
 };
 
-struct _anon3
-{
-	int* vlist;
-	short* plist;
-	NJS_POINT3 center;
-	float r;
-};
+
+
+
+
+
+
+
 
 struct _anon4
 {
@@ -1123,7 +1123,7 @@ struct _anon42
 struct npobj
 {
 	unsigned int evalflags;
-	_anon3* model;
+	NJS_CNK_MODEL* model;
 	float pos[3];
 	int ang[3];
 	float scl[3];

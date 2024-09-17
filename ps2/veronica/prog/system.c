@@ -264,9 +264,9 @@ struct _anon30 {
     float l;
     float rn;
     float rmax;
-    Vector3 wp_fps1;
-    Vector3 wp_fps2;
-    Vector3 wp_cps;
+    NJS_POINT3 wp_fps1;
+    NJS_POINT3 wp_fps2;
+    NJS_POINT3 wp_cps;
     unsigned char ltp;
     unsigned char lr;
     unsigned char lg;

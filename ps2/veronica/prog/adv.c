@@ -64,7 +64,7 @@ unsigned int AdvGetCancelButton();
 void SetPvrInfo(TextureFileLocation* np, TextureInfo* ip, unsigned char* pp);
 int TransPvpData(unsigned char* pp, int Mode);
 void AdvTransShadowPalette();
-void AdvEasyDrawWindow(Vector3* tlp, Vector3* brp, unsigned int WindowColor, unsigned int BackColor);
+void AdvEasyDrawWindow(NJS_POINT3* tlp, NJS_POINT3* brp, unsigned int WindowColor, unsigned int BackColor);
 void AdvEasyDrawTexture(int TexNo, unsigned int BaseColor, NJS_QUAD_TEXTURE* qp, float PosZ, int TransFlag);
 void AdvEasyDrawTextureS(int TexNo, unsigned int BaseColor, NJS_QUAD_TEXTURE* qp, float PosZ, int TransFlag, unsigned int ShadowAlpha);
 void SetQuadPos(float StartX, float StartY, float SizeX, float SizeY, NJS_QUAD_TEXTURE* qp);
@@ -1019,7 +1019,7 @@ void AdvTransShadowPalette() { // Line 989, Address: 0x2c19c0
 
 
 /* 100% match */
-void AdvEasyDrawWindow(Vector3* tlp, Vector3* brp, unsigned int WindowColor, unsigned int BackColor) { // Line 1022, Address: 0x2c1a40
+void AdvEasyDrawWindow(NJS_POINT3* tlp, NJS_POINT3* brp, unsigned int WindowColor, unsigned int BackColor) { // Line 1022, Address: 0x2c1a40
     NJS_POLYGON_VTX poly[4];
 
     poly[0].z = poly[2].z = tlp->z; // Line 1025, Address: 0x2c1a6c

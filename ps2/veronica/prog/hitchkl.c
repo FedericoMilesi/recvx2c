@@ -31,7 +31,7 @@ typedef struct _anon28;
 typedef struct _anon29;
 typedef struct BH_PWORK;
 typedef struct _anon30;
-typedef struct _anon31;
+typedef struct NJS_CNK_MODEL;
 
 typedef struct _anon33;
 typedef struct _anon34;
@@ -163,7 +163,7 @@ typedef _anon1* type_113[512];
 struct npobj
 {
 	unsigned int evalflags;
-	_anon31* model;
+	NJS_CNK_MODEL* model;
 	float pos[3];
 	int ang[3];
 	float scl[3];
@@ -1322,13 +1322,13 @@ struct _anon30
 	float cb;
 };
 
-struct _anon31
-{
-	int* vlist;
-	short* plist;
-	NJS_POINT3 center;
-	float r;
-};
+
+
+
+
+
+
+
 
 
 
@@ -1487,7 +1487,7 @@ _anon6* bhCollisionCheckLine3(NJS_POINT3* p1, NJS_POINT3* p2, unsigned int flg, 
 int bhCollisionCheckLineMain(_anon6* hp, NJS_POINT3* vec, NJS_POINT3* p1, NJS_POINT3* p2);
 int bhCollisionCheckL2PL(NJS_POINT3* p1, NJS_POINT3* p2, NJS_POINT3* area, int num);
 int bhInOutCheck(NJS_POINT3* p, NJS_POINT3* area, NJS_POINT3* normal, int num);
-int bhCollisionCheckL2MDL(NJS_POINT3* p1, NJS_POINT3* p2, _anon31* mdl, NJS_MATRIX mtx);
+int bhCollisionCheckL2MDL(NJS_POINT3* p1, NJS_POINT3* p2, NJS_CNK_MODEL* mdl, NJS_MATRIX mtx);
 int bhCollisionCheckL2XZPL(NJS_POINT3* p1, NJS_POINT3* p2, NJS_POINT3* pos, float w, float d, int flg);
 int bhCollisionCheckL2XYPL(NJS_POINT3* p1, NJS_POINT3* p2, NJS_POINT3* pos, float w, float h, int flg);
 int bhCollisionCheckL2YZPL(NJS_POINT3* p1, NJS_POINT3* p2, NJS_POINT3* pos, float h, float d, int flg);
@@ -2144,7 +2144,7 @@ int bhInOutCheck(NJS_POINT3* p, NJS_POINT3* area, NJS_POINT3* normal, int num)
 
 // 
 // Start address: 0x26b200
-int bhCollisionCheckL2MDL(NJS_POINT3* p1, NJS_POINT3* p2, _anon31* mdl, NJS_MATRIX mtx)
+int bhCollisionCheckL2MDL(NJS_POINT3* p1, NJS_POINT3* p2, NJS_CNK_MODEL* mdl, NJS_MATRIX mtx)
 {
 	NJS_LINE ln;
 	NJS_POINT3 center;

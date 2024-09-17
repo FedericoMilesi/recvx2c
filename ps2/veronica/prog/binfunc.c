@@ -8,7 +8,7 @@ typedef union _anon6;
 
 typedef struct _anon8;
 typedef struct npobj;
-typedef struct _anon9;
+typedef struct NJS_CNK_MODEL;
 typedef struct _anon10;
 
 typedef struct _anon12;
@@ -91,7 +91,7 @@ struct _anon8
 struct npobj
 {
 	unsigned int evalflags;
-	_anon9* model;
+	NJS_CNK_MODEL* model;
 	float pos[3];
 	int ang[3];
 	float scl[3];
@@ -99,13 +99,13 @@ struct npobj
 	npobj* sibling;
 };
 
-struct _anon9
-{
-	int* vlist;
-	short* plist;
-	NJS_POINT3 center;
-	float r;
-};
+
+
+
+
+
+
+
 
 struct _anon10
 {
@@ -160,7 +160,7 @@ struct _anon14
 
 int bhMlbBinRealize(void* bin_datP, _anon10* mlwP);
 int bhBscBinRealize(_anon12* mdlP, unsigned int dat_off);
-int bhCnkBinRealize(_anon9* mdlP, unsigned int dat_off);
+int bhCnkBinRealize(NJS_CNK_MODEL* mdlP, unsigned int dat_off);
 int bhMnbBinRealize(void* bin_datP, _anon0* mnwP);
 
 // 
@@ -262,7 +262,7 @@ int bhBscBinRealize(_anon12* mdlP, unsigned int dat_off)
 
 // 
 // Start address: 0x2c8a00
-int bhCnkBinRealize(_anon9* mdlP, unsigned int dat_off)
+int bhCnkBinRealize(NJS_CNK_MODEL* mdlP, unsigned int dat_off)
 {
 	// Line 199, Address: 0x2c8a00, Func Offset: 0
 	// Line 200, Address: 0x2c8a1c, Func Offset: 0x1c

@@ -21,7 +21,7 @@ typedef struct tagICONINFORMATION;
 typedef struct tagMEMORYCARDSTATE;
 typedef struct _anon12;
 typedef struct _anon13;
-typedef struct _anon14;
+typedef struct NJS_CNK_MODEL;
 typedef struct _anon15;
 typedef struct BH_PWORK;
 typedef struct _anon16;
@@ -321,7 +321,7 @@ struct tagLOAD_SCREEN
 struct npobj
 {
 	unsigned int evalflags;
-	_anon14* model;
+	NJS_CNK_MODEL* model;
 	float pos[3];
 	int ang[3];
 	float scl[3];
@@ -988,13 +988,13 @@ struct _anon13
 	int cap_r;
 };
 
-struct _anon14
-{
-	int* vlist;
-	short* plist;
-	NJS_POINT3 center;
-	float r;
-};
+
+
+
+
+
+
+
 
 struct _anon15
 {

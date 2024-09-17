@@ -16,7 +16,7 @@ typedef struct _anon13;
 typedef struct _anon14;
 typedef struct BH_PWORK;
 typedef struct _anon15;
-typedef struct _anon16;
+typedef struct NJS_CNK_MODEL;
 typedef struct _anon17;
 typedef struct _anon18;
 typedef struct _anon19;
@@ -93,7 +93,7 @@ typedef _anon15 type_61[16];
 struct npobj
 {
 	unsigned int evalflags;
-	_anon16* model;
+	NJS_CNK_MODEL* model;
 	float pos[3];
 	int ang[3];
 	float scl[3];
@@ -363,13 +363,13 @@ struct _anon15
 	_anon9* owP;
 };
 
-struct _anon16
-{
-	int* vlist;
-	short* plist;
-	NJS_POINT3 center;
-	float r;
-};
+
+
+
+
+
+
+
 
 struct _anon17
 {
@@ -459,8 +459,8 @@ unsigned int npGetMatColor(npobj* objp, int obj_n);
 void npSetAllMatColor(npobj* objp, int obj_n, unsigned int argb);
 void npChangeMatAlphaColor(npobj* objp, int obj_n, unsigned char alpha);
 void npSetAllMatAlphaColor(npobj* objp, int obj_n, unsigned char alpha);
-void npSetOffsetUV(_anon16* mdlp, short offu, short offv);
-void npSetOffsetUV2(_anon16* mdlp, short offu, short offv);
+void npSetOffsetUV(NJS_CNK_MODEL* mdlp, short offu, short offv);
+void npSetOffsetUV2(NJS_CNK_MODEL* mdlp, short offu, short offv);
 int npCopyVlist(int* dstp, int* srcp);
 void npCutSkin();
 void npInitCalcSkin(void* pwp, int obj_n, int* sknp);
@@ -1690,7 +1690,7 @@ void npSetAllMatAlphaColor(npobj* objp, int obj_n, unsigned char alpha)
 
 // 
 // Start address: 0x12dde0
-void npSetOffsetUV(_anon16* mdlp, short offu, short offv)
+void npSetOffsetUV(NJS_CNK_MODEL* mdlp, short offu, short offv)
 {
 	short* plp;
 	short head;
@@ -1746,7 +1746,7 @@ void npSetOffsetUV(_anon16* mdlp, short offu, short offv)
 
 // 
 // Start address: 0x12df50
-void npSetOffsetUV2(_anon16* mdlp, short offu, short offv)
+void npSetOffsetUV2(NJS_CNK_MODEL* mdlp, short offu, short offv)
 {
 	short* plp;
 	short head;

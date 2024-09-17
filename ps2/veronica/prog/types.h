@@ -45,7 +45,7 @@ typedef struct SAVEFILE
 	unsigned int mp_flg[8];
 	unsigned int itm[384];
 	unsigned int ply_stflg[4];
-	Vector3 ply_pos;
+	NJS_POINT3 ply_pos;
 	int ply_ang;
 	char ply_wno[4];
 	short ply_hp[4];
@@ -792,19 +792,19 @@ LfOpen;
 
 
 
-typedef struct Model {
-	/*  0 */ int* vlist;
-	/*  4 */ short* plist;
-	/*  8 */ Vector3 center;
-	/* 20 */ float r;
-}
-Model;
+
+
+
+
+
+
+
 
 
 typedef struct npobj npobj;
 typedef struct npobj {
 	/*  0 */ unsigned int evalflags;
-	/*  4 */ Model* model;
+	/*  4 */ NJS_CNK_MODEL* model;
 	/*  8 */ float pos[3];
 	/* 20 */ int ang[3];
 	/* 32 */ float scl[3];
@@ -899,16 +899,16 @@ Unknown18;
 
 
 typedef struct Unknown17 {
-	Vector3 c1;
-	Vector3 c2;
+	NJS_POINT3 c1;
+	NJS_POINT3 c2;
 	float r;
 }
 Unknown17;
 
 
 typedef struct Unknown16 {
-	/*  0 */ Vector3 c1;
-	/* 12 */ Vector3 c2;
+	/*  0 */ NJS_POINT3 c1;
+	/* 12 */ NJS_POINT3 c2;
 	/* 24 */ float r1;
 	/* 28 */ float r2;
 }
@@ -936,7 +936,7 @@ Unknown15;
 
 
 typedef struct Unknown14 {
-	Vector3 ps;
+	NJS_POINT3 ps;
 	float nr;
 	float fr;
 	float cr;
@@ -974,9 +974,9 @@ typedef struct Unknown12 {
 	float intns;
 	int exp;
 	int reserve;
-	Vector3 lpnt;
-	Vector3 lvctr;
-	Vector3 lmvctr;
+	NJS_POINT3 lpnt;
+	NJS_POINT3 lvctr;
+	NJS_POINT3 lmvctr;
 	Color atten;
 	Color amb;
 	Color dif;
@@ -990,8 +990,8 @@ Unknown12;
 
 typedef struct Unknown11 {
 	NJS_MATRIX mtrx;
-	Vector3 pnt;
-	Vector3 vctr;
+	NJS_POINT3 pnt;
+	NJS_POINT3 vctr;
 	int stat;
 	int reserve;
 	Unknown12 ltcal;
@@ -1102,7 +1102,7 @@ Unknown7;
 
 
 typedef struct Unknown6 {
-	Vector3 c;
+	NJS_POINT3 c;
 	float r;
 }
 Unknown6;
@@ -1459,7 +1459,7 @@ typedef struct System {
 	unsigned int mp_flg[8];
 	unsigned int itm[384];
 	unsigned int ply_stflg[4];
-	Vector3 ply_pos;
+	NJS_POINT3 ply_pos;
 	int ply_ang;
 	char ply_wno[4];
 	short ply_hp[4];
@@ -1684,8 +1684,8 @@ typedef struct System {
 	BH_PWORK* plp;
 	Unknown15* pl_htp;
 	int costume;
-	Vector3 hd_pos;
-	Vector3 apos;
+	NJS_POINT3 hd_pos;
+	NJS_POINT3 apos;
 	Unknown15* ahtp;
 	int mwal_n;
 	int metc_n;
@@ -1762,7 +1762,7 @@ typedef struct System {
 	unsigned char ufo_md;
 	unsigned char ufo_flg;
 	short ufo_oidx;
-	Vector3 ufo_pos;
+	NJS_POINT3 ufo_pos;
 	unsigned int opt_flg;
 	unsigned short opt_md0;
 	unsigned short opt_md1;
@@ -1789,7 +1789,7 @@ typedef struct System {
 	Unknown16 gatc[16];
 	int ght_ct;
 	unsigned int ghtc[32];
-	Vector3 ghtp[32];
+	NJS_POINT3 ghtp[32];
 	unsigned short db_md0;
 	unsigned short db_md1;
 	char db_stgno;

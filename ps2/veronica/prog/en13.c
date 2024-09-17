@@ -30,7 +30,7 @@ typedef struct _anon26;
 typedef struct _anon27;
 typedef struct _anon28;
 typedef struct _anon29;
-typedef struct _anon30;
+typedef struct NJS_CNK_MODEL;
 
 
 typedef struct _anon33;
@@ -189,7 +189,7 @@ typedef _anon0* type_136[512];
 struct npobj
 {
 	unsigned int evalflags;
-	_anon30* model;
+	NJS_CNK_MODEL* model;
 	float pos[3];
 	int ang[3];
 	float scl[3];
@@ -1341,13 +1341,13 @@ struct _anon29
 	float cb;
 };
 
-struct _anon30
-{
-	int* vlist;
-	short* plist;
-	NJS_POINT3 center;
-	float r;
-};
+
+
+
+
+
+
+
 
 
 
@@ -2290,7 +2290,7 @@ int bhEne13_StoreObject(BH_PWORK* epw, NJS_POINT3* pos, NJS_POINT3** v, int no)
 	_anon33* pd;
 	_anon33* ps;
 	int nVtx;
-	_anon30* pModel;
+	NJS_CNK_MODEL* pModel;
 	int i;
 	int obj_n;
 	int ono;
@@ -2337,7 +2337,7 @@ int bhEne13_RestoreObject(BH_PWORK* epw, NJS_POINT3* pos, NJS_POINT3** v, int no
 	_anon33* pd;
 	_anon33* ps;
 	int nVtx;
-	_anon30* pModel;
+	NJS_CNK_MODEL* pModel;
 	int i;
 	int obj_n;
 	int ono;

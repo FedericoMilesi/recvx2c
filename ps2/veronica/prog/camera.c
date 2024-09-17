@@ -75,7 +75,7 @@ void bhInitCamera() { // Line 58, Address: 0x279ea0, 0x279eb0
 
 /* 100% match */
 void bhControlCamera() { // Line 77, Address: 0x279f50, 0x279f5c
-    Vector3 pos = { 0.0, 0.0, -1.0 }, ps; // Line 78, Address: 0x279f54, 0x279f60, 0x279f70
+    NJS_POINT3 pos = { 0.0, 0.0, -1.0 }, ps; // Line 78, Address: 0x279f54, 0x279f60, 0x279f70
 
     njSetPerspective(cam.pers); // Line 80, Address: 0x279f6c, 0x279f78
     njSetMatrix(0, cmat); // Line 81, Address: 0x279f80
@@ -110,7 +110,7 @@ void bhControlCamera() { // Line 77, Address: 0x279f50, 0x279f5c
     njRotateY(0, cam.ay); // Line 110, Address: 0x27a040
     njRotateX(0, cam.ax); // Line 111, Address: 0x27a050
     njRotateZ(0 ,cam.az); // Line 112, Address: 0x27a060
-    njCalcVector(0, &pos, (Vector3*)&cam.vx); // Line 113, Address: 0x27a070
+    njCalcVector(0, &pos, (NJS_POINT3*)&cam.vx); // Line 113, Address: 0x27a070
     cam.vx = -cam.vx; // Line 114, Address: 0x27a084, 0x27a090
     cam.vy = -cam.vy; // Line 115, Address: 0x27a09c
 
@@ -121,7 +121,7 @@ void bhControlCamera() { // Line 77, Address: 0x279f50, 0x279f5c
     njRotateZ(0, cam.az); // Line 121, Address: 0x27a118
     ps.x = ps.y = 0; // Line 122, Address: 0x27a130, 0x27a138
     ps.z = -cam.ln; // Line 123, Address: 0x27a128, 0x27a140
-    njCalcPoint(0, &ps, (Vector3*)&cam.wpx); // Line 124, Address: 0x27a134, 0x27a13c, 0x27a144
+    njCalcPoint(0, &ps, (NJS_POINT3*)&cam.wpx); // Line 124, Address: 0x27a134, 0x27a13c, 0x27a144
 
 
 
@@ -141,12 +141,12 @@ void bhControlCamera() { // Line 77, Address: 0x279f50, 0x279f5c
 
 /* 99.76% match */
 void bhMakeCameraVector() { // Line 143, Address: 0x27a160, 0x27a16c
-    Vector3 pos = { 0.0, 0.0, -1.0 }; // Line 144, Address: 0x27a164, 0x27a170
+    NJS_POINT3 pos = { 0.0, 0.0, -1.0 }; // Line 144, Address: 0x27a164, 0x27a170
     njUnitMatrix(0); // Line 145, Address: 0x27a180
     njRotateY(0, cam.ay); // Line 146, Address: 0x27a18c
     njRotateX(0, cam.ax); // Line 147, Address: 0x27a19c
     njRotateZ(0, cam.az); // Line 148, Address: 0x27a1ac
-    njCalcVector(0, &pos, (Vector3*)&cam.vx); // Line 149, Address: 0x27a1bc
+    njCalcVector(0, &pos, (NJS_POINT3*)&cam.vx); // Line 149, Address: 0x27a1bc
     cam.vx = -cam.vx; // Line 150, Address: 0x27a1d0
     cam.vy = -cam.vy; // Line 151, Address: 0x27a1e4
 } // Line 152, Address: 0x27a1f8
@@ -156,7 +156,7 @@ void bhMakeCameraVector() { // Line 143, Address: 0x27a160, 0x27a16c
 
 /* 100% match */
 void bhGetCameraPosition() { // Line 158, Address: 0x27a210
-    Vector3 ps;
+    NJS_POINT3 ps;
     njUnitMatrix(0); // Line 160, Address: 0x27a218
     njTranslate(0, cam.px + cam.ofx, cam.py + cam.ofy, cam.pz + cam.ofz); // Line 161, Address: 0x27a220
     njRotateY(0, cam.ay); // Line 162, Address: 0x27a264
@@ -164,5 +164,5 @@ void bhGetCameraPosition() { // Line 158, Address: 0x27a210
     njRotateZ(0, cam.az); // Line 164, Address: 0x27a284
     ps.x = ps.y = 0; // Line 165, Address: 0x27a29c, 0x27a2a4
     ps.z = -cam.ln; // Line 166, Address: 0x27a294, 0x27a2ac
-    njCalcPoint(0, &ps, (Vector3*)&cam.wpx); // Line 167, Address: 0x27a2a0, 0x27a2a8, 0x27a2b0
+    njCalcPoint(0, &ps, (NJS_POINT3*)&cam.wpx); // Line 167, Address: 0x27a2a0, 0x27a2a8, 0x27a2b0
 } // Line 168, Address: 0x27a2c0
