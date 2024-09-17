@@ -3,7 +3,7 @@
 typedef struct _anon0;
 typedef struct _anon1;
 typedef struct _anon2;
-typedef struct _anon3;
+
 typedef struct _anon4;
 typedef struct npobj;
 typedef struct _anon5;
@@ -74,7 +74,7 @@ typedef unsigned int type_17[8];
 typedef int type_18[4];
 
 typedef int type_20[450];
-typedef _anon3 type_21[4];
+
 typedef unsigned int type_22[8];
 typedef unsigned char type_23[450];
 typedef _anon1 type_24[4];
@@ -257,15 +257,15 @@ struct _anon2
 	NJS_MATRIX mtx;
 };
 
-struct _anon3
-{
-	float x;
-	float y;
-	float z;
-	float u;
-	float v;
-	unsigned int col;
-};
+
+
+
+
+
+
+
+
+
 
 struct _anon4
 {
@@ -834,9 +834,9 @@ struct _anon27
 	_anon40 cspr;
 	int pn;
 	NJS_POLYGON_VTX* pvp;
-	_anon3* tvp;
+	NJS_TEXTURE_VTX* tvp;
 	NJS_POLYGON_VTX pv[4];
-	_anon3 tv[4];
+	NJS_TEXTURE_VTX tv[4];
 	int bl_src;
 	int bl_dst;
 	int ani_ct;

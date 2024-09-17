@@ -24,7 +24,7 @@ typedef struct _anon20;
 typedef struct _anon21;
 
 typedef struct _anon23;
-typedef struct _anon24;
+
 typedef struct _anon25;
 typedef struct _anon26;
 typedef struct _anon27;
@@ -94,7 +94,7 @@ typedef int type_27[64];
 typedef int type_28[4];
 
 typedef int type_30[450];
-typedef _anon24 type_31[4];
+
 typedef unsigned int type_32[8];
 typedef unsigned char type_33[450];
 typedef _anon16 type_34[4];
@@ -1026,15 +1026,15 @@ struct _anon23
 	};
 };
 
-struct _anon24
-{
-	float x;
-	float y;
-	float z;
-	float u;
-	float v;
-	unsigned int col;
-};
+
+
+
+
+
+
+
+
+
 
 struct _anon25
 {
@@ -1312,9 +1312,9 @@ struct _anon39
 	_anon33 cspr;
 	int pn;
 	NJS_POLYGON_VTX* pvp;
-	_anon24* tvp;
+	NJS_TEXTURE_VTX* tvp;
 	NJS_POLYGON_VTX pv[4];
-	_anon24 tv[4];
+	NJS_TEXTURE_VTX tv[4];
 	int bl_src;
 	int bl_dst;
 	int ani_ct;

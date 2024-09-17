@@ -28,7 +28,7 @@ typedef struct _anon19;
 typedef struct tagICONINFORMATION;
 
 typedef struct _anon21;
-typedef struct _anon22;
+
 typedef struct tagCONFIGFILE;
 typedef struct _anon23;
 typedef struct _anon24;
@@ -139,7 +139,7 @@ typedef unsigned char type_90[64];
 typedef char type_91[3];
 
 typedef unsigned char type_93[64];
-typedef _anon22 type_94[4];
+
 typedef int type_95[450];
 typedef unsigned char type_96[512];
 typedef char* type_97[18];
@@ -297,9 +297,9 @@ struct _anon0
 	_anon5 cspr;
 	int pn;
 	NJS_POLYGON_VTX* pvp;
-	_anon22* tvp;
+	NJS_TEXTURE_VTX* tvp;
 	NJS_POLYGON_VTX pv[4];
-	_anon22 tv[4];
+	NJS_TEXTURE_VTX tv[4];
 	int bl_src;
 	int bl_dst;
 	int ani_ct;
@@ -1254,15 +1254,15 @@ struct _anon21
 	_anon15* light;
 };
 
-struct _anon22
-{
-	float x;
-	float y;
-	float z;
-	float u;
-	float v;
-	unsigned int col;
-};
+
+
+
+
+
+
+
+
+
 
 struct tagCONFIGFILE
 {

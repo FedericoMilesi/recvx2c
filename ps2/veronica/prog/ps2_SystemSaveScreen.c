@@ -28,7 +28,7 @@ typedef struct _anon20;
 
 typedef struct _anon22;
 typedef struct tagSELECTFILEINFO;
-typedef struct _anon23;
+
 typedef struct _anon24;
 typedef struct _anon25;
 typedef struct _anon26;
@@ -123,7 +123,7 @@ typedef char type_72[50];
 typedef unsigned char type_74[64];
 typedef char type_75[3];
 typedef char type_76[32];
-typedef _anon23 type_77[4];
+
 typedef int type_78[450];
 typedef unsigned char type_79[512];
 typedef unsigned int type_80[8];
@@ -283,9 +283,9 @@ struct _anon0
 	_anon4 cspr;
 	int pn;
 	NJS_POLYGON_VTX* pvp;
-	_anon23* tvp;
+	NJS_TEXTURE_VTX* tvp;
 	NJS_POLYGON_VTX pv[4];
-	_anon23 tv[4];
+	NJS_TEXTURE_VTX tv[4];
 	int bl_src;
 	int bl_dst;
 	int ani_ct;
@@ -1234,15 +1234,15 @@ struct tagSELECTFILEINFO
 	char saveroom;
 };
 
-struct _anon23
-{
-	float x;
-	float y;
-	float z;
-	float u;
-	float v;
-	unsigned int col;
-};
+
+
+
+
+
+
+
+
+
 
 struct _anon24
 {

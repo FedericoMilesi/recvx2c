@@ -4,7 +4,7 @@ typedef struct _anon0;
 typedef struct _anon1;
 typedef struct _en29_freework;
 typedef struct _anon2;
-typedef struct _anon3;
+
 typedef struct _anon4;
 typedef struct _eaw_typ;
 typedef struct _anon5;
@@ -130,7 +130,7 @@ typedef int type_70[64];
 typedef _anon12 type_71[450];
 typedef char type_72[4];
 
-typedef _anon3 type_74[4];
+
 typedef int type_75[450];
 typedef unsigned int type_76[8];
 typedef unsigned char type_77[450];
@@ -439,9 +439,9 @@ struct _anon0
 	_anon41 cspr;
 	int pn;
 	NJS_POLYGON_VTX* pvp;
-	_anon3* tvp;
+	NJS_TEXTURE_VTX* tvp;
 	NJS_POLYGON_VTX pv[4];
-	_anon3 tv[4];
+	NJS_TEXTURE_VTX tv[4];
 	int bl_src;
 	int bl_dst;
 	int ani_ct;
@@ -508,15 +508,15 @@ struct _anon2
 	unsigned int nbTexture;
 };
 
-struct _anon3
-{
-	float x;
-	float y;
-	float z;
-	float u;
-	float v;
-	unsigned int col;
-};
+
+
+
+
+
+
+
+
+
 
 struct _anon4
 {

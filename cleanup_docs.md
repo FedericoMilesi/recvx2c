@@ -17,3 +17,4 @@
 | sceGsTex0 | Found on SCE | `<sce>/ee/include/eestruct.h` |
 | sceGsTex1 | Found on SCE | `<sce>/ee/include/eestruct.h` |
 | NJS_POLYGON_VTX | Found on Katana | `<katana>/ninjastr.h` |
+| NJS_TEXTURE_VTX | Found on Katana | `<katana>/ninjastr.h` |

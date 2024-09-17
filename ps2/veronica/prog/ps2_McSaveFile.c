@@ -36,7 +36,7 @@ typedef struct GDS_FS_DIRREC_ENT;
 typedef struct _anon21;
 typedef struct _anon22;
 typedef struct _anon23;
-typedef struct _anon24;
+
 typedef struct GDS_FS_DIRREC_TBL;
 typedef struct _anon25;
 typedef union _anon26;
@@ -154,7 +154,7 @@ typedef char type_94[3];
 
 typedef unsigned char type_96[64];
 
-typedef _anon24 type_98[4];
+
 typedef int type_99[450];
 typedef _anon37 type_100[18];
 typedef unsigned char type_101[512];
@@ -311,9 +311,9 @@ struct _anon0
 	_anon5 cspr;
 	int pn;
 	NJS_POLYGON_VTX* pvp;
-	_anon24* tvp;
+	NJS_TEXTURE_VTX* tvp;
 	NJS_POLYGON_VTX pv[4];
-	_anon24 tv[4];
+	NJS_TEXTURE_VTX tv[4];
 	int bl_src;
 	int bl_dst;
 	int ani_ct;
@@ -1360,15 +1360,15 @@ struct _anon23
 	unsigned char a;
 };
 
-struct _anon24
-{
-	float x;
-	float y;
-	float z;
-	float u;
-	float v;
-	unsigned int col;
-};
+
+
+
+
+
+
+
+
+
 
 struct GDS_FS_DIRREC_TBL
 {

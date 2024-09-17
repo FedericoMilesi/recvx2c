@@ -362,15 +362,15 @@ typedef struct Unknown22
 
 
 
-typedef struct Vector5Col {
-    /*  0 */ float x;
-    /*  4 */ float y;
-    /*  8 */ float z;
-    /* 12 */ float u;
-    /* 16 */ float v;
-    /* 20 */ unsigned int col;
-}
-Vector5Col;
+
+
+
+
+
+
+
+
+
 
 
 typedef struct Point {
@@ -1250,9 +1250,9 @@ typedef struct Unknown1 {
     Unknown6 cspr;
     int pn;
     NJS_POLYGON_VTX* pvp;
-    Vector5Col* tvp;
+    NJS_TEXTURE_VTX* tvp;
     NJS_POLYGON_VTX pv[4];
-    Vector5Col tv[4];
+    NJS_TEXTURE_VTX tv[4];
     int bl_src;
     int bl_dst;
     int ani_ct;

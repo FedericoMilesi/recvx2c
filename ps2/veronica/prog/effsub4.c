@@ -4,7 +4,7 @@ typedef struct _anon1;
 typedef struct _anon2;
 typedef struct _anon3;
 typedef struct _anon4;
-typedef struct _anon5;
+
 typedef struct _anon6;
 typedef struct _anon7;
 typedef struct _anon8;
@@ -157,7 +157,7 @@ typedef _anon4* type_108[1];
 typedef _anon31 type_109[48];
 typedef _anon4* type_110[11];
 
-typedef _anon5 type_112[4];
+
 typedef _anon4 type_113[15];
 typedef int type_114[450];
 typedef unsigned int type_115[8];
@@ -334,9 +334,9 @@ struct _anon1
 	_anon39 cspr;
 	int pn;
 	NJS_POLYGON_VTX* pvp;
-	_anon5* tvp;
+	NJS_TEXTURE_VTX* tvp;
 	NJS_POLYGON_VTX pv[4];
-	_anon5 tv[4];
+	NJS_TEXTURE_VTX tv[4];
 	int bl_src;
 	int bl_dst;
 	int ani_ct;
@@ -372,15 +372,15 @@ struct _anon4
 	short timer;
 };
 
-struct _anon5
-{
-	float x;
-	float y;
-	float z;
-	float u;
-	float v;
-	unsigned int col;
-};
+
+
+
+
+
+
+
+
+
 
 struct _anon6
 {

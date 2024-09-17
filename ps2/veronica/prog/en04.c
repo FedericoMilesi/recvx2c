@@ -2,7 +2,7 @@ typedef struct npobj;
 typedef struct BH_PWORK;
 typedef struct _anon0;
 typedef struct _anon1;
-typedef struct _anon2;
+
 typedef struct _anon3;
 typedef struct _anon4;
 typedef struct _anon5;
@@ -162,7 +162,7 @@ typedef char type_101[4];
 typedef unsigned int type_102[8];
 typedef int type_103[5];
 
-typedef _anon2 type_105[4];
+
 typedef int type_107[450];
 typedef void(*type_108)(BH_PWORK*)[6];
 typedef unsigned int type_109[8];
@@ -479,9 +479,9 @@ struct _anon0
 	_anon47 cspr;
 	int pn;
 	NJS_POLYGON_VTX* pvp;
-	_anon2* tvp;
+	NJS_TEXTURE_VTX* tvp;
 	NJS_POLYGON_VTX pv[4];
-	_anon2 tv[4];
+	NJS_TEXTURE_VTX tv[4];
 	int bl_src;
 	int bl_dst;
 	int ani_ct;
@@ -502,15 +502,15 @@ struct _anon1
 	unsigned int nbTexture;
 };
 
-struct _anon2
-{
-	float x;
-	float y;
-	float z;
-	float u;
-	float v;
-	unsigned int col;
-};
+
+
+
+
+
+
+
+
+
 
 struct _anon3
 {

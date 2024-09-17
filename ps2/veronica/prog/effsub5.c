@@ -2,7 +2,7 @@ typedef struct _anon0;
 typedef struct npobj;
 typedef struct tagEFF5UVWHUC;
 typedef struct _anon1;
-typedef struct _anon2;
+
 typedef struct tagEFF5SNOWGRP;
 typedef struct tagEFF5UV;
 typedef struct tagEFF5UVWH;
@@ -151,7 +151,7 @@ typedef int type_86[3];
 typedef int type_87[8];
 typedef float type_88[3];
 typedef tagEFF5UV type_89[20];
-typedef _anon2 type_90[4];
+
 typedef _anon1* type_91[256];
 typedef tagEFF5UV type_92[8];
 typedef _anon12 type_93[256];
@@ -170,7 +170,7 @@ typedef tagEFF5UV type_105[16];
 typedef char type_106[4];
 typedef unsigned int type_107[8];
 
-typedef _anon2 type_109[4];
+
 typedef int type_110[450];
 typedef tagEFF5UV type_111[14];
 typedef unsigned int type_112[8];
@@ -226,11 +226,11 @@ typedef short type_168[4];
 typedef tagEFF5UVWH* type_169[6];
 typedef unsigned char type_170[4];
 typedef _anon34 type_171[16];
-typedef _anon2 type_172[4];
+
 typedef tagEFF5UV type_173[3];
 typedef tagEFF5UV type_174[3][3];
 typedef unsigned int type_175[8];
-typedef _anon2 type_176[4];
+
 typedef unsigned int type_177[32];
 typedef tagEFF5UV type_178[16];
 typedef unsigned int type_179[4];
@@ -351,9 +351,9 @@ struct _anon0
 	_anon43 cspr;
 	int pn;
 	NJS_POLYGON_VTX* pvp;
-	_anon2* tvp;
+	NJS_TEXTURE_VTX* tvp;
 	NJS_POLYGON_VTX pv[4];
-	_anon2 tv[4];
+	NJS_TEXTURE_VTX tv[4];
 	int bl_src;
 	int bl_dst;
 	int ani_ct;
@@ -393,15 +393,15 @@ struct _anon1
 	unsigned int nbTexture;
 };
 
-struct _anon2
-{
-	float x;
-	float y;
-	float z;
-	float u;
-	float v;
-	unsigned int col;
-};
+
+
+
+
+
+
+
+
+
 
 struct tagEFF5SNOWGRP
 {
@@ -871,7 +871,7 @@ struct tagEFF5SNOWRECT
 	int lSnowTimerMax;
 	_anon1* pSnowTexList;
 	unsigned int ulSnowTexNum;
-	_anon2 SnowModel[4];
+	NJS_TEXTURE_VTX SnowModel[4];
 };
 
 struct _anon6
@@ -3673,8 +3673,8 @@ void bhEff229(_anon0* op)
 void bhDrawWeaponEffect2(_anon0* op)
 {
 	float off;
-	_anon2 tvb[4];
-	_anon2 tv[4];
+	NJS_TEXTURE_VTX tvb[4];
+	NJS_TEXTURE_VTX tv[4];
 	int ani;
 	int i;
 	_anon39* uvp;
@@ -5494,7 +5494,7 @@ void DrawEff5SnowRect(_anon0* op)
 {
 	NJS_POINT3 Vector;
 	int aAngleZ;
-	_anon2* pModel;
+	NJS_TEXTURE_VTX* pModel;
 	NJS_MATRIX Matrix;
 	NJS_POINT3* pPoint;
 	int lDrawMax;
@@ -5648,7 +5648,7 @@ void ArrangeEff5SnowRectParticle(tagEFF5SNOWRECT* pSnow)
 // Start address: 0x25d430
 void SetEff5SnowRectParticleTexture(tagEFF5SNOWRECT* pSnow, _anon1* pTexList, unsigned int ulTexNum, float fU0, float fV0, float fU1, float fV1, float fU2, float fV2, float fU3, float fV3)
 {
-	_anon2* pTex;
+	NJS_TEXTURE_VTX* pTex;
 	// Line 6241, Address: 0x25d430, Func Offset: 0
 	// Line 6242, Address: 0x25d434, Func Offset: 0x4
 	// Line 6245, Address: 0x25d438, Func Offset: 0x8
@@ -5666,7 +5666,7 @@ void SetEff5SnowRectParticleTexture(tagEFF5SNOWRECT* pSnow, _anon1* pTexList, un
 // Start address: 0x25d460
 void SetEff5SnowRectParticleColor(tagEFF5SNOWRECT* pSnow, unsigned int ulColor0, unsigned int ulColor1, unsigned int ulColor2, unsigned int ulColor3)
 {
-	_anon2* pTex;
+	NJS_TEXTURE_VTX* pTex;
 	// Line 6282, Address: 0x25d460, Func Offset: 0
 	// Line 6283, Address: 0x25d464, Func Offset: 0x4
 	// Line 6284, Address: 0x25d468, Func Offset: 0x8
@@ -5678,7 +5678,7 @@ void SetEff5SnowRectParticleColor(tagEFF5SNOWRECT* pSnow, unsigned int ulColor0,
 // Start address: 0x25d480
 void SetEff5SnowRectParticleSize(tagEFF5SNOWRECT* pSnow, float fWidth, float fHeight)
 {
-	_anon2* pSnowModel;
+	NJS_TEXTURE_VTX* pSnowModel;
 	// Line 6311, Address: 0x25d480, Func Offset: 0
 	// Line 6312, Address: 0x25d498, Func Offset: 0x18
 	// Line 6313, Address: 0x25d4a0, Func Offset: 0x20

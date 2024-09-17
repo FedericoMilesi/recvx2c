@@ -3,7 +3,7 @@ typedef struct _anon0;
 typedef struct _anon1;
 typedef struct _anon2;
 typedef struct _anon3;
-typedef struct _anon4;
+
 typedef struct _cnc_wrk_typ;
 typedef struct _anon5;
 typedef struct _anon6;
@@ -186,7 +186,7 @@ typedef char type_89[4];
 typedef unsigned int type_90[8];
 
 typedef _tag_wrk_typ* type_93[4];
-typedef _anon4 type_94[4];
+
 typedef int type_95[450];
 typedef _anon39 type_96[2];
 typedef unsigned int type_98[8];
@@ -368,9 +368,9 @@ struct _anon0
 	_anon62 cspr;
 	int pn;
 	NJS_POLYGON_VTX* pvp;
-	_anon4* tvp;
+	NJS_TEXTURE_VTX* tvp;
 	NJS_POLYGON_VTX pv[4];
-	_anon4 tv[4];
+	NJS_TEXTURE_VTX tv[4];
 	int bl_src;
 	int bl_dst;
 	int ani_ct;
@@ -410,15 +410,15 @@ struct _anon3
 	NJS_POINT3 gge_pos;
 };
 
-struct _anon4
-{
-	float x;
-	float y;
-	float z;
-	float u;
-	float v;
-	unsigned int col;
-};
+
+
+
+
+
+
+
+
+
 
 struct _cnc_wrk_typ
 {

@@ -4,7 +4,7 @@ typedef struct _anon1;
 typedef struct _anon2;
 typedef struct _anon3;
 typedef struct _anon4;
-typedef struct _anon5;
+
 typedef struct _anon6;
 typedef struct _anon7;
 typedef struct _anon8;
@@ -100,7 +100,7 @@ typedef short type_27[9];
 typedef _anon0* type_28[128];
 typedef unsigned int type_29[1];
 typedef _anon8 type_30[8];
-typedef _anon5 type_31[4];
+
 typedef _anon3 type_32[256];
 typedef _anon4* type_33[8];
 typedef _anon8 type_34[5];
@@ -125,7 +125,7 @@ typedef _anon8 type_52[14];
 typedef char type_53[256];
 typedef float type_54[4];
 typedef _anon8 type_55[4];
-typedef _anon5 type_56[4];
+
 typedef float type_57[4];
 typedef _anon8 type_58[4];
 typedef _anon8 type_59[7];
@@ -167,7 +167,7 @@ typedef _anon8 type_96[13];
 typedef _anon8 type_97[11];
 typedef int type_98[4];
 typedef unsigned char* type_99[256];
-typedef _anon5 type_101[4];
+
 typedef _anon8 type_102[8];
 typedef unsigned int type_103[2];
 typedef short type_104[256];
@@ -200,7 +200,7 @@ typedef unsigned int type_130[16];
 typedef char type_132[4];
 typedef unsigned int type_133[8];
 
-typedef _anon5 type_135[4];
+
 typedef int type_136[450];
 typedef short type_137[3];
 typedef short type_138[3][2];
@@ -231,7 +231,7 @@ typedef _anon1 type_164[64];
 typedef unsigned int type_165[16];
 typedef _anon8 type_166[4];
 typedef unsigned int type_167[3];
-typedef _anon5 type_168[4];
+
 typedef BH_PWORK* type_169[16];
 typedef unsigned int type_170[8];
 typedef _anon8 type_171[7];
@@ -239,12 +239,12 @@ typedef unsigned int type_172[1];
 typedef _anon8 type_173[8];
 typedef _anon8 type_174[17];
 typedef unsigned int type_175[384];
-typedef _anon5 type_176[4];
+
 typedef unsigned int type_177[2];
 typedef unsigned char type_178[2];
 typedef int* type_179[16];
 typedef unsigned int type_180[4];
-typedef _anon5 type_181[4];
+
 typedef char type_183[32];
 typedef npobj* type_184[16];
 typedef _anon8 type_185[8];
@@ -267,7 +267,7 @@ typedef unsigned int type_202[32];
 typedef _anon8 type_203[6];
 typedef unsigned int type_204[4];
 typedef _anon8 type_206[5];
-typedef _anon5 type_207[4];
+
 typedef NJS_POINT3 type_208[32];
 typedef _anon0* type_209[512];
 typedef _anon8 type_210[12];
@@ -279,7 +279,7 @@ typedef _anon0* type_215[128];
 typedef _anon0* type_216[512];
 typedef _anon8 type_217[5];
 typedef unsigned char type_218[64];
-typedef _anon5 type_219[4];
+
 typedef _anon0* type_221[512];
 typedef _anon8 type_222[12];
 
@@ -390,9 +390,9 @@ struct _anon0
 	_anon53 cspr;
 	int pn;
 	NJS_POLYGON_VTX* pvp;
-	_anon5* tvp;
+	NJS_TEXTURE_VTX* tvp;
 	NJS_POLYGON_VTX pv[4];
-	_anon5 tv[4];
+	NJS_TEXTURE_VTX tv[4];
 	int bl_src;
 	int bl_dst;
 	int ani_ct;
@@ -467,15 +467,15 @@ struct _anon4
 	unsigned int nbTexture;
 };
 
-struct _anon5
-{
-	float x;
-	float y;
-	float z;
-	float u;
-	float v;
-	unsigned int col;
-};
+
+
+
+
+
+
+
+
+
 
 struct _anon6
 {
@@ -2672,8 +2672,8 @@ void bhDrawWeaponEffect(_anon0* op)
 	float* wkp;
 	float off;
 	float scl;
-	_anon5 tvb[4];
-	_anon5 tv[4];
+	NJS_TEXTURE_VTX tvb[4];
+	NJS_TEXTURE_VTX tv[4];
 	int ani;
 	int i;
 	_anon8* uvp;
@@ -5064,7 +5064,7 @@ void bhDraw022(_anon0* op)
 	NJS_POINT3 scl;
 	_anon36* exp;
 	_anon8* uvp;
-	_anon5 tv[4];
+	NJS_TEXTURE_VTX tv[4];
 	_anon8 uvinfo[15];
 	// Line 3765, Address: 0x22c7e0, Func Offset: 0
 	// Line 3793, Address: 0x22c7f4, Func Offset: 0x14
@@ -5306,12 +5306,12 @@ void bhDraw024(_anon0* op)
 	NJS_POINT3 scl;
 	_anon36* exp;
 	_anon8* uvp;
-	_anon5* tv;
+	NJS_TEXTURE_VTX* tv;
 	int ef24ct[2];
 	_anon8 uvinfo1[11];
-	_anon5 tv1[4];
+	NJS_TEXTURE_VTX tv1[4];
 	_anon8 uvinfo0[8];
-	_anon5 tv0[4];
+	NJS_TEXTURE_VTX tv0[4];
 	// Line 4030, Address: 0x22d430, Func Offset: 0
 	// Line 4077, Address: 0x22d448, Func Offset: 0x18
 	// Line 4079, Address: 0x22d450, Func Offset: 0x20
@@ -5483,7 +5483,7 @@ void bhDraw025(_anon0* op)
 	NJS_POINT3 scl;
 	_anon2* exp;
 	_anon8* uvp;
-	_anon5 tv[4];
+	NJS_TEXTURE_VTX tv[4];
 	_anon8 uvinfo[11];
 	// Line 4231, Address: 0x22db40, Func Offset: 0
 	// Line 4279, Address: 0x22db50, Func Offset: 0x10
@@ -5674,7 +5674,7 @@ void bhDraw027(_anon0* op)
 	NJS_POINT3 scl;
 	_anon2* exp;
 	_anon8* uvp;
-	_anon5 tv[4];
+	NJS_TEXTURE_VTX tv[4];
 	_anon8 uvinfo[11];
 	// Line 4437, Address: 0x22e440, Func Offset: 0
 	// Line 4461, Address: 0x22e450, Func Offset: 0x10
@@ -6129,7 +6129,7 @@ void bhDraw107(_anon0* op)
 	int i;
 	_anon8* uvp;
 	_anon9* erp;
-	_anon5 tv[4];
+	NJS_TEXTURE_VTX tv[4];
 	_anon8 uvinfo[6];
 	// Line 4886, Address: 0x22fd10, Func Offset: 0
 	// Line 4904, Address: 0x22fd20, Func Offset: 0x10

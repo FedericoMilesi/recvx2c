@@ -3,7 +3,7 @@ typedef struct _anon0;
 typedef struct tagSYSSAVE_SCREEN;
 typedef struct tagCONFIGFILE;
 typedef struct _anon1;
-typedef struct _anon2;
+
 typedef struct _anon3;
 typedef struct _anon4;
 typedef struct _anon5;
@@ -136,7 +136,7 @@ typedef char type_84[3];
 typedef int type_85[64];
 typedef _anon9 type_86[450];
 
-typedef _anon2 type_88[4];
+
 typedef int type_89[450];
 typedef unsigned int type_90[8];
 typedef unsigned char type_91[450];
@@ -304,9 +304,9 @@ struct _anon0
 	_anon35 cspr;
 	int pn;
 	NJS_POLYGON_VTX* pvp;
-	_anon2* tvp;
+	NJS_TEXTURE_VTX* tvp;
 	NJS_POLYGON_VTX pv[4];
-	_anon2 tv[4];
+	NJS_TEXTURE_VTX tv[4];
 	int bl_src;
 	int bl_dst;
 	int ani_ct;
@@ -362,15 +362,15 @@ struct _anon1
 	unsigned int nbTexture;
 };
 
-struct _anon2
-{
-	float x;
-	float y;
-	float z;
-	float u;
-	float v;
-	unsigned int col;
-};
+
+
+
+
+
+
+
+
+
 
 struct _anon3
 {

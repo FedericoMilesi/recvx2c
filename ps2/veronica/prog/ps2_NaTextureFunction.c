@@ -5,7 +5,7 @@ typedef struct _anon3;
 typedef struct _anon4;
 
 
-typedef struct _anon7;
+
 typedef struct _anon8;
 
 typedef struct _anon10;
@@ -107,15 +107,15 @@ struct _anon4
 
 
 
-struct _anon7
-{
-	float x;
-	float y;
-	float z;
-	float u;
-	float v;
-	unsigned int col;
-};
+
+
+
+
+
+
+
+
+
 
 struct _anon8
 {
@@ -181,7 +181,7 @@ unsigned int palbuf[4096];
 unsigned int Ps2_clut[1024];
 void* Ps2_render_p;
 int Ps2_tex3DEx_count;
-_anon7* Ps2_tex3DEx_p;
+NJS_TEXTURE_VTX* Ps2_tex3DEx_p;
 int Ps2_tex3DEx_trans;
 int Ps2_3DEx_count;
 NJS_POLYGON_VTX* Ps2_3DEx_p;

@@ -7,7 +7,7 @@ typedef struct _anon3;
 typedef struct _anon4;
 typedef struct _anon5;
 typedef struct NJS_POINT3;
-typedef struct _anon7;
+
 typedef struct _anon8;
 typedef struct _anon9;
 typedef struct _anon10;
@@ -172,7 +172,7 @@ typedef char type_96[24];
 typedef int type_97[4];
 
 typedef _anon47 type_99[21];
-typedef _anon7 type_100[4];
+
 typedef float type_101[3];
 typedef int type_102[450];
 typedef int type_103[4];
@@ -494,9 +494,9 @@ struct _anon0
 	_anon53 cspr;
 	int pn;
 	NJS_POLYGON_VTX* pvp;
-	_anon7* tvp;
+	NJS_TEXTURE_VTX* tvp;
 	NJS_POLYGON_VTX pv[4];
-	_anon7 tv[4];
+	NJS_TEXTURE_VTX tv[4];
 	int bl_src;
 	int bl_dst;
 	int ani_ct;
@@ -644,15 +644,15 @@ struct _anon5
 
 
 
-struct _anon7
-{
-	float x;
-	float y;
-	float z;
-	float u;
-	float v;
-	unsigned int col;
-};
+
+
+
+
+
+
+
+
+
 
 struct _anon8
 {

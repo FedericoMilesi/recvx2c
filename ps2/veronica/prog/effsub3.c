@@ -5,7 +5,7 @@ typedef struct _anon2;
 typedef struct _anon3;
 typedef struct _anon4;
 typedef struct _anon5;
-typedef struct _anon6;
+
 typedef struct _anon7;
 typedef struct _anon8;
 typedef struct _anon9;
@@ -196,7 +196,7 @@ typedef int type_95[5];
 typedef int type_96[3];
 typedef int type_97[8];
 typedef float type_98[3];
-typedef _anon6 type_100[4];
+
 typedef void(*type_101)(_anon1*)[4];
 typedef _anon5* type_102[256];
 typedef _anon23 type_103[256];
@@ -208,7 +208,7 @@ typedef char type_108[10];
 typedef int type_109[5];
 typedef _anon59 type_110[16];
 typedef _anon2 type_111[2];
-typedef _anon6 type_112[16];
+
 typedef short type_113[256];
 typedef char type_114[3];
 typedef int type_115[64];
@@ -222,7 +222,7 @@ typedef int type_122[16];
 typedef char type_123[4];
 typedef unsigned int type_124[8];
 
-typedef _anon6 type_126[4];
+
 typedef float type_127[3];
 typedef _anon7 type_128[20];
 typedef int type_129[450];
@@ -240,7 +240,7 @@ typedef _anon2 type_140[2];
 typedef char type_141[1092];
 typedef char type_142[64];
 typedef char type_143[16];
-typedef _anon6 type_145[4];
+
 typedef char type_146[4];
 typedef _anon43 type_148[2];
 typedef unsigned int type_149[32];
@@ -302,7 +302,7 @@ typedef _anon1* type_210[512];
 typedef NJS_POINT3 type_211[18];
 typedef unsigned char type_212[64];
 typedef NJS_POINT3 type_213[16];
-typedef _anon6 type_214[4];
+
 typedef _anon2 type_215[2];
 typedef _anon1* type_216[512];
 
@@ -431,9 +431,9 @@ struct _anon1
 	_anon79 cspr;
 	int pn;
 	NJS_POLYGON_VTX* pvp;
-	_anon6* tvp;
+	NJS_TEXTURE_VTX* tvp;
 	NJS_POLYGON_VTX pv[4];
-	_anon6 tv[4];
+	NJS_TEXTURE_VTX tv[4];
 	int bl_src;
 	int bl_dst;
 	int ani_ct;
@@ -484,15 +484,15 @@ struct _anon5
 	unsigned int nbTexture;
 };
 
-struct _anon6
-{
-	float x;
-	float y;
-	float z;
-	float u;
-	float v;
-	unsigned int col;
-};
+
+
+
+
+
+
+
+
+
 
 struct _anon7
 {
@@ -1140,7 +1140,7 @@ struct _anon21
 {
 	float vtx_scl;
 	NJS_POINT3 vtx_pos;
-	_anon6 VtxBuf[4];
+	NJS_TEXTURE_VTX VtxBuf[4];
 };
 
 struct _anon22
@@ -1735,7 +1735,7 @@ struct _anon51
 	NJS_POINT3 VtxDir[18];
 	NJS_POINT3 VtxBufS[18];
 	NJS_POINT3 VtxBufD[18];
-	_anon6 poly[4];
+	NJS_TEXTURE_VTX poly[4];
 	float wnd_acl;
 	float WndSpd[18];
 };
@@ -1826,7 +1826,7 @@ struct _anon60
 	float bld_spd;
 	float srt_spd[5];
 	int srt_vtx[5];
-	_anon6 tv_buf[16];
+	NJS_TEXTURE_VTX tv_buf[16];
 	NJS_POINT3 tv_spd[16];
 };
 
@@ -2379,19 +2379,19 @@ void bhEff300(_anon1* oP)
 	BH_PWORK* ewP;
 	NJS_POINT3 pos;
 	int pnt;
-	_anon6* tvP;
+	NJS_TEXTURE_VTX* tvP;
 	NJS_POINT3 add;
 	float spd;
 	int srt_no;
 	int i;
-	_anon6* tvP;
+	NJS_TEXTURE_VTX* tvP;
 	NJS_POINT3* addP;
 	float spd;
 	int tmp;
 	int ang;
 	int i;
 	NJS_POINT3* spdP;
-	_anon6* tvP;
+	NJS_TEXTURE_VTX* tvP;
 	int ang;
 	float spd;
 	NJS_POINT3 center;
@@ -3473,7 +3473,7 @@ void bhEff304(_anon1* oP)
 void bhEff305(_anon1* oP)
 {
 	unsigned int col;
-	_anon6* tvP;
+	NJS_TEXTURE_VTX* tvP;
 	_anon9* uvP;
 	float sp;
 	int ay;
@@ -3577,7 +3577,7 @@ void bhEff305(_anon1* oP)
 void bhEff306(_anon1* oP)
 {
 	unsigned int col;
-	_anon6* tvP;
+	NJS_TEXTURE_VTX* tvP;
 	_anon9* uvP;
 	float dst;
 	NJS_POINT3 vct;
@@ -4535,7 +4535,7 @@ void bhEff30bDrw(_anon24* orP)
 	int num;
 	_anon25* vtxP;
 	_anon19* r0bP;
-	_anon6 VtxBuf[4];
+	NJS_TEXTURE_VTX VtxBuf[4];
 	// Line 3316, Address: 0x24c600, Func Offset: 0
 	// Line 3317, Address: 0x24c618, Func Offset: 0x18
 	// Line 3324, Address: 0x24c61c, Func Offset: 0x1c
