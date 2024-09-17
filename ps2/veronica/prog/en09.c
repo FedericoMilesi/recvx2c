@@ -220,7 +220,7 @@ typedef int type_155[3];
 typedef unsigned char type_156[2];
 typedef unsigned int type_157[4];
 typedef int* type_158[16];
-typedef NJS_MATRIX type_159[0];
+
 typedef char type_160[32];
 typedef npobj* type_161[16];
 typedef char type_162[64];
