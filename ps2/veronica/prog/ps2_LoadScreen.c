@@ -41,7 +41,7 @@ typedef struct _anon29;
 
 
 typedef struct _anon32;
-typedef struct _anon33;
+
 
 typedef void(*type_92)(void*);
 
@@ -731,7 +731,7 @@ struct _anon11
 	int wt_maxx;
 	int wt_maxz;
 	unsigned char* wt_wvp;
-	_anon33 mr_pl;
+	NJS_PLANE mr_pl;
 	unsigned char* zan_memp;
 	unsigned char* zanp;
 	_anon21* lgtp;
@@ -1371,15 +1371,15 @@ struct _anon32
 	unsigned char prm3;
 };
 
-struct _anon33
-{
-	float px;
-	float py;
-	float pz;
-	float vx;
-	float vy;
-	float vz;
-};
+
+
+
+
+
+
+
+
+
 
 tagSELECTFILEWINDOW SelectFileWindow;
 tagSELECTFILEINFO SelectFileInfo[15];

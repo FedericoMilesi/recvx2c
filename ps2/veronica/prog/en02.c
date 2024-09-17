@@ -42,7 +42,7 @@ typedef struct _anon37;
 typedef struct _anon39;
 typedef struct _anon40;
 typedef struct _anon41;
-typedef struct _anon42;
+
 typedef struct _anon43;
 typedef struct _anon44;
 typedef struct _anon45;
@@ -1208,7 +1208,7 @@ struct _anon29
 	int wt_maxx;
 	int wt_maxz;
 	unsigned char* wt_wvp;
-	_anon42 mr_pl;
+	NJS_PLANE mr_pl;
 	unsigned char* zan_memp;
 	unsigned char* zanp;
 	_anon17* lgtp;
@@ -1560,15 +1560,15 @@ struct _anon41
 	float icr[3][20];
 };
 
-struct _anon42
-{
-	float px;
-	float py;
-	float pz;
-	float vx;
-	float vy;
-	float vz;
-};
+
+
+
+
+
+
+
+
+
 
 struct _anon43
 {
@@ -2020,7 +2020,7 @@ void bhEne02_MV00(BH_PWORK* epw)
 void bhEne02_MV02(BH_PWORK* epw)
 {
 	float dist;
-	_anon42 ln;
+	NJS_LINE ln;
 	NJS_POINT3 pos;
 	int i;
 	_anon1* owk;
@@ -2273,7 +2273,7 @@ void bhEne02_MV03(BH_PWORK* epw)
 {
 	float dist;
 	NJS_POINT3 vec;
-	_anon42 ln;
+	NJS_LINE ln;
 	NJS_POINT3 pos;
 	int tim[16][2];
 	_anon1* owk;
@@ -2448,7 +2448,7 @@ void bhEne02_MV04(BH_PWORK* epw)
 {
 	float dist;
 	NJS_POINT3 vec;
-	_anon42 ln;
+	NJS_LINE ln;
 	NJS_POINT3 pos;
 	int i;
 	_anon1* owk;

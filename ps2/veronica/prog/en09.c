@@ -46,7 +46,7 @@ typedef struct _anon42;
 
 typedef struct _anon44;
 typedef struct _anon45;
-typedef struct _anon46;
+
 typedef struct _anon47;
 typedef struct _anon48;
 typedef struct _anon49;
@@ -1121,7 +1121,7 @@ struct _anon21
 	int wt_maxx;
 	int wt_maxz;
 	unsigned char* wt_wvp;
-	_anon46 mr_pl;
+	NJS_PLANE mr_pl;
 	unsigned char* zan_memp;
 	unsigned char* zanp;
 	_anon19* lgtp;
@@ -1643,15 +1643,15 @@ struct _anon45
 	float icr[3][20];
 };
 
-struct _anon46
-{
-	float px;
-	float py;
-	float pz;
-	float vx;
-	float vy;
-	float vz;
-};
+
+
+
+
+
+
+
+
+
 
 struct _anon47
 {
@@ -2866,7 +2866,7 @@ int bhEne09_JumpCheck(BH_PWORK* epw, _anon4* hp)
 	int flr_n;
 	int i;
 	float len;
-	_anon46 l1;
+	NJS_LINE l1;
 	NJS_POINT3 pd;
 	_anon4* fp;
 	int jump_ang[4];
@@ -5659,7 +5659,7 @@ int bhEne09_CollChkArm(BH_PWORK* epw, BH_PWORK* trg)
 	float len;
 	int r;
 	NJS_POINT3 pd;
-	_anon46 l1;
+	NJS_LINE l1;
 	_anon51 cp;
 	_anon50 sp;
 	_anon24* owk;

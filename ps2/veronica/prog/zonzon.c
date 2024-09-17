@@ -41,7 +41,7 @@ typedef struct _anon37;
 typedef struct _anon38;
 
 typedef struct _anon40;
-typedef struct _anon41;
+
 typedef struct _anon42;
 typedef struct _anon43;
 typedef struct _anon44;
@@ -1040,7 +1040,7 @@ struct _anon22
 	int wt_maxx;
 	int wt_maxz;
 	unsigned char* wt_wvp;
-	_anon41 mr_pl;
+	NJS_PLANE mr_pl;
 	unsigned char* zan_memp;
 	unsigned char* zanp;
 	_anon19* lgtp;
@@ -1435,15 +1435,15 @@ struct _anon40
 	short ax;
 };
 
-struct _anon41
-{
-	float px;
-	float py;
-	float pz;
-	float vx;
-	float vy;
-	float vz;
-};
+
+
+
+
+
+
+
+
+
 
 struct _anon42
 {
@@ -2306,7 +2306,7 @@ int bhEne_SetDFireEffect(BH_PWORK* epw, int no, _anon10* ltbl, int type)
 // Start address: 0x217d40
 void bhEne_SetDFireEffect2(BH_PWORK* epw, int no, _anon10* ltbl, int type)
 {
-	_anon41 line;
+	NJS_LINE line;
 	int time;
 	int eno;
 	NJS_POINT3 gpos;

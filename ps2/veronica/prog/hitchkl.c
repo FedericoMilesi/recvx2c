@@ -37,7 +37,7 @@ typedef struct _anon33;
 typedef struct _anon34;
 
 typedef struct _anon36;
-typedef struct _anon37;
+
 typedef struct _anon38;
 typedef struct _anon39;
 typedef struct _anon40;
@@ -416,7 +416,7 @@ struct _anon0
 	int wt_maxx;
 	int wt_maxz;
 	unsigned char* wt_wvp;
-	_anon37 mr_pl;
+	NJS_PLANE mr_pl;
 	unsigned char* zan_memp;
 	unsigned char* zanp;
 	_anon17* lgtp;
@@ -1396,15 +1396,15 @@ struct _anon36
 	short ax;
 };
 
-struct _anon37
-{
-	float px;
-	float py;
-	float pz;
-	float vx;
-	float vy;
-	float vz;
-};
+
+
+
+
+
+
+
+
+
 
 struct _anon38
 {
@@ -1477,7 +1477,7 @@ struct _anon42
 	unsigned char* recp;
 };
 
-_anon37 PLANE;
+NJS_PLANE PLANE;
 _anon0* sys;
 _anon12* rom;
 
@@ -2039,8 +2039,8 @@ int bhCollisionCheckL2PL(NJS_POINT3* p1, NJS_POINT3* p2, NJS_POINT3* area, int n
 	int ret;
 	NJS_POINT3 dv;
 	NJS_POINT3 cp;
-	_anon37 ln;
-	_anon37 pl;
+	NJS_LINE ln;
+	NJS_PLANE pl;
 	// Line 638, Address: 0x26ae90, Func Offset: 0
 	// Line 646, Address: 0x26aec0, Func Offset: 0x30
 	// Line 647, Address: 0x26aec4, Func Offset: 0x34
@@ -2146,7 +2146,7 @@ int bhInOutCheck(NJS_POINT3* p, NJS_POINT3* area, NJS_POINT3* normal, int num)
 // Start address: 0x26b200
 int bhCollisionCheckL2MDL(NJS_POINT3* p1, NJS_POINT3* p2, _anon31* mdl, NJS_MATRIX mtx)
 {
-	_anon37 ln;
+	NJS_LINE ln;
 	NJS_POINT3 center;
 	NJS_POINT3 area[4];
 	NJS_POINT3* pd;
@@ -2197,8 +2197,8 @@ int bhCollisionCheckL2XZPL(NJS_POINT3* p1, NJS_POINT3* p2, NJS_POINT3* pos, floa
 {
 	int ret;
 	NJS_POINT3 cp;
-	_anon37 ln;
-	_anon37 pl;
+	NJS_LINE ln;
+	NJS_PLANE pl;
 	// Line 931, Address: 0x26b3c0, Func Offset: 0
 	// Line 937, Address: 0x26b3dc, Func Offset: 0x1c
 	// Line 935, Address: 0x26b3f0, Func Offset: 0x30
@@ -2237,8 +2237,8 @@ int bhCollisionCheckL2XYPL(NJS_POINT3* p1, NJS_POINT3* p2, NJS_POINT3* pos, floa
 {
 	int ret;
 	NJS_POINT3 cp;
-	_anon37 ln;
-	_anon37 pl;
+	NJS_LINE ln;
+	NJS_PLANE pl;
 	// Line 983, Address: 0x26b560, Func Offset: 0
 	// Line 989, Address: 0x26b57c, Func Offset: 0x1c
 	// Line 987, Address: 0x26b590, Func Offset: 0x30
@@ -2278,8 +2278,8 @@ int bhCollisionCheckL2YZPL(NJS_POINT3* p1, NJS_POINT3* p2, NJS_POINT3* pos, floa
 {
 	int ret;
 	NJS_POINT3 cp;
-	_anon37 ln;
-	_anon37 pl;
+	NJS_LINE ln;
+	NJS_PLANE pl;
 	// Line 1035, Address: 0x26b700, Func Offset: 0
 	// Line 1041, Address: 0x26b71c, Func Offset: 0x1c
 	// Line 1039, Address: 0x26b730, Func Offset: 0x30

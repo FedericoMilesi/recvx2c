@@ -41,7 +41,7 @@ typedef struct _anon37;
 
 typedef struct _anon39;
 typedef struct _anon40;
-typedef struct _anon41;
+
 typedef struct _anon42;
 typedef struct _anon43;
 typedef struct _anon44;
@@ -893,7 +893,7 @@ struct _anon12
 	int wt_maxx;
 	int wt_maxz;
 	unsigned char* wt_wvp;
-	_anon41 mr_pl;
+	NJS_PLANE mr_pl;
 	unsigned char* zan_memp;
 	unsigned char* zanp;
 	_anon18* lgtp;
@@ -1538,15 +1538,15 @@ struct _anon40
 	float r;
 };
 
-struct _anon41
-{
-	float px;
-	float py;
-	float pz;
-	float vx;
-	float vy;
-	float vz;
-};
+
+
+
+
+
+
+
+
+
 
 struct _anon42
 {
@@ -1675,7 +1675,7 @@ int bhSearchNearEnemyB(NJS_POINT3* pos, int ay, int ar, float len);
 int bhSearchNearEnemy2(BH_PWORK* pp, int* r, float* h, int* id);
 int bhSearchNextEnemy(BH_PWORK* pp, int r, float h);
 int bhSearchPlayer(BH_PWORK* pp, int r);
-int bhCheckL2Wall(_anon41* lp, unsigned int flg, float* len);
+int bhCheckL2Wall(NJS_LINE* lp, unsigned int flg, float* len);
 int bhCheckC2Wall(_anon40* cap);
 int bhCheckC2WallN(_anon40* cap, unsigned int flg);
 int bhCheckClipModel(BH_PWORK* pp);
@@ -2287,9 +2287,9 @@ int bhSearchPlayer(BH_PWORK* pp, int r)
 
 // 
 // Start address: 0x14f760
-int bhCheckL2Wall(_anon41* lp, unsigned int flg, float* len)
+int bhCheckL2Wall(NJS_LINE* lp, unsigned int flg, float* len)
 {
-	_anon41 cln;
+	NJS_LINE cln;
 	int hit;
 	int wal_n;
 	int i;
@@ -2305,7 +2305,7 @@ int bhCheckL2Wall(_anon41* lp, unsigned int flg, float* len)
 	float* psp;
 	NJS_POINT3 pt;
 	NJS_POINT3 ps;
-	_anon41 pl;
+	NJS_PLANE pl;
 	_anon40 cap2;
 	_anon40 cap;
 	_anon47 box;
@@ -3376,8 +3376,8 @@ int bhCheckC2Wall(_anon40* cap)
 	NJS_POINT3 p[3];
 	NJS_POINT3 pt;
 	NJS_POINT3 ps;
-	_anon41 pl;
-	_anon41 lp;
+	NJS_PLANE pl;
+	NJS_LINE lp;
 	_anon40 cap2;
 	_anon47 box;
 	_anon0* hp;
@@ -3625,8 +3625,8 @@ int bhCheckC2WallN(_anon40* cap, unsigned int flg)
 	NJS_POINT3 p[3];
 	NJS_POINT3 pt;
 	NJS_POINT3 ps;
-	_anon41 pl;
-	_anon41 lp;
+	NJS_PLANE pl;
+	NJS_LINE lp;
 	_anon40 cap2;
 	_anon47 box;
 	_anon0* hp;
@@ -4070,7 +4070,7 @@ void bhSetGunFire(BH_PWORK* pp, int wno, int jno, int hand, int ang)
 	int walhit;
 	_anon0* wlp;
 	NJS_POINT3 wps;
-	_anon41 gline;
+	NJS_LINE gline;
 	_anon1* op;
 	_anon18* lp;
 	int i;

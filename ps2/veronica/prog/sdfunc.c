@@ -49,7 +49,7 @@ typedef struct _anon44;
 typedef struct _anon45;
 typedef struct _anon46;
 typedef struct _anon47;
-typedef struct _anon48;
+
 typedef struct SDS_PORT_REF;
 typedef struct _anon49;
 typedef struct _anon50;
@@ -1198,15 +1198,15 @@ struct _anon47
 	_anon62* owP;
 };
 
-struct _anon48
-{
-	float px;
-	float py;
-	float pz;
-	float vx;
-	float vy;
-	float vz;
-};
+
+
+
+
+
+
+
+
+
 
 struct SDS_PORT_REF
 {
@@ -1572,7 +1572,7 @@ struct _anon56
 	int wt_maxx;
 	int wt_maxz;
 	unsigned char* wt_wvp;
-	_anon48 mr_pl;
+	NJS_PLANE mr_pl;
 	unsigned char* zan_memp;
 	unsigned char* zanp;
 	_anon7* lgtp;

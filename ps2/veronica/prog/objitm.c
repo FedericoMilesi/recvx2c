@@ -39,7 +39,7 @@ typedef struct _anon35;
 typedef struct _anon36;
 typedef struct _anon37;
 
-typedef struct _anon39;
+
 typedef struct _anon40;
 typedef struct _anon41;
 typedef struct _anon42;
@@ -544,7 +544,7 @@ struct _anon1
 	int wt_maxx;
 	int wt_maxz;
 	unsigned char* wt_wvp;
-	_anon39 mr_pl;
+	NJS_PLANE mr_pl;
 	unsigned char* zan_memp;
 	unsigned char* zanp;
 	_anon3* lgtp;
@@ -1431,15 +1431,15 @@ struct _anon37
 
 
 
-struct _anon39
-{
-	float px;
-	float py;
-	float pz;
-	float vx;
-	float vy;
-	float vz;
-};
+
+
+
+
+
+
+
+
+
 
 struct _anon40
 {
@@ -2625,7 +2625,7 @@ void bhObj006(_anon0* op)
 {
 	_anon3* lp;
 	float len;
-	_anon39 line;
+	NJS_LINE line;
 	NJS_POINT3 ps0;
 	NJS_POINT3 ps;
 	npobj* obp;
@@ -2722,7 +2722,7 @@ void bhObj007(_anon0* op)
 	NJS_POINT3 ps2;
 	NJS_POINT3 ps1;
 	NJS_POINT3 ps0;
-	_anon39 lin;
+	NJS_LINE lin;
 	// Line 2165, Address: 0x286160, Func Offset: 0
 	// Line 2169, Address: 0x286194, Func Offset: 0x34
 	// Line 2170, Address: 0x2861b4, Func Offset: 0x54

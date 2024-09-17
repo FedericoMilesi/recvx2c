@@ -66,7 +66,7 @@ typedef struct _anon57;
 typedef enum _enum_2;
 typedef enum _enum_3;
 typedef struct _anon58;
-typedef struct _anon59;
+
 typedef enum _enum_4;
 typedef struct _anon60;
 typedef struct _anon61;
@@ -1266,7 +1266,7 @@ struct _anon31
 	int wt_maxx;
 	int wt_maxz;
 	unsigned char* wt_wvp;
-	_anon59 mr_pl;
+	NJS_PLANE mr_pl;
 	unsigned char* zan_memp;
 	unsigned char* zanp;
 	_anon24* lgtp;
@@ -1769,15 +1769,15 @@ struct _anon58
 	short ax;
 };
 
-struct _anon59
-{
-	float px;
-	float py;
-	float pz;
-	float vx;
-	float vy;
-	float vz;
-};
+
+
+
+
+
+
+
+
+
 
 enum _enum_4
 {

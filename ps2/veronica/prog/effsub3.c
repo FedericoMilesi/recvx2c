@@ -76,7 +76,7 @@ typedef struct _anon69;
 typedef struct _anon70;
 typedef struct _anon71;
 typedef struct _anon72;
-typedef struct _anon73;
+
 typedef struct _anon74;
 typedef struct _anon75;
 typedef struct _anon76;
@@ -778,7 +778,7 @@ struct _anon11
 	int wt_maxx;
 	int wt_maxz;
 	unsigned char* wt_wvp;
-	_anon73 mr_pl;
+	NJS_PLANE mr_pl;
 	unsigned char* zan_memp;
 	unsigned char* zanp;
 	_anon30* lgtp;
@@ -2035,15 +2035,15 @@ struct _anon72
 	unsigned int attrflags;
 };
 
-struct _anon73
-{
-	float px;
-	float py;
-	float pz;
-	float vx;
-	float vy;
-	float vz;
-};
+
+
+
+
+
+
+
+
+
 
 struct _anon74
 {
@@ -3312,8 +3312,8 @@ void bhEff303(_anon1* oP)
 // Start address: 0x249440
 int bhCheckCamWall2D(NJS_POINT3* srcP, NJS_POINT3* vctP, NJS_POINT3* rtnP, float rng_x, float rng_y)
 {
-	_anon73 lne;
-	_anon73 pln;
+	NJS_LINE lne;
+	NJS_PLANE pln;
 	// Line 1663, Address: 0x249440, Func Offset: 0
 	// Line 1671, Address: 0x24945c, Func Offset: 0x1c
 	// Line 1672, Address: 0x24947c, Func Offset: 0x3c

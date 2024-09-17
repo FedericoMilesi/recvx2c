@@ -43,7 +43,7 @@ typedef struct _anon39;
 
 typedef struct _anon41;
 typedef struct _anon42;
-typedef struct _anon43;
+
 typedef struct _anon44;
 typedef struct _anon45;
 typedef struct _anon46;
@@ -791,7 +791,7 @@ struct _anon6
 	int wt_maxx;
 	int wt_maxz;
 	unsigned char* wt_wvp;
-	_anon43 mr_pl;
+	NJS_PLANE mr_pl;
 	unsigned char* zan_memp;
 	unsigned char* zanp;
 	_anon7* lgtp;
@@ -1616,15 +1616,15 @@ struct _anon42
 	float icr[3][20];
 };
 
-struct _anon43
-{
-	float px;
-	float py;
-	float pz;
-	float vx;
-	float vy;
-	float vz;
-};
+
+
+
+
+
+
+
+
+
 
 struct _anon44
 {
@@ -1955,7 +1955,7 @@ int bhCountBullet()
 // Start address: 0x28ad90
 int bhCheckGunAtari(_anon21* gap)
 {
-	_anon43 wtln;
+	NJS_LINE wtln;
 	NJS_POINT3 vec1;
 	NJS_POINT3 vec0;
 	unsigned int wp_flg;
@@ -1977,7 +1977,7 @@ int bhCheckGunAtari(_anon21* gap)
 	float a;
 	float rmax;
 	float rn;
-	_anon43 gline;
+	NJS_LINE gline;
 	NJS_POINT3 gvec;
 	NJS_POINT3 wps;
 	NJS_POINT3 sca;
@@ -2391,7 +2391,7 @@ void bhCheckKnifeAtari(_anon21* gap)
 	NJS_POINT3 ps;
 	NJS_POINT3 sca;
 	_anon34 cap;
-	_anon43 gline;
+	NJS_LINE gline;
 	// Line 870, Address: 0x28c2e0, Func Offset: 0
 	// Line 885, Address: 0x28c304, Func Offset: 0x24
 	// Line 914, Address: 0x28c308, Func Offset: 0x28
@@ -2850,7 +2850,7 @@ int bhCheckCapCol2Capsule(BH_PWORK* pp, _anon34* cap, NJS_POINT3* hps)
 	NJS_POINT3 htp;
 	NJS_POINT3 sca;
 	NJS_POINT3 ofp;
-	_anon43 gline;
+	NJS_LINE gline;
 	_anon46 sp;
 	_anon34 cp;
 	_anon29* cpcl;

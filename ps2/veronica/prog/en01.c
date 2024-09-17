@@ -50,7 +50,7 @@ typedef struct _anon46;
 typedef struct _anon47;
 
 typedef struct _anon49;
-typedef struct _anon50;
+
 typedef struct _anon51;
 typedef struct _anon52;
 typedef struct _anon53;
@@ -1228,7 +1228,7 @@ struct _anon27
 	int wt_maxx;
 	int wt_maxz;
 	unsigned char* wt_wvp;
-	_anon50 mr_pl;
+	NJS_PLANE mr_pl;
 	unsigned char* zan_memp;
 	unsigned char* zanp;
 	_anon4* lgtp;
@@ -1649,15 +1649,15 @@ struct _anon49
 	int e_frm;
 };
 
-struct _anon50
-{
-	float px;
-	float py;
-	float pz;
-	float vx;
-	float vy;
-	float vz;
-};
+
+
+
+
+
+
+
+
+
 
 struct _anon51
 {
@@ -7480,7 +7480,7 @@ void bhEne01_DD00(BH_PWORK* epw)
 	int ang;
 	BH_PWORK* cepw;
 	NJS_POINT3 gpos;
-	_anon50 line;
+	NJS_LINE line;
 	int mtn_tbl[2][9];
 	// Line 10209, Address: 0x185b40, Func Offset: 0
 	// Line 10229, Address: 0x185b54, Func Offset: 0x14
@@ -7607,7 +7607,7 @@ void bhEne01_DD01(BH_PWORK* epw)
 void bhEne01_DD02(BH_PWORK* epw)
 {
 	NJS_POINT3 gpos;
-	_anon50 line;
+	NJS_LINE line;
 	_anon2* owk;
 	// Line 10442, Address: 0x186220, Func Offset: 0
 	// Line 10447, Address: 0x186230, Func Offset: 0x10
@@ -8541,7 +8541,7 @@ void bhEne01_PoisonEffect(BH_PWORK* epw, int num)
 // Start address: 0x188d10
 void bhEne01_LinkFireEffect(BH_PWORK* epw, int type)
 {
-	_anon50 line;
+	NJS_LINE line;
 	int flg;
 	int time;
 	int i;

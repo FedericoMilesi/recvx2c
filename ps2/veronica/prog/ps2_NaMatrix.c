@@ -2,7 +2,7 @@
 typedef struct tagNJS_SCRVECTOR;
 typedef struct _anon1;
 
-typedef struct _anon3;
+
 typedef struct _anon4;
 typedef struct _anon5;
 
@@ -40,15 +40,15 @@ struct _anon1
 
 
 
-struct _anon3
-{
-	float px;
-	float py;
-	float pz;
-	float vx;
-	float vy;
-	float vz;
-};
+
+
+
+
+
+
+
+
+
 
 struct _anon4
 {
@@ -101,7 +101,7 @@ void njScaleV(NJS_MATRIX pMatrix, NJS_POINT3* pScale);
 int njInvertMatrix(NJS_MATRIX pMatrix);
 void njTransposeMatrix(NJS_MATRIX pMatrix);
 float njAtan2b(float a, float b);
-void njMirror(NJS_MATRIX pMatrix, _anon3* pPlane);
+void njMirror(NJS_MATRIX pMatrix, NJS_PLANE* pPlane);
 void njCalcPoint(NJS_MATRIX pMatrix, NJS_POINT3* pSrcPoint, NJS_POINT3* pDstPoint);
 void njCalcPoint4(NJS_MATRIX pMatrix, _anon1* pSrcPoint, _anon1* pDstPoint);
 void njCalcPointCN(NJS_POINT3* pSrcPoint, NJS_POINT3* pDstPoint);
@@ -797,7 +797,7 @@ float njAtan2b(float a, float b)
 
 // 
 // Start address: 0x2d7260
-void njMirror(NJS_MATRIX pMatrix, _anon3* pPlane)
+void njMirror(NJS_MATRIX pMatrix, NJS_PLANE* pPlane)
 {
 	int lAngleZ;
 	int lAngleX;

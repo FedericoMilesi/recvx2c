@@ -51,7 +51,7 @@ typedef struct _anon32;
 typedef struct _anon35;
 typedef struct _anon36;
 typedef struct _anon37;
-typedef struct _anon38;
+
 
 typedef void(*type_38)(void*);
 typedef void(*type_47)(void*);
@@ -894,7 +894,7 @@ struct _anon13
 	int wt_maxx;
 	int wt_maxz;
 	unsigned char* wt_wvp;
-	_anon38 mr_pl;
+	NJS_PLANE mr_pl;
 	unsigned char* zan_memp;
 	unsigned char* zanp;
 	_anon22* lgtp;
@@ -1500,15 +1500,15 @@ struct _anon37
 	float v2;
 };
 
-struct _anon38
-{
-	float px;
-	float py;
-	float pz;
-	float vx;
-	float vy;
-	float vz;
-};
+
+
+
+
+
+
+
+
+
 
 char cSubDirName[13];
 int Type_Space[3][18];

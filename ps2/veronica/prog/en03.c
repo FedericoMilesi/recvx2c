@@ -41,7 +41,7 @@ typedef struct _anon37;
 
 typedef struct _anon39;
 typedef struct _anon40;
-typedef struct _anon41;
+
 typedef struct _anon42;
 typedef struct _anon43;
 typedef struct _anon44;
@@ -1192,7 +1192,7 @@ struct _anon28
 	int wt_maxx;
 	int wt_maxz;
 	unsigned char* wt_wvp;
-	_anon41 mr_pl;
+	NJS_PLANE mr_pl;
 	unsigned char* zan_memp;
 	unsigned char* zanp;
 	_anon16* lgtp;
@@ -1480,15 +1480,15 @@ struct _anon40
 	char exef;
 };
 
-struct _anon41
-{
-	float px;
-	float py;
-	float pz;
-	float vx;
-	float vy;
-	float vz;
-};
+
+
+
+
+
+
+
+
+
 
 struct _anon42
 {
@@ -5393,8 +5393,8 @@ int bhEne03_CollisionWallSlope(_anon0* hp, NJS_POINT3* pos, float ar)
 	char zf0;
 	char xf1;
 	char xf0;
-	_anon41 ln;
-	_anon41 pl;
+	NJS_LINE ln;
+	NJS_PLANE pl;
 	NJS_POINT3 cp;
 	NJS_POINT3 area[4];
 	float len;
@@ -5514,7 +5514,7 @@ int bhEne03_CollisionWallSlope(_anon0* hp, NJS_POINT3* pos, float ar)
 int bhEne03_CollisionWallTriangle(_anon0* hp, NJS_POINT3* pos, float ar)
 {
 	_anon0 bhp;
-	_anon41 ln;
+	NJS_LINE ln;
 	NJS_POINT3 vd;
 	NJS_POINT3 pd;
 	NJS_POINT3 area[4];

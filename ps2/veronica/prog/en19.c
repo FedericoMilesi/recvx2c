@@ -52,7 +52,7 @@ typedef struct _anon41;
 
 typedef struct _anon43;
 typedef struct _anon44;
-typedef struct _anon45;
+
 typedef struct _anon46;
 typedef enum _enum_5;
 typedef struct _anon47;
@@ -909,7 +909,7 @@ struct _anon9
 	int wt_maxx;
 	int wt_maxz;
 	unsigned char* wt_wvp;
-	_anon45 mr_pl;
+	NJS_PLANE mr_pl;
 	unsigned char* zan_memp;
 	unsigned char* zanp;
 	_anon31* lgtp;
@@ -1561,15 +1561,15 @@ struct _anon44
 	unsigned int attrflags;
 };
 
-struct _anon45
-{
-	float px;
-	float py;
-	float pz;
-	float vx;
-	float vy;
-	float vz;
-};
+
+
+
+
+
+
+
+
+
 
 struct _anon46
 {

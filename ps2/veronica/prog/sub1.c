@@ -59,7 +59,7 @@ typedef struct _anon55;
 typedef struct _anon56;
 typedef struct _anon57;
 typedef struct _anon58;
-typedef struct _anon59;
+
 typedef struct _anon60;
 
 typedef void(*type_185)(void*);
@@ -1370,7 +1370,7 @@ struct _anon38
 	int wt_maxx;
 	int wt_maxz;
 	unsigned char* wt_wvp;
-	_anon59 mr_pl;
+	NJS_PLANE mr_pl;
 	unsigned char* zan_memp;
 	unsigned char* zanp;
 	_anon6* lgtp;
@@ -1935,15 +1935,15 @@ struct _anon58
 	unsigned short type;
 };
 
-struct _anon59
-{
-	float px;
-	float py;
-	float pz;
-	float vx;
-	float vy;
-	float vz;
-};
+
+
+
+
+
+
+
+
+
 
 struct _anon60
 {

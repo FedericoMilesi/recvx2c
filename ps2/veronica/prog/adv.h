@@ -58,7 +58,7 @@ typedef struct _anon46;
 typedef struct tagMEMORYCARDPORT;
 typedef struct _anon47;
 typedef struct _anon48;
-typedef struct _anon49;
+
 typedef struct _anon50;
 typedef struct _anon51;
 typedef struct _anon52;
@@ -1440,7 +1440,7 @@ struct _anon40
 	int wt_maxx;
 	int wt_maxz;
 	unsigned char* wt_wvp;
-	_anon49 mr_pl;
+	NJS_PLANE mr_pl;
 	unsigned char* zan_memp;
 	unsigned char* zanp;
 	_anon17* lgtp;
@@ -1719,15 +1719,15 @@ struct _anon48
 	unsigned short max_pow;
 };
 
-struct _anon49
-{
-	float px;
-	float py;
-	float pz;
-	float vx;
-	float vy;
-	float vz;
-};
+
+
+
+
+
+
+
+
+
 
 struct _anon50
 {

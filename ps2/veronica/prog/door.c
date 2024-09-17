@@ -54,7 +54,7 @@ typedef struct _anon48;
 typedef struct _anon49;
 typedef struct _anon50;
 typedef struct _anon51;
-typedef struct _anon52;
+
 typedef struct _anon53;
 typedef struct _anon54;
 typedef struct _anon55;
@@ -965,7 +965,7 @@ struct _anon25
 	int wt_maxx;
 	int wt_maxz;
 	unsigned char* wt_wvp;
-	_anon52 mr_pl;
+	NJS_PLANE mr_pl;
 	unsigned char* zan_memp;
 	unsigned char* zanp;
 	_anon40* lgtp;
@@ -1594,15 +1594,15 @@ struct _anon51
 	int snd_wait1;
 };
 
-struct _anon52
-{
-	float px;
-	float py;
-	float pz;
-	float vx;
-	float vy;
-	float vz;
-};
+
+
+
+
+
+
+
+
+
 
 struct _anon53
 {

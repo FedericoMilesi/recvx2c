@@ -42,7 +42,7 @@ typedef struct _anon36;
 
 typedef struct _anon39;
 typedef struct _anon40;
-typedef struct _anon41;
+
 
 typedef struct _anon43;
 typedef struct _anon44;
@@ -121,7 +121,7 @@ typedef short type_63[256];
 typedef int type_64[3];
 typedef int type_65[128];
 typedef _anon35 type_66[4];
-typedef _anon41 type_67[128];
+
 typedef float type_68[3];
 typedef short type_69[256];
 typedef int type_70[3];
@@ -415,7 +415,7 @@ struct _anon7
 	unsigned int qtbcol[512];
 	int qten[3];
 	int lnfg[128];
-	_anon41 line[128];
+	NJS_LINE line[128];
 	short lnct[128];
 	short mwin_alp;
 	short swin_alp;
@@ -741,7 +741,7 @@ struct _anon11
 	int wt_maxx;
 	int wt_maxz;
 	unsigned char* wt_wvp;
-	_anon41 mr_pl;
+	NJS_PLANE mr_pl;
 	unsigned char* zan_memp;
 	unsigned char* zanp;
 	_anon17* lgtp;
@@ -1539,15 +1539,15 @@ struct _anon40
 	_anon32 mspc;
 };
 
-struct _anon41
-{
-	float px;
-	float py;
-	float pz;
-	float vx;
-	float vy;
-	float vz;
-};
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1699,7 +1699,7 @@ void bhDrawSpEvtComCharacter();
 void bhSetSpEvtComFade(float fdst, float fcnt);
 void bhCalcSpEvtComFade();
 void bhDrawSpEvtComFade();
-void bhEntrySpEvtBoxLine(_anon41* line);
+void bhEntrySpEvtBoxLine(NJS_LINE* line);
 void bhDrawSpEvtBoxLine();
 void bhClearComEvtText();
 void bhInitComEvtScript();
@@ -1773,7 +1773,7 @@ void bhInitSpEvtComputer()
 // Start address: 0x2bd370
 void bhMainSpEvtComputer()
 {
-	_anon41 line;
+	NJS_LINE line;
 	_anon7* ce;
 	// Line 156, Address: 0x2bd370, Func Offset: 0
 	// Line 157, Address: 0x2bd37c, Func Offset: 0xc
@@ -2775,7 +2775,7 @@ void bhDrawSpEvtComFade()
 
 // 
 // Start address: 0x2bf9a0
-void bhEntrySpEvtBoxLine(_anon41* line)
+void bhEntrySpEvtBoxLine(NJS_LINE* line)
 {
 	int i;
 	_anon7* ce;

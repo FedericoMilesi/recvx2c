@@ -21,7 +21,7 @@ typedef struct _anon17;
 typedef struct _anon18;
 typedef struct _anon19;
 typedef struct _anon20;
-typedef struct _anon21;
+
 
 
 
@@ -415,15 +415,15 @@ struct _anon20
 	char mes[256];
 };
 
-struct _anon21
-{
-	float px;
-	float py;
-	float pz;
-	float vx;
-	float vy;
-	float vz;
-};
+
+
+
+
+
+
+
+
+
 
 _anon20 np;
 unsigned char* njpmemp;
@@ -504,9 +504,9 @@ int npCollisionCheckCC(_anon4* cpa, _anon4* cpb)
 	_anon6 sa;
 	_anon4* capb;
 	_anon4* capa;
-	_anon21 lnc;
-	_anon21 lnb;
-	_anon21 lna;
+	NJS_LINE lnc;
+	NJS_LINE lnb;
+	NJS_LINE lna;
 	// Line 91, Address: 0x12b710, Func Offset: 0
 	// Line 97, Address: 0x12b748, Func Offset: 0x38
 	// Line 98, Address: 0x12b74c, Func Offset: 0x3c
@@ -665,9 +665,9 @@ int npCollisionCheckCCEx(_anon4* cpa, _anon4* cpb, NJS_POINT3* pos)
 	_anon6 sa;
 	_anon4* capb;
 	_anon4* capa;
-	_anon21 lnc;
-	_anon21 lnb;
-	_anon21 lna;
+	NJS_LINE lnc;
+	NJS_LINE lnb;
+	NJS_LINE lna;
 	// Line 256, Address: 0x12bc70, Func Offset: 0
 	// Line 262, Address: 0x12bca8, Func Offset: 0x38
 	// Line 263, Address: 0x12bcac, Func Offset: 0x3c
@@ -875,7 +875,7 @@ int npCollisionCheckSC(_anon6* sa, _anon4* cpb)
 	float inn;
 	NJS_POINT3 vec;
 	_anon6 sb;
-	_anon21 lnb;
+	NJS_LINE lnb;
 	// Line 493, Address: 0x12c440, Func Offset: 0
 	// Line 498, Address: 0x12c470, Func Offset: 0x30
 	// Line 499, Address: 0x12c478, Func Offset: 0x38
@@ -931,7 +931,7 @@ void npDistanceP2C(NJS_POINT3* pos, _anon4* cap, NJS_POINT3* htp)
 	float len;
 	float inn;
 	NJS_POINT3 vec;
-	_anon21 ln;
+	NJS_LINE ln;
 	// Line 549, Address: 0x12c640, Func Offset: 0
 	// Line 553, Address: 0x12c670, Func Offset: 0x30
 	// Line 554, Address: 0x12c674, Func Offset: 0x34

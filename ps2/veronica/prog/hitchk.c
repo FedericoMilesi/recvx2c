@@ -39,7 +39,7 @@ typedef struct _anon35;
 
 typedef struct _anon37;
 typedef struct _anon38;
-typedef struct _anon39;
+
 typedef struct _anon40;
 typedef struct _anon41;
 typedef struct _anon42;
@@ -730,7 +730,7 @@ struct _anon4
 	int wt_maxx;
 	int wt_maxz;
 	unsigned char* wt_wvp;
-	_anon39 mr_pl;
+	NJS_PLANE mr_pl;
 	unsigned char* zan_memp;
 	unsigned char* zanp;
 	_anon17* lgtp;
@@ -1486,15 +1486,15 @@ struct _anon38
 	float icr[3][20];
 };
 
-struct _anon39
-{
-	float px;
-	float py;
-	float pz;
-	float vx;
-	float vy;
-	float vz;
-};
+
+
+
+
+
+
+
+
+
 
 struct _anon40
 {
@@ -1598,7 +1598,7 @@ int bhCheckFloorSound(BH_PWORK* pp, int flr_no, float px, float pz);
 _anon0* bhCheckFloorEnemy(int flr_no, float px, float pz);
 _anon0* bhCheckFloorEffect(int flr_no, float px, float pz);
 _anon0* bhCheckWater(NJS_POINT3* pos);
-_anon0* bhCheckL2Water(_anon39* lp, NJS_POINT3* pos);
+_anon0* bhCheckL2Water(NJS_LINE* lp, NJS_POINT3* pos);
 void bhResetAtariAttr();
 void bhCheckPlayer(BH_PWORK* pp);
 void bhCheckEnemies(BH_PWORK* pp);
@@ -1637,7 +1637,7 @@ void bhCheckWall(BH_PWORK* pw)
 	int i;
 	_anon0 ht;
 	_anon0* hp;
-	_anon39 l;
+	NJS_LINE l;
 	NJS_POINT3 pd;
 	NJS_POINT3* npos;
 	// Line 102, Address: 0x25d590, Func Offset: 0
@@ -2035,7 +2035,7 @@ int bhCheckWallEx(BH_PWORK* pw, NJS_POINT3* npos, NJS_POINT3* opos, float par, f
 	int i;
 	_anon0 ht;
 	_anon0* hp;
-	_anon39 l;
+	NJS_LINE l;
 	NJS_POINT3 pd;
 	// Line 622, Address: 0x25e930, Func Offset: 0
 	// Line 636, Address: 0x25e98c, Func Offset: 0x5c
@@ -2397,7 +2397,7 @@ void bhCheckWall2Box(BH_PWORK* pw)
 	int i;
 	_anon0 ht;
 	_anon0* hp;
-	_anon39 l;
+	NJS_LINE l;
 	NJS_POINT3 pd;
 	// Line 1154, Address: 0x25fbf0, Func Offset: 0
 	// Line 1168, Address: 0x25fc38, Func Offset: 0x48
@@ -2982,7 +2982,7 @@ _anon0* bhCheckWallRefAngle(NJS_POINT3* pos, unsigned int flg, float ar, float a
 	int i;
 	_anon0 ht;
 	_anon0* hp;
-	_anon39 l;
+	NJS_LINE l;
 	NJS_POINT3 pd;
 	// Line 1865, Address: 0x261eb0, Func Offset: 0
 	// Line 1875, Address: 0x261f08, Func Offset: 0x58
@@ -3419,7 +3419,7 @@ void bhSetWallRefAngle(_anon0* hp, NJS_POINT3* pos, float ar, float ah, int* ay)
 	float py;
 	float px;
 	_anon0 ht;
-	_anon39 l;
+	NJS_LINE l;
 	NJS_POINT3 pd;
 	// Line 2378, Address: 0x2632e0, Func Offset: 0
 	// Line 2388, Address: 0x2632e4, Func Offset: 0x4
@@ -5259,7 +5259,7 @@ _anon0* bhCheckWater(NJS_POINT3* pos)
 
 // 
 // Start address: 0x2686a0
-_anon0* bhCheckL2Water(_anon39* lp, NJS_POINT3* pos)
+_anon0* bhCheckL2Water(NJS_LINE* lp, NJS_POINT3* pos)
 {
 	int flr_n;
 	int i;
@@ -5269,7 +5269,7 @@ _anon0* bhCheckL2Water(_anon39* lp, NJS_POINT3* pos)
 	NJS_POINT3 ll;
 	NJS_POINT3 pt;
 	NJS_POINT3 ps;
-	_anon39 pl;
+	NJS_PLANE pl;
 	_anon0* fp;
 	// Line 4499, Address: 0x2686a0, Func Offset: 0
 	// Line 4505, Address: 0x2686cc, Func Offset: 0x2c

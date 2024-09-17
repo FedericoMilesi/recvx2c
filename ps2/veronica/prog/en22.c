@@ -47,7 +47,7 @@ typedef struct _anon43;
 typedef struct _anon44;
 
 typedef struct _anon46;
-typedef struct _anon47;
+
 typedef struct _anon48;
 typedef struct _anon49;
 typedef struct _anon50;
@@ -1117,7 +1117,7 @@ struct _anon22
 	int wt_maxx;
 	int wt_maxz;
 	unsigned char* wt_wvp;
-	_anon47 mr_pl;
+	NJS_PLANE mr_pl;
 	unsigned char* zan_memp;
 	unsigned char* zanp;
 	_anon2* lgtp;
@@ -1533,15 +1533,15 @@ struct _anon46
 	_anon42 atb[4];
 };
 
-struct _anon47
-{
-	float px;
-	float py;
-	float pz;
-	float vx;
-	float vy;
-	float vz;
-};
+
+
+
+
+
+
+
+
+
 
 struct _anon48
 {

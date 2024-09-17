@@ -50,7 +50,7 @@ typedef struct _anon46;
 typedef struct _anon47;
 typedef struct _anon48;
 typedef struct _anon49;
-typedef struct _anon50;
+
 typedef struct _anon51;
 typedef struct _anon52;
 typedef struct _anon53;
@@ -730,7 +730,7 @@ struct _anon7
 	int wt_maxx;
 	int wt_maxz;
 	unsigned char* wt_wvp;
-	_anon50 mr_pl;
+	NJS_PLANE mr_pl;
 	unsigned char* zan_memp;
 	unsigned char* zanp;
 	_anon13* lgtp;
@@ -1733,15 +1733,15 @@ struct _anon49
 	float icr[3][20];
 };
 
-struct _anon50
-{
-	float px;
-	float py;
-	float pz;
-	float vx;
-	float vy;
-	float vz;
-};
+
+
+
+
+
+
+
+
+
 
 struct _anon51
 {
@@ -2666,7 +2666,7 @@ void bhEff002(_anon0* op)
 void bhDrawWeaponEffect(_anon0* op)
 {
 	float len;
-	_anon50 lp;
+	NJS_LINE lp;
 	NJS_POINT3 pos;
 	NJS_POINT3 fps;
 	float* wkp;
@@ -4043,7 +4043,7 @@ void bhEff013(_anon0* op)
 	_anon44 gat;
 	float len;
 	NJS_POINT3 ps;
-	_anon50 lp;
+	NJS_LINE lp;
 	// Line 2586, Address: 0x229d50, Func Offset: 0
 	// Line 2600, Address: 0x229d78, Func Offset: 0x28
 	// Line 2602, Address: 0x229db0, Func Offset: 0x60
@@ -8098,7 +8098,7 @@ void bhEff130(_anon0* op)
 	_anon44 gat;
 	NJS_POINT3 vc;
 	NJS_POINT3 ps;
-	_anon50 lp;
+	NJS_LINE lp;
 	_anon13* lgp;
 	// Line 6935, Address: 0x235590, Func Offset: 0
 	// Line 6943, Address: 0x2355ac, Func Offset: 0x1c

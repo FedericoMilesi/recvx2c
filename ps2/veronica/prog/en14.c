@@ -31,7 +31,7 @@ typedef struct _anon26;
 typedef struct _anon28;
 typedef struct _anon29;
 typedef struct _anon30;
-typedef struct _anon31;
+
 typedef struct _anon32;
 typedef struct _anon33;
 typedef struct _anon34;
@@ -909,7 +909,7 @@ struct _anon18
 	int wt_maxx;
 	int wt_maxz;
 	unsigned char* wt_wvp;
-	_anon31 mr_pl;
+	NJS_PLANE mr_pl;
 	unsigned char* zan_memp;
 	unsigned char* zanp;
 	_anon17* lgtp;
@@ -1207,15 +1207,15 @@ struct _anon30
 	unsigned char prm3;
 };
 
-struct _anon31
-{
-	float px;
-	float py;
-	float pz;
-	float vx;
-	float vy;
-	float vz;
-};
+
+
+
+
+
+
+
+
+
 
 struct _anon32
 {
@@ -1623,7 +1623,7 @@ void bhEne14_MV03()
 void bhEne14_MV04(BH_PWORK* epw)
 {
 	float dist;
-	_anon31 ln;
+	NJS_LINE ln;
 	NJS_POINT3 cp;
 	float spd;
 	NJS_POINT3 v;
@@ -1836,7 +1836,7 @@ void bhEne14_MV10()
 void bhEne14_MV11(BH_PWORK* epw)
 {
 	float dist;
-	_anon31 ln;
+	NJS_LINE ln;
 	NJS_POINT3 cp;
 	float spd;
 	NJS_POINT3 v;

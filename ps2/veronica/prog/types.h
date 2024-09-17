@@ -324,7 +324,7 @@ typedef struct Unknown24
 	unsigned short ImageWidth;
 	unsigned short ImageHeight;
 	unsigned long GsTex0;
-	unsigned long GsTex1;
+	unsigned long GsTex1;   
 	unsigned int GsRegs;
 	unsigned int GsTexClut;
 } Unknown24;
@@ -380,15 +380,15 @@ typedef struct Unknown22
 
 
 
-typedef struct PositionVelocity {
-    /*  0 */ float px;
-    /*  4 */ float py;
-    /*  8 */ float pz;
-    /* 12 */ float vx;
-    /* 16 */ float vy;
-    /* 20 */ float vz;
-}
-PositionVelocity;
+
+
+
+
+
+
+
+
+
 
 
 typedef struct Unknown21
@@ -1655,7 +1655,7 @@ typedef struct System {
     int wt_maxx;
     int wt_maxz;
     unsigned char* wt_wvp;
-    PositionVelocity mr_pl;
+    NJS_PLANE mr_pl;
     unsigned char* zan_memp;
     unsigned char* zanp;
     Unknown10* lgtp;
