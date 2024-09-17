@@ -40,7 +40,7 @@ typedef struct _anon36;
 typedef struct _anon37;
 
 typedef struct _anon39;
-typedef struct _anon40;
+
 
 typedef struct _anon42;
 typedef struct _anon43;
@@ -444,7 +444,7 @@ struct BH_PWORK
 	int wpnr_no;
 	int wpnl_no;
 	unsigned int at_flg;
-	_anon40 watr;
+	NJS_CAPSULE watr;
 	_anon28* cpcl;
 	short wax;
 	short way;
@@ -1531,12 +1531,12 @@ struct _anon39
 	float icr[3][20];
 };
 
-struct _anon40
-{
-	NJS_POINT3 c1;
-	NJS_POINT3 c2;
-	float r;
-};
+
+
+
+
+
+
 
 
 
@@ -1676,8 +1676,8 @@ int bhSearchNearEnemy2(BH_PWORK* pp, int* r, float* h, int* id);
 int bhSearchNextEnemy(BH_PWORK* pp, int r, float h);
 int bhSearchPlayer(BH_PWORK* pp, int r);
 int bhCheckL2Wall(NJS_LINE* lp, unsigned int flg, float* len);
-int bhCheckC2Wall(_anon40* cap);
-int bhCheckC2WallN(_anon40* cap, unsigned int flg);
+int bhCheckC2Wall(NJS_CAPSULE* cap);
+int bhCheckC2WallN(NJS_CAPSULE* cap, unsigned int flg);
 int bhCheckClipModel(BH_PWORK* pp);
 int bhCheckClipPoint(NJS_POINT3* pos);
 void bhSetWaterSplash(BH_PWORK* pp, int jno, int type, float sx, float sy, float sz);
@@ -1891,7 +1891,7 @@ int bhSearchNearEnemy(BH_PWORK* pp, int* r, float* h, int* id)
 	float ln;
 	float er;
 	float a;
-	_anon40 cap;
+	NJS_CAPSULE cap;
 	NJS_POINT3 vc2;
 	NJS_POINT3 vc1;
 	NJS_POINT3 vc0;
@@ -1982,7 +1982,7 @@ int bhSearchNearEnemyB(NJS_POINT3* pos, int ay, int ar, float len)
 	float ln;
 	float er;
 	float a;
-	_anon40 cap;
+	NJS_CAPSULE cap;
 	NJS_POINT3 vc2;
 	NJS_POINT3 vc1;
 	NJS_POINT3 vc0;
@@ -2048,7 +2048,7 @@ int bhSearchNearEnemy2(BH_PWORK* pp, int* r, float* h, int* id)
 	float epz;
 	float epy;
 	float epx;
-	_anon40 cap;
+	NJS_CAPSULE cap;
 	NJS_POINT3 vc2;
 	NJS_POINT3 vc1;
 	NJS_POINT3 vc0;
@@ -2136,7 +2136,7 @@ int bhSearchNextEnemy(BH_PWORK* pp, int r, float h)
 	float ln;
 	float er;
 	float a;
-	_anon40 cap;
+	NJS_CAPSULE cap;
 	NJS_POINT3 vc2;
 	NJS_POINT3 vc1;
 	NJS_POINT3 vc0;
@@ -2306,8 +2306,8 @@ int bhCheckL2Wall(NJS_LINE* lp, unsigned int flg, float* len)
 	NJS_POINT3 pt;
 	NJS_POINT3 ps;
 	NJS_PLANE pl;
-	_anon40 cap2;
-	_anon40 cap;
+	NJS_CAPSULE cap2;
+	NJS_CAPSULE cap;
 	_anon47 box;
 	_anon0* hp;
 	// Line 960, Address: 0x14f760, Func Offset: 0
@@ -3360,7 +3360,7 @@ int bhCheckL2Wall(NJS_LINE* lp, unsigned int flg, float* len)
 
 // 
 // Start address: 0x1521c0
-int bhCheckC2Wall(_anon40* cap)
+int bhCheckC2Wall(NJS_CAPSULE* cap)
 {
 	int wal_n;
 	int i;
@@ -3378,7 +3378,7 @@ int bhCheckC2Wall(_anon40* cap)
 	NJS_POINT3 ps;
 	NJS_PLANE pl;
 	NJS_LINE lp;
-	_anon40 cap2;
+	NJS_CAPSULE cap2;
 	_anon47 box;
 	_anon0* hp;
 	// Line 1953, Address: 0x1521c0, Func Offset: 0
@@ -3609,7 +3609,7 @@ int bhCheckC2Wall(_anon40* cap)
 
 // 
 // Start address: 0x1529b0
-int bhCheckC2WallN(_anon40* cap, unsigned int flg)
+int bhCheckC2WallN(NJS_CAPSULE* cap, unsigned int flg)
 {
 	int wal_n;
 	int i;
@@ -3627,7 +3627,7 @@ int bhCheckC2WallN(_anon40* cap, unsigned int flg)
 	NJS_POINT3 ps;
 	NJS_PLANE pl;
 	NJS_LINE lp;
-	_anon40 cap2;
+	NJS_CAPSULE cap2;
 	_anon47 box;
 	_anon0* hp;
 	// Line 2153, Address: 0x1529b0, Func Offset: 0

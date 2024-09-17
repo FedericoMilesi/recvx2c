@@ -49,7 +49,7 @@ typedef struct _anon45;
 typedef struct _anon46;
 typedef struct _anon47;
 typedef struct _anon48;
-typedef struct _anon49;
+
 typedef struct _anon50;
 typedef struct _anon51;
 typedef struct _anon52;
@@ -329,7 +329,7 @@ struct BH_PWORK
 	int wpnr_no;
 	int wpnl_no;
 	unsigned int at_flg;
-	_anon49 watr;
+	NJS_CAPSULE watr;
 	_anon34* cpcl;
 	short wax;
 	short way;
@@ -1619,12 +1619,12 @@ struct _anon48
 	float r;
 };
 
-struct _anon49
-{
-	NJS_POINT3 c1;
-	NJS_POINT3 c2;
-	float r;
-};
+
+
+
+
+
+
 
 struct _anon50
 {
@@ -2930,7 +2930,7 @@ int bhEne17_PlayerDGCheck(BH_PWORK* epw, BH_PWORK* pl)
 	NJS_POINT3 ps;
 	_anon0* owk;
 	int i;
-	_anon49 cap;
+	NJS_CAPSULE cap;
 	// Line 2594, Address: 0x1ed640, Func Offset: 0
 	// Line 2600, Address: 0x1ed660, Func Offset: 0x20
 	// Line 2606, Address: 0x1ed6ac, Func Offset: 0x6c

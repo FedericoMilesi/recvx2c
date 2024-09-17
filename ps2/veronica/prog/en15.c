@@ -34,7 +34,7 @@ typedef struct _anon24;
 typedef struct _anon25;
 typedef struct _anon26;
 typedef struct _anon27;
-typedef struct _anon28;
+
 typedef struct _anon29;
 typedef struct _anon30;
 typedef struct _anon31;
@@ -476,7 +476,7 @@ struct BH_PWORK
 	int wpnr_no;
 	int wpnl_no;
 	unsigned int at_flg;
-	_anon28 watr;
+	NJS_CAPSULE watr;
 	_anon29* cpcl;
 	short wax;
 	short way;
@@ -660,7 +660,7 @@ struct _COMBO_EFF
 
 union _anon12
 {
-	_anon28 cap;
+	NJS_CAPSULE cap;
 	_anon11 box;
 };
 
@@ -992,12 +992,12 @@ struct _anon27
 	void* p[2];
 };
 
-struct _anon28
-{
-	NJS_POINT3 c1;
-	NJS_POINT3 c2;
-	float r;
-};
+
+
+
+
+
+
 
 struct _anon29
 {
@@ -1724,7 +1724,7 @@ void Attack(BH_PWORK* epw);
 void Throw(BH_PWORK* epw);
 void Damage(BH_PWORK* epw);
 void Die(BH_PWORK* epw);
-int NearestCapsule(BH_PWORK* epw, NJS_POINT3* pos, _anon28* dest, short* jnt);
+int NearestCapsule(BH_PWORK* epw, NJS_POINT3* pos, NJS_CAPSULE* dest, short* jnt);
 void CheckDamage(BH_PWORK* epw);
 int GetRelay(BH_PWORK* epw, _MTN_RELAY** ret);
 void SetMtn(BH_PWORK* epw);
@@ -1732,7 +1732,7 @@ void ReqMtn(BH_PWORK* epw, unsigned int mtn_no);
 void SetPlyMtn(unsigned int mtn_no);
 int VacumeToPoint(BH_PWORK* pw, NJS_POINT3* pos);
 void LockLeg(BH_PWORK* epw);
-int bhEne15_AttackPlayerCC(_anon28* cap, NJS_POINT3* attack_v, int damage);
+int bhEne15_AttackPlayerCC(NJS_CAPSULE* cap, NJS_POINT3* attack_v, int damage);
 int bhEne15_AttackPlayerBC(_anon11* box, NJS_POINT3* attack_v, int damage);
 int bhEne15_AttackPlayerSS(_anon0* spr, NJS_POINT3* attack_v, int damage);
 void SetSmoke(NJS_POINT3* pos);
@@ -2378,17 +2378,17 @@ void Die(BH_PWORK* epw)
 
 // 
 // Start address: 0x1e4560
-int NearestCapsule(BH_PWORK* epw, NJS_POINT3* pos, _anon28* dest, short* jnt)
+int NearestCapsule(BH_PWORK* epw, NJS_POINT3* pos, NJS_CAPSULE* dest, short* jnt)
 {
 	NJS_POINT3 p;
 	short _jnt;
 	float dis;
-	_anon28 cap;
+	NJS_CAPSULE cap;
 	_anon29* ctab;
 	int notop;
 	float topdis;
 	short topjnt;
-	_anon28 top;
+	NJS_CAPSULE top;
 	// Line 2140, Address: 0x1e4560, Func Offset: 0
 	// Line 2145, Address: 0x1e4590, Func Offset: 0x30
 	// Line 2144, Address: 0x1e4594, Func Offset: 0x34
@@ -2454,7 +2454,7 @@ int NearestCapsule(BH_PWORK* epw, NJS_POINT3* pos, _anon28* dest, short* jnt)
 void CheckDamage(BH_PWORK* epw)
 {
 	short jnt;
-	_anon28 cap;
+	NJS_CAPSULE cap;
 	NJS_POINT3 ofp;
 	NJS_POINT3 pos;
 	NJS_POINT3 ofs;
@@ -2711,7 +2711,7 @@ void LockLeg(BH_PWORK* epw)
 
 // 
 // Start address: 0x1e57d0
-int bhEne15_AttackPlayerCC(_anon28* cap, NJS_POINT3* attack_v, int damage)
+int bhEne15_AttackPlayerCC(NJS_CAPSULE* cap, NJS_POINT3* attack_v, int damage)
 {
 	NJS_POINT3 tar_p;
 	float distance;

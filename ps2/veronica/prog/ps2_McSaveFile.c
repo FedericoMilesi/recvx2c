@@ -12,7 +12,7 @@ typedef struct tagSELECTFILEWINDOW;
 typedef struct GDS_FS_HANDLE;
 typedef struct _anon5;
 typedef struct GDS_FS_WORK;
-typedef struct _anon6;
+
 typedef struct _anon7;
 typedef struct _anon8;
 typedef struct tagSAVEFILE;
@@ -504,12 +504,12 @@ struct GDS_FS_WORK
 	GDS_FS_HANDLE hndlist[1];
 };
 
-struct _anon6
-{
-	NJS_POINT3 c1;
-	NJS_POINT3 c2;
-	float r;
-};
+
+
+
+
+
+
 
 struct _anon7
 {
@@ -1182,7 +1182,7 @@ struct BH_PWORK
 	int wpnr_no;
 	int wpnl_no;
 	unsigned int at_flg;
-	_anon6 watr;
+	NJS_CAPSULE watr;
 	_anon12* cpcl;
 	short wax;
 	short way;

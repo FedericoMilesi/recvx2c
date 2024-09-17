@@ -11,7 +11,7 @@ typedef struct npobj;
 typedef struct _anon9;
 typedef struct _anon10;
 
-typedef struct _anon12;
+
 typedef struct _anon13;
 typedef union _anon14;
 typedef struct _anon15;
@@ -679,12 +679,12 @@ struct _anon10
 
 
 
-struct _anon12
-{
-	NJS_POINT3 c1;
-	NJS_POINT3 c2;
-	float r;
-};
+
+
+
+
+
+
 
 struct _anon13
 {
@@ -1660,7 +1660,7 @@ struct BH_PWORK
 	int wpnr_no;
 	int wpnl_no;
 	unsigned int at_flg;
-	_anon12 watr;
+	NJS_CAPSULE watr;
 	_anon34* cpcl;
 	short wax;
 	short way;

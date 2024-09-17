@@ -37,7 +37,7 @@ typedef struct _anon31;
 typedef struct _anon33;
 typedef struct _anon34;
 typedef struct _anon35;
-typedef struct _anon36;
+
 
 typedef void(*type_74)(void*);
 
@@ -396,7 +396,7 @@ struct BH_PWORK
 	int wpnr_no;
 	int wpnl_no;
 	unsigned int at_flg;
-	_anon36 watr;
+	NJS_CAPSULE watr;
 	_anon19* cpcl;
 	short wax;
 	short way;
@@ -1300,12 +1300,12 @@ struct _anon35
 	float r;
 };
 
-struct _anon36
-{
-	NJS_POINT3 c1;
-	NJS_POINT3 c2;
-	float r;
-};
+
+
+
+
+
+
 
 BH_PWORK* plp;
 _anon10* sys;
@@ -1556,7 +1556,7 @@ void SetOneObjectMotion(BH_PWORK* ewP, npobj* objP, int* ang)
 // Start address: 0x14afa0
 _search* bhSearchEnemy(BH_PWORK* pwP, int rng, float hgt)
 {
-	_anon36 cap;
+	NJS_CAPSULE cap;
 	int i;
 	float dst;
 	float p_cs;

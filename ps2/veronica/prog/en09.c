@@ -51,7 +51,7 @@ typedef struct _anon47;
 typedef struct _anon48;
 typedef struct _anon49;
 typedef struct _anon50;
-typedef struct _anon51;
+
 typedef struct _anon52;
 typedef struct _anon53;
 typedef struct _anon54;
@@ -353,7 +353,7 @@ struct BH_PWORK
 	int wpnr_no;
 	int wpnl_no;
 	unsigned int at_flg;
-	_anon51 watr;
+	NJS_CAPSULE watr;
 	_anon32* cpcl;
 	short wax;
 	short way;
@@ -1694,12 +1694,12 @@ struct _anon50
 	float r;
 };
 
-struct _anon51
-{
-	NJS_POINT3 c1;
-	NJS_POINT3 c2;
-	float r;
-};
+
+
+
+
+
+
 
 struct _anon52
 {
@@ -5660,7 +5660,7 @@ int bhEne09_CollChkArm(BH_PWORK* epw, BH_PWORK* trg)
 	int r;
 	NJS_POINT3 pd;
 	NJS_LINE l1;
-	_anon51 cp;
+	NJS_CAPSULE cp;
 	_anon50 sp;
 	_anon24* owk;
 	// Line 6847, Address: 0x1d0d30, Func Offset: 0

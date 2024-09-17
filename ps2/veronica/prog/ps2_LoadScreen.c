@@ -8,7 +8,7 @@ typedef struct tagSELECTFILEWINDOW;
 typedef struct tagMEMORYCARDPORT;
 
 typedef struct _anon5;
-typedef struct _anon6;
+
 typedef struct _anon7;
 typedef struct tagSELECTFILEINFO;
 typedef struct _anon8;
@@ -421,12 +421,12 @@ struct _anon5
 	float r;
 };
 
-struct _anon6
-{
-	NJS_POINT3 c1;
-	NJS_POINT3 c2;
-	float r;
-};
+
+
+
+
+
+
 
 struct _anon7
 {
@@ -1113,7 +1113,7 @@ struct BH_PWORK
 	int wpnr_no;
 	int wpnl_no;
 	unsigned int at_flg;
-	_anon6 watr;
+	NJS_CAPSULE watr;
 	_anon13* cpcl;
 	short wax;
 	short way;

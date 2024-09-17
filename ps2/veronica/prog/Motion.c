@@ -11,7 +11,7 @@ typedef struct _anon7;
 typedef struct _anon8;
 typedef struct _anon9;
 
-typedef struct _anon11;
+
 
 
 typedef char type_0[8];
@@ -158,7 +158,7 @@ struct BH_PWORK
 	int wpnr_no;
 	int wpnl_no;
 	unsigned int at_flg;
-	_anon11 watr;
+	NJS_CAPSULE watr;
 	_anon5* cpcl;
 	short wax;
 	short way;
@@ -266,12 +266,12 @@ struct _anon9
 
 
 
-struct _anon11
-{
-	NJS_POINT3 c1;
-	NJS_POINT3 c2;
-	float r;
-};
+
+
+
+
+
+
 
 char NormalTbl[64];
 _anon3 NullMka;

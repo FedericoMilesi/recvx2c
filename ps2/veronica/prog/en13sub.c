@@ -32,7 +32,7 @@ typedef struct _anon27;
 typedef struct _anon29;
 typedef struct _anon30;
 typedef struct _anon31;
-typedef struct _anon32;
+
 
 typedef void(*type_38)(BH_PWORK*);
 typedef void(*type_54)(BH_PWORK*);
@@ -399,7 +399,7 @@ struct BH_PWORK
 	int wpnr_no;
 	int wpnl_no;
 	unsigned int at_flg;
-	_anon32 watr;
+	NJS_CAPSULE watr;
 	_anon14* cpcl;
 	short wax;
 	short way;
@@ -1198,12 +1198,12 @@ struct _anon31
 	float r;
 };
 
-struct _anon32
-{
-	NJS_POINT3 c1;
-	NJS_POINT3 c2;
-	float r;
-};
+
+
+
+
+
+
 
 void(*bhEne13B_Mode0)(BH_PWORK*)[6];
 void(*bhEne13B_BrainType)(BH_PWORK*)[1];

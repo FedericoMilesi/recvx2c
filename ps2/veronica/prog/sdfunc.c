@@ -58,7 +58,7 @@ typedef struct tag_SYS_BT_SYSTEMID;
 typedef struct _anon52;
 
 typedef struct _anon54;
-typedef struct _anon55;
+
 typedef struct _anon56;
 typedef struct _anon57;
 typedef struct _anon58;
@@ -426,7 +426,7 @@ struct BH_PWORK
 	int wpnr_no;
 	int wpnl_no;
 	unsigned int at_flg;
-	_anon55 watr;
+	NJS_CAPSULE watr;
 	_anon15* cpcl;
 	short wax;
 	short way;
@@ -1320,12 +1320,12 @@ struct _anon54
 	unsigned char reserved[3];
 };
 
-struct _anon55
-{
-	NJS_POINT3 c1;
-	NJS_POINT3 c2;
-	float r;
-};
+
+
+
+
+
+
 
 struct _anon56
 {
@@ -2716,7 +2716,7 @@ int wadGetAngle(NJS_POINT3* pPos1, int Ang, NJS_POINT3* pPos2)
 int CheckCollision4Sound(NJS_POINT3* pP2)
 {
 	int ReturnCode;
-	_anon55 Capsule;
+	NJS_CAPSULE Capsule;
 	// Line 1374, Address: 0x2935a0, Func Offset: 0
 	// Line 1379, Address: 0x2935ac, Func Offset: 0xc
 	// Line 1383, Address: 0x2935c4, Func Offset: 0x24

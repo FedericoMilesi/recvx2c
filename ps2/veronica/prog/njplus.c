@@ -3,7 +3,7 @@ typedef struct _anon0;
 
 typedef struct _anon2;
 typedef struct _anon3;
-typedef struct _anon4;
+
 typedef struct _anon5;
 typedef struct _anon6;
 typedef struct _anon7;
@@ -135,12 +135,12 @@ struct _anon3
 	unsigned char ucPadding[56];
 };
 
-struct _anon4
-{
-	NJS_POINT3 c1;
-	NJS_POINT3 c2;
-	float r;
-};
+
+
+
+
+
+
 
 struct _anon5
 {
@@ -318,7 +318,7 @@ struct BH_PWORK
 	int wpnr_no;
 	int wpnl_no;
 	unsigned int at_flg;
-	_anon4 watr;
+	NJS_CAPSULE watr;
 	_anon14* cpcl;
 	short wax;
 	short way;
@@ -431,10 +431,10 @@ NJS_MATRIX lcmat[];
 
 
 void npPlusInit();
-int npCollisionCheckCC(_anon4* cpa, _anon4* cpb);
-int npCollisionCheckCCEx(_anon4* cpa, _anon4* cpb, NJS_POINT3* pos);
-int npCollisionCheckSC(_anon6* sa, _anon4* cpb);
-void npDistanceP2C(NJS_POINT3* pos, _anon4* cap, NJS_POINT3* htp);
+int npCollisionCheckCC(NJS_CAPSULE* cpa, NJS_CAPSULE* cpb);
+int npCollisionCheckCCEx(NJS_CAPSULE* cpa, NJS_CAPSULE* cpb, NJS_POINT3* pos);
+int npCollisionCheckSC(_anon6* sa, NJS_CAPSULE* cpb);
+void npDistanceP2C(NJS_POINT3* pos, NJS_CAPSULE* cap, NJS_POINT3* htp);
 void npDrawPlane(NJS_POINT3* ps0, NJS_POINT3* ps1, NJS_POINT3* ps2, NJS_POINT3* ps3, unsigned int argb);
 void npCalcMorphing(npobj* obj_a, npobj* obj_b, float no, int obj_n);
 void npTransform(npobj* srcobj, npobj* dstobj, float no, int ono);
@@ -493,7 +493,7 @@ void npPlusInit()
 
 // 
 // Start address: 0x12b710
-int npCollisionCheckCC(_anon4* cpa, _anon4* cpb)
+int npCollisionCheckCC(NJS_CAPSULE* cpa, NJS_CAPSULE* cpb)
 {
 	float sca;
 	float lenb;
@@ -502,8 +502,8 @@ int npCollisionCheckCC(_anon4* cpa, _anon4* cpb)
 	NJS_POINT3 vec;
 	_anon6 sb;
 	_anon6 sa;
-	_anon4* capb;
-	_anon4* capa;
+	NJS_CAPSULE* capb;
+	NJS_CAPSULE* capa;
 	NJS_LINE lnc;
 	NJS_LINE lnb;
 	NJS_LINE lna;
@@ -651,7 +651,7 @@ int npCollisionCheckCC(_anon4* cpa, _anon4* cpb)
 
 // 
 // Start address: 0x12bc70
-int npCollisionCheckCCEx(_anon4* cpa, _anon4* cpb, NJS_POINT3* pos)
+int npCollisionCheckCCEx(NJS_CAPSULE* cpa, NJS_CAPSULE* cpb, NJS_POINT3* pos)
 {
 	NJS_POINT3 scl;
 	NJS_POINT3 scl;
@@ -663,8 +663,8 @@ int npCollisionCheckCCEx(_anon4* cpa, _anon4* cpb, NJS_POINT3* pos)
 	NJS_POINT3 vec;
 	_anon6 sb;
 	_anon6 sa;
-	_anon4* capb;
-	_anon4* capa;
+	NJS_CAPSULE* capb;
+	NJS_CAPSULE* capa;
 	NJS_LINE lnc;
 	NJS_LINE lnb;
 	NJS_LINE lna;
@@ -867,7 +867,7 @@ int npCollisionCheckCCEx(_anon4* cpa, _anon4* cpb, NJS_POINT3* pos)
 
 // 
 // Start address: 0x12c440
-int npCollisionCheckSC(_anon6* sa, _anon4* cpb)
+int npCollisionCheckSC(_anon6* sa, NJS_CAPSULE* cpb)
 {
 	float sca;
 	float lenb;
@@ -925,7 +925,7 @@ int npCollisionCheckSC(_anon6* sa, _anon4* cpb)
 
 // 
 // Start address: 0x12c640
-void npDistanceP2C(NJS_POINT3* pos, _anon4* cap, NJS_POINT3* htp)
+void npDistanceP2C(NJS_POINT3* pos, NJS_CAPSULE* cap, NJS_POINT3* htp)
 {
 	float sca;
 	float len;

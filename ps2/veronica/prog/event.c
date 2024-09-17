@@ -50,7 +50,7 @@ typedef struct _anon45;
 typedef struct _anon47;
 typedef struct _anon48;
 typedef struct _anon49;
-typedef struct _anon50;
+
 typedef struct _anon51;
 typedef struct _anon52;
 typedef struct _anon53;
@@ -357,7 +357,7 @@ struct BH_PWORK
 	int wpnr_no;
 	int wpnl_no;
 	unsigned int at_flg;
-	_anon50 watr;
+	NJS_CAPSULE watr;
 	_anon31* cpcl;
 	short wax;
 	short way;
@@ -1790,12 +1790,12 @@ struct _anon49
 	float r;
 };
 
-struct _anon50
-{
-	NJS_POINT3 c1;
-	NJS_POINT3 c2;
-	float r;
-};
+
+
+
+
+
+
 
 struct _anon51
 {

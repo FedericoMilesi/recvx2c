@@ -51,7 +51,7 @@ typedef struct _anon47;
 typedef struct _anon48;
 typedef struct _anon49;
 typedef struct _anon50;
-typedef struct _anon51;
+
 typedef struct _anon52;
 
 typedef void(*type_18)(_anon0*);
@@ -1233,7 +1233,7 @@ struct BH_PWORK
 	int wpnr_no;
 	int wpnl_no;
 	unsigned int at_flg;
-	_anon51 watr;
+	NJS_CAPSULE watr;
 	_anon31* cpcl;
 	short wax;
 	short way;
@@ -1650,12 +1650,12 @@ struct _anon50
 	float r;
 };
 
-struct _anon51
-{
-	NJS_POINT3 c1;
-	NJS_POINT3 c2;
-	float r;
-};
+
+
+
+
+
+
 
 struct _anon52
 {
@@ -2484,7 +2484,7 @@ void bhEff_E03_Acid(_anon0* op)
 	NJS_POINT3 n;
 	_anon4* uvp;
 	_anon48 param[7];
-	_anon51 c;
+	NJS_CAPSULE c;
 	_anon24* hp;
 	_anon4* uvtble[3];
 	// Line 1364, Address: 0x23f940, Func Offset: 0

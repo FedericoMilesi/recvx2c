@@ -34,7 +34,7 @@ typedef struct _anon30;
 typedef struct _anon31;
 typedef struct _anon32;
 typedef struct _anon33;
-typedef struct _anon34;
+
 typedef struct _anon35;
 typedef struct _anon36;
 
@@ -426,7 +426,7 @@ struct BH_PWORK
 	int wpnr_no;
 	int wpnl_no;
 	unsigned int at_flg;
-	_anon34 watr;
+	NJS_CAPSULE watr;
 	_anon29* cpcl;
 	short wax;
 	short way;
@@ -1456,12 +1456,12 @@ struct _anon33
 	_anon45 attr;
 };
 
-struct _anon34
-{
-	NJS_POINT3 c1;
-	NJS_POINT3 c2;
-	float r;
-};
+
+
+
+
+
+
 
 struct _anon35
 {
@@ -1723,7 +1723,7 @@ void bhCheckKnifeAtari(_anon21* gap);
 int bhCheckFlyAtari(_anon21* gap, int eidx);
 void bhSetBowDamage();
 void bhCheckBombAtari(NJS_POINT3* pos, float ar, int dmax, int dmin);
-int bhCheckCapCol2Capsule(BH_PWORK* pp, _anon34* cap, NJS_POINT3* hps);
+int bhCheckCapCol2Capsule(BH_PWORK* pp, NJS_CAPSULE* cap, NJS_POINT3* hps);
 void bhSetGunSplash(_anon21* gap, NJS_POINT3* pos, int wattr);
 void bhSetExplosion(NJS_POINT3* pos);
 void bhSetExplosionEffect(NJS_POINT3* pos);
@@ -1983,8 +1983,8 @@ int bhCheckGunAtari(_anon21* gap)
 	NJS_POINT3 sca;
 	NJS_POINT3 ps;
 	NJS_POINT3 ap;
-	_anon34 wal;
-	_anon34 gatr;
+	NJS_CAPSULE wal;
+	NJS_CAPSULE gatr;
 	int igct;
 	// Line 403, Address: 0x28ad90, Func Offset: 0
 	// Line 415, Address: 0x28add8, Func Offset: 0x48
@@ -2390,7 +2390,7 @@ void bhCheckKnifeAtari(_anon21* gap)
 	NJS_POINT3 wps;
 	NJS_POINT3 ps;
 	NJS_POINT3 sca;
-	_anon34 cap;
+	NJS_CAPSULE cap;
 	NJS_LINE gline;
 	// Line 870, Address: 0x28c2e0, Func Offset: 0
 	// Line 885, Address: 0x28c304, Func Offset: 0x24
@@ -2518,7 +2518,7 @@ int bhCheckFlyAtari(_anon21* gap, int eidx)
 	NJS_POINT3 ps;
 	NJS_POINT3 sca;
 	_anon46 spr;
-	_anon34 wal;
+	NJS_CAPSULE wal;
 	// Line 1057, Address: 0x28c940, Func Offset: 0
 	// Line 1068, Address: 0x28c96c, Func Offset: 0x2c
 	// Line 1088, Address: 0x28c970, Func Offset: 0x30
@@ -2685,7 +2685,7 @@ void bhCheckBombAtari(NJS_POINT3* pos, float ar, int dmax, int dmin)
 	NJS_POINT3 ps;
 	NJS_POINT3 sca;
 	_anon46 spr;
-	_anon34 wal;
+	NJS_CAPSULE wal;
 	// Line 1257, Address: 0x28cfe0, Func Offset: 0
 	// Line 1268, Address: 0x28d010, Func Offset: 0x30
 	// Line 1271, Address: 0x28d014, Func Offset: 0x34
@@ -2837,7 +2837,7 @@ void bhCheckBombAtari(NJS_POINT3* pos, float ar, int dmax, int dmin)
 
 // 
 // Start address: 0x28d690
-int bhCheckCapCol2Capsule(BH_PWORK* pp, _anon34* cap, NJS_POINT3* hps)
+int bhCheckCapCol2Capsule(BH_PWORK* pp, NJS_CAPSULE* cap, NJS_POINT3* hps)
 {
 	float nr;
 	float len;
@@ -2852,7 +2852,7 @@ int bhCheckCapCol2Capsule(BH_PWORK* pp, _anon34* cap, NJS_POINT3* hps)
 	NJS_POINT3 ofp;
 	NJS_LINE gline;
 	_anon46 sp;
-	_anon34 cp;
+	NJS_CAPSULE cp;
 	_anon29* cpcl;
 	// Line 1469, Address: 0x28d690, Func Offset: 0
 	// Line 1477, Address: 0x28d6c0, Func Offset: 0x30

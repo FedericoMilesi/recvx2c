@@ -34,7 +34,7 @@ typedef struct _anon30;
 typedef struct _anon31;
 typedef struct _anon32;
 typedef struct _anon33;
-typedef struct _anon34;
+
 
 typedef void(*type_26)(BH_PWORK*);
 typedef void(*type_34)(BH_PWORK*);
@@ -408,7 +408,7 @@ struct BH_PWORK
 	int wpnr_no;
 	int wpnl_no;
 	unsigned int at_flg;
-	_anon34 watr;
+	NJS_CAPSULE watr;
 	_anon15* cpcl;
 	short wax;
 	short way;
@@ -1235,12 +1235,12 @@ struct _anon33
 	int srt_dir[5];
 };
 
-struct _anon34
-{
-	NJS_POINT3 c1;
-	NJS_POINT3 c2;
-	float r;
-};
+
+
+
+
+
+
 
 _anon33 BloodParam;
 char En21SdwTab[2];
