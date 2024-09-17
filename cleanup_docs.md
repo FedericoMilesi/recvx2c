@@ -26,3 +26,4 @@
 | BUS_FILEINFO | Found on Katana | `<katana>/sg_bup.h` |
 | NJS_CAPSULE | Found on Katana | `<katana>/ninjastr.h` |
 | sceMcStDateTime | Found on SCE | `<sce>/ee/include/libmc.h` |
+| sceMcTblGetDir | Found on SCE | `<sce>/ee/include/libmc.h` |

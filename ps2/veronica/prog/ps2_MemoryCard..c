@@ -1,6 +1,6 @@
 
 typedef struct tagMEMORYCARDSTATE;
-typedef struct _anon1;
+
 typedef struct tagMEMORYCARDPORT;
 
 
@@ -10,7 +10,7 @@ typedef unsigned char type_1[32];
 typedef char type_2[50];
 typedef char type_3[32];
 typedef tagMEMORYCARDPORT type_4[2];
-typedef _anon1 type_5[21];
+
 
 
 
@@ -43,17 +43,17 @@ struct tagMEMORYCARDSTATE
 	tagMEMORYCARDPORT Port[2];
 };
 
-struct _anon1
-{
-	sceMcStDateTime _Create;
-	sceMcStDateTime _Modify;
-	unsigned int FileSizeByte;
-	unsigned short AttrFile;
-	unsigned short Reserve1;
-	unsigned int Reserve2;
-	unsigned int PdaAplNo;
-	unsigned char EntryName[32];
-};
+
+
+
+
+
+
+
+
+
+
+
 
 struct tagMEMORYCARDPORT
 {
@@ -120,7 +120,7 @@ int CheckMcSelectPortInfoType(unsigned int ulPort);
 int CheckMemoryCardInfoFree(tagMEMORYCARDSTATE* pCard);
 int CheckMcSelectPortInfoState(unsigned int ulPort);
 int CheckMemoryCardInfoUnformat(tagMEMORYCARDSTATE* pCard);
-int GetMemoryCardDir(tagMEMORYCARDSTATE* pCard, char* cpPath, int lFlag, int lMaxent, _anon1* pbuff);
+int GetMemoryCardDir(tagMEMORYCARDSTATE* pCard, char* cpPath, int lFlag, int lMaxent, sceMcTblGetDir* pbuff);
 int ChangeMemoryCardDir(tagMEMORYCARDSTATE* pCard, char* cpPath, char* cpbuff);
 int MakeMemoryCardDir(tagMEMORYCARDSTATE* pCard);
 int MemoryCardFormat(tagMEMORYCARDSTATE* pCard);
@@ -812,7 +812,7 @@ int CheckMemoryCardExistSubDirectory(tagMEMORYCARDSTATE* pCard)
 // Start address: 0x2746a0
 int CheckMemoryCardExistFile(tagMEMORYCARDSTATE* pCard)
 {
-	_anon1 CardInfo;
+	sceMcTblGetDir CardInfo;
 	// Line 2136, Address: 0x2746a0, Func Offset: 0
 	// Line 2140, Address: 0x2746b0, Func Offset: 0x10
 	// Line 2143, Address: 0x2746d0, Func Offset: 0x30
@@ -831,7 +831,7 @@ int CheckMemoryCardExistFileList(tagMEMORYCARDSTATE* pCard, char** cppPathList, 
 	unsigned short usCheckCounter;
 	unsigned short usCheckFileNameCounter;
 	int lResult;
-	_anon1 CardInfo[21];
+	sceMcTblGetDir CardInfo[21];
 	// Line 2188, Address: 0x274720, Func Offset: 0
 	// Line 2195, Address: 0x274748, Func Offset: 0x28
 	// Line 2198, Address: 0x27475c, Func Offset: 0x3c
@@ -975,7 +975,7 @@ int CheckMemoryCardInfoUnformat(tagMEMORYCARDSTATE* pCard)
 
 // 
 // Start address: 0x274b70
-int GetMemoryCardDir(tagMEMORYCARDSTATE* pCard, char* cpPath, int lFlag, int lMaxent, _anon1* pbuff)
+int GetMemoryCardDir(tagMEMORYCARDSTATE* pCard, char* cpPath, int lFlag, int lMaxent, sceMcTblGetDir* pbuff)
 {
 	int lResult;
 	int lRetry;

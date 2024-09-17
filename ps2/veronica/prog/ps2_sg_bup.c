@@ -1,6 +1,6 @@
 
 typedef struct _anon1;
-typedef struct _anon2;
+
 
 
 
@@ -41,17 +41,17 @@ struct _anon1
 	unsigned int save_size;
 };
 
-struct _anon2
-{
-	sceMcStDateTime _Create;
-	sceMcStDateTime _Modify;
-	unsigned int FileSizeByte;
-	unsigned short AttrFile;
-	unsigned short Reserve1;
-	unsigned int Reserve2;
-	unsigned int PdaAplNo;
-	unsigned char EntryName[32];
-};
+
+
+
+
+
+
+
+
+
+
+
 
 
 
