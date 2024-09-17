@@ -6,7 +6,7 @@ typedef struct cnkobj;
 typedef struct _anon3;
 typedef struct tagVU1_STRIP_BUF;
 typedef struct _anon4;
-typedef struct NJS_CNK_MODEL;
+
 typedef struct _anon6;
 typedef struct _anon7;
 typedef struct _anon8;

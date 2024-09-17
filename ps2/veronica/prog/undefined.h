@@ -9,7 +9,7 @@ typedef struct npobj;
 typedef struct _anon5;
 typedef struct _anon6;
 typedef struct _anon7;
-typedef struct NJS_CNK_MODEL;
+
 typedef struct _anon9;
 typedef struct _anon10;
 typedef struct _anon11;

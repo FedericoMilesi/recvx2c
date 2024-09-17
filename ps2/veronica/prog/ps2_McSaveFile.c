@@ -24,7 +24,7 @@ typedef struct _anon11;
 typedef struct tagICONINFORMATION;
 typedef struct _anon12;
 typedef struct _anon13;
-typedef struct NJS_CNK_MODEL;
+
 typedef struct _anon15;
 typedef struct BH_PWORK;
 typedef struct _anon16;

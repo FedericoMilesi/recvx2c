@@ -44,7 +44,7 @@ typedef struct _anon40;
 
 typedef struct _anon42;
 typedef struct _anon43;
-typedef struct NJS_CNK_MODEL;
+
 typedef struct _anon45;
 typedef struct _anon46;
 typedef struct _anon47;

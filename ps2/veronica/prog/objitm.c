@@ -5,7 +5,7 @@ typedef struct _anon3;
 typedef struct _anon4;
 typedef struct npobj;
 typedef struct BH_PWORK;
-typedef struct NJS_CNK_MODEL;
+
 typedef struct _anon6;
 typedef struct _anon7;
 

@@ -17,7 +17,7 @@ typedef struct _anon11;
 typedef struct _anon12;
 typedef struct _anon13;
 typedef struct _anon14;
-typedef struct NJS_CNK_MODEL;
+
 typedef struct _anon16;
 typedef struct BH_PWORK;
 typedef struct _anon17;

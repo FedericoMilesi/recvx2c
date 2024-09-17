@@ -7,7 +7,7 @@ typedef struct _anon2;
 typedef struct _anon4;
 
 typedef struct _anon6;
-typedef struct NJS_CNK_MODEL;
+
 typedef struct _anon8;
 
 

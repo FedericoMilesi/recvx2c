@@ -8,7 +8,7 @@ typedef union _anon6;
 
 typedef struct _anon8;
 typedef struct npobj;
-typedef struct NJS_CNK_MODEL;
+
 typedef struct _anon10;
 
 typedef struct _anon12;

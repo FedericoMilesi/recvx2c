@@ -4,7 +4,7 @@ typedef struct cnkobj;
 
 typedef struct _anon2;
 
-typedef struct NJS_CNK_MODEL;
+
 typedef struct _anon5;
 typedef struct _anon6;
 typedef struct _anon7;

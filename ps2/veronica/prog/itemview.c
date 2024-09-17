@@ -29,7 +29,7 @@ typedef struct _anon26;
 typedef struct _anon27;
 typedef struct BH_PWORK;
 typedef struct _anon28;
-typedef struct NJS_CNK_MODEL;
+
 
 typedef struct _anon31;
 

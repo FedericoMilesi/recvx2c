@@ -43,7 +43,7 @@ typedef struct _anon32;
 typedef struct _UVINFO;
 typedef struct _anon34;
 typedef struct _anon35;
-typedef struct NJS_CNK_MODEL;
+
 typedef struct _anon37;
 typedef struct _anon38;
 typedef struct _EFF_INFO;

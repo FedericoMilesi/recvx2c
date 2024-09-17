@@ -60,7 +60,7 @@ typedef struct _anon54;
 typedef struct _anon55;
 typedef struct _anon56;
 typedef struct _anon57;
-typedef struct NJS_CNK_MODEL;
+
 
 typedef struct _anon60;
 typedef struct _rap_dsp_typ;

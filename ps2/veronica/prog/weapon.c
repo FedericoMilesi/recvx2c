@@ -36,7 +36,7 @@ typedef struct _anon32;
 typedef struct _anon33;
 
 typedef struct _anon35;
-typedef struct NJS_CNK_MODEL;
+
 
 typedef struct _anon38;
 typedef struct _anon39;
