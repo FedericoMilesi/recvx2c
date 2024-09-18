@@ -4867,12 +4867,12 @@ void RequestAdjustDisplay(int AdjustX, int AdjustY) { // Line 4923, Address: 0x2
 }
 
 /* 100% match */
-void ExecAdjustDisplay() { // Line 4929, Address: 0x297d70
-    if (SystemAdjustFlag != 0) { // Line 4930, Address: 0x297d78
-        njAdjustDisplay(sys->adjust_x, sys->adjust_y + 1); // Line 4931, Address: 0x297d88
-        SystemAdjustFlag = 0; // Line 4932, Address: 0x297da0
+void ExecAdjustDisplay() { // Line 4929, Address: 0x297d70, Func Offset: 0
+    if (SystemAdjustFlag != 0) { // Line 4930, Address: 0x297d78, Func Offset: 0x8
+        njAdjustDisplay(sys->adjust_x, sys->adjust_y + 1); // Line 4931, Address: 0x297d88, Func Offset: 0x18
+        SystemAdjustFlag = 0; // Line 4932, Address: 0x297da0, Func Offset: 0x30
     }
-} // Line 4934, Address: 0x297da8
+} // Line 4934, Address: 0x297da8, Func Offset: 0x38
 
 /* empty */
 void InitPlayLogSystem() { } // Line 4958, Address: 0x297dc0
