@@ -1,10 +1,10 @@
 typedef struct _anon0;
 typedef struct _anon1;
-typedef struct _UUID;
+
 typedef struct _anon2;
-typedef struct _anon3;
-typedef struct _anon4;
-typedef struct _sj_vtbl;
+
+
+
 typedef enum _mwe_ply_stat;
 typedef struct _anon5;
 typedef struct _anon6;
@@ -21,28 +21,28 @@ typedef void(*type_2)(_anon0*, int);
 typedef int(*type_3)(_anon0*);
 typedef void(*type_4)(_anon0*, int, int);
 typedef int(*type_5)(_anon0*, int);
-typedef void(*type_7)(_anon0*, _anon3*);
+typedef void(*type_7)(_anon0*, SJ_OBJ*);
 typedef void(*type_9)(_anon0*, void*, int);
 typedef void(*type_11)();
 typedef void(*type_12)();
 typedef void(*type_13)();
-typedef void(*type_14)(_anon3*);
-typedef _UUID*(*type_15)(_anon3*);
-typedef void(*type_17)(_anon3*);
-typedef void(*type_19)(_anon3*, int, int, _anon4*);
-typedef void(*type_21)(_anon3*, int, _anon4*);
+
+
+
+
+
 typedef void(*type_22)();
 typedef void(*type_23)();
 typedef void(*type_24)();
-typedef void(*type_25)(_anon3*, int, _anon4*);
+
 typedef void(*type_26)(_anon0*);
 typedef void(*type_27)(_anon0*);
-typedef int(*type_29)(_anon3*, int);
+
 typedef void(*type_30)(_anon0*);
-typedef int(*type_31)(_anon3*, int, int, int*);
+
 typedef void(*type_32)(_anon0*, char*);
 typedef void(*type_33)(_anon0*);
-typedef void(*type_34)(_anon3*, void(*)(void*, int), void*);
+
 typedef void(*type_35)(void*, int);
 typedef _mwe_ply_stat(*type_36)(_anon0*);
 
@@ -71,13 +71,13 @@ struct _anon1
 	int fd;
 };
 
-struct _UUID
-{
-	unsigned int Data1;
-	unsigned short Data2;
-	unsigned short Data3;
-	unsigned char Data4[8];
-};
+
+
+
+
+
+
+
 
 struct _anon2
 {
@@ -97,32 +97,32 @@ struct _anon2
 	unsigned int MVCancelButton;
 };
 
-struct _anon3
-{
-	_sj_vtbl* vtbl;
-};
 
-struct _anon4
-{
-	char* data;
-	int len;
-};
 
-struct _sj_vtbl
-{
-	void(*QueryInterface)();
-	void(*AddRef)();
-	void(*Release)();
-	void(*Destroy)(_anon3*);
-	_UUID*(*GetUuid)(_anon3*);
-	void(*Reset)(_anon3*);
-	void(*GetChunk)(_anon3*, int, int, _anon4*);
-	void(*UngetChunk)(_anon3*, int, _anon4*);
-	void(*PutChunk)(_anon3*, int, _anon4*);
-	int(*GetNumData)(_anon3*, int);
-	int(*IsGetChunk)(_anon3*, int, int, int*);
-	void(*EntryErrFunc)(_anon3*, void(*)(void*, int), void*);
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 enum _mwe_ply_stat
 {
@@ -163,7 +163,7 @@ struct _mwply_if
 	int(*GetOutVol)(_anon0*);
 	void(*SetOutPan)(_anon0*, int, int);
 	int(*GetOutPan)(_anon0*, int);
-	void(*StartSj)(_anon0*, _anon3*);
+	void(*StartSj)(_anon0*, SJ_OBJ*);
 	void(*StartMem)(_anon0*, void*, int);
 };
 

@@ -1,36 +1,36 @@
 typedef struct _anon0;
-typedef struct _anon1;
-typedef struct _anon2;
-typedef struct _adx_talk;
+
+
+
 typedef struct _adxt_sprm;
 typedef struct _anon3;
 typedef struct _anon4;
-typedef struct _UUID;
-typedef struct _sj_vtbl;
+
+
 typedef struct _anon5;
-typedef struct _adx_fs;
+
 typedef struct _anon6;
 
-typedef void(*type_0)(_anon1*, int, _anon2*);
-typedef void(*type_1)(_anon1*, int, _anon2*);
-typedef int(*type_4)(_anon1*, int);
-typedef int(*type_6)(_anon1*, int, int, int*);
-typedef void(*type_8)(_anon1*, void(*)(void*, int), void*);
+
+
+
+
+
 typedef void(*type_9)(void*, int);
 typedef void(*type_21)();
 typedef void(*type_22)();
 typedef void(*type_23)();
-typedef void(*type_25)(_anon1*);
-typedef _UUID*(*type_27)(_anon1*);
-typedef void(*type_28)(_anon1*);
-typedef void(*type_30)(_anon1*, int, int, _anon2*);
+
+
+
+
 
 typedef _anon6 type_2[8];
 typedef _anon0 type_3[4];
 typedef char type_5[256];
 typedef short type_7[128];
 typedef char type_10[256];
-typedef _anon1* type_11[2];
+
 typedef char* type_12[0];
 typedef char type_13[471040];
 typedef char type_14[5628];
@@ -40,14 +40,14 @@ typedef unsigned char type_17[8];
 typedef unsigned char type_18[880];
 typedef short type_19[2];
 typedef char type_20[256];
-typedef _anon1* type_24[2];
-typedef _anon1* type_26[2];
+
+
 typedef char type_29[256];
 typedef _anon5 type_31[16];
 
-struct _anon0
+struct _anon0 // ADXWRAP_ADXT_INFO
 {
-	_adx_talk* Handle;
+	ADXT Handle;
 	unsigned char* pAdxTWork;
 	int WorkSize;
 	unsigned int Flag;
@@ -65,70 +65,70 @@ struct _anon0
 	float PanLast;
 };
 
-struct _anon1
-{
-	_sj_vtbl* vtbl;
-};
 
-struct _anon2
-{
-	char* data;
-	int len;
-};
 
-struct _adx_talk
-{
-	char used;
-	char stat;
-	char pmode;
-	char maxnch;
-	void* sjd;
-	void* stm;
-	void* rna;
-	_anon1* sjf;
-	_anon1* sji;
-	_anon1* sjo[2];
-	char* ibuf;
-	int ibuflen;
-	int ibufxlen;
-	short* obuf;
-	int obufsize;
-	int obufdist;
-	int svrfreq;
-	short maxsct;
-	short minsct;
-	short outvol;
-	short outpan[2];
-	int maxdecsmpl;
-	int lpcnt;
-	int lp_skiplen;
-	int trp;
-	int wpos;
-	int mofst;
-	short ercode;
-	int edecpos;
-	short edeccnt;
-	short eshrtcnt;
-	char lpflg;
-	char autorcvr;
-	char fltmode;
-	char execflag;
-	char pstwait_flag;
-	char pstready_flag;
-	char pause_flag;
-	void* amp;
-	_anon1* ampsji[2];
-	_anon1* ampsjo[2];
-	int time_ofst;
-	int lesct;
-	int trpnsmpl;
-	void* lsc;
-	char lnkflg;
-	char rsv;
-	short rsv2;
-	unsigned int tvofst;
-	unsigned int svcnt;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _adxt_sprm
 {
@@ -157,62 +157,62 @@ struct _anon4
 	unsigned char* pInfoWork;
 };
 
-struct _UUID
-{
-	unsigned int Data1;
-	unsigned short Data2;
-	unsigned short Data3;
-	unsigned char Data4[8];
-};
 
-struct _sj_vtbl
-{
-	void(*QueryInterface)();
-	void(*AddRef)();
-	void(*Release)();
-	void(*Destroy)(_anon1*);
-	_UUID*(*GetUuid)(_anon1*);
-	void(*Reset)(_anon1*);
-	void(*GetChunk)(_anon1*, int, int, _anon2*);
-	void(*UngetChunk)(_anon1*, int, _anon2*);
-	void(*PutChunk)(_anon1*, int, _anon2*);
-	int(*GetNumData)(_anon1*, int);
-	int(*IsGetChunk)(_anon1*, int, int, int*);
-	void(*EntryErrFunc)(_anon1*, void(*)(void*, int), void*);
-};
 
-struct _anon5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+struct _anon5 // ADXWRAP_AFS_INFO
 {
 	unsigned char* pInfoPart;
 	unsigned int PartAreaSize;
 	unsigned int Flag;
 };
 
-struct _adx_fs
-{
-	char used;
-	char stat;
-	char sjflag;
-	char rev;
-	void* stm;
-	_anon1* sj;
-	int fnsct;
-	int fsize;
-	int skpos;
-	int rdstpos;
-	int rqsct;
-	int rdsct;
-	char* buf;
-	int bsize;
-	int rqrdsct;
-	int ofst;
-	char fname[256];
-	void* dir;
-};
 
-struct _anon6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+struct _anon6 // ADXWRAP_ADXF_INFO
 {
-	_adx_fs* Handle;
+	ADXF Handle;
 	unsigned char* pAdxFWork;
 	unsigned int Flag;
 	int Mode;

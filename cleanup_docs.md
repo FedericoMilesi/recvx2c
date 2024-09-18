@@ -54,3 +54,12 @@
 | NJS_LIGHT | Found on Katana | `<katana>/ninjastr.h` |
 | NJS_LIGHT_PTR | Found on Katana | `<katana>/ninjastr.h` |
 | NJS_TEXTUREH_VTX | Found on Katana | `<katana>/ninjastr.h` |
+| ADX_TALK | Found on Katana | `<katana>/cri_adxt.h` |
+| ADXT | Found on Katana | `<katana>/cri_adx.h` |
+| SJ_OBJ | Found on Katana | `<katana>/sj.h` |
+| UUID | Found on Katana | `<katana>/sj.h` |
+| _sj_vtbl | Found on Katana | `<katana>/sj.h` |
+| SJCK | Found on Katana | `<katana>/sj.h` |
+| SJ_IF | Found on Katana | `<katana>/sj.h` |
+| ADXF | Found on Katana | `<katana>/cri_adxf.h` |
+| _adx_fs | Found on Katana | `<katana>/cri_adxf.h` |
