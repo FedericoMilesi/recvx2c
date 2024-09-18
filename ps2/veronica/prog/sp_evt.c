@@ -7,7 +7,7 @@ typedef struct _anon4;
 typedef struct _anon5;
 typedef struct _anon6;
 typedef struct _anon7;
-typedef struct _anon8;
+
 
 typedef struct _anon10;
 typedef struct _anon11;
@@ -78,7 +78,7 @@ typedef short type_18[32];
 typedef char* type_20[4];
 typedef _anon0* type_21[128];
 typedef unsigned int type_22[1];
-typedef _anon8 type_23[256];
+
 
 typedef int* type_25[16];
 typedef _anon0* type_26[128];
@@ -462,16 +462,16 @@ struct _anon7
 	int bar_ct[3];
 };
 
-struct _anon8
-{
-	float x;
-	float y;
-	float z;
-	float u;
-	float v;
-	unsigned int bcol;
-	unsigned int ocol;
-};
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -728,7 +728,7 @@ struct _anon11
 	NJS_TEXINFO ren_info;
 	NJS_TEXNAME ren_tex[1];
 	NJS_TEXLIST ren_tlist;
-	_anon8 rpb[256];
+	NJS_TEXTUREH_VTX rpb[256];
 	int ren_n;
 	int ren_idx[4];
 	int wt_nbpt;

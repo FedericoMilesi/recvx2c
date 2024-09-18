@@ -1,4 +1,4 @@
-typedef struct _anon0;
+
 
 
 
@@ -8,7 +8,7 @@ typedef struct tagVU1_STRIP_BUF;
 typedef struct tagNJS_SCRVECTOR;
 
 
-typedef _anon0 type_0[32];
+
 typedef float type_1[4][128];
 typedef float type_2[4];
 typedef float type_3[4][6];
@@ -16,20 +16,20 @@ typedef float type_4[4][64];
 typedef float type_5[4][64];
 typedef tagVU1_STRIP_BUF type_6[256];
 typedef float type_7[4][64];
-typedef _anon0 type_8[4];
+
 typedef float type_9[4][128];
 typedef float type_10[4][64];
 
-struct _anon0
-{
-	float x;
-	float y;
-	float z;
-	float u;
-	float v;
-	unsigned int bcol;
-	unsigned int ocol;
-};
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -120,8 +120,8 @@ unsigned int Ps2_quad_color;
 void njDrawPolygon(NJS_POLYGON_VTX* polygon, int count, int trans);
 void njDrawTextureSub(NJS_TEXTURE_VTX* polygon, int count, int flag);
 void njDrawTexture(NJS_TEXTURE_VTX* polygon, int count, int tex, int flag);
-void njDrawTextureSubH(_anon0* polygon, int count, int flag);
-void njDrawTextureH(_anon0* polygon, int count, int tex, int flag);
+void njDrawTextureSubH(NJS_TEXTUREH_VTX* polygon, int count, int flag);
+void njDrawTextureH(NJS_TEXTUREH_VTX* polygon, int count, int tex, int flag);
 void njDrawPolygon3DEx(NJS_POLYGON_VTX* p, int count, int trans);
 void njDrawPolygon3DExStart(int trans);
 void njDrawPolygonSub3D(NJS_POLYGON_VTX* polygon, int count, int flag);
@@ -135,8 +135,8 @@ void njDrawTextureSub3D1P(NJS_TEXTURE_VTX* polygon, int count, int flag);
 void njDrawTexture3DExSetData(NJS_TEXTURE_VTX* p, int count);
 void njDrawTexture3DExSetData1P(NJS_TEXTURE_VTX* p, int count);
 void njDrawTexture3DExEnd();
-void njDrawTextureSub3DH(_anon0* polygon, int count, int flag);
-void njDrawTexture3DHEx(_anon0* p, int count, int trans);
+void njDrawTextureSub3DH(NJS_TEXTUREH_VTX* polygon, int count, int flag);
+void njDrawTexture3DHEx(NJS_TEXTUREH_VTX* p, int count, int trans);
 void njQuadTextureStart(int trans);
 void njQuadTextureEnd();
 void njSetQuadTexture(int texid, unsigned int col);
@@ -252,7 +252,7 @@ void njDrawTexture(NJS_TEXTURE_VTX* polygon, int count, int tex, int flag)
 
 // 
 // Start address: 0x2de490
-void njDrawTextureSubH(_anon0* polygon, int count, int flag)
+void njDrawTextureSubH(NJS_TEXTUREH_VTX* polygon, int count, int flag)
 {
 	unsigned int i;
 	float bp[4];
@@ -300,10 +300,10 @@ void njDrawTextureSubH(_anon0* polygon, int count, int flag)
 
 // 
 // Start address: 0x2de610
-void njDrawTextureH(_anon0* polygon, int count, int tex, int flag)
+void njDrawTextureH(NJS_TEXTUREH_VTX* polygon, int count, int tex, int flag)
 {
 	int i;
-	_anon0 poly[32];
+	NJS_TEXTUREH_VTX poly[32];
 	// Line 304, Address: 0x2de610, Func Offset: 0
 	// Line 317, Address: 0x2de628, Func Offset: 0x18
 	// Line 318, Address: 0x2de654, Func Offset: 0x44
@@ -544,7 +544,7 @@ void njDrawTexture3DExEnd()
 
 // 
 // Start address: 0x2ded70
-void njDrawTextureSub3DH(_anon0* polygon, int count, int flag)
+void njDrawTextureSub3DH(NJS_TEXTUREH_VTX* polygon, int count, int flag)
 {
 	tagNJS_SCRVECTOR scr;
 	unsigned int i;
@@ -586,10 +586,10 @@ void njDrawTextureSub3DH(_anon0* polygon, int count, int flag)
 
 // 
 // Start address: 0x2deed0
-void njDrawTexture3DHEx(_anon0* p, int count, int trans)
+void njDrawTexture3DHEx(NJS_TEXTUREH_VTX* p, int count, int trans)
 {
 	int i;
-	_anon0 poly[4];
+	NJS_TEXTUREH_VTX poly[4];
 	// Line 854, Address: 0x2deed0, Func Offset: 0
 	// Line 865, Address: 0x2deee4, Func Offset: 0x14
 	// Line 866, Address: 0x2def0c, Func Offset: 0x3c

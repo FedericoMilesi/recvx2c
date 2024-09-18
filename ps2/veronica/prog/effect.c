@@ -7,7 +7,7 @@ typedef struct _anon4;
 typedef struct _anon5;
 typedef struct _anon6;
 typedef struct _anon7;
-typedef struct _anon8;
+
 typedef struct BH_PWORK;
 
 typedef struct _anon10;
@@ -81,7 +81,7 @@ typedef short type_17[32];
 
 typedef _anon0* type_19[128];
 typedef unsigned int type_20[1];
-typedef _anon8 type_21[256];
+
 
 typedef int* type_23[16];
 typedef _anon0* type_24[128];
@@ -586,7 +586,7 @@ struct _anon4
 	NJS_TEXINFO ren_info;
 	NJS_TEXNAME ren_tex[1];
 	NJS_TEXLIST ren_tlist;
-	_anon8 rpb[256];
+	NJS_TEXTUREH_VTX rpb[256];
 	int ren_n;
 	int ren_idx[4];
 	int wt_nbpt;
@@ -867,16 +867,16 @@ struct _anon7
 	float amb_b[4];
 };
 
-struct _anon8
-{
-	float x;
-	float y;
-	float z;
-	float u;
-	float v;
-	unsigned int bcol;
-	unsigned int ocol;
-};
+
+
+
+
+
+
+
+
+
+
 
 struct BH_PWORK
 {
@@ -2723,7 +2723,7 @@ void bhDrawThlEffect3D(unsigned int* owp, int ct)
 	NJS_POINT3 pb;
 	NJS_POINT3 pa;
 	_anon0* op;
-	_anon8* tvp;
+	NJS_TEXTUREH_VTX* tvp;
 	// Line 1936, Address: 0x21e650, Func Offset: 0
 	// Line 1943, Address: 0x21e664, Func Offset: 0x14
 	// Line 1936, Address: 0x21e668, Func Offset: 0x18

@@ -19,7 +19,7 @@ typedef struct _anon11;
 
 typedef struct _anon17;
 
-typedef struct _anon19;
+
 
 typedef struct tagSYSLOAD_SCREEN;
 
@@ -145,7 +145,7 @@ typedef short type_70[32];
 typedef unsigned int type_73[2];
 typedef float type_74[4];
 typedef _anon10 type_75[16];
-typedef _anon19 type_76[256];
+
 typedef int type_77[3];
 typedef char type_78[8];
 typedef float type_79[4];
@@ -768,16 +768,16 @@ struct _anon17
 
 
 
-struct _anon19
-{
-	float x;
-	float y;
-	float z;
-	float u;
-	float v;
-	unsigned int bcol;
-	unsigned int ocol;
-};
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1427,7 +1427,7 @@ struct _anon40
 	NJS_TEXINFO ren_info;
 	NJS_TEXNAME ren_tex[1];
 	NJS_TEXLIST ren_tlist;
-	_anon19 rpb[256];
+	NJS_TEXTUREH_VTX rpb[256];
 	int ren_n;
 	int ren_idx[4];
 	int wt_nbpt;

@@ -31,7 +31,7 @@ typedef struct _anon21;
 
 typedef struct tagCONFIGFILE;
 
-typedef struct _anon24;
+
 typedef struct _anon25;
 typedef struct tagMEMORYCARDSTATE;
 
@@ -92,7 +92,7 @@ typedef float type_43[4];
 typedef char type_44[12];
 typedef char type_45[8];
 
-typedef _anon24 type_47[256];
+
 typedef char type_48[12];
 typedef char type_49[13];
 typedef int type_50[4];
@@ -738,7 +738,7 @@ struct _anon11
 	NJS_TEXINFO ren_info;
 	NJS_TEXNAME ren_tex[1];
 	NJS_TEXLIST ren_tlist;
-	_anon24 rpb[256];
+	NJS_TEXTUREH_VTX rpb[256];
 	int ren_n;
 	int ren_idx[4];
 	int wt_nbpt;
@@ -1283,16 +1283,16 @@ struct tagCONFIGFILE
 
 
 
-struct _anon24
-{
-	float x;
-	float y;
-	float z;
-	float u;
-	float v;
-	unsigned int bcol;
-	unsigned int ocol;
-};
+
+
+
+
+
+
+
+
+
+
 
 struct _anon25
 {

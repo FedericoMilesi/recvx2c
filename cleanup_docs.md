@@ -53,3 +53,4 @@
 | NJS_LIGHT_ATTR | Found on Katana | `<katana>/ninjastr.h` |
 | NJS_LIGHT | Found on Katana | `<katana>/ninjastr.h` |
 | NJS_LIGHT_PTR | Found on Katana | `<katana>/ninjastr.h` |
+| NJS_TEXTUREH_VTX | Found on Katana | `<katana>/ninjastr.h` |

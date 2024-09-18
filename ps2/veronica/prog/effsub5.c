@@ -13,7 +13,7 @@ typedef struct tagEFF5SNOWRECT;
 typedef struct _anon6;
 typedef struct _anon7;
 typedef struct _anon8;
-typedef struct _anon9;
+
 typedef struct _anon10;
 
 typedef struct _anon12;
@@ -89,7 +89,7 @@ typedef short type_23[32];
 typedef _anon0* type_25[128];
 typedef float type_26[3];
 typedef unsigned int type_27[1];
-typedef _anon9 type_28[256];
+
 
 typedef int* type_30[16];
 typedef _anon0* type_31[128];
@@ -670,7 +670,7 @@ struct _anon5
 	NJS_TEXINFO ren_info;
 	NJS_TEXNAME ren_tex[1];
 	NJS_TEXLIST ren_tlist;
-	_anon9 rpb[256];
+	NJS_TEXTUREH_VTX rpb[256];
 	int ren_n;
 	int ren_idx[4];
 	int wt_nbpt;
@@ -979,16 +979,16 @@ struct _anon8
 	float amb_b[4];
 };
 
-struct _anon9
-{
-	float x;
-	float y;
-	float z;
-	float u;
-	float v;
-	unsigned int bcol;
-	unsigned int ocol;
-};
+
+
+
+
+
+
+
+
+
+
 
 struct _anon10
 {
@@ -3020,7 +3020,7 @@ void bhEff221(_anon0* op)
 	float v;
 	float u;
 	int pt;
-	_anon9* tvp;
+	NJS_TEXTUREH_VTX* tvp;
 	NJS_POINT3 vc0;
 	// Line 2286, Address: 0x255a40, Func Offset: 0
 	// Line 2292, Address: 0x255a50, Func Offset: 0x10
@@ -3194,7 +3194,7 @@ void bhDrawEff221(_anon0* op)
 	float it;
 	NJS_POINT3 vc1;
 	NJS_POINT3 vc0;
-	_anon9* tvp;
+	NJS_TEXTUREH_VTX* tvp;
 	// Line 2448, Address: 0x2560a0, Func Offset: 0
 	// Line 2456, Address: 0x2560b0, Func Offset: 0x10
 	// Line 2459, Address: 0x2560c0, Func Offset: 0x20

@@ -32,7 +32,7 @@ typedef struct tagSELECTFILEINFO;
 typedef struct tagSELECTFILEWINDOW;
 
 
-typedef struct _anon25;
+
 typedef struct _anon26;
 
 
@@ -89,7 +89,7 @@ typedef _anon0* type_39[32];
 typedef float type_40[4];
 typedef char type_41[8];
 
-typedef _anon25 type_43[256];
+
 typedef int type_44[4];
 
 typedef int type_46[4];
@@ -601,7 +601,7 @@ struct _anon3
 	NJS_TEXINFO ren_info;
 	NJS_TEXNAME ren_tex[1];
 	NJS_TEXLIST ren_tlist;
-	_anon25 rpb[256];
+	NJS_TEXTUREH_VTX rpb[256];
 	int ren_n;
 	int ren_idx[4];
 	int wt_nbpt;
@@ -1300,16 +1300,16 @@ struct tagSELECTFILEWINDOW
 
 
 
-struct _anon25
-{
-	float x;
-	float y;
-	float z;
-	float u;
-	float v;
-	unsigned int bcol;
-	unsigned int ocol;
-};
+
+
+
+
+
+
+
+
+
+
 
 struct _anon26
 {

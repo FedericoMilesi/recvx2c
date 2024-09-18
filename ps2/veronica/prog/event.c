@@ -10,7 +10,7 @@ typedef struct _anon6;
 typedef struct _anon7;
 typedef struct _anon8;
 typedef struct _anon9;
-typedef struct _anon10;
+
 typedef struct _anon11;
 
 typedef struct _anon13;
@@ -86,7 +86,7 @@ typedef short type_25[32];
 
 typedef _anon0* type_27[128];
 typedef unsigned int type_28[1];
-typedef _anon10 type_29[256];
+
 
 typedef int* type_31[16];
 typedef float type_32[5];
@@ -619,16 +619,16 @@ struct _anon9
 	_anon51 keyf[16];
 };
 
-struct _anon10
-{
-	float x;
-	float y;
-	float z;
-	float u;
-	float v;
-	unsigned int bcol;
-	unsigned int ocol;
-};
+
+
+
+
+
+
+
+
+
+
 
 struct _anon11
 {
@@ -1031,7 +1031,7 @@ struct _anon15
 	NJS_TEXINFO ren_info;
 	NJS_TEXNAME ren_tex[1];
 	NJS_TEXLIST ren_tlist;
-	_anon10 rpb[256];
+	NJS_TEXTUREH_VTX rpb[256];
 	int ren_n;
 	int ren_idx[4];
 	int wt_nbpt;
@@ -7595,7 +7595,7 @@ unsigned int bhFogParameterStart()
 // Start address: 0x1631d0
 unsigned int bhEffUVSet2()
 {
-	_anon10* tvp;
+	NJS_TEXTUREH_VTX* tvp;
 	int v4;
 	int v3;
 	int v2;

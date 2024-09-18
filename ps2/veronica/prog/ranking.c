@@ -5,7 +5,7 @@ typedef struct tagCONFIGFILE;
 
 
 typedef struct _anon3;
-typedef struct _anon4;
+
 typedef struct _anon5;
 typedef struct tagSELECTFILEWINDOW;
 typedef struct tagMEMORYCARDPORT;
@@ -72,7 +72,7 @@ typedef int type_19[8];
 typedef _anon0* type_20[128];
 typedef tagMEMORYCARDPORT type_21[2];
 typedef unsigned int type_22[1];
-typedef _anon4 type_23[256];
+
 
 typedef int* type_25[16];
 typedef _anon0* type_26[128];
@@ -382,16 +382,16 @@ struct _anon3
 	unsigned short* atrP;
 };
 
-struct _anon4
-{
-	float x;
-	float y;
-	float z;
-	float u;
-	float v;
-	unsigned int bcol;
-	unsigned int ocol;
-};
+
+
+
+
+
+
+
+
+
+
 
 struct _anon5
 {
@@ -837,7 +837,7 @@ struct _anon13
 	NJS_TEXINFO ren_info;
 	NJS_TEXNAME ren_tex[1];
 	NJS_TEXLIST ren_tlist;
-	_anon4 rpb[256];
+	NJS_TEXTUREH_VTX rpb[256];
 	int ren_n;
 	int ren_idx[4];
 	int wt_nbpt;

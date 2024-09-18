@@ -9,7 +9,7 @@ typedef struct _anon5;
 typedef struct _anon6;
 typedef struct _anon7;
 typedef struct _anon8;
-typedef struct _anon9;
+
 typedef struct _anon10;
 typedef struct _anon11;
 
@@ -97,7 +97,7 @@ typedef _anon56 type_23[3];
 typedef _anon0* type_24[128];
 typedef unsigned int type_25[1];
 typedef int type_26[4];
-typedef _anon9 type_28[256];
+
 
 typedef int* type_30[16];
 typedef void(*type_31)(BH_PWORK*)[1];
@@ -597,16 +597,16 @@ struct _anon8
 	_anon53 keyf[16];
 };
 
-struct _anon9
-{
-	float x;
-	float y;
-	float z;
-	float u;
-	float v;
-	unsigned int bcol;
-	unsigned int ocol;
-};
+
+
+
+
+
+
+
+
+
+
 
 struct _anon10
 {
@@ -1108,7 +1108,7 @@ struct _anon21
 	NJS_TEXINFO ren_info;
 	NJS_TEXNAME ren_tex[1];
 	NJS_TEXLIST ren_tlist;
-	_anon9 rpb[256];
+	NJS_TEXTUREH_VTX rpb[256];
 	int ren_n;
 	int ren_idx[4];
 	int wt_nbpt;

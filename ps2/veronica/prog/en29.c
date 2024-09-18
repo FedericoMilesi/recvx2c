@@ -10,7 +10,7 @@ typedef struct _eaw_typ;
 typedef struct _anon5;
 typedef struct _anon6;
 typedef struct _anon7;
-typedef struct _anon8;
+
 typedef enum _enum_0;
 
 typedef enum _enum_1;
@@ -81,7 +81,7 @@ typedef short type_17[32];
 typedef _anon0* type_19[128];
 typedef _anon1 type_20[4];
 typedef unsigned int type_21[1];
-typedef _anon8 type_22[256];
+
 
 typedef int* type_24[16];
 typedef _anon0* type_25[128];
@@ -791,7 +791,7 @@ struct _anon5
 	NJS_TEXINFO ren_info;
 	NJS_TEXNAME ren_tex[1];
 	NJS_TEXLIST ren_tlist;
-	_anon8 rpb[256];
+	NJS_TEXTUREH_VTX rpb[256];
 	int ren_n;
 	int ren_idx[4];
 	int wt_nbpt;
@@ -989,16 +989,16 @@ struct _anon7
 	void* prgP;
 };
 
-struct _anon8
-{
-	float x;
-	float y;
-	float z;
-	float u;
-	float v;
-	unsigned int bcol;
-	unsigned int ocol;
-};
+
+
+
+
+
+
+
+
+
+
 
 enum _enum_0
 {

@@ -14,7 +14,7 @@ typedef struct _tag_wrk_typ;
 typedef struct _anon10;
 typedef enum _enum_0;
 
-typedef struct _anon12;
+
 typedef struct _func_wrk_typ;
 typedef enum _enum_1;
 typedef struct _anon13;
@@ -126,7 +126,7 @@ typedef _anon0* type_27[128];
 
 
 typedef unsigned int type_30[1];
-typedef _anon12 type_31[256];
+
 
 typedef int* type_33[16];
 typedef _anon0* type_34[128];
@@ -515,16 +515,16 @@ enum _enum_0
 
 
 
-struct _anon12
-{
-	float x;
-	float y;
-	float z;
-	float u;
-	float v;
-	unsigned int bcol;
-	unsigned int ocol;
-};
+
+
+
+
+
+
+
+
+
+
 
 struct _func_wrk_typ
 {
@@ -1253,7 +1253,7 @@ struct _anon31
 	NJS_TEXINFO ren_info;
 	NJS_TEXNAME ren_tex[1];
 	NJS_TEXLIST ren_tlist;
-	_anon12 rpb[256];
+	NJS_TEXTUREH_VTX rpb[256];
 	int ren_n;
 	int ren_idx[4];
 	int wt_nbpt;

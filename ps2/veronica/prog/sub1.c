@@ -49,7 +49,7 @@ typedef struct _anon43;
 
 
 
-typedef struct _anon49;
+
 
 
 typedef struct _anon52;
@@ -71,7 +71,7 @@ typedef _anon0* type_3[512];
 typedef char type_4[32];
 typedef unsigned int type_5[32];
 typedef _anon0* type_6[128];
-typedef _anon49 type_7[4];
+
 typedef unsigned int type_8[4];
 typedef _anon0* type_9[128];
 typedef char type_10[64];
@@ -135,7 +135,7 @@ typedef short type_65[32];
 typedef _anon3 type_68[8];
 
 typedef _anon7 type_70[8];
-typedef _anon49 type_71[256];
+
 typedef float type_72[4];
 typedef _anon24 type_73[16];
 
@@ -158,7 +158,7 @@ typedef float type_90[4];
 typedef float type_91[3];
 typedef unsigned short type_92[5];
 typedef float type_93[3][20];
-typedef _anon49 type_94[4];
+
 typedef unsigned short type_95[5][3];
 typedef float type_96[4];
 typedef _anon3 type_97[24];
@@ -241,7 +241,7 @@ typedef unsigned short type_173[5];
 typedef _anon3 type_174[16];
 typedef unsigned short type_175[5];
 typedef short type_176[2];
-typedef _anon49 type_177[4];
+
 typedef short type_178[5];
 typedef short type_179[2][3];
 typedef char type_180[16];
@@ -1357,7 +1357,7 @@ struct _anon38
 	NJS_TEXINFO ren_info;
 	NJS_TEXNAME ren_tex[1];
 	NJS_TEXLIST ren_tlist;
-	_anon49 rpb[256];
+	NJS_TEXTUREH_VTX rpb[256];
 	int ren_n;
 	int ren_idx[4];
 	int wt_nbpt;
@@ -1759,16 +1759,16 @@ struct _anon43
 
 
 
-struct _anon49
-{
-	float x;
-	float y;
-	float z;
-	float u;
-	float v;
-	unsigned int bcol;
-	unsigned int ocol;
-};
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7600,7 +7600,7 @@ void PulseFadeAnim()
 // Start address: 0x2a8b30
 void PulseHealAnim(NJS_POINT2* pos)
 {
-	_anon49 poly[4];
+	NJS_TEXTUREH_VTX poly[4];
 	_anon29* pw;
 	// Line 7678, Address: 0x2a8b30, Func Offset: 0
 	// Line 7682, Address: 0x2a8b38, Func Offset: 0x8
@@ -7674,7 +7674,7 @@ void PulseHealAnim(NJS_POINT2* pos)
 // Start address: 0x2a8d40
 void PulsePoisonHealAnim(NJS_POINT2* pos)
 {
-	_anon49 poly[4];
+	NJS_TEXTUREH_VTX poly[4];
 	_anon29* pw;
 	// Line 7739, Address: 0x2a8d40, Func Offset: 0
 	// Line 7744, Address: 0x2a8d48, Func Offset: 0x8
@@ -7753,7 +7753,7 @@ void PulsePoisonHealAnim(NJS_POINT2* pos)
 void Pulse00(NJS_POINT2* pos, NJS_COLOR* texuv)
 {
 	unsigned short i;
-	_anon49 poly[4];
+	NJS_TEXTUREH_VTX poly[4];
 	// Line 7801, Address: 0x2a8f60, Func Offset: 0
 	// Line 7808, Address: 0x2a8f94, Func Offset: 0x34
 	// Line 7810, Address: 0x2a8f9c, Func Offset: 0x3c

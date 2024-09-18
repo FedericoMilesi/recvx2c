@@ -6,7 +6,7 @@ typedef struct _anon3;
 typedef struct _anon4;
 
 typedef struct _anon5;
-typedef struct _anon6;
+
 
 typedef struct _anon8;
 typedef struct _anon9;
@@ -106,7 +106,7 @@ typedef _anon53 type_34[24];
 typedef unsigned int type_35[1];
 
 typedef int* type_37[16];
-typedef _anon6 type_38[256];
+
 typedef _anon52 type_39[16];
 
 
@@ -592,16 +592,16 @@ struct _anon5
 	int cb_blood;
 };
 
-struct _anon6
-{
-	float x;
-	float y;
-	float z;
-	float u;
-	float v;
-	unsigned int bcol;
-	unsigned int ocol;
-};
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -841,7 +841,7 @@ struct _anon8
 	NJS_TEXINFO ren_info;
 	NJS_TEXNAME ren_tex[1];
 	NJS_TEXLIST ren_tlist;
-	_anon6 rpb[256];
+	NJS_TEXTUREH_VTX rpb[256];
 	int ren_n;
 	int ren_idx[4];
 	int wt_nbpt;
