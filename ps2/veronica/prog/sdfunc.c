@@ -4872,13 +4872,13 @@ void ExecAdjustDisplay() { // Line 4929, Address: 0x297d70, Func Offset: 0
 } // Line 4934, Address: 0x297da8, Func Offset: 0x38
 
 /* empty */
-void InitPlayLogSystem() { } // Line 4958, Address: 0x297dc0
+void InitPlayLogSystem() { } // Line 4958, Address: 0x297dc0, Func Offset: 0
 
 /* empty */
-void ExitPlayLogSystem() { } // Line 4970, Address: 0x297dd0
+void ExitPlayLogSystem() { } // Line 4970, Address: 0x297dd0, Func Offset: 0
 
 /* empty */
-void ReadPlayLog() { } // Line 4987, Address: 0x297de0
+void ReadPlayLog() { } // Line 4987, Address: 0x297de0, Func Offset: 0
 
 /* empty */
-void WritePlayLog() { } // Line 5008, Address: 0x297df0
+void WritePlayLog() { } // Line 5008, Address: 0x297df0, Func Offset: 0
