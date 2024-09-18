@@ -4845,12 +4845,9 @@ void StartVibrationEx(int AtrbId, int VibNo)
 	// Func End, Address: 0x297d04, Func Offset: 0x14
 }
 
-// 
-// Start address: 0x297d10
-void StopVibrationBasic(int PortNo)
-{
-	// Line 4897, Address: 0x297d10, Func Offset: 0
-	// Func End, Address: 0x297d24, Func Offset: 0x14
+/* 100% match */
+void StopVibrationBasic(int PortNo) { // Line 4897, Address: 0x297d10, Func Offset: 0
+    StopVibration((PortNo * 6) + 2);
 }
 
 // 
