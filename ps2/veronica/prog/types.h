@@ -1101,11 +1101,11 @@ typedef struct Unknown7 {
 Unknown7;
 
 
-typedef struct Unknown6 {
-	NJS_POINT3 c;
-	float r;
-}
-Unknown6;
+
+
+
+
+
 
 
 typedef struct Unknown5 {
@@ -1121,13 +1121,13 @@ typedef struct Unknown4 {
 	unsigned int obj_num;
 	void* datP;
 	NJS_OBJECT* objP;
-	TextureList* texP;
+	NJS_TEXLIST* texP;
 	Unknown5* owP;
 }
 Unknown4;
 
 
-typedef struct Unknown3 {
+typedef struct Unknown3 { // Possible NJS_MDATA2 variant
 	void* p[2];
 }
 Unknown3;
@@ -1138,7 +1138,7 @@ typedef struct Unknown2 {
 	unsigned int obj_num;
 	unsigned int frm_num;
 	void* datP;
-	Unknown3* md2P;
+	Unknown3* md2P; // Possible NJS_MDATA2 variant
 	unsigned short* atrP;
 }
 Unknown2;
@@ -1194,7 +1194,7 @@ typedef struct Unknown1 {
 	unsigned int Dummy[1];
 	int* skp[16];
 	NJS_OBJECT* mbp[16];
-	TextureList* txp[16];
+	NJS_TEXLIST* txp[16];
 	Unknown4 mdl[16];
 	Unknown4* mlwP;
 	unsigned int mdl_no;
@@ -1247,7 +1247,7 @@ typedef struct Unknown1 {
 	int ct2;
 	int ct3;
 	unsigned char* objbak;
-	Unknown6 cspr;
+	NJS_SPHERE cspr;
 	int pn;
 	NJS_POLYGON_VTX* pvp;
 	NJS_TEXTURE_VTX* tvp;
@@ -1319,7 +1319,7 @@ typedef struct BH_PWORK {
 	unsigned int Dummy[1];
 	int* skp[16];
 	NJS_OBJECT* mbp[16];
-	TextureList* txp[16];
+	NJS_TEXLIST* txp[16];
 	Unknown4 mdl[16];
 	Unknown4* mlwP;
 	unsigned int mdl_no;
@@ -1476,11 +1476,11 @@ typedef struct System {
 	char pos_nob;
 	char rcase_b;
 	unsigned int en_flg[4];
-	TextureList* et_lp[100][16][16];
-	TextureList* ot_lp[1300];
-	TextureList* it_lp[200];
+	NJS_TEXLIST* et_lp[100][16][16];
+	NJS_TEXLIST* ot_lp[1300];
+	NJS_TEXLIST* it_lp[200];
 	int eft_n;
-	TextureList* eft_lp[8];
+	NJS_TEXLIST* eft_lp[8];
 	int loop_ct;
 	int loop_now;
 	int cng_pid;
@@ -1575,17 +1575,17 @@ typedef struct System {
 	void* mes_tp;
 	short txr_n;
 	short txr_ct;
-	TextureList* txlp[256];
+	NJS_TEXLIST* txlp[256];
 	unsigned char* txdp[256];
 	short txloff[256];
 	short txb_ct;
 	short txb_n;
 	short txb[256];
-	TextureList* txblp[256];
+	NJS_TEXLIST* txblp[256];
 	Unknown7 txbp[256];
 	unsigned char* ef_psp;
 	NJS_TEXNAME ef_tex[450];
-	TextureList ef_tlist;
+	NJS_TEXLIST ef_tlist;
 	Unknown8 ef;
 	short efid[256];
 	Unknown4 efm[450];
@@ -1641,7 +1641,7 @@ typedef struct System {
 	unsigned int ren_gid;
 	NJS_TEXINFO ren_info;
 	NJS_TEXNAME ren_tex[1];
-	TextureList ren_tlist;
+	NJS_TEXLIST ren_tlist;
 	Unknown9 rpb[256];
 	int ren_n;
 	int ren_idx[4];
@@ -1741,7 +1741,7 @@ typedef struct System {
 	void* sb_rdp;
 	void* sb_mlb;
 	void* sb_ppp;
-	TextureList* sb_tlist;
+	NJS_TEXLIST* sb_tlist;
 	int ddmd;
 	Door door;
 	int mpmd;
