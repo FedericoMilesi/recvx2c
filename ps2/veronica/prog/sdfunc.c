@@ -4805,8 +4805,8 @@ int PlayMovieMain(int parameter /* UNUSED */)
 }
 
 /* 100% match */
-void SetEventVibrationMode(int Mode) { // Line 4840, Address: 0x297c10
-    EventVibrationMode = Mode; // Line 4841, Address: 0x297c14
+void SetEventVibrationMode(int Mode) { // Line 4840, Address: 0x297c10, Func Offset: 0
+    EventVibrationMode = Mode; // Line 4841, Address: 0x297c14, Func Offset: 0x4
 }
 
 // 
