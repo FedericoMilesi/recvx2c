@@ -28,7 +28,7 @@ typedef struct tagCNK_LIGHTING;
 
 typedef struct _anon21;
 typedef struct _anon22;
-typedef struct _anon23;
+
 typedef struct _anon24;
 typedef struct _anon25;
 typedef struct _anon26;
@@ -76,7 +76,7 @@ typedef float type_37[3];
 struct _anon0
 {
 	void* texaddr;
-	_anon23 texsurface;
+	NJS_TEXSURFACE texsurface;
 };
 
 struct tagCHUNK_HEAD
@@ -409,19 +409,19 @@ struct _anon22
 	float clipV[4];
 };
 
-struct _anon23
-{
-	unsigned int Type;
-	unsigned int BitDepth;
-	unsigned int PixelFormat;
-	unsigned int nWidth;
-	unsigned int nHeight;
-	unsigned int TextureSize;
-	unsigned int fSurfaceFlags;
-	unsigned int* pSurface;
-	unsigned int* pVirtual;
-	unsigned int* pPhysical;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon24
 {

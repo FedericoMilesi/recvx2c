@@ -21,7 +21,7 @@ typedef struct _anon18;
 typedef struct _anon19;
 typedef struct _anon20;
 typedef struct _anon21;
-typedef struct _anon22;
+
 typedef struct _anon23;
 typedef struct _anon24;
 typedef struct _anon25;
@@ -1143,19 +1143,19 @@ struct _anon21
 	NJS_TEXTURE_VTX VtxBuf[4];
 };
 
-struct _anon22
-{
-	unsigned int Type;
-	unsigned int BitDepth;
-	unsigned int PixelFormat;
-	unsigned int nWidth;
-	unsigned int nHeight;
-	unsigned int TextureSize;
-	unsigned int fSurfaceFlags;
-	unsigned int* pSurface;
-	unsigned int* pVirtual;
-	unsigned int* pPhysical;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon23
 {
@@ -1597,7 +1597,7 @@ struct _anon38
 struct _anon39
 {
 	void* texaddr;
-	_anon22 texsurface;
+	NJS_TEXSURFACE texsurface;
 };
 
 struct _anon40

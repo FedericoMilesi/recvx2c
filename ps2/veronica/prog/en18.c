@@ -8,7 +8,7 @@ typedef struct BH_PWORK;
 typedef struct _anon5;
 typedef struct _anon6;
 typedef struct _anon7;
-typedef struct _anon8;
+
 typedef struct _anon9;
 typedef struct _anon10;
 
@@ -513,19 +513,19 @@ struct _anon7
 	char exef;
 };
 
-struct _anon8
-{
-	unsigned int Type;
-	unsigned int BitDepth;
-	unsigned int PixelFormat;
-	unsigned int nWidth;
-	unsigned int nHeight;
-	unsigned int TextureSize;
-	unsigned int fSurfaceFlags;
-	unsigned int* pSurface;
-	unsigned int* pVirtual;
-	unsigned int* pPhysical;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon9
 {
@@ -586,7 +586,7 @@ struct _anon12
 struct _anon13
 {
 	void* texaddr;
-	_anon8 texsurface;
+	NJS_TEXSURFACE texsurface;
 };
 
 struct _anon14

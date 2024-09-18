@@ -52,7 +52,7 @@ typedef struct _anon48;
 typedef struct _anon49;
 typedef struct _anon50;
 typedef struct _anon51;
-typedef struct _anon52;
+
 typedef struct _anon53;
 typedef struct _anon54;
 typedef struct _anon55;
@@ -178,7 +178,7 @@ typedef _anon39* type_114[32];
 struct _anon0
 {
 	void* texaddr;
-	_anon52 texsurface;
+	NJS_TEXSURFACE texsurface;
 };
 
 struct npobj
@@ -1525,19 +1525,19 @@ struct _anon51
 	};
 };
 
-struct _anon52
-{
-	unsigned int Type;
-	unsigned int BitDepth;
-	unsigned int PixelFormat;
-	unsigned int nWidth;
-	unsigned int nHeight;
-	unsigned int TextureSize;
-	unsigned int fSurfaceFlags;
-	unsigned int* pSurface;
-	unsigned int* pVirtual;
-	unsigned int* pPhysical;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon53
 {

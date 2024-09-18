@@ -7,7 +7,7 @@ typedef struct _anon2;
 
 typedef struct _anon5;
 typedef struct _anon6;
-typedef struct _anon7;
+
 typedef struct _anon8;
 typedef struct _anon9;
 typedef struct _anon10;
@@ -398,19 +398,19 @@ struct _anon6
 	unsigned int ocol;
 };
 
-struct _anon7
-{
-	unsigned int Type;
-	unsigned int BitDepth;
-	unsigned int PixelFormat;
-	unsigned int nWidth;
-	unsigned int nHeight;
-	unsigned int TextureSize;
-	unsigned int fSurfaceFlags;
-	unsigned int* pSurface;
-	unsigned int* pVirtual;
-	unsigned int* pPhysical;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon8
 {
@@ -528,7 +528,7 @@ struct _anon17
 struct _anon18
 {
 	void* texaddr;
-	_anon7 texsurface;
+	NJS_TEXSURFACE texsurface;
 };
 
 struct _anon19

@@ -71,7 +71,7 @@ typedef struct _anon64;
 typedef struct _anon65;
 typedef struct _anon66;
 typedef struct _anon67;
-typedef struct _anon68;
+
 
 typedef void(*type_52)(void*);
 typedef void(*type_175)(int);
@@ -655,7 +655,7 @@ struct _anon17
 struct _anon18
 {
 	void* texaddr;
-	_anon68 texsurface;
+	NJS_TEXSURFACE texsurface;
 };
 
 struct _anon19
@@ -1943,19 +1943,19 @@ struct _anon67
 	float r2;
 };
 
-struct _anon68
-{
-	unsigned int Type;
-	unsigned int BitDepth;
-	unsigned int PixelFormat;
-	unsigned int nWidth;
-	unsigned int nHeight;
-	unsigned int TextureSize;
-	unsigned int fSurfaceFlags;
-	unsigned int* pSurface;
-	unsigned int* pVirtual;
-	unsigned int* pPhysical;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 int PatId[4];
 _anon46 SoundAfsPatDef[8];

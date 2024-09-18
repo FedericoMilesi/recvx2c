@@ -23,7 +23,7 @@ typedef struct BH_PWORK;
 typedef struct _anon17;
 typedef struct tagMEMORYCARDSTATE;
 
-typedef struct _anon19;
+
 typedef struct _anon20;
 
 typedef struct _anon22;
@@ -1134,19 +1134,19 @@ struct tagMEMORYCARDSTATE
 
 
 
-struct _anon19
-{
-	unsigned int Type;
-	unsigned int BitDepth;
-	unsigned int PixelFormat;
-	unsigned int nWidth;
-	unsigned int nHeight;
-	unsigned int TextureSize;
-	unsigned int fSurfaceFlags;
-	unsigned int* pSurface;
-	unsigned int* pVirtual;
-	unsigned int* pPhysical;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon20
 {
@@ -1247,7 +1247,7 @@ struct tagSELECTFILEINFO
 struct _anon24
 {
 	void* texaddr;
-	_anon19 texsurface;
+	NJS_TEXSURFACE texsurface;
 };
 
 struct _anon25

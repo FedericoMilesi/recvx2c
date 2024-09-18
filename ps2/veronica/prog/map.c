@@ -19,7 +19,7 @@ typedef struct _func_wrk_typ;
 typedef enum _enum_1;
 typedef struct _anon13;
 
-typedef struct _anon15;
+
 typedef struct _anon16;
 typedef struct _anon17;
 typedef struct _anon18;
@@ -568,19 +568,19 @@ struct _anon13
 
 
 
-struct _anon15
-{
-	unsigned int Type;
-	unsigned int BitDepth;
-	unsigned int PixelFormat;
-	unsigned int nWidth;
-	unsigned int nHeight;
-	unsigned int TextureSize;
-	unsigned int fSurfaceFlags;
-	unsigned int* pSurface;
-	unsigned int* pVirtual;
-	unsigned int* pPhysical;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon16
 {
@@ -1500,7 +1500,7 @@ struct _anon36
 struct _anon37
 {
 	void* texaddr;
-	_anon15 texsurface;
+	NJS_TEXSURFACE texsurface;
 };
 
 struct _anon38
