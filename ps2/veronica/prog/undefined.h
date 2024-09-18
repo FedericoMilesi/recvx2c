@@ -26,7 +26,7 @@ typedef struct _anon19;
 
 typedef struct _anon22;
 typedef struct _anon23;
-typedef struct _anon24;
+
 typedef struct _anon25;
 
 typedef struct _anon27;
@@ -95,7 +95,7 @@ typedef char type_39[64];
 typedef unsigned int type_40[1];
 typedef unsigned int type_41[384];
 typedef unsigned int type_43[2];
-typedef _anon24 type_44[256];
+
 typedef void(*type_45)()[23];
 typedef int* type_46[16];
 typedef unsigned int type_47[4];
@@ -702,17 +702,17 @@ struct _anon23
 	float b;
 };
 
-struct _anon24
-{
-	unsigned int globalIndex;
-	unsigned int bank;
-	unsigned int tspparambuffer;
-	unsigned int texparambuffer;
-	unsigned int texaddr;
-	NJS_TEXINFO texinfo;
-	unsigned short count;
-	unsigned short dummy;
-};
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon25
 {

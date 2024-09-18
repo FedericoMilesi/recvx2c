@@ -23,7 +23,7 @@ typedef struct _anon20;
 typedef struct _anon21;
 typedef struct _anon22;
 typedef struct BH_PWORK;
-typedef struct _anon23;
+
 typedef struct _anon24;
 
 
@@ -114,7 +114,7 @@ typedef unsigned int type_63[24];
 typedef int type_67[450];
 typedef unsigned int type_68[8];
 typedef unsigned char type_69[450];
-typedef _anon23 type_70[0];
+
 typedef char type_71[16];
 typedef char type_72[4];
 typedef unsigned int type_74[32];
@@ -1177,17 +1177,17 @@ struct BH_PWORK
 	unsigned int Dummy2[2];
 };
 
-struct _anon23
-{
-	unsigned int globalIndex;
-	unsigned int bank;
-	unsigned int tspparambuffer;
-	unsigned int texparambuffer;
-	unsigned int texaddr;
-	NJS_TEXINFO texinfo;
-	unsigned short count;
-	unsigned short dummy;
-};
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon24
 {
@@ -1385,7 +1385,7 @@ _anon35 parts_22b[0];
 _anon19* sys;
 _anon12 swork;
 char ViewCnt;
-_anon23 tbuf[0];
+NJS_TEXMEMLIST tbuf[0];
 unsigned char menuanim[4][0];
 _anon35 parts_00b[24];
 _anon35 parts_10b[0];

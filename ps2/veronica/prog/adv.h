@@ -29,7 +29,7 @@ typedef struct _anon24;
 typedef struct tagMEMORYCARDSTATE;
 typedef struct _anon25;
 typedef struct _anon26;
-typedef struct _anon27;
+
 typedef struct _anon28;
 
 typedef struct tagCONFIGFILE;
@@ -176,7 +176,7 @@ typedef unsigned char type_103[3];
 typedef char type_104[8];
 typedef int type_105[2];
 typedef unsigned char type_106[10956];
-typedef _anon27 type_107[0];
+
 typedef float type_108[12];
 typedef int type_109[8];
 typedef tagMEMORYCARDPORT type_110[2];
@@ -864,17 +864,17 @@ struct _anon26
 	_anon7 keyf[16];
 };
 
-struct _anon27
-{
-	unsigned int globalIndex;
-	unsigned int bank;
-	unsigned int tspparambuffer;
-	unsigned int texparambuffer;
-	unsigned int texaddr;
-	NJS_TEXINFO texinfo;
-	unsigned short count;
-	unsigned short dummy;
-};
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon28
 {

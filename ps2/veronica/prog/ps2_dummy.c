@@ -2,7 +2,7 @@ typedef struct _anon0;
 typedef struct _anon1;
 typedef struct _anon2;
 
-typedef struct _anon4;
+
 typedef struct _anon5;
 
 typedef struct _anon7;
@@ -174,17 +174,17 @@ struct _anon2
 
 
 
-struct _anon4
-{
-	unsigned int globalIndex;
-	unsigned int bank;
-	unsigned int tspparambuffer;
-	unsigned int texparambuffer;
-	unsigned int texaddr;
-	NJS_TEXINFO texinfo;
-	unsigned short count;
-	unsigned short dummy;
-};
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon5
 {
@@ -354,7 +354,7 @@ struct _anon16
 
 struct _anon17
 {
-	_anon4* tp;
+	NJS_TEXMEMLIST* tp;
 	unsigned char mode_bk[2];
 	unsigned char set_last;
 	unsigned char dc_alpha;
@@ -684,7 +684,7 @@ float Ps2_zbuff_a;
 float Ps2_zbuff_b;
 _anon1 Ps2_gs_save;
 unsigned int Ps2_use_pt_flag;
-_anon4* Ps2_now_tex;
+NJS_TEXMEMLIST* Ps2_now_tex;
 unsigned int Ps2_ot_list_no;
 void* Ps2_PP;
 _anon17 Ps2_ot_list[8192];
@@ -698,7 +698,7 @@ _anon31 ps2_tp_cache[64];
 unsigned int Ps2_tex_cache_num;
 unsigned int Ps2_tex_cache_beflag[4];
 void* Ps2_tex_cache_buff[4];
-_anon4* Ps2_tex_info;
+NJS_TEXMEMLIST* Ps2_tex_info;
 unsigned long ulNaFogB;
 unsigned long ulNaFogG;
 unsigned long ulNaFogR;
@@ -747,7 +747,7 @@ int Ps2DrawOTagSub(int start_no);
 unsigned int Ps2BitCount(unsigned int value);
 void Ps2InitTexCache();
 int Ps2GlobalIndexTexLoad(unsigned int index);
-int Ps2TexLoad(_anon4* addr);
+int Ps2TexLoad(NJS_TEXMEMLIST* addr);
 void Ps2SetFogColor();
 void Ps2SetFogColorSys(unsigned int r, unsigned int g, unsigned int b);
 void Ps2AlphaIs000(unsigned int* cp, unsigned int num);
@@ -1830,7 +1830,7 @@ int Ps2GlobalIndexTexLoad(unsigned int index)
 
 // 
 // Start address: 0x2cd410
-int Ps2TexLoad(_anon4* addr)
+int Ps2TexLoad(NJS_TEXMEMLIST* addr)
 {
 	unsigned int cache_flag;
 	_anon0* timp;

@@ -9,7 +9,7 @@ typedef struct _anon4;
 
 typedef struct _anon6;
 typedef struct _anon7;
-typedef struct _anon8;
+
 
 typedef struct tagCNK_PRIM_BUF;
 typedef struct _anon10;
@@ -168,17 +168,17 @@ struct _anon7
 	unsigned int planeNum;
 };
 
-struct _anon8
-{
-	unsigned int globalIndex;
-	unsigned int bank;
-	unsigned int tspparambuffer;
-	unsigned int texparambuffer;
-	unsigned int texaddr;
-	NJS_TEXINFO texinfo;
-	unsigned short count;
-	unsigned short dummy;
-};
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -526,7 +526,7 @@ tagVU1_COLOR vu1Specula;
 tagVU1_COLOR vu1Ambient;
 tagVU1_COLOR vu1Diffuse;
 unsigned int Ps2_tex_load_tp_cancel;
-_anon8* Ps2_now_tex;
+NJS_TEXMEMLIST* Ps2_now_tex;
 void(*vu1DrawTriangleStripOpaqueSingle)(unsigned long, tagVU1_STRIP_BUF*, unsigned short, unsigned short);
 void(*vu1DrawTriangleStripTransSingle)(unsigned long, tagVU1_STRIP_BUF*, unsigned short, unsigned short);
 void(*vu1DrawTriangleStripTransDoubleI)(unsigned long, tagVU1_STRIP_BUF*, unsigned short, unsigned short);

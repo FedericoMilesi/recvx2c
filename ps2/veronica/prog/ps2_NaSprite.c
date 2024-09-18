@@ -1,7 +1,7 @@
 
 
 
-typedef struct _anon3;
+
 
 typedef struct _anon5;
 typedef struct _anon6;
@@ -31,17 +31,17 @@ typedef int type_2[4][32];
 
 
 
-struct _anon3
-{
-	unsigned int globalIndex;
-	unsigned int bank;
-	unsigned int tspparambuffer;
-	unsigned int texparambuffer;
-	unsigned int texaddr;
-	NJS_TEXINFO texinfo;
-	unsigned short count;
-	unsigned short dummy;
-};
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -99,7 +99,7 @@ void njDrawSprite2D(_anon5* sp, int n, float pri, unsigned int attr);
 // Start address: 0x2e0bb0
 void njDrawSprite2D(_anon5* sp, int n, float pri, unsigned int attr)
 {
-	_anon3* tmp;
+	NJS_TEXMEMLIST* tmp;
 	int val;
 	int shift_num;
 	int v_val;

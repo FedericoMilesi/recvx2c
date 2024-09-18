@@ -22,7 +22,7 @@ typedef struct _anon19;
 
 typedef struct _anon21;
 typedef struct _anon22;
-typedef struct _anon23;
+
 
 typedef struct BH_PWORK;
 typedef struct _anon25;
@@ -81,7 +81,7 @@ typedef BH_PWORK type_29[0];
 typedef float type_30[4];
 typedef _anon14 type_31[16];
 typedef _anon0* type_32[512];
-typedef _anon23 type_33[256];
+
 typedef float type_34[4];
 typedef int type_35[4];
 typedef void* type_36[256];
@@ -89,7 +89,7 @@ typedef unsigned int type_37[4];
 typedef unsigned int type_38[0];
 typedef float type_39[4];
 typedef char type_40[256];
-typedef _anon23 type_41[0];
+
 typedef _anon7* type_42[128];
 typedef float type_43[4];
 typedef float type_44[4];
@@ -891,7 +891,7 @@ struct _anon10
 struct _anon12
 {
 	unsigned int num;
-	_anon23 tmem[256];
+	NJS_TEXMEMLIST tmem[256];
 	void* addr[256];
 };
 
@@ -1103,17 +1103,17 @@ struct _anon22
 	unsigned char prm3;
 };
 
-struct _anon23
-{
-	unsigned int globalIndex;
-	unsigned int bank;
-	unsigned int tspparambuffer;
-	unsigned int texparambuffer;
-	unsigned int texaddr;
-	NJS_TEXINFO texinfo;
-	unsigned short count;
-	unsigned short dummy;
-};
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1511,11 +1511,11 @@ NJS_TEXLIST tlist;
 _anon2* sys;
 char BIO_CURRENT[0];
 unsigned int palbuf[0];
-_anon23 tbuf[0];
+NJS_TEXMEMLIST tbuf[0];
 _anon6* rom;
 BH_PWORK ene[0];
 _anon12 Ps2_tex_save[2];
-_anon23* Ps2_tex_info;
+NJS_TEXMEMLIST* Ps2_tex_info;
 
 void ClutCopy(void* data, void* org_data);
 void ClutCopy256(void* data, void* org_data);
@@ -1528,7 +1528,7 @@ char* bhCopyTexmem2MainmemSub(NJS_TEXLIST* tlp, char* adr);
 void bhCopyMainmem2Texmem(NJS_TEXLIST* tlp);
 void bhPushAllTexture();
 void bhPopAllTexture();
-void bhGarbageTexture(_anon23* addr, unsigned int n);
+void bhGarbageTexture(NJS_TEXMEMLIST* addr, unsigned int n);
 
 // 
 // Start address: 0x2e5f50
@@ -1817,7 +1817,7 @@ char* bhCopyTexmem2Mainmem(NJS_TEXLIST* tlp, char* adr)
 // Start address: 0x2e6900
 char* bhCopyTexmem2MainmemSub(NJS_TEXLIST* tlp, char* adr)
 {
-	_anon23* tmp;
+	NJS_TEXMEMLIST* tmp;
 	unsigned int num;
 	unsigned int i;
 	// Line 474, Address: 0x2e6900, Func Offset: 0
@@ -1844,9 +1844,9 @@ char* bhCopyTexmem2MainmemSub(NJS_TEXLIST* tlp, char* adr)
 // Start address: 0x2e6a10
 void bhCopyMainmem2Texmem(NJS_TEXLIST* tlp)
 {
-	_anon23* tmp;
+	NJS_TEXMEMLIST* tmp;
 	int no;
-	_anon23* addr;
+	NJS_TEXMEMLIST* addr;
 	unsigned int num;
 	unsigned int i;
 	// Line 515, Address: 0x2e6a10, Func Offset: 0
@@ -1893,7 +1893,7 @@ void bhPopAllTexture()
 
 // 
 // Start address: 0x2e6bd0
-void bhGarbageTexture(_anon23* addr, unsigned int n)
+void bhGarbageTexture(NJS_TEXMEMLIST* addr, unsigned int n)
 {
 	// Line 717, Address: 0x2e6bd0, Func Offset: 0
 	// Func End, Address: 0x2e6bd8, Func Offset: 0x8

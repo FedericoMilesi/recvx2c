@@ -41,3 +41,4 @@
 | PDS_PERIPHERAL | Found on Katana | `<katana>/sg_pad.h` |
 | NJS_TEXSURFACE | Found on Katana | `<katana>/ninjastr.h` |
 | NJS_TEXINFO | Found on Katana | `<katana>/ninjastr.h` |
+| NJS_TEXMEMLIST | Found on Katana | `<katana>/ninjastr.h` |

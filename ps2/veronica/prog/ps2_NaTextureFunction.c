@@ -1,5 +1,5 @@
 
-typedef struct _anon1;
+
 
 
 typedef struct _anon4;
@@ -23,17 +23,17 @@ typedef unsigned int type_4[27];
 
 
 
-struct _anon1
-{
-	unsigned int globalIndex;
-	unsigned int bank;
-	unsigned int tspparambuffer;
-	unsigned int texparambuffer;
-	unsigned int texaddr;
-	NJS_TEXINFO texinfo;
-	unsigned short count;
-	unsigned short dummy;
-};
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -165,16 +165,16 @@ unsigned int Ps2_texcontinue_no;
 void* Ps2_free_last;
 unsigned int Ps2_free_texmemsize;
 void* Ps2_now_free;
-_anon1 Ps2_last_tmlist;
-_anon1 Ps2_1st_tmlist;
+NJS_TEXMEMLIST Ps2_last_tmlist;
+NJS_TEXMEMLIST Ps2_1st_tmlist;
 unsigned int Ps2_texmemlist_num;
-_anon1* Ps2_tex_info;
+NJS_TEXMEMLIST* Ps2_tex_info;
 _anon4 Ps2_tm_list_last;
 _anon4 Ps2_tm_list_1st;
 void* Ps2_tex_buff;
 unsigned int Ps2_current_texno;
 NJS_TEXLIST* Ps2_current_texlist;
-_anon1* Ps2_current_texmemlist;
+NJS_TEXMEMLIST* Ps2_current_texmemlist;
 char*(*index)(char*, int);
 unsigned int Ps2_render_width;
 unsigned int palbuf[4096];
@@ -193,7 +193,7 @@ NJS_TEXLIST* Ps2_current_texlist_bk;
 
 void Ps2MemCopy4(void* vpDst, void* vpSrc, int lNum);
 void njInitTextureBuffer();
-void njInitTexture(_anon1* addr, unsigned int n);
+void njInitTexture(NJS_TEXMEMLIST* addr, unsigned int n);
 void njExitTexture();
 int SearchNumber(unsigned int global_index, unsigned int bank);
 int SearchNullNumber();
@@ -216,8 +216,8 @@ unsigned int njGetPaletteMode();
 void njSetPaletteData();
 void njGarbageTexture();
 unsigned int Ps2GetTim2Size(void* p);
-int Ps2TextureMalloc(_anon1* p);
-int Ps2TextureFree(_anon1* p);
+int Ps2TextureMalloc(NJS_TEXMEMLIST* p);
+int Ps2TextureFree(NJS_TEXMEMLIST* p);
 int Ps2ReplaceTexAddr(unsigned int gindex, void* rep_addr);
 int Ps2TextureGarbageCollectionAll();
 int ring_check();
@@ -247,7 +247,7 @@ void njInitTextureBuffer()
 
 // 
 // Start address: 0x2e1bc0
-void njInitTexture(_anon1* addr, unsigned int n)
+void njInitTexture(NJS_TEXMEMLIST* addr, unsigned int n)
 {
 	int i;
 	// Line 182, Address: 0x2e1bc0, Func Offset: 0
@@ -317,7 +317,7 @@ void njExitTexture()
 // Start address: 0x2e1d70
 int SearchNumber(unsigned int global_index, unsigned int bank)
 {
-	_anon1* addr;
+	NJS_TEXMEMLIST* addr;
 	unsigned int n;
 	unsigned int i;
 	// Line 264, Address: 0x2e1d70, Func Offset: 0
@@ -337,7 +337,7 @@ int SearchNumber(unsigned int global_index, unsigned int bank)
 // Start address: 0x2e1df0
 int SearchNullNumber()
 {
-	_anon1* addr;
+	NJS_TEXMEMLIST* addr;
 	unsigned int n;
 	unsigned int i;
 	// Line 285, Address: 0x2e1df0, Func Offset: 0
@@ -354,7 +354,7 @@ int SearchNullNumber()
 // Start address: 0x2e1e40
 int njLoadTexture(NJS_TEXLIST* texlist)
 {
-	_anon1* addr;
+	NJS_TEXMEMLIST* addr;
 	unsigned int attr;
 	unsigned int bank;
 	unsigned int g_index;
@@ -492,7 +492,7 @@ void njReleaseTextureAll()
 // Start address: 0x2e22b0
 int njReleaseTexture(NJS_TEXLIST* texlist)
 {
-	_anon1* p;
+	NJS_TEXMEMLIST* p;
 	unsigned int tex_num;
 	int i;
 	// Line 517, Address: 0x2e22b0, Func Offset: 0
@@ -640,7 +640,7 @@ unsigned int Ps2GetTim2Size(void* p)
 
 // 
 // Start address: 0x2e2520
-int Ps2TextureMalloc(_anon1* p)
+int Ps2TextureMalloc(NJS_TEXMEMLIST* p)
 {
 	_anon4* last2;
 	_anon4* timp;
@@ -706,7 +706,7 @@ int Ps2TextureMalloc(_anon1* p)
 
 // 
 // Start address: 0x2e2740
-int Ps2TextureFree(_anon1* p)
+int Ps2TextureFree(NJS_TEXMEMLIST* p)
 {
 	_anon4* timp;
 	_anon4* after;
@@ -745,7 +745,7 @@ int Ps2TextureFree(_anon1* p)
 int Ps2ReplaceTexAddr(unsigned int gindex, void* rep_addr)
 {
 	int count;
-	_anon1* addr;
+	NJS_TEXMEMLIST* addr;
 	unsigned int n;
 	unsigned int i;
 	// Line 987, Address: 0x2e27e0, Func Offset: 0

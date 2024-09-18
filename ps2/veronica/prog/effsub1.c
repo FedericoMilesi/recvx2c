@@ -37,7 +37,7 @@ typedef struct _anon33;
 typedef struct _anon34;
 typedef struct _anon35;
 typedef struct _anon36;
-typedef struct _anon37;
+
 typedef struct _anon38;
 
 
@@ -142,7 +142,7 @@ typedef float type_69[3][20];
 typedef _anon0 type_70[0];
 typedef float type_71[3];
 typedef float type_72[3][20];
-typedef _anon37 type_73[0];
+
 typedef _anon8 type_74[6];
 typedef int type_75[2];
 typedef float type_76[3];
@@ -1523,17 +1523,17 @@ struct _anon36
 	float pz;
 };
 
-struct _anon37
-{
-	unsigned int globalIndex;
-	unsigned int bank;
-	unsigned int tspparambuffer;
-	unsigned int texparambuffer;
-	unsigned int texaddr;
-	NJS_TEXINFO texinfo;
-	unsigned short count;
-	unsigned short dummy;
-};
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon38
 {
@@ -1840,7 +1840,7 @@ void(*bhEff106)(_anon0*);
 void(*bhDraw107)(_anon0*);
 float BHD_ASPECT_X;
 float BHD_ASPECT_Y;
-_anon37 tbuf[0];
+NJS_TEXMEMLIST tbuf[0];
 NJS_MATRIX cmat;
 void(*bhDraw114)(_anon0*);
 _anon0 eff[0];
