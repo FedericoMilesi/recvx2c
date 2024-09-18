@@ -1,4 +1,4 @@
-typedef struct _anon0;
+
 typedef struct npobj;
 typedef struct _anon1;
 typedef struct _anon2;
@@ -175,11 +175,11 @@ typedef _anon39* type_112[32];
 typedef unsigned char type_113[64];
 typedef _anon39* type_114[32];
 
-struct _anon0
-{
-	void* texaddr;
-	NJS_TEXSURFACE texsurface;
-};
+
+
+
+
+
 
 struct npobj
 {
@@ -481,7 +481,7 @@ struct _anon8
 	_anon39* ob_hlg[32];
 	_anon39* ob_spc[32];
 	unsigned int ren_gid;
-	_anon0 ren_info;
+	NJS_TEXINFO ren_info;
 	NJS_TEXNAME ren_tex[1];
 	NJS_TEXLIST ren_tlist;
 	_anon2 rpb[256];

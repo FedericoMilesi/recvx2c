@@ -26,7 +26,7 @@ typedef struct _anon18;
 typedef struct MTN_SE_TBL;
 typedef struct _anon19;
 typedef struct _anon20;
-typedef struct _anon21;
+
 typedef struct _LEGLOCK_TAB;
 typedef struct _anon22;
 
@@ -878,11 +878,11 @@ struct _anon20
 	int ct3;
 };
 
-struct _anon21
-{
-	void* texaddr;
-	NJS_TEXSURFACE texsurface;
-};
+
+
+
+
+
 
 struct _LEGLOCK_TAB
 {
@@ -1243,7 +1243,7 @@ struct _anon31
 	_anon1* ob_hlg[32];
 	_anon1* ob_spc[32];
 	unsigned int ren_gid;
-	_anon21 ren_info;
+	NJS_TEXINFO ren_info;
 	NJS_TEXNAME ren_tex[1];
 	NJS_TEXLIST ren_tlist;
 	_anon5 rpb[256];

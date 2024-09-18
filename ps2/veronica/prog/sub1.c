@@ -48,7 +48,7 @@ typedef struct _anon43;
 typedef struct _anon45;
 typedef struct _anon46;
 
-typedef struct _anon48;
+
 typedef struct _anon49;
 
 typedef struct _anon51;
@@ -1354,7 +1354,7 @@ struct _anon38
 	_anon0* ob_hlg[32];
 	_anon0* ob_spc[32];
 	unsigned int ren_gid;
-	_anon48 ren_info;
+	NJS_TEXINFO ren_info;
 	NJS_TEXNAME ren_tex[1];
 	NJS_TEXLIST ren_tlist;
 	_anon49 rpb[256];
@@ -1753,11 +1753,11 @@ struct _anon46
 
 
 
-struct _anon48
-{
-	void* texaddr;
-	NJS_TEXSURFACE texsurface;
-};
+
+
+
+
+
 
 struct _anon49
 {

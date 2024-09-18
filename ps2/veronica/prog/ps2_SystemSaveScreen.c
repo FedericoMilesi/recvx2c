@@ -29,7 +29,7 @@ typedef struct _anon20;
 typedef struct _anon22;
 typedef struct tagSELECTFILEINFO;
 
-typedef struct _anon24;
+
 typedef struct _anon25;
 typedef struct _anon26;
 
@@ -725,7 +725,7 @@ struct _anon13
 	_anon0* ob_hlg[32];
 	_anon0* ob_spc[32];
 	unsigned int ren_gid;
-	_anon24 ren_info;
+	NJS_TEXINFO ren_info;
 	NJS_TEXNAME ren_tex[1];
 	NJS_TEXLIST ren_tlist;
 	_anon25 rpb[256];
@@ -1244,11 +1244,11 @@ struct tagSELECTFILEINFO
 
 
 
-struct _anon24
-{
-	void* texaddr;
-	NJS_TEXSURFACE texsurface;
-};
+
+
+
+
+
 
 struct _anon25
 {

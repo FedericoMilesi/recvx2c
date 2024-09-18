@@ -1,4 +1,4 @@
-typedef struct _anon0;
+
 typedef struct tagCHUNK_HEAD;
 typedef union _anon1;
 typedef struct _anon2;
@@ -73,11 +73,11 @@ typedef _anon22 type_35[12];
 typedef float type_36[3];
 typedef float type_37[3];
 
-struct _anon0
-{
-	void* texaddr;
-	NJS_TEXSURFACE texsurface;
-};
+
+
+
+
+
 
 struct tagCHUNK_HEAD
 {
@@ -175,7 +175,7 @@ struct _anon8
 	unsigned int tspparambuffer;
 	unsigned int texparambuffer;
 	unsigned int texaddr;
-	_anon0 texinfo;
+	NJS_TEXINFO texinfo;
 	unsigned short count;
 	unsigned short dummy;
 };

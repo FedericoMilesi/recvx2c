@@ -1,4 +1,4 @@
-typedef struct _anon0;
+
 
 
 typedef struct _anon3;
@@ -12,11 +12,11 @@ typedef int type_0[4];
 typedef float type_1[4];
 typedef int type_2[4][32];
 
-struct _anon0
-{
-	void* texaddr;
-	NJS_TEXSURFACE texsurface;
-};
+
+
+
+
+
 
 
 
@@ -38,7 +38,7 @@ struct _anon3
 	unsigned int tspparambuffer;
 	unsigned int texparambuffer;
 	unsigned int texaddr;
-	_anon0 texinfo;
+	NJS_TEXINFO texinfo;
 	unsigned short count;
 	unsigned short dummy;
 };

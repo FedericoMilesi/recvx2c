@@ -20,7 +20,7 @@ typedef struct _anon17;
 typedef struct _anon18;
 typedef struct _anon19;
 typedef struct _anon20;
-typedef struct _anon21;
+
 typedef struct _anon22;
 typedef struct _anon23;
 
@@ -400,7 +400,7 @@ struct _anon0
 	_anon1* ob_hlg[32];
 	_anon1* ob_spc[32];
 	unsigned int ren_gid;
-	_anon21 ren_info;
+	NJS_TEXINFO ren_info;
 	NJS_TEXNAME ren_tex[1];
 	NJS_TEXLIST ren_tlist;
 	_anon9 rpb[256];
@@ -1074,11 +1074,11 @@ struct _anon20
 	int param;
 };
 
-struct _anon21
-{
-	void* texaddr;
-	NJS_TEXSURFACE texsurface;
-};
+
+
+
+
+
 
 struct _anon22
 {

@@ -16,7 +16,7 @@ typedef struct _anon12;
 
 typedef struct _anon14;
 
-typedef struct _anon16;
+
 typedef struct _anon17;
 typedef union _anon18;
 typedef struct _anon19;
@@ -251,8 +251,8 @@ typedef unsigned int type_178[32];
 typedef unsigned int type_179[16];
 typedef unsigned int type_180[8];
 typedef unsigned int type_181[384];
-typedef _anon16 type_182[8];
-typedef _anon16 type_183[8][2];
+
+
 typedef unsigned int type_184[4];
 typedef char type_185[16];
 typedef char type_186[4];
@@ -695,11 +695,11 @@ struct _anon14
 
 
 
-struct _anon16
-{
-	void* texaddr;
-	NJS_TEXSURFACE texsurface;
-};
+
+
+
+
+
 
 struct _anon17
 {
@@ -871,7 +871,7 @@ struct _anon27
 	unsigned int tspparambuffer;
 	unsigned int texparambuffer;
 	unsigned int texaddr;
-	_anon16 texinfo;
+	NJS_TEXINFO texinfo;
 	unsigned short count;
 	unsigned short dummy;
 };
@@ -1424,7 +1424,7 @@ struct _anon40
 	_anon1* ob_hlg[32];
 	_anon1* ob_spc[32];
 	unsigned int ren_gid;
-	_anon16 ren_info;
+	NJS_TEXINFO ren_info;
 	NJS_TEXNAME ren_tex[1];
 	NJS_TEXLIST ren_tlist;
 	_anon19 rpb[256];

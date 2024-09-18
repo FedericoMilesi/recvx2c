@@ -38,7 +38,7 @@ typedef struct _anon35;
 typedef struct _anon36;
 typedef struct _anon37;
 typedef struct _anon38;
-typedef struct _anon39;
+
 
 typedef void(*type_29)();
 typedef void(*type_30)();
@@ -181,7 +181,7 @@ struct _anon4
 	unsigned int tspparambuffer;
 	unsigned int texparambuffer;
 	unsigned int texaddr;
-	_anon39 texinfo;
+	NJS_TEXINFO texinfo;
 	unsigned short count;
 	unsigned short dummy;
 };
@@ -663,11 +663,11 @@ struct _anon38
 	long test1addr;
 };
 
-struct _anon39
-{
-	void* texaddr;
-	NJS_TEXSURFACE texsurface;
-};
+
+
+
+
+
 
 unsigned char* Ps2_MOVIE;
 unsigned int Ps2_tex_load_tp_cancel;

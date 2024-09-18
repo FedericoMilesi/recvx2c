@@ -22,7 +22,7 @@ typedef struct tagICONINFORMATION;
 typedef struct tagMEMORYCARDSTATE;
 typedef struct _anon13;
 
-typedef struct _anon15;
+
 typedef struct _anon16;
 
 typedef struct _anon18;
@@ -834,7 +834,7 @@ struct _anon13
 	_anon0* ob_hlg[32];
 	_anon0* ob_spc[32];
 	unsigned int ren_gid;
-	_anon15 ren_info;
+	NJS_TEXINFO ren_info;
 	NJS_TEXNAME ren_tex[1];
 	NJS_TEXLIST ren_tlist;
 	_anon4 rpb[256];
@@ -1031,11 +1031,11 @@ struct _anon13
 
 
 
-struct _anon15
-{
-	void* texaddr;
-	NJS_TEXSURFACE texsurface;
-};
+
+
+
+
+
 
 struct _anon16
 {

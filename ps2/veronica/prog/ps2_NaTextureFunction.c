@@ -1,4 +1,4 @@
-typedef struct _anon0;
+
 typedef struct _anon1;
 
 
@@ -17,11 +17,11 @@ typedef unsigned int type_1[4096];
 typedef char type_2[4];
 typedef unsigned int type_4[27];
 
-struct _anon0
-{
-	void* texaddr;
-	NJS_TEXSURFACE texsurface;
-};
+
+
+
+
+
 
 struct _anon1
 {
@@ -30,7 +30,7 @@ struct _anon1
 	unsigned int tspparambuffer;
 	unsigned int texparambuffer;
 	unsigned int texaddr;
-	_anon0 texinfo;
+	NJS_TEXINFO texinfo;
 	unsigned short count;
 	unsigned short dummy;
 };
@@ -205,7 +205,7 @@ int njSetTextureNumSys(unsigned int n);
 void njReleaseTextureAll();
 int njReleaseTexture(NJS_TEXLIST* texlist);
 unsigned int njCalcTexture();
-void njSetTextureInfo(_anon0* info, unsigned short* tex, int Type, int nWidth, int nHeight);
+void njSetTextureInfo(NJS_TEXINFO* info, unsigned short* tex, int Type, int nWidth, int nHeight);
 void njSetTextureName(NJS_TEXNAME* texname, void* addr, unsigned int globalIndex, unsigned int attr);
 void njRenderTextureNum();
 void njRenderTextureNumG(unsigned int globalIndex);
@@ -537,7 +537,7 @@ unsigned int njCalcTexture()
 
 // 
 // Start address: 0x2e23c0
-void njSetTextureInfo(_anon0* info, unsigned short* tex, int Type, int nWidth, int nHeight)
+void njSetTextureInfo(NJS_TEXINFO* info, unsigned short* tex, int Type, int nWidth, int nHeight)
 {
 	// Line 658, Address: 0x2e23c0, Func Offset: 0
 	// Line 659, Address: 0x2e23c4, Func Offset: 0x4
