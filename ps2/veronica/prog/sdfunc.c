@@ -4718,7 +4718,7 @@ void PlayStopMovieEx(int Mode)
 }
 
 /* 100% match */
-void PlayStopMovie() { // Line 4640, Address: 0x2978e0
+void PlayStopMovie() { // Line 4640, Address: 0x2978e0, Func Offset: 0
     PlayStopMovieEx(0);
 }
 
