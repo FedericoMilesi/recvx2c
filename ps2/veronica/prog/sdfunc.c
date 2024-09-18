@@ -2209,20 +2209,14 @@ void ExitApplication() { // Line 241, Address: 0x292430, Func Offset: 0
     njUserExit();
 }
 
-// 
-// Start address: 0x292440
-void QuickGetDiscTrayStatus()
-{
-	// Line 245, Address: 0x292440, Func Offset: 0
-	// Line 246, Address: 0x292444, Func Offset: 0x4
-	// Line 245, Address: 0x292448, Func Offset: 0x8
-	// Line 246, Address: 0x29244c, Func Offset: 0xc
-	// Line 247, Address: 0x292450, Func Offset: 0x10
-	// Line 248, Address: 0x292458, Func Offset: 0x18
-	// Line 249, Address: 0x29246c, Func Offset: 0x2c
-	// Line 251, Address: 0x292474, Func Offset: 0x34
-	// Func End, Address: 0x292480, Func Offset: 0x40
-}
+/* 100% match */
+void QuickGetDiscTrayStatus() { // Line 245, Address: 0x292440, 0x292448 Func Offset: 0, 0x8
+    StatusUpdateCounter = 1; // Line 246, Address: 0x292444, 0x29244c Func Offset: 0x4, 0xc
+    njWaitVSync(); // Line 247, Address: 0x292450, Func Offset: 0x10
+    if (DiscOpenTrayFlag == -1) { // Line 248, Address: 0x292458, Func Offset: 0x18
+        ExitApplication(DiscOpenTrayFlag); // Line 249, Address: 0x29246c, Func Offset: 0x2c
+    }
+} // Line 251, Address: 0x292474, Func Offset: 0x34
 
 // 
 // Start address: 0x292480
