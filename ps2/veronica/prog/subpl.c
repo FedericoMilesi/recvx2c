@@ -1,4 +1,4 @@
-typedef struct npobj;
+
 typedef struct BH_PWORK;
 typedef struct _anon0;
 typedef struct _anon1;
@@ -31,23 +31,23 @@ typedef unsigned int type_12[1];
 typedef unsigned int type_13[2];
 typedef int* type_14[16];
 typedef void(*type_16)(BH_PWORK*)[15];
-typedef npobj* type_17[16];
+
 
 typedef _anon7 type_19[16];
 typedef void(*type_21)(BH_PWORK*)[120];
 typedef void(*type_23)(BH_PWORK*)[7];
 typedef unsigned char type_24[64];
 
-struct npobj
-{
-	unsigned int evalflags;
-	NJS_CNK_MODEL* model;
-	float pos[3];
-	int ang[3];
-	float scl[3];
-	npobj* child;
-	npobj* sibling;
-};
+
+
+
+
+
+
+
+
+
+
 
 struct BH_PWORK
 {
@@ -99,7 +99,7 @@ struct BH_PWORK
 	void* mskp;
 	unsigned int Dummy[1];
 	int* skp[16];
-	npobj* mbp[16];
+	NJS_OBJECT* mbp[16];
 	NJS_TEXLIST* txp[16];
 	_anon7 mdl[16];
 	_anon7* mlwP;
@@ -112,8 +112,8 @@ struct BH_PWORK
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
 	NJS_MATRIX mtx;
-	npobj* obj_a;
-	npobj* obj_b;
+	NJS_OBJECT* obj_a;
+	NJS_OBJECT* obj_b;
 	float shp_ct;
 	char clp_jno[8];
 	int lok_jno;
@@ -246,7 +246,7 @@ struct _anon7
 	unsigned int flg;
 	unsigned int obj_num;
 	void* datP;
-	npobj* objP;
+	NJS_OBJECT* objP;
 	NJS_TEXLIST* texP;
 	_anon5* owP;
 };

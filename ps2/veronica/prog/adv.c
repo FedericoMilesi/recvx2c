@@ -61,7 +61,7 @@ void ExecuteAdvScreenSaver();
 void CheckAdvScreenSaverStopKey(int PortId);
 unsigned int AdvGetOkButton();
 unsigned int AdvGetCancelButton();
-void SetPvrInfo(TextureFileLocation* np, TextureInfo* ip, unsigned char* pp);
+void SetPvrInfo(TextureFileLocation* np, NJS_TEXINFO* ip, unsigned char* pp);
 int TransPvpData(unsigned char* pp, int Mode);
 void AdvTransShadowPalette();
 void AdvEasyDrawWindow(NJS_POINT3* tlp, NJS_POINT3* brp, unsigned int WindowColor, unsigned int BackColor);
@@ -886,7 +886,7 @@ unsigned int AdvGetCancelButton() { // Line 861, Address: 0x2c1890
 
 
 /* 100% match */
-void SetPvrInfo(TextureFileLocation* np, TextureInfo* ip, unsigned char* pp) { // Line 889, Address: 0x2c18c0
+void SetPvrInfo(TextureFileLocation* np, NJS_TEXINFO* ip, unsigned char* pp) { // Line 889, Address: 0x2c18c0
     Unknown24* pPichd;
     unsigned int GlobalIndex;
     
@@ -1238,7 +1238,7 @@ void SetQuadPos(float StartX, float StartY, float SizeX, float SizeY, NJS_QUAD_T
 
 /* 100% match */
 void SetQuadUv2Ex(float u, float v, float SizeX, float SizeY, unsigned int ListNo, unsigned int TexNo, NJS_QUAD_TEXTURE* qp) { // Line 1240, Address: 0x2c1e60
-	Unknown30* temp = (Unknown30*)AdvTexList[ListNo].textures[TexNo].texaddr; // Line 1241, Address: 0x2c1ebc
+	NJS_TEXMEMLIST* temp = (NJS_TEXMEMLIST*)AdvTexList[ListNo].textures[TexNo].texaddr; // Line 1241, Address: 0x2c1ebc
     float TexX, TexY;
     TexX = (temp->texinfo.texsurface.nWidth >= 0) ? temp->texinfo.texsurface.nWidth : temp->texinfo.texsurface.nWidth / 3; // Line 1243, Address: 0x2c1ef0, 0x2c1f00
     TexY = (temp->texinfo.texsurface.nHeight >= 0) ? temp->texinfo.texsurface.nHeight : temp->texinfo.texsurface.nHeight / 3; // Line 1244, Address: 0x2c1f04, 0x2c1f10

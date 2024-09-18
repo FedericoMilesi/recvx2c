@@ -1,8 +1,8 @@
-typedef union _anon0;
 
-typedef struct _anon2;
-typedef struct _anon3;
-typedef struct _anon4;
+
+
+
+
 
 
 typedef float type_0[4][32];
@@ -10,12 +10,6 @@ typedef float type_1[4][32];
 typedef float type_2[4];
 typedef float type_3[4][32];
 
-union _anon0
-{
-	unsigned int color;
-	_anon3 tex;
-	_anon4 argb;
-};
 
 
 
@@ -23,27 +17,33 @@ union _anon0
 
 
 
-struct _anon2
-{
-	NJS_POINT2* p;
-	_anon0* col;
-	_anon0* tex;
-	unsigned int num;
-};
 
-struct _anon3
-{
-	short u;
-	short v;
-};
 
-struct _anon4
-{
-	unsigned char b;
-	unsigned char g;
-	unsigned char r;
-	unsigned char a;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 float Ps2_zbuff_b;
 float Ps2_zbuff_a;
@@ -52,9 +52,9 @@ float fNaViwClipNear;
 
 void CalcPs2ZbuffAB();
 void sceVu0ITOF12Vector(float* v0, float* v1);
-void njDrawLine2D(_anon2* p, int n, float pri, unsigned int attr);
-void njDrawPolygon2D(_anon2* p, int n, float pri, unsigned int attr);
-void njDrawPolygon2DM(_anon2* p, int n, float pri, unsigned int attr);
+void njDrawLine2D(NJS_POINT2COL* p, int n, float pri, unsigned int attr);
+void njDrawPolygon2D(NJS_POINT2COL* p, int n, float pri, unsigned int attr);
+void njDrawPolygon2DM(NJS_POINT2COL* p, int n, float pri, unsigned int attr);
 
 /* 100% match */
 void CalcPs2ZbuffAB() { 
@@ -74,7 +74,7 @@ void sceVu0ITOF12Vector(float* v0, float* v1)
 
 // 
 // Start address: 0x2df250
-void njDrawLine2D(_anon2* p, int n, float pri, unsigned int attr)
+void njDrawLine2D(NJS_POINT2COL* p, int n, float pri, unsigned int attr)
 {
 	unsigned long prim;
 	unsigned int i;
@@ -130,7 +130,7 @@ void njDrawLine2D(_anon2* p, int n, float pri, unsigned int attr)
 
 // 
 // Start address: 0x2df450
-void njDrawPolygon2D(_anon2* p, int n, float pri, unsigned int attr)
+void njDrawPolygon2D(NJS_POINT2COL* p, int n, float pri, unsigned int attr)
 {
 	unsigned long prim;
 	unsigned int i;
@@ -190,7 +190,7 @@ void njDrawPolygon2D(_anon2* p, int n, float pri, unsigned int attr)
 
 // 
 // Start address: 0x2df6c0
-void njDrawPolygon2DM(_anon2* p, int n, float pri, unsigned int attr)
+void njDrawPolygon2DM(NJS_POINT2COL* p, int n, float pri, unsigned int attr)
 {
 	unsigned long prim;
 	unsigned int i;

@@ -1,4 +1,4 @@
-typedef struct npobj;
+
 typedef struct _anon0;
 
 
@@ -26,21 +26,21 @@ typedef struct _anon21;
 typedef struct _anon23;
 typedef struct _anon24;
 typedef struct _anon25;
-typedef struct _anon26;
+
 typedef struct _anon27;
-typedef struct _anon28;
+
 typedef struct _anon29;
 
 
 
 typedef struct _anon33;
-typedef struct _anon34;
+
 
 typedef struct _anon36;
 
 
-typedef struct _anon39;
-typedef struct _anon40;
+
+
 
 typedef struct _anon42;
 typedef struct _anon43;
@@ -74,7 +74,7 @@ typedef _anon6 type_20[256];
 typedef int* type_22[16];
 typedef _anon0* type_23[128];
 typedef _anon42 type_24[16];
-typedef npobj* type_25[16];
+
 typedef _anon0* type_26[128];
 typedef int type_27[4];
 
@@ -146,7 +146,7 @@ typedef unsigned char type_96[2];
 typedef unsigned int type_97[4];
 typedef int* type_98[16];
 typedef char type_99[32];
-typedef npobj* type_100[16];
+
 typedef char type_101[64];
 
 typedef char type_103[4];
@@ -164,16 +164,16 @@ typedef _anon0* type_114[512];
 typedef unsigned char type_115[64];
 typedef _anon0* type_116[512];
 
-struct npobj
-{
-	unsigned int evalflags;
-	NJS_CNK_MODEL* model;
-	float pos[3];
-	int ang[3];
-	float scl[3];
-	npobj* child;
-	npobj* sibling;
-};
+
+
+
+
+
+
+
+
+
+
 
 struct _anon0
 {
@@ -225,7 +225,7 @@ struct _anon0
 	void* mskp;
 	unsigned int Dummy[1];
 	int* skp[16];
-	npobj* mbp[16];
+	NJS_OBJECT* mbp[16];
 	NJS_TEXLIST* txp[16];
 	_anon11 mdl[16];
 	_anon11* mlwP;
@@ -238,8 +238,8 @@ struct _anon0
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
 	NJS_MATRIX mtx;
-	npobj* obj_a;
-	npobj* obj_b;
+	NJS_OBJECT* obj_a;
+	NJS_OBJECT* obj_b;
 	float shp_ct;
 	char clp_jno[8];
 	int lok_jno;
@@ -279,7 +279,7 @@ struct _anon0
 	int ct2;
 	int ct3;
 	unsigned char* objbak;
-	_anon40 cspr;
+	NJS_SPHERE cspr;
 	int pn;
 	NJS_POLYGON_VTX* pvp;
 	NJS_TEXTURE_VTX* tvp;
@@ -484,7 +484,7 @@ struct _anon11
 	unsigned int flg;
 	unsigned int obj_num;
 	void* datP;
-	npobj* objP;
+	NJS_OBJECT* objP;
 	NJS_TEXLIST* texP;
 	_anon27* owP;
 };
@@ -581,7 +581,7 @@ struct _anon14
 	int waz;
 	unsigned char* lkwkp;
 	unsigned char* exp;
-	_anon28* light;
+	NJS_LIGHT_PTR light;
 };
 
 struct _anon15
@@ -670,7 +670,7 @@ struct BH_PWORK
 	void* mskp;
 	unsigned int Dummy[1];
 	int* skp[16];
-	npobj* mbp[16];
+	NJS_OBJECT* mbp[16];
 	NJS_TEXLIST* txp[16];
 	_anon11 mdl[16];
 	_anon11* mlwP;
@@ -683,8 +683,8 @@ struct BH_PWORK
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
 	NJS_MATRIX mtx;
-	npobj* obj_a;
-	npobj* obj_b;
+	NJS_OBJECT* obj_a;
+	NJS_OBJECT* obj_b;
 	float shp_ct;
 	char clp_jno[8];
 	int lok_jno;
@@ -1282,13 +1282,13 @@ struct _anon25
 	unsigned short* evd;
 };
 
-struct _anon26
-{
-	float a;
-	float r;
-	float g;
-	float b;
-};
+
+
+
+
+
+
+
 
 struct _anon27
 {
@@ -1298,16 +1298,16 @@ struct _anon27
 	NJS_MATRIX mtx;
 };
 
-struct _anon28
-{
-	NJS_MATRIX mtrx;
-	NJS_POINT3 pnt;
-	NJS_POINT3 vctr;
-	int stat;
-	int reserve;
-	_anon34 ltcal;
-	_anon39 attr;
-};
+
+
+
+
+
+
+
+
+
+
 
 struct _anon29
 {
@@ -1348,31 +1348,31 @@ struct _anon33
 	float r2;
 };
 
-struct _anon34
-{
-	float ratten;
-	float ipd;
-	float nrr;
-	float frr;
-	float cosi;
-	float cose;
-	float idev;
-	float odev;
-	float rate;
-	float intns;
-	int exp;
-	int reserve;
-	NJS_POINT3 lpnt;
-	NJS_POINT3 lvctr;
-	NJS_POINT3 lmvctr;
-	_anon26 atten;
-	_anon26 amb;
-	_anon26 dif;
-	_anon26 spc;
-	_anon26 mamb;
-	_anon26 mdif;
-	_anon26 mspc;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1423,25 +1423,25 @@ struct _anon36
 
 
 
-struct _anon39
-{
-	int lsrc;
-	float iamb;
-	float idif;
-	float ispc;
-	float nrang;
-	float frang;
-	void* func;
-	int iang;
-	int oang;
-	_anon26 argb;
-};
 
-struct _anon40
-{
-	NJS_POINT3 c;
-	float r;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

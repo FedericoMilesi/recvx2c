@@ -1,5 +1,5 @@
 typedef struct BH_PWORK;
-typedef struct npobj;
+
 typedef struct _anon0;
 typedef struct _anon1;
 
@@ -34,23 +34,23 @@ typedef struct _anon30;
 
 typedef struct _anon32;
 typedef struct _anon33;
-typedef struct _anon34;
-typedef struct _anon35;
+
+
 typedef struct _anon36;
 
 
 typedef struct _anon39;
 typedef struct _anon40;
 typedef struct _anon41;
-typedef struct _anon42;
+
 
 typedef struct _anon44;
 typedef struct _anon45;
 
 
-typedef struct _anon48;
+
 typedef struct _anon49;
-typedef struct _anon50;
+
 
 typedef struct _anon52;
 typedef struct _anon53;
@@ -104,7 +104,7 @@ typedef void(*type_31)(BH_PWORK*)[1];
 typedef _anon0* type_32[128];
 typedef _anon53 type_33[16];
 typedef int type_34[3];
-typedef npobj* type_35[16];
+
 typedef int type_36[3][24];
 typedef _anon0* type_37[128];
 typedef int type_38[4];
@@ -222,7 +222,7 @@ typedef unsigned int type_157[4];
 typedef int* type_158[16];
 
 typedef char type_160[32];
-typedef npobj* type_161[16];
+
 typedef char type_162[64];
 
 typedef char type_164[4];
@@ -297,7 +297,7 @@ struct BH_PWORK
 	void* mskp;
 	unsigned int Dummy[1];
 	int* skp[16];
-	npobj* mbp[16];
+	NJS_OBJECT* mbp[16];
 	NJS_TEXLIST* txp[16];
 	_anon16 mdl[16];
 	_anon16* mlwP;
@@ -310,8 +310,8 @@ struct BH_PWORK
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
 	NJS_MATRIX mtx;
-	npobj* obj_a;
-	npobj* obj_b;
+	NJS_OBJECT* obj_a;
+	NJS_OBJECT* obj_b;
 	float shp_ct;
 	char clp_jno[8];
 	int lok_jno;
@@ -388,16 +388,16 @@ struct BH_PWORK
 	unsigned int Dummy2[2];
 };
 
-struct npobj
-{
-	unsigned int evalflags;
-	NJS_CNK_MODEL* model;
-	float pos[3];
-	int ang[3];
-	float scl[3];
-	npobj* child;
-	npobj* sibling;
-};
+
+
+
+
+
+
+
+
+
+
 
 struct _anon0
 {
@@ -449,7 +449,7 @@ struct _anon0
 	void* mskp;
 	unsigned int Dummy[1];
 	int* skp[16];
-	npobj* mbp[16];
+	NJS_OBJECT* mbp[16];
 	NJS_TEXLIST* txp[16];
 	_anon16 mdl[16];
 	_anon16* mlwP;
@@ -462,8 +462,8 @@ struct _anon0
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
 	NJS_MATRIX mtx;
-	npobj* obj_a;
-	npobj* obj_b;
+	NJS_OBJECT* obj_a;
+	NJS_OBJECT* obj_b;
 	float shp_ct;
 	char clp_jno[8];
 	int lok_jno;
@@ -503,7 +503,7 @@ struct _anon0
 	int ct2;
 	int ct3;
 	unsigned char* objbak;
-	_anon50 cspr;
+	NJS_SPHERE cspr;
 	int pn;
 	NJS_POLYGON_VTX* pvp;
 	NJS_TEXTURE_VTX* tvp;
@@ -757,7 +757,7 @@ struct _anon16
 	unsigned int flg;
 	unsigned int obj_num;
 	void* datP;
-	npobj* objP;
+	NJS_OBJECT* objP;
 	NJS_TEXLIST* texP;
 	_anon24* owP;
 };
@@ -854,7 +854,7 @@ struct _anon19
 	int waz;
 	unsigned char* lkwkp;
 	unsigned char* exp;
-	_anon35* light;
+	NJS_LIGHT_PTR light;
 };
 
 struct _anon20
@@ -1454,24 +1454,24 @@ struct _anon33
 	unsigned short* evd;
 };
 
-struct _anon34
-{
-	float a;
-	float r;
-	float g;
-	float b;
-};
 
-struct _anon35
-{
-	NJS_MATRIX mtrx;
-	NJS_POINT3 pnt;
-	NJS_POINT3 vctr;
-	int stat;
-	int reserve;
-	_anon42 ltcal;
-	_anon48 attr;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon36
 {
@@ -1521,31 +1521,31 @@ struct _anon41
 	float r2;
 };
 
-struct _anon42
-{
-	float ratten;
-	float ipd;
-	float nrr;
-	float frr;
-	float cosi;
-	float cose;
-	float idev;
-	float odev;
-	float rate;
-	float intns;
-	int exp;
-	int reserve;
-	NJS_POINT3 lpnt;
-	NJS_POINT3 lvctr;
-	NJS_POINT3 lmvctr;
-	_anon34 atten;
-	_anon34 amb;
-	_anon34 dif;
-	_anon34 spc;
-	_anon34 mamb;
-	_anon34 mdif;
-	_anon34 mspc;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1666,19 +1666,19 @@ struct _anon45
 
 
 
-struct _anon48
-{
-	int lsrc;
-	float iamb;
-	float idif;
-	float ispc;
-	float nrang;
-	float frang;
-	void* func;
-	int iang;
-	int oang;
-	_anon34 argb;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon49
 {
@@ -1688,11 +1688,11 @@ struct _anon49
 	int bonus;
 };
 
-struct _anon50
-{
-	NJS_POINT3 c;
-	float r;
-};
+
+
+
+
+
 
 
 
@@ -2186,7 +2186,7 @@ void bhEne09_Init(BH_PWORK* epw)
 	unsigned char* addr;
 	float save_pos[4];
 	int i;
-	npobj* obj;
+	NJS_OBJECT* obj;
 	// Line 781, Address: 0x1c75a0, Func Offset: 0
 	// Line 787, Address: 0x1c75ac, Func Offset: 0xc
 	// Line 788, Address: 0x1c75b4, Func Offset: 0x14
@@ -3059,7 +3059,7 @@ int bhEne09_AramLineCheck(BH_PWORK* epw, NJS_POINT3* p1, NJS_POINT3* p2)
 	int max;
 	int j;
 	int i;
-	_anon50 at;
+	NJS_SPHERE at;
 	BH_PWORK* ep;
 	// Line 2311, Address: 0x1c9c70, Func Offset: 0
 	// Line 2318, Address: 0x1c9c98, Func Offset: 0x28
@@ -3101,7 +3101,7 @@ int bhEne09_AramLineCheck(BH_PWORK* epw, NJS_POINT3* p1, NJS_POINT3* p2)
 // Start address: 0x1c9de0
 void bhEne09_MV00(BH_PWORK* epw)
 {
-	npobj* obj;
+	NJS_OBJECT* obj;
 	// Line 2380, Address: 0x1c9de0, Func Offset: 0
 	// Line 2383, Address: 0x1c9df0, Func Offset: 0x10
 	// Line 2386, Address: 0x1c9e10, Func Offset: 0x30
@@ -3224,7 +3224,7 @@ void bhEne09_MV04(BH_PWORK* epw)
 	unsigned int frm;
 	_anon4* hp;
 	float len;
-	npobj* obj;
+	NJS_OBJECT* obj;
 	// Line 2626, Address: 0x1ca3e0, Func Offset: 0
 	// Line 2633, Address: 0x1ca3ec, Func Offset: 0xc
 	// Line 2636, Address: 0x1ca418, Func Offset: 0x38
@@ -3367,7 +3367,7 @@ void bhEne09_MV05(BH_PWORK* epw)
 	NJS_POINT3 pos2;
 	NJS_POINT3 pos;
 	_anon24* owk;
-	npobj* obj;
+	NJS_OBJECT* obj;
 	// Line 2796, Address: 0x1caa60, Func Offset: 0
 	// Line 2808, Address: 0x1caa80, Func Offset: 0x20
 	// Line 2811, Address: 0x1caaac, Func Offset: 0x4c
@@ -3598,7 +3598,7 @@ void bhEne09_MV06(BH_PWORK* epw)
 {
 	int rot;
 	_anon24* owk;
-	npobj* obj;
+	NJS_OBJECT* obj;
 	// Line 3399, Address: 0x1cb440, Func Offset: 0
 	// Line 3404, Address: 0x1cb450, Func Offset: 0x10
 	// Line 3418, Address: 0x1cb494, Func Offset: 0x54
@@ -3720,7 +3720,7 @@ void bhEne09_MV07(BH_PWORK* epw)
 {
 	int frm;
 	int rot;
-	_anon50 at;
+	NJS_SPHERE at;
 	// Line 3563, Address: 0x1cb9e0, Func Offset: 0
 	// Line 3570, Address: 0x1cb9f4, Func Offset: 0x14
 	// Line 3573, Address: 0x1cba14, Func Offset: 0x34
@@ -3864,7 +3864,7 @@ void bhEne09_MV09(BH_PWORK* epw)
 void bhEne09_MV10(BH_PWORK* epw)
 {
 	int frm;
-	npobj* obj;
+	NJS_OBJECT* obj;
 	// Line 3827, Address: 0x1cc0b0, Func Offset: 0
 	// Line 3833, Address: 0x1cc0c0, Func Offset: 0x10
 	// Line 3836, Address: 0x1cc0ec, Func Offset: 0x3c
@@ -3931,7 +3931,7 @@ void bhEne09_MV10(BH_PWORK* epw)
 void bhEne09_MV11(BH_PWORK* epw)
 {
 	int frm;
-	npobj* obj;
+	NJS_OBJECT* obj;
 	// Line 3932, Address: 0x1cc3f0, Func Offset: 0
 	// Line 3939, Address: 0x1cc3fc, Func Offset: 0xc
 	// Line 3945, Address: 0x1cc428, Func Offset: 0x38
@@ -4139,7 +4139,7 @@ void bhEne09_MV13(BH_PWORK* epw)
 void bhEne09_MV14(BH_PWORK* epw)
 {
 	unsigned int frm;
-	npobj* obj;
+	NJS_OBJECT* obj;
 	// Line 4291, Address: 0x1ccce0, Func Offset: 0
 	// Line 4298, Address: 0x1cccec, Func Offset: 0xc
 	// Line 4301, Address: 0x1ccd18, Func Offset: 0x38
@@ -4666,7 +4666,7 @@ int bhEne09_PlyNageCheck(BH_PWORK* epw, BH_PWORK* pl, float h)
 	int rot;
 	NJS_POINT3 pos2;
 	NJS_POINT3 pos;
-	_anon50 at;
+	NJS_SPHERE at;
 	_anon4* hp2;
 	_anon4* hp;
 	// Line 5267, Address: 0x1ce130, Func Offset: 0
@@ -4743,7 +4743,7 @@ void bhEne09_DGType00(BH_PWORK* epw)
 void bhEne09_DG00(BH_PWORK* epw)
 {
 	int mtn_no;
-	npobj* obj;
+	NJS_OBJECT* obj;
 	// Line 5381, Address: 0x1ce3c0, Func Offset: 0
 	// Line 5386, Address: 0x1ce3d0, Func Offset: 0x10
 	// Line 5392, Address: 0x1ce3f0, Func Offset: 0x30
@@ -4814,7 +4814,7 @@ void bhEne09_DG00(BH_PWORK* epw)
 void bhEne09_DG01(BH_PWORK* epw)
 {
 	int mtn_no;
-	npobj* obj;
+	NJS_OBJECT* obj;
 	// Line 5489, Address: 0x1ce6b0, Func Offset: 0
 	// Line 5494, Address: 0x1ce6c0, Func Offset: 0x10
 	// Line 5500, Address: 0x1ce6e0, Func Offset: 0x30
@@ -4885,7 +4885,7 @@ void bhEne09_DG01(BH_PWORK* epw)
 void bhEne09_DG02(BH_PWORK* epw)
 {
 	int mtn_no;
-	npobj* obj;
+	NJS_OBJECT* obj;
 	// Line 5597, Address: 0x1ce9f0, Func Offset: 0
 	// Line 5602, Address: 0x1cea00, Func Offset: 0x10
 	// Line 5608, Address: 0x1cea20, Func Offset: 0x30
@@ -4958,7 +4958,7 @@ void bhEne09_DG03(BH_PWORK* epw)
 	int frm;
 	int ang;
 	NJS_POINT3 pos;
-	npobj* obj;
+	NJS_OBJECT* obj;
 	// Line 5707, Address: 0x1ced30, Func Offset: 0
 	// Line 5714, Address: 0x1ced40, Func Offset: 0x10
 	// Line 5718, Address: 0x1ced60, Func Offset: 0x30
@@ -5054,7 +5054,7 @@ void bhEne09_DG03(BH_PWORK* epw)
 // Start address: 0x1cf190
 void bhEne09_DG04(BH_PWORK* epw)
 {
-	npobj* obj;
+	NJS_OBJECT* obj;
 	// Line 5853, Address: 0x1cf190, Func Offset: 0
 	// Line 5862, Address: 0x1cf19c, Func Offset: 0xc
 	// Line 5866, Address: 0x1cf1bc, Func Offset: 0x2c
@@ -5136,7 +5136,7 @@ void bhEne09_DG05(BH_PWORK* epw)
 	int frm;
 	float len;
 	_anon4* hp;
-	npobj* obj;
+	NJS_OBJECT* obj;
 	// Line 5980, Address: 0x1cf510, Func Offset: 0
 	// Line 5988, Address: 0x1cf524, Func Offset: 0x14
 	// Line 5993, Address: 0x1cf544, Func Offset: 0x34
@@ -5254,7 +5254,7 @@ void bhEne09_DG05(BH_PWORK* epw)
 // Start address: 0x1cfb80
 void bhEne09_DG06(BH_PWORK* epw)
 {
-	npobj* obj;
+	NJS_OBJECT* obj;
 	// Line 6182, Address: 0x1cfb80, Func Offset: 0
 	// Line 6185, Address: 0x1cfb90, Func Offset: 0x10
 	// Line 6189, Address: 0x1cfbb0, Func Offset: 0x30
@@ -5331,7 +5331,7 @@ void bhEne09_DG06(BH_PWORK* epw)
 // Start address: 0x1cfef0
 void bhEne09_DG07(BH_PWORK* epw)
 {
-	npobj* obj;
+	NJS_OBJECT* obj;
 	// Line 6287, Address: 0x1cfef0, Func Offset: 0
 	// Line 6291, Address: 0x1cfefc, Func Offset: 0xc
 	// Line 6295, Address: 0x1cff1c, Func Offset: 0x2c
@@ -5399,7 +5399,7 @@ void bhEne09_DG07(BH_PWORK* epw)
 // Start address: 0x1d01b0
 void bhEne09_DG08(BH_PWORK* epw)
 {
-	npobj* obj;
+	NJS_OBJECT* obj;
 	// Line 6407, Address: 0x1d01b0, Func Offset: 0
 	// Line 6410, Address: 0x1d01c0, Func Offset: 0x10
 	// Line 6415, Address: 0x1d01e0, Func Offset: 0x30
@@ -5487,7 +5487,7 @@ void bhEne09_DG08(BH_PWORK* epw)
 void bhEne09_DG09(BH_PWORK* epw)
 {
 	float flr_y;
-	npobj* obj;
+	NJS_OBJECT* obj;
 	// Line 6527, Address: 0x1d0590, Func Offset: 0
 	// Line 6531, Address: 0x1d05a0, Func Offset: 0x10
 	// Line 6536, Address: 0x1d05c0, Func Offset: 0x30
@@ -5661,7 +5661,7 @@ int bhEne09_CollChkArm(BH_PWORK* epw, BH_PWORK* trg)
 	NJS_POINT3 pd;
 	NJS_LINE l1;
 	NJS_CAPSULE cp;
-	_anon50 sp;
+	NJS_SPHERE sp;
 	_anon24* owk;
 	// Line 6847, Address: 0x1d0d30, Func Offset: 0
 	// Line 6858, Address: 0x1d0d5c, Func Offset: 0x2c
@@ -5716,8 +5716,8 @@ int bhEne09_CollChkArm2(BH_PWORK* epw)
 	int i;
 	_anon24* owk;
 	BH_PWORK* ep;
-	_anon50 at2;
-	_anon50 at;
+	NJS_SPHERE at2;
+	NJS_SPHERE at;
 	// Line 6925, Address: 0x1d0f30, Func Offset: 0
 	// Line 6934, Address: 0x1d0f3c, Func Offset: 0xc
 	// Line 6925, Address: 0x1d0f40, Func Offset: 0x10
@@ -5805,7 +5805,7 @@ float bhEne09_ChkArmLen2(BH_PWORK* epw)
 	unsigned int s_mtn_no;
 	int s_ang[3][24];
 	int i;
-	npobj* obj;
+	NJS_OBJECT* obj;
 	float tmp2;
 	float tmp;
 	NJS_POINT3 pos2;
@@ -5908,7 +5908,7 @@ _anon4* bhEne09_ChkArmLen(BH_PWORK* epw, float* len, NJS_POINT3* vec)
 	int i;
 	_anon4* hp2;
 	_anon4* hp;
-	npobj* obj;
+	NJS_OBJECT* obj;
 	float tmp;
 	NJS_POINT3 pos4;
 	NJS_POINT3 pos3;
@@ -6048,7 +6048,7 @@ int bhEne09_SetMtn(BH_PWORK* epw)
 	_anon39* arm;
 	int frm;
 	int ret;
-	npobj* obj;
+	NJS_OBJECT* obj;
 	int rot_tbl2[4];
 	int rot_tbl[4];
 	// Line 7441, Address: 0x1d1930, Func Offset: 0

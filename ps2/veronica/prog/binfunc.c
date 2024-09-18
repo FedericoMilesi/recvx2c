@@ -2,18 +2,18 @@ typedef struct _anon0;
 typedef struct _anon1;
 
 typedef struct _anon3;
-typedef struct _anon4;
-typedef struct _anon5;
-typedef union _anon6;
+
+
+
 
 typedef struct _anon8;
-typedef struct npobj;
+
 
 typedef struct _anon10;
 
-typedef struct _anon12;
-typedef struct _anon13;
-typedef struct _anon14;
+
+
+
 
 
 typedef void* type_0[2];
@@ -53,26 +53,26 @@ struct _anon3
 	void* p[2];
 };
 
-struct _anon4
-{
-	short u;
-	short v;
-};
 
-struct _anon5
-{
-	unsigned char b;
-	unsigned char g;
-	unsigned char r;
-	unsigned char a;
-};
 
-union _anon6
-{
-	unsigned int color;
-	_anon4 tex;
-	_anon5 argb;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -88,16 +88,16 @@ struct _anon8
 	NJS_MATRIX mtx;
 };
 
-struct npobj
-{
-	unsigned int evalflags;
-	NJS_CNK_MODEL* model;
-	float pos[3];
-	int ang[3];
-	float scl[3];
-	npobj* child;
-	npobj* sibling;
-};
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -112,7 +112,7 @@ struct _anon10
 	unsigned int flg;
 	unsigned int obj_num;
 	void* datP;
-	npobj* objP;
+	NJS_OBJECT* objP;
 	NJS_TEXLIST* texP;
 	_anon8* owP;
 };
@@ -124,42 +124,42 @@ struct _anon10
 
 
 
-struct _anon12
-{
-	NJS_POINT3* points;
-	NJS_POINT3* normals;
-	int nbPoint;
-	_anon13* meshsets;
-	_anon14* mats;
-	unsigned short nbMeshset;
-	unsigned short nbMat;
-	NJS_POINT3 center;
-	float r;
-};
 
-struct _anon13
-{
-	unsigned short type_matId;
-	unsigned short nbMesh;
-	short* meshes;
-	unsigned int* attrs;
-	NJS_POINT3* normals;
-	_anon6* vertcolor;
-	_anon6* vertuv;
-};
 
-struct _anon14
-{
-	_anon6 diffuse;
-	_anon6 specular;
-	float exponent;
-	unsigned int attr_texId;
-	unsigned int attrflags;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 int bhMlbBinRealize(void* bin_datP, _anon10* mlwP);
-int bhBscBinRealize(_anon12* mdlP, unsigned int dat_off);
+int bhBscBinRealize(NJS_MODEL* mdlP, unsigned int dat_off);
 int bhCnkBinRealize(NJS_CNK_MODEL* mdlP, unsigned int dat_off);
 int bhMnbBinRealize(void* bin_datP, _anon0* mnwP);
 
@@ -169,7 +169,7 @@ int bhMlbBinRealize(void* bin_datP, _anon10* mlwP)
 {
 	NJS_TEXNAME* namP;
 	unsigned int tex_num;
-	npobj* objP;
+	NJS_OBJECT* objP;
 	unsigned int status;
 	unsigned int obj_off;
 	unsigned int tex_off;
@@ -225,10 +225,10 @@ int bhMlbBinRealize(void* bin_datP, _anon10* mlwP)
 
 // 
 // Start address: 0x2c88b0
-int bhBscBinRealize(_anon12* mdlP, unsigned int dat_off)
+int bhBscBinRealize(NJS_MODEL* mdlP, unsigned int dat_off)
 {
 	unsigned int i;
-	_anon13* mshP;
+	NJS_MESHSET* mshP;
 	// Line 144, Address: 0x2c88b0, Func Offset: 0
 	// Line 146, Address: 0x2c88c4, Func Offset: 0x14
 	// Line 148, Address: 0x2c88d0, Func Offset: 0x20

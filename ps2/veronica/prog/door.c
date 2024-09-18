@@ -3,7 +3,7 @@ typedef struct _door_wrk;
 typedef struct _anon1;
 
 typedef struct _anon3;
-typedef struct npobj;
+
 
 typedef struct _anon5;
 typedef struct _anon6;
@@ -19,18 +19,18 @@ typedef struct _anon14;
 typedef struct _anon16;
 typedef struct _anon17;
 typedef enum _enum;
-typedef struct _anon18;
+
 typedef struct _anon19;
-typedef struct _anon20;
+
 typedef struct _anon21;
 
 typedef struct _anon23;
-typedef union _anon24;
+
 typedef struct _anon25;
 typedef struct _anon26;
 
-typedef struct _anon28;
-typedef struct _anon29;
+
+
 typedef struct BH_PWORK;
 typedef struct _anon30;
 typedef struct _anon31;
@@ -46,19 +46,19 @@ typedef struct _anon40;
 typedef struct _anon41;
 
 typedef struct _anon43;
-typedef struct _anon44;
+
 typedef struct _anon45;
 typedef struct _anon46;
-typedef struct _anon47;
+
 typedef struct _anon48;
 typedef struct _anon49;
 typedef struct _anon50;
 typedef struct _anon51;
 
 
-typedef struct _anon54;
+
 typedef struct _anon55;
-typedef struct _anon56;
+
 
 
 typedef void(*type_7)(void*);
@@ -83,7 +83,7 @@ typedef _anon1* type_11[128];
 typedef int* type_12[16];
 
 typedef _anon1* type_14[128];
-typedef npobj* type_15[16];
+
 typedef int type_16[3];
 
 typedef _anon1* type_18[512];
@@ -111,7 +111,7 @@ typedef unsigned int type_41[4];
 
 typedef void* type_43[2];
 typedef _anon41 type_44[8];
-typedef _anon24 type_45[4];
+
 typedef unsigned char* type_46[256];
 typedef _anon41 type_47[2];
 typedef char type_48[256];
@@ -172,7 +172,7 @@ typedef _anon41 type_106[8];
 typedef unsigned int type_107[4];
 typedef unsigned int type_108[2];
 typedef int* type_109[16];
-typedef npobj* type_110[16];
+
 typedef unsigned char type_111[2];
 typedef char type_112[4];
 
@@ -254,7 +254,7 @@ struct _door_wrk
 	int dor_snd_exd;
 	void* dpP;
 	_anon14 dor_mdl;
-	npobj* objP;
+	NJS_OBJECT* objP;
 	NJS_POINT3 dor_bak;
 	int dor_yaw;
 	int dor_pitch;
@@ -328,7 +328,7 @@ struct _anon1
 	void* mskp;
 	unsigned int Dummy[1];
 	int* skp[16];
-	npobj* mbp[16];
+	NJS_OBJECT* mbp[16];
 	NJS_TEXLIST* txp[16];
 	_anon14 mdl[16];
 	_anon14* mlwP;
@@ -341,8 +341,8 @@ struct _anon1
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
 	NJS_MATRIX mtx;
-	npobj* obj_a;
-	npobj* obj_b;
+	NJS_OBJECT* obj_a;
+	NJS_OBJECT* obj_b;
 	float shp_ct;
 	char clp_jno[8];
 	int lok_jno;
@@ -382,7 +382,7 @@ struct _anon1
 	int ct2;
 	int ct3;
 	unsigned char* objbak;
-	_anon56 cspr;
+	NJS_SPHERE cspr;
 	int pn;
 	NJS_POLYGON_VTX* pvp;
 	NJS_TEXTURE_VTX* tvp;
@@ -422,16 +422,16 @@ struct _anon3
 	short pru_off;
 };
 
-struct npobj
-{
-	unsigned int evalflags;
-	NJS_CNK_MODEL* model;
-	float pos[3];
-	int ang[3];
-	float scl[3];
-	npobj* child;
-	npobj* sibling;
-};
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -587,7 +587,7 @@ struct _anon14
 	unsigned int flg;
 	unsigned int obj_num;
 	void* datP;
-	npobj* objP;
+	NJS_OBJECT* objP;
 	NJS_TEXLIST* texP;
 	_anon32* owP;
 };
@@ -649,11 +649,11 @@ enum _enum
 	DMO_SPD_3
 };
 
-struct _anon18
-{
-	short u;
-	short v;
-};
+
+
+
+
+
 
 struct _anon19
 {
@@ -674,13 +674,13 @@ struct _anon19
 	int wait;
 };
 
-struct _anon20
-{
-	unsigned char b;
-	unsigned char g;
-	unsigned char r;
-	unsigned char a;
-};
+
+
+
+
+
+
+
 
 struct _anon21
 {
@@ -713,12 +713,12 @@ struct _anon23
 	int cap_r;
 };
 
-union _anon24
-{
-	unsigned int color;
-	_anon18 tex;
-	_anon20 argb;
-};
+
+
+
+
+
+
 
 struct _anon25
 {
@@ -1140,24 +1140,24 @@ struct _anon26
 
 
 
-struct _anon28
-{
-	NJS_MATRIX mtrx;
-	NJS_POINT3 pnt;
-	NJS_POINT3 vctr;
-	int stat;
-	int reserve;
-	_anon44 ltcal;
-	_anon54 attr;
-};
 
-struct _anon29
-{
-	float a;
-	float r;
-	float g;
-	float b;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct BH_PWORK
 {
@@ -1209,7 +1209,7 @@ struct BH_PWORK
 	void* mskp;
 	unsigned int Dummy[1];
 	int* skp[16];
-	npobj* mbp[16];
+	NJS_OBJECT* mbp[16];
 	NJS_TEXLIST* txp[16];
 	_anon14 mdl[16];
 	_anon14* mlwP;
@@ -1222,8 +1222,8 @@ struct BH_PWORK
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
 	NJS_MATRIX mtx;
-	npobj* obj_a;
-	npobj* obj_b;
+	NJS_OBJECT* obj_a;
+	NJS_OBJECT* obj_b;
 	float shp_ct;
 	char clp_jno[8];
 	int lok_jno;
@@ -1449,7 +1449,7 @@ struct _anon40
 	int waz;
 	unsigned char* lkwkp;
 	unsigned char* exp;
-	_anon28* light;
+	NJS_LIGHT_PTR light;
 };
 
 struct _anon41
@@ -1474,31 +1474,31 @@ struct _anon43
 	int pru_wait;
 };
 
-struct _anon44
-{
-	float ratten;
-	float ipd;
-	float nrr;
-	float frr;
-	float cosi;
-	float cose;
-	float idev;
-	float odev;
-	float rate;
-	float intns;
-	int exp;
-	int reserve;
-	NJS_POINT3 lpnt;
-	NJS_POINT3 lvctr;
-	NJS_POINT3 lmvctr;
-	_anon29 atten;
-	_anon29 amb;
-	_anon29 dif;
-	_anon29 spc;
-	_anon29 mamb;
-	_anon29 mdif;
-	_anon29 mspc;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon45
 {
@@ -1517,13 +1517,13 @@ struct _anon46
 	_anon35 lgt_dat[3];
 };
 
-struct _anon47
-{
-	NJS_POINT2* p;
-	_anon24* col;
-	_anon24* tex;
-	unsigned int num;
-};
+
+
+
+
+
+
+
 
 struct _anon48
 {
@@ -1617,19 +1617,19 @@ struct _anon51
 
 
 
-struct _anon54
-{
-	int lsrc;
-	float iamb;
-	float idif;
-	float ispc;
-	float nrang;
-	float frang;
-	void* func;
-	int iang;
-	int oang;
-	_anon29 argb;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon55
 {
@@ -1650,11 +1650,11 @@ struct _anon55
 	unsigned char prm3;
 };
 
-struct _anon56
-{
-	NJS_POINT3 c;
-	float r;
-};
+
+
+
+
+
 
 
 
@@ -2345,9 +2345,9 @@ void ViewProc7(_door_wrk* dwP)
 void DoorProc1(_door_wrk* dwP)
 {
 	_anon51* dpP;
-	npobj* objP;
-	npobj* obP;
-	npobj* oaP;
+	NJS_OBJECT* objP;
+	NJS_OBJECT* obP;
+	NJS_OBJECT* oaP;
 	int flp_n;
 	int flp_d;
 	// Line 1322, Address: 0x2b0660, Func Offset: 0
@@ -2416,11 +2416,11 @@ void DoorProc2(_door_wrk* dwP)
 	float pos_x;
 	int ang_z;
 	int pole;
-	npobj* objP;
-	npobj* basP;
+	NJS_OBJECT* objP;
+	NJS_OBJECT* basP;
 	int j;
 	int i;
-	npobj* basP;
+	NJS_OBJECT* basP;
 	_anon0* dpP;
 	// Line 1450, Address: 0x2b09f0, Func Offset: 0
 	// Line 1455, Address: 0x2b0a04, Func Offset: 0x14
@@ -2479,9 +2479,9 @@ void DoorProc2(_door_wrk* dwP)
 void DoorProc3(_door_wrk* dwP)
 {
 	_anon10* dpP;
-	npobj* objP;
-	npobj* obP;
-	npobj* oaP;
+	NJS_OBJECT* objP;
+	NJS_OBJECT* obP;
+	NJS_OBJECT* oaP;
 	int flp_n;
 	int flp_d;
 	// Line 1541, Address: 0x2b0c20, Func Offset: 0
@@ -2546,7 +2546,7 @@ void DoorProc4(_door_wrk* dwP)
 {
 	_anon6* prmP;
 	_anon6* dpP;
-	npobj* objP;
+	NJS_OBJECT* objP;
 	// Line 1647, Address: 0x2b0ee0, Func Offset: 0
 	// Line 1653, Address: 0x2b0ef4, Func Offset: 0x14
 	// Line 1651, Address: 0x2b0ef8, Func Offset: 0x18
@@ -2586,7 +2586,7 @@ void DoorProc4(_door_wrk* dwP)
 void DoorProc5(_door_wrk* dwP)
 {
 	_anon30* dpP;
-	npobj* objP;
+	NJS_OBJECT* objP;
 	// Line 1716, Address: 0x2b10a0, Func Offset: 0
 	// Line 1723, Address: 0x2b10b4, Func Offset: 0x14
 	// Line 1717, Address: 0x2b10b8, Func Offset: 0x18
@@ -2636,7 +2636,7 @@ void DoorProc5(_door_wrk* dwP)
 // Start address: 0x2b12b0
 void DoorProc6(_door_wrk* dwP)
 {
-	npobj* objP;
+	NJS_OBJECT* objP;
 	// Line 1812, Address: 0x2b12b0, Func Offset: 0
 	// Line 1816, Address: 0x2b12d0, Func Offset: 0x20
 	// Line 1817, Address: 0x2b12f0, Func Offset: 0x40
@@ -2650,9 +2650,9 @@ void DoorProc6(_door_wrk* dwP)
 void DoorProc7(_door_wrk* dwP)
 {
 	_anon51* dpP;
-	npobj* objP;
-	npobj* obP;
-	npobj* oaP;
+	NJS_OBJECT* objP;
+	NJS_OBJECT* obP;
+	NJS_OBJECT* oaP;
 	int nob;
 	int flp_n;
 	int flp_d;
@@ -2840,8 +2840,8 @@ void ryExcuteFade(float pri, int col, float rate)
 {
 	unsigned int tmp;
 	int pal;
-	_anon47 p2c;
-	_anon24 col_buf[4];
+	NJS_POINT2COL p2c;
+	NJS_COLOR col_buf[4];
 	// Line 2148, Address: 0x2b1c20, Func Offset: 0
 	// Line 2161, Address: 0x2b1c34, Func Offset: 0x14
 	// Line 2148, Address: 0x2b1c3c, Func Offset: 0x1c

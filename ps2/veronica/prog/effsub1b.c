@@ -1,4 +1,4 @@
-typedef struct npobj;
+
 typedef struct _anon0;
 
 
@@ -17,35 +17,35 @@ typedef struct _anon14;
 typedef struct _anon15;
 typedef struct _anon16;
 typedef struct _anon17;
-typedef struct _anon18;
+
 typedef struct _anon19;
 typedef struct _anon20;
-typedef struct _anon21;
 
-typedef union _anon23;
+
+
 typedef struct _anon24;
 typedef struct _anon25;
 
 typedef struct _anon27;
 typedef struct _anon28;
-typedef struct _anon29;
+
 typedef struct _anon30;
-typedef struct _anon31;
+
 typedef struct BH_PWORK;
 typedef struct _anon32;
 
 
 
 typedef struct _anon36;
-typedef struct _anon37;
 
-typedef struct _anon39;
+
+
 typedef struct _anon40;
 typedef struct _anon41;
 
 
-typedef struct _anon44;
-typedef struct _anon45;
+
+
 
 typedef struct _anon47;
 typedef struct _anon48;
@@ -62,14 +62,14 @@ typedef _anon0* type_2[512];
 
 typedef _anon0* type_4[32];
 
-typedef _anon23 type_6[4];
+
 typedef _anon0* type_7[32];
 typedef _anon0* type_8[512];
 
 
 typedef char type_11[8];
 typedef _anon0* type_12[32];
-typedef _anon23 type_13[4];
+
 typedef _anon0* type_14[512];
 
 typedef char type_16[32];
@@ -85,7 +85,7 @@ typedef _anon8 type_24[256];
 typedef int* type_26[16];
 typedef _anon0* type_27[128];
 typedef _anon47 type_28[16];
-typedef npobj* type_29[16];
+
 typedef _anon0* type_30[128];
 typedef int type_31[4];
 
@@ -149,9 +149,9 @@ typedef unsigned int type_91[8];
 typedef unsigned char type_92[450];
 typedef float type_93[128];
 
-typedef _anon23 type_95[4];
+
 typedef char type_96[16];
-typedef _anon23 type_97[4];
+
 typedef char type_98[4];
 typedef _anon24 type_100[2];
 typedef unsigned int type_101[32];
@@ -175,7 +175,7 @@ typedef unsigned char type_118[2];
 typedef int* type_120[16];
 typedef unsigned int type_121[4];
 typedef char type_122[32];
-typedef npobj* type_123[16];
+
 typedef char type_124[64];
 typedef _anon48 type_125[8];
 
@@ -192,22 +192,22 @@ typedef _anon48 type_137[9];
 typedef _anon0* type_138[512];
 
 typedef _anon0* type_140[128];
-typedef _anon18 type_141[4];
-typedef _anon23 type_142[4];
+
+
 typedef _anon0* type_143[512];
 typedef unsigned char type_144[64];
 typedef _anon0* type_145[512];
 
-struct npobj
-{
-	unsigned int evalflags;
-	NJS_CNK_MODEL* model;
-	float pos[3];
-	int ang[3];
-	float scl[3];
-	npobj* child;
-	npobj* sibling;
-};
+
+
+
+
+
+
+
+
+
+
 
 struct _anon0
 {
@@ -259,7 +259,7 @@ struct _anon0
 	void* mskp;
 	unsigned int Dummy[1];
 	int* skp[16];
-	npobj* mbp[16];
+	NJS_OBJECT* mbp[16];
 	NJS_TEXLIST* txp[16];
 	_anon12 mdl[16];
 	_anon12* mlwP;
@@ -272,8 +272,8 @@ struct _anon0
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
 	NJS_MATRIX mtx;
-	npobj* obj_a;
-	npobj* obj_b;
+	NJS_OBJECT* obj_a;
+	NJS_OBJECT* obj_b;
 	float shp_ct;
 	char clp_jno[8];
 	int lok_jno;
@@ -313,7 +313,7 @@ struct _anon0
 	int ct2;
 	int ct3;
 	unsigned char* objbak;
-	_anon45 cspr;
+	NJS_SPHERE cspr;
 	int pn;
 	NJS_POLYGON_VTX* pvp;
 	NJS_TEXTURE_VTX* tvp;
@@ -926,7 +926,7 @@ struct _anon12
 	unsigned int flg;
 	unsigned int obj_num;
 	void* datP;
-	npobj* objP;
+	NJS_OBJECT* objP;
 	NJS_TEXLIST* texP;
 	_anon30* owP;
 };
@@ -1023,7 +1023,7 @@ struct _anon15
 	int waz;
 	unsigned char* lkwkp;
 	unsigned char* exp;
-	_anon31* light;
+	NJS_LIGHT_PTR light;
 };
 
 struct _anon16
@@ -1062,11 +1062,11 @@ struct _anon17
 	int ct3;
 };
 
-struct _anon18
-{
-	short u;
-	short v;
-};
+
+
+
+
+
 
 struct _anon19
 {
@@ -1111,13 +1111,6 @@ struct _anon20
 	unsigned char prm3;
 };
 
-struct _anon21
-{
-	unsigned char b;
-	unsigned char g;
-	unsigned char r;
-	unsigned char a;
-};
 
 
 
@@ -1125,12 +1118,19 @@ struct _anon21
 
 
 
-union _anon23
-{
-	unsigned int color;
-	_anon18 tex;
-	_anon21 argb;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon24
 {
@@ -1196,13 +1196,13 @@ struct _anon28
 	unsigned short* evd;
 };
 
-struct _anon29
-{
-	float a;
-	float r;
-	float g;
-	float b;
-};
+
+
+
+
+
+
+
 
 struct _anon30
 {
@@ -1212,16 +1212,16 @@ struct _anon30
 	NJS_MATRIX mtx;
 };
 
-struct _anon31
-{
-	NJS_MATRIX mtrx;
-	NJS_POINT3 pnt;
-	NJS_POINT3 vctr;
-	int stat;
-	int reserve;
-	_anon37 ltcal;
-	_anon44 attr;
-};
+
+
+
+
+
+
+
+
+
+
 
 struct BH_PWORK
 {
@@ -1273,7 +1273,7 @@ struct BH_PWORK
 	void* mskp;
 	unsigned int Dummy[1];
 	int* skp[16];
-	npobj* mbp[16];
+	NJS_OBJECT* mbp[16];
 	NJS_TEXLIST* txp[16];
 	_anon12 mdl[16];
 	_anon12* mlwP;
@@ -1286,8 +1286,8 @@ struct BH_PWORK
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
 	NJS_MATRIX mtx;
-	npobj* obj_a;
-	npobj* obj_b;
+	NJS_OBJECT* obj_a;
+	NJS_OBJECT* obj_b;
 	float shp_ct;
 	char clp_jno[8];
 	int lok_jno;
@@ -1403,31 +1403,6 @@ struct _anon36
 	float r2;
 };
 
-struct _anon37
-{
-	float ratten;
-	float ipd;
-	float nrr;
-	float frr;
-	float cosi;
-	float cose;
-	float idev;
-	float odev;
-	float rate;
-	float intns;
-	int exp;
-	int reserve;
-	NJS_POINT3 lpnt;
-	NJS_POINT3 lvctr;
-	NJS_POINT3 lmvctr;
-	_anon29 atten;
-	_anon29 amb;
-	_anon29 dif;
-	_anon29 spc;
-	_anon29 mamb;
-	_anon29 mdif;
-	_anon29 mspc;
-};
 
 
 
@@ -1438,13 +1413,38 @@ struct _anon37
 
 
 
-struct _anon39
-{
-	NJS_POINT2* p;
-	_anon23* col;
-	_anon23* tex;
-	unsigned int num;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon40
 {
@@ -1556,25 +1556,25 @@ struct _anon41
 
 
 
-struct _anon44
-{
-	int lsrc;
-	float iamb;
-	float idif;
-	float ispc;
-	float nrang;
-	float frang;
-	void* func;
-	int iang;
-	int oang;
-	_anon29 argb;
-};
 
-struct _anon45
-{
-	NJS_POINT3 c;
-	float r;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1622,7 +1622,7 @@ struct _anon48
 	float y0;
 	float x1;
 	float y1;
-	_anon18 uv[4];
+	NJS_TEX uv[4];
 };
 
 _anon4* sys;
@@ -1709,9 +1709,9 @@ void bhDraw134(_anon0* op)
 {
 	int i;
 	unsigned int argb;
-	_anon23 col[4];
+	NJS_COLOR col[4];
 	NJS_POINT2 p[4];
-	_anon39 p2c;
+	NJS_POINT2COL p2c;
 	_anon48 ef134tb[8];
 	// Line 122, Address: 0x239250, Func Offset: 0
 	// Line 144, Address: 0x23927c, Func Offset: 0x2c
@@ -2212,10 +2212,10 @@ void bhDraw137(_anon0* op)
 	float xr;
 	float zom;
 	float px;
-	_anon23 uv[4];
-	_anon23 col[4];
+	NJS_COLOR uv[4];
+	NJS_COLOR col[4];
 	NJS_POINT2 p[4];
-	_anon39 p2c;
+	NJS_POINT2COL p2c;
 	_anon48 ef137tb[9];
 	// Line 722, Address: 0x23ac80, Func Offset: 0
 	// Line 742, Address: 0x23acb8, Func Offset: 0x38
@@ -2521,10 +2521,10 @@ void bhDraw138(_anon0* op)
 {
 	int i;
 	unsigned int argb;
-	_anon23 uv[4];
-	_anon23 col[4];
+	NJS_COLOR uv[4];
+	NJS_COLOR col[4];
 	NJS_POINT2 p[4];
-	_anon39 p2c;
+	NJS_POINT2COL p2c;
 	_anon48 ef138cur[1];
 	_anon48 ef138ledl[4];
 	_anon48 ef138leds[4];

@@ -1,4 +1,4 @@
-typedef struct npobj;
+
 typedef struct BH_PWORK;
 typedef struct _anon0;
 typedef struct _anon1;
@@ -25,9 +25,9 @@ typedef struct _anon17;
 
 typedef struct _anon19;
 typedef struct _anon20;
-typedef struct _anon21;
+
 typedef struct _anon22;
-typedef struct _anon23;
+
 typedef struct _anon24;
 
 
@@ -38,7 +38,7 @@ typedef struct _anon29;
 typedef struct _anon30;
 typedef struct _anon31;
 typedef struct _anon32;
-typedef struct _anon33;
+
 
 typedef struct _anon35;
 typedef struct _anon36;
@@ -46,9 +46,9 @@ typedef enum _enum_2;
 
 typedef enum _enum_3;
 
-typedef struct _anon39;
+
 typedef struct _anon40;
-typedef struct _anon41;
+
 
 typedef enum _enum_4;
 typedef struct _anon43;
@@ -85,7 +85,7 @@ typedef _anon8 type_22[256];
 
 typedef int* type_24[16];
 typedef _anon0* type_25[128];
-typedef npobj* type_26[16];
+
 typedef _anon0* type_27[128];
 typedef int type_28[4];
 
@@ -162,7 +162,7 @@ typedef unsigned char type_103[2];
 typedef unsigned int type_104[4];
 typedef int* type_105[16];
 typedef char type_106[32];
-typedef npobj* type_107[16];
+
 typedef char type_108[64];
 typedef _anon35 type_109[5];
 
@@ -180,16 +180,16 @@ typedef _anon0* type_122[512];
 typedef unsigned char type_123[64];
 typedef _anon0* type_124[512];
 
-struct npobj
-{
-	unsigned int evalflags;
-	NJS_CNK_MODEL* model;
-	float pos[3];
-	int ang[3];
-	float scl[3];
-	npobj* child;
-	npobj* sibling;
-};
+
+
+
+
+
+
+
+
+
+
 
 struct BH_PWORK
 {
@@ -241,7 +241,7 @@ struct BH_PWORK
 	void* mskp;
 	unsigned int Dummy[1];
 	int* skp[16];
-	npobj* mbp[16];
+	NJS_OBJECT* mbp[16];
 	NJS_TEXLIST* txp[16];
 	_anon12 mdl[16];
 	_anon12* mlwP;
@@ -254,8 +254,8 @@ struct BH_PWORK
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
 	NJS_MATRIX mtx;
-	npobj* obj_a;
-	npobj* obj_b;
+	NJS_OBJECT* obj_a;
+	NJS_OBJECT* obj_b;
 	float shp_ct;
 	char clp_jno[8];
 	int lok_jno;
@@ -382,7 +382,7 @@ struct _anon0
 	void* mskp;
 	unsigned int Dummy[1];
 	int* skp[16];
-	npobj* mbp[16];
+	NJS_OBJECT* mbp[16];
 	NJS_TEXLIST* txp[16];
 	_anon12 mdl[16];
 	_anon12* mlwP;
@@ -395,8 +395,8 @@ struct _anon0
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
 	NJS_MATRIX mtx;
-	npobj* obj_a;
-	npobj* obj_b;
+	NJS_OBJECT* obj_a;
+	NJS_OBJECT* obj_b;
 	float shp_ct;
 	char clp_jno[8];
 	int lok_jno;
@@ -436,7 +436,7 @@ struct _anon0
 	int ct2;
 	int ct3;
 	unsigned char* objbak;
-	_anon41 cspr;
+	NJS_SPHERE cspr;
 	int pn;
 	NJS_POLYGON_VTX* pvp;
 	NJS_TEXTURE_VTX* tvp;
@@ -1062,7 +1062,7 @@ struct _anon12
 	unsigned int flg;
 	unsigned int obj_num;
 	void* datP;
-	npobj* objP;
+	NJS_OBJECT* objP;
 	NJS_TEXLIST* texP;
 	_anon22* owP;
 };
@@ -1198,16 +1198,16 @@ struct _anon20
 	int waz;
 	unsigned char* lkwkp;
 	unsigned char* exp;
-	_anon23* light;
+	NJS_LIGHT_PTR light;
 };
 
-struct _anon21
-{
-	float a;
-	float r;
-	float g;
-	float b;
-};
+
+
+
+
+
+
+
 
 struct _anon22
 {
@@ -1217,16 +1217,16 @@ struct _anon22
 	NJS_MATRIX mtx;
 };
 
-struct _anon23
-{
-	NJS_MATRIX mtrx;
-	NJS_POINT3 pnt;
-	NJS_POINT3 vctr;
-	int stat;
-	int reserve;
-	_anon33 ltcal;
-	_anon39 attr;
-};
+
+
+
+
+
+
+
+
+
+
 
 struct _anon24
 {
@@ -1315,31 +1315,31 @@ struct _anon32
 	float r2;
 };
 
-struct _anon33
-{
-	float ratten;
-	float ipd;
-	float nrr;
-	float frr;
-	float cosi;
-	float cose;
-	float idev;
-	float odev;
-	float rate;
-	float intns;
-	int exp;
-	int reserve;
-	NJS_POINT3 lpnt;
-	NJS_POINT3 lvctr;
-	NJS_POINT3 lmvctr;
-	_anon21 atten;
-	_anon21 amb;
-	_anon21 dif;
-	_anon21 spc;
-	_anon21 mamb;
-	_anon21 mdif;
-	_anon21 mspc;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1433,19 +1433,19 @@ enum _enum_3
 
 
 
-struct _anon39
-{
-	int lsrc;
-	float iamb;
-	float idif;
-	float ispc;
-	float nrang;
-	float frang;
-	void* func;
-	int iang;
-	int oang;
-	_anon21 argb;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon40
 {
@@ -1455,11 +1455,11 @@ struct _anon40
 	int bonus;
 };
 
-struct _anon41
-{
-	NJS_POINT3 c;
-	float r;
-};
+
+
+
+
+
 
 
 
@@ -2214,7 +2214,7 @@ int bhEne29_AttackHitCheck(BH_PWORK* ewP, _en29_freework* fwP)
 {
 	int ang;
 	int i;
-	_anon41 spr;
+	NJS_SPHERE spr;
 	_anon28 E29Cll[6];
 	// Line 1478, Address: 0x2121a0, Func Offset: 0
 	// Line 1489, Address: 0x2121c8, Func Offset: 0x28

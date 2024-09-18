@@ -1,10 +1,10 @@
-typedef struct _anon0;
+
 typedef struct _anon1;
 
 
 typedef struct BH_PWORK;
 typedef struct _anon4;
-typedef struct npobj;
+
 typedef struct _anon5;
 
 typedef struct _anon7;
@@ -31,7 +31,7 @@ typedef struct _LEGLOCK_TAB;
 typedef struct _anon22;
 
 typedef struct _anon24;
-typedef struct _anon25;
+
 typedef struct _anon26;
 typedef struct _anon27;
 
@@ -41,11 +41,11 @@ typedef struct _anon31;
 typedef struct _anon32;
 
 typedef struct _UVINFO;
-typedef struct _anon34;
+
 typedef struct _anon35;
 
 typedef struct _anon37;
-typedef struct _anon38;
+
 typedef struct _EFF_INFO;
 typedef struct _anon39;
 
@@ -53,7 +53,7 @@ typedef struct _anon39;
 typedef struct _anon42;
 
 typedef struct _JOINT_PARE;
-typedef struct _anon44;
+
 typedef struct _ATTACK_COL_TBL;
 typedef struct _anon45;
 typedef struct _anon46;
@@ -106,7 +106,7 @@ typedef char type_37[3];
 typedef _anon5 type_38[256];
 typedef char type_39[12];
 typedef _anon46 type_40[16];
-typedef npobj* type_41[16];
+
 typedef _MTN_RELAY_RELAY type_42[4];
 typedef _COMBO_EFF type_43[21];
 typedef _LEGLOCK_LIST type_44[2];
@@ -206,7 +206,7 @@ typedef int type_140[3];
 typedef unsigned int type_141[4];
 typedef int* type_142[16];
 typedef BH_PWORK type_143[0];
-typedef npobj* type_144[16];
+
 typedef _anon1 type_145[0];
 
 typedef char type_147[4];
@@ -223,11 +223,11 @@ typedef unsigned int type_158[4];
 typedef unsigned int type_159[32];
 typedef _anon1* type_160[128];
 
-struct _anon0
-{
-	NJS_POINT3 c;
-	float r;
-};
+
+
+
+
+
 
 struct _anon1
 {
@@ -279,7 +279,7 @@ struct _anon1
 	void* mskp;
 	unsigned int Dummy[1];
 	int* skp[16];
-	npobj* mbp[16];
+	NJS_OBJECT* mbp[16];
 	NJS_TEXLIST* txp[16];
 	_anon16 mdl[16];
 	_anon16* mlwP;
@@ -292,8 +292,8 @@ struct _anon1
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
 	NJS_MATRIX mtx;
-	npobj* obj_a;
-	npobj* obj_b;
+	NJS_OBJECT* obj_a;
+	NJS_OBJECT* obj_b;
 	float shp_ct;
 	char clp_jno[8];
 	int lok_jno;
@@ -333,7 +333,7 @@ struct _anon1
 	int ct2;
 	int ct3;
 	unsigned char* objbak;
-	_anon0 cspr;
+	NJS_SPHERE cspr;
 	int pn;
 	NJS_POLYGON_VTX* pvp;
 	NJS_TEXTURE_VTX* tvp;
@@ -420,7 +420,7 @@ struct BH_PWORK
 	void* mskp;
 	unsigned int Dummy[1];
 	int* skp[16];
-	npobj* mbp[16];
+	NJS_OBJECT* mbp[16];
 	NJS_TEXLIST* txp[16];
 	_anon16 mdl[16];
 	_anon16* mlwP;
@@ -433,8 +433,8 @@ struct BH_PWORK
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
 	NJS_MATRIX mtx;
-	npobj* obj_a;
-	npobj* obj_b;
+	NJS_OBJECT* obj_a;
+	NJS_OBJECT* obj_b;
 	float shp_ct;
 	char clp_jno[8];
 	int lok_jno;
@@ -568,19 +568,19 @@ struct _anon4
 	int waz;
 	unsigned char* lkwkp;
 	unsigned char* exp;
-	_anon34* light;
+	NJS_LIGHT_PTR light;
 };
 
-struct npobj
-{
-	unsigned int evalflags;
-	NJS_CNK_MODEL* model;
-	float pos[3];
-	int ang[3];
-	float scl[3];
-	npobj* child;
-	npobj* sibling;
-};
+
+
+
+
+
+
+
+
+
+
 
 struct _anon5
 {
@@ -789,7 +789,7 @@ struct _anon16
 	unsigned int flg;
 	unsigned int obj_num;
 	void* datP;
-	npobj* objP;
+	NJS_OBJECT* objP;
 	NJS_TEXLIST* texP;
 	_anon30* owP;
 };
@@ -941,13 +941,13 @@ struct _anon24
 	unsigned char prm3;
 };
 
-struct _anon25
-{
-	float a;
-	float r;
-	float g;
-	float b;
-};
+
+
+
+
+
+
+
 
 struct _anon26
 {
@@ -1445,16 +1445,16 @@ struct _UVINFO
 	short scale;
 };
 
-struct _anon34
-{
-	NJS_MATRIX mtrx;
-	NJS_POINT3 pnt;
-	NJS_POINT3 vctr;
-	int stat;
-	int reserve;
-	_anon38 ltcal;
-	_anon44 attr;
-};
+
+
+
+
+
+
+
+
+
+
 
 struct _anon35
 {
@@ -1486,31 +1486,31 @@ struct _anon37
 	float len;
 };
 
-struct _anon38
-{
-	float ratten;
-	float ipd;
-	float nrr;
-	float frr;
-	float cosi;
-	float cose;
-	float idev;
-	float odev;
-	float rate;
-	float intns;
-	int exp;
-	int reserve;
-	NJS_POINT3 lpnt;
-	NJS_POINT3 lvctr;
-	NJS_POINT3 lmvctr;
-	_anon25 atten;
-	_anon25 amb;
-	_anon25 dif;
-	_anon25 spc;
-	_anon25 mamb;
-	_anon25 mdif;
-	_anon25 mspc;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _EFF_INFO
 {
@@ -1581,19 +1581,19 @@ struct _JOINT_PARE
 	char parent;
 };
 
-struct _anon44
-{
-	int lsrc;
-	float iamb;
-	float idif;
-	float ispc;
-	float nrang;
-	float frang;
-	void* func;
-	int iang;
-	int oang;
-	_anon25 argb;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _ATTACK_COL_TBL
 {
@@ -1734,7 +1734,7 @@ int VacumeToPoint(BH_PWORK* pw, NJS_POINT3* pos);
 void LockLeg(BH_PWORK* epw);
 int bhEne15_AttackPlayerCC(NJS_CAPSULE* cap, NJS_POINT3* attack_v, int damage);
 int bhEne15_AttackPlayerBC(_anon11* box, NJS_POINT3* attack_v, int damage);
-int bhEne15_AttackPlayerSS(_anon0* spr, NJS_POINT3* attack_v, int damage);
+int bhEne15_AttackPlayerSS(NJS_SPHERE* spr, NJS_POINT3* attack_v, int damage);
 void SetSmoke(NJS_POINT3* pos);
 void SpecialAttack(BH_PWORK* epw, NJS_POINT3* splash_v);
 void _bhEne_SetPoison(BH_PWORK* epw, NJS_POINT3* ofp, short ry);
@@ -2821,9 +2821,9 @@ int bhEne15_AttackPlayerBC(_anon11* box, NJS_POINT3* attack_v, int damage)
 
 // 
 // Start address: 0x1e5d20
-int bhEne15_AttackPlayerSS(_anon0* spr, NJS_POINT3* attack_v, int damage)
+int bhEne15_AttackPlayerSS(NJS_SPHERE* spr, NJS_POINT3* attack_v, int damage)
 {
-	_anon0 plcol;
+	NJS_SPHERE plcol;
 	// Line 2807, Address: 0x1e5d20, Func Offset: 0
 	// Line 2810, Address: 0x1e5d38, Func Offset: 0x18
 	// Line 2813, Address: 0x1e5d48, Func Offset: 0x28
@@ -3148,7 +3148,7 @@ void bhEne_SetPoison(BH_PWORK* epw, _anon37* bt)
 void PoisonAttack(_anon1* op)
 {
 	NJS_POINT3 attack_v;
-	_anon0 col;
+	NJS_SPHERE col;
 	// Line 3192, Address: 0x1e6c50, Func Offset: 0
 	// Line 3203, Address: 0x1e6c5c, Func Offset: 0xc
 	// Line 3204, Address: 0x1e6c6c, Func Offset: 0x1c

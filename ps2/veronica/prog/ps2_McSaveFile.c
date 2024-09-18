@@ -1,7 +1,7 @@
 typedef struct _anon0;
-typedef struct npobj;
 
-typedef struct _anon1;
+
+
 
 typedef struct tagSELECTFILEINFO;
 
@@ -10,7 +10,7 @@ typedef struct tagCONFIGFILE;
 
 typedef struct tagSELECTFILEWINDOW;
 
-typedef struct _anon5;
+
 
 
 typedef struct _anon7;
@@ -20,12 +20,12 @@ typedef struct tagMEMORYCARDPORT;
 typedef struct _anon9;
 
 typedef struct tagMEMORYCARDSTATE;
-typedef struct _anon11;
+
 typedef struct tagICONINFORMATION;
 typedef struct _anon12;
 typedef struct _anon13;
 
-typedef struct _anon15;
+
 typedef struct BH_PWORK;
 typedef struct _anon16;
 
@@ -33,23 +33,23 @@ typedef struct _anon16;
 typedef struct _anon19;
 
 
-typedef struct _anon21;
+
 typedef struct _anon22;
-typedef struct _anon23;
 
 
 
-typedef union _anon26;
+
+
 typedef struct _anon27;
 typedef struct _anon28;
 
-typedef struct _anon30;
+
 typedef struct _anon31;
 typedef struct _anon32;
 
 
 typedef struct _anon35;
-typedef struct _anon36;
+
 typedef struct _anon37;
 
 
@@ -87,7 +87,7 @@ typedef char type_23[32];
 typedef int* type_25[16];
 typedef _anon0* type_26[128];
 typedef short type_27[32];
-typedef npobj* type_28[16];
+
 typedef _anon0* type_29[128];
 
 typedef int type_31[8];
@@ -182,14 +182,14 @@ typedef unsigned short type_123[10];
 typedef unsigned int type_124[2];
 typedef int* type_125[16];
 typedef unsigned int type_126[4];
-typedef npobj* type_127[16];
+
 
 typedef char type_129[4];
 typedef _anon8 type_130[16];
 typedef short type_131[4];
 typedef unsigned char type_133[4];
 
-typedef _anon26 type_135[4];
+
 typedef char type_136[13];
 typedef _anon19 type_137[16];
 typedef _anon35 type_138[64];
@@ -254,7 +254,7 @@ struct _anon0
 	void* mskp;
 	unsigned int Dummy[1];
 	int* skp[16];
-	npobj* mbp[16];
+	NJS_OBJECT* mbp[16];
 	NJS_TEXLIST* txp[16];
 	_anon8 mdl[16];
 	_anon8* mlwP;
@@ -267,8 +267,8 @@ struct _anon0
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
 	NJS_MATRIX mtx;
-	npobj* obj_a;
-	npobj* obj_b;
+	NJS_OBJECT* obj_a;
+	NJS_OBJECT* obj_b;
 	float shp_ct;
 	char clp_jno[8];
 	int lok_jno;
@@ -308,7 +308,7 @@ struct _anon0
 	int ct2;
 	int ct3;
 	unsigned char* objbak;
-	_anon5 cspr;
+	NJS_SPHERE cspr;
 	int pn;
 	NJS_POLYGON_VTX* pvp;
 	NJS_TEXTURE_VTX* tvp;
@@ -328,46 +328,46 @@ struct _anon0
 	int Dummy2;
 };
 
-struct npobj
-{
-	unsigned int evalflags;
-	NJS_CNK_MODEL* model;
-	float pos[3];
-	int ang[3];
-	float scl[3];
-	npobj* child;
-	npobj* sibling;
-};
 
 
 
 
 
-struct _anon1
-{
-	float ratten;
-	float ipd;
-	float nrr;
-	float frr;
-	float cosi;
-	float cose;
-	float idev;
-	float odev;
-	float rate;
-	float intns;
-	int exp;
-	int reserve;
-	NJS_POINT3 lpnt;
-	NJS_POINT3 lvctr;
-	NJS_POINT3 lmvctr;
-	_anon30 atten;
-	_anon30 amb;
-	_anon30 dif;
-	_anon30 spc;
-	_anon30 mamb;
-	_anon30 mdif;
-	_anon30 mspc;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -475,11 +475,11 @@ struct tagSELECTFILEWINDOW
 
 
 
-struct _anon5
-{
-	NJS_POINT3 c;
-	float r;
-};
+
+
+
+
+
 
 
 
@@ -525,7 +525,7 @@ struct _anon8
 	unsigned int flg;
 	unsigned int obj_num;
 	void* datP;
-	npobj* objP;
+	NJS_OBJECT* objP;
 	NJS_TEXLIST* texP;
 	_anon32* owP;
 };
@@ -623,19 +623,19 @@ struct tagMEMORYCARDSTATE
 	tagMEMORYCARDPORT Port[2];
 };
 
-struct _anon11
-{
-	int lsrc;
-	float iamb;
-	float idif;
-	float ispc;
-	float nrang;
-	float frang;
-	void* func;
-	int iang;
-	int oang;
-	_anon30 argb;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct tagICONINFORMATION
 {
@@ -1065,16 +1065,16 @@ struct _anon13
 
 
 
-struct _anon15
-{
-	NJS_MATRIX mtrx;
-	NJS_POINT3 pnt;
-	NJS_POINT3 vctr;
-	int stat;
-	int reserve;
-	_anon1 ltcal;
-	_anon11 attr;
-};
+
+
+
+
+
+
+
+
+
+
 
 struct BH_PWORK
 {
@@ -1126,7 +1126,7 @@ struct BH_PWORK
 	void* mskp;
 	unsigned int Dummy[1];
 	int* skp[16];
-	npobj* mbp[16];
+	NJS_OBJECT* mbp[16];
 	NJS_TEXLIST* txp[16];
 	_anon8 mdl[16];
 	_anon8* mlwP;
@@ -1139,8 +1139,8 @@ struct BH_PWORK
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
 	NJS_MATRIX mtx;
-	npobj* obj_a;
-	npobj* obj_b;
+	NJS_OBJECT* obj_a;
+	NJS_OBJECT* obj_b;
 	float shp_ct;
 	char clp_jno[8];
 	int lok_jno;
@@ -1286,11 +1286,11 @@ struct _anon19
 
 
 
-struct _anon21
-{
-	short u;
-	short v;
-};
+
+
+
+
+
 
 struct _anon22
 {
@@ -1349,15 +1349,7 @@ struct _anon22
 	int waz;
 	unsigned char* lkwkp;
 	unsigned char* exp;
-	_anon15* light;
-};
-
-struct _anon23
-{
-	unsigned char b;
-	unsigned char g;
-	unsigned char r;
-	unsigned char a;
+	NJS_LIGHT_PTR light;
 };
 
 
@@ -1385,12 +1377,20 @@ struct _anon23
 
 
 
-union _anon26
-{
-	unsigned int color;
-	_anon21 tex;
-	_anon23 argb;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon27
 {
@@ -1427,13 +1427,13 @@ struct _anon28
 
 
 
-struct _anon30
-{
-	float a;
-	float r;
-	float g;
-	float b;
-};
+
+
+
+
+
+
+
 
 struct _anon31
 {
@@ -1480,13 +1480,13 @@ struct _anon35
 	unsigned char prm3;
 };
 
-struct _anon36
-{
-	NJS_POINT2* p;
-	_anon26* col;
-	_anon26* tex;
-	unsigned int num;
-};
+
+
+
+
+
+
+
 
 struct _anon37
 {
@@ -2294,9 +2294,9 @@ void DispCursolTexture(float pos_x, float pos_y, unsigned int color)
 // Start address: 0x2730c0
 void DispUpDownCursol(float fx, float fy, unsigned int mode)
 {
-	_anon26 col[4];
+	NJS_COLOR col[4];
 	NJS_POINT2 p[4];
-	_anon36 p2c;
+	NJS_POINT2COL p2c;
 	// Line 1862, Address: 0x2730c0, Func Offset: 0
 	// Line 1869, Address: 0x2730c4, Func Offset: 0x4
 	// Line 1862, Address: 0x2730c8, Func Offset: 0x8

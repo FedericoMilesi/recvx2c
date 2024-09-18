@@ -1,4 +1,4 @@
-typedef struct npobj;
+
 typedef struct _anon0;
 typedef struct BH_PWORK;
 typedef struct _anon1;
@@ -31,21 +31,21 @@ typedef int type_12[64];
 typedef unsigned int type_14[1];
 typedef unsigned int type_15[2];
 typedef int* type_16[16];
-typedef npobj* type_17[16];
+
 
 typedef _anon9 type_19[16];
 typedef unsigned char type_20[64];
 
-struct npobj
-{
-	unsigned int evalflags;
-	NJS_CNK_MODEL* model;
-	float pos[3];
-	int ang[3];
-	float scl[3];
-	npobj* child;
-	npobj* sibling;
-};
+
+
+
+
+
+
+
+
+
+
 
 struct _anon0
 {
@@ -102,7 +102,7 @@ struct BH_PWORK
 	void* mskp;
 	unsigned int Dummy[1];
 	int* skp[16];
-	npobj* mbp[16];
+	NJS_OBJECT* mbp[16];
 	NJS_TEXLIST* txp[16];
 	_anon9 mdl[16];
 	_anon9* mlwP;
@@ -115,8 +115,8 @@ struct BH_PWORK
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
 	NJS_MATRIX mtx;
-	npobj* obj_a;
-	npobj* obj_b;
+	NJS_OBJECT* obj_a;
+	NJS_OBJECT* obj_b;
 	float shp_ct;
 	char clp_jno[8];
 	int lok_jno;
@@ -254,7 +254,7 @@ struct _anon9
 	unsigned int flg;
 	unsigned int obj_num;
 	void* datP;
-	npobj* objP;
+	NJS_OBJECT* objP;
 	NJS_TEXLIST* texP;
 	_anon6* owP;
 };
@@ -824,7 +824,7 @@ void bhCalcFixOffset(BH_PWORK* ewP, char* datP, NJS_POINT3* offP, NJS_POINT3* rt
 {
 	NJS_POINT3 dst;
 	NJS_POINT3 src;
-	npobj* objP;
+	NJS_OBJECT* objP;
 	_anon9* mlwP;
 	NJS_POINT3 off;
 	// Line 779, Address: 0x130de0, Func Offset: 0

@@ -801,52 +801,52 @@ LfOpen;
 
 
 
-typedef struct npobj npobj;
-typedef struct npobj {
-	/*  0 */ unsigned int evalflags;
-	/*  4 */ NJS_CNK_MODEL* model;
-	/*  8 */ float pos[3];
-	/* 20 */ int ang[3];
-	/* 32 */ float scl[3];
-	/* 44 */ npobj* child;
-	/* 48 */ npobj* sibling;
-}
-npobj;
 
 
-typedef struct Surface {
-	/*  0 */ unsigned int Type;
-	/*  4 */ unsigned int BitDepth;
-	/*  8 */ unsigned int PixelFormat;
-	/* 12 */ unsigned int nWidth;
-	/* 16 */ unsigned int nHeight;
-	/* 20 */ unsigned int TextureSize;
-	/* 24 */ unsigned int fSurfaceFlags;
-	/* 28 */ unsigned int* pSurface;
-	/* 32 */ unsigned int* pVirtual;
-	/* 36 */ unsigned int* pPhysical;
-}
-Surface;
 
 
-typedef struct TextureInfo {
-	void* texaddr;
-	Surface texsurface;
-}
-TextureInfo;
 
 
-typedef struct Unknown30
-{
-	unsigned int globalIndex;
-	unsigned int bank;
-	unsigned int tspparambuffer;
-	unsigned int texparambuffer;
-	unsigned int texaddr;
-	TextureInfo texinfo;
-	unsigned short count;
-	unsigned short dummy;
-} Unknown30;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 typedef struct Color {
@@ -1120,7 +1120,7 @@ typedef struct Unknown4 {
 	unsigned int flg;
 	unsigned int obj_num;
 	void* datP;
-	npobj* objP;
+	NJS_OBJECT* objP;
 	TextureList* texP;
 	Unknown5* owP;
 }
@@ -1193,7 +1193,7 @@ typedef struct Unknown1 {
 	void* mskp;
 	unsigned int Dummy[1];
 	int* skp[16];
-	npobj* mbp[16];
+	NJS_OBJECT* mbp[16];
 	TextureList* txp[16];
 	Unknown4 mdl[16];
 	Unknown4* mlwP;
@@ -1206,8 +1206,8 @@ typedef struct Unknown1 {
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
 	NJS_MATRIX mtx;
-	npobj* obj_a;
-	npobj* obj_b;
+	NJS_OBJECT* obj_a;
+	NJS_OBJECT* obj_b;
 	float shp_ct;
 	char clp_jno[8];
 	int lok_jno;
@@ -1318,7 +1318,7 @@ typedef struct BH_PWORK {
 	void* mskp;
 	unsigned int Dummy[1];
 	int* skp[16];
-	npobj* mbp[16];
+	NJS_OBJECT* mbp[16];
 	TextureList* txp[16];
 	Unknown4 mdl[16];
 	Unknown4* mlwP;
@@ -1331,8 +1331,8 @@ typedef struct BH_PWORK {
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
 	NJS_MATRIX mtx;
-	npobj* obj_a;
-	npobj* obj_b;
+	NJS_OBJECT* obj_a;
+	NJS_OBJECT* obj_b;
 	float shp_ct;
 	char clp_jno[8];
 	int lok_jno;
@@ -1639,7 +1639,7 @@ typedef struct System {
 	Unknown1* ob_hlg[32];
 	Unknown1* ob_spc[32];
 	unsigned int ren_gid;
-	TextureInfo ren_info;
+	NJS_TEXINFO ren_info;
 	NJS_TEXNAME ren_tex[1];
 	TextureList ren_tlist;
 	Unknown9 rpb[256];

@@ -208,16 +208,17 @@ struct _anon23 {
     unsigned char exd[256];
 };
 
-struct _anon25 {
-    unsigned int globalIndex;
-    unsigned int bank;
-    unsigned int tspparambuffer;
-    unsigned int texparambuffer;
-    unsigned int texaddr;
-    TextureInfo texinfo;
-    unsigned short count;
-    unsigned short dummy;
-};
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon26 {
     unsigned int attr;
@@ -396,7 +397,7 @@ unsigned char BackColorFlag;
 _anon16 Ps2_pad;
 int pd_port;
 _anon22* rom;
-_anon25 tbuf[0];
+NJS_TEXMEMLIST tbuf[0];
 int SoftResetFlag;
 float GameFar;
 float GameNear;

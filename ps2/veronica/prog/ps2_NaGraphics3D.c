@@ -1,12 +1,12 @@
-typedef union _anon0;
+
 typedef struct _anon1;
 typedef struct tagVU1_STRIP_BUF;
 typedef struct _anon2;
 
 typedef struct tagNJS_SCRVECTOR;
 typedef struct _anon4;
-typedef struct _anon5;
-typedef struct _anon6;
+
+
 
 
 typedef float type_0[4][96];
@@ -19,12 +19,12 @@ typedef float type_6[4][2];
 typedef float type_7[4][64];
 typedef tagVU1_STRIP_BUF type_8[256];
 
-union _anon0
-{
-	unsigned int color;
-	_anon5 tex;
-	_anon6 argb;
-};
+
+
+
+
+
+
 
 struct _anon1
 {
@@ -55,8 +55,8 @@ struct tagVU1_STRIP_BUF
 struct _anon2
 {
 	NJS_POINT3* p;
-	_anon0* col;
-	_anon0* tex;
+	NJS_COLOR* col;
+	NJS_COLOR* tex;
 	unsigned int num;
 };
 
@@ -85,19 +85,19 @@ struct _anon4
 	float cy;
 };
 
-struct _anon5
-{
-	short u;
-	short v;
-};
 
-struct _anon6
-{
-	unsigned char b;
-	unsigned char g;
-	unsigned char r;
-	unsigned char a;
-};
+
+
+
+
+
+
+
+
+
+
+
+
 
 _anon1 sc_plane;
 _anon1 c_plane[5];

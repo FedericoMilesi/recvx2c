@@ -1,4 +1,4 @@
-typedef struct npobj;
+
 typedef struct _anon0;
 typedef struct BH_PWORK;
 
@@ -31,22 +31,22 @@ typedef struct _anon27;
 
 typedef struct _anon29;
 typedef struct _anon30;
-typedef struct _anon31;
+
 typedef struct _anon32;
-typedef struct _anon33;
+
 
 typedef struct _anon35;
 
 
 typedef struct _anon38;
-typedef struct _anon39;
+
 
 typedef struct _anon41;
 typedef struct _anon42;
 
 
-typedef struct _anon45;
-typedef struct _anon46;
+
+
 typedef struct _anon47;
 typedef struct _anon48;
 
@@ -79,7 +79,7 @@ typedef _anon12 type_22[256];
 typedef int* type_24[16];
 typedef _anon0* type_25[128];
 typedef _anon47 type_26[16];
-typedef npobj* type_27[16];
+
 typedef _anon0* type_28[128];
 typedef int type_29[4];
 
@@ -165,7 +165,7 @@ typedef unsigned char type_110[2];
 typedef unsigned int type_111[4];
 typedef int* type_112[16];
 typedef char type_113[32];
-typedef npobj* type_114[16];
+
 typedef char type_115[64];
 
 typedef char type_117[4];
@@ -185,16 +185,16 @@ typedef _anon0* type_130[512];
 typedef unsigned char type_131[64];
 typedef _anon0* type_132[512];
 
-struct npobj
-{
-	unsigned int evalflags;
-	NJS_CNK_MODEL* model;
-	float pos[3];
-	int ang[3];
-	float scl[3];
-	npobj* child;
-	npobj* sibling;
-};
+
+
+
+
+
+
+
+
+
+
 
 struct _anon0
 {
@@ -246,7 +246,7 @@ struct _anon0
 	void* mskp;
 	unsigned int Dummy[1];
 	int* skp[16];
-	npobj* mbp[16];
+	NJS_OBJECT* mbp[16];
 	NJS_TEXLIST* txp[16];
 	_anon16 mdl[16];
 	_anon16* mlwP;
@@ -259,8 +259,8 @@ struct _anon0
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
 	NJS_MATRIX mtx;
-	npobj* obj_a;
-	npobj* obj_b;
+	NJS_OBJECT* obj_a;
+	NJS_OBJECT* obj_b;
 	float shp_ct;
 	char clp_jno[8];
 	int lok_jno;
@@ -300,7 +300,7 @@ struct _anon0
 	int ct2;
 	int ct3;
 	unsigned char* objbak;
-	_anon46 cspr;
+	NJS_SPHERE cspr;
 	int pn;
 	NJS_POLYGON_VTX* pvp;
 	NJS_TEXTURE_VTX* tvp;
@@ -370,7 +370,7 @@ struct BH_PWORK
 	void* mskp;
 	unsigned int Dummy[1];
 	int* skp[16];
-	npobj* mbp[16];
+	NJS_OBJECT* mbp[16];
 	NJS_TEXLIST* txp[16];
 	_anon16 mdl[16];
 	_anon16* mlwP;
@@ -383,8 +383,8 @@ struct BH_PWORK
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
 	NJS_MATRIX mtx;
-	npobj* obj_a;
-	npobj* obj_b;
+	NJS_OBJECT* obj_a;
+	NJS_OBJECT* obj_b;
 	float shp_ct;
 	char clp_jno[8];
 	int lok_jno;
@@ -1011,7 +1011,7 @@ struct _anon7
 	int waz;
 	unsigned char* lkwkp;
 	unsigned char* exp;
-	_anon33* light;
+	NJS_LIGHT_PTR light;
 };
 
 struct _anon8
@@ -1184,7 +1184,7 @@ struct _anon16
 	unsigned int flg;
 	unsigned int obj_num;
 	void* datP;
-	npobj* objP;
+	NJS_OBJECT* objP;
 	NJS_TEXLIST* texP;
 	_anon32* owP;
 };
@@ -1429,13 +1429,13 @@ struct _anon30
 	unsigned short* evd;
 };
 
-struct _anon31
-{
-	float a;
-	float r;
-	float g;
-	float b;
-};
+
+
+
+
+
+
+
 
 struct _anon32
 {
@@ -1445,16 +1445,16 @@ struct _anon32
 	NJS_MATRIX mtx;
 };
 
-struct _anon33
-{
-	NJS_MATRIX mtrx;
-	NJS_POINT3 pnt;
-	NJS_POINT3 vctr;
-	int stat;
-	int reserve;
-	_anon39 ltcal;
-	_anon45 attr;
-};
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1495,31 +1495,31 @@ struct _anon38
 	float r2;
 };
 
-struct _anon39
-{
-	float ratten;
-	float ipd;
-	float nrr;
-	float frr;
-	float cosi;
-	float cose;
-	float idev;
-	float odev;
-	float rate;
-	float intns;
-	int exp;
-	int reserve;
-	NJS_POINT3 lpnt;
-	NJS_POINT3 lvctr;
-	NJS_POINT3 lmvctr;
-	_anon31 atten;
-	_anon31 amb;
-	_anon31 dif;
-	_anon31 spc;
-	_anon31 mamb;
-	_anon31 mdif;
-	_anon31 mspc;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1639,25 +1639,25 @@ struct _anon42
 
 
 
-struct _anon45
-{
-	int lsrc;
-	float iamb;
-	float idif;
-	float ispc;
-	float nrang;
-	float frang;
-	void* func;
-	int iang;
-	int oang;
-	_anon31 argb;
-};
 
-struct _anon46
-{
-	NJS_POINT3 c;
-	float r;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon47
 {
@@ -1810,7 +1810,7 @@ void bhActionWeapon(_anon0* op)
 	float nn;
 	int rr;
 	int ang;
-	npobj* obp;
+	NJS_OBJECT* obp;
 	NJS_POINT3 pos;
 	// Line 199, Address: 0x28a610, Func Offset: 0
 	// Line 204, Address: 0x28a620, Func Offset: 0x10
@@ -2517,7 +2517,7 @@ int bhCheckFlyAtari(_anon21* gap, int eidx)
 	float knr;
 	NJS_POINT3 ps;
 	NJS_POINT3 sca;
-	_anon46 spr;
+	NJS_SPHERE spr;
 	NJS_CAPSULE wal;
 	// Line 1057, Address: 0x28c940, Func Offset: 0
 	// Line 1068, Address: 0x28c96c, Func Offset: 0x2c
@@ -2684,7 +2684,7 @@ void bhCheckBombAtari(NJS_POINT3* pos, float ar, int dmax, int dmin)
 	float knr;
 	NJS_POINT3 ps;
 	NJS_POINT3 sca;
-	_anon46 spr;
+	NJS_SPHERE spr;
 	NJS_CAPSULE wal;
 	// Line 1257, Address: 0x28cfe0, Func Offset: 0
 	// Line 1268, Address: 0x28d010, Func Offset: 0x30
@@ -2851,7 +2851,7 @@ int bhCheckCapCol2Capsule(BH_PWORK* pp, NJS_CAPSULE* cap, NJS_POINT3* hps)
 	NJS_POINT3 sca;
 	NJS_POINT3 ofp;
 	NJS_LINE gline;
-	_anon46 sp;
+	NJS_SPHERE sp;
 	NJS_CAPSULE cp;
 	_anon29* cpcl;
 	// Line 1469, Address: 0x28d690, Func Offset: 0

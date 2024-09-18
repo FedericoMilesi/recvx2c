@@ -12,7 +12,7 @@ typedef struct _anon9;
 
 
 typedef struct _anon12;
-typedef struct npobj;
+
 typedef struct _anon13;
 
 
@@ -46,7 +46,7 @@ typedef float type_26[3];
 typedef float type_27[32];
 typedef int type_28[3];
 typedef float type_29[4];
-typedef npobj* type_30[256];
+
 typedef cnkobj* type_31[256];
 typedef cnkobj* type_32[256];
 
@@ -145,7 +145,7 @@ struct _anon5
 	unsigned int flg;
 	unsigned int obj_num;
 	void* datP;
-	npobj* objP;
+	NJS_OBJECT* objP;
 	NJS_TEXLIST* texP;
 	_anon12* owP;
 };
@@ -215,16 +215,16 @@ struct _anon12
 	NJS_MATRIX mtx;
 };
 
-struct npobj
-{
-	unsigned int evalflags;
-	NJS_CNK_MODEL* model;
-	float pos[3];
-	int ang[3];
-	float scl[3];
-	npobj* child;
-	npobj* sibling;
-};
+
+
+
+
+
+
+
+
+
+
 
 struct _anon13
 {
@@ -302,9 +302,9 @@ void fmSetLipSyncParam(_anon2* fm, _anon4* base, _anon9* lip, unsigned int mask)
 void _fmSetObjP(_anon5* mlwP)
 {
 	int sp;
-	npobj* stack[256];
-	npobj* obj2;
-	npobj* obj;
+	NJS_OBJECT* stack[256];
+	NJS_OBJECT* obj2;
+	NJS_OBJECT* obj;
 	// Line 133, Address: 0x2989d0, Func Offset: 0
 	// Line 139, Address: 0x2989e4, Func Offset: 0x14
 	// Line 138, Address: 0x2989e8, Func Offset: 0x18

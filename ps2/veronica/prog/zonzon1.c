@@ -1,4 +1,4 @@
-typedef struct npobj;
+
 typedef struct _anon0;
 
 
@@ -30,22 +30,22 @@ typedef struct _anon26;
 
 typedef struct _anon28;
 typedef struct _anon29;
-typedef struct _anon30;
+
 typedef struct _anon31;
-typedef struct _anon32;
+
 typedef struct _anon33;
 
 
 typedef struct _anon36;
-typedef struct _anon37;
+
 
 typedef struct _anon39;
 typedef struct _anon40;
 typedef struct _anon41;
 
 
-typedef struct _anon44;
-typedef struct _anon45;
+
+
 
 typedef struct _anon47;
 
@@ -76,7 +76,7 @@ typedef _anon7 type_20[256];
 typedef int* type_22[16];
 typedef _anon0* type_23[128];
 typedef _anon47 type_24[16];
-typedef npobj* type_25[16];
+
 typedef _anon0* type_26[128];
 typedef int type_27[4];
 
@@ -153,7 +153,7 @@ typedef unsigned char type_99[2];
 typedef int* type_100[16];
 typedef unsigned int type_101[4];
 typedef char type_102[32];
-typedef npobj* type_103[16];
+
 typedef char type_104[64];
 
 typedef char type_106[4];
@@ -171,16 +171,16 @@ typedef _anon0* type_117[512];
 typedef unsigned char type_118[64];
 typedef _anon0* type_119[512];
 
-struct npobj
-{
-	unsigned int evalflags;
-	NJS_CNK_MODEL* model;
-	float pos[3];
-	int ang[3];
-	float scl[3];
-	npobj* child;
-	npobj* sibling;
-};
+
+
+
+
+
+
+
+
+
+
 
 struct _anon0
 {
@@ -232,7 +232,7 @@ struct _anon0
 	void* mskp;
 	unsigned int Dummy[1];
 	int* skp[16];
-	npobj* mbp[16];
+	NJS_OBJECT* mbp[16];
 	NJS_TEXLIST* txp[16];
 	_anon12 mdl[16];
 	_anon12* mlwP;
@@ -245,8 +245,8 @@ struct _anon0
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
 	NJS_MATRIX mtx;
-	npobj* obj_a;
-	npobj* obj_b;
+	NJS_OBJECT* obj_a;
+	NJS_OBJECT* obj_b;
 	float shp_ct;
 	char clp_jno[8];
 	int lok_jno;
@@ -286,7 +286,7 @@ struct _anon0
 	int ct2;
 	int ct3;
 	unsigned char* objbak;
-	_anon45 cspr;
+	NJS_SPHERE cspr;
 	int pn;
 	NJS_POLYGON_VTX* pvp;
 	NJS_TEXTURE_VTX* tvp;
@@ -380,7 +380,7 @@ struct BH_PWORK
 	void* mskp;
 	unsigned int Dummy[1];
 	int* skp[16];
-	npobj* mbp[16];
+	NJS_OBJECT* mbp[16];
 	NJS_TEXLIST* txp[16];
 	_anon12 mdl[16];
 	_anon12* mlwP;
@@ -393,8 +393,8 @@ struct BH_PWORK
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
 	NJS_MATRIX mtx;
-	npobj* obj_a;
-	npobj* obj_b;
+	NJS_OBJECT* obj_a;
+	NJS_OBJECT* obj_b;
 	float shp_ct;
 	char clp_jno[8];
 	int lok_jno;
@@ -639,7 +639,7 @@ struct _anon12
 	unsigned int flg;
 	unsigned int obj_num;
 	void* datP;
-	npobj* objP;
+	NJS_OBJECT* objP;
 	NJS_TEXLIST* texP;
 	_anon31* owP;
 };
@@ -736,7 +736,7 @@ struct _anon15
 	int waz;
 	unsigned char* lkwkp;
 	unsigned char* exp;
-	_anon32* light;
+	NJS_LIGHT_PTR light;
 };
 
 struct _anon16
@@ -1317,13 +1317,13 @@ struct _anon29
 	unsigned short* evd;
 };
 
-struct _anon30
-{
-	float a;
-	float r;
-	float g;
-	float b;
-};
+
+
+
+
+
+
+
 
 struct _anon31
 {
@@ -1333,16 +1333,16 @@ struct _anon31
 	NJS_MATRIX mtx;
 };
 
-struct _anon32
-{
-	NJS_MATRIX mtrx;
-	NJS_POINT3 pnt;
-	NJS_POINT3 vctr;
-	int stat;
-	int reserve;
-	_anon37 ltcal;
-	_anon44 attr;
-};
+
+
+
+
+
+
+
+
+
+
 
 struct _anon33
 {
@@ -1376,31 +1376,31 @@ struct _anon36
 	float r2;
 };
 
-struct _anon37
-{
-	float ratten;
-	float ipd;
-	float nrr;
-	float frr;
-	float cosi;
-	float cose;
-	float idev;
-	float odev;
-	float rate;
-	float intns;
-	int exp;
-	int reserve;
-	NJS_POINT3 lpnt;
-	NJS_POINT3 lvctr;
-	NJS_POINT3 lmvctr;
-	_anon30 atten;
-	_anon30 amb;
-	_anon30 dif;
-	_anon30 spc;
-	_anon30 mamb;
-	_anon30 mdif;
-	_anon30 mspc;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1466,25 +1466,25 @@ struct _anon41
 
 
 
-struct _anon44
-{
-	int lsrc;
-	float iamb;
-	float idif;
-	float ispc;
-	float nrang;
-	float frang;
-	void* func;
-	int iang;
-	int oang;
-	_anon30 argb;
-};
 
-struct _anon45
-{
-	NJS_POINT3 c;
-	float r;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1983,7 +1983,7 @@ int bhEne_CheckDirTarget(BH_PWORK* epw, float x, float z, int w)
 // Start address: 0x21a200
 void bhEne_GetPartsPos(BH_PWORK* epw, char* parts, NJS_POINT3* p)
 {
-	npobj* objP;
+	NJS_OBJECT* objP;
 	_anon12* mlwP;
 	// Line 624, Address: 0x21a200, Func Offset: 0
 	// Line 625, Address: 0x21a218, Func Offset: 0x18
@@ -2122,7 +2122,7 @@ void bhEne_SetWeponAtr(BH_PWORK* epw, char j1, char j2, float r)
 // Start address: 0x21a5d0
 unsigned char bhEne_AttackHitCheck(BH_PWORK* pl, NJS_POINT3* pos, float ar)
 {
-	_anon45 sphere;
+	NJS_SPHERE sphere;
 	int kno;
 	int i;
 	float knr;

@@ -1,15 +1,15 @@
-typedef struct npobj;
+
 typedef struct _anon0;
 
 typedef struct _anon2;
 typedef struct _anon3;
 
 typedef struct _anon5;
-typedef struct _anon6;
-typedef struct _anon7;
-typedef struct _anon8;
+
+
+
 typedef struct _anon9;
-typedef union _anon10;
+
 
 
 typedef struct _anon13;
@@ -26,22 +26,22 @@ typedef struct _anon20;
 
 
 
-typedef _anon10 type_2[8];
+
 typedef unsigned char type_3[64];
 
 typedef char type_5[8];
 
 typedef float type_7[10];
 
-typedef _anon10 type_9[16];
+
 
 
 typedef unsigned char type_12[64];
 
 
-typedef _anon10 type_15[3];
-typedef _anon10 type_16[2];
-typedef _anon10 type_17[8];
+
+
+
 typedef unsigned char type_18[64];
 typedef void* type_19[2];
 typedef unsigned int type_20[2];
@@ -54,20 +54,20 @@ typedef float type_25[3];
 
 
 typedef float type_29[3];
-typedef _anon10 type_30[4];
-typedef _anon10 type_31[4];
+
+
 typedef int type_32[64];
 
-typedef _anon10 type_34[16];
 
-typedef _anon10 type_36[4];
 
-typedef _anon10 type_38[4];
+
+
+
 typedef unsigned char type_39[64];
 typedef unsigned char type_40[56];
 typedef int* type_41[128];
 
-typedef npobj* type_43[128];
+
 typedef int* type_44[128];
 typedef int* type_45[128];
 
@@ -81,7 +81,7 @@ typedef unsigned int type_53[2];
 typedef int* type_54[16];
 
 typedef int* type_56[128];
-typedef npobj* type_57[16];
+
 typedef char type_58[256];
 
 typedef float type_60[10];
@@ -90,16 +90,16 @@ typedef _anon15 type_61[16];
 
 
 
-struct npobj
-{
-	unsigned int evalflags;
-	NJS_CNK_MODEL* model;
-	float pos[3];
-	int ang[3];
-	float scl[3];
-	npobj* child;
-	npobj* sibling;
-};
+
+
+
+
+
+
+
+
+
+
 
 struct _anon0
 {
@@ -152,25 +152,25 @@ struct _anon5
 	unsigned short* atrP;
 };
 
-struct _anon6
-{
-	NJS_POINT3 c;
-	float r;
-};
 
-struct _anon7
-{
-	short u;
-	short v;
-};
 
-struct _anon8
-{
-	unsigned char b;
-	unsigned char g;
-	unsigned char r;
-	unsigned char a;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon9
 {
@@ -180,12 +180,12 @@ struct _anon9
 	NJS_MATRIX mtx;
 };
 
-union _anon10
-{
-	unsigned int color;
-	_anon7 tex;
-	_anon8 argb;
-};
+
+
+
+
+
+
 
 
 
@@ -262,7 +262,7 @@ struct BH_PWORK
 	void* mskp;
 	unsigned int Dummy[1];
 	int* skp[16];
-	npobj* mbp[16];
+	NJS_OBJECT* mbp[16];
 	NJS_TEXLIST* txp[16];
 	_anon15 mdl[16];
 	_anon15* mlwP;
@@ -275,8 +275,8 @@ struct BH_PWORK
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
 	NJS_MATRIX mtx;
-	npobj* obj_a;
-	npobj* obj_b;
+	NJS_OBJECT* obj_a;
+	NJS_OBJECT* obj_b;
 	float shp_ct;
 	char clp_jno[8];
 	int lok_jno;
@@ -358,7 +358,7 @@ struct _anon15
 	unsigned int flg;
 	unsigned int obj_num;
 	void* datP;
-	npobj* objP;
+	NJS_OBJECT* objP;
 	NJS_TEXLIST* texP;
 	_anon9* owP;
 };
@@ -389,8 +389,8 @@ struct _anon18
 struct _anon19
 {
 	NJS_POINT3* p;
-	_anon10* col;
-	_anon10* tex;
+	NJS_COLOR* col;
+	NJS_COLOR* tex;
 	unsigned int num;
 };
 
@@ -403,7 +403,7 @@ struct _anon20
 	unsigned char* bp;
 	int* vlist[128];
 	NJS_POINT3 op[128];
-	npobj* cobj[128];
+	NJS_OBJECT* cobj[128];
 	int* sktp[128];
 	int* vlp[128];
 	NJS_MATRIX mxp[128][10]; // Swapped order of array dimensions to match the order of the array in the original code
@@ -433,32 +433,32 @@ NJS_MATRIX lcmat[];
 void npPlusInit();
 int npCollisionCheckCC(NJS_CAPSULE* cpa, NJS_CAPSULE* cpb);
 int npCollisionCheckCCEx(NJS_CAPSULE* cpa, NJS_CAPSULE* cpb, NJS_POINT3* pos);
-int npCollisionCheckSC(_anon6* sa, NJS_CAPSULE* cpb);
+int npCollisionCheckSC(NJS_SPHERE* sa, NJS_CAPSULE* cpb);
 void npDistanceP2C(NJS_POINT3* pos, NJS_CAPSULE* cap, NJS_POINT3* htp);
 void npDrawPlane(NJS_POINT3* ps0, NJS_POINT3* ps1, NJS_POINT3* ps2, NJS_POINT3* ps3, unsigned int argb);
-void npCalcMorphing(npobj* obj_a, npobj* obj_b, float no, int obj_n);
-void npTransform(npobj* srcobj, npobj* dstobj, float no, int ono);
-void npPushMdlstr(npobj* objp, int obj_n);
-void npPopMdlstr(npobj* objp, int obj_n);
-void npPushMdlstr2(npobj* objp, int obj_n);
-void npPopMdlstr2(npobj* objp, int obj_n);
-void npCnkFlatOff(npobj* objp);
+void npCalcMorphing(NJS_OBJECT* obj_a, NJS_OBJECT* obj_b, float no, int obj_n);
+void npTransform(NJS_OBJECT* srcobj, NJS_OBJECT* dstobj, float no, int ono);
+void npPushMdlstr(NJS_OBJECT* objp, int obj_n);
+void npPopMdlstr(NJS_OBJECT* objp, int obj_n);
+void npPushMdlstr2(NJS_OBJECT* objp, int obj_n);
+void npPopMdlstr2(NJS_OBJECT* objp, int obj_n);
+void npCnkFlatOff(NJS_OBJECT* objp);
 void npClrTranslate();
 void npSetMemory(unsigned char* memp, unsigned int size, char dat);
 void npSetMemoryL(unsigned int* memp, unsigned int size, int dat);
 void npCopyMemory(unsigned char* dst, unsigned char* src, unsigned int size);
-void npGetWHDSizeSub(npobj* objp, NJS_POINT3* whd);
-void npGetWHDSize(npobj* objp, NJS_POINT3* whd);
-void npSkinConvPreparation(npobj* objp);
-void npSkinConvSub(npobj* objp);
-void npSkinConvMain(npobj* objp);
-void npSkinConvert(npobj* objp, int* sknp);
-void npRetSkinConvMain(npobj* objp);
-void npRetSkinConvert(npobj* objp, int* sknp);
-unsigned int npGetMatColor(npobj* objp, int obj_n);
-void npSetAllMatColor(npobj* objp, int obj_n, unsigned int argb);
-void npChangeMatAlphaColor(npobj* objp, int obj_n, unsigned char alpha);
-void npSetAllMatAlphaColor(npobj* objp, int obj_n, unsigned char alpha);
+void npGetWHDSizeSub(NJS_OBJECT* objp, NJS_POINT3* whd);
+void npGetWHDSize(NJS_OBJECT* objp, NJS_POINT3* whd);
+void npSkinConvPreparation(NJS_OBJECT* objp);
+void npSkinConvSub(NJS_OBJECT* objp);
+void npSkinConvMain(NJS_OBJECT* objp);
+void npSkinConvert(NJS_OBJECT* objp, int* sknp);
+void npRetSkinConvMain(NJS_OBJECT* objp);
+void npRetSkinConvert(NJS_OBJECT* objp, int* sknp);
+unsigned int npGetMatColor(NJS_OBJECT* objp, int obj_n);
+void npSetAllMatColor(NJS_OBJECT* objp, int obj_n, unsigned int argb);
+void npChangeMatAlphaColor(NJS_OBJECT* objp, int obj_n, unsigned char alpha);
+void npSetAllMatAlphaColor(NJS_OBJECT* objp, int obj_n, unsigned char alpha);
 void npSetOffsetUV(NJS_CNK_MODEL* mdlp, short offu, short offv);
 void npSetOffsetUV2(NJS_CNK_MODEL* mdlp, short offu, short offv);
 int npCopyVlist(int* dstp, int* srcp);
@@ -500,8 +500,8 @@ int npCollisionCheckCC(NJS_CAPSULE* cpa, NJS_CAPSULE* cpb)
 	float lena;
 	float inn;
 	NJS_POINT3 vec;
-	_anon6 sb;
-	_anon6 sa;
+	NJS_SPHERE sb;
+	NJS_SPHERE sa;
 	NJS_CAPSULE* capb;
 	NJS_CAPSULE* capa;
 	NJS_LINE lnc;
@@ -661,8 +661,8 @@ int npCollisionCheckCCEx(NJS_CAPSULE* cpa, NJS_CAPSULE* cpb, NJS_POINT3* pos)
 	float lena;
 	float inn;
 	NJS_POINT3 vec;
-	_anon6 sb;
-	_anon6 sa;
+	NJS_SPHERE sb;
+	NJS_SPHERE sa;
 	NJS_CAPSULE* capb;
 	NJS_CAPSULE* capa;
 	NJS_LINE lnc;
@@ -867,14 +867,14 @@ int npCollisionCheckCCEx(NJS_CAPSULE* cpa, NJS_CAPSULE* cpb, NJS_POINT3* pos)
 
 // 
 // Start address: 0x12c440
-int npCollisionCheckSC(_anon6* sa, NJS_CAPSULE* cpb)
+int npCollisionCheckSC(NJS_SPHERE* sa, NJS_CAPSULE* cpb)
 {
 	float sca;
 	float lenb;
 	float lr;
 	float inn;
 	NJS_POINT3 vec;
-	_anon6 sb;
+	NJS_SPHERE sb;
 	NJS_LINE lnb;
 	// Line 493, Address: 0x12c440, Func Offset: 0
 	// Line 498, Address: 0x12c470, Func Offset: 0x30
@@ -990,7 +990,7 @@ void npDistanceP2C(NJS_POINT3* pos, NJS_CAPSULE* cap, NJS_POINT3* htp)
 // Start address: 0x12c890
 void npDrawPlane(NJS_POINT3* ps0, NJS_POINT3* ps1, NJS_POINT3* ps2, NJS_POINT3* ps3, unsigned int argb)
 {
-	_anon10 col[4];
+	NJS_COLOR col[4];
 	NJS_POINT3 p3[4];
 	_anon19 p3c;
 	// Line 1112, Address: 0x12c890, Func Offset: 0
@@ -1029,7 +1029,7 @@ void npDrawPlane(NJS_POINT3* ps0, NJS_POINT3* ps1, NJS_POINT3* ps2, NJS_POINT3* 
 
 // 
 // Start address: 0x12c960
-void npCalcMorphing(npobj* obj_a, npobj* obj_b, float no, int obj_n)
+void npCalcMorphing(NJS_OBJECT* obj_a, NJS_OBJECT* obj_b, float no, int obj_n)
 {
 	unsigned int ulSize;
 	int nb;
@@ -1070,7 +1070,7 @@ void npCalcMorphing(npobj* obj_a, npobj* obj_b, float no, int obj_n)
 
 // 
 // Start address: 0x12cae0
-void npTransform(npobj* srcobj, npobj* dstobj, float no, int ono)
+void npTransform(NJS_OBJECT* srcobj, NJS_OBJECT* dstobj, float no, int ono)
 {
 	int s_nb;
 	_anon0* fp;
@@ -1137,7 +1137,7 @@ void npTransform(npobj* srcobj, npobj* dstobj, float no, int ono)
 
 // 
 // Start address: 0x12cc50
-void npPushMdlstr(npobj* objp, int obj_n)
+void npPushMdlstr(NJS_OBJECT* objp, int obj_n)
 {
 	int i;
 	// Line 2174, Address: 0x12cc50, Func Offset: 0
@@ -1151,7 +1151,7 @@ void npPushMdlstr(npobj* objp, int obj_n)
 
 // 
 // Start address: 0x12cca0
-void npPopMdlstr(npobj* objp, int obj_n)
+void npPopMdlstr(NJS_OBJECT* objp, int obj_n)
 {
 	int i;
 	// Line 2185, Address: 0x12cca0, Func Offset: 0
@@ -1165,7 +1165,7 @@ void npPopMdlstr(npobj* objp, int obj_n)
 
 // 
 // Start address: 0x12ccf0
-void npPushMdlstr2(npobj* objp, int obj_n)
+void npPushMdlstr2(NJS_OBJECT* objp, int obj_n)
 {
 	int i;
 	// Line 2196, Address: 0x12ccf0, Func Offset: 0
@@ -1184,7 +1184,7 @@ void npPushMdlstr2(npobj* objp, int obj_n)
 
 // 
 // Start address: 0x12cd70
-void npPopMdlstr2(npobj* objp, int obj_n)
+void npPopMdlstr2(NJS_OBJECT* objp, int obj_n)
 {
 	int i;
 	// Line 2214, Address: 0x12cd70, Func Offset: 0
@@ -1203,7 +1203,7 @@ void npPopMdlstr2(npobj* objp, int obj_n)
 
 // 
 // Start address: 0x12cdf0
-void npCnkFlatOff(npobj* objp)
+void npCnkFlatOff(NJS_OBJECT* objp)
 {
 	short head;
 	short* plP;
@@ -1283,7 +1283,7 @@ void npCopyMemory(unsigned char* dst, unsigned char* src, unsigned int size)
 
 // 
 // Start address: 0x12cff0
-void npGetWHDSizeSub(npobj* objp, NJS_POINT3* whd)
+void npGetWHDSizeSub(NJS_OBJECT* objp, NJS_POINT3* whd)
 {
 	_anon3* pHdrPs;
 	_anon2* pHdrCv;
@@ -1329,7 +1329,7 @@ void npGetWHDSizeSub(npobj* objp, NJS_POINT3* whd)
 
 // 
 // Start address: 0x12d250
-void npGetWHDSize(npobj* objp, NJS_POINT3* whd)
+void npGetWHDSize(NJS_OBJECT* objp, NJS_POINT3* whd)
 {
 	// Line 2529, Address: 0x12d250, Func Offset: 0
 	// Line 2530, Address: 0x12d260, Func Offset: 0x10
@@ -1341,7 +1341,7 @@ void npGetWHDSize(npobj* objp, NJS_POINT3* whd)
 
 // 
 // Start address: 0x12d2a0
-void npSkinConvPreparation(npobj* objp)
+void npSkinConvPreparation(NJS_OBJECT* objp)
 {
 	int nb;
 	int mno;
@@ -1385,7 +1385,7 @@ void npSkinConvPreparation(npobj* objp)
 
 // 
 // Start address: 0x12d440
-void npSkinConvSub(npobj* objp)
+void npSkinConvSub(NJS_OBJECT* objp)
 {
 	_anon3* pHdr;
 	int mno;
@@ -1448,7 +1448,7 @@ void npSkinConvSub(npobj* objp)
 
 // 
 // Start address: 0x12d640
-void npSkinConvMain(npobj* objp)
+void npSkinConvMain(NJS_OBJECT* objp)
 {
 	// Line 2674, Address: 0x12d640, Func Offset: 0
 	// Line 2675, Address: 0x12d650, Func Offset: 0x10
@@ -1464,7 +1464,7 @@ void npSkinConvMain(npobj* objp)
 
 // 
 // Start address: 0x12d6d0
-void npSkinConvert(npobj* objp, int* sknp)
+void npSkinConvert(NJS_OBJECT* objp, int* sknp)
 {
 	// Line 2686, Address: 0x12d6d0, Func Offset: 0
 	// Line 2687, Address: 0x12d6e8, Func Offset: 0x18
@@ -1480,7 +1480,7 @@ void npSkinConvert(npobj* objp, int* sknp)
 
 // 
 // Start address: 0x12d740
-void npRetSkinConvMain(npobj* objp)
+void npRetSkinConvMain(NJS_OBJECT* objp)
 {
 	_anon3* pHdr;
 	int mno;
@@ -1538,7 +1538,7 @@ void npRetSkinConvMain(npobj* objp)
 
 // 
 // Start address: 0x12d9a0
-void npRetSkinConvert(npobj* objp, int* sknp)
+void npRetSkinConvert(NJS_OBJECT* objp, int* sknp)
 {
 	// Line 2810, Address: 0x12d9a0, Func Offset: 0
 	// Line 2811, Address: 0x12d9b8, Func Offset: 0x18
@@ -1554,7 +1554,7 @@ void npRetSkinConvert(npobj* objp, int* sknp)
 
 // 
 // Start address: 0x12da10
-unsigned int npGetMatColor(npobj* objp, int obj_n)
+unsigned int npGetMatColor(NJS_OBJECT* objp, int obj_n)
 {
 	unsigned int* pnt;
 	int i;
@@ -1570,7 +1570,7 @@ unsigned int npGetMatColor(npobj* objp, int obj_n)
 
 // 
 // Start address: 0x12da70
-void npSetAllMatColor(npobj* objp, int obj_n, unsigned int argb)
+void npSetAllMatColor(NJS_OBJECT* objp, int obj_n, unsigned int argb)
 {
 	unsigned char b;
 	unsigned char g;
@@ -1634,7 +1634,7 @@ void npSetAllMatColor(npobj* objp, int obj_n, unsigned int argb)
 
 // 
 // Start address: 0x12dc50
-void npChangeMatAlphaColor(npobj* objp, int obj_n, unsigned char alpha)
+void npChangeMatAlphaColor(NJS_OBJECT* objp, int obj_n, unsigned char alpha)
 {
 	unsigned char* pnt;
 	int i;
@@ -1651,7 +1651,7 @@ void npChangeMatAlphaColor(npobj* objp, int obj_n, unsigned char alpha)
 
 // 
 // Start address: 0x12dca0
-void npSetAllMatAlphaColor(npobj* objp, int obj_n, unsigned char alpha)
+void npSetAllMatAlphaColor(NJS_OBJECT* objp, int obj_n, unsigned char alpha)
 {
 	unsigned char* mat;
 	short* plp;
@@ -1822,7 +1822,7 @@ void npInitCalcSkin(void* pwp, int obj_n, int* sknp)
 	int nb;
 	int flg;
 	int i;
-	npobj* op;
+	NJS_OBJECT* op;
 	_anon9* owp;
 	NJS_MATRIX mat;
 	unsigned char matb[64];
@@ -1891,7 +1891,7 @@ void npCalcSkin(void* pwp, int obj_n, int* sknp)
 	int i;
 	float* p1;
 	float lv;
-	npobj* op;
+	NJS_OBJECT* op;
 	_anon0* p0;
 	float level[10];
 	// Line 3823, Address: 0x12e2b0, Func Offset: 0
@@ -2026,7 +2026,7 @@ void npInitCalcSkinFM(void* pwp, int obj_n, int* sknp)
 	int nb;
 	int flg;
 	int i;
-	npobj* op;
+	NJS_OBJECT* op;
 	_anon9* owp;
 	NJS_MATRIX mat;
 	unsigned char matb[64];
@@ -2096,7 +2096,7 @@ void npCalcSkinFM(void* pwp, int obj_n, int* sknp)
 	int i;
 	float* p1;
 	float lv;
-	npobj* op;
+	NJS_OBJECT* op;
 	_anon0* p0;
 	float level[10];
 	// Line 4292, Address: 0x12e830, Func Offset: 0

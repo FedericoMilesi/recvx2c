@@ -1,4 +1,4 @@
-typedef struct npobj;
+
 typedef struct _anon0;
 typedef struct BH_PWORK;
 typedef struct _anon1;
@@ -22,21 +22,21 @@ typedef struct _anon17;
 
 typedef struct _anon19;
 typedef struct _anon20;
-typedef struct _anon21;
+
 typedef struct _anon22;
-typedef struct _anon23;
+
 typedef struct _anon24;
 
 
 
 typedef struct _anon28;
-typedef struct _anon29;
+
 
 typedef struct _anon31;
 
 
-typedef struct _anon34;
-typedef struct _anon35;
+
+
 
 
 typedef void(*type_74)(void*);
@@ -69,7 +69,7 @@ typedef _anon7 type_24[256];
 
 typedef int* type_26[16];
 typedef _anon0* type_27[128];
-typedef npobj* type_28[16];
+
 typedef _anon0* type_29[128];
 typedef int type_30[4];
 
@@ -134,7 +134,7 @@ typedef unsigned char type_90[2];
 typedef unsigned int type_91[4];
 typedef int* type_92[16];
 typedef char type_93[32];
-typedef npobj* type_94[16];
+
 typedef char type_95[5];
 typedef char type_96[64];
 
@@ -155,16 +155,16 @@ typedef unsigned char type_110[64];
 typedef _search type_112[64];
 typedef _anon0* type_113[512];
 
-struct npobj
-{
-	unsigned int evalflags;
-	NJS_CNK_MODEL* model;
-	float pos[3];
-	int ang[3];
-	float scl[3];
-	npobj* child;
-	npobj* sibling;
-};
+
+
+
+
+
+
+
+
+
+
 
 struct _anon0
 {
@@ -216,7 +216,7 @@ struct _anon0
 	void* mskp;
 	unsigned int Dummy[1];
 	int* skp[16];
-	npobj* mbp[16];
+	NJS_OBJECT* mbp[16];
 	NJS_TEXLIST* txp[16];
 	_anon11 mdl[16];
 	_anon11* mlwP;
@@ -229,8 +229,8 @@ struct _anon0
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
 	NJS_MATRIX mtx;
-	npobj* obj_a;
-	npobj* obj_b;
+	NJS_OBJECT* obj_a;
+	NJS_OBJECT* obj_b;
 	float shp_ct;
 	char clp_jno[8];
 	int lok_jno;
@@ -270,7 +270,7 @@ struct _anon0
 	int ct2;
 	int ct3;
 	unsigned char* objbak;
-	_anon35 cspr;
+	NJS_SPHERE cspr;
 	int pn;
 	NJS_POLYGON_VTX* pvp;
 	NJS_TEXTURE_VTX* tvp;
@@ -340,7 +340,7 @@ struct BH_PWORK
 	void* mskp;
 	unsigned int Dummy[1];
 	int* skp[16];
-	npobj* mbp[16];
+	NJS_OBJECT* mbp[16];
 	NJS_TEXLIST* txp[16];
 	_anon11 mdl[16];
 	_anon11* mlwP;
@@ -353,8 +353,8 @@ struct BH_PWORK
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
 	NJS_MATRIX mtx;
-	npobj* obj_a;
-	npobj* obj_b;
+	NJS_OBJECT* obj_a;
+	NJS_OBJECT* obj_b;
 	float shp_ct;
 	char clp_jno[8];
 	int lok_jno;
@@ -477,8 +477,8 @@ struct _anon3
 	int mode;
 	int count;
 	int gun_delay;
-	npobj obj_r;
-	npobj obj_l;
+	NJS_OBJECT obj_r;
+	NJS_OBJECT obj_l;
 	int ang_tmp[3];
 	int arm_dl;
 	int arm_dr;
@@ -984,7 +984,7 @@ struct _anon11
 	unsigned int flg;
 	unsigned int obj_num;
 	void* datP;
-	npobj* objP;
+	NJS_OBJECT* objP;
 	NJS_TEXLIST* texP;
 	_anon22* owP;
 };
@@ -1134,16 +1134,16 @@ struct _anon20
 	int waz;
 	unsigned char* lkwkp;
 	unsigned char* exp;
-	_anon23* light;
+	NJS_LIGHT_PTR light;
 };
 
-struct _anon21
-{
-	float a;
-	float r;
-	float g;
-	float b;
-};
+
+
+
+
+
+
+
 
 struct _anon22
 {
@@ -1153,16 +1153,16 @@ struct _anon22
 	NJS_MATRIX mtx;
 };
 
-struct _anon23
-{
-	NJS_MATRIX mtrx;
-	NJS_POINT3 pnt;
-	NJS_POINT3 vctr;
-	int stat;
-	int reserve;
-	_anon29 ltcal;
-	_anon34 attr;
-};
+
+
+
+
+
+
+
+
+
+
 
 struct _anon24
 {
@@ -1203,31 +1203,31 @@ struct _anon28
 	float r2;
 };
 
-struct _anon29
-{
-	float ratten;
-	float ipd;
-	float nrr;
-	float frr;
-	float cosi;
-	float cose;
-	float idev;
-	float odev;
-	float rate;
-	float intns;
-	int exp;
-	int reserve;
-	NJS_POINT3 lpnt;
-	NJS_POINT3 lvctr;
-	NJS_POINT3 lmvctr;
-	_anon21 atten;
-	_anon21 amb;
-	_anon21 dif;
-	_anon21 spc;
-	_anon21 mamb;
-	_anon21 mdif;
-	_anon21 mspc;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1280,25 +1280,25 @@ struct _anon31
 
 
 
-struct _anon34
-{
-	int lsrc;
-	float iamb;
-	float idif;
-	float ispc;
-	float nrang;
-	float frang;
-	void* func;
-	int iang;
-	int oang;
-	_anon21 argb;
-};
 
-struct _anon35
-{
-	NJS_POINT3 c;
-	float r;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1317,9 +1317,9 @@ _anon5 WpnEffTab[4][0];
 
 void PlyPchInit(BH_PWORK* ewP);
 void PlyPchMain(BH_PWORK* ewP);
-void MixSetToJointRot(npobj* basP, char* rutP, npobj* objP, int yaw);
+void MixSetToJointRot(NJS_OBJECT* basP, char* rutP, NJS_OBJECT* objP, int yaw);
 void GetOneObjectMotion(BH_PWORK* ewP, int obj_no, int* ang);
-void SetOneObjectMotion(BH_PWORK* ewP, npobj* objP, int* ang);
+void SetOneObjectMotion(BH_PWORK* ewP, NJS_OBJECT* objP, int* ang);
 _search* bhSearchEnemy(BH_PWORK* pwP, int rng, float hgt);
 int SetLockOnDirection(int range, int count, int mode, int special);
 void bhCPM2_act_suw_pch();
@@ -1346,7 +1346,7 @@ void PlyPchMain(BH_PWORK* ewP)
 	int* dstP;
 	int* atP;
 	int dir;
-	npobj* objP;
+	NJS_OBJECT* objP;
 	_anon11* mlwP;
 	_anon3* ppP;
 	char RouteArmLn_0[5];
@@ -1440,9 +1440,9 @@ void PlyPchMain(BH_PWORK* ewP)
 
 // 
 // Start address: 0x14aaa0
-void MixSetToJointRot(npobj* basP, char* rutP, npobj* objP, int yaw)
+void MixSetToJointRot(NJS_OBJECT* basP, char* rutP, NJS_OBJECT* objP, int yaw)
 {
-	npobj* tmpP;
+	NJS_OBJECT* tmpP;
 	NJS_MATRIX mtx1P;
 	NJS_MATRIX mtx0P;
 	// Line 231, Address: 0x14aaa0, Func Offset: 0
@@ -1499,7 +1499,7 @@ void GetOneObjectMotion(BH_PWORK* ewP, int obj_no, int* ang)
 
 // 
 // Start address: 0x14ace0
-void SetOneObjectMotion(BH_PWORK* ewP, npobj* objP, int* ang)
+void SetOneObjectMotion(BH_PWORK* ewP, NJS_OBJECT* objP, int* ang)
 {
 	int* srcP;
 	float rate;
@@ -2148,8 +2148,8 @@ void bhCPM2_SearchPch()
 // Start address: 0x14cf60
 void bhArmIkMdk(BH_PWORK* ewP, int bas_no, NJS_POINT3* effP, int rot)
 {
-	npobj* obj1P;
-	npobj* obj0P;
+	NJS_OBJECT* obj1P;
+	NJS_OBJECT* obj0P;
 	NJS_POINT3* vtP;
 	NJS_POINT3* vb1P;
 	NJS_POINT3* vyP;

@@ -1,5 +1,5 @@
 typedef struct _anon0;
-typedef struct npobj;
+
 typedef struct _anon1;
 typedef struct _anon2;
 
@@ -30,22 +30,22 @@ typedef struct _anon25;
 typedef struct _anon27;
 typedef struct _anon28;
 typedef struct _anon29;
-typedef struct _anon30;
+
 typedef struct _anon31;
-typedef struct _anon32;
+
 typedef struct _anon33;
 
 
 typedef struct _anon36;
-typedef struct _anon37;
+
 
 typedef struct _anon39;
 typedef struct _anon40;
 
 
-typedef struct _anon43;
+
 typedef struct _anon44;
-typedef struct _anon45;
+
 
 typedef struct _anon47;
 typedef struct _anon48;
@@ -87,7 +87,7 @@ typedef _anon8 type_23[256];
 typedef int* type_25[16];
 typedef _anon1* type_26[128];
 typedef _anon47 type_27[16];
-typedef npobj* type_28[16];
+
 
 typedef _anon1* type_30[128];
 
@@ -193,7 +193,7 @@ typedef unsigned int type_136[4];
 typedef int* type_137[16];
 typedef int type_138[16];
 typedef char type_139[32];
-typedef npobj* type_140[16];
+
 typedef int type_141[16][4];
 typedef char type_142[64];
 
@@ -237,16 +237,16 @@ struct _anon0
 	unsigned char prm3;
 };
 
-struct npobj
-{
-	unsigned int evalflags;
-	NJS_CNK_MODEL* model;
-	float pos[3];
-	int ang[3];
-	float scl[3];
-	npobj* child;
-	npobj* sibling;
-};
+
+
+
+
+
+
+
+
+
+
 
 struct _anon1
 {
@@ -298,7 +298,7 @@ struct _anon1
 	void* mskp;
 	unsigned int Dummy[1];
 	int* skp[16];
-	npobj* mbp[16];
+	NJS_OBJECT* mbp[16];
 	NJS_TEXLIST* txp[16];
 	_anon13 mdl[16];
 	_anon13* mlwP;
@@ -311,8 +311,8 @@ struct _anon1
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
 	NJS_MATRIX mtx;
-	npobj* obj_a;
-	npobj* obj_b;
+	NJS_OBJECT* obj_a;
+	NJS_OBJECT* obj_b;
 	float shp_ct;
 	char clp_jno[8];
 	int lok_jno;
@@ -352,7 +352,7 @@ struct _anon1
 	int ct2;
 	int ct3;
 	unsigned char* objbak;
-	_anon45 cspr;
+	NJS_SPHERE cspr;
 	int pn;
 	NJS_POLYGON_VTX* pvp;
 	NJS_TEXTURE_VTX* tvp;
@@ -443,7 +443,7 @@ struct BH_PWORK
 	void* mskp;
 	unsigned int Dummy[1];
 	int* skp[16];
-	npobj* mbp[16];
+	NJS_OBJECT* mbp[16];
 	NJS_TEXLIST* txp[16];
 	_anon13 mdl[16];
 	_anon13* mlwP;
@@ -456,8 +456,8 @@ struct BH_PWORK
 	unsigned char* exp3;
 	unsigned char mtxbuf[64];
 	NJS_MATRIX mtx;
-	npobj* obj_a;
-	npobj* obj_b;
+	NJS_OBJECT* obj_a;
+	NJS_OBJECT* obj_b;
 	float shp_ct;
 	char clp_jno[8];
 	int lok_jno;
@@ -703,7 +703,7 @@ struct _anon13
 	unsigned int flg;
 	unsigned int obj_num;
 	void* datP;
-	npobj* objP;
+	NJS_OBJECT* objP;
 	NJS_TEXLIST* texP;
 	_anon31* owP;
 };
@@ -800,7 +800,7 @@ struct _anon16
 	int waz;
 	unsigned char* lkwkp;
 	unsigned char* exp;
-	_anon32* light;
+	NJS_LIGHT_PTR light;
 };
 
 struct _anon17
@@ -1362,13 +1362,13 @@ struct _anon29
 	unsigned short* evd;
 };
 
-struct _anon30
-{
-	float a;
-	float r;
-	float g;
-	float b;
-};
+
+
+
+
+
+
+
 
 struct _anon31
 {
@@ -1378,16 +1378,16 @@ struct _anon31
 	NJS_MATRIX mtx;
 };
 
-struct _anon32
-{
-	NJS_MATRIX mtrx;
-	NJS_POINT3 pnt;
-	NJS_POINT3 vctr;
-	int stat;
-	int reserve;
-	_anon37 ltcal;
-	_anon43 attr;
-};
+
+
+
+
+
+
+
+
+
+
 
 struct _anon33
 {
@@ -1421,31 +1421,31 @@ struct _anon36
 	float r2;
 };
 
-struct _anon37
-{
-	float ratten;
-	float ipd;
-	float nrr;
-	float frr;
-	float cosi;
-	float cose;
-	float idev;
-	float odev;
-	float rate;
-	float intns;
-	int exp;
-	int reserve;
-	NJS_POINT3 lpnt;
-	NJS_POINT3 lvctr;
-	NJS_POINT3 lmvctr;
-	_anon30 atten;
-	_anon30 amb;
-	_anon30 dif;
-	_anon30 spc;
-	_anon30 mamb;
-	_anon30 mdif;
-	_anon30 mspc;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1503,19 +1503,19 @@ struct _anon40
 
 
 
-struct _anon43
-{
-	int lsrc;
-	float iamb;
-	float idif;
-	float ispc;
-	float nrang;
-	float frang;
-	void* func;
-	int iang;
-	int oang;
-	_anon30 argb;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon44
 {
@@ -1525,11 +1525,11 @@ struct _anon44
 	int bonus;
 };
 
-struct _anon45
-{
-	NJS_POINT3 c;
-	float r;
-};
+
+
+
+
+
 
 
 
@@ -1678,8 +1678,8 @@ int bhEne03_DirTarget(BH_PWORK* epw, NJS_POINT3* pos, int w);
 void bhEne03_GoAHead(BH_PWORK* epw);
 void bhEne03_GetPartsPos(BH_PWORK* epw, char* parts, NJS_POINT3* p);
 void bhEne03_MakeMatrix(BH_PWORK* epw);
-void bhEne03_HidePartsSub0(npobj* p);
-void bhEne03_HidePartsSub1(npobj* p);
+void bhEne03_HidePartsSub0(NJS_OBJECT* p);
+void bhEne03_HidePartsSub1(NJS_OBJECT* p);
 void bhEne03_HideParts(BH_PWORK* epw, unsigned short PartsNo, unsigned short flg);
 int bhEne03_CollisionWalls(BH_PWORK* epw);
 _anon0* bhEne03_GetWall(BH_PWORK* epw);
@@ -4603,7 +4603,7 @@ void bhEne03_DD02(BH_PWORK* epw)
 // Start address: 0x19e0a0
 void bhEne03_DD03(BH_PWORK* epw)
 {
-	npobj* p;
+	NJS_OBJECT* p;
 	unsigned int i;
 	_anon31* owk;
 	// Line 4619, Address: 0x19e0a0, Func Offset: 0
@@ -4904,7 +4904,7 @@ void bhEne03_GoAHead(BH_PWORK* epw)
 // Start address: 0x19ebe0
 void bhEne03_GetPartsPos(BH_PWORK* epw, char* parts, NJS_POINT3* p)
 {
-	npobj* objP;
+	NJS_OBJECT* objP;
 	_anon13* mlwP;
 	// Line 4992, Address: 0x19ebe0, Func Offset: 0
 	// Line 4993, Address: 0x19ebf8, Func Offset: 0x18
@@ -4966,7 +4966,7 @@ void bhEne03_MakeMatrix(BH_PWORK* epw)
 
 // 
 // Start address: 0x19ee60
-void bhEne03_HidePartsSub0(npobj* p)
+void bhEne03_HidePartsSub0(NJS_OBJECT* p)
 {
 	// Line 5071, Address: 0x19ee60, Func Offset: 0
 	// Line 5072, Address: 0x19ee6c, Func Offset: 0xc
@@ -4978,7 +4978,7 @@ void bhEne03_HidePartsSub0(npobj* p)
 
 // 
 // Start address: 0x19eec0
-void bhEne03_HidePartsSub1(npobj* p)
+void bhEne03_HidePartsSub1(NJS_OBJECT* p)
 {
 	// Line 5085, Address: 0x19eec0, Func Offset: 0
 	// Line 5086, Address: 0x19eecc, Func Offset: 0xc
@@ -4992,7 +4992,7 @@ void bhEne03_HidePartsSub1(npobj* p)
 // Start address: 0x19ef20
 void bhEne03_HideParts(BH_PWORK* epw, unsigned short PartsNo, unsigned short flg)
 {
-	npobj* p;
+	NJS_OBJECT* p;
 	// Line 5101, Address: 0x19ef20, Func Offset: 0
 	// Line 5104, Address: 0x19ef28, Func Offset: 0x8
 	// Line 5105, Address: 0x19ef48, Func Offset: 0x28
@@ -5009,7 +5009,7 @@ void bhEne03_HideParts(BH_PWORK* epw, unsigned short PartsNo, unsigned short flg
 // Start address: 0x19efb0
 int bhEne03_CollisionWalls(BH_PWORK* epw)
 {
-	npobj* objP;
+	NJS_OBJECT* objP;
 	_anon2* mkaP;
 	int ret;
 	NJS_POINT3 trans;

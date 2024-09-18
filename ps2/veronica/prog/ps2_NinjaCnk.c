@@ -1,11 +1,11 @@
 
 typedef struct tagCHUNK_HEAD;
-typedef union _anon1;
+
 typedef struct _anon2;
 typedef struct cnkobj;
 typedef struct _anon3;
 typedef struct tagVU1_STRIP_BUF;
-typedef struct _anon4;
+
 
 typedef struct _anon6;
 typedef struct _anon7;
@@ -15,22 +15,22 @@ typedef struct tagCNK_PRIM_BUF;
 typedef struct _anon10;
 
 typedef struct tagCNK_LIGHT;
-typedef struct _anon12;
-typedef struct _anon13;
+
+
 typedef struct _anon14;
 typedef struct tagVU1_COLOR;
 typedef struct _anon15;
 
 typedef struct _anon17;
-typedef struct _anon18;
+
 typedef struct tagCNK_LIGHTING;
 
 
 typedef struct _anon21;
 typedef struct _anon22;
 
-typedef struct _anon24;
-typedef struct _anon25;
+
+
 typedef struct _anon26;
 
 typedef void(*type_3)(unsigned long, tagVU1_STRIP_BUF*, unsigned short, unsigned short);
@@ -86,12 +86,12 @@ struct tagCHUNK_HEAD
 	unsigned short usSize;
 };
 
-union _anon1
-{
-	unsigned int color;
-	_anon24 tex;
-	_anon25 argb;
-};
+
+
+
+
+
+
 
 struct _anon2
 {
@@ -140,13 +140,13 @@ typedef struct VU1_STRIP_BUF
 	float fNz;
 } VU1_STRIP_BUF;
 
-struct _anon4
-{
-	float a;
-	float r;
-	float g;
-	float b;
-};
+
+
+
+
+
+
+
 
 
 
@@ -246,25 +246,25 @@ struct tagCNK_LIGHT
 	float pad1;
 };
 
-struct _anon12
-{
-	_anon1 diffuse;
-	_anon1 specular;
-	float exponent;
-	unsigned int attr_texId;
-	unsigned int attrflags;
-};
 
-struct _anon13
-{
-	unsigned short type_matId;
-	unsigned short nbMesh;
-	short* meshes;
-	unsigned int* attrs;
-	NJS_POINT3* normals;
-	_anon1* vertcolor;
-	_anon1* vertuv;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon14
 {
@@ -345,18 +345,18 @@ struct _anon17
 	unsigned int ClampFlag;
 };
 
-struct _anon18
-{
-	NJS_POINT3* points;
-	NJS_POINT3* normals;
-	int nbPoint;
-	_anon13* meshsets;
-	_anon12* mats;
-	unsigned short nbMeshset;
-	unsigned short nbMat;
-	NJS_POINT3 center;
-	float r;
-};
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct tagCNK_LIGHTING
 {
@@ -423,19 +423,19 @@ struct _anon22
 
 
 
-struct _anon24
-{
-	short u;
-	short v;
-};
 
-struct _anon25
-{
-	unsigned char b;
-	unsigned char g;
-	unsigned char r;
-	unsigned char a;
-};
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon26
 {
@@ -535,10 +535,10 @@ unsigned int ulDrawGeneralPurposeWater;
 unsigned int njCnkConvTest;
 
 void njInit3D(NJS_VERTEX_BUF* pBufferTop, int iBufferMax);
-void njDrawModel(_anon18* pModel);
+void njDrawModel(NJS_MODEL* pModel);
 void njControl3D(unsigned int ulFlag);
 void njSetConstantAttr(unsigned int ulAnd, unsigned int ulOr);
-void njSetConstantMaterial(_anon4* pMaterial);
+void njSetConstantMaterial(NJS_ARGB* pMaterial);
 void njSetCnkBlendMode(unsigned int ulAttr);
 void njCnkModDrawModel(NJS_CNK_MODEL* pModel);
 void njCnkSetEasyLight(float fX, float fY, float fZ);
@@ -606,7 +606,7 @@ void njInit3D(NJS_VERTEX_BUF* pBufferTop, int iBufferMax) {
 
 // 
 // Start address: 0x2cf380
-void njDrawModel(_anon18* pModel)
+void njDrawModel(NJS_MODEL* pModel)
 {
 	// Line 593, Address: 0x2cf380, Func Offset: 0
 	// Line 594, Address: 0x2cf384, Func Offset: 0x4
@@ -642,7 +642,7 @@ void njSetConstantAttr(unsigned int ulAnd, unsigned int ulOr)
 
 // 
 // Start address: 0x2cf420
-void njSetConstantMaterial(_anon4* pMaterial)
+void njSetConstantMaterial(NJS_ARGB* pMaterial)
 {
 	// Line 664, Address: 0x2cf420, Func Offset: 0
 	// Line 665, Address: 0x2cf42c, Func Offset: 0xc

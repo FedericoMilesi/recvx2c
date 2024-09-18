@@ -2,7 +2,7 @@
 
 
 typedef struct _anon3;
-typedef struct _anon4;
+
 
 
 
@@ -42,11 +42,11 @@ struct _anon3
 	NJS_POINT3 v[8];
 };
 
-struct _anon4
-{
-	NJS_POINT3 c;
-	float r;
-};
+
+
+
+
+
 
 
 int njIsParalellL2L(NJS_LINE* pLine1, NJS_LINE* pLine2);
@@ -58,10 +58,10 @@ float njDistanceL2L(NJS_LINE* pLine1, NJS_LINE* pLine2, NJS_POINT3* pCross1, NJS
 float njDistanceL2PL(NJS_LINE* pLine, NJS_PLANE* pPlane, NJS_POINT3* pCross);
 void njGetPlaneNormal(NJS_POINT3* pPoint, NJS_VECTOR* pVector);
 void njGetPlaneNormal2(NJS_POINT3* pP1, NJS_POINT3* pP2, NJS_POINT3* pP3, NJS_VECTOR* pVector);
-int njCollisionCheckSS(_anon4* pSphere1, _anon4* pSphere2);
+int njCollisionCheckSS(NJS_SPHERE* pSphere1, NJS_SPHERE* pSphere2);
 int njCollisionCheckCC(NJS_CAPSULE* pCap1, NJS_CAPSULE* pCap2);
-int njCollisionCheckSC(_anon4* pSphere, NJS_CAPSULE* pCapsule);
-int njCollisionCheckBS(_anon3* pBox, _anon4* pSphere);
+int njCollisionCheckSC(NJS_SPHERE* pSphere, NJS_CAPSULE* pCapsule);
+int njCollisionCheckBS(_anon3* pBox, NJS_SPHERE* pSphere);
 int njCollisionCheckBC(_anon3* pBox, NJS_CAPSULE* pCapsule);
 int njCheckPlane4AndLine(NJS_POINT3* pP1, NJS_POINT3* pP2, NJS_POINT3* pP3, NJS_POINT3* pP4, NJS_POINT3* pPN, NJS_LINE* pLine);
 int njCollisionCheckBC2(_anon3* pBox, NJS_CAPSULE* pCapsule);
@@ -373,7 +373,7 @@ void njGetPlaneNormal2(NJS_POINT3* pP1, NJS_POINT3* pP2, NJS_POINT3* pP3, NJS_VE
 
 // 
 // Start address: 0x2e3b20
-int njCollisionCheckSS(_anon4* pSphere1, _anon4* pSphere2)
+int njCollisionCheckSS(NJS_SPHERE* pSphere1, NJS_SPHERE* pSphere2)
 {
 	float fR;
 	float fDz;
@@ -399,7 +399,7 @@ int njCollisionCheckSS(_anon4* pSphere1, _anon4* pSphere2)
 // Start address: 0x2e3b90
 int njCollisionCheckCC(NJS_CAPSULE* pCap1, NJS_CAPSULE* pCap2)
 {
-	_anon4 Sphere;
+	NJS_SPHERE Sphere;
 	NJS_POINT3 Point2;
 	NJS_POINT3 Point1;
 	float fLength;
@@ -462,7 +462,7 @@ int njCollisionCheckCC(NJS_CAPSULE* pCap1, NJS_CAPSULE* pCap2)
 
 // 
 // Start address: 0x2e3e70
-int njCollisionCheckSC(_anon4* pSphere, NJS_CAPSULE* pCapsule)
+int njCollisionCheckSC(NJS_SPHERE* pSphere, NJS_CAPSULE* pCapsule)
 {
 	NJS_POINT3 Point;
 	float fLength;
@@ -492,7 +492,7 @@ int njCollisionCheckSC(_anon4* pSphere, NJS_CAPSULE* pCapsule)
 
 // 
 // Start address: 0x2e3fe0
-int njCollisionCheckBS(_anon3* pBox, _anon4* pSphere)
+int njCollisionCheckBS(_anon3* pBox, NJS_SPHERE* pSphere)
 {
 	NJS_CAPSULE Capsule;
 	float fR;

@@ -42,3 +42,14 @@
 | NJS_TEXSURFACE | Found on Katana | `<katana>/ninjastr.h` |
 | NJS_TEXINFO | Found on Katana | `<katana>/ninjastr.h` |
 | NJS_TEXMEMLIST | Found on Katana | `<katana>/ninjastr.h` |
+| NJS_TEX | Found on Katana | `<katana>/ninjastr.h` |
+| NJS_BGRA | Found on Katana | `<katana>/ninjastr.h` |
+| NJS_COLOR | Found on Katana | `<katana>/ninjastr.h` |
+| NJS_SPHERE | Found on Katana | `<katana>/ninjastr.h` |
+| NJS_MESHSET | Found on Katana | `<katana>/ninjastr.h` |
+| NJS_MATERIAL | Found on Katana | `<katana>/ninjastr.h` |
+| NJS_MODEL | Found on Katana | `<katana>/ninjastr.h` |
+| NJS_ARGB | Found on Katana | `<katana>/ninjastr.h` |
+| NJS_LIGHT_ATTR | Found on Katana | `<katana>/ninjastr.h` |
+| NJS_LIGHT | Found on Katana | `<katana>/ninjastr.h` |
+| NJS_LIGHT_PTR | Found on Katana | `<katana>/ninjastr.h` |
