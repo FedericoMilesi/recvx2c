@@ -11,3 +11,5 @@ This project aims to reconstruct the source code for Resident Evil - Code: Veron
 3) The PS2 uses a MIPS-based CPU, the R5900 a.k.a the Emotion Engine, and thus decompiling the assembly instructions back to the high-level language the game was originally programmed on (C) is relatively easier than doing so with other console ports of the game that use different, more complex Instruction Set Architectures.
 
 At this very early stage of the project, there is no compilation environment set up, just raw code. Once there is enough reverse-engineered logic to make the game playable up to the main menu screen, some tests will be conducted where the rendering of graphics and such will be rewritten to work without Sony's API for the PS2 in order to run on modern operating systems. 
+
+If you want to know more information about how to contribute, reach out on the Discord server for the project: https://discord.gg/wDqqXBjhSk
