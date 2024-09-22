@@ -1,14 +1,14 @@
+#include "backup.h"
 #include "types.h"
 
-void(*BupInitCallback)();
+#include <SHC/string.h>
+
 Drive gBupInfo[8];
 
-void BupInit();
-void BupExit();
-void ClearInfo(int drive);
-int BupComplete(int drive, int op, int stat);
-int BupProgress(int drive, int op, int count, int max);
-void BupInitCallback();
+
+
+
+
 
 
 
@@ -291,6 +291,6 @@ void BupInitCallback() { // Line 290, Address: 0x2c9c70, 0x2c9c78
 
 
 
-  buSetCompleteCallback(BupComplete); // Line 294, Address: 0x2c9c74, 0x2c9c7c
-  buSetProgressCallback(BupProgress); // Line 295, Address: 0x2c9c84
+  buSetCompleteCallback((BU_COMPLETECALLBACK)BupComplete); // Line 294, Address: 0x2c9c74, 0x2c9c7c
+  buSetProgressCallback((BU_PROGRESSCALLBACK)BupProgress); // Line 295, Address: 0x2c9c84
 } // Line 296, Address: 0x2c9c90
