@@ -1844,13 +1844,8 @@ void njColorBlendingMode(int target, int mode)
 	// Func End, Address: 0x2e1894, Func Offset: 0x34
 }
 
-// 
-// Start address: 0x2e18a0
-void njTextureShadingMode()
-{
-	// Line 553, Address: 0x2e18a0, Func Offset: 0
-	// Func End, Address: 0x2e18a8, Func Offset: 0x8
-}
+/* empty */
+void njTextureShadingMode() { } // Line 553, Address: 0x2e18a0, Func Offset: 0
 
 // 
 // Start address: 0x2e18b0
