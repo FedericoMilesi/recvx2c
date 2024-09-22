@@ -1,7 +1,7 @@
-#include "types.h"
+#include "ps2_sg_sybt.h"
 
-void syBtExit();
-int syBtGetBootSystemID(SYS_BT_SYSTEMID* pData);
+
+
 
 
 

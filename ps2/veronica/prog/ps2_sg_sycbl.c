@@ -4,7 +4,7 @@
 
 
 
-/* 100% match - Hardwires the CBL type to NTSC */
+/* 100% match */
 SYE_CBL syCblCheck() { // Line 8, Address: 0x2ddef0
     return SYE_CBL_NTSC;
 }
