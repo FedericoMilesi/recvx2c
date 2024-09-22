@@ -1264,13 +1264,9 @@ void npSetMemoryL(unsigned int* memp, unsigned int size, int dat) { // Line 2359
     while (size--) *memp++ = dat; // Line 2360, Address: 0x12cfb8, Func Offset: 0x28
 }
 
-// 
-// Start address: 0x12cfc0
-void npCopyMemory(unsigned char* dst, unsigned char* src, unsigned int size)
-{
-	// Line 2367, Address: 0x12cfc0, Func Offset: 0
-	// Line 2368, Address: 0x12cfe8, Func Offset: 0x28
-	// Func End, Address: 0x12cff0, Func Offset: 0x30
+/* 100% match */
+void npCopyMemory(unsigned char* dst, unsigned char* src, unsigned int size) { // Line 2367, Address: 0x12cfc0, Func Offset: 0
+    while (size--) *dst++ = *src++; // Line 2368, Address: 0x12cfe8, Func Offset: 0x28
 }
 
 // 
