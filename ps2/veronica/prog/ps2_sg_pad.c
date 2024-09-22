@@ -281,13 +281,8 @@ _anon2* pdGetPeripheralInfo()
 	// Func End, Address: 0x2d9f68, Func Offset: 0xf8
 }
 
-// 
-// Start address: 0x2d9f70
-void pdSetMode()
-{
-	// Line 213, Address: 0x2d9f70, Func Offset: 0
-	// Func End, Address: 0x2d9f78, Func Offset: 0x8
-}
+/* empty */
+void pdSetMode() { } // Line 213, Address: 0x2d9f70, Func Offset: 0
 
 // 
 // Start address: 0x2d9f80
