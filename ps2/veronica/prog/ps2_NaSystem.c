@@ -1658,13 +1658,8 @@ void njInitSystem(int mode, int frame, int count)
 	// Func End, Address: 0x2e13a8, Func Offset: 0x8
 }
 
-// 
-// Start address: 0x2e13b0
-void njInitVertexBuffer()
-{
-	// Line 119, Address: 0x2e13b0, Func Offset: 0
-	// Func End, Address: 0x2e13b8, Func Offset: 0x8
-}
+/* empty */
+void njInitVertexBuffer() { } // Line 119, Address: 0x2e13b0, Func Offset: 0
 
 // 
 // Start address: 0x2e13c0
