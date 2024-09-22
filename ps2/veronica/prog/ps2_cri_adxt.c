@@ -1,4 +1,4 @@
-void ADXT_Pause();
+#include <cri_adxt.h>
 
 
 
@@ -15,4 +15,4 @@ void ADXT_Pause();
 
 
 /* empty */
-void ADXT_Pause() { } // Line 18, Address: 0x2cb050
+void ADXT_Pause(ADXT adxt, long sw) { } // Line 18, Address: 0x2cb050
