@@ -1,1438 +1,18 @@
-typedef struct _anon0;
-typedef struct tagLOAD_SCREEN;
-
-
-
-typedef struct _anon3;
-typedef struct tagSELECTFILEWINDOW;
-typedef struct tagMEMORYCARDPORT;
-
-
-
-typedef struct _anon7;
-typedef struct tagSELECTFILEINFO;
-typedef struct _anon8;
-typedef struct _anon9;
-
-typedef struct _anon11;
-typedef struct tagCONFIGFILE;
-typedef struct tagSAVEFILE;
-typedef struct tagICONINFORMATION;
-typedef struct tagMEMORYCARDSTATE;
-
-typedef struct _anon13;
-
-
-typedef struct BH_PWORK;
-typedef struct _anon16;
-
-
-typedef struct _anon19;
-
-typedef struct _anon21;
-
-
-
-typedef struct _anon25;
-
-
-typedef struct _anon28;
-typedef struct _anon29;
-
-
-typedef struct _anon32;
-
-
-typedef void(*type_92)(void*);
-
-typedef unsigned char type_0[2];
-typedef unsigned int type_1[4];
-typedef _anon0* type_2[512];
-typedef char type_3[32];
-typedef char type_4[32];
-
-typedef _anon0* type_6[512];
-
-
-typedef char type_9[8];
-typedef char type_10[64];
-typedef _anon0* type_11[512];
-
-typedef int type_13[8];
-typedef tagMEMORYCARDPORT type_14[2];
-typedef _anon0* type_15[512];
-
-typedef _anon0* type_17[128];
-typedef unsigned int type_18[1];
-typedef tagSELECTFILEINFO type_19[15];
-typedef char type_20[32];
-
-typedef int* type_22[16];
-typedef _anon0* type_23[128];
-typedef short type_24[32];
-
-typedef _anon0* type_26[128];
-
-typedef _anon8 type_28[16];
-typedef _anon0* type_29[512];
-typedef unsigned int type_30[4];
-typedef _anon0* type_31[32];
-typedef _anon3* type_32[128];
-typedef char type_33[256];
-typedef _anon0* type_34[32];
-typedef unsigned char type_35[64];
-typedef float type_36[4];
-
-typedef float type_38[4];
-typedef _anon0* type_39[32];
-typedef float type_40[4];
-typedef char type_41[8];
-
-
-typedef int type_44[4];
-
-typedef float type_46[3];
-typedef int type_47[4];
-typedef unsigned int type_48[32];
-typedef unsigned char* type_49[256];
-typedef int type_50[3];
-typedef unsigned int type_51[16];
-typedef float type_52[3];
-typedef float type_53[4];
-typedef short type_54[256];
-typedef unsigned int type_55[16];
-typedef unsigned int type_56[32];
-typedef unsigned int type_57[16];
-typedef unsigned char type_58[4];
-typedef int type_59[4];
-typedef unsigned int type_60[8];
-typedef short type_61[256];
-typedef unsigned int type_62[384];
-typedef int type_63[8];
-typedef unsigned int type_64[4];
-
-typedef char type_66[4];
-typedef _anon7 type_67[256];
-typedef short type_68[4];
-typedef int type_69[4][4];
-typedef unsigned char type_70[4];
-typedef float type_71[4][3];
-
-typedef float type_73[4][3];
-typedef short type_74[256];
-typedef unsigned char type_75[68];
-typedef int type_76[64];
-typedef _anon8 type_77[450];
-typedef unsigned char type_78[64];
-typedef unsigned char type_79[64];
-typedef char type_80[3];
-
-typedef unsigned char type_82[64];
-
-typedef int type_84[450];
-typedef unsigned char type_85[512];
-typedef unsigned int type_86[8];
-typedef unsigned char type_87[450];
-typedef _anon16 type_88[4];
-typedef void* type_89[2];
-typedef char type_90[16];
-typedef char type_91[4];
-typedef unsigned int type_93[32];
-
-typedef unsigned int type_95[16];
-typedef unsigned int type_96[2];
-typedef unsigned int type_97[16];
-typedef unsigned int type_98[32];
-typedef unsigned int type_99[16];
-typedef BH_PWORK* type_100[16];
-typedef unsigned int type_101[8];
-typedef unsigned int type_102[1];
-typedef unsigned int type_103[384];
-typedef unsigned int type_104[2];
-typedef int* type_105[16];
-typedef unsigned int type_106[4];
-
-
-typedef char type_109[4];
-typedef _anon8 type_110[16];
-typedef short type_111[4];
-typedef unsigned char type_112[4];
-typedef _anon19 type_113[16];
-typedef _anon32 type_114[64];
-typedef _anon0* type_115[512];
-typedef _anon32 type_116[64];
-typedef unsigned int type_117[32];
-typedef _anon0* type_118[128];
-typedef _anon32 type_119[64];
-
-typedef unsigned int type_121[3];
-typedef _anon0* type_122[512];
-typedef unsigned char type_123[64];
-typedef _anon0* type_124[512];
-typedef char type_125[50];
-
-struct _anon0
-{
-	unsigned int flg;
-	unsigned short id;
-	unsigned short type;
-	char flr_no;
-	char flr_nob;
-	unsigned char mdlver;
-	unsigned char param;
-	unsigned char mode0;
-	unsigned char mode1;
-	unsigned char mode2;
-	unsigned char mode3;
-	float px;
-	float py;
-	float pz;
-	int ax;
-	int ay;
-	int az;
-	float ar;
-	float aw;
-	float ah;
-	float ad;
-	float car;
-	float cah;
-	float pxb;
-	float pyb;
-	float pzb;
-	int axb;
-	int ayb;
-	int azb;
-	float gpx;
-	float gpy;
-	float gpz;
-	float lox;
-	float loy;
-	float loz;
-	float aox;
-	float aoy;
-	float aoz;
-	float spd;
-	unsigned int flg2;
-	unsigned int mdflg;
-	unsigned int stflg;
-	unsigned int Dummy3;
-	int draw_tp;
-	int mdl_n;
-	void* mskp;
-	unsigned int Dummy[1];
-	int* skp[16];
-	NJS_OBJECT* mbp[16];
-	NJS_TEXLIST* txp[16];
-	_anon8 mdl[16];
-	_anon8* mlwP;
-	unsigned int mdl_no;
-	int lkono;
-	unsigned char* lkwkp;
-	unsigned char* exp0;
-	unsigned char* exp1;
-	unsigned char* exp2;
-	unsigned char* exp3;
-	unsigned char mtxbuf[64];
-	NJS_MATRIX mtx;
-	NJS_OBJECT* obj_a;
-	NJS_OBJECT* obj_b;
-	float shp_ct;
-	char clp_jno[8];
-	int lok_jno;
-	_anon3* mnwP;
-	_anon3* mnwPb;
-	unsigned int mtn_attr;
-	unsigned int mtn_no;
-	int frm_no;
-	unsigned int frm_mode;
-	int hokan_rate;
-	unsigned int hokan_count;
-	unsigned int hokan_ctbak;
-	int mtn_add;
-	unsigned int mtn_md;
-	unsigned char* mtn_tp;
-	int axp;
-	int ayp;
-	int azp;
-	short psh_ct;
-	short psh_idx;
-	int idx_ct;
-	int mtn_chk;
-	float ofx;
-	float ofy;
-	float ofz;
-	float sx;
-	float sy;
-	float sz;
-	float sxb;
-	float syb;
-	float szb;
-	float xn;
-	float yn;
-	float zn;
-	int ct0;
-	int ct1;
-	int ct2;
-	int ct3;
-	unsigned char* objbak;
-	NJS_SPHERE cspr;
-	int pn;
-	NJS_POLYGON_VTX* pvp;
-	NJS_TEXTURE_VTX* tvp;
-	NJS_POLYGON_VTX pv[4];
-	NJS_TEXTURE_VTX tv[4];
-	int bl_src;
-	int bl_dst;
-	int ani_ct;
-	int tex_id;
-	int aspd;
-	unsigned int gidx;
-	int bank;
-	char jno[16];
-	char hide[4];
-	void(*func)(void*);
-	int idx;
-	int Dummy2;
-};
-
-struct tagLOAD_SCREEN
-{
-	unsigned int ulState;
-	unsigned int ulSubState;
-	unsigned int ulMemCheckCountTimer;
-	unsigned int ulFileSize;
-	int lCardState;
-	short sCursorX;
-	short sCursorY;
-	short sSelectCur;
-	unsigned short usExitFlag;
-	unsigned short usSaveEnd;
-	unsigned short usLoopCount;
-	char cMesFlag;
-	char cCgFlag;
-	tagCONFIGFILE* pConfigFile;
-	tagSAVEFILE* pSaveFile;
-	tagICONINFORMATION* pIconInfo;
-	tagMEMORYCARDSTATE* pMcState;
-	tagSELECTFILEINFO* pSelectFileInfo;
-	tagSELECTFILEWINDOW* pSelectFileWindow;
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-struct _anon3
-{
-	unsigned int flg;
-	unsigned int obj_num;
-	unsigned int frm_num;
-	void* datP;
-	_anon28* md2P;
-	unsigned short* atrP;
-};
-
-struct tagSELECTFILEWINDOW
-{
-	unsigned int ulFileState;
-	tagSELECTFILEINFO* pRecordTop;
-	int lRecordMax;
-	short slDispTopNumber;
-	short slDispRecordNumber;
-	short sMesCur;
-	short sCursol;
-	short sWaitMesTimer;
-	float slLineNumber;
-	int slDispWriteMesMax;
-	int slDispWriteMes;
-	unsigned int ulfoundationColor;
-};
-
-struct tagMEMORYCARDPORT
-{
-	int lCrntType;
-	int lPrevType;
-	int lFreeSize;
-	int lFormatType;
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-struct _anon7
-{
-	unsigned char* adr;
-	unsigned int gidx;
-	unsigned int attr;
-	unsigned int w;
-	unsigned int h;
-};
-
-struct tagSELECTFILEINFO
-{
-	int FileNumber;
-	int save_ct;
-	int gm_mode;
-	char ply_id;
-	char saveroom;
-};
-
-struct _anon8
-{
-	unsigned int flg;
-	unsigned int obj_num;
-	void* datP;
-	NJS_OBJECT* objP;
-	NJS_TEXLIST* texP;
-	_anon29* owP;
-};
-
-struct _anon9
-{
-	unsigned int flg;
-	char stg_no;
-	char rom_no;
-	unsigned char pos_no;
-	unsigned char dor_tp;
-	unsigned char mode0;
-	unsigned char mode1;
-	unsigned char mode2;
-	unsigned char mode3;
-	int ct0;
-	int ct1;
-	int ct2;
-	int ct3;
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-struct _anon11
-{
-	unsigned int ssd_ver;
-	unsigned int ssd_flg;
-	unsigned int ssd_reserve;
-	char keytype;
-	char adjust_x;
-	char adjust_y;
-	char vibration;
-	int best_tm[8];
-	unsigned int sys_partid;
-	unsigned int itm_partid;
-	unsigned int fil_partid;
-	unsigned int dor_partid;
-	unsigned int ss_flg;
-	int pdm_no;
-	unsigned int typ_flg;
-	unsigned short typ_md0;
-	unsigned short typ_md1;
-	void* typ_exp;
-	unsigned int tk_flg;
-	unsigned int ts_flg;
-	unsigned int gm_flg;
-	unsigned int st_flg;
-	unsigned int cb_flg;
-	unsigned int rm_flg;
-	unsigned int pt_flg;
-	unsigned int sp_flg;
-	unsigned int ef_flg;
-	unsigned int error;
-	unsigned int version;
-	int save_ct;
-	char ply_id;
-	char stg_no;
-	char rom_no;
-	char rcase;
-	char pos_no;
-	char cut_no;
-	char flr_no;
-	char reserve0;
-	int gm_mode;
-	unsigned int ev_flg[32];
-	unsigned int it_flg[16];
-	unsigned int ic_flg[16];
-	unsigned int ed_flg[32];
-	unsigned int ky_flg[16];
-	unsigned int mp_flg[8];
-	unsigned int itm[384];
-	unsigned int ply_stflg[4];
-	NJS_POINT3 ply_pos;
-	int ply_ang;
-	char ply_wno[4];
-	short ply_hp[4];
-	unsigned char evt_posno[4];
-	int time;
-	int stv_tm;
-	short spray_ct;
-	short retry_ct;
-	short clear_ct;
-	short reserve1;
-	unsigned int save_end;
-	char stg_nob;
-	char rom_nob;
-	char pos_nob;
-	char rcase_b;
-	unsigned int en_flg[4];
-	NJS_TEXLIST* et_lp[16][16][100];
-	NJS_TEXLIST* ot_lp[1300];
-	NJS_TEXLIST* it_lp[200];
-	int eft_n;
-	NJS_TEXLIST* eft_lp[8];
-	int loop_ct;
-	int loop_now;
-	int cng_pid;
-	PDS_PERIPHERAL* p1per;
-	PDS_PERIPHERAL* p2per;
-	PDS_PERIPHERAL* kbper;
-	PDS_PERIPHERAL* msper;
-	PDS_PERIPHERAL ms_per;
-	int pad_port;
-	unsigned int pad_on;
-	unsigned int pad_oncpy;
-	unsigned int pad_ps;
-	unsigned int pad_rs;
-	unsigned int pad_old;
-	unsigned int pad_onb;
-	unsigned int pad_psb;
-	unsigned int pad_oldb;
-	short pad_ax;
-	short pad_ay;
-	short pad_dx;
-	short pad_dy;
-	unsigned short pad_ar;
-	unsigned short pad_al;
-	int fixcno;
-	int fixkno;
-	unsigned int exm_attr;
-	short evc_no;
-	short evc_kn;
-	short evc_ono;
-	short evc_okn;
-	int evc_sc;
-	unsigned char mn_mode0;
-	unsigned char mn_mode1;
-	unsigned char mn_mode2;
-	unsigned char mn_mode3;
-	unsigned char mn_md0;
-	unsigned char mn_md1;
-	unsigned char mn_md2;
-	unsigned char mn_md3;
-	int mn_setct;
-	unsigned int mn_stack[8];
-	unsigned int sdm_flg;
-	unsigned int sdm_mode;
-	unsigned char* ltc_bp;
-	unsigned int ltc_tsbak;
-	int ewk_n;
-	unsigned int enow;
-	unsigned int onow;
-	unsigned int efnow;
-	int vsyc_ct;
-	int vsyc_flg;
-	int fog_ct;
-	int bcl_ct;
-	int gfrm_ct;
-	int gframe;
-	int eor_ct;
-	unsigned int pfm_cts;
-	int evt_tmd;
-	int evt_tim;
-	int evt_tdg;
-	int evt_fcd;
-	unsigned int evt_fcdct;
-	unsigned int fsize;
-	unsigned int rdtsz;
-	unsigned char* memp;
-	unsigned char* mempb;
-	unsigned char* endp;
-	unsigned char* rdtp;
-	unsigned char* plmdlp;
-	unsigned char* lmmdlp;
-	unsigned char* wrmdlp;
-	unsigned char* wlmdlp;
-	unsigned char* plmthp;
-	unsigned char* plbmtp;
-	unsigned char* plwmtp;
-	unsigned char* plzmtp;
-	unsigned char* plemtp;
-	unsigned char* plexwp;
-	unsigned char* plhdwp;
-	unsigned char* pletcp;
-	unsigned char* subtxp;
-	unsigned char* doordp;
-	unsigned char* sbs_sp;
-	_anon0* obwp;
-	_anon0* itwp;
-	_anon3* emtp[128];
-	_anon3* rmthp;
-	unsigned char* mspp;
-	unsigned char* lspp;
-	unsigned int* mes_ip;
-	unsigned int* mes_sp;
-	void* mes_tp;
-	short txr_n;
-	short txr_ct;
-	NJS_TEXLIST* txlp[256];
-	unsigned char* txdp[256];
-	short txloff[256];
-	short txb_ct;
-	short txb_n;
-	short txb[256];
-	NJS_TEXLIST* txblp[256];
-	_anon7 txbp[256];
-	unsigned char* ef_psp;
-	NJS_TEXNAME ef_tex[450];
-	NJS_TEXLIST ef_tlist;
-	_anon25 ef;
-	short efid[256];
-	_anon8 efm[450];
-	int ef_ct;
-	int ef_ctb;
-	int ef_extn;
-	int ef_tn[450];
-	unsigned char ef_pbkb[450];
-	int ef_pbnk;
-	int ef_slow;
-	int ef_ctrn;
-	int yk_ct;
-	int mg_ct;
-	int bl_ct;
-	int windr;
-	float winds;
-	int windrb;
-	float windsb;
-	unsigned int thunder;
-	float gas_py;
-	int en_objn;
-	BH_PWORK* en_obj[16];
-	int ef_poln;
-	int ef_mdfn;
-	int ef_linn;
-	int ef_ntxn;
-	int ef_trsn;
-	int ef_pncn;
-	int ef_opqn;
-	int ef_thln;
-	int ef_ntx2dn;
-	int ef_trs2dn;
-	int ef_pnc2dn;
-	int ef_fncn;
-	_anon0* ef_pol[512];
-	_anon0* ef_mdf[128];
-	_anon0* ef_lin[512];
-	_anon0* ef_ntx[512];
-	_anon0* ef_trs[512];
-	_anon0* ef_pnc[512];
-	_anon0* ef_opq[512];
-	_anon0* ef_thl[512];
-	_anon0* ef_ntx2d[128];
-	_anon0* ef_trs2d[128];
-	_anon0* ef_pnc2d[128];
-	_anon0* ef_fnc[512];
-	int ob_nlgn;
-	int ob_hlgn;
-	int ob_spcn;
-	_anon0* ob_nlg[32];
-	_anon0* ob_hlg[32];
-	_anon0* ob_spc[32];
-	unsigned int ren_gid;
-	NJS_TEXINFO ren_info;
-	NJS_TEXNAME ren_tex[1];
-	NJS_TEXLIST ren_tlist;
-	NJS_TEXTUREH_VTX rpb[256];
-	int ren_n;
-	int ren_idx[4];
-	int wt_nbpt;
-	float wt_px;
-	float wt_pz;
-	int wt_xp;
-	int wt_zp;
-	int wt_minx;
-	int wt_minz;
-	int wt_maxx;
-	int wt_maxz;
-	unsigned char* wt_wvp;
-	NJS_PLANE mr_pl;
-	unsigned char* zan_memp;
-	unsigned char* zanp;
-	_anon21* lgtp;
-	float lg_vx;
-	float lg_vy;
-	float lg_vz;
-	float lg_r;
-	float lg_g;
-	float lg_b;
-	int lg_pnt;
-	_anon16 lg_ptb[4];
-	int mes_idx;
-	unsigned int* mes_dp;
-	int mes_ct;
-	int mes_tim;
-	int mes_fls;
-	int mes_sel;
-	int mes_seln;
-	NJS_POINT2 mes_sps[16];
-	int rt_sp;
-	unsigned char* rt_wp;
-	unsigned char* rt_dp;
-	unsigned char* rt_nw;
-	unsigned char* rt_nx;
-	float* rt_ln;
-	BH_PWORK* plp;
-	_anon32* pl_htp;
-	int costume;
-	NJS_POINT3 hd_pos;
-	NJS_POINT3 apos;
-	_anon32* ahtp;
-	int mwal_n;
-	int metc_n;
-	int mflr_n;
-	_anon32 mwalp[64];
-	_anon32 metcp[64];
-	_anon32 mflrp[64];
-	int dla_n;
-	_anon32* htp;
-	int psh_snd;
-	int fog_cngct;
-	unsigned int fog_col;
-	float fog_nr;
-	float fog_fr;
-	float fade_ct;
-	float fade_hkn;
-	float fade_ao;
-	float fade_an;
-	float fade_ap;
-	float fade_ro;
-	float fade_rn;
-	float fade_rp;
-	float fade_go;
-	float fade_gn;
-	float fade_gp;
-	float fade_bo;
-	float fade_bn;
-	float fade_bp;
-	unsigned int fade_pbk;
-	unsigned short ssv_md0;
-	unsigned short ssv_md1;
-	int ssv_tim;
-	float ssv_ct;
-	float ssv_hkn;
-	float ssv_ao;
-	float ssv_an;
-	float ssv_ap;
-	short fil_no;
-	short fil_rt;
-	float rvf_sc;
-	float rvf_sn;
-	unsigned int rvfc[4];
-	float cine_an;
-	float cine_ap;
-	unsigned int sco_flg;
-	float amb_r[4];
-	float amb_g[4];
-	float amb_b[4];
-	int sb_id;
-	int sb_cmd;
-	int sb_rdid;
-	int sb_rdsz;
-	void* sb_rdp;
-	void* sb_mlb;
-	void* sb_ppp;
-	NJS_TEXLIST* sb_tlist;
-	int ddmd;
-	_anon9 door;
-	int mpmd;
-	int mp_prm[4];
-	unsigned short gov_md0;
-	unsigned short gov_md1;
-	int gov_ct;
-	void* gov_exp;
-	unsigned int com_flg;
-	unsigned short com_md0;
-	unsigned short com_md1;
-	unsigned int com_num;
-	void* com_exp;
-	short ond_tnm;
-	short ond_ud;
-	char ond_cx;
-	char ond_n[3];
-	unsigned char ufo_md;
-	unsigned char ufo_flg;
-	short ufo_oidx;
-	NJS_POINT3 ufo_pos;
-	unsigned int opt_flg;
-	unsigned short opt_md0;
-	unsigned short opt_md1;
-	void* opt_exp;
-	unsigned int etc_idx;
-	unsigned int flr_idx;
-	int mvi_no;
-	int mvi_tp;
-	unsigned short mvi_md;
-	unsigned short mvi_flg;
-	unsigned int mvi_tsb;
-	unsigned int mvi_spb;
-	unsigned char* mvi_memp;
-	unsigned int dcg_tkbak;
-	unsigned int dcg_tsbak;
-	unsigned int pau_spbak;
-	unsigned int pau_pad_on;
-	unsigned int pau_pad_ps;
-	unsigned int pau_pad_old;
-	unsigned char* pdm_dp;
-	unsigned char* pdm_pd;
-	int pdm_keytpb;
-	int gat_ct;
-	_anon19 gatc[16];
-	int ght_ct;
-	unsigned int ghtc[32];
-	NJS_POINT3 ghtp[32];
-	unsigned short db_md0;
-	unsigned short db_md1;
-	char db_stgno;
-	char db_romno;
-	char db_rcase;
-	char db_muteki;
-	short db_px;
-	short db_py;
-	int db_mes;
-	int calc_v;
-	unsigned int brkfg;
-	char brkfg_typ[32];
-	short brkfg_bit[32];
-	unsigned int brkfg_tkb;
-	unsigned int brkfg_tsb;
-	int brkfg_ct;
-	unsigned int bmt_size;
-	unsigned int lmt_size;
-	unsigned int emt_size;
-	unsigned int wmt_size;
-	char mes[256];
-	float sfx;
-	float sfy;
-	float sfxn;
-	float sfyn;
-	float sfct;
-};
-
-struct tagCONFIGFILE
-{
-	unsigned int ssd_ver;
-	unsigned int ssd_flg;
-	unsigned int ssd_reserve;
-	char keytype;
-	char adjust_x;
-	char adjust_y;
-	char vibration;
-	int best_tm[8];
-	unsigned int Check_Sam;
-};
-
-struct tagSAVEFILE
-{
-	unsigned int version;
-	int save_ct;
-	char ply_id;
-	char stg_no;
-	char rom_no;
-	char rcase;
-	char pos_no;
-	char cut_no;
-	char flr_no;
-	char reserve0;
-	int gm_mode;
-	unsigned int ev_flg[32];
-	unsigned int it_flg[16];
-	unsigned int ic_flg[16];
-	unsigned int ed_flg[32];
-	unsigned int ky_flg[16];
-	unsigned int mp_flg[8];
-	unsigned int itm[384];
-	unsigned int ply_stflg[4];
-	NJS_POINT3 ply_pos;
-	int ply_ang;
-	char ply_wno[4];
-	short ply_hp[4];
-	unsigned char evt_posno[4];
-	int time;
-	int stv_tm;
-	short spray_ct;
-	short retry_ct;
-	short clear_ct;
-	short reserve1;
-	unsigned int CheckSam;
-};
-
-struct tagICONINFORMATION
-{
-	sceMcIconSys icon;
-};
-
-struct tagMEMORYCARDSTATE
-{
-	unsigned int ulState;
-	unsigned int ulError;
-	unsigned int ulMcSubState;
-	unsigned int ulFileSize;
-	int lCurrentPort;
-	int lOpenFileNumber;
-	int lSelectFileNumber;
-	int lOpenMode;
-	unsigned short usMcSysState;
-	void* vpAddr;
-	char cCurrentDir[50];
-	char cOpenFileName[32];
-	char cRetryCount;
-	char cMcCheckFlag;
-	char cCheckMcFlag;
-	tagMEMORYCARDPORT Port[2];
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-struct _anon13
-{
-	short jnt_a;
-	short jnt_b;
-	int cap_r;
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-struct BH_PWORK
-{
-	unsigned int flg;
-	unsigned short id;
-	unsigned short type;
-	char flr_no;
-	char flr_nob;
-	unsigned char mdlver;
-	unsigned char param;
-	unsigned char mode0;
-	unsigned char mode1;
-	unsigned char mode2;
-	unsigned char mode3;
-	float px;
-	float py;
-	float pz;
-	int ax;
-	int ay;
-	int az;
-	float ar;
-	float aw;
-	float ah;
-	float ad;
-	float car;
-	float cah;
-	float pxb;
-	float pyb;
-	float pzb;
-	int axb;
-	int ayb;
-	int azb;
-	float gpx;
-	float gpy;
-	float gpz;
-	float lox;
-	float loy;
-	float loz;
-	float aox;
-	float aoy;
-	float aoz;
-	float spd;
-	unsigned int flg2;
-	unsigned int mdflg;
-	unsigned int stflg;
-	unsigned int Dummy3;
-	int draw_tp;
-	int mdl_n;
-	void* mskp;
-	unsigned int Dummy[1];
-	int* skp[16];
-	NJS_OBJECT* mbp[16];
-	NJS_TEXLIST* txp[16];
-	_anon8 mdl[16];
-	_anon8* mlwP;
-	unsigned int mdl_no;
-	int lkono;
-	unsigned char* lkwkp;
-	unsigned char* exp0;
-	unsigned char* exp1;
-	unsigned char* exp2;
-	unsigned char* exp3;
-	unsigned char mtxbuf[64];
-	NJS_MATRIX mtx;
-	NJS_OBJECT* obj_a;
-	NJS_OBJECT* obj_b;
-	float shp_ct;
-	char clp_jno[8];
-	int lok_jno;
-	_anon3* mnwP;
-	_anon3* mnwPb;
-	unsigned int mtn_attr;
-	unsigned int mtn_no;
-	int frm_no;
-	unsigned int frm_mode;
-	int hokan_rate;
-	unsigned int hokan_count;
-	unsigned int hokan_ctbak;
-	int mtn_add;
-	unsigned int mtn_md;
-	unsigned char* mtn_tp;
-	int axp;
-	int ayp;
-	int azp;
-	short psh_ct;
-	short psh_idx;
-	int idx_ct;
-	int mtn_chk;
-	float ofx;
-	float ofy;
-	float ofz;
-	float sx;
-	float sy;
-	float sz;
-	float sxb;
-	float syb;
-	float szb;
-	float xn;
-	float yn;
-	float zn;
-	int ct0;
-	int ct1;
-	int ct2;
-	int ct3;
-	int wpnr_no;
-	int wpnl_no;
-	unsigned int at_flg;
-	NJS_CAPSULE watr;
-	_anon13* cpcl;
-	short wax;
-	short way;
-	short waz;
-	short waxp;
-	short wayp;
-	short wazp;
-	int hp;
-	int dam[64];
-	int djnt_no;
-	int cpcl_no;
-	int dax;
-	int day;
-	float dpx;
-	float dpy;
-	float dpz;
-	float dvx;
-	float dvy;
-	float dvz;
-	int flr_snd;
-	int ko_num;
-	int footeff;
-	int src_no;
-	unsigned char* kdnp;
-	int kdnidx;
-	void* dan_ap;
-	unsigned int comb_flg;
-	unsigned int comb_wep;
-	int comb_pnt;
-	int comb_timeout;
-	int total_dam;
-	unsigned int Dummy2[2];
-};
-
-struct _anon16
-{
-	NJS_POINT3 ps;
-	float nr;
-	float fr;
-	float cr;
-	float cg;
-	float cb;
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-struct _anon19
-{
-	NJS_POINT3 c1;
-	NJS_POINT3 c2;
-	float r1;
-	float r2;
-};
-
-
-
-
-
-
-
-
-
-
-struct _anon21
-{
-	unsigned int flg;
-	unsigned int type;
-	int aspd;
-	int lkflg;
-	int lkno;
-	int lkono;
-	int lsrc;
-	float px;
-	float py;
-	float pz;
-	float lx;
-	float ly;
-	float lz;
-	float vx;
-	float vy;
-	float vz;
-	float spc;
-	float dif;
-	float amb;
-	float r;
-	float g;
-	float b;
-	float nr;
-	float fr;
-	int iang;
-	int oang;
-	int ax;
-	int ay;
-	int az;
-	unsigned int mode;
-	int ct0;
-	int ct1;
-	int ct2;
-	int ct3;
-	float wpx;
-	float wpy;
-	float wpz;
-	float wvx;
-	float wvy;
-	float wvz;
-	float wspc;
-	float wdif;
-	float wamb;
-	float wr;
-	float wg;
-	float wb;
-	float wnr;
-	float wfr;
-	int wiang;
-	int woang;
-	int wax;
-	int way;
-	int waz;
-	unsigned char* lkwkp;
-	unsigned char* exp;
-	NJS_LIGHT_PTR light;
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-struct _anon25
-{
-	unsigned int flg;
-	unsigned short id;
-	unsigned short type;
-	short flr_no;
-	unsigned short mdlver;
-	float px;
-	float py;
-	float pz;
-	float sx;
-	float sy;
-	float sz;
-	short ay;
-	short ax;
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-struct _anon28
-{
-	void* p[2];
-};
-
-struct _anon29
-{
-	unsigned int flg;
-	int dmy;
-	unsigned int dummy[2];
-	NJS_MATRIX mtx;
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-struct _anon32
-{
-	unsigned char flg;
-	unsigned char type;
-	unsigned char id;
-	char flr_no;
-	unsigned int attr;
-	float px;
-	float py;
-	float pz;
-	float w;
-	float h;
-	float d;
-	unsigned char prm0;
-	unsigned char prm1;
-	unsigned char prm2;
-	unsigned char prm3;
-};
-
-
-
-
-
-
-
-
-
-
-
-tagSELECTFILEWINDOW SelectFileWindow;
-tagSELECTFILEINFO SelectFileInfo[15];
+#include "ps2_LoadScreen.h"
+#include "types.h"
+
+SELECTFILEWINDOW SelectFileWindow;
+SELECTFILEINFO SelectFileInfo[15];
 char* cpNameList;
-tagICONINFORMATION IconInfo;
-tagMEMORYCARDSTATE McState;
-tagSAVEFILE SaveFile;
-tagCONFIGFILE ConfigFile;
-_anon11* sys;
-
-tagLOAD_SCREEN* CreateLoadScreen(tagLOAD_SCREEN* pLoad);
-void DispLoadMessageSelect(char cSelectMes);
-void DispLoadTexture(tagLOAD_SCREEN* pLoad);
-int ExecuteLoadScreen(tagLOAD_SCREEN* pLoad);
-void SetStateLoadScreenAwarenessCard(tagLOAD_SCREEN* pLoad);
-void ExecuteStateLoadScreenAwarenessCard(tagLOAD_SCREEN* pLoad);
-void SetStateLoadScreenErrLostCard(tagLOAD_SCREEN* pLoad);
-void ExecuteStateLoadScreenErrLostCard(tagLOAD_SCREEN* pLoad);
-void SetStateLoadScreenErrUnPS2MemCard(tagLOAD_SCREEN* pLoad);
-void ExecuteStateLoadScreenErrUnPS2MemCard(tagLOAD_SCREEN* pLoad);
-void SetStateLoadScreenSelectCard(tagLOAD_SCREEN* pLoad);
-void ExecuteStateLoadScreenSelectCard(tagLOAD_SCREEN* pLoad);
-void SetStateLoadScreenTitleExit(tagLOAD_SCREEN* pLoad);
-void ExecuteStateLoadScreenTitleExit(tagLOAD_SCREEN* pLoad);
-void SetStateLoadScreenErrUnFormat(tagLOAD_SCREEN* pLoad);
-void ExecuteStateLoadScreenErrUnFormat(tagLOAD_SCREEN* pLoad);
-void SetStateLoadScreenErrLostDirCheck(tagLOAD_SCREEN* pLoad);
-void ExecuteStateLoadScreenErrLostDirCheck(tagLOAD_SCREEN* pLoad);
-void SetStateLoadScreenDirCheck(tagLOAD_SCREEN* pLoad);
-void ExecuteStateLoadScreenDirCheck(tagLOAD_SCREEN* pLoad);
-void SetStateLoadScreenDirFileBroken(tagLOAD_SCREEN* pLoad);
-void ExecuteStateLoadScreenDirFileBroken(tagLOAD_SCREEN* pLoad);
-void SetStateLoadScreenSelectFile(tagLOAD_SCREEN* pLoad);
-void ExecuteStateLoadScreenSelectFile(tagLOAD_SCREEN* pLoad);
-void LoadScreenCheckSave(tagLOAD_SCREEN* pLoad);
-void SetStateLoadScreenNoSave(tagLOAD_SCREEN* pLoad);
-void ExecuteStateLoadScreenNoSave(tagLOAD_SCREEN* pLoad);
-void SetStateLoadScreenLoadCursor(tagLOAD_SCREEN* pLoad);
-void ExecuteStateLoadScreenLoadCursor(tagLOAD_SCREEN* pLoad);
-void SetStateLoadScreenLoad(tagLOAD_SCREEN* pLoad);
-void ExecuteStateLoadScreenLoad(tagLOAD_SCREEN* pLoad);
-void SetStateLoadScreenFileBroken(tagLOAD_SCREEN* pLoad);
-void ExecuteStateLoadScreenFileBroken(tagLOAD_SCREEN* pLoad);
-void SetStateLoadScreenErrCardRead(tagLOAD_SCREEN* pLoad);
-void ExecuteStateLoadScreenErrCardRead(tagLOAD_SCREEN* pLoad);
-void SetStateLoadScreenLoadExit(tagLOAD_SCREEN* pLoad);
-void ExecuteStateLoadScreenLoadExit(tagLOAD_SCREEN* pLoad);
-void SetDispLoadSelectMessage();
-void CheckDispLoadMemoryCard(tagLOAD_SCREEN* pLoad);
+ICONINFORMATION IconInfo;
+MEMORYCARDSTATE McState;
+SAVEFILE SaveFile;
+CONFIGFILE ConfigFile;
+SYS* sys;
 
 // 
 // Start address: 0x275340
-tagLOAD_SCREEN* CreateLoadScreen(tagLOAD_SCREEN* pLoad)
+LOAD_SCREEN* CreateLoadScreen(LOAD_SCREEN* pLoad)
 {
 	// Line 62, Address: 0x275340, Func Offset: 0
 	// Line 63, Address: 0x27534c, Func Offset: 0xc
@@ -1500,7 +80,7 @@ void DispLoadMessageSelect(char cSelectMes)
 
 // 
 // Start address: 0x2756c0
-void DispLoadTexture(tagLOAD_SCREEN* pLoad)
+void DispLoadTexture(LOAD_SCREEN* pLoad)
 {
 	int DispLoadPortCard;
 	// Line 241, Address: 0x2756c0, Func Offset: 0
@@ -1519,7 +99,7 @@ void DispLoadTexture(tagLOAD_SCREEN* pLoad)
 
 // 
 // Start address: 0x275790
-int ExecuteLoadScreen(tagLOAD_SCREEN* pLoad)
+int ExecuteLoadScreen(LOAD_SCREEN* pLoad)
 {
 	// Line 282, Address: 0x275790, Func Offset: 0
 	// Line 284, Address: 0x2757a0, Func Offset: 0x10
@@ -1566,7 +146,7 @@ int ExecuteLoadScreen(tagLOAD_SCREEN* pLoad)
 
 // 
 // Start address: 0x2759e0
-void SetStateLoadScreenAwarenessCard(tagLOAD_SCREEN* pLoad)
+void SetStateLoadScreenAwarenessCard(LOAD_SCREEN* pLoad)
 {
 	// Line 364, Address: 0x2759e0, Func Offset: 0
 	// Line 366, Address: 0x2759e4, Func Offset: 0x4
@@ -1577,7 +157,7 @@ void SetStateLoadScreenAwarenessCard(tagLOAD_SCREEN* pLoad)
 
 // 
 // Start address: 0x275a00
-void ExecuteStateLoadScreenAwarenessCard(tagLOAD_SCREEN* pLoad)
+void ExecuteStateLoadScreenAwarenessCard(LOAD_SCREEN* pLoad)
 {
 	int lPort1State;
 	int lPort0State;
@@ -1604,7 +184,7 @@ void ExecuteStateLoadScreenAwarenessCard(tagLOAD_SCREEN* pLoad)
 
 // 
 // Start address: 0x275b20
-void SetStateLoadScreenErrLostCard(tagLOAD_SCREEN* pLoad)
+void SetStateLoadScreenErrLostCard(LOAD_SCREEN* pLoad)
 {
 	// Line 446, Address: 0x275b20, Func Offset: 0
 	// Line 448, Address: 0x275b28, Func Offset: 0x8
@@ -1614,7 +194,7 @@ void SetStateLoadScreenErrLostCard(tagLOAD_SCREEN* pLoad)
 
 // 
 // Start address: 0x275b40
-void ExecuteStateLoadScreenErrLostCard(tagLOAD_SCREEN* pLoad)
+void ExecuteStateLoadScreenErrLostCard(LOAD_SCREEN* pLoad)
 {
 	int lPort1State;
 	int lPort0State;
@@ -1641,7 +221,7 @@ void ExecuteStateLoadScreenErrLostCard(tagLOAD_SCREEN* pLoad)
 
 // 
 // Start address: 0x275c70
-void SetStateLoadScreenErrUnPS2MemCard(tagLOAD_SCREEN* pLoad)
+void SetStateLoadScreenErrUnPS2MemCard(LOAD_SCREEN* pLoad)
 {
 	// Line 528, Address: 0x275c70, Func Offset: 0
 	// Line 530, Address: 0x275c78, Func Offset: 0x8
@@ -1651,7 +231,7 @@ void SetStateLoadScreenErrUnPS2MemCard(tagLOAD_SCREEN* pLoad)
 
 // 
 // Start address: 0x275c90
-void ExecuteStateLoadScreenErrUnPS2MemCard(tagLOAD_SCREEN* pLoad)
+void ExecuteStateLoadScreenErrUnPS2MemCard(LOAD_SCREEN* pLoad)
 {
 	int lPort1State;
 	int lPort0State;
@@ -1678,7 +258,7 @@ void ExecuteStateLoadScreenErrUnPS2MemCard(tagLOAD_SCREEN* pLoad)
 
 // 
 // Start address: 0x275da0
-void SetStateLoadScreenSelectCard(tagLOAD_SCREEN* pLoad)
+void SetStateLoadScreenSelectCard(LOAD_SCREEN* pLoad)
 {
 	// Line 606, Address: 0x275da0, Func Offset: 0
 	// Line 608, Address: 0x275dac, Func Offset: 0xc
@@ -1694,7 +274,7 @@ void SetStateLoadScreenSelectCard(tagLOAD_SCREEN* pLoad)
 
 // 
 // Start address: 0x275df0
-void ExecuteStateLoadScreenSelectCard(tagLOAD_SCREEN* pLoad)
+void ExecuteStateLoadScreenSelectCard(LOAD_SCREEN* pLoad)
 {
 	// Line 636, Address: 0x275df0, Func Offset: 0
 	// Line 639, Address: 0x275dfc, Func Offset: 0xc
@@ -1743,7 +323,7 @@ void ExecuteStateLoadScreenSelectCard(tagLOAD_SCREEN* pLoad)
 
 // 
 // Start address: 0x275fe0
-void SetStateLoadScreenTitleExit(tagLOAD_SCREEN* pLoad)
+void SetStateLoadScreenTitleExit(LOAD_SCREEN* pLoad)
 {
 	// Line 747, Address: 0x275fe0, Func Offset: 0
 	// Line 749, Address: 0x275fe8, Func Offset: 0x8
@@ -1755,7 +335,7 @@ void SetStateLoadScreenTitleExit(tagLOAD_SCREEN* pLoad)
 
 // 
 // Start address: 0x276000
-void ExecuteStateLoadScreenTitleExit(tagLOAD_SCREEN* pLoad)
+void ExecuteStateLoadScreenTitleExit(LOAD_SCREEN* pLoad)
 {
 	// Line 773, Address: 0x276000, Func Offset: 0
 	// Line 775, Address: 0x276010, Func Offset: 0x10
@@ -1765,7 +345,7 @@ void ExecuteStateLoadScreenTitleExit(tagLOAD_SCREEN* pLoad)
 
 // 
 // Start address: 0x276020
-void SetStateLoadScreenErrUnFormat(tagLOAD_SCREEN* pLoad)
+void SetStateLoadScreenErrUnFormat(LOAD_SCREEN* pLoad)
 {
 	// Line 794, Address: 0x276020, Func Offset: 0
 	// Line 796, Address: 0x276028, Func Offset: 0x8
@@ -1776,7 +356,7 @@ void SetStateLoadScreenErrUnFormat(tagLOAD_SCREEN* pLoad)
 
 // 
 // Start address: 0x276050
-void ExecuteStateLoadScreenErrUnFormat(tagLOAD_SCREEN* pLoad)
+void ExecuteStateLoadScreenErrUnFormat(LOAD_SCREEN* pLoad)
 {
 	// Line 815, Address: 0x276050, Func Offset: 0
 	// Line 817, Address: 0x276058, Func Offset: 0x8
@@ -1791,7 +371,7 @@ void ExecuteStateLoadScreenErrUnFormat(tagLOAD_SCREEN* pLoad)
 
 // 
 // Start address: 0x2760d0
-void SetStateLoadScreenErrLostDirCheck(tagLOAD_SCREEN* pLoad)
+void SetStateLoadScreenErrLostDirCheck(LOAD_SCREEN* pLoad)
 {
 	// Line 850, Address: 0x2760d0, Func Offset: 0
 	// Line 852, Address: 0x2760d8, Func Offset: 0x8
@@ -1802,7 +382,7 @@ void SetStateLoadScreenErrLostDirCheck(tagLOAD_SCREEN* pLoad)
 
 // 
 // Start address: 0x2760f0
-void ExecuteStateLoadScreenErrLostDirCheck(tagLOAD_SCREEN* pLoad)
+void ExecuteStateLoadScreenErrLostDirCheck(LOAD_SCREEN* pLoad)
 {
 	// Line 870, Address: 0x2760f0, Func Offset: 0
 	// Line 872, Address: 0x2760f8, Func Offset: 0x8
@@ -1817,7 +397,7 @@ void ExecuteStateLoadScreenErrLostDirCheck(tagLOAD_SCREEN* pLoad)
 
 // 
 // Start address: 0x276170
-void SetStateLoadScreenDirCheck(tagLOAD_SCREEN* pLoad)
+void SetStateLoadScreenDirCheck(LOAD_SCREEN* pLoad)
 {
 	// Line 903, Address: 0x276170, Func Offset: 0
 	// Line 905, Address: 0x27617c, Func Offset: 0xc
@@ -1836,7 +416,7 @@ void SetStateLoadScreenDirCheck(tagLOAD_SCREEN* pLoad)
 
 // 
 // Start address: 0x2761e0
-void ExecuteStateLoadScreenDirCheck(tagLOAD_SCREEN* pLoad)
+void ExecuteStateLoadScreenDirCheck(LOAD_SCREEN* pLoad)
 {
 	int lResult;
 	// Line 937, Address: 0x2761e0, Func Offset: 0
@@ -1896,7 +476,7 @@ void ExecuteStateLoadScreenDirCheck(tagLOAD_SCREEN* pLoad)
 
 // 
 // Start address: 0x276440
-void SetStateLoadScreenDirFileBroken(tagLOAD_SCREEN* pLoad)
+void SetStateLoadScreenDirFileBroken(LOAD_SCREEN* pLoad)
 {
 	// Line 1084, Address: 0x276440, Func Offset: 0
 	// Line 1086, Address: 0x276448, Func Offset: 0x8
@@ -1907,7 +487,7 @@ void SetStateLoadScreenDirFileBroken(tagLOAD_SCREEN* pLoad)
 
 // 
 // Start address: 0x276460
-void ExecuteStateLoadScreenDirFileBroken(tagLOAD_SCREEN* pLoad)
+void ExecuteStateLoadScreenDirFileBroken(LOAD_SCREEN* pLoad)
 {
 	// Line 1104, Address: 0x276460, Func Offset: 0
 	// Line 1105, Address: 0x276468, Func Offset: 0x8
@@ -1922,7 +502,7 @@ void ExecuteStateLoadScreenDirFileBroken(tagLOAD_SCREEN* pLoad)
 
 // 
 // Start address: 0x2764e0
-void SetStateLoadScreenSelectFile(tagLOAD_SCREEN* pLoad)
+void SetStateLoadScreenSelectFile(LOAD_SCREEN* pLoad)
 {
 	// Line 1136, Address: 0x2764e0, Func Offset: 0
 	// Line 1138, Address: 0x2764ec, Func Offset: 0xc
@@ -1938,7 +518,7 @@ void SetStateLoadScreenSelectFile(tagLOAD_SCREEN* pLoad)
 
 // 
 // Start address: 0x276540
-void ExecuteStateLoadScreenSelectFile(tagLOAD_SCREEN* pLoad)
+void ExecuteStateLoadScreenSelectFile(LOAD_SCREEN* pLoad)
 {
 	unsigned int KeyWait01;
 	unsigned int KeyWait00;
@@ -1997,7 +577,7 @@ void ExecuteStateLoadScreenSelectFile(tagLOAD_SCREEN* pLoad)
 
 // 
 // Start address: 0x276800
-void LoadScreenCheckSave(tagLOAD_SCREEN* pLoad)
+void LoadScreenCheckSave(LOAD_SCREEN* pLoad)
 {
 	// Line 1286, Address: 0x276800, Func Offset: 0
 	// Line 1288, Address: 0x27680c, Func Offset: 0xc
@@ -2013,7 +593,7 @@ void LoadScreenCheckSave(tagLOAD_SCREEN* pLoad)
 
 // 
 // Start address: 0x276880
-void SetStateLoadScreenNoSave(tagLOAD_SCREEN* pLoad)
+void SetStateLoadScreenNoSave(LOAD_SCREEN* pLoad)
 {
 	// Line 1323, Address: 0x276880, Func Offset: 0
 	// Line 1325, Address: 0x276888, Func Offset: 0x8
@@ -2024,7 +604,7 @@ void SetStateLoadScreenNoSave(tagLOAD_SCREEN* pLoad)
 
 // 
 // Start address: 0x2768a0
-void ExecuteStateLoadScreenNoSave(tagLOAD_SCREEN* pLoad)
+void ExecuteStateLoadScreenNoSave(LOAD_SCREEN* pLoad)
 {
 	// Line 1343, Address: 0x2768a0, Func Offset: 0
 	// Line 1345, Address: 0x2768a8, Func Offset: 0x8
@@ -2039,7 +619,7 @@ void ExecuteStateLoadScreenNoSave(tagLOAD_SCREEN* pLoad)
 
 // 
 // Start address: 0x276920
-void SetStateLoadScreenLoadCursor(tagLOAD_SCREEN* pLoad)
+void SetStateLoadScreenLoadCursor(LOAD_SCREEN* pLoad)
 {
 	// Line 1378, Address: 0x276920, Func Offset: 0
 	// Line 1380, Address: 0x276928, Func Offset: 0x8
@@ -2050,7 +630,7 @@ void SetStateLoadScreenLoadCursor(tagLOAD_SCREEN* pLoad)
 
 // 
 // Start address: 0x276940
-void ExecuteStateLoadScreenLoadCursor(tagLOAD_SCREEN* pLoad)
+void ExecuteStateLoadScreenLoadCursor(LOAD_SCREEN* pLoad)
 {
 	// Line 1400, Address: 0x276940, Func Offset: 0
 	// Line 1404, Address: 0x276948, Func Offset: 0x8
@@ -2087,7 +667,7 @@ void ExecuteStateLoadScreenLoadCursor(tagLOAD_SCREEN* pLoad)
 
 // 
 // Start address: 0x276a80
-void SetStateLoadScreenLoad(tagLOAD_SCREEN* pLoad)
+void SetStateLoadScreenLoad(LOAD_SCREEN* pLoad)
 {
 	// Line 1475, Address: 0x276a80, Func Offset: 0
 	// Line 1479, Address: 0x276a88, Func Offset: 0x8
@@ -2101,7 +681,7 @@ void SetStateLoadScreenLoad(tagLOAD_SCREEN* pLoad)
 
 // 
 // Start address: 0x276ab0
-void ExecuteStateLoadScreenLoad(tagLOAD_SCREEN* pLoad)
+void ExecuteStateLoadScreenLoad(LOAD_SCREEN* pLoad)
 {
 	int lFileNumber;
 	int lResult;
@@ -2135,7 +715,7 @@ void ExecuteStateLoadScreenLoad(tagLOAD_SCREEN* pLoad)
 
 // 
 // Start address: 0x276bf0
-void SetStateLoadScreenFileBroken(tagLOAD_SCREEN* pLoad)
+void SetStateLoadScreenFileBroken(LOAD_SCREEN* pLoad)
 {
 	// Line 1579, Address: 0x276bf0, Func Offset: 0
 	// Line 1581, Address: 0x276bf8, Func Offset: 0x8
@@ -2146,7 +726,7 @@ void SetStateLoadScreenFileBroken(tagLOAD_SCREEN* pLoad)
 
 // 
 // Start address: 0x276c10
-void ExecuteStateLoadScreenFileBroken(tagLOAD_SCREEN* pLoad)
+void ExecuteStateLoadScreenFileBroken(LOAD_SCREEN* pLoad)
 {
 	// Line 1599, Address: 0x276c10, Func Offset: 0
 	// Line 1600, Address: 0x276c18, Func Offset: 0x8
@@ -2161,7 +741,7 @@ void ExecuteStateLoadScreenFileBroken(tagLOAD_SCREEN* pLoad)
 
 // 
 // Start address: 0x276c90
-void SetStateLoadScreenErrCardRead(tagLOAD_SCREEN* pLoad)
+void SetStateLoadScreenErrCardRead(LOAD_SCREEN* pLoad)
 {
 	// Line 1633, Address: 0x276c90, Func Offset: 0
 	// Line 1635, Address: 0x276c98, Func Offset: 0x8
@@ -2172,7 +752,7 @@ void SetStateLoadScreenErrCardRead(tagLOAD_SCREEN* pLoad)
 
 // 
 // Start address: 0x276cb0
-void ExecuteStateLoadScreenErrCardRead(tagLOAD_SCREEN* pLoad)
+void ExecuteStateLoadScreenErrCardRead(LOAD_SCREEN* pLoad)
 {
 	// Line 1653, Address: 0x276cb0, Func Offset: 0
 	// Line 1654, Address: 0x276cb8, Func Offset: 0x8
@@ -2187,7 +767,7 @@ void ExecuteStateLoadScreenErrCardRead(tagLOAD_SCREEN* pLoad)
 
 // 
 // Start address: 0x276d30
-void SetStateLoadScreenLoadExit(tagLOAD_SCREEN* pLoad)
+void SetStateLoadScreenLoadExit(LOAD_SCREEN* pLoad)
 {
 	// Line 1687, Address: 0x276d30, Func Offset: 0
 	// Line 1689, Address: 0x276d38, Func Offset: 0x8
@@ -2199,7 +779,7 @@ void SetStateLoadScreenLoadExit(tagLOAD_SCREEN* pLoad)
 
 // 
 // Start address: 0x276d60
-void ExecuteStateLoadScreenLoadExit(tagLOAD_SCREEN* pLoad)
+void ExecuteStateLoadScreenLoadExit(LOAD_SCREEN* pLoad)
 {
 	// Line 1711, Address: 0x276d60, Func Offset: 0
 	// Line 1715, Address: 0x276d6c, Func Offset: 0xc
@@ -2234,7 +814,7 @@ void SetDispLoadSelectMessage()
 
 // 
 // Start address: 0x276f20
-void CheckDispLoadMemoryCard(tagLOAD_SCREEN* pLoad)
+void CheckDispLoadMemoryCard(LOAD_SCREEN* pLoad)
 {
 	int lPort1CurX;
 	int lPort0CurX;
