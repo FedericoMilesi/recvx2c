@@ -1,139 +1,13 @@
-typedef struct tagVU1_STRIP_BUF;
-typedef struct tagVU1_PRIM_BUF;
-typedef struct _anon0;
-typedef struct _anon1;
-typedef struct _anon2;
+#include "ps2_Vu1Strip.h"
 
-typedef struct _anon4;
-typedef struct _anon5;
-typedef struct _anon6;
-typedef struct tagVU1_COLOR;
-
-typedef void(*type_0)(tagVU1_STRIP_BUF*, tagVU1_PRIM_BUF*);
-typedef void(*type_2)(tagVU1_STRIP_BUF*, tagVU1_PRIM_BUF*);
-typedef void(*type_12)(tagVU1_STRIP_BUF*, tagVU1_PRIM_BUF*);
-typedef void(*type_14)(tagVU1_STRIP_BUF*, tagVU1_PRIM_BUF*);
-typedef void(*type_17)(tagVU1_STRIP_BUF*, tagVU1_PRIM_BUF*);
-typedef void(*type_18)(tagVU1_STRIP_BUF*, tagVU1_PRIM_BUF*);
-
-typedef float type_1[4][2];
-typedef void(*type_3)(tagVU1_STRIP_BUF*, tagVU1_PRIM_BUF*)[11];
-
-typedef _anon4 type_5[12];
-typedef float type_6[3];
-typedef _anon0 type_7[2];
-typedef unsigned char type_8[16384];
-typedef float type_9[4][1];
-typedef float type_10[4];
-typedef _anon6 type_11[5];
-typedef float type_13[4];
-typedef float type_15[4][4];
-typedef tagVU1_PRIM_BUF type_16[16];
-
-struct tagVU1_STRIP_BUF
-{
-	float fU;
-	float fV;
-	float fPad0;
-	float fPad1;
-	float fIr;
-	float fIg;
-	float fIb;
-	float fA;
-	float fVx;
-	float fVy;
-	float fVz;
-	float fFog;
-	float fSx;
-	float fSy;
-	float fIz;
-	float fNz;
-};
-
-struct tagVU1_PRIM_BUF
-{
-	float fS;
-	float fT;
-	float fQ;
-	unsigned int ulKick;
-	float fR;
-	float fG;
-	float fB;
-	float fA;
-	float fX;
-	float fY;
-	float fZ;
-	float fF;
-};
-
-struct _anon0
-{
-	_anon4 node[12];
-	unsigned int nodeNum;
-	float pad[3];
-};
-
-struct _anon1
-{
-	float x;
-	float y;
-	float z;
-	float w;
-};
-
-struct _anon2
-{
-	_anon0 triangle;
-	_anon0 narray[2];
-	_anon0* in;
-	_anon0* out;
-	unsigned int rotflag;
-	unsigned int flipflag;
-};
-
-
-
-
-
-
-
-
-struct _anon4
-{
-	float vertex[4];
-	float color[4];
-	float texUV[4];
-	float clipV[4];
-};
-
-struct _anon5
-{
-	_anon6 plane[5];
-	unsigned int planeNum;
-};
-
-struct _anon6
-{
-	unsigned int xyzflag;
-	unsigned int clipmask;
-};
-
-struct tagVU1_COLOR
-{
-	float fR;
-	float fG;
-	float fB;
-	float fA;
-};
-
-void(*pColorCalcFuncTbl)(tagVU1_STRIP_BUF*, tagVU1_PRIM_BUF*)[11];
-tagVU1_COLOR vu1Diffuse;
-tagVU1_COLOR vu1Specula;
-tagVU1_COLOR vu1Ambient;
+void(*pColorCalcFuncTbl)(VU1_STRIP_BUF*, VU1_PRIM_BUF*)[11];
+VU1_COLOR vu1Diffuse;
+VU1_COLOR vu1Specula;
+VU1_COLOR vu1Ambient;
 float fVu1AlphaRatio;
-_anon5 planeset;
-_anon2 scissorflip;
-_anon4 node;
+SCISSOR_PLANE_SET planeset;
+SCISSOR_SYSTEM scissorflip;
+SCISSOR_NODE node;
 float _fNaViwClipFar;
 float _fNaViwClipNear;
 float fVu1Projection;
@@ -145,7 +19,7 @@ float fVu1OffsetY;
 float fVu1OffsetX;
 float fVu1AspectH;
 float fVu1AspectW;
-tagVU1_PRIM_BUF vu1ScessorBuf[16];
+VU1_PRIM_BUF vu1ScessorBuf[16];
 unsigned char Ps2_DRAW_TMP[16384];
 float Ps2AddPrimPrio;
 
@@ -153,39 +27,39 @@ void vu1SetScreenProjection(float fProjection);
 void vu1SetNearFarClip(float fNear, float fFar);
 void vu1SetScreenOffset(float fOffsetX, float fOffsetY);
 void vu1SetScreenAspect(float fAspectW, float fAspectH);
-void vu1SetDiffuseMaterial(tagVU1_COLOR* pDiffuse);
-void vu1SetSpeculaMaterial(tagVU1_COLOR* pSpecula);
-void vu1SetAmbient(tagVU1_COLOR* pAmbient);
+void vu1SetDiffuseMaterial(VU1_COLOR* pDiffuse);
+void vu1SetSpeculaMaterial(VU1_COLOR* pSpecula);
+void vu1SetAmbient(VU1_COLOR* pAmbient);
 void vu1SetAlphaRatio(float fAlpha);
-void InitNodeArraySet(_anon2* scissor);
-void InitScissorPlane(_anon5* sp);
+void InitNodeArraySet(SCISSOR_SYSTEM* scissor);
+void InitScissorPlane(SCISSOR_PLANE_SET* sp);
 void _Init_ScissorSystem();
 int _Clip_ViewVolume(float* clip, float local_clip[4], float* vertex);
-void PushTriangleNodeArray(_anon2* scissor);
-void ResetNodeArraySet(_anon2* scissor);
-void ScissorTriangle(_anon2* scissor, _anon5* plane_set);
+void PushTriangleNodeArray(SCISSOR_SYSTEM* scissor);
+void ResetNodeArraySet(SCISSOR_SYSTEM* scissor);
+void ScissorTriangle(SCISSOR_SYSTEM* scissor, SCISSOR_PLANE_SET* plane_set);
 int _Check_DisplayAreaPoint(NJS_POINT3* vec);
-void DrawScissorPolygonOpaque(_anon2* scissor, unsigned long ulType);
-void vu1DrawTriangleStripOpaqueSingle(unsigned long ulType, tagVU1_STRIP_BUF* pStripTop, unsigned short usStripMax, unsigned short usMode);
-void vu1DrawTriangleStripOpaqueDouble(unsigned long ulType, tagVU1_STRIP_BUF* pS, unsigned short usStripMax, unsigned short usMode);
-void vu1DrawTriangleStripTransSingle(unsigned long ulType, tagVU1_STRIP_BUF* pStripTop, unsigned short usStripMax, unsigned short usMode);
+void DrawScissorPolygonOpaque(SCISSOR_SYSTEM* scissor, unsigned long ulType);
+void vu1DrawTriangleStripOpaqueSingle(unsigned long ulType, VU1_STRIP_BUF* pStripTop, unsigned short usStripMax, unsigned short usMode);
+void vu1DrawTriangleStripOpaqueDouble(unsigned long ulType, VU1_STRIP_BUF* pS, unsigned short usStripMax, unsigned short usMode);
+void vu1DrawTriangleStripTransSingle(unsigned long ulType, VU1_STRIP_BUF* pStripTop, unsigned short usStripMax, unsigned short usMode);
 int _Clip_Screen(float* clip);
-void vu1DrawTriangleStripTransDouble(unsigned long ulType, tagVU1_STRIP_BUF* pS, unsigned short usStripMax, unsigned short usMode);
-void vu1GetVertexColor(tagVU1_STRIP_BUF* pStrip, tagVU1_PRIM_BUF* pPrim);
-void vu1GetVertexColorCM(tagVU1_PRIM_BUF* pPrim);
-void vu1GetVertexColorIgnore(tagVU1_PRIM_BUF* pPrim);
-void vu1GetVertexColorDif(tagVU1_STRIP_BUF* pStrip, tagVU1_PRIM_BUF* pPrim);
-void vu1GetVertexColorDifAmb(tagVU1_STRIP_BUF* pStrip, tagVU1_PRIM_BUF* pPrim);
-void vu1GetVertexColorDifSpe1(tagVU1_STRIP_BUF* pStrip, tagVU1_PRIM_BUF* pPrim);
-void vu1GetVertexColorDifSpe2(tagVU1_STRIP_BUF* pStrip, tagVU1_PRIM_BUF* pPrim);
-void vu1GetVertexColorDifSpe3(tagVU1_STRIP_BUF* pStrip, tagVU1_PRIM_BUF* pPrim);
-void vu1GetVertexColorDifSpe1Amb(tagVU1_STRIP_BUF* pStrip, tagVU1_PRIM_BUF* pPrim);
-void vu1GetVertexColorDifSpe2Amb(tagVU1_STRIP_BUF* pStrip, tagVU1_PRIM_BUF* pPrim);
-void vu1GetVertexColorDifSpe3Amb(tagVU1_STRIP_BUF* pStrip, tagVU1_PRIM_BUF* pPrim);
-void vu1RotTransStripBuf(NJS_MATRIX pMatrix, NJS_POINT3* pVector, tagVU1_STRIP_BUF* pBuf);
-void vu1DrawTriangleStripTransDoubleI(unsigned long ulType, tagVU1_STRIP_BUF* pS, unsigned short usStripMax, unsigned short usMode);
-void DrawScissorPolygonTrans1P(_anon2* scissor, unsigned long ulType);
-void vu1DrawTriangleStripTransDouble1P(unsigned long ulType, tagVU1_STRIP_BUF* pS, unsigned short usStripMax, unsigned short usMode);
+void vu1DrawTriangleStripTransDouble(unsigned long ulType, VU1_STRIP_BUF* pS, unsigned short usStripMax, unsigned short usMode);
+void vu1GetVertexColor(VU1_STRIP_BUF* pStrip, VU1_PRIM_BUF* pPrim);
+void vu1GetVertexColorCM(VU1_PRIM_BUF* pPrim);
+void vu1GetVertexColorIgnore(VU1_PRIM_BUF* pPrim);
+void vu1GetVertexColorDif(VU1_STRIP_BUF* pStrip, VU1_PRIM_BUF* pPrim);
+void vu1GetVertexColorDifAmb(VU1_STRIP_BUF* pStrip, VU1_PRIM_BUF* pPrim);
+void vu1GetVertexColorDifSpe1(VU1_STRIP_BUF* pStrip, VU1_PRIM_BUF* pPrim);
+void vu1GetVertexColorDifSpe2(VU1_STRIP_BUF* pStrip, VU1_PRIM_BUF* pPrim);
+void vu1GetVertexColorDifSpe3(VU1_STRIP_BUF* pStrip, VU1_PRIM_BUF* pPrim);
+void vu1GetVertexColorDifSpe1Amb(VU1_STRIP_BUF* pStrip, VU1_PRIM_BUF* pPrim);
+void vu1GetVertexColorDifSpe2Amb(VU1_STRIP_BUF* pStrip, VU1_PRIM_BUF* pPrim);
+void vu1GetVertexColorDifSpe3Amb(VU1_STRIP_BUF* pStrip, VU1_PRIM_BUF* pPrim);
+void vu1RotTransStripBuf(NJS_MATRIX pMatrix, NJS_POINT3* pVector, VU1_STRIP_BUF* pBuf);
+void vu1DrawTriangleStripTransDoubleI(unsigned long ulType, VU1_STRIP_BUF* pS, unsigned short usStripMax, unsigned short usMode);
+void DrawScissorPolygonTrans1P(SCISSOR_SYSTEM* scissor, unsigned long ulType);
+void vu1DrawTriangleStripTransDouble1P(unsigned long ulType, VU1_STRIP_BUF* pS, unsigned short usStripMax, unsigned short usMode);
 
 // 
 // Start address: 0x2d38c0
@@ -248,7 +122,7 @@ void vu1SetScreenAspect(float fAspectW, float fAspectH)
 
 // 
 // Start address: 0x2d39d0
-void vu1SetDiffuseMaterial(tagVU1_COLOR* pDiffuse)
+void vu1SetDiffuseMaterial(VU1_COLOR* pDiffuse)
 {
 	// Line 340, Address: 0x2d39d0, Func Offset: 0
 	// Line 341, Address: 0x2d39e8, Func Offset: 0x18
@@ -268,7 +142,7 @@ void vu1SetDiffuseMaterial(tagVU1_COLOR* pDiffuse)
 
 // 
 // Start address: 0x2d3a40
-void vu1SetSpeculaMaterial(tagVU1_COLOR* pSpecula)
+void vu1SetSpeculaMaterial(VU1_COLOR* pSpecula)
 {
 	// Line 380, Address: 0x2d3a40, Func Offset: 0
 	// Line 381, Address: 0x2d3a58, Func Offset: 0x18
@@ -287,7 +161,7 @@ void vu1SetSpeculaMaterial(tagVU1_COLOR* pSpecula)
 
 // 
 // Start address: 0x2d3aa0
-void vu1SetAmbient(tagVU1_COLOR* pAmbient)
+void vu1SetAmbient(VU1_COLOR* pAmbient)
 {
 	// Line 417, Address: 0x2d3aa0, Func Offset: 0
 	// Line 418, Address: 0x2d3aac, Func Offset: 0xc
@@ -310,7 +184,7 @@ void vu1SetAlphaRatio(float fAlpha)
 
 // 
 // Start address: 0x2d3ff0
-void InitNodeArraySet(_anon2* scissor)
+void InitNodeArraySet(SCISSOR_SYSTEM* scissor)
 {
 	// Line 482, Address: 0x2d3ff0, Func Offset: 0
 	// Line 483, Address: 0x2d3ff4, Func Offset: 0x4
@@ -328,7 +202,7 @@ void InitNodeArraySet(_anon2* scissor)
 
 // 
 // Start address: 0x2d4020
-void InitScissorPlane(_anon5* sp)
+void InitScissorPlane(SCISSOR_PLANE_SET* sp)
 {
 	// Line 503, Address: 0x2d4020, Func Offset: 0
 	// Line 504, Address: 0x2d4028, Func Offset: 0x8
@@ -380,7 +254,7 @@ int _Clip_ViewVolume(float* clip, float local_clip[4], float* vertex)
 
 // 
 // Start address: 0x2d40f0
-void PushTriangleNodeArray(_anon2* scissor)
+void PushTriangleNodeArray(SCISSOR_SYSTEM* scissor)
 {
 	// Line 624, Address: 0x2d40f0, Func Offset: 0
 	// Line 625, Address: 0x2d40f8, Func Offset: 0x8
@@ -406,7 +280,7 @@ void PushTriangleNodeArray(_anon2* scissor)
 
 // 
 // Start address: 0x2d4160
-void ResetNodeArraySet(_anon2* scissor)
+void ResetNodeArraySet(SCISSOR_SYSTEM* scissor)
 {
 	// Line 661, Address: 0x2d4160, Func Offset: 0
 	// Line 662, Address: 0x2d4164, Func Offset: 0x4
@@ -422,14 +296,14 @@ void ResetNodeArraySet(_anon2* scissor)
 
 // 
 // Start address: 0x2d4190
-void ScissorTriangle(_anon2* scissor, _anon5* plane_set)
+void ScissorTriangle(SCISSOR_SYSTEM* scissor, SCISSOR_PLANE_SET* plane_set)
 {
 	int n;
-	_anon4 interN;
-	_anon4* nextN;
-	_anon4* currN;
-	_anon0* outarray;
-	_anon0* inarray;
+	SCISSOR_NODE interN;
+	SCISSOR_NODE* nextN;
+	SCISSOR_NODE* currN;
+	SCISSOR_NODE_ARRAY* outarray;
+	SCISSOR_NODE_ARRAY* inarray;
 	float sgn;
 	int xyz;
 	int mask;
@@ -668,9 +542,9 @@ int _Check_DisplayAreaPoint(NJS_POINT3* vec)
 
 // 
 // Start address: 0x2d4700
-void DrawScissorPolygonOpaque(_anon2* scissor, unsigned long ulType)
+void DrawScissorPolygonOpaque(SCISSOR_SYSTEM* scissor, unsigned long ulType)
 {
-	_anon0* in;
+	SCISSOR_NODE_ARRAY* in;
 	// Line 1391, Address: 0x2d4700, Func Offset: 0
 	// Line 1341, Address: 0x2d4704, Func Offset: 0x4
 	// Line 1391, Address: 0x2d4708, Func Offset: 0x8
@@ -706,18 +580,18 @@ void DrawScissorPolygonOpaque(_anon2* scissor, unsigned long ulType)
 
 // 
 // Start address: 0x2d47c0
-void vu1DrawTriangleStripOpaqueSingle(unsigned long ulType, tagVU1_STRIP_BUF* pStripTop, unsigned short usStripMax, unsigned short usMode)
+void vu1DrawTriangleStripOpaqueSingle(unsigned long ulType, VU1_STRIP_BUF* pStripTop, unsigned short usStripMax, unsigned short usMode)
 {
 	int count;
 	int flg;
 	unsigned int clipflag;
-	void(*pFunc)(tagVU1_STRIP_BUF*, tagVU1_PRIM_BUF*);
+	void(*pFunc)(VU1_STRIP_BUF*, VU1_PRIM_BUF*);
 	unsigned short usStripCnt;
 	float fIz;
-	tagVU1_STRIP_BUF* pS2;
-	tagVU1_STRIP_BUF* pS1;
-	tagVU1_STRIP_BUF* pS0;
-	tagVU1_PRIM_BUF* pP;
+	VU1_STRIP_BUF* pS2;
+	VU1_STRIP_BUF* pS1;
+	VU1_STRIP_BUF* pS0;
+	VU1_PRIM_BUF* pP;
 	// Line 1457, Address: 0x2d47c0, Func Offset: 0
 	// Line 1473, Address: 0x2d47ec, Func Offset: 0x2c
 	// Line 1457, Address: 0x2d47f0, Func Offset: 0x30
@@ -803,15 +677,15 @@ void vu1DrawTriangleStripOpaqueSingle(unsigned long ulType, tagVU1_STRIP_BUF* pS
 
 // 
 // Start address: 0x2d4ae0
-void vu1DrawTriangleStripOpaqueDouble(unsigned long ulType, tagVU1_STRIP_BUF* pS, unsigned short usStripMax, unsigned short usMode)
+void vu1DrawTriangleStripOpaqueDouble(unsigned long ulType, VU1_STRIP_BUF* pS, unsigned short usStripMax, unsigned short usMode)
 {
 	int count;
 	unsigned int flg;
 	unsigned int clipflag;
-	void(*pFunc)(tagVU1_STRIP_BUF*, tagVU1_PRIM_BUF*);
+	void(*pFunc)(VU1_STRIP_BUF*, VU1_PRIM_BUF*);
 	unsigned short usStripCnt;
 	float fIz;
-	tagVU1_PRIM_BUF* pP;
+	VU1_PRIM_BUF* pP;
 	// Line 1885, Address: 0x2d4ae0, Func Offset: 0
 	// Line 1901, Address: 0x2d4b14, Func Offset: 0x34
 	// Line 1906, Address: 0x2d4b1c, Func Offset: 0x3c
@@ -887,18 +761,18 @@ void vu1DrawTriangleStripOpaqueDouble(unsigned long ulType, tagVU1_STRIP_BUF* pS
 
 // 
 // Start address: 0x2d4d90
-void vu1DrawTriangleStripTransSingle(unsigned long ulType, tagVU1_STRIP_BUF* pStripTop, unsigned short usStripMax, unsigned short usMode)
+void vu1DrawTriangleStripTransSingle(unsigned long ulType, VU1_STRIP_BUF* pStripTop, unsigned short usStripMax, unsigned short usMode)
 {
 	int count;
 	int flg;
 	unsigned int clipflag;
-	void(*pFunc)(tagVU1_STRIP_BUF*, tagVU1_PRIM_BUF*);
+	void(*pFunc)(VU1_STRIP_BUF*, VU1_PRIM_BUF*);
 	unsigned short usStripCnt;
 	float fIz;
-	tagVU1_STRIP_BUF* pS2;
-	tagVU1_STRIP_BUF* pS1;
-	tagVU1_STRIP_BUF* pS0;
-	tagVU1_PRIM_BUF* pP;
+	VU1_STRIP_BUF* pS2;
+	VU1_STRIP_BUF* pS1;
+	VU1_STRIP_BUF* pS0;
+	VU1_PRIM_BUF* pP;
 	// Line 2502, Address: 0x2d4d90, Func Offset: 0
 	// Line 2517, Address: 0x2d4dbc, Func Offset: 0x2c
 	// Line 2502, Address: 0x2d4dc0, Func Offset: 0x30
@@ -1007,7 +881,7 @@ int _Clip_Screen(float* clip)
 
 // 
 // Start address: 0x2d50f0
-void vu1DrawTriangleStripTransDouble(unsigned long ulType, tagVU1_STRIP_BUF* pS, unsigned short usStripMax, unsigned short usMode)
+void vu1DrawTriangleStripTransDouble(unsigned long ulType, VU1_STRIP_BUF* pS, unsigned short usStripMax, unsigned short usMode)
 {
 	int clipswitch;
 	int count;
@@ -1015,7 +889,7 @@ void vu1DrawTriangleStripTransDouble(unsigned long ulType, tagVU1_STRIP_BUF* pS,
 	unsigned int clipflag;
 	unsigned short usStripCnt;
 	float fIz;
-	tagVU1_PRIM_BUF* pP;
+	VU1_PRIM_BUF* pP;
 	// Line 3071, Address: 0x2d50f0, Func Offset: 0
 	// Line 3080, Address: 0x2d5128, Func Offset: 0x38
 	// Line 3087, Address: 0x2d512c, Func Offset: 0x3c
@@ -1182,7 +1056,7 @@ void vu1DrawTriangleStripTransDouble(unsigned long ulType, tagVU1_STRIP_BUF* pS,
 
 // 
 // Start address: 0x2d5570
-void vu1GetVertexColor(tagVU1_STRIP_BUF* pStrip, tagVU1_PRIM_BUF* pPrim)
+void vu1GetVertexColor(VU1_STRIP_BUF* pStrip, VU1_PRIM_BUF* pPrim)
 {
 	// Line 3663, Address: 0x2d5570, Func Offset: 0
 	// Line 3664, Address: 0x2d5580, Func Offset: 0x10
@@ -1201,7 +1075,7 @@ void vu1GetVertexColor(tagVU1_STRIP_BUF* pStrip, tagVU1_PRIM_BUF* pPrim)
 
 // 
 // Start address: 0x2d55b0
-void vu1GetVertexColorCM(tagVU1_PRIM_BUF* pPrim)
+void vu1GetVertexColorCM(VU1_PRIM_BUF* pPrim)
 {
 	// Line 3705, Address: 0x2d55b0, Func Offset: 0
 	// Line 3706, Address: 0x2d55b8, Func Offset: 0x8
@@ -1214,7 +1088,7 @@ void vu1GetVertexColorCM(tagVU1_PRIM_BUF* pPrim)
 
 // 
 // Start address: 0x2d55e0
-void vu1GetVertexColorIgnore(tagVU1_PRIM_BUF* pPrim)
+void vu1GetVertexColorIgnore(VU1_PRIM_BUF* pPrim)
 {
 	// Line 3742, Address: 0x2d55e0, Func Offset: 0
 	// Line 3743, Address: 0x2d55e4, Func Offset: 0x4
@@ -1229,7 +1103,7 @@ void vu1GetVertexColorIgnore(tagVU1_PRIM_BUF* pPrim)
 
 // 
 // Start address: 0x2d5610
-void vu1GetVertexColorDif(tagVU1_STRIP_BUF* pStrip, tagVU1_PRIM_BUF* pPrim)
+void vu1GetVertexColorDif(VU1_STRIP_BUF* pStrip, VU1_PRIM_BUF* pPrim)
 {
 	// Line 3790, Address: 0x2d5610, Func Offset: 0
 	// Line 3791, Address: 0x2d5618, Func Offset: 0x8
@@ -1246,7 +1120,7 @@ void vu1GetVertexColorDif(tagVU1_STRIP_BUF* pStrip, tagVU1_PRIM_BUF* pPrim)
 
 // 
 // Start address: 0x2d5650
-void vu1GetVertexColorDifAmb(tagVU1_STRIP_BUF* pStrip, tagVU1_PRIM_BUF* pPrim)
+void vu1GetVertexColorDifAmb(VU1_STRIP_BUF* pStrip, VU1_PRIM_BUF* pPrim)
 {
 	// Line 3843, Address: 0x2d5650, Func Offset: 0
 	// Line 3846, Address: 0x2d5654, Func Offset: 0x4
@@ -1262,7 +1136,7 @@ void vu1GetVertexColorDifAmb(tagVU1_STRIP_BUF* pStrip, tagVU1_PRIM_BUF* pPrim)
 
 // 
 // Start address: 0x2d5680
-void vu1GetVertexColorDifSpe1(tagVU1_STRIP_BUF* pStrip, tagVU1_PRIM_BUF* pPrim)
+void vu1GetVertexColorDifSpe1(VU1_STRIP_BUF* pStrip, VU1_PRIM_BUF* pPrim)
 {
 	// Line 3909, Address: 0x2d5680, Func Offset: 0
 	// Line 3912, Address: 0x2d5684, Func Offset: 0x4
@@ -1285,7 +1159,7 @@ void vu1GetVertexColorDifSpe1(tagVU1_STRIP_BUF* pStrip, tagVU1_PRIM_BUF* pPrim)
 
 // 
 // Start address: 0x2d56d0
-void vu1GetVertexColorDifSpe2(tagVU1_STRIP_BUF* pStrip, tagVU1_PRIM_BUF* pPrim)
+void vu1GetVertexColorDifSpe2(VU1_STRIP_BUF* pStrip, VU1_PRIM_BUF* pPrim)
 {
 	// Line 3976, Address: 0x2d56d0, Func Offset: 0
 	// Line 3978, Address: 0x2d56e8, Func Offset: 0x18
@@ -1310,7 +1184,7 @@ void vu1GetVertexColorDifSpe2(tagVU1_STRIP_BUF* pStrip, tagVU1_PRIM_BUF* pPrim)
 
 // 
 // Start address: 0x2d5740
-void vu1GetVertexColorDifSpe3(tagVU1_STRIP_BUF* pStrip, tagVU1_PRIM_BUF* pPrim)
+void vu1GetVertexColorDifSpe3(VU1_STRIP_BUF* pStrip, VU1_PRIM_BUF* pPrim)
 {
 	// Line 4044, Address: 0x2d5740, Func Offset: 0
 	// Line 4045, Address: 0x2d5750, Func Offset: 0x10
@@ -1338,7 +1212,7 @@ void vu1GetVertexColorDifSpe3(tagVU1_STRIP_BUF* pStrip, tagVU1_PRIM_BUF* pPrim)
 
 // 
 // Start address: 0x2d57c0
-void vu1GetVertexColorDifSpe1Amb(tagVU1_STRIP_BUF* pStrip, tagVU1_PRIM_BUF* pPrim)
+void vu1GetVertexColorDifSpe1Amb(VU1_STRIP_BUF* pStrip, VU1_PRIM_BUF* pPrim)
 {
 	// Line 4122, Address: 0x2d57c0, Func Offset: 0
 	// Line 4123, Address: 0x2d57d8, Func Offset: 0x18
@@ -1363,7 +1237,7 @@ void vu1GetVertexColorDifSpe1Amb(tagVU1_STRIP_BUF* pStrip, tagVU1_PRIM_BUF* pPri
 
 // 
 // Start address: 0x2d5830
-void vu1GetVertexColorDifSpe2Amb(tagVU1_STRIP_BUF* pStrip, tagVU1_PRIM_BUF* pPrim)
+void vu1GetVertexColorDifSpe2Amb(VU1_STRIP_BUF* pStrip, VU1_PRIM_BUF* pPrim)
 {
 	// Line 4192, Address: 0x2d5830, Func Offset: 0
 	// Line 4193, Address: 0x2d5848, Func Offset: 0x18
@@ -1388,7 +1262,7 @@ void vu1GetVertexColorDifSpe2Amb(tagVU1_STRIP_BUF* pStrip, tagVU1_PRIM_BUF* pPri
 
 // 
 // Start address: 0x2d58a0
-void vu1GetVertexColorDifSpe3Amb(tagVU1_STRIP_BUF* pStrip, tagVU1_PRIM_BUF* pPrim)
+void vu1GetVertexColorDifSpe3Amb(VU1_STRIP_BUF* pStrip, VU1_PRIM_BUF* pPrim)
 {
 	// Line 4259, Address: 0x2d58a0, Func Offset: 0
 	// Line 4260, Address: 0x2d58b8, Func Offset: 0x18
@@ -1418,7 +1292,7 @@ void vu1GetVertexColorDifSpe3Amb(tagVU1_STRIP_BUF* pStrip, tagVU1_PRIM_BUF* pPri
 
 // 
 // Start address: 0x2d5930
-void vu1RotTransStripBuf(NJS_MATRIX pMatrix, NJS_POINT3* pVector, tagVU1_STRIP_BUF* pBuf)
+void vu1RotTransStripBuf(NJS_MATRIX pMatrix, NJS_POINT3* pVector, VU1_STRIP_BUF* pBuf)
 {
 	float fIz;
 	float fZ;
@@ -1440,13 +1314,13 @@ void vu1RotTransStripBuf(NJS_MATRIX pMatrix, NJS_POINT3* pVector, tagVU1_STRIP_B
 
 // 
 // Start address: 0x2d59b0
-void vu1DrawTriangleStripTransDoubleI(unsigned long ulType, tagVU1_STRIP_BUF* pS, unsigned short usStripMax, unsigned short usMode)
+void vu1DrawTriangleStripTransDoubleI(unsigned long ulType, VU1_STRIP_BUF* pS, unsigned short usStripMax, unsigned short usMode)
 {
 	int flg;
 	unsigned int clipflag;
-	void(*pFunc)(tagVU1_STRIP_BUF*, tagVU1_PRIM_BUF*);
+	void(*pFunc)(VU1_STRIP_BUF*, VU1_PRIM_BUF*);
 	unsigned short usStripCnt;
-	tagVU1_PRIM_BUF* pP;
+	VU1_PRIM_BUF* pP;
 	// Line 4578, Address: 0x2d59b0, Func Offset: 0
 	// Line 4588, Address: 0x2d59d8, Func Offset: 0x28
 	// Line 4583, Address: 0x2d59ec, Func Offset: 0x3c
@@ -1516,9 +1390,9 @@ void vu1DrawTriangleStripTransDoubleI(unsigned long ulType, tagVU1_STRIP_BUF* pS
 
 // 
 // Start address: 0x2d5be0
-void DrawScissorPolygonTrans1P(_anon2* scissor, unsigned long ulType)
+void DrawScissorPolygonTrans1P(SCISSOR_SYSTEM* scissor, unsigned long ulType)
 {
-	_anon0* in;
+	SCISSOR_NODE_ARRAY* in;
 	// Line 4750, Address: 0x2d5be0, Func Offset: 0
 	// Line 4748, Address: 0x2d5be4, Func Offset: 0x4
 	// Line 4750, Address: 0x2d5be8, Func Offset: 0x8
@@ -1554,15 +1428,15 @@ void DrawScissorPolygonTrans1P(_anon2* scissor, unsigned long ulType)
 
 // 
 // Start address: 0x2d5ca0
-void vu1DrawTriangleStripTransDouble1P(unsigned long ulType, tagVU1_STRIP_BUF* pS, unsigned short usStripMax, unsigned short usMode)
+void vu1DrawTriangleStripTransDouble1P(unsigned long ulType, VU1_STRIP_BUF* pS, unsigned short usStripMax, unsigned short usMode)
 {
 	int flg;
 	unsigned int clipflag;
-	void(*pFunc)(tagVU1_STRIP_BUF*, tagVU1_PRIM_BUF*);
+	void(*pFunc)(VU1_STRIP_BUF*, VU1_PRIM_BUF*);
 	unsigned short usStripCnt;
 	float sam;
 	float fIz;
-	tagVU1_PRIM_BUF* pP;
+	VU1_PRIM_BUF* pP;
 	// Line 4792, Address: 0x2d5ca0, Func Offset: 0
 	// Line 4802, Address: 0x2d5cd0, Func Offset: 0x30
 	// Line 4797, Address: 0x2d5ce4, Func Offset: 0x44
