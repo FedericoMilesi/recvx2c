@@ -53,12 +53,13 @@ def run_command(command, env_vars, log_file='build.log'):
         f.write(result.stderr.decode('utf-8'))
 
     if result.returncode != 0:
-        colored_output("Error:", color=Colors.FAIL, bold=True)
+        colored_output("Error", color=Colors.FAIL, bold=True)
+        colored_output(result.stdout.decode('utf-8'), color=Colors.FAIL, brackets=False)
         colored_output(result.stderr.decode('utf-8'), color=Colors.FAIL, brackets=False)
         return False  # Return False on failure
     else:
-        colored_output("Success:", color=Colors.OKGREEN, bold=True)
-        colored_output(result.stdout.decode('utf-8'), color=Colors.OKGREEN, brackets=False)
+        colored_output("Success", color=Colors.OKGREEN, bold=True)
+        # colored_output(result.stdout.decode('utf-8'), color=Colors.OKGREEN, brackets=False)
         return True  # Return True on success
     
 
@@ -90,6 +91,8 @@ def compile_source_files(compiler, sources, compiler_flags, include_dirs, define
 
         compile_command = [compiler] + compiler_flags + ['-c', source, '-o', object_file] + \
                           [f'-I{inc}' for inc in include_dirs] + [f'-D{d}' for d in defines]
+
+        colored_output(f"Building: {source}", color=Colors.OKCYAN)
 
         # Continue compiling even if one source fails
         if not run_command(compile_command, env_vars):
