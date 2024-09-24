@@ -1,1 +1,5 @@
 .vscode/
+codewarrior/
+.cache/
+recvx2c.code-workspace
+*.o
