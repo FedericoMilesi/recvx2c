@@ -1,7 +1,7 @@
 #include "ps2_sfd_mw.h"
-#include "libcdvd.h"
+#include "types.h"
+#include <libcdvd.h>
 #include "ps2_MovieFunc.h"
-#include "ps2_prefix.h"
 
 int iRingBufNum;
 MWPLY MwHandle;

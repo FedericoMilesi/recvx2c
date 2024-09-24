@@ -1337,7 +1337,7 @@ short combidata[0];
 unsigned char curedata[0];
 _anon29 pulsework;
 _anon7 parts_21[8];
-unsigned int palbuf[0];
+extern unsigned int palbuf[4096];
 float x_k;
 float y_k;
 float xend;

@@ -5,15 +5,9 @@
 
 #include <sg_mw.h>
 
-typedef struct AFS_PARTITION // Fabricated name
-{
-	char* AfsFileName;
-	int PartitionId;
-	int MaxInsideFileNum;
-	unsigned char* pInfoWork;
-} AFS_PARTITION;
 
-struct ADXWRAP_ADXT
+
+struct SOUND_TALK_INFO
 {
 	ADXT Handle;
 	unsigned char* pAdxTWork;
@@ -51,8 +45,8 @@ struct ADXWRAP_ADXF
 void InitAdx();
 void ExitAdx();
 void DeletePartition(unsigned int PartitionId);
-int CreatePartitionEx(AFS_PARTITION* ap);
-void DeletePartitionEx(AFS_PARTITION* ap);
+int CreatePartitionEx(SOUND_AFS_PARTITION* ap);
+void DeletePartitionEx(SOUND_AFS_PARTITION* ap);
 int SearchAdxFSlot();
 int OpenAfsInsideFile(unsigned int PartitionId, unsigned int FileId);
 int OpenAfsIsoFile(char* FileName);

@@ -902,7 +902,7 @@ NJS_TEXINFO info;
 NJS_TEXLIST tlist;
 extern SYS* sys;
 char BIO_CURRENT[0];
-unsigned int palbuf[0];
+extern unsigned int palbuf[4096];
 extern NJS_TEXMEMLIST tbuf[256];
 extern ROOM* rom;
 BH_PWORK ene[0];

@@ -1,54 +1,9 @@
-
-
-
-
-
-
-
-typedef float type_0[4][32];
-typedef float type_1[4][32];
-typedef float type_2[4];
-typedef float type_3[4][32];
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#include "types.h"
 
 float Ps2_zbuff_b;
 float Ps2_zbuff_a;
-float fNaViwClipFar;
-float fNaViwClipNear;
+extern float fNaViwClipFar;
+extern float fNaViwClipNear;
 
 void CalcPs2ZbuffAB();
 void sceVu0ITOF12Vector(float* v0, float* v1);

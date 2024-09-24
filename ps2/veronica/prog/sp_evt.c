@@ -1063,7 +1063,7 @@ void* comevt_script_tab[8];
 void* comevt_acs_tab[8];
 void(*bhCtrSpEvtCom_mode0)()[3];
 extern SYS* sys;
-unsigned int palbuf[0];
+extern unsigned int palbuf[4096];
 extern ROOM* rom;
 float fNaViwClipFar;
 NJS_MATRIX cmat;

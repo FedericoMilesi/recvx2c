@@ -13,7 +13,7 @@ PDS_PERIPHERALINFO pgp_info;
 unsigned int Pad_state[2];
 extern int SoftResetFlag;
 extern Controller Pad[4];
-int CurrentPortId;
+extern int CurrentPortId;
 PS2_PADS Ps2_pad;
 PS2_PADS Pad_info;
 PS2_PAD_STATUS Pad_status;

@@ -1,57 +1,46 @@
-typedef struct _anon0;
-typedef struct _anon1;
-typedef union _anon2;
-typedef struct _anon3;
-typedef struct _anon4;
-typedef union _anon5;
+// Structure for queuing source and destination buffers for expansion operations
+typedef struct BUFFER_QUEUE {
+    char* from;               // Source buffer address
+    unsigned char* to;        // Destination buffer address
+} BUFFER_QUEUE;
 
+// Structure for controlling the expansion process status and mode
+typedef struct EXPANSION_STATUS {
+    char active;              // Active flag indicating if expansion is in progress
+    char mode;                // Mode of operation for expansion
+} EXPANSION_STATUS;
 
-typedef _anon0 type[2];
+// Union for managing expansion flags or data, using either status or a short for checks
+typedef union EXPANSION_CONTROL {
+    EXPANSION_STATUS sb;      // Status block for expansion
+    short check;              // A short used for quick checks
+} EXPANSION_CONTROL;
 
-struct _anon0
-{
-	char* from;
-	unsigned char* to;
-};
+// Structure for managing the flags and various parameters related to expansion operations
+typedef union EXPANSION_FLAGS {
+    struct {
+        EXPANSION_CONTROL uw; // Expansion control structure
+        char in;              // Input buffer indicator
+        char out;             // Output buffer indicator
+    } sl;
+    int abort;                // Flag for aborting the expansion process
+} EXPANSION_FLAGS;
 
-struct _anon1
-{
-	char active;
-	char mode;
-};
+// Main control structure for buffer expansion, containing flags, codes, counters, and buffers
+typedef struct EXPANSION_CTRL {
+    EXPANSION_FLAGS flag;        // Expansion flags
+    int code;                    // Code for the current operation
+    int counter;                 // Counter for operations
+    int repeat;                  // Repeat count for buffer processing
+    unsigned char* offset;       // Pointer to current offset in the buffer
+    char* source;                // Source buffer
+    unsigned char* destination;  // Destination buffer
+    BUFFER_QUEUE que[2];         // Queues for holding two source-destination buffer pairs
+} EXPANSION_CTRL;
 
-union _anon2
-{
-	_anon1 sb;
-	short check;
-};
+// Global buffer control variable for managing the expansion process
+EXPANSION_CTRL ExpandCtrlBuf;
 
-struct _anon3
-{
-	_anon5 flag;
-	int code;
-	int counter;
-	int repeat;
-	unsigned char* offset;
-	char* source;
-	unsigned char* destination;
-	_anon0 que[2];
-};
-
-struct _anon4
-{
-	_anon2 uw;
-	char in;
-	char out;
-};
-
-union _anon5
-{
-	_anon4 sl;
-	int abort;
-};
-
-_anon3 ExpandCtrlBuf;
 
 void Init_Expand();
 int Expand(char* s, unsigned char* d);

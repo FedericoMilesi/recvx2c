@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "ps2_prefix.h"
+#include "types.h"
 #include "libmpeg.h"
 #include "libgraph.h"
 
@@ -144,24 +144,6 @@ typedef struct AUDIO_DECODER {
     int totalBytesSent; // Total bytes sent
     int iopZero; // IOP zero flag
 } AUDIO_DECODER;
-
-// Remote input structure
-typedef struct REMOTE_INPUT {
-    unsigned char* put_ptr; // Put pointer
-    unsigned char* get_ptr; // Get pointer
-    int putsize; // Size of data to put
-    int getsize; // Size of data to get
-    int readrest; // Remaining read size
-    int writerest; // Remaining write size
-    int count; // Data count
-    int proceed; // Proceed flag
-    unsigned int button_old; // Previous button state
-    unsigned char cdata[32]; // Controller data
-    int iMovieState; // Movie state
-    int iMovieFrame; // Movie frame count
-    unsigned int uiContFlag; // Controller flag
-    unsigned int MVCancelButton; // Cancel button mask
-} REMOTE_INPUT;
 
 // File information structure -- todo: sceCdlFILE without the pad field
 typedef struct FILE_INFO { // 

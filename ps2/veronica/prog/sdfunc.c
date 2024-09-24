@@ -1,1256 +1,179 @@
 #include "types.h"
-
-typedef struct _anon0;
-
-typedef struct _anon2;
-
-typedef struct _anon4;
-
-
-typedef struct _anon6;
-
-
-
-
-typedef struct _anon11;
-
-
-
-
-
-
-
-typedef struct _anon19;
-
-
-typedef struct _anon22;
-typedef struct HardwareScreenInfo;
-
-typedef struct _anon25;
-typedef struct _anon26;
-
-
-
-typedef struct _anon30;
-typedef struct Camera;
-
-
-typedef struct MWS_PLY_CPRM_SFD;
-typedef struct _anon34;
-typedef struct _anon35;
-
-typedef struct _anon37;
-
-
-typedef struct _anon40;
-typedef struct _anon41;
-
-
-
-typedef struct _anon44;
-
-
-
-
-typedef struct SDS_PORT_REF;
-typedef struct _anon49;
-
-typedef struct REMOTE_INPUT;
-typedef struct tag_SYS_BT_SYSTEMID;
-
-
-
-
-
-
-
-
-
-
-
-
-
-typedef struct _anon65;
-
-
-
-
-typedef void(*type_52)(void*);
-typedef void(*type_175)(int);
-
-typedef int type_0[2];
-typedef short type_1[256];
-typedef float type_2[4];
-typedef float type_3[4];
-typedef short type_4[22];
-typedef char type_5[32];
-typedef float type_6[4];
-typedef short type_7[256];
-typedef int type_8[2];
-
-typedef char type_10[510];
-typedef _anon4 type_11[2];
-typedef int type_12[2];
-typedef TEXTURE_BUFFER type_13[256];
-typedef int type_14[8];
-typedef short type_15[6];
-
-typedef _anon26 type_17[32];
-typedef unsigned short type_18[2];
-typedef short type_19[256];
-typedef MODEL_DATA type_20[450];
-typedef char type_21[2];
-typedef short type_22[4];
-typedef int type_23[4];
-typedef char type_24[2];
-typedef int type_25[64];
-typedef unsigned int type_26[16];
-typedef int type_27[450];
-typedef char type_28[4];
-typedef unsigned int type_29[8];
-typedef char type_30[2];
-typedef unsigned int type_31[8];
-typedef unsigned char type_32[450];
-typedef int type_33[3];
-
-
-
-typedef AFS_PARTITION type_37[8];
-typedef short type_38[4];
-typedef Controller type_39[0];
-typedef int type_40[4];
-typedef int type_41[3];
-typedef _anon40 type_42[2];
-typedef char type_43[68];
-typedef char type_44[16];
-
-
-typedef short type_47[5];
-typedef char type_48[4];
-typedef unsigned int type_49[32];
-typedef char type_50[5];
-typedef char type_51[3];
-typedef CAMERA type_53[2];
-typedef float type_54[128];
-typedef unsigned int type_55[16];
-typedef unsigned char type_56[256];
-typedef unsigned int type_57[16];
-typedef int type_58[5];
-typedef unsigned int type_59[32];
-typedef BH_PWORK* type_60[16];
-typedef unsigned int type_61[16];
-typedef int type_62[2];
-typedef unsigned int type_63[8];
-typedef char type_64[68];
-typedef unsigned int type_65[384];
-typedef unsigned int type_66[1];
-typedef unsigned int type_67[2];
-typedef unsigned int type_68[4];
-typedef int* type_69[16];
-typedef _anon0 type_70[6];
-typedef char type_71[8];
-
-typedef _anon37 type_73[4];
-typedef unsigned char type_74[2];
-typedef char type_75[5];
-typedef int type_76[3];
-typedef char type_77[4];
-
-typedef _anon2 type_79[128];
-typedef int type_80[3];
-typedef short type_81[4];
-typedef MODEL_DATA type_82[16];
-typedef _anon19 type_83[0];
-typedef unsigned char type_84[4];
-typedef unsigned int type_85[3];
-typedef _anon11 type_86[3];
-typedef BOUNDARY type_87[64];
-typedef SDS_PORT_REF** type_88[0];
-typedef Unknown1* type_89[512];
-typedef unsigned int type_90[8];
-typedef BOUNDARY type_91[64];
-typedef _anon35 type_92[16];
-typedef unsigned int type_93[4];
-typedef unsigned char type_94[2];
-typedef Unknown1* type_95[128];
-typedef BOUNDARY type_96[64];
-typedef char type_97[32];
-typedef Unknown1* type_98[512];
-typedef unsigned char type_99[128];
-typedef char type_100[64];
-typedef Unknown1* type_101[512];
-typedef int type_102[2];
-typedef Unknown1* type_103[512];
-typedef unsigned char type_104[16];
-typedef unsigned char type_105[64];
-typedef unsigned char type_106[22];
-typedef Unknown1* type_107[512];
-typedef unsigned int type_108[4];
-typedef char type_109[16];
-typedef Unknown1* type_110[512];
-
-
-
-typedef Unknown1* type_114[512];
-typedef char type_115[8];
-
-
-typedef short type_118[5];
-typedef Unknown1* type_119[128];
-typedef int type_120[6];
-
-typedef float type_122[32];
-typedef unsigned char type_123[3];
-typedef int type_124[2];
-typedef unsigned int type_125[32];
-typedef unsigned char type_126[32];
-typedef Unknown1* type_127[128];
-typedef void* type_128[2];
-
-typedef Unknown1* type_130[128];
-typedef unsigned int type_131[1];
-
-
-typedef int type_134[2];
-typedef int* type_135[16];
-typedef Unknown1* type_136[512];
-
-
-
-typedef float type_140[4];
-typedef MODEL_DATA type_141[16];
-typedef unsigned int type_142[2];
-typedef float type_143[4];
-typedef Unknown1* type_144[32];
-typedef int type_145[5];
-typedef float type_146[4];
-
-typedef int type_148[6];
-typedef Unknown1* type_149[32];
-typedef _anon44 type_150[20];
-typedef Unknown1* type_151[32];
-typedef float type_152[3];
-typedef float type_153[3];
-typedef unsigned char type_154[64];
-typedef float type_155[3][20];
-typedef int type_156[3];
-typedef int type_157[4];
-typedef char type_158[32];
-typedef _anon44 type_159[8];
-typedef float type_160[3];
-typedef float type_161[3];
-typedef float type_162[3][20];
-typedef short type_163[32];
-
-typedef float type_165[3];
-typedef float type_166[3][20];
-typedef char type_167[8];
-typedef char type_168[16];
-typedef _anon44 type_169[2];
-
-typedef unsigned int type_171[2];
-typedef float type_172[3];
-typedef float type_173[3][20];
-typedef unsigned char type_174[40];
-typedef int type_176[4];
-typedef short type_177[3];
-typedef unsigned int type_178[4];
-
-typedef _anon65 type_180[10];
-typedef unsigned char* type_181[256];
-typedef int type_182[3];
-typedef char type_183[256];
-
-struct _anon0
-{
-	int SeNo;
-	unsigned short Flag;
-	unsigned short Attrib;
-	unsigned short Prio;
-	unsigned short EnemyNo;
-};
-
-
-
-
-
-
-
-
-
-
-struct _anon2
-{
-	NJS_POINT3 Pos;
-	float Dist;
-	int SeNo;
-	int SeNoV;
-	int FadeRate;
-	char ReqFlag;
-	char ReqFlagV;
-	char CallFlag;
-	char CallFlagV;
-	char Prio;
-	char Pan;
-	char Vol;
-	unsigned char VolType;
-};
-
-
-
-
-
-
-
-
-
-struct _anon4
-{
-	int SeNo;
-	short Timer;
-	short ReqFlag;
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-struct _anon6
-{
-	int OfsPointBgSe[2];
-	int FadeNextBgSe[2];
-	int OfsPointBgm;
-	int FadeNextBgm;
-	short NextBgmType;
-	unsigned short NextBgSeNo[2];
-	char ComNextBgm;
-	char PointNextBgm;
-	unsigned char NextBgmNo;
-	char ComNextBgSe[2];
-	char PointNextBgSe[2];
-	char SetNextBgmFlag;
-	char SetNextBgSeFlag[2];
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-struct _anon11
-{
-	int SeNo;
-	short Flag;
-	short FindFlag;
-	short Prio;
-	short ObjectNo;
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-struct _anon19
-{
-	unsigned int Flag;
-	int FadeFunc;
-	int FadeCntMax;
-	float Volume;
-	float VolSpeed;
-	float VolLast;
-	float LimitMaxVol;
-	int PanFunc;
-	int PanCntMax;
-	float Pan;
-	float PanSpeed;
-	float PanLast;
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-struct _anon22
-{
-	int Offset;
-	int Size;
-	int Type;
-	int BankNo;
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-struct _anon25
-{
-	int Type;
-	int SlotNo;
-	int SeNo;
-	int StartVol;
-	int LastVol;
-	int StartPan;
-	int LastPan;
-	int Frame;
-};
-
-struct _anon26
-{
-	unsigned char flag;
-	char power;
-	unsigned char freq;
-	unsigned char inc;
-};
-
-
-
-
-
-
-
-
-
-struct _anon30
-{
-	int mode;
-	int frame;
-	int count;
-	int latency;
-	int rsv[4];
-};
-
-
-
-struct MWS_PLY_CPRM_SFD
-{
-	int ftype;
-	int max_bps;
-	int max_width;
-	int max_height;
-	int nfrm_pool_wk;
-	char* work;
-	int wksize;
-	int dtype;
-};
-
-struct _anon34
-{
-	unsigned int SlotNo;
-	short PanDelayTime;
-	short VolumeDelayTime;
-	short Pitch;
-	short PitchDelayTime;
-	short Speed;
-	short SpeedDelayTime;
-	char BankNo;
-	char ListNo;
-	char Priority;
-	char Pan;
-	char Volume;
-	char FxInput;
-	char FxLevel;
-};
-
-struct _anon35
-{
-	NJS_POINT3 Pos;
-	float Dist;
-	int SeNo;
-	char ReqFlag;
-	char Prio;
-	char SlotNo;
-	char Type;
-	char Pan;
-	char Vol;
-	int Flag;
-	int VolFadeP[3];
-	int PanFadeP[3];
-};
-
-
-struct _anon37
-{
-	unsigned short sSizeX;
-	unsigned short sSizeY;
-	unsigned short dPosX;
-	unsigned short dPosY;
-	unsigned short dSizeX;
-	unsigned short dSizeY;
-	unsigned char DispType;
-};
-
-
-
-struct _anon40
-{
-	unsigned int MaxChannel;
-	unsigned int MaxSampleRate;
-	int RecoverType;
-	int ReloadSector;
-};
-
-struct _anon41
-{
-	int MaxCommand;
-	unsigned char ComTbl[2];
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-struct _anon44
-{
-	unsigned char Flag;
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-struct AFS_PARTITION
-{
-	char* AfsFileName;
-	int PartitionId;
-	int MaxInsideFileNum;
-	unsigned char* pInfoWork;
-};
-
-
-
-
-
-
-
-
-
-
-
-
-struct SDS_PORT_REF
-{
-	void* m_Ref;
-};
-
-struct _anon49
-{
-	char VolPlayerVoice;
-	char VolPlayerAction;
-	char VolWeaponSe;
-	char VolCartridgeSe;
-	char VolEnemySe;
-	char VolBgSe0;
-	char VolBgSe1;
-	char VolObjectSe;
-	char VolEventSe;
-	char RoomFxLevel;
-	char RoomFxProg;
-	char MaxEventSeSlots;
-	char MaxObjectSeSlots;
-	char Dummy1;
-	char Dummy2;
-	char Dummy3;
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-struct REMOTE_INPUT
-{
-	unsigned char* put_ptr;
-	unsigned char* get_ptr;
-	int putsize;
-	int getsize;
-	int readrest;
-	int writerest;
-	int count;
-	int proceed;
-	unsigned int button_old;
-	unsigned char cdata[32];
-	int iMovieState;
-	int iMovieFrame;
-	unsigned int uiContFlag;
-	unsigned int MVCancelButton;
-};
-
-struct tag_SYS_BT_SYSTEMID
-{
-	int nNo;
-	int nAll;
-	char szProduct[16];
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-struct _anon65
-{
-	void(*FuncName)(int);
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#include <sg_sd.h>
+#include <sg_mw.h>
+
+typedef struct SND_ENEMY_SLOT {
+    int SeNo; // Sound effect number
+    unsigned short Flag; // Flags
+    unsigned short Attrib; // Attributes
+    unsigned short Prio; // Priority
+    unsigned short EnemyNo; // Enemy number
+} SND_ENEMY_SLOT;
+
+typedef struct SND_ENEMY_INFO {
+    NJS_POINT3 Pos;
+    float Dist;
+    int SeNo;
+    int SeNoV;
+    int FadeRate;
+    char ReqFlag;
+    char ReqFlagV;
+    char CallFlag;
+    char CallFlagV;
+    char Prio;
+    char Pan;
+    char Vol;
+    unsigned char VolType;
+} SND_ENEMY_INFO;
+
+typedef struct SOUND_REQUEST {
+    int SeNo;      // Sound effect number
+    short Timer;   // Timer for sound request (delay or duration)
+    short ReqFlag; // Request flag (indicates if the sound should be played)
+} SOUND_REQUEST;
+
+
+typedef struct SOUND_TRANSITION {
+    int OfsPointBgSe[2];       // Offset points for background sound effects
+    int FadeNextBgSe[2];       // Fade transition for next background sound effects
+    int OfsPointBgm;           // Offset point for background music
+    int FadeNextBgm;           // Fade transition for next background music
+    short NextBgmType;         // Type of the next background music
+    unsigned short NextBgSeNo[2]; // Next background sound effect numbers
+    char ComNextBgm;           // Command for next background music
+    char PointNextBgm;         // Pointer for next background music
+    unsigned char NextBgmNo;   // Next background music number
+    char ComNextBgSe[2];       // Command for next background sound effects
+    char PointNextBgSe[2];     // Pointer for next background sound effects
+    char SetNextBgmFlag;       // Flag to set the next background music
+    char SetNextBgSeFlag[2];   // Flags to set the next background sound effects
+} SOUND_TRANSITION;
+
+typedef struct SND_OBJECT_SLOT {
+    int SeNo; // Sound effect number
+    short Flag; // Flags
+    short FindFlag; // Find flag
+    short Prio; // Priority
+    short ObjectNo; // Object number
+} SND_OBJECT_SLOT;
+
+typedef struct SND_MIDI_INFO {
+    unsigned int Flag; // Flags
+    int FadeFunc; // Fade function
+    int FadeCntMax; // Maximum fade count
+    float Volume; // Volume
+    float VolSpeed; // Volume speed
+    float VolLast; // Last volume
+    float LimitMaxVol; // Maximum volume limit
+    int PanFunc; // Pan function
+    int PanCntMax; // Maximum pan count
+    float Pan; // Pan
+    float PanSpeed; // Pan speed
+    float PanLast; // Last pan
+} SND_MIDI_INFO;
+
+typedef struct SOUND_DATA { 
+    int Offset; // Offset
+    int Size; // Size
+    int Type; // Type
+    int BankNo; // BankNo
+} SOUND_DATA;
+
+typedef struct SOUND_EFFECT {
+    int Type;
+    int SlotNo;
+    int SeNo;
+    int StartVol;
+    int LastVol;
+    int StartPan;
+    int LastPan;
+    int Frame;
+} SOUND_EFFECT;
+
+typedef struct SOUND_SLOT {
+    unsigned int SlotNo;
+    short PanDelayTime;
+    short VolumeDelayTime;
+    short Pitch;
+    short PitchDelayTime;
+    short Speed;
+    short SpeedDelayTime;
+    char BankNo;
+    char ListNo;
+    char Priority;
+    char Pan;
+    char Volume;
+    char FxInput;
+    char FxLevel;
+} SOUND_SLOT;
+
+typedef struct SOUND_OBJECT {
+    NJS_POINT3 Pos;
+    float Dist;
+    int SeNo;
+    char ReqFlag;
+    char Prio;
+    char SlotNo;
+    char Type;
+    char Pan;
+    char Vol;
+    int Flag;
+    int VolFadeP[3];
+    int PanFadeP[3];
+} SOUND_OBJECT;
+
+typedef struct MOVIE_DEFINITION {
+    unsigned short sSizeX;
+    unsigned short sSizeY;
+    unsigned short dPosX;
+    unsigned short dPosY;
+    unsigned short dSizeX;
+    unsigned short dSizeY;
+    unsigned char DispType;
+} MOVIE_DEFINITION;
+
+typedef struct SOUND_ADX {
+    unsigned int MaxChannel;
+    unsigned int MaxSampleRate;
+    int RecoverType;
+    int ReloadSector;
+} SOUND_ADX;
+
+typedef struct SOUND_COMMAND {
+    int MaxCommand;
+    unsigned char ComTbl[2];
+} SOUND_COMMAND;
+
+typedef struct GS_SLOT_INFO {
+    unsigned char Flag;
+} GS_SLOT_INFO;
+
+typedef struct ROOM_SOUND_SETTINGS {
+    char VolPlayerVoice;     // Volume for player voice
+    char VolPlayerAction;    // Volume for player actions
+    char VolWeaponSe;        // Volume for weapon sound effects
+    char VolCartridgeSe;     // Volume for cartridge sound effects
+    char VolEnemySe;         // Volume for enemy sound effects
+    char VolBgSe0;           // Volume for background sound effect 0
+    char VolBgSe1;           // Volume for background sound effect 1
+    char VolObjectSe;        // Volume for object sound effects
+    char VolEventSe;         // Volume for event sound effects
+    char RoomFxLevel;        // Room FX level (reverb or environmental effects)
+    char RoomFxProg;         // Room FX program (which FX to apply)
+    char MaxEventSeSlots;    // Maximum event sound effect slots
+    char MaxObjectSeSlots;   // Maximum object sound effect slots
+    char Dummy1;             // Reserved or unused
+    char Dummy2;             // Reserved or unused
+    char Dummy3;             // Reserved or unused
+} ROOM_SOUND_SETTINGS;
+
+typedef struct SND_COM_FUNC {
+    void (*FuncName)(int);
+} SND_COM_FUNC;
 
 int PatId[4];
-AFS_PARTITION SoundAfsPatDef[8];
-_anon40 AdxDef[2];
+SOUND_AFS_PARTITION SoundAfsPatDef[8];
+SOUND_ADX AdxDef[2];
 SDE_DATA_TYPE SdTypeDef[5];
 int PlayerFootStepSwitch[3];
 int SystemSeSlotSwitch;
@@ -1272,28 +195,28 @@ int ReadFileRequestFlag;
 int FileReadStatus;
 int KeyReadSwitch;
 extern SYS* sys;
-unsigned int DiscOpenTrayFlag;
-unsigned int StatusUpdateCounter;
-tag_SYS_BT_SYSTEMID BootDiscSystemId;
+extern unsigned int DiscOpenTrayFlag;
+extern unsigned int StatusUpdateCounter;
+SYS_BT_SYSTEMID BootDiscSystemId;
 extern HardwareScreenInfo* hws;
-_anon41 SoundCommand;
+SOUND_COMMAND SoundCommand;
 MOVIE_INFO MovieInfo;
 unsigned char* pConfigWork;
 unsigned short* pSpqList;
 unsigned char* pSoundAfs;
 char SpqFileName[32];
 int EventVibrationMode;
-_anon4 BgSePrmBuf[2];
+SOUND_REQUEST BgSePrmBuf[2];
 int ReqFadeBgSe[2];
 int ReqFadeBgmNo;
 int NextBgmVolume;
 int CurrentBgmVolume;
 unsigned char* pSdReadBuf;
-_anon22* pSpqHeader;
+SOUND_DATA* pSpqHeader;
 int AddFxLevel;
 int CurrentFxLevel;
 int RoomFxLevel;
-_anon49 Room_SoundEnv;
+ROOM_SOUND_SETTINGS Room_SoundEnv;
 char FxLevelTimer;
 unsigned short SpqKeyCode;
 char CurrentDoorNo;
@@ -1306,44 +229,44 @@ extern Camera cam;
 extern ROOM* rom;
 char CurrentRoomFxLevel;
 int AngBak;
-_anon34 RequestInfo;
+SOUND_SLOT RequestInfo;
 NJS_POINT3 CameraPos;
-_anon44 GsSlotInfoAx[2];
-_anon35 ObjectInfo[16];
-_anon44 GsSlotInfoMi[8];
-_anon44 GsSlotInfoSe[20];
+GS_SLOT_INFO GsSlotInfoAx[2];
+SOUND_OBJECT ObjectInfo[16];
+GS_SLOT_INFO GsSlotInfoMi[8];
+GS_SLOT_INFO GsSlotInfoSe[20];
 NJS_POINT3 PlayerPos;
 int xAng;
 int xVol;
 int xPan;
-SDS_PORT_REF** MidiHandle[0];
+extern SDS_PORT_REF** MidiHandle[8];
 int StartInitScriptFlag;
-_anon19 MidiInfo[0];
-_anon2 EnemyInfo[128];
-_anon0 EnemySlotInfo[6];
+extern SND_MIDI_INFO MidiInfo[8];
+SND_ENEMY_INFO EnemyInfo[128];
+SND_ENEMY_SLOT EnemySlotInfo[6];
 int MaxObjectReqList;
 unsigned char ObjectReqList[16];
 unsigned int AdxPlayFlag[2];
 char CurrentRoomFxProgNo;
 int MaxRequestList;
 unsigned char RequestList[128];
-_anon11 ObjectSlotInfo[3];
-_anon65 SdComFuncTbl[10];
+SND_OBJECT_SLOT ObjectSlotInfo[3];
+SND_COM_FUNC SdComFuncTbl[10];
 extern BH_PWORK* plp;
 unsigned char* DestReadPtr;
 int GenAdxfSlot;
 int OpenDriveTrayFlag;
 unsigned char MovieTypeDef[22];
 short MovieVolDef[22];
-_anon37 MovieDef[4];
+MOVIE_DEFINITION MovieDef[4];
 extern REMOTE_INPUT rmi;
 extern Controller Pad[4];
-int CurrentPortId;
-_anon26 VibP[32];
+extern int CurrentPortId;
+VIBPARAM VibP[32];
 char VibFlag[5];
 int SystemAdjustFlag;
 float xDist;
-_anon6 NextSoundInfo;
+SOUND_TRANSITION NextSoundInfo;
 
 void bhReleaseFreeMemory(void* mp);
 void ExitApplication();
@@ -1380,7 +303,7 @@ void Set3dSoundFlag(int Type, int SlotNo, unsigned int Flag);
 void Reset3dSoundFlag();
 void SetUserSoundVolume(int Type, int SlotNo, int StartVol, int LastVol, int Frame);
 void SetUserSoundPan(int Type, int SlotNo, int StartPan, int LastPan, int Frame);
-void PlayGameSe4Event(_anon25* gp, NJS_POINT3* pPos, int FloorType, int SeType);
+void PlayGameSe4Event(SOUND_EFFECT* gp, NJS_POINT3* pPos, int FloorType, int SeType);
 void CallSystemSeBasic(int SeNo, int Volume, int FxLevel);
 void CallSystemSeEx(int SeNo, int Volume);
 void CallSystemSe(int SeNo);
@@ -1436,7 +359,7 @@ void ExecEnemySeManager();
 int SearchPlayingObjectSeEx(int ObjectNo, int Mode);
 int SearchPlayingObjectSe(int ObjectNo);
 int SearchFreeObjectSeSlot();
-void CallObjectSe2(unsigned int SlotNo, _anon35* oip, int Flag);
+void CallObjectSe2(unsigned int SlotNo, SOUND_OBJECT* oip, int Flag);
 void RegistObjectSlot(int SlotNo, int ObjectNo, int SeNo);
 void ResetObjectSeInfo();
 void ExecObjectSeManager();
@@ -1535,7 +458,7 @@ int GetBootDiscId()
 // Start address: 0x292500
 void InitSofdecSystem(int Mode)
 {
-	_anon30 iprm;
+	MWS_PLY_INIT_SFD iprm;
 	// Line 308, Address: 0x292500, Func Offset: 0
 	// Line 312, Address: 0x292510, Func Offset: 0x10
 	// Line 313, Address: 0x292520, Func Offset: 0x20
@@ -2297,7 +1220,7 @@ void SetUserSoundPan(int Type, int SlotNo, int StartPan, int LastPan, int Frame)
 
 // 
 // Start address: 0x294400
-void PlayGameSe4Event(_anon25* gp, NJS_POINT3* pPos, int FloorType, int SeType)
+void PlayGameSe4Event(SOUND_EFFECT* gp, NJS_POINT3* pPos, int FloorType, int SeType)
 {
 	int Flag;
 	// Line 1947, Address: 0x294400, Func Offset: 0
@@ -2717,7 +1640,7 @@ void CallDoorSe(unsigned int No)
 void RequestEnemySeBasic(int EnemyNo, NJS_POINT3* pPos, int SeNo, int Flag, int FadeRate)
 {
 	char VolDownTbl[8];
-	_anon2* eip;
+	SND_ENEMY_INFO* eip;
 	// Line 2550, Address: 0x295110, Func Offset: 0
 	// Line 2552, Address: 0x295124, Func Offset: 0x14
 	// Line 2550, Address: 0x29512c, Func Offset: 0x1c
@@ -2775,7 +1698,7 @@ void RequestEnemySeEx(int EnemyNo, NJS_POINT3* pPos, int SeNo, int FadeRate)
 // Start address: 0x295260
 int ChechPlayEnemySe(int EnemyNo, int SeNo)
 {
-	_anon0* esp;
+	SND_ENEMY_SLOT* esp;
 	int i;
 	// Line 2634, Address: 0x295260, Func Offset: 0
 	// Line 2635, Address: 0x29526c, Func Offset: 0xc
@@ -2794,7 +1717,7 @@ int ChechPlayEnemySe(int EnemyNo, int SeNo)
 // Start address: 0x2952d0
 void AllStopEnemySe()
 {
-	_anon0* esp;
+	SND_ENEMY_SLOT* esp;
 	int i;
 	// Line 2658, Address: 0x2952d0, Func Offset: 0
 	// Line 2662, Address: 0x2952e0, Func Offset: 0x10
@@ -2911,7 +1834,7 @@ int StopNativeEventSe(int SlotNo)
 // Start address: 0x2955f0
 void RequestObjectSeEx(int ObjectNo, NJS_POINT3* pPos, int Type)
 {
-	_anon35* oip;
+	SOUND_OBJECT* oip;
 	// Line 2851, Address: 0x2955f0, Func Offset: 0
 	// Line 2854, Address: 0x295600, Func Offset: 0x10
 	// Line 2855, Address: 0x295608, Func Offset: 0x18
@@ -2931,7 +1854,7 @@ void RequestObjectSeEx(int ObjectNo, NJS_POINT3* pPos, int Type)
 // Start address: 0x2956a0
 void RegistObjectSe(int ObjectNo, NJS_POINT3* pPos, int SeNo, int Prio)
 {
-	_anon35* oip;
+	SOUND_OBJECT* oip;
 	int i;
 	// Line 2904, Address: 0x2956a0, Func Offset: 0
 	// Line 2909, Address: 0x2956a8, Func Offset: 0x8
@@ -2963,7 +1886,7 @@ void RegistObjectSe(int ObjectNo, NJS_POINT3* pPos, int SeNo, int Prio)
 // Start address: 0x295760
 void FreeObjectSe(int ObjectNo)
 {
-	_anon35* oip;
+	SOUND_OBJECT* oip;
 	int Flag;
 	int i;
 	// Line 2941, Address: 0x295760, Func Offset: 0
@@ -3203,7 +2126,7 @@ void SetRoomSoundFxLevelEx()
 // Start address: 0x295de0
 int SearchPlayingEnemySe(int EnemyNo, int Attrib)
 {
-	_anon0* esp;
+	SND_ENEMY_SLOT* esp;
 	int i;
 	// Line 3267, Address: 0x295de0, Func Offset: 0
 	// Line 3268, Address: 0x295dec, Func Offset: 0xc
@@ -3220,7 +2143,7 @@ int SearchPlayingEnemySe(int EnemyNo, int Attrib)
 // Start address: 0x295e40
 int SearchFreeEnemySeSlot()
 {
-	_anon0* esp;
+	SND_ENEMY_SLOT* esp;
 	int i;
 	// Line 3285, Address: 0x295e40, Func Offset: 0
 	// Line 3286, Address: 0x295e4c, Func Offset: 0xc
@@ -3236,7 +2159,7 @@ int SearchFreeEnemySeSlot()
 int CheckPlaySameSe(int EnemyNo, int SeNo, int Flag)
 {
 	int c;
-	_anon0* esp;
+	SND_ENEMY_SLOT* esp;
 	int i;
 	// Line 3301, Address: 0x295e80, Func Offset: 0
 	// Line 3302, Address: 0x295e90, Func Offset: 0x10
@@ -3291,7 +2214,7 @@ void CallEnemySeMain(unsigned int SlotNo, int SeNo, char Pan, char Vol, int Flag
 // Start address: 0x296050
 void RegistEnemySlot(int SlotNo, int EnemyNo, int SeNo)
 {
-	_anon0* esp;
+	SND_ENEMY_SLOT* esp;
 	// Line 3358, Address: 0x296050, Func Offset: 0
 	// Line 3359, Address: 0x296058, Func Offset: 0x8
 	// Line 3363, Address: 0x296068, Func Offset: 0x18
@@ -3323,9 +2246,9 @@ void ExecEnemySeManager()
 	unsigned char a;
 	unsigned char* rlp2;
 	unsigned char* rlp1;
-	_anon2* eip2;
-	_anon2* eip;
-	_anon0* esp;
+	SND_ENEMY_INFO* eip2;
+	SND_ENEMY_INFO* eip;
+	SND_ENEMY_SLOT* esp;
 	int j;
 	int i;
 	// Line 3382, Address: 0x2960b0, Func Offset: 0
@@ -3415,7 +2338,7 @@ void ExecEnemySeManager()
 // Start address: 0x296470
 int SearchPlayingObjectSeEx(int ObjectNo, int Mode)
 {
-	_anon11* osp;
+	SND_OBJECT_SLOT* osp;
 	int i;
 	// Line 3526, Address: 0x296470, Func Offset: 0
 	// Line 3527, Address: 0x296488, Func Offset: 0x18
@@ -3440,7 +2363,7 @@ int SearchPlayingObjectSe(int ObjectNo)
 // Start address: 0x2964e0
 int SearchFreeObjectSeSlot()
 {
-	_anon11* osp;
+	SND_OBJECT_SLOT* osp;
 	int i;
 	// Line 3550, Address: 0x2964e0, Func Offset: 0
 	// Line 3551, Address: 0x2964f8, Func Offset: 0x18
@@ -3453,7 +2376,7 @@ int SearchFreeObjectSeSlot()
 
 // 
 // Start address: 0x296530
-void CallObjectSe2(unsigned int SlotNo, _anon35* oip, int Flag)
+void CallObjectSe2(unsigned int SlotNo, SOUND_OBJECT* oip, int Flag)
 {
 	// Line 3560, Address: 0x296530, Func Offset: 0
 	// Line 3561, Address: 0x296544, Func Offset: 0x14
@@ -3498,7 +2421,7 @@ void CallObjectSe2(unsigned int SlotNo, _anon35* oip, int Flag)
 // Start address: 0x296730
 void RegistObjectSlot(int SlotNo, int ObjectNo, int SeNo)
 {
-	_anon11* osp;
+	SND_OBJECT_SLOT* osp;
 	// Line 3608, Address: 0x296730, Func Offset: 0
 	// Line 3609, Address: 0x296738, Func Offset: 0x8
 	// Line 3611, Address: 0x296748, Func Offset: 0x18
@@ -3528,8 +2451,8 @@ void ResetObjectSeInfo()
 void ExecObjectSeManager()
 {
 	int SlotNo;
-	_anon11* osp;
-	_anon35* oip;
+	SND_OBJECT_SLOT* osp;
+	SOUND_OBJECT* oip;
 	int j;
 	int i;
 	// Line 3630, Address: 0x2967b0, Func Offset: 0

@@ -30,7 +30,7 @@ Drive* binfo_;
 unsigned char* img2p;
 unsigned char* img3p;
 unsigned char* img4p;
-unsigned int palbuf[0];
+extern unsigned int palbuf[4096];
 extern ROOM* rom;
 LOAD_SCREEN* pLoad;
 LOAD_SCREEN Load;

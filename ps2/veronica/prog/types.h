@@ -1592,3 +1592,35 @@ typedef struct tagNJS_SCRVECTOR {
 typedef struct NJS_MATRIX_WRAP {
     NJS_MATRIX m; // Matrix
 } NJS_MATRIX_WRAP;
+
+typedef struct VIBPARAM {
+	unsigned char flag; // Vibration flag
+	char power; // Vibration power
+	unsigned char freq; // Vibration frequency
+	unsigned char inc; // Vibration increment
+} VIBPARAM;
+
+typedef struct SOUND_AFS_PARTITION {
+    char* AfsFileName;        // Name of the AFS file
+    int PartitionId;          // Partition ID
+    int MaxInsideFileNum;     // Maximum number of files inside the partition
+    unsigned char* pInfoWork; // Pointer to information work buffer
+} SOUND_AFS_PARTITION;
+
+// Remote input structure
+typedef struct REMOTE_INPUT {
+    unsigned char* put_ptr; // Put pointer
+    unsigned char* get_ptr; // Get pointer
+    int putsize; // Size of data to put
+    int getsize; // Size of data to get
+    int readrest; // Remaining read size
+    int writerest; // Remaining write size
+    int count; // Data count
+    int proceed; // Proceed flag
+    unsigned int button_old; // Previous button state
+    unsigned char cdata[32]; // Controller data
+    int iMovieState; // Movie state
+    int iMovieFrame; // Movie frame count
+    unsigned int uiContFlag; // Controller flag
+    unsigned int MVCancelButton; // Cancel button mask
+} REMOTE_INPUT;

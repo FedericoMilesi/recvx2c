@@ -1,4 +1,4 @@
-typedef struct _anon0;
+typedef struct SND_MIDI_INFO;
 typedef struct SDS_MEMBLK;
 typedef struct SDS_PORT_REF;
 typedef struct _anon1;
@@ -10,12 +10,12 @@ typedef void(*type_1)();
 typedef void(*type_6)(void*);
 
 typedef unsigned int type_0[16];
-typedef _anon0 type_2[8];
+typedef SND_MIDI_INFO type_2[8];
 typedef SDS_PORT_REF** type_3[8];
-typedef _anon0 type_4[20];
+typedef SND_MIDI_INFO type_4[20];
 typedef SDS_PORT_REF** type_5[20];
 
-struct _anon0
+struct SND_MIDI_INFO
 {
 	unsigned int Flag;
 	int FadeFunc;
@@ -100,11 +100,11 @@ SDS_MEMBLK* SdMemBlk;
 void(*TransWaitCallBackFunction)();
 char SdcMasterVolume;
 char SdcGdDaVolume;
-_anon0 MidiInfo[8];
+SND_MIDI_INFO MidiInfo[8];
 SDS_PORT_REF** MidiHandle[8];
 char SdcSeDefaultVolume;
 char SdcMidiDefaultVolume;
-_anon0 SeInfo[20];
+SND_MIDI_INFO SeInfo[20];
 SDS_PORT_REF** SeHandle[20];
 
 void TransWaitCallBackFunction();
@@ -807,7 +807,7 @@ void StopFxProgram()
 // Start address: 0x28ff80
 void RequestMidiFadeFunction(int SlotNo, int Func, short Timer)
 {
-	_anon0* mp;
+	SND_MIDI_INFO* mp;
 	// Line 652, Address: 0x28ff80, Func Offset: 0
 	// Line 653, Address: 0x28ff98, Func Offset: 0x18
 	// Line 655, Address: 0x28ffb8, Func Offset: 0x38
@@ -827,7 +827,7 @@ void RequestMidiFadeFunction(int SlotNo, int Func, short Timer)
 // Start address: 0x290090
 void RequestMidiFadeFunctionEx(int SlotNo, int StartVol, int LastVol, int Frame)
 {
-	_anon0* mp;
+	SND_MIDI_INFO* mp;
 	// Line 680, Address: 0x290090, Func Offset: 0
 	// Line 683, Address: 0x2900a0, Func Offset: 0x10
 	// Line 680, Address: 0x2900bc, Func Offset: 0x2c
@@ -859,7 +859,7 @@ void StopFadeMidi(int SlotNo)
 // Start address: 0x290180
 void RequestSeFadeFunction(int SlotNo, int Func, short Timer)
 {
-	_anon0* sp;
+	SND_MIDI_INFO* sp;
 	// Line 708, Address: 0x290180, Func Offset: 0
 	// Line 709, Address: 0x290198, Func Offset: 0x18
 	// Line 711, Address: 0x2901b8, Func Offset: 0x38
@@ -879,7 +879,7 @@ void RequestSeFadeFunction(int SlotNo, int Func, short Timer)
 // Start address: 0x290290
 void RequestSeFadeFunctionEx(int SlotNo, int StartVol, int LastVol, int Frame)
 {
-	_anon0* sp;
+	SND_MIDI_INFO* sp;
 	// Line 735, Address: 0x290290, Func Offset: 0
 	// Line 738, Address: 0x2902a0, Func Offset: 0x10
 	// Line 735, Address: 0x2902bc, Func Offset: 0x2c
@@ -920,8 +920,8 @@ int CheckFadeEndSe(int SlotNo)
 // Start address: 0x2903b0
 int ExecSoundFadeManager()
 {
-	_anon0* sp;
-	_anon0* mp;
+	SND_MIDI_INFO* sp;
+	SND_MIDI_INFO* mp;
 	int ReturnCode;
 	int i;
 	// Line 764, Address: 0x2903b0, Func Offset: 0
@@ -963,7 +963,7 @@ int ExecSoundFadeManager()
 // Start address: 0x290560
 void RequestMidiPanFunctionEx(int SlotNo, int StartPan, int LastPan, int Frame)
 {
-	_anon0* mp;
+	SND_MIDI_INFO* mp;
 	// Line 817, Address: 0x290560, Func Offset: 0
 	// Line 820, Address: 0x290570, Func Offset: 0x10
 	// Line 817, Address: 0x29058c, Func Offset: 0x2c
@@ -986,7 +986,7 @@ void RequestMidiPanFunctionEx(int SlotNo, int StartPan, int LastPan, int Frame)
 // Start address: 0x290620
 void RequestSePanFunctionEx(int SlotNo, int StartPan, int LastPan, int Frame)
 {
-	_anon0* sp;
+	SND_MIDI_INFO* sp;
 	// Line 836, Address: 0x290620, Func Offset: 0
 	// Line 839, Address: 0x290630, Func Offset: 0x10
 	// Line 836, Address: 0x29064c, Func Offset: 0x2c
@@ -1009,7 +1009,7 @@ void RequestSePanFunctionEx(int SlotNo, int StartPan, int LastPan, int Frame)
 // Start address: 0x2906e0
 int ExecSoundPanManager()
 {
-	_anon0* sp;
+	SND_MIDI_INFO* sp;
 	int ReturnCode;
 	int i;
 	// Line 855, Address: 0x2906e0, Func Offset: 0
