@@ -24,13 +24,8 @@ void njInitSystem(int mode, int frame, int count)
     // Func End, Address: 0x2e13a8, Func Offset: 0x8
 }
 
-//
-// Start address: 0x2e13b0
-void njInitVertexBuffer(Sint32 op, Sint32 om, Sint32 tp, Sint32 tm, Sint32 pt)
-{
-    // Line 119, Address: 0x2e13b0, Func Offset: 0
-    // Func End, Address: 0x2e13b8, Func Offset: 0x8
-}
+/* empty */
+void njInitVertexBuffer() { } // Line 119, Address: 0x2e13b0, Func Offset: 0
 
 //
 // Start address: 0x2e13c0
@@ -159,13 +154,8 @@ void njTextureFilterMode(int mode)
     // Func End, Address: 0x2e169c, Func Offset: 0xc
 }
 
-//
-// Start address: 0x2e16a0
-void njPolygonCullingMode(Int mode)
-{
-    // Line 306, Address: 0x2e16a0, Func Offset: 0
-    // Func End, Address: 0x2e16a8, Func Offset: 0x8
-}
+/* empty */
+void njPolygonCullingMode() { } // Line 306, Address: 0x2e16a0, Func Offset: 0
 
 //
 // Start address: 0x2e16b0
@@ -220,13 +210,8 @@ void njColorBlendingMode(int target, int mode)
     // Func End, Address: 0x2e1894, Func Offset: 0x34
 }
 
-//
-// Start address: 0x2e18a0
-void njTextureShadingMode(Int mode)
-{
-    // Line 553, Address: 0x2e18a0, Func Offset: 0
-    // Func End, Address: 0x2e18a8, Func Offset: 0x8
-}
+/* empty */
+void njTextureShadingMode() { } // Line 553, Address: 0x2e18a0, Func Offset: 0
 
 //
 // Start address: 0x2e18b0

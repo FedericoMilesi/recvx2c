@@ -410,20 +410,14 @@ void ExitApplication() { // Line 241, Address: 0x292430, Func Offset: 0
     njUserExit();
 }
 
-// 
-// Start address: 0x292440
-void QuickGetDiscTrayStatus()
-{
-	// Line 245, Address: 0x292440, Func Offset: 0
-	// Line 246, Address: 0x292444, Func Offset: 0x4
-	// Line 245, Address: 0x292448, Func Offset: 0x8
-	// Line 246, Address: 0x29244c, Func Offset: 0xc
-	// Line 247, Address: 0x292450, Func Offset: 0x10
-	// Line 248, Address: 0x292458, Func Offset: 0x18
-	// Line 249, Address: 0x29246c, Func Offset: 0x2c
-	// Line 251, Address: 0x292474, Func Offset: 0x34
-	// Func End, Address: 0x292480, Func Offset: 0x40
-}
+/* 100% match */
+void QuickGetDiscTrayStatus() { // Line 245, Address: 0x292440, 0x292448 Func Offset: 0, 0x8
+    StatusUpdateCounter = 1; // Line 246, Address: 0x292444, 0x29244c Func Offset: 0x4, 0xc
+    njWaitVSync(); // Line 247, Address: 0x292450, Func Offset: 0x10
+    if (DiscOpenTrayFlag == -1) { // Line 248, Address: 0x292458, Func Offset: 0x18
+        ExitApplication(DiscOpenTrayFlag); // Line 249, Address: 0x29246c, Func Offset: 0x2c
+    }
+} // Line 251, Address: 0x292474, Func Offset: 0x34
 
 // 
 // Start address: 0x292480
@@ -2814,8 +2808,8 @@ int GetInsideFileSize(unsigned int PartitionId, unsigned int FileId)
 }
 
 /* 100% match */
-int GetReadFileStatus() { // Line 4415, Address: 0x2973e0
-    return FileReadStatus; // Line 4416, Address: 0x2973e4
+int GetReadFileStatus() { // Line 4415, Address: 0x2973e0, Func Offset: 0
+    return FileReadStatus; // Line 4416, Address: 0x2973e4, Func Offset: 0x4
 }
 
 // 
@@ -2925,7 +2919,7 @@ void PlayStopMovieEx(int Mode)
 }
 
 /* 100% match */
-void PlayStopMovie() { // Line 4640, Address: 0x2978e0
+void PlayStopMovie() { // Line 4640, Address: 0x2978e0, Func Offset: 0
     PlayStopMovieEx(0);
 }
 
@@ -3012,8 +3006,8 @@ int PlayMovieMain(int parameter /* UNUSED */)
 }
 
 /* 100% match */
-void SetEventVibrationMode(int Mode) { // Line 4840, Address: 0x297c10
-    EventVibrationMode = Mode; // Line 4841, Address: 0x297c14
+void SetEventVibrationMode(int Mode) { // Line 4840, Address: 0x297c10, Func Offset: 0
+    EventVibrationMode = Mode; // Line 4841, Address: 0x297c14, Func Offset: 0x4
 }
 
 // 
@@ -3044,57 +3038,48 @@ void StartVibrationBasic(int PortNo, int AtrbId, int VibNo)
 	// Func End, Address: 0x297ce8, Func Offset: 0xc8
 }
 
-// 
-// Start address: 0x297cf0
-void StartVibrationEx(int AtrbId, int VibNo)
-{
-	// Line 4886, Address: 0x297cf4, Func Offset: 0x4
-	// Func End, Address: 0x297d04, Func Offset: 0x14
-}
-
-// 
-// Start address: 0x297d10
-void StopVibrationBasic(int PortNo)
-{
-	// Line 4897, Address: 0x297d10, Func Offset: 0
-	// Func End, Address: 0x297d24, Func Offset: 0x14
-}
-
-// 
-// Start address: 0x297d30
-void StopVibrationEx()
-{
-	// Line 4907, Address: 0x297d30, Func Offset: 0
-	// Func End, Address: 0x297d3c, Func Offset: 0xc
+/* 100% match */
+void StartVibrationEx(int AtrbId, int VibNo) { // Line 4886, Address: 0x297cf4, Func Offset: 0x4
+    StartVibrationBasic(CurrentPortId, AtrbId, VibNo);
 }
 
 /* 100% match */
-void SetAdjustDisplay() { // Line 4918, Address: 0x297d40
-    SystemAdjustFlag = 1; // Line 4919, Address: 0x297d48
+void StopVibrationBasic(int PortNo) { // Line 4897, Address: 0x297d10, Func Offset: 0
+    StopVibration((PortNo * 6) + 2);
 }
 
 /* 100% match */
-void RequestAdjustDisplay(int AdjustX, int AdjustY) { // Line 4923, Address: 0x297d50
-    sys->adjust_x = AdjustX; sys->adjust_y = AdjustY; // Line 4924, Address: 0x297d5c
-    SetAdjustDisplay(); // Line 4925, Address: 0x297d64
+void StopVibrationEx() { // Line 4907, Address: 0x297d30, Func Offset: 0
+    StopVibrationBasic(CurrentPortId);
 }
 
 /* 100% match */
-void ExecAdjustDisplay() { // Line 4929, Address: 0x297d70
-    if (SystemAdjustFlag != 0) { // Line 4930, Address: 0x297d78
-        njAdjustDisplay(sys->adjust_x, sys->adjust_y + 1); // Line 4931, Address: 0x297d88
-        SystemAdjustFlag = 0; // Line 4932, Address: 0x297da0
+void SetAdjustDisplay() { // Line 4918, Address: 0x297d40, Func Offset: 0
+    SystemAdjustFlag = 1; // Line 4919, Address: 0x297d48, Func Offset: 0x8
+}
+
+/* 100% match */
+void RequestAdjustDisplay(int AdjustX, int AdjustY) { // Line 4923, Address: 0x297d50, Func Offset: 0
+    sys->adjust_x = AdjustX; sys->adjust_y = AdjustY; // Line 4924, Address: 0x297d5c, Func Offset: 0xc
+    SetAdjustDisplay(); // Line 4925, Address: 0x297d64, Func Offset: 0x14
+}
+
+/* 100% match */
+void ExecAdjustDisplay() { // Line 4929, Address: 0x297d70, Func Offset: 0
+    if (SystemAdjustFlag != 0) { // Line 4930, Address: 0x297d78, Func Offset: 0x8
+        njAdjustDisplay(sys->adjust_x, sys->adjust_y + 1); // Line 4931, Address: 0x297d88, Func Offset: 0x18
+        SystemAdjustFlag = 0; // Line 4932, Address: 0x297da0, Func Offset: 0x30
     }
-} // Line 4934, Address: 0x297da8
+} // Line 4934, Address: 0x297da8, Func Offset: 0x38
 
 /* empty */
-void InitPlayLogSystem() { } // Line 4958, Address: 0x297dc0
+void InitPlayLogSystem() { } // Line 4958, Address: 0x297dc0, Func Offset: 0
 
 /* empty */
-void ExitPlayLogSystem() { } // Line 4970, Address: 0x297dd0
+void ExitPlayLogSystem() { } // Line 4970, Address: 0x297dd0, Func Offset: 0
 
 /* empty */
-void ReadPlayLog() { } // Line 4987, Address: 0x297de0
+void ReadPlayLog() { } // Line 4987, Address: 0x297de0, Func Offset: 0
 
 /* empty */
-void WritePlayLog() { } // Line 5008, Address: 0x297df0
+void WritePlayLog() { } // Line 5008, Address: 0x297df0, Func Offset: 0

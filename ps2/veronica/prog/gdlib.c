@@ -167,10 +167,10 @@ unsigned int InitGdSystem() { // Line 137, Address: 0x28ea00
     return 1; // Line 167, Address: 0x28eb10
 } // Line 168, Address: 0x28eb14
 
-/* 96.67% match */
+/* 100% match */
 unsigned int InitGdSystemEx(unsigned int MaxDirNum) {
-    MaxDirectoryEntry = MaxDirNum; // Line 172, Address: 0x28eb30
-    InitGdSystem(); // Line 173, Address: 0x28eb34
+    MaxDirectoryEntry = MaxDirNum; // Line 172, Address: 0x28eb30, Func Offset: 0
+    InitGdSystem(); // Line 173, Address: 0x28eb34, Func Offset: 0x4
 }
 
 /* 100% match */

@@ -641,22 +641,77 @@ void bhFirstGameStart()
 	// Func End, Address: 0x132b70, Func Offset: 0x310
 }
 
-// 
-// Start address: 0x132b70
-void bhSysCallPad()
-{
-	// Line 935, Address: 0x132b70, Func Offset: 0
-	// Line 936, Address: 0x132b78, Func Offset: 0x8
-	// Line 937, Address: 0x132b94, Func Offset: 0x24
-	// Line 938, Address: 0x132b9c, Func Offset: 0x2c
-	// Line 941, Address: 0x132bb8, Func Offset: 0x48
-	// Line 943, Address: 0x132be0, Func Offset: 0x70
-	// Line 946, Address: 0x132bec, Func Offset: 0x7c
-	// Line 947, Address: 0x132c24, Func Offset: 0xb4
-	// Line 952, Address: 0x132c48, Func Offset: 0xd8
-	// Line 1004, Address: 0x132c6c, Func Offset: 0xfc
-	// Func End, Address: 0x132c78, Func Offset: 0x108
-}
+/* 100% match */
+void bhSysCallPad() { // Line 935, Address: 0x132b70, Func Offset: 0
+    if ((sys->ss_flg & 0x40000000)) { // Line 936, Address: 0x132b78, Func Offset: 0x8
+        sys->sp_flg = -1; // Line 937, Address: 0x132b94, Func Offset: 0x24
+        sys->ss_flg &= ~0x40000000; // Line 938, Address: 0x132b9c, Func Offset: 0x2c
+    }
+    
+    if ((sys->sp_flg & 0x20)) { // Line 941, Address: 0x132bb8, Func Offset: 0x48
+        bhSetPad();
+    } else { // Line 943, Address: 0x132be0, Func Offset: 0x70
+        sys->pad_on = 0;
+    }
+    if (!(sys->cb_flg & 0x4)) { // Line 946, Address: 0x132bec, Func Offset: 0x7c
+        if (((sys->tk_flg & 0x1000)) && (!(sys->ts_flg & 0x1000))) { // Line 947, Address: 0x132c24, Func Offset: 0xb4
+            goto block;
+        }
+    } else {
+block:
+        sys->pad_on &= 0x1188F; // Line 952, Address: 0x132c48, Func Offset: 0xd8
+        sys->pad_ps &= 0x1188F;
+    }
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+} // Line 1004, Address: 0x132c6c, Func Offset: 0xfc
 
 // 
 // Start address: 0x132c80
