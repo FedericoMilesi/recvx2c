@@ -51,10 +51,15 @@ def replace_struct_name(file_content: str, structure_regex: str, replacement: st
 # 3. Open/Closed Principle: Folder traversal logic is separated from file processing
 def scan_folder_and_process_files(folder_path: str, file_processor: Callable[[str], None]) -> None:
     """Scans a folder and processes each file using the provided file_processor function."""
+    # Define the allowed file extensions
+    allowed_extensions = {".c", ".h", ".cpp", ".hpp"}
+
     for root, dirs, files in os.walk(folder_path):
         for file_name in files:
             file_path = os.path.join(root, file_name)
-            file_processor(file_path)
+            # Check if the file has an allowed extension
+            if os.path.splitext(file_name)[1] in allowed_extensions:
+                file_processor(file_path)
 
 
 # 4. Dependency Injection: Higher-level logic passes in the behavior
