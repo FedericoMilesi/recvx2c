@@ -10,9 +10,7 @@ extern int pd_port; /* UNUSED */
 SYS* sys;
 extern ROOM* rom; /* UNUSED */
 extern BH_PWORK* plp; /* UNUSED */
-typedef void(*fn)(SYS*); // not originally outputted by dwarf2cpp
-fn bhSysTaskJumpTab[23]; // modified, below is the original definition 
-//void(*bhSysTaskJumpTab)()[23];
+void(*bhSysTaskJumpTab[23])();
 NJS_TEXMEMLIST tbuf[256];
 NJS_MATRIX crmat;
 NJS_VIEW view;
