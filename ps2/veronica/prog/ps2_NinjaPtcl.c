@@ -3,7 +3,7 @@
 unsigned int Ps2_ptcl_poly_col;
 int Ps2_ptcl_spr_flag;
 unsigned int Ps2_ptcl_spr_col;
-NJS_SCREEN _nj_screen_;
+extern NJS_SCREEN _nj_screen_;
 
 void njPtclPolygonStart(unsigned int col);
 void njPtclPolygonEnd();

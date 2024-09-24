@@ -1,9 +1,9 @@
 #include "types.h"
+#include <libscf.h>
 
 void syRtcFinish();
 int syRtcGetDate(SYS_RTC_DATE* date);
 int syRtcInit();
-
 
 
 

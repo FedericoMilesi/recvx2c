@@ -1,47 +1,16 @@
-typedef struct _anon0;
-
-
-
-typedef char type_0[2];
-typedef unsigned char type_1[3];
-typedef _anon0 type_2[20];
-typedef unsigned char type_3[6];
-
-struct _anon0
-{
-	unsigned char be_flag;
-	unsigned char level;
-	unsigned char start;
-	unsigned char end;
-	unsigned short delay;
-	unsigned short time;
-	unsigned short add;
-	short f_level;
-	short f_add;
-	char data[2];
-};
-
-
-
-
-
-
-
-
-
-
+#include "types.h"
 
 unsigned char Pad_vibe_call_num;
 unsigned char Ps2_pad_motor[6];
-_anon0 Pad_act[20];
+PAD_ACTION Pad_act[20];
 
 int pdVibMxIsReady();
 int pdVibMxSetStopTime();
 int pdVibMxStart(PDS_VIBPARAM* param);
 int pdVibMxStop();
 void Ps2_pad_actuater();
-void Ps2_pad_act_start(_anon0* pPact);
-void Ps2_pad_act_stop(_anon0* pPact);
+void Ps2_pad_act_start(PAD_ACTION* pPact);
+void Ps2_pad_act_stop(PAD_ACTION* pPact);
 void Ps2_pad_act_all_stop();
 
 // 
@@ -81,7 +50,7 @@ int pdVibMxSetStopTime()
 // Start address: 0x2dab80
 int pdVibMxStart(PDS_VIBPARAM* param)
 {
-	_anon0* pPact;
+	PAD_ACTION* pPact;
 	unsigned char cnt;
 	// Line 148, Address: 0x2dab80, Func Offset: 0
 	// Line 159, Address: 0x2dab88, Func Offset: 0x8
@@ -120,7 +89,7 @@ int pdVibMxStop()
 void Ps2_pad_actuater()
 {
 	unsigned int cnt;
-	_anon0* pPact;
+	PAD_ACTION* pPact;
 	// Line 240, Address: 0x2dac60, Func Offset: 0
 	// Line 245, Address: 0x2dac70, Func Offset: 0x10
 	// Line 241, Address: 0x2dac78, Func Offset: 0x18
@@ -149,7 +118,7 @@ void Ps2_pad_actuater()
 
 // 
 // Start address: 0x2dad30
-void Ps2_pad_act_start(_anon0* pPact)
+void Ps2_pad_act_start(PAD_ACTION* pPact)
 {
 	// Line 296, Address: 0x2dad30, Func Offset: 0
 	// Line 298, Address: 0x2dad40, Func Offset: 0x10
@@ -166,7 +135,7 @@ void Ps2_pad_act_start(_anon0* pPact)
 
 // 
 // Start address: 0x2dadd0
-void Ps2_pad_act_stop(_anon0* pPact)
+void Ps2_pad_act_stop(PAD_ACTION* pPact)
 {
 	// Line 328, Address: 0x2dadd0, Func Offset: 0
 	// Func End, Address: 0x2dadd8, Func Offset: 0x8
@@ -177,7 +146,7 @@ void Ps2_pad_act_stop(_anon0* pPact)
 void Ps2_pad_act_all_stop()
 {
 	int i;
-	_anon0* pPact;
+	PAD_ACTION* pPact;
 	// Line 338, Address: 0x2dade0, Func Offset: 0
 	// Line 339, Address: 0x2dade8, Func Offset: 0x8
 	// Line 350, Address: 0x2dadec, Func Offset: 0xc

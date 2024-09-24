@@ -8,7 +8,7 @@ unsigned int _Clip_ViewVolume2(_anon1* vec);
 unsigned int _Get_ClipViewVolume2();
 int _Get_ClipVolumePlane();
 void _Check_ClipViewAll(_anon1* vec);
-void _Set_NodeArray(tagVU1_STRIP_BUF* pS, tagVU1_PRIM_BUF* pP);
+void _Set_NodeArray(VU1_STRIP_BUF* pS, VU1_PRIM_BUF* pP);
 int _ClipInter(int mask1, int mask2, int xyzflg, float sin, int work0, int work1, int count);
 int _Check_ScissorPlane();
 
@@ -16,7 +16,7 @@ int _Check_ScissorPlane();
 // Start address: 0x2d3b00
 void DrawScissorPolygonOpaque2(int count, unsigned long ulType)
 {
-	tagVU1_PRIM_BUF* pPrim;
+	VU1_PRIM_BUF* pPrim;
 	// Line 37, Address: 0x2d3b00, Func Offset: 0
 	// Line 38, Address: 0x2d3b0c, Func Offset: 0xc
 	// Line 78, Address: 0x2d3b14, Func Offset: 0x14
@@ -103,7 +103,7 @@ void _Check_ClipViewAll(_anon1* vec)
 
 // 
 // Start address: 0x2d3c40
-void _Set_NodeArray(tagVU1_STRIP_BUF* pS, tagVU1_PRIM_BUF* pP)
+void _Set_NodeArray(VU1_STRIP_BUF* pS, VU1_PRIM_BUF* pP)
 {
 	// Line 329, Address: 0x2d3c40, Func Offset: 0
 	// Line 368, Address: 0x2d3c48, Func Offset: 0x8

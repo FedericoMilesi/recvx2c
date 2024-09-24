@@ -1,35 +1,42 @@
-#include "types.h"
 #include "adv.h"
 
+#include "types.h"
+#include "ps2_SystemLoadScreen.h"
+#include "ps2_SystemSaveScreen.h"
+#include "sysload_screen.h"
+#include "syssave_screen.h"
+
 unsigned char SaveLoadMessage[10956];
-_anon53 OptionDef[7];
+OPTION_DEFINTION OptionDef[7];
 int AdvFirstInitFlag;
-_anon6 AdvTexList[2];
+NJS_TEXLIST AdvTexList[2];
 int PatId[0];
-Unknown21 AdvWork;
-_anon40* sys;
-_anon27 tbuf[0];
-_anon34* rom;
+ADV_WORK AdvWork;
+extern SYS* sys;
+NJS_TEXMEMLIST tbuf[0];
+extern ROOM* rom;
 unsigned int palbuf[0];
-Unknown22 Pad[0];
-_anon27* Ps2_current_texmemlist;
+extern Controller Pad[4];
+NJS_TEXMEMLIST* Ps2_current_texmemlist;
 NJS_QUAD_TEXTURE Qtex[16];
-_anon16 AdvTexInfo[8][2];
-_anon20 AdvTexName[8][2];
+NJS_TEXINFO AdvTexInfo[8][2];
+NJS_TEXNAME AdvTexName[8][2];
 char AdvTexPalBank[8][2];
 int CurrentPortId;
-unsigned char FontSz[0];
-float FontScaleCR;
-float FontScaleX;
-_anon31 AdvVmMsgDef[21];
+extern unsigned char FontSz[126];
+extern float FontScaleCR;
+extern float FontScaleX;
+ADV_MESSAGE_DEFINITION AdvVmMsgDef[21];
+
 SYSLOAD_SCREEN* pSysLoad;
 SYSLOAD_SCREEN SysLoad;
+SYSSAVE_SCREEN* pSysSave;
+SYSSAVE_SCREEN SysSave;
+
 float ColorBarSizeY;
 float RedLinePosY;
 unsigned int ColorBarBright;
-tagSYSSAVE_SCREEN* pSysSave;
-unsigned char* vwbmemp;
-tagSYSSAVE_SCREEN SysSave;
+extern Sint8* vwbmemp;
 
 void CallPlayerDeadVoice(int PlayerNo);
 void CallSystemVoice(int VoiceNo);
@@ -61,7 +68,7 @@ void ExecuteAdvScreenSaver();
 void CheckAdvScreenSaverStopKey(int PortId);
 unsigned int AdvGetOkButton();
 unsigned int AdvGetCancelButton();
-void SetPvrInfo(TextureFileLocation* np, NJS_TEXINFO* ip, unsigned char* pp);
+void SetPvrInfo(NJS_TEXNAME* np, NJS_TEXINFO* ip, unsigned char* pp);
 int TransPvpData(unsigned char* pp, int Mode);
 void AdvTransShadowPalette();
 void AdvEasyDrawWindow(NJS_POINT3* tlp, NJS_POINT3* brp, unsigned int WindowColor, unsigned int BackColor);
@@ -103,7 +110,7 @@ void FadeOutPlate();
 void TitleCall(int PortId, int ReturnCode);
 int CheckButton(int Level, int Flag, int MaxFlag);
 int CheckStartButton();
-int Adv_BioCvTitle();
+int Adv_BioCvTitle(); // Meaning: Biohazard Code Veronica Title
 void ResetOptionMenuParam(int Mode);
 void DisplayOptionScrollPlate(float PosX, float PosY);
 void DisplayOptionBg(int Level, int Flag);
@@ -230,7 +237,7 @@ void CallSystemVoice(int VoiceNo) { // Line 223, Address: 0x2c0d60
 
 
 /* 100% match */
-float GetSamurai(int Time) { 
+float GetSamurai(int Time) {
     return 1.0f / (((Time / 100) * 30) + (((Time % 100) * 6) / 10)); // Line 234, Address: 0x2c0d80
 } // Line 235, Address: 0x2c0e04
 
@@ -243,15 +250,15 @@ float GetSamurai(int Time) {
 
 /* 100% match */
 void InitAdvSystem() { // Line 245, Address: 0x2c0e10
-    Unknown21* ap = &AdvWork; // Line 246, Address: 0x2c0e1c
+    ADV_WORK* ap = &AdvWork; // Line 246, Address: 0x2c0e1c
 
     if (AdvFirstInitFlag == 0) { // Line 248, Address: 0x2c0e24
-        memset(&AdvWork, 0, sizeof(Unknown21)); // Line 249, Address: 0x2c0e34
+        memset(&AdvWork, 0, sizeof(ADV_WORK)); // Line 249, Address: 0x2c0e34
         ap->PatId = -1; // Line 250, Address: 0x2c0e48
         ap->Active = 0; // Line 251, Address: 0x2c0e54
         AdvFirstInitFlag = 1; // Line 252, Address: 0x2c0e50, 0x2c0e58
-    } 
-    
+    }
+
     MountAdvAfs(); // Line 255, Address: 0x2c0e60
 } // Line 256, Address: 0x2c0e68
 
@@ -264,33 +271,33 @@ void InitAdvSystem() { // Line 245, Address: 0x2c0e10
 
 /* 100% match */
 void ResetAdvSystem() { // Line 266, Address: 0x2c0e80
-	Unknown21* ap = (Unknown21*)&AdvWork; // Line 267, Address: 0x2c0e8c
+	ADV_WORK* ap = (ADV_WORK*)&AdvWork; // Line 267, Address: 0x2c0e8c
     int i;
 
     if (ap->Active != 0) // Line 270, Address: 0x2c0e94
         ExitApplication(); // Line 271, Address: 0x2c0ea0
-    
+
     ap->Active = 1; // Line 273, Address: 0x2c0ea8
-    
+
     njSetBackColor(0, 0, 0); // Line 275, Address: 0x2c0eb0
     njFogDisable(); // Line 276, Address: 0x2c0ec0
-    
+
     for (i = 0; i < 8; i++) { // Line 278, Address: 0x2c0ec8
-        ap->ptr[i] = NULL; // Line 279, Address: 0x2c0ed4, 0x2c0edc 
-    } // Line 280, Address: 0x2c0ed0, 0x2c0ed8, 0x2c0ee0 
+        ap->ptr[i] = NULL; // Line 279, Address: 0x2c0ed4, 0x2c0edc
+    } // Line 280, Address: 0x2c0ed0, 0x2c0ed8, 0x2c0ee0
     for (i = 0; i < 2; i++) { // Line 281, Address: 0x2c0eec
-        ap->SetTexture[i] = 0; // Line 282, Address: 0x2c0ef0, 0x2c0ef8 
-    } // Line 283, Address: 0x2c0ef4, 0x2c0efc 
+        ap->SetTexture[i] = 0; // Line 282, Address: 0x2c0ef0, 0x2c0ef8
+    } // Line 283, Address: 0x2c0ef4, 0x2c0efc
     for (i = 0; i < 7; i++) { // Line 284, Address: 0x2c0f0c
-        ap->KeyCommandCount[i] = 0; // Line 285, Address: 0x2c0f10, 0x2c0f18 
-    } // Line 286, Address: 0x2c0f14, 0x2c0f1c 
-  
+        ap->KeyCommandCount[i] = 0; // Line 285, Address: 0x2c0f10, 0x2c0f18
+    } // Line 286, Address: 0x2c0f14, 0x2c0f1c
+
     ap->NextReturnCode = 0; // Line 288, Address: 0x2c0f2c
     ap->Count = 0; // Line 289, Address: 0x2c0f30
     ap->OptIndex = 0; // Line 290, Address: 0x2c0f34
     ap->ErrorId = 0; // Line 291, Address: 0x2c0f38
     ap->ErrorMsgFlushCount = 0; // Line 292, Address: 0x2c0f3c
-    
+
     ap->ExtraFlag = 0; // Line 294, Address: 0x2c0f40
     ap->Mode2 = 0; // Line 295, Address: 0x2c0f44
     ap->NextMode = 0; // Line 296, Address: 0x2c0f48
@@ -298,33 +305,15 @@ void ResetAdvSystem() { // Line 266, Address: 0x2c0e80
     ap->GenFlag = 0; // Line 298, Address: 0x2c0f50
     ap->OptFadeType = 0; // Line 299, Address: 0x2c0f54
     ap->PalNo = 0; // Line 300, Address: 0x2c0f5c
-    ap->PalFlag = 1; // Line 301, Address: 0x2c0f58, 0x2c0f60 
+    ap->PalFlag = 1; // Line 301, Address: 0x2c0f58, 0x2c0f60
     ap->TexFlag = 0; // Line 302, Address: 0x2c0f64
     ap->SrFlag = 0; // Line 303, Address: 0x2c0f6c
-    ap->SoundMode = -1; // Line 304, Address: 0x2c0f68, 0x2c0f70 
+    ap->SoundMode = -1; // Line 304, Address: 0x2c0f68, 0x2c0f70
     ap->OptSaveFlag = 0; // Line 305, Address: 0x2c0f74
     ap->vMode = 0; // Line 306, Address: 0x2c0f78
     ap->DriveNo = 0; // Line 307, Address: 0x2c0f7c
     ap->OldVmOpMode = 0; // Line 308, Address: 0x2c0f80
-    ap->VmOpMode = 0; 
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-    
+    ap->VmOpMode = 0;
 
 
 
@@ -339,7 +328,25 @@ void ResetAdvSystem() { // Line 266, Address: 0x2c0e80
 
 
 
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     StopAdvScreenSaver(1); // Line 345, Address: 0x2c0f84
@@ -358,7 +365,7 @@ void ResetAdvSystem() { // Line 266, Address: 0x2c0e80
 
 /* 100% match */
 void MountAdvAfs() { // Line 360, Address: 0x2c0fa0
-    Unknown21* temp = (Unknown21*)&AdvWork; // not originally outputted by dwarf2cpp
+    ADV_WORK* temp = (ADV_WORK*)&AdvWork; // not originally outputted by dwarf2cpp
     temp->PatId = PatId[3]; // Line 362, Address: 0x2c0fb0
 }
 
@@ -397,8 +404,8 @@ unsigned char* AdvGetResourcePtr(unsigned char* bp, unsigned int ResId) { // Lin
 
 /* 100% match */
 void AdvSetSoundMode() { // Line 399, Address: 0x2c0fe0
-    Unknown21* ap = (Unknown21*)&AdvWork; // Line 400, Address: 0x2c0fec
-    
+    ADV_WORK* ap = (ADV_WORK*)&AdvWork; // Line 400, Address: 0x2c0fec
+
     if (ap->SoundMode >= 0) { // Line 402, Address: 0x2c0ff4
         syCfgSetSoundMode(ap->SoundMode); // Line 403, Address: 0x2c1000
         ap->SoundMode = -1; // Line 404, Address: 0x2c1008
@@ -413,8 +420,8 @@ void AdvSetSoundMode() { // Line 399, Address: 0x2c0fe0
 
 /* 100% match */
 void AdvCheckSoftReset(int Flag) { // Line 415, Address: 0x2c1020
-    Unknown21* ap = (Unknown21*)&AdvWork; // Line 416, Address: 0x2c1030
-    
+    ADV_WORK* ap = (ADV_WORK*)&AdvWork; // Line 416, Address: 0x2c1030
+
     if ((ap->SrFlag == 0) && (!(sys->ss_flg & 0x20000)) && (CheckSoftResetKeyFlag(-1) != 0)) { // Line 418, Address: 0x2c1038
         if (Flag == 0) { // Line 419, Address: 0x2c1044
             ap->Mode = -1; // Line 420, Address: 0x2c1060
@@ -422,11 +429,11 @@ void AdvCheckSoftReset(int Flag) { // Line 415, Address: 0x2c1020
             ap->Mode2 = -1; // Line 422, Address: 0x2c1078
         } // Line 423, Address: 0x2c107c
         AdvSetSoundMode(); // Line 424, Address: 0x2c1084
-        
+
     } // Line 426, Address: 0x2c108c
 
 
-    
+
 } // Line 430, Address: 0x2c1094
 
 
@@ -437,10 +444,10 @@ void AdvCheckSoftReset(int Flag) { // Line 415, Address: 0x2c1020
 
 /* 100% match */
 void AdvPushRoomTexture() { // Line 439, Address: 0x2c10b0
-    Unknown21* ap = (Unknown21*)&AdvWork; // Line 440, Address: 0x2c10bc
-    
+    ADV_WORK* ap = (ADV_WORK*)&AdvWork; // Line 440, Address: 0x2c10bc
+
     ap->TexFlag = 0; // Line 442, Address: 0x2c10c4
-    
+
     if (rom->mdl.texP != NULL) { // Line 444, Address: 0x2c10c8
         ap->SysMemPtr = sys->memp; // Line 445, Address: 0x2c10dc
         sys->memp = (unsigned char*)bhCopyTexmem2MainmemSub(rom->mdl.texP, (char*)sys->memp); // Line 446, Address: 0x2c10f4
@@ -448,7 +455,7 @@ void AdvPushRoomTexture() { // Line 439, Address: 0x2c10b0
         bhGarbageTexture(&tbuf, 256); // Line 448, Address: 0x2c113c
         ap->TexFlag = 1; // Line 449, Address: 0x2c114c
     }
-    
+
 } // Line 452, Address: 0x2c1154
 
 
@@ -459,7 +466,7 @@ void AdvPushRoomTexture() { // Line 439, Address: 0x2c10b0
 
 /* 100% match */
 void AdvPopRoomTexture() { // Line 461, Address: 0x2c1170
-    Unknown21* ap = (Unknown21*)&AdvWork; // Line 462, Address: 0x2c117c
+    ADV_WORK* ap = (ADV_WORK*)&AdvWork; // Line 462, Address: 0x2c117c
 
     if (ap->TexFlag != 0) { // Line 464, Address: 0x2c1184
         if (rom->mdl.texP != NULL) { // Line 465, Address: 0x2c1190
@@ -481,7 +488,7 @@ void AdvPushPaletteData() { // Line 480, Address: 0x2c11e8, 0x2c11f4
 
 
     // temp var not originally outputted by dwarf2cpp
-    Unknown21* temp = (Unknown21*)&AdvWork; // Line 484, Address: 0x2c11e0, 0x2c11ec, 0x2c11f8
+    ADV_WORK* temp = (ADV_WORK*)&AdvWork; // Line 484, Address: 0x2c11e0, 0x2c11ec, 0x2c11f8
     njMemCopy4(&palbuf[3072], &palbuf, 1024); // Line 485, Address: 0x2c1200
     temp->PalMode = njGetPaletteMode(); // Line 486, Address: 0x2c1214
 }
@@ -492,17 +499,17 @@ void AdvPushPaletteData() { // Line 480, Address: 0x2c11e8, 0x2c11f4
 
 /* 100% match */
 void AdvPopPaletteData() { // temp var not originally outputted by dwarf2cpp
-    Unknown21* temp = (Unknown21*)&AdvWork; // Line 495, Address: 0x2c1220, 0x2c122c
+    ADV_WORK* temp = (ADV_WORK*)&AdvWork; // Line 495, Address: 0x2c1220, 0x2c122c
 
-    
+
     njSetPaletteMode(temp->PalMode); // Line 498, Address: 0x2c1224, 0x2c1230
-    
+
     njMemCopy4(&palbuf, &palbuf[3072], 1024); // Line 500, Address: 0x2c1238
     sys->gm_flg |= 0x4; // Line 501, Address: 0x2c1250, 0x2c1260
-    
+
     if ((sys->st_flg & 0x2)) { // Line 503, Address: 0x2c125c, 0x2c1268
         njFogEnable(); // Line 504, Address: 0x2c127c
-    } 
+    }
     sys->gm_flg |= 0x8000; // Line 506, Address: 0x2c1284
 } // Line 507, Address: 0x2c1298
 
@@ -515,7 +522,7 @@ void AdvPopPaletteData() { // temp var not originally outputted by dwarf2cpp
 
 /* 100% match */
 void RequestAdvInsideFileEx(int InsideFileId, int MemoryBlockNo) { // Line 517, Address: 0x2c12b0
-    Unknown21* ap = (Unknown21*)&AdvWork; // Line 518, Address: 0x2c12c4
+    ADV_WORK* ap = (ADV_WORK*)&AdvWork; // Line 518, Address: 0x2c12c4
 
     ap->ptr[MemoryBlockNo] = bhGetFreeMemory(GetInsideFileSize(ap->PatId, InsideFileId), 32); // Line 520, Address: 0x2c12d0
     RequestReadInsideFile(ap->PatId, InsideFileId, (void*)ap->ptr[MemoryBlockNo]); // Line 521, Address: 0x2c12f8
@@ -539,13 +546,13 @@ void RequestAdvInsideFile(int InsideFileId) { // Line 532, Address: 0x2c1320
 
 /* 100% match */
 void FreeAdvMemoryEx(int MemoryBlockNo) { // temp var not originally outputted by dwarf2cpp
-    Unknown21* temp = (Unknown21*)&AdvWork; // Line 542, Address: 0x2c1338, 0x2c1340, 0x2c1348
+    ADV_WORK* temp = (ADV_WORK*)&AdvWork; // Line 542, Address: 0x2c1338, 0x2c1340, 0x2c1348
 
-    
+
     if (temp->ptr[MemoryBlockNo] != NULL) { // Line 545, Address: 0x2c1330, 0x2c133c, 0x2c1344, 0x2c134c
         bhReleaseFreeMemory(temp->ptr[MemoryBlockNo]); // Line 546, Address: 0x2c1358
         temp->ptr[MemoryBlockNo] = NULL; // Line 547, Address: 0x2c1360
-    } 
+    }
 } // Line 549, Address: 0x2c1364
 
 
@@ -577,11 +584,11 @@ int CheckReadEndAdvInsideFile() { // Line 575, Address: 0x2c13c0
 
 
     ReturnCode = GetReadFileStatus(); // Line 579, Address: 0x2c13c8
-    
+
     if (ReturnCode == -1) { // Line 581, Address: 0x2c13d4
         AllFreeAdvMemory(); // Line 582, Address: 0x2c13e0
     }
-    
+
     return ReturnCode; // Line 585, Address: 0x2c13e8
 } // Line 586, Address: 0x2c13ec
 
@@ -594,9 +601,9 @@ int CheckReadEndAdvInsideFile() { // Line 575, Address: 0x2c13c0
 
 /* 100% match */
 void CheckReadEndAdvInsideFile2Ex(int NextMode, int Flag) { // Line 596, Address: 0x2c1400
-    Unknown21* ap = (Unknown21*)&AdvWork; // Line 597, Address: 0x2c1414
+    ADV_WORK* ap = (ADV_WORK*)&AdvWork; // Line 597, Address: 0x2c1414
 
-    switch (CheckReadEndAdvInsideFile()) { // Line 599, Address: 0x2c1420                  
+    switch (CheckReadEndAdvInsideFile()) { // Line 599, Address: 0x2c1420
     case -1:
         if (Flag == 0) { // Line 601, Address: 0x2c1450
             ap->Mode = -1;
@@ -637,16 +644,16 @@ void CheckReadEndAdvInsideFile2(int NextMode) { // Line 626, Address: 0x2c14a0
 
 
 /* 100% match */
-void RequestAdvFade(int FadeType, float FadeSpeed) { 
-    Unknown21* ap = (Unknown21*)&AdvWork; // Line 641, Address: 0x2c14b0
-    
+void RequestAdvFade(int FadeType, float FadeSpeed) {
+    ADV_WORK* ap = (ADV_WORK*)&AdvWork; // Line 641, Address: 0x2c14b0
+
     ap->FadeType = FadeType; // Line 643, Address: 0x2c14bc
 
-    
+
     ap->FadeSpeed = FadeSpeed; // Line 646, Address: 0x2c14b8, 0x2c14c0
 
-    
-    switch (FadeType) { // Line 649, Address: 0x2c14e8                 
+
+    switch (FadeType) { // Line 649, Address: 0x2c14e8
     case 1:
         ap->FadeType = 0; // Line 651, Address: 0x2c14f0
         break; // Line 652, Address: 0x2c14f4
@@ -667,7 +674,7 @@ void RequestAdvFade(int FadeType, float FadeSpeed) {
 
 /* 100% match */
 int CheckAdvFade() { // temp var not originally outputted by dwarf2cpp
-    Unknown21* temp = (Unknown21*)&AdvWork; // Line 670, Address: 0x2c1510
+    ADV_WORK* temp = (ADV_WORK*)&AdvWork; // Line 670, Address: 0x2c1510
     return temp->FadeType; // Line 671, Address: 0x2c1518
 }
 
@@ -693,9 +700,9 @@ void AdvDrawFadePolygon(int Type, float Rate, unsigned int BaseColor) { // Line 
     };
 
 
-    
+
     BaseColor |= ((unsigned int)(255.0f * Rate) & 0xFF) << 24; // Line 697, Address: 0x2c1548
-    
+
     poly[0].x = -2.0f; // Line 699, Address: 0x2c156c
     poly[0].y = -2.0f; // Line 700, Address: 0x2c157c
     poly[1].x = -2.0f; // Line 701, Address: 0x2c1584
@@ -717,33 +724,33 @@ void AdvDrawFadePolygon(int Type, float Rate, unsigned int BaseColor) { // Line 
 
 /* 100% match */
 void ExecuteAdvFadeEx(int Type) { // Line 719, Address: 0x2c15f0, 0x2c15fc
-    Unknown21* ap = (Unknown21*)&AdvWork; // Line 720, Address: 0x2c15f4
+    ADV_WORK* ap = (ADV_WORK*)&AdvWork; // Line 720, Address: 0x2c15f4
 
     switch (ap->FadeType) { // Line 722, Address: 0x2c1600
-        
-            
-            
-            
+
+
+
+
     case 2:
         ap->FadeRate -= ap->FadeSpeed; // Line 728, Address: 0x2c1624, 0x2c1634
         if (ap->FadeRate <= 0) { // Line 729, Address: 0x2c162c, 0x2c1638
             ap->FadeRate = 0; // Line 730, Address: 0x2c1648
             ap->FadeType = 0; // Line 731, Address: 0x2c164c
-        } 
-        
+        }
+
         AdvDrawFadePolygon(Type, ap->FadeRate, 0); // Line 734, Address: 0x2c1650
         break; // Line 735, Address: 0x2c165c
 
 
 
-        
+
     case 3:
         ap->FadeRate += ap->FadeSpeed; // Line 741, Address: 0x2c1664, 0x2c1678
         if (ap->FadeRate >= 1.0f) { // Line 742, Address: 0x2c166c, 0x2c167c
             ap->FadeRate = 1.0f; // Line 743, Address: 0x2c168c
             ap->FadeType = 0; // Line 744, Address: 0x2c1690
         }
-        
+
         AdvDrawFadePolygon(Type, ap->FadeRate, 0); // Line 747, Address: 0x2c1694
         break;
     }
@@ -770,10 +777,10 @@ void ExecuteAdvFade() { // Line 760, Address: 0x2c16b0
 
 /* 100% match */
 void StopAdvScreenSaver(int Flag) {
-    Unknown21* ap = (Unknown21*)&AdvWork; // Line 773, Address: 0x2c16c0
-    
+    ADV_WORK* ap = (ADV_WORK*)&AdvWork; // Line 773, Address: 0x2c16c0
+
     ap->SaverTimer = 9000.0f; // Line 775, Address: 0x2c16c8
-    
+
     ap->SaverCommand = 0; // Line 777, Address: 0x2c16d4
     if (Flag != 0) { // Line 778, Address: 0x2c16dc
         ap->SaverRate = 0;
@@ -788,8 +795,8 @@ void StopAdvScreenSaver(int Flag) {
 
 /* 100% match */
 void ExecuteAdvScreenSaver() { // Line 790, Address: 0x2c16f0
-    
-    Unknown21* ap = (Unknown21*)&AdvWork; // Line 792, Address: 0x2c16f8
+
+    ADV_WORK* ap = (ADV_WORK*)&AdvWork; // Line 792, Address: 0x2c16f8
     if (ap->SaverCommand == 0) { // Line 793, Address: 0x2c1704, 0x2c1718
         ap->SaverTimer -= 1.0f; // Line 794, Address: 0x2c1710, 0x2c171c
         if (ap->SaverTimer < 0) { // Line 795, Address: 0x2c172c
@@ -846,7 +853,7 @@ unsigned int AdvGetOkButton() { // Line 836, Address: 0x2c1850
 
 
 
-    
+
     return ButtonDef[sys->keytype]; // Line 850, Address: 0x2c1858, 0x2c1864
 } // Line 851, Address: 0x2c1878
 
@@ -871,7 +878,7 @@ unsigned int AdvGetCancelButton() { // Line 861, Address: 0x2c1890
 
 
 
-    
+
     return ButtonDef[sys->keytype]; // Line 875, Address: 0x2c1898, 0x2c18a4
 } // Line 876, Address: 0x2c18b8
 
@@ -886,57 +893,57 @@ unsigned int AdvGetCancelButton() { // Line 861, Address: 0x2c1890
 
 
 /* 100% match */
-void SetPvrInfo(TextureFileLocation* np, NJS_TEXINFO* ip, unsigned char* pp) { // Line 889, Address: 0x2c18c0
-    Unknown24* pPichd;
+void SetPvrInfo(NJS_TEXNAME* np, NJS_TEXINFO* ip, unsigned char* pp) { // Line 889, Address: 0x2c18c0
+    TIM2_PICTUREHEADER* pPichd;
     unsigned int GlobalIndex;
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
-    ((Unknown25*)pp)->PictFormat = 0; // Line 930, Address: 0x2c18f0
-    
-    GlobalIndex = ((Unknown25*)pp)->Gindex; // Line 932, Address: 0x2c18dc
-    pPichd = (Unknown24*)&((Unknown25*)pp)->TotalSize; // Line 933, Address: 0x2c18e0
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    ((PS2_TIM_LIST_ENTRY*)pp)->PictFormat = 0; // Line 930, Address: 0x2c18f0
+
+    GlobalIndex = ((PS2_TIM_LIST_ENTRY*)pp)->Gindex; // Line 932, Address: 0x2c18dc
+    pPichd = (TIM2_PICTUREHEADER*)&((PS2_TIM_LIST_ENTRY*)pp)->TotalSize; // Line 933, Address: 0x2c18e0
+
     Ps2CheckTextureAlpha(pp); // Line 935, Address: 0x2c18f4
-    
+
     njSetTextureInfo(ip, (unsigned short*)pp, pPichd->PictFormat, pPichd->ImageWidth, pPichd->ImageHeight); // Line 937, Address: 0x2c18fc
     njSetTextureName(np, ip, GlobalIndex, 0x40800000); // Line 938, Address: 0x2c1914
-    
+
 } // Line 940, Address: 0x2c1928
 
 
@@ -955,26 +962,26 @@ int TransPvpData(unsigned char* pp, int Mode) { // Line 951, Address: 0x2c1950
 
     pPvp = (Unknown29*)pp;
 
-    
+
     if (strncmp(&pPvp->ppStrPvpl, "PVPL", 4) != 0) { // Line 959, Address: 0x2c1960
         return -1; // Line 960, Address: 0x2c1980
     }
 
-    
+
     temp = pPvp->ppCategoryCode; // Line 964, Address: 0x2c1988
     temp2 = pPvp->ppBankId;
 
 
-    
+
     if (Mode != 0) { // Line 969, Address: 0x2c198c
         njSetPaletteMode(temp); // Line 970, Address: 0x2c1994
-    } 
+    }
 
 
 
 
 
-    
+
     return temp2; // Line 978, Address: 0x2c199c
 } // Line 979, Address: 0x2c19a4
 
@@ -996,16 +1003,16 @@ void AdvTransShadowPalette() { // Line 989, Address: 0x2c19c0
 
 
 
-    
-    lp = p = (unsigned int*)bhGetFreeMemory(64, 32); // Line 1000, Address: 0x2c19c8, 0x2c19e0                    
-    *lp++ = 0xFFFFFF; // Line 1001, Address: 0x2c19d8, 0x2c19e4 
+
+    lp = p = (unsigned int*)bhGetFreeMemory(64, 32); // Line 1000, Address: 0x2c19c8, 0x2c19e0
+    *lp++ = 0xFFFFFF; // Line 1001, Address: 0x2c19d8, 0x2c19e4
     for (i = 0; i < 15; i++) { // Line 1002, Address: 0x2c19ec
-        *lp++ = 0xFF000000; // Line 1003, Address: 0x2c19f0, 0x2c19f8, 0x2c1a00 
-    } // Line 1004, Address: 0x2c19f4, 0x2c19fc, 0x2c1a04 
+        *lp++ = 0xFF000000; // Line 1003, Address: 0x2c19f0, 0x2c19f8, 0x2c1a00
+    } // Line 1004, Address: 0x2c19f4, 0x2c19fc, 0x2c1a04
     njSetPaletteData(16, 16, p); // Line 1005, Address: 0x2c1a10
     bhReleaseFreeMemory(p); // Line 1006, Address: 0x2c1a20
 
-    
+
 } // Line 1009, Address: 0x2c1a28
 
 
@@ -1025,9 +1032,9 @@ void AdvEasyDrawWindow(NJS_POINT3* tlp, NJS_POINT3* brp, unsigned int WindowColo
     poly[0].z = poly[2].z = tlp->z; // Line 1025, Address: 0x2c1a6c
     poly[1].z = poly[3].z = brp->z; // Line 1026, Address: 0x2c1a88
     poly[0].col = poly[1].col = poly[2].col = poly[3].col = WindowColor; // Line 1027, Address: 0x2c1aa4
-    
-    
-    poly[0].x = poly[1].x = tlp->x; // Line 1030, Address: 0x2c1a74, 0x2c1ac4 
+
+
+    poly[0].x = poly[1].x = tlp->x; // Line 1030, Address: 0x2c1a74, 0x2c1ac4
     poly[2].x = poly[3].x = brp->x; // Line 1031, Address: 0x2c1a78
     poly[0].y = poly[2].y = tlp->y; // Line 1032, Address: 0x2c1a94
     poly[1].y = poly[3].y = 4.0f + tlp->y; // Line 1033, Address: 0x2c1ac8
@@ -1035,8 +1042,8 @@ void AdvEasyDrawWindow(NJS_POINT3* tlp, NJS_POINT3* brp, unsigned int WindowColo
     poly[0].y = poly[2].y = brp->y - 4.0f; // Line 1035, Address: 0x2c1b28
     poly[1].y = poly[3].y = brp->y; // Line 1036, Address: 0x2c1b50
     njDrawPolygon((NJS_POLYGON_VTX*)&poly, 4, 0); // Line 1037, Address: 0x2c1b34
-    
-    
+
+
     poly[0].x = poly[1].x = tlp->x; // Line 1040, Address: 0x2c1b60
     poly[2].x = poly[3].x = 3.0f + tlp->x; // Line 1041, Address: 0x2c1b64
     poly[0].y = poly[2].y = tlp->y; // Line 1042, Address: 0x2c1b70
@@ -1045,8 +1052,8 @@ void AdvEasyDrawWindow(NJS_POINT3* tlp, NJS_POINT3* brp, unsigned int WindowColo
     poly[0].x = poly[1].x = brp->x - 4.0f; // Line 1045, Address: 0x2c1bb0
     poly[2].x = poly[3].x = 3.0f + (brp->x - 4.0f); // Line 1046, Address: 0x2c1bc0
     njDrawPolygon((NJS_POLYGON_VTX*)&poly, 4, 0); // Line 1047, Address: 0x2c1bbc
-    
-    
+
+
     poly[0].x = poly[1].x = tlp->x; // Line 1050, Address: 0x2c1bf8
     poly[2].x = poly[3].x = brp->x; // Line 1051, Address: 0x2c1c14
     poly[0].y = poly[2].y = tlp->y; // Line 1052, Address: 0x2c1c18
@@ -1071,45 +1078,45 @@ void AdvEasyDrawWindow(NJS_POINT3* tlp, NJS_POINT3* brp, unsigned int WindowColo
 
 /* 100% match */
 void AdvEasyDrawTexture(int TexNo, unsigned int BaseColor, NJS_QUAD_TEXTURE* qp, float PosZ, int TransFlag) { // Line 1073, Address: 0x2c1cd0
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // TODO: find correct cast for line 1109
     if (TransFlag != 0) { // Line 1108, Address: 0x2c1cf4
         ((unsigned short*)Ps2_current_texmemlist->texinfo.texsurface.pSurface)[7] |= 0x8000; // Line 1109, Address: 0x2c1cfc
     }
 
-    
+
     njQuadTextureStart(TransFlag); // Line 1113, Address: 0x2c1d14
     njSetQuadTexture(TexNo, BaseColor); // Line 1114, Address: 0x2c1d1c
     njDrawQuadTexture(qp, PosZ); // Line 1115, Address: 0x2c1d28
@@ -1134,7 +1141,7 @@ void AdvEasyDrawTextureS(int TexNo, unsigned int BaseColor, NJS_QUAD_TEXTURE* qp
     NJS_QUAD_TEXTURE* sqp = &Qtex[15]; // Line 1134, Address: 0x2c1d78, 0x2c1d80
 
     AdvEasyDrawTexture(TexNo, BaseColor, qp, PosZ, TransFlag); // Line 1136, Address: 0x2c1d90
-    
+
     memcpy(sqp, qp, 32); // Line 1138, Address: 0x2c1d98
     sqp->x1 = 3.0f + qp->x1; // Line 1139, Address: 0x2c1da8, 0x2c1dd4
     sqp->y1 = 3.0f + qp->y1; // Line 1140, Address: 0x2c1ddc
@@ -1145,9 +1152,9 @@ void AdvEasyDrawTextureS(int TexNo, unsigned int BaseColor, NJS_QUAD_TEXTURE* qp
 
 
 
-    
+
     AdvEasyDrawTexture(TexNo, ShadowAlpha << 24, sqp, PosZ - 0.001f, 1); // Line 1149, Address: 0x2c1dfc
-    
+
 } // Line 1151, Address: 0x2c1e04
 
 
@@ -1296,9 +1303,9 @@ void SetQuadUv2(float u, float v, float SizeX, float SizeY, unsigned int TexNo, 
 /* 99.20% match */
 void AdvDwawOnePictureEx(int TexNo, unsigned int BaseColor) { // Line 1297, Address: 0x2c1f50
 
-    
+
     NJS_QUAD_TEXTURE* qp = (NJS_QUAD_TEXTURE*)&Qtex[0]; // Line 1300, Address: 0x2c1f68
-    
+
     njTextureFilterMode(1); // Line 1302, Address: 0x2c1f70
     SetQuadPos(0, 0, 512.0f, 1024.0f, qp); // Line 1303, Address: 0x2c1f7c
     SetQuadUv2(0, 0, 512.0f, 1024.0f, TexNo, qp); // Line 1304, Address: 0x2c1f9c
@@ -1348,14 +1355,14 @@ void AdvDwawOnePicture(int TexNo) { // Line 1317, Address: 0x2c2000
 
 /* 100% match */
 void AdvEasySetupTextureBasic(unsigned char* xp, int ListNo, int TexNo) { // Line 1350, Address: 0x2c2010
-    Unknown21* ap = (Unknown21*)&AdvWork; // Line 1351, Address: 0x2c202c
+    ADV_WORK* ap = (ADV_WORK*)&AdvWork; // Line 1351, Address: 0x2c202c
     unsigned int* lp;
 
 
-    
+
     lp = (unsigned int*)xp; // Line 1356, Address: 0x2c2034
     AdvTexPalBank[ListNo][TexNo] = -1; // Line 1357, Address: 0x2c2054
-    
+
     if (lp[0] != 0) { // Line 1359, Address: 0x2c2064
         ap->PalNo = TransPvpData(xp + lp[0], ap->PalFlag); // Line 1360, Address: 0x2c2074
         if (ap->PalFlag != 0) { // Line 1361, Address: 0x2c2080
@@ -1363,7 +1370,7 @@ void AdvEasySetupTextureBasic(unsigned char* xp, int ListNo, int TexNo) { // Lin
         } // Line 1363, Address: 0x2c2084
         AdvTexPalBank[ListNo][TexNo] = ap->PalNo;
     }
-    
+
     SetPvrInfo(&AdvTexName[ListNo][TexNo], &AdvTexInfo[ListNo][TexNo], xp + lp[1], -1, ap->PalNo); // Line 1367, Address: 0x2c208c
 } // Line 1368, Address: 0x2c2100
 
@@ -1376,8 +1383,8 @@ void AdvEasySetupTextureBasic(unsigned char* xp, int ListNo, int TexNo) { // Lin
 
 /* 100% match */
 void AdvEasySetupTextureEx(int ListNo) { // Line 1378, Address: 0x2c2120
-    Unknown21* ap = (Unknown21*)&AdvWork; // Line 1379, Address: 0x2c212c
-    
+    ADV_WORK* ap = (ADV_WORK*)&AdvWork; // Line 1379, Address: 0x2c212c
+
     AdvEasySetupTextureBasic(ap->ptr[ap->Count], ListNo, ap->Count); // Line 1381, Address: 0x2c2134
     ap->Count++; // Line 1382, Address: 0x2c214c
 } // Line 1383, Address: 0x2c2158
@@ -1420,16 +1427,16 @@ void AdvEasySetTextureList(int ListNo) { // Line 1405, Address: 0x2c2188, 0x2c21
 
 /* 100% match */
 void AdvEasyTransTextureBasic(int ListNo, int TexNum, int Flag) { // Line 1422, Address: 0x2c21b0, 0x2c21cc, 0x2c21d4
-    Unknown21* ap = (Unknown21*)&AdvWork; // Line 1423, Address: 0x2c21bc
+    ADV_WORK* ap = (ADV_WORK*)&AdvWork; // Line 1423, Address: 0x2c21bc
 
     AdvTexList[ListNo].nbTexture = TexNum; // Line 1425, Address: 0x2c21c4, 0x2c21d0, 0x2c21d8
     njLoadTexture(&AdvTexList[ListNo]); // Line 1426, Address: 0x2c21e0
     AdvEasySetTextureList(ListNo); // Line 1427, Address: 0x2c21f8
-    
+
     if (Flag == 0) { // Line 1429, Address: 0x2c2200
         AllFreeAdvMemory(); // Line 1430, Address: 0x2c2208
     }
-    
+
     ap->Count = 0; // Line 1433, Address: 0x2c2218
     ap->SetTexture[ListNo] = 1; // Line 1434, Address: 0x2c2210, 0x2c221c
 } // Line 1435, Address: 0x2c2220
@@ -1446,7 +1453,7 @@ void AdvEasyTransTextureBasic(int ListNo, int TexNum, int Flag) { // Line 1422, 
 
 /* 100% match */
 void AdvEasyTransTextureEx(int ListNo) { // Line 1448, Address: 0x2c2240
-    Unknown21* temp = (Unknown21*)&AdvWork; // not originally outputted by dwarf2cpp
+    ADV_WORK* temp = (ADV_WORK*)&AdvWork; // not originally outputted by dwarf2cpp
     AdvEasyTransTextureBasic(ListNo, temp->Count, 0);
 }
 
@@ -1469,15 +1476,15 @@ void AdvEasyTransTexture() { // Line 1460, Address: 0x2c2260
 
 /* 100% match */
 void AdvEasyReleaseTextureEx(int ListNo) { // Line 1471, Address: 0x2c2274, 0x2c227c, 0x2c2284
-    Unknown21* temp = (Unknown21*)&AdvWork; // not originally outputted by dwarf2cpp
+    ADV_WORK* temp = (ADV_WORK*)&AdvWork; // not originally outputted by dwarf2cpp
 
     if (temp->SetTexture[ListNo] != 0) { // Line 1474, Address: 0x2c2270, 0x2c2278, 0x2c2280, 0x2c2288
         njReleaseTexture(&AdvTexList[ListNo]); // Line 1475, Address: 0x2c2298
         temp->SetTexture[ListNo] = 0; // Line 1476, Address: 0x2c22ac
     }
-    
+
     bhGarbageTexture(NULL, 0); // Line 1479, Address: 0x2c22b0
-    
+
 } // Line 1481, Address: 0x2c22bc
 
 
@@ -1501,7 +1508,7 @@ void AdvEasyReleaseTexture() { // Line 1492, Address: 0x2c22d0
 
 /* 100% match */
 void AdvEasyReleaseAllTexture() { // Line 1503, Address: 0x2c22e0, 0x2c22ec
-    Unknown21* ap = (Unknown21*)&AdvWork; // Line 1504, Address: 0x2c22e4
+    ADV_WORK* ap = (ADV_WORK*)&AdvWork; // Line 1504, Address: 0x2c22e4
     int i;
 
     for (i = 0; i < 2; i++) { // Line 1507, Address: 0x2c22f0
@@ -1553,7 +1560,7 @@ void AdvEasyReleaseAllTexture() { // Line 1503, Address: 0x2c22e0, 0x2c22ec
 /* 100% match */
 int AdvGetCurrentPort() { // Line 1554, Address: 0x2c2340
     return CurrentPortId; // Line 1555, Address: 0x2c2344
-} 
+}
 
 
 
@@ -1624,7 +1631,7 @@ int CheckConnectVmDrive(int parameter /* UNUSED */, int SlotNo) { // Line 1619, 
 
 
 
-    
+
     pMcDrive = CreateMemoryCard(&McDrive); // Line 1628, Address: 0x2c235c
     if (GetMcSelectPortType(pMcDrive, SlotNo - 1) == 2) {
 
@@ -1634,7 +1641,7 @@ int CheckConnectVmDrive(int parameter /* UNUSED */, int SlotNo) { // Line 1619, 
 
 
 
-        
+
         return ((SlotNo % 6) - 1) + ((SlotNo / 6) * 2); // Line 1638, Address: 0x2c2368
     }
 
@@ -1647,10 +1654,6 @@ int CheckConnectVmDrive(int parameter /* UNUSED */, int SlotNo) { // Line 1619, 
 
 
 
-    
-
-
-    
 
 
 
@@ -1660,7 +1663,11 @@ int CheckConnectVmDrive(int parameter /* UNUSED */, int SlotNo) { // Line 1619, 
 
 
 
-    
+
+
+
+
+
 
 
 
@@ -1682,11 +1689,11 @@ int FindFirstVmDrive() { // Line 1679, Address: 0x2c23d0
 
 
 
-    
+
     for (j = 1; ; ) { // Line 1686, Address: 0x2c23dc
-        
+
         DriveNo = CheckConnectVmDrive(0, j); // Line 1688, Address: 0x2c23e0
-        
+
         if (DriveNo >= 0) { // Line 1690, Address: 0x2c23f4
             return DriveNo;
         } // Line 1692, Address: 0x2c23fc
@@ -1695,30 +1702,30 @@ int FindFirstVmDrive() { // Line 1679, Address: 0x2c23d0
             break;
         }
     }
-    
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     return -1; // Line 1722, Address: 0x2c2410
 }
 
@@ -1861,11 +1868,11 @@ float AdvEasyDispMessage(float PosX, float PosY, unsigned int MessageNo) { // Li
 	int SearchFlag;
 	float SizeX, sx;
 
-    float sy = PosY; 
-    Unknown21* temp = (Unknown21*)&AdvWork; smp = (void*)((int)temp->MsgPtr + ((int*)temp->MsgPtr)[MessageNo + 1]); // Line 1865, Address: 0x2c2444, 0x2c2454, 0x2c2460 
+    float sy = PosY;
+    ADV_WORK* temp = (ADV_WORK*)&AdvWork; smp = (void*)((int)temp->MsgPtr + ((int*)temp->MsgPtr)[MessageNo + 1]); // Line 1865, Address: 0x2c2444, 0x2c2454, 0x2c2460
     dmp = syMalloc(1024); // Line 1866, Address: 0x2c246c
     memcpy(dmp, smp, 1024); // Line 1867, Address: 0x2c247c
-    
+
     nmp = (void*)dmp; // Line 1869, Address: 0x2c248c
     y = 0; // Line 1870, Address: 0x2c2490
     sx = PosX; // Line 1871, Address: 0x2c2494
@@ -1880,34 +1887,34 @@ float AdvEasyDispMessage(float PosX, float PosY, unsigned int MessageNo) { // Li
             case 0xFF00:
                 nmp[x] = 0xFFFF; // Line 1881, Address: 0x2c24f8
                 temp2 = (void*)(&nmp[x] + 1); // Line 1882, Address: 0x2c24f4
-                SearchFlag = 0; 
+                SearchFlag = 0;
                 break; // Line 1884, Address: 0x2c24fc
             case 0xFF01:
-                SizeX += 14.0f; // Line 1886, Address: 0x2c24b0, 0x2c2504 
+                SizeX += 14.0f; // Line 1886, Address: 0x2c24b0, 0x2c2504
                 break; // Line 1887, Address: 0x2c2508
             default:
 
-                
 
 
-                
 
-                SizeX += FontSz[nmp[x]]; // Line 1895, Address: 0x2c24a8, 0x2c2510 
-                break; 
+
+
+                SizeX += FontSz[nmp[x]]; // Line 1895, Address: 0x2c24a8, 0x2c2510
+                break;
             }
-            
+
         } // Line 1899, Address: 0x2c2554
 
         if (PosX < 0) { // Line 1901, Address: 0x2c255c
             sx = 320.0f - (SizeX / 2.0f); // Line 1902, Address: 0x2c2574
         } // Line 1903, Address: 0x2c2594
-        sys->mes_tp = (int*)nmp; // Line 1904, Address: 0x2c2598, 0x2c25b4 
-        bhDispMessage(sx, sy, -1, 2, 0, 0, 0); // Line 1905, Address: 0x2c25a0, 0x2c25c0 
+        sys->mes_tp = (int*)nmp; // Line 1904, Address: 0x2c2598, 0x2c25b4
+        bhDispMessage(sx, sy, -1, 2, 0, 0, 0); // Line 1905, Address: 0x2c25a0, 0x2c25c0
         sy += 30; // Line 1906, Address: 0x2c25d0, 0x2c25dc
         y++; // Line 1907, Address: 0x2c25d8
-        nmp = (void*)temp2; 
+        nmp = (void*)temp2;
     } // Line 1909, Address: 0x2c25e0
-    
+
     syFree(dmp); // Line 1911, Address: 0x2c25e8
     if (PosX < 0) {
         return y * 30; // Line 1913, Address: 0x2c25f0
@@ -1932,7 +1939,7 @@ float AdvEasyDispMessage(float PosX, float PosY, unsigned int MessageNo) { // Li
 
 
 /* 100% match */
-float AutoSaveLoadEasyDispMessage(float PosX, float PosY, unsigned char* ucpMsbTop, unsigned int MessageNo) { // Line 1935, Address: 0x2c2650, 0x2c2674, 0x2c2680 
+float AutoSaveLoadEasyDispMessage(float PosX, float PosY, unsigned char* ucpMsbTop, unsigned int MessageNo) { // Line 1935, Address: 0x2c2650, 0x2c2674, 0x2c2680
 	unsigned char* dmp, * smp;
 	unsigned short* mp, * nmp;
     unsigned int* temp; // not from the DWARF info
@@ -1940,12 +1947,12 @@ float AutoSaveLoadEasyDispMessage(float PosX, float PosY, unsigned char* ucpMsbT
 	int LoopFlag = 1; // Line 1940, Address: 0x2c268c
 	int SearchFlag;
     float sx, SizeX;
-    float sy = PosY; 
-    
-    smp = (ucpMsbTop + ((int*)ucpMsbTop)[MessageNo + 1]); // Line 1945, Address: 0x2c2670, 0x2c2678, 0x2c2684, 0x2c2690 
+    float sy = PosY;
+
+    smp = (ucpMsbTop + ((int*)ucpMsbTop)[MessageNo + 1]); // Line 1945, Address: 0x2c2670, 0x2c2678, 0x2c2684, 0x2c2690
     dmp = syMalloc(1024); // Line 1946, Address: 0x2c2694
     memcpy(dmp, smp, 1024); // Line 1947, Address: 0x2c26a0
-    
+
     nmp = (void*)dmp; // Line 1949, Address: 0x2c26b0
     y = 0; // Line 1950, Address: 0x2c26b4
     sx = PosX; // Line 1951, Address: 0x2c26b8
@@ -1960,34 +1967,34 @@ float AutoSaveLoadEasyDispMessage(float PosX, float PosY, unsigned char* ucpMsbT
             case 0xFF00:
                 nmp[x] = 0xFFFF; // Line 1961, Address: 0x2c2720
                 temp = (void*)(&nmp[x] + 1); // Line 1962, Address: 0x2c271c
-                SearchFlag = 0; 
+                SearchFlag = 0;
                 break; // Line 1964, Address: 0x2c2724
             case 0xFF01:
-                SizeX += 14.0f * FontScaleX; // Line 1966, Address: 0x2c26d8, 0x2c272c 
+                SizeX += 14.0f * FontScaleX; // Line 1966, Address: 0x2c26d8, 0x2c272c
                 break; // Line 1967, Address: 0x2c2738
             default:
 
-                
 
 
-                
 
-                SizeX += FontSz[nmp[x]] * FontScaleX; // Line 1975, Address: 0x2c26d0, 0x2c2740, 0x2c2790 
-                break; 
-                
+
+
+                SizeX += FontSz[nmp[x]] * FontScaleX; // Line 1975, Address: 0x2c26d0, 0x2c2740, 0x2c2790
+                break;
+
             } // Line 1978, Address: 0x2c278c
         } // Line 1979, Address: 0x2c2794
 
         if (PosX < 0) { // Line 1981, Address: 0x2c279c
             sx = 320.0f - (SizeX / 2); // Line 1982, Address: 0x2c27b4
         } // Line 1983, Address: 0x2c27d4
-        sys->mes_tp = nmp; // Line 1984, Address: 0x2c27d8, 0x2c27f4 
-        bhDispMessage(sx, sy, -1, 2, 0, 0, 0); // Line 1985, Address: 0x2c27e0, 0x2c2800 
-        sy += 30 * FontScaleCR; // Line 1986, Address: 0x2c2810, 0x2c2828 
+        sys->mes_tp = nmp; // Line 1984, Address: 0x2c27d8, 0x2c27f4
+        bhDispMessage(sx, sy, -1, 2, 0, 0, 0); // Line 1985, Address: 0x2c27e0, 0x2c2800
+        sy += 30 * FontScaleCR; // Line 1986, Address: 0x2c2810, 0x2c2828
         y++; // Line 1987, Address: 0x2c2820
         nmp = (void*)temp; // Line 1988, Address: 0x2c2824
     } // Line 1989, Address: 0x2c282c
-    
+
     syFree(dmp); // Line 1991, Address: 0x2c2834
     if (PosX < 0) {
         return y * 30 * FontScaleCR; // Line 1993, Address: 0x2c283c
@@ -2068,16 +2075,16 @@ float AutoSaveLoadEasyDispMessage(float PosX, float PosY, unsigned char* ucpMsbT
 
 /* 100% match */
 int DispVmWarningMessage(int MsgId) { // Line 2070, Address: 0x2c28c0, 0x2c28cc, 0x2c28d4
-    Unknown21* ap = (Unknown21*)&AdvWork; // Line 2071, Address: 0x2c28b0
-    Unknown32* mp = &AdvVmMsgDef[MsgId]; // Line 2072, Address: 0x2c28b8, 0x2c28c4, 0x2c28d0, 0x2c28d8
-    
+    ADV_WORK* ap = (ADV_WORK*)&AdvWork; // Line 2071, Address: 0x2c28b0
+    ADV_MESSAGE_DEFINITION* mp = &AdvVmMsgDef[MsgId]; // Line 2072, Address: 0x2c28b8, 0x2c28c4, 0x2c28d0, 0x2c28d8
+
     if ((mp->MsgType != 0) && ((Pad[ap->PortId].press & 0x800))) { // Line 2074, Address: 0x2c28dc
         ap->Mode = ap->Mode2 = ap->NextMode; // Line 2075, Address: 0x2c28e8
         return 1; // Line 2076, Address: 0x2c2914, 0x2c291c
     } // Line 2077, Address: 0x2c2918, 0x2c2920
 
 
-    
+
     AdvEasyDispMessage(mp->Sx, mp->Sy, mp->StartMsgNo); // Line 2081, Address: 0x2c2928
     if (mp->NaviMsgNo >= 0) { // Line 2082, Address: 0x2c2938
         AdvEasyDispMessage(-1.0f, 400.0f, mp->NaviMsgNo); // Line 2083, Address: 0x2c2944
@@ -2096,7 +2103,7 @@ int DispVmWarningMessage(int MsgId) { // Line 2070, Address: 0x2c28c0, 0x2c28cc,
 void DefaultSetOption() { // Line 2096, Address: 0x2c2970
 
     // temp var not originally outputted by dwarf2cpp
-    Unknown21* temp = (Unknown21*)&AdvWork; // Line 2099, Address: 0x2c2978
+    ADV_WORK* temp = (ADV_WORK*)&AdvWork; // Line 2099, Address: 0x2c2978
     sys->keytype = 0; // Line 2100, Address: 0x2c2980,
     RequestAdjustDisplay(0, 0); // Line 2101, Address: 0x2c2990
     sys->vibration = (CheckVibrationUnit((temp->PortId * 6) + 2) == 0) ? 0 : 1; // Line 2102, Address: 0x2c29c4
@@ -2111,12 +2118,12 @@ void DefaultSetOption() { // Line 2096, Address: 0x2c2970
 
 /* 99.66% match */
 int Adv_FirstWarningMessage() { // Line 2113, Address: 0x2c29e0
-	Unknown21* ap = (Unknown21*)&AdvWork; // Line 2114, Address: 0x2c29f0
+	ADV_WORK* ap = (ADV_WORK*)&AdvWork; // Line 2114, Address: 0x2c29f0
     int ReturnCode;
-	int TexNoDef[3] = {0, 1, -1}; // Line 2118, Address: 0x2c29f8, 0x2c2a10 
+	int TexNoDef[3] = {0, 1, -1}; // Line 2118, Address: 0x2c29f8, 0x2c2a10
 	static int lState;
 	static int LoadCheck;
-    
+
     ReturnCode = 0; // Line 2120, Address: 0x2c2a0c
 
 
@@ -2127,7 +2134,7 @@ int Adv_FirstWarningMessage() { // Line 2113, Address: 0x2c29e0
 
 
 
-    
+
     ap->PortId = AdvGetCurrentPort(); // Line 2131, Address: 0x2c2a14
     ExecuteAdvFade(); // Line 2132, Address: 0x2c2a1c
     ExecuteAdvScreenSaver(); // Line 2133, Address: 0x2c2a24
@@ -2139,11 +2146,11 @@ int Adv_FirstWarningMessage() { // Line 2113, Address: 0x2c29e0
         ResetAdvSystem(); // Line 2139, Address: 0x2c2a68
 
 
-        
+
         ap->Mode = 1; // Line 2143, Address: 0x2c2a70
         break; // Line 2144, Address: 0x2c2a74
     case 1:
-        
+
         ap->ptr[0] = bhGetFreeMemory(GetInsideFileSize(sys->sys_partid, 1), 32); // Line 2147, Address: 0x2c2a7c
         RequestReadInsideFile(sys->sys_partid, 1, ap->ptr[0]); // Line 2148, Address: 0x2c2aa0
         ap->Mode = 2; // Line 2149, Address: 0x2c2ab8
@@ -2155,9 +2162,9 @@ int Adv_FirstWarningMessage() { // Line 2113, Address: 0x2c29e0
         bhSetFontTexture(ap->ptr[0]); // Line 2155, Address: 0x2c2ad4
         AllFreeAdvMemory(); // Line 2156, Address: 0x2c2adc
         ap->Mode = 4; // Line 2157, Address: 0x2c2ae4
-        
+
     case 4:
-        
+
         RequestAdvInsideFileEx(0, 0); // Line 2161, Address: 0x2c2aec
         ap->Mode = 5; // Line 2162, Address: 0x2c2af8
         break; // Line 2163, Address: 0x2c2afc
@@ -2168,27 +2175,26 @@ int Adv_FirstWarningMessage() { // Line 2113, Address: 0x2c29e0
         ap->MsgPtr = AdvGetResourcePtr(ap->ptr[0], 0); // Line 2168, Address: 0x2c2b14
         AdvEasySetupTextureBasic(AdvGetResourcePtr(ap->ptr[0], 2), 0, 0); // Line 2169, Address: 0x2c2b24
         AdvEasySetupTextureBasic(AdvGetResourcePtr(ap->ptr[0], 3), 0, 1); // Line 2170, Address: 0x2c2b40
-        ap->PalNo = TransPvpData(AdvGetResourcePtr(ap->ptr[0], 1), ap->PalFlag); // Line 2171, Address: 0x2c2b5c, 0x2c2b7c 
-        AdvEasyTransTextureBasic(0, 2, 1); // Line 2172, Address: 0x2c2b74, 0x2c2b80 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        ap->PalNo = TransPvpData(AdvGetResourcePtr(ap->ptr[0], 1), ap->PalFlag); // Line 2171, Address: 0x2c2b5c, 0x2c2b7c
+        AdvEasyTransTextureBasic(0, 2, 1); // Line 2172, Address: 0x2c2b74, 0x2c2b80
+
+
+
+
+
+
+
+
+
+
         ap->Mode = 8; // Line 2183, Address: 0x2c2b88
-        
-        
+
+
         break; // Line 2186, Address: 0x2c2b8c
     case 8:
     case 9:
 
 
-        
 
 
 
@@ -2196,19 +2202,20 @@ int Adv_FirstWarningMessage() { // Line 2113, Address: 0x2c29e0
 
 
 
-        
-
-
-        
 
 
 
 
-        
 
 
 
-        
+
+
+
+
+
+
+
 
 
 
@@ -2231,20 +2238,6 @@ int Adv_FirstWarningMessage() { // Line 2113, Address: 0x2c29e0
         ap->Mode = 11; // Line 2231, Address: 0x2c2b94
         break; // Line 2232, Address: 0x2c2b98
     case 10:
-        
-
-
-
-
-        
-
-
-
-        
-
-
-
-        
 
 
 
@@ -2252,15 +2245,29 @@ int Adv_FirstWarningMessage() { // Line 2113, Address: 0x2c29e0
 
 
 
-        
 
 
 
 
-        
 
 
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2270,47 +2277,47 @@ int Adv_FirstWarningMessage() { // Line 2113, Address: 0x2c29e0
         ap->Mode = 11; // Line 2270, Address: 0x2c2ba0
 
 
-        
 
 
 
 
-        
+
+
 
         break; // Line 2280, Address: 0x2c2ba4
     case 11:
-        
+
         switch (lState) { // Line 2283, Address: 0x2c2bac
         case 0:
 
 
 
-            
+
             pSysLoad = CreateSysLoadScreen(&SysLoad, NULL); // Line 2289, Address: 0x2c2bd0
-            
+
             lState = 1; // Line 2291, Address: 0x2c2bf0
             LoadCheck = 0; // Line 2292, Address: 0x2c2be8
-            
+
             break;// Line 2294, Address: 0x2c2bf8
         case 1:
             LoadCheck = ExecuteSysLoadScreen(pSysLoad); // Line 2296, Address: 0x2c2c00
             if (LoadCheck == 1) { // Line 2297, Address: 0x2c2c14
-                
+
                 ap->Mode = 15; // Line 2299, Address: 0x2c2c28
                 lState = 0; // Line 2300, Address: 0x2c2c30
                 LoadCheck = 0; // Line 2301, Address: 0x2c2c38
                 DefaultSetOption(1); // Line 2302, Address: 0x2c2c3c
             } else { // Line 2303, Address: 0x2c2c44
                 if (LoadCheck == 2) { // Line 2304, Address: 0x2c2c4c
-                    
+
                     ap->Mode = 15; // Line 2306, Address: 0x2c2c58
                     lState = 0; // Line 2307, Address: 0x2c2c60
                     LoadCheck = 0; // Line 2308, Address: 0x2c2c68
                     ap->GenFlag = 1; // Line 2309, Address: 0x2c2c70
-                    
+
                     switch (sys->ssd_reserve) { // Line 2311, Address: 0x2c2c74
                     case 0:
-                        
+
                         SetSoundMode(0); // Line 2314, Address: 0x2c2c98
                         break; // Line 2315, Address: 0x2c2ca4
                     case 1:
@@ -2318,70 +2325,10 @@ int Adv_FirstWarningMessage() { // Line 2113, Address: 0x2c29e0
                         break;
                     }
                 }
-            } 
+            }
         }
         break; // Line 2323, Address: 0x2c2cb4
     case 12:
-        
-
-
-
-
-
-        
-
-
-
-        
-
-
-        
-
-
-
-
-        
-
-
-
-
-
-
-
-
-
-        
-
-
-        
-
-
-
-
-
-
-        
-
-
-        
-
-
-        
-
-
-        
-
-
-        
-
-
-
-
-
-        
-
-
-        
 
 
 
@@ -2395,33 +2342,93 @@ int Adv_FirstWarningMessage() { // Line 2113, Address: 0x2c29e0
 
 
 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         ap->Mode = 15; // Line 2408, Address: 0x2c2cbc
-        
+
         break; // Line 2410, Address: 0x2c2cc0
     case 13:
-        
+
         ap->Mode = 15; // Line 2413, Address: 0x2c2cc8
 
 
 
-        
 
 
 
 
 
 
-        
+
+
 
 
 
@@ -2443,31 +2450,31 @@ int Adv_FirstWarningMessage() { // Line 2113, Address: 0x2c29e0
         }
 
 
-        
+
         RequestAdvFade(2, GetSamurai(50)); // Line 2447, Address: 0x2c2d0c
         ap->Count = 0; // Line 2448, Address: 0x2c2d28
         ap->Mode = 17; // Line 2449, Address: 0x2c2d24
-        
+
         break; // Line 2451, Address: 0x2c2d2c
     case 17:
         if (CheckAdvFade() == 0) { // Line 2453, Address: 0x2c2d34
-            
-            
-            
-            
+
+
+
+
             ap->Timer = 150.0f; // Line 2458, Address: 0x2c2d44
-            
-            
-            
-            
+
+
+
+
             ap->Mode = 18; // Line 2463, Address: 0x2c2d4c
         }
         AdvEasySetTextureList(0); // Line 2465, Address: 0x2c2d54
         AdvDwawOnePicture(TexNoDef[ap->Count]); // Line 2466, Address: 0x2c2d60
         break; // Line 2467, Address: 0x2c2d74
     case 18:
-        ap->Timer--; // Line 2469, Address: 0x2c2d7c, 0x2c2d90 
-        if (ap->Timer < 0) { // Line 2470, Address: 0x2c2d88, 0x2c2d94 
+        ap->Timer--; // Line 2469, Address: 0x2c2d7c, 0x2c2d90
+        if (ap->Timer < 0) { // Line 2470, Address: 0x2c2d88, 0x2c2d94
             RequestAdvFade(3, GetSamurai(50)); // Line 2471, Address: 0x2c2da4
             ap->Mode = 19; // Line 2472, Address: 0x2c2db8
         }
@@ -2489,7 +2496,7 @@ int Adv_FirstWarningMessage() { // Line 2113, Address: 0x2c29e0
         }
         break;
     }
-    
+
     if (ap->Mode == -1) { // Line 2493, Address: 0x2c2e68
         AdvEasyReleaseAllTexture(); // Line 2494, Address: 0x2c2e78
         AllFreeAdvMemory(); // Line 2495, Address: 0x2c2e80
@@ -2497,7 +2504,7 @@ int Adv_FirstWarningMessage() { // Line 2113, Address: 0x2c29e0
         ap->Active = 0; // Line 2497, Address: 0x2c2e90
         ReturnCode = 1; // Line 2498, Address: 0x2c2e8c
     }
-    
+
     return ReturnCode; // Line 2501, Address: 0x2c2e94
 } // Line 2502, Address: 0x2c2e98
 
@@ -2510,9 +2517,9 @@ int Adv_FirstWarningMessage() { // Line 2113, Address: 0x2c29e0
 
 /* 99.94% match */
 int Adv_CapcomLogo() { // Line 2512, Address: 0x2c2eb0
-	Unknown21* ap = (Unknown21*)&AdvWork; // Line 2513, Address: 0x2c2ec0
+	ADV_WORK* ap = (ADV_WORK*)&AdvWork; // Line 2513, Address: 0x2c2ec0
     int ReturnCode = 0;
-    
+
     ap->PortId = AdvGetCurrentPort(); // Line 2516, Address: 0x2c2ec8
     ExecuteAdvFade(); // Line 2517, Address: 0x2c2ed0
     AdvCheckSoftReset(0); // Line 2518, Address: 0x2c2ed8
@@ -2520,15 +2527,15 @@ int Adv_CapcomLogo() { // Line 2512, Address: 0x2c2eb0
     switch (ap->Mode) { // Line 2520, Address: 0x2c2ee0
 
 
-        
+
     case 0:
         ResetAdvSystem(); // Line 2525, Address: 0x2c2f0c
 
 
-        
+
         ap->Mode = 1; // Line 2529, Address: 0x2c2f14
 
-        
+
         break; // Line 2532, Address: 0x2c2f18
     case 1:
         RequestAdvInsideFile(1); // Line 2534, Address: 0x2c2f20
@@ -2545,23 +2552,23 @@ int Adv_CapcomLogo() { // Line 2512, Address: 0x2c2eb0
         break; // Line 2545, Address: 0x2c2f6c
     case 4:
         if (CheckAdvFade() == 0) { // Line 2547, Address: 0x2c2f74
-            
-            
-            
-            
+
+
+
+
             ap->Timer = 150.0f; // Line 2552, Address: 0x2c2f84
-            
-            
-            
-            
+
+
+
+
             ap->Mode = 5; // Line 2557, Address: 0x2c2f8c
         }
         AdvDwawOnePicture(0); // Line 2559, Address: 0x2c2f94
         break; // Line 2560, Address: 0x2c2fa0
     case 5:
-        ap->Timer--; // Line 2562, Address: 0x2c2fa8, 0x2c2fbc 
-        
-        if (ap->Timer < 0) { // Line 2564, Address: 0x2c2fb4, 0x2c2fc0 
+        ap->Timer--; // Line 2562, Address: 0x2c2fa8, 0x2c2fbc
+
+        if (ap->Timer < 0) { // Line 2564, Address: 0x2c2fb4, 0x2c2fc0
             RequestAdvFade(3, GetSamurai(50)); // Line 2565, Address: 0x2c2fd0
             ap->NextMode = 7; // Line 2566, Address: 0x2c2fe4
             ap->Mode = 6; // Line 2567, Address: 0x2c2fec
@@ -2574,14 +2581,14 @@ int Adv_CapcomLogo() { // Line 2512, Address: 0x2c2eb0
 
 
 
-        
 
 
 
 
 
 
-        
+
+
 
         break; // Line 2586, Address: 0x2c2ffc
     case 6:
@@ -2590,7 +2597,7 @@ int Adv_CapcomLogo() { // Line 2512, Address: 0x2c2eb0
         } // Line 2590, Address: 0x2c3018
         else
         {
-            
+
             if ((Pad[ap->PortId].press & 0x800)) { // Line 2594, Address: 0x2c3020
                 ap->NextMode = -1;
             }
@@ -2598,13 +2605,13 @@ int Adv_CapcomLogo() { // Line 2512, Address: 0x2c2eb0
         }
         break; // Line 2599, Address: 0x2c3060
     case 7:
-        
+
 
 
 
         PlayStartMovieEx(16, 0, 1); // Line 2605, Address: 0x2c3068
-        
-        
+
+
         ap->Mode = 8; // Line 2608, Address: 0x2c3078
         break; // Line 2609, Address: 0x2c307c
     case 8:
@@ -2620,7 +2627,7 @@ int Adv_CapcomLogo() { // Line 2512, Address: 0x2c2eb0
         }
         break; // Line 2621, Address: 0x2c30d0
     case 9:
-        
+
         switch (PlayMovieMain(0)) { // Line 2624, Address: 0x2c30d8
         case 1:
         case 2:
@@ -2634,43 +2641,43 @@ int Adv_CapcomLogo() { // Line 2512, Address: 0x2c2eb0
     }
 
 
-    
+
     if (ap->Mode == -1) { // Line 2638, Address: 0x2c311c
         AdvEasyReleaseTexture(); // Line 2639, Address: 0x2c312c
         ap->Mode = 0; // Line 2640, Address: 0x2c3134
         ap->Active = 0; // Line 2641, Address: 0x2c313c
         ReturnCode = 1; // Line 2642, Address: 0x2c3138
     }
-    
+
     return ReturnCode; // Line 2645, Address: 0x2c3140
 } // Line 2646, Address: 0x2c3144
 
 
 
 
-/* 100% match */ 
+/* 100% match */
 void ResetFlushPlate() {
-    Unknown21* ap = (Unknown21*)&AdvWork; // Line 2653, Address: 0x2c3160
-    
+    ADV_WORK* ap = (ADV_WORK*)&AdvWork; // Line 2653, Address: 0x2c3160
+
     ap->FlushSpeed2 = 0; // Line 2655, Address: 0x2c3168
     ap->FlushCount2 = 0; // Line 2656, Address: 0x2c316c
 }
 
 
 
-/* 100% match */ 
-void FlushPlate() { // Line 2662, Address: 0x2c3180, 0x2c3188 
-    Unknown21* ap = (Unknown21*)&AdvWork; // Line 2663, Address: 0x2c3190
+/* 100% match */
+void FlushPlate() { // Line 2662, Address: 0x2c3180, 0x2c3188
+    ADV_WORK* ap = (ADV_WORK*)&AdvWork; // Line 2663, Address: 0x2c3190
 
     ap->FlushCount2 += ap->FlushSpeed2; // Line 2665, Address: 0x2c3198
-    if (ap->FlushSpeed2 < 0) { // Line 2666, Address: 0x2c3184, 0x2c31a8 
-        
+    if (ap->FlushSpeed2 < 0) { // Line 2666, Address: 0x2c3184, 0x2c31a8
+
         if (ap->FlushCount2 <= -64.0f) { // Line 2668, Address: 0x2c31bc
             ap->FlushCount2 = -64.0f; // Line 2669, Address: 0x2c31dc
             ap->FlushSpeed2 = 2.0f; // Line 2670, Address: 0x2c31e0
         }
     } else { // Line 2672, Address: 0x2c31e4
-        
+
         if (ap->FlushCount2 >= 0) { // Line 2674, Address: 0x2c31ec
             ap->FlushCount2 = 0; // Line 2675, Address: 0x2c3200
             ap->FlushSpeed2 = -2.0f; // Line 2676, Address: 0x2c3204
@@ -2682,7 +2689,7 @@ void FlushPlate() { // Line 2662, Address: 0x2c3180, 0x2c3188
     ap->FontBaseColor |= ((unsigned int)ap->FlushCount2 + 0xFF) << 8; // Line 2682, Address: 0x2c3238
 } // Line 2683, Address: 0x2c3254
 
-// 
+//
 // Start address: 0x2c3270
 void DisplayTitleBg()
 {
@@ -2700,7 +2707,7 @@ void DisplayTitleBg()
 	// Func End, Address: 0x2c338c, Func Offset: 0x11c
 }
 
-// 
+//
 // Start address: 0x2c3390
 void DisplayPressStartPlate(float FadeRate)
 {
@@ -2717,7 +2724,7 @@ void DisplayPressStartPlate(float FadeRate)
 	// Func End, Address: 0x2c3460, Func Offset: 0xd0
 }
 
-// 
+//
 // Start address: 0x2c3460
 void DisplayGameModePlate(int Cursor, int CursorMax, float FadeRate, int Flag)
 {
@@ -2786,7 +2793,7 @@ void DisplayGameModePlate(int Cursor, int CursorMax, float FadeRate, int Flag)
 	// Func End, Address: 0x2c3798, Func Offset: 0x338
 }
 
-// 
+//
 // Start address: 0x2c37a0
 void DisplayNewGamePlate(int Cursor, float FadeRate, int Flag)
 {
@@ -2839,7 +2846,7 @@ void DisplayNewGamePlate(int Cursor, float FadeRate, int Flag)
 	// Func End, Address: 0x2c3abc, Func Offset: 0x31c
 }
 
-// 
+//
 // Start address: 0x2c3ac0
 void DisplayExtraGamePlate(int Cursor, float FadeRate, int Flag)
 {
@@ -2888,9 +2895,9 @@ void DisplayExtraGamePlate(int Cursor, float FadeRate, int Flag)
 	// Func End, Address: 0x2c3d7c, Func Offset: 0x2bc
 }
 
-/* 100% match */ 
+/* 100% match */
 void FadeInPlate(int NextMode) { // Line 3219, Address: 0x2c3d80
-    Unknown21* ap = (Unknown21*)&AdvWork; // Line 3220, Address: 0x2c3d90
+    ADV_WORK* ap = (ADV_WORK*)&AdvWork; // Line 3220, Address: 0x2c3d90
 
     ResetFlushPlate(); // Line 3222, Address: 0x2c3d98
     ap->FlushCount += ap->FlushSpeed; // Line 3223, Address: 0x2c3da0, 0x2c3db4
@@ -2901,9 +2908,9 @@ void FadeInPlate(int NextMode) { // Line 3219, Address: 0x2c3d80
     }
 } // Line 3229, Address: 0x2c3dd8
 
-/* 100% match */ 
+/* 100% match */
 void FadeOutPlate() { // Line 3235, Address: 0x2c3df0
-    Unknown21* ap = (Unknown21*)&AdvWork; // Line 3236, Address: 0x2c3dfc
+    ADV_WORK* ap = (ADV_WORK*)&AdvWork; // Line 3236, Address: 0x2c3dfc
 
     ResetFlushPlate(); // Line 3238, Address: 0x2c3e00
     ap->FlushCount -= ap->FlushSpeed; // Line 3239, Address: 0x2c3e08, 0x2c3e18
@@ -2914,25 +2921,25 @@ void FadeOutPlate() { // Line 3235, Address: 0x2c3df0
     }
 } // Line 3245, Address: 0x2c3e40
 
-/* 100% match */ 
+/* 100% match */
 void TitleCall(int PortId, int ReturnCode) { // Line 3251, Address: 0x2c3e50
-    Unknown21* ap = (Unknown21*)&AdvWork; // Line 3252, Address: 0x2c3e64
-    
+    ADV_WORK* ap = (ADV_WORK*)&AdvWork; // Line 3252, Address: 0x2c3e64
+
     StartVibrationEx(PortId, 16); // Line 3254, Address: 0x2c3e6c
     SetVolumeAdx2(0, 0); // Line 3255, Address: 0x2c3e74
     PlayAdx(0, ap->PatId, 3); // Line 3256, Address: 0x2c3e80
 
 
-    
+
     RequestAdvFade(3, GetSamurai(430)); // Line 3260, Address: 0x2c3e90
-    
+
     ap->FlushCount = 180.0f; // Line 3262, Address: 0x2c3ea4
     ap->NextReturnCode = ReturnCode; // Line 3263, Address: 0x2c3eb0
     ap->Mode = 17; // Line 3264, Address: 0x2c3eac, 0x2c3eb4
     ap->GenFlag = 1; // Line 3265, Address: 0x2c3eb8
 } // Line 3266, Address: 0x2c3ec0
 
-// 
+//
 // Start address: 0x2c3ee0
 int CheckButton(int Level, int Flag, int MaxFlag)
 {
@@ -3059,87 +3066,87 @@ int CheckButton(int Level, int Flag, int MaxFlag)
 	// Func End, Address: 0x2c440c, Func Offset: 0x52c
 }
 
-/* 100% match */ 
+/* 100% match */
 int CheckStartButton() { // Line 3511, Address: 0x2c4410, 0x2c441c
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // temp var not originally outputted by dwarf2cpp
-    Unknown21* temp = (Unknown21*)&AdvWork; // Line 3564, Address: 0x2c4414, 0x2c4420
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+    ADV_WORK* temp = (ADV_WORK*)&AdvWork; // Line 3564, Address: 0x2c4414, 0x2c4420
+
+
+
+
+
+
+
+
+
+
+
+
+
     if ((Pad[temp->PortId].press & 0x800)) { // Line 3578, Address: 0x2c444c
-        
+
         CallSystemSeBasic(3, 0, 0); // Line 3580, Address: 0x2c445c
 
 
-        
+
         StopAdvScreenSaver(0); // Line 3584, Address: 0x2c4464
         return 1;
     }
     return 0; // Line 3587, Address: 0x2c446c
 } // Line 3588, Address: 0x2c4470
 
-// 
+//
 // Start address: 0x2c4480
 int Adv_BioCvTitle()
 {
@@ -3413,7 +3420,7 @@ int Adv_BioCvTitle()
 
 /* 100% match */
 void ResetOptionMenuParam(int Mode) { // Line 4243, Address: 0x2c4eb0
-    Unknown21* ap = &AdvWork; // Line 4244, Address: 0x2c4ebc
+    ADV_WORK* ap = &AdvWork; // Line 4244, Address: 0x2c4ebc
     int i;
 
     switch (Mode) { // Line 4247, Address: 0x2c4ec4
@@ -3497,7 +3504,7 @@ void DisplayOptionScrollPlate(float PosX, float PosY) { // Line 4321, Address: 0
     njTextureFilterMode(0); // Line 4332, Address: 0x2c51e4
 } // Line 4333, Address: 0x2c51ec
 
-// 
+//
 // Start address: 0x2c5210
 void DisplayOptionBg(int Level, int Flag)
 {
@@ -3555,7 +3562,7 @@ void DisplayOptionBg(int Level, int Flag)
 	// Func End, Address: 0x2c54bc, Func Offset: 0x2ac
 }
 
-// 
+//
 // Start address: 0x2c54c0
 int DisplayOptionPlateLevel0(int PortId, int Flag)
 {
@@ -3725,7 +3732,7 @@ int DisplayOptionPlateLevel0(int PortId, int Flag)
 	// Func End, Address: 0x2c6190, Func Offset: 0xcd0
 }
 
-// 
+//
 // Start address: 0x2c6190
 int DisplayOptionPlateLevel1(int PortId, int Flag)
 {
@@ -3856,7 +3863,7 @@ int DisplayOptionPlateLevel1(int PortId, int Flag)
 	// Func End, Address: 0x2c6d4c, Func Offset: 0xbbc
 }
 
-// 
+//
 // Start address: 0x2c6d50
 int DisplayOptionPlateLevel2(int PortId, int Flag)
 {
@@ -3987,7 +3994,7 @@ int DisplayOptionPlateLevel2(int PortId, int Flag)
 	// Func End, Address: 0x2c786c, Func Offset: 0xb1c
 }
 
-// 
+//
 // Start address: 0x2c7870
 int DisplayOptionPlateLevel3(int PortId, int Flag)
 {
@@ -4082,7 +4089,7 @@ int DisplayOptionPlateLevel3(int PortId, int Flag)
 
 /* 100% match */
 int DisplayOptionPlate(int PortId, int Level, int Flag) { // Line 5429, Address: 0x2c7cf0
-    switch (Level) { // Line 5430, Address: 0x2c7cf4                   
+    switch (Level) { // Line 5430, Address: 0x2c7cf4
         case 0:
             return DisplayOptionPlateLevel0(PortId, Flag); // Line 5432, Address: 0x2c7d28
         case 1:
@@ -4091,16 +4098,16 @@ int DisplayOptionPlate(int PortId, int Level, int Flag) { // Line 5429, Address:
         case 2:
 
             return DisplayOptionPlateLevel2(PortId, Flag); // Line 5438, Address: 0x2c7d50
-        case 3: 
+        case 3:
 
             return DisplayOptionPlateLevel3(PortId, Flag); // Line 5441, Address: 0x2c7d64
         default:
-            
+
             return -1; // Line 5444, Address: 0x2c7d74
     }
 } // Line 5446, Address: 0x2c7d78
 
-// 
+//
 // Start address: 0x2c7d90
 int Adv_GameOptionScreen()
 {
@@ -4258,7 +4265,7 @@ int Adv_GameOptionScreen()
 
 /* 100% match */
 int Adv_ChangeDiscScreen() { // Line 5818, Address: 0x2c83e0
-    Unknown21* ap = &AdvWork; // Line 5819, Address: 0x2c83ec
+    ADV_WORK* ap = &AdvWork; // Line 5819, Address: 0x2c83ec
 
 
 
@@ -4294,5 +4301,5 @@ int Adv_ChangeDiscScreen() { // Line 5818, Address: 0x2c83e0
 /* 100% match */
 int Adv_SoundMuseum() { // Line 6907, Address: 0x2c84d0
     return 1;
-} 
+}
 

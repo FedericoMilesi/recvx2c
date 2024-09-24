@@ -1,6 +1,6 @@
-void syHwFinish();
-void syHwInit();
-void syHwInit2();
+#include "sg_syhw.h"
+
+
 /* empty */
 void syHwFinish() { } // Line 5, Address: 0x2ddf50
 

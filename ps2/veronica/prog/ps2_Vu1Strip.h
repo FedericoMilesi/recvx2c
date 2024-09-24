@@ -16,15 +16,15 @@ typedef struct SCISSOR_NODE {
 
 typedef struct SCISSOR_NODE_ARRAY {
     SCISSOR_NODE node[12];
-    unsigned int nodeNum;
+    Uint32 nodeNum;
     float pad[3];
 } SCISSOR_NODE_ARRAY;
 
 typedef struct VECTOR4 {
-    float x;
-    float y;
-    float z;
-    float w;
+    Float x;
+    Float y;
+    Float z;
+    Float w;
 } VECTOR4;
 
 typedef struct SCISSOR_SYSTEM {
@@ -32,18 +32,18 @@ typedef struct SCISSOR_SYSTEM {
     SCISSOR_NODE_ARRAY narray[2];
     SCISSOR_NODE_ARRAY* in;
     SCISSOR_NODE_ARRAY* out;
-    unsigned int rotflag;
-    unsigned int flipflag;
+    Uint32 rotflag;
+    Uint32 flipflag;
 } SCISSOR_SYSTEM;
 
 typedef struct SCISSOR_PLANE {
-    unsigned int xyzflag;
-    unsigned int clipmask;
+    Uint32 xyzflag;
+    Uint32 clipmask;
 } SCISSOR_PLANE;
 
 typedef struct SCISSOR_PLANE_SET {
     SCISSOR_PLANE plane[5];
-    unsigned int planeNum;
+    Uint32 planeNum;
 } SCISSOR_PLANE_SET;
 
 void vu1SetScreenProjection(float fProjection);
@@ -79,7 +79,7 @@ void vu1GetVertexColorDifSpe3(VU1_STRIP_BUF* pStrip, VU1_PRIM_BUF* pPrim);
 void vu1GetVertexColorDifSpe1Amb(VU1_STRIP_BUF* pStrip, VU1_PRIM_BUF* pPrim);
 void vu1GetVertexColorDifSpe2Amb(VU1_STRIP_BUF* pStrip, VU1_PRIM_BUF* pPrim);
 void vu1GetVertexColorDifSpe3Amb(VU1_STRIP_BUF* pStrip, VU1_PRIM_BUF* pPrim);
-void vu1RotTransStripBuf(NJS_MATRIX pMatrix, NJS_POINT3* pVector, VU1_STRIP_BUF* pBuf);
+void vu1RotTransStripBuf(NJS_MATRIX* pMatrix, NJS_POINT3* pVector, VU1_STRIP_BUF* pBuf);
 void vu1DrawTriangleStripTransDoubleI(unsigned long ulType, VU1_STRIP_BUF* pS, unsigned short usStripMax, unsigned short usMode);
 void DrawScissorPolygonTrans1P(SCISSOR_SYSTEM* scissor, unsigned long ulType);
 void vu1DrawTriangleStripTransDouble1P(unsigned long ulType, VU1_STRIP_BUF* pS, unsigned short usStripMax, unsigned short usMode);

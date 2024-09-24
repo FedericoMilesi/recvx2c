@@ -1,8 +1,8 @@
 #include "types.h"
 
-extern Camera cam;
-extern NJS_MATRIX cmmat[2];
-extern float* cmat;
+Camera cam;
+NJS_MATRIX cmmat[2];
+float* cmat;
 
 void bhInitCamera();
 void bhControlCamera();

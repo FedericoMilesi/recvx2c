@@ -4,8 +4,8 @@
 
 typedef struct _anon4;
 
-typedef struct tagVU1_STRIP_BUF;
-typedef struct tagNJS_SCRVECTOR;
+
+
 
 
 
@@ -14,7 +14,7 @@ typedef float type_2[4];
 typedef float type_3[4][6];
 typedef float type_4[4][64];
 typedef float type_5[4][64];
-typedef tagVU1_STRIP_BUF type_6[256];
+
 typedef float type_7[4][64];
 
 typedef float type_9[4][128];
@@ -75,34 +75,7 @@ struct _anon4
 
 
 
-struct tagVU1_STRIP_BUF
-{
-	float fU;
-	float fV;
-	float fPad0;
-	float fPad1;
-	float fIr;
-	float fIg;
-	float fIb;
-	float fA;
-	float fVx;
-	float fVy;
-	float fVz;
-	float fFog;
-	float fSx;
-	float fSy;
-	float fIz;
-	float fNz;
-};
 
-struct tagNJS_SCRVECTOR
-{
-	float x;
-	float y;
-	float z;
-	float iz;
-	float fog;
-};
 
 int Ps2_3DEx_trans;
 int Ps2_3DEx_count;
@@ -349,7 +322,7 @@ void njDrawPolygon3DExStart(int trans)
 // Start address: 0x2de790
 void njDrawPolygonSub3D(NJS_POLYGON_VTX* polygon, int count, int flag)
 {
-	tagNJS_SCRVECTOR scr;
+	NJS_SCRVECTOR scr;
 	unsigned int i;
 	float bp[4];
 	float buff[4][64];
@@ -439,7 +412,7 @@ void njDrawTexture3DExStart(int trans)
 void njDrawTextureSub3D(NJS_TEXTURE_VTX* polygon, int count, int flag)
 {
 	unsigned int cflag;
-	tagNJS_SCRVECTOR scr;
+	NJS_SCRVECTOR scr;
 	unsigned int col;
 	unsigned int i;
 	float bp[4];
@@ -487,10 +460,10 @@ void njDrawTextureSub3D(NJS_TEXTURE_VTX* polygon, int count, int flag)
 // Start address: 0x2deb00
 void njDrawTextureSub3D1P(NJS_TEXTURE_VTX* polygon, int count, int flag)
 {
-	tagVU1_STRIP_BUF* vp;
+	VU1_STRIP_BUF* vp;
 	unsigned long prim;
 	unsigned int i;
-	tagVU1_STRIP_BUF vb[256];
+	VU1_STRIP_BUF vb[256];
 	// Line 643, Address: 0x2deb00, Func Offset: 0
 	// Line 660, Address: 0x2deb1c, Func Offset: 0x1c
 	// Line 643, Address: 0x2deb20, Func Offset: 0x20
@@ -546,7 +519,7 @@ void njDrawTexture3DExEnd()
 // Start address: 0x2ded70
 void njDrawTextureSub3DH(NJS_TEXTUREH_VTX* polygon, int count, int flag)
 {
-	tagNJS_SCRVECTOR scr;
+	NJS_SCRVECTOR scr;
 	unsigned int i;
 	float bp[4];
 	float buff[4][64];

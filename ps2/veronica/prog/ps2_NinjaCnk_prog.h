@@ -17,7 +17,7 @@ tagCHUNK_HEAD* njCnkCsUvh(tagCHUNK_HEAD* pCnk)
 	unsigned long ulVuflag;
 	unsigned long* ulpP;
 	int sExit;
-	void(*pVu1Func)(unsigned long, tagVU1_STRIP_BUF*, unsigned short, unsigned short);
+	void(*pVu1Func)(unsigned long, VU1_STRIP_BUF*, unsigned short, unsigned short);
 	unsigned short usColorCalc;
 	unsigned short usClip;
 	unsigned short usNum;
@@ -25,9 +25,9 @@ tagCHUNK_HEAD* njCnkCsUvh(tagCHUNK_HEAD* pCnk)
 	unsigned short usCnt;
 	unsigned short usStrip;
 	unsigned short usNext;
-	tagVU1_STRIP_BUF* pSorg;
-	tagVU1_STRIP_BUF* pS;
-	tagVU1_STRIP_BUF* pV;
+	VU1_STRIP_BUF* pSorg;
+	VU1_STRIP_BUF* pS;
+	VU1_STRIP_BUF* pV;
 	unsigned short* uspCnk;
 	unsigned long ulType2;
 	unsigned long ulType;
@@ -309,7 +309,7 @@ tagCHUNK_HEAD* njCnkCsUvn(tagCHUNK_HEAD* pCnk)
 	unsigned long ulVuflag;
 	unsigned long* ulpP;
 	int sExit;
-	void(*pVu1Func)(unsigned long, tagVU1_STRIP_BUF*, unsigned short, unsigned short);
+	void(*pVu1Func)(unsigned long, VU1_STRIP_BUF*, unsigned short, unsigned short);
 	unsigned short usColorCalc;
 	unsigned short usClip;
 	unsigned short usNum;
@@ -317,9 +317,9 @@ tagCHUNK_HEAD* njCnkCsUvn(tagCHUNK_HEAD* pCnk)
 	unsigned short usCnt;
 	unsigned short usStrip;
 	unsigned short usNext;
-	tagVU1_STRIP_BUF* pSorg;
-	tagVU1_STRIP_BUF* pS;
-	tagVU1_STRIP_BUF* pV;
+	VU1_STRIP_BUF* pSorg;
+	VU1_STRIP_BUF* pS;
+	VU1_STRIP_BUF* pV;
 	unsigned short* uspCnk;
 	unsigned long ulType2;
 	unsigned long ulType;

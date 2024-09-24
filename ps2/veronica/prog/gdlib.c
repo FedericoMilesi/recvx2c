@@ -1,4 +1,9 @@
+#include "sg_gd.h"
 #include "types.h"
+
+typedef struct GDS_FS_DIRREC_TBL GDS_FS_DIRREC_TBL;
+typedef struct GDS_FS_HANDLE GDS_FS_HANDLE;
+typedef struct GDS_FS_DIRINFO GDS_FS_DIRINFO;
 
 unsigned int MaxDirectoryEntry;
 unsigned int DiscOpenTrayFlag;
@@ -6,7 +11,7 @@ unsigned int NewDiscCheckSw;
 unsigned int GdErrorFlag;
 LfOpen LfOpenInfo[14];
 GDS_FS_DIRREC_TBL* GdDirRec;
-void(*CallbackGdErrorFunc)(void*, int);
+// void(*CallbackGdErrorFunc)(void*, int);
 unsigned char* pDirTbl;
 unsigned char* pDirWork;
 unsigned int RequestMultiReadFlag;
@@ -18,18 +23,13 @@ unsigned int StatusUpdateCounter;
 GDS_FS_HANDLE* LfGdFs;
 
 void LfInitLib();
-void CallbackGdErrorFunc(int err);
+void CallbackGdErrorFunc(int unused, int err);
 unsigned int InitGdSystem();
 unsigned int InitGdSystemEx(unsigned int MaxDirNum);
 void ExitGdSystem();
 int GetFileSize(char* FileName);
 int ReadFileEx(char* FileName, void* ReadAddress);
 unsigned int CheckOpenTray();
-
-
-
-
-
 
 
 
@@ -158,7 +158,7 @@ unsigned int InitGdSystem() { // Line 137, Address: 0x28ea00
             gdFsLoadDir("\\", GdDirRec); // Line 158, Address: 0x28eac4
             gdFsSetDir(GdDirRec); // Line 159, Address: 0x28ead8
 
-            gdFsEntryErrFuncAll(CallbackGdErrorFunc, 0); // Line 161, Address: 0x28eae4
+            gdFsEntryErrFuncAll((GDFS_ERRFUNC)CallbackGdErrorFunc, 0); // Line 161, Address: 0x28eae4
 
             return 0; // Line 163, Address: 0x28eaf4
         }
@@ -213,7 +213,7 @@ int ReadFileEx(char* FileName, void* ReadAddress) { // Line 201, Address: 0x28eb
 
     gdFsGetFileSize(GdFs, &FileSize); // Line 214, Address: 0x28ebf8
 
-    if (gdFsRead(GdFs, FileSize + 2047 >> 11, ReadAddress) != 0) { // Line 216, Address: 0x28ec04
+    if (gdFsRead(GdFs, (FileSize + 2047) >> 11, ReadAddress) != 0) { // Line 216, Address: 0x28ec04
         return 1; // Line 217, Address: 0x28ec24
     }
 

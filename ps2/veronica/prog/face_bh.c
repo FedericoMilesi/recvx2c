@@ -4,14 +4,14 @@ typedef struct cnkobj;
 typedef struct _anon2;
 typedef struct _anon3;
 typedef struct _anon4;
-typedef struct _anon5;
+
 typedef struct _anon6;
 typedef struct _anon7;
 typedef struct _anon8;
 typedef struct _anon9;
 
 
-typedef struct _anon12;
+
 
 typedef struct _anon13;
 
@@ -140,15 +140,6 @@ struct _anon4
 	short flag;
 };
 
-struct _anon5
-{
-	unsigned int flg;
-	unsigned int obj_num;
-	void* datP;
-	NJS_OBJECT* objP;
-	NJS_TEXLIST* texP;
-	_anon12* owP;
-};
 
 struct _anon6
 {
@@ -207,13 +198,6 @@ struct _anon9
 
 
 
-struct _anon12
-{
-	unsigned int flg;
-	int dmy;
-	unsigned int dummy[2];
-	NJS_MATRIX mtx;
-};
 
 
 
@@ -236,7 +220,7 @@ struct _anon13
 
 
 void fmSetLipSyncParam(_anon2* fm, _anon4* base, _anon9* lip, unsigned int mask);
-void _fmSetObjP(_anon5* mlwP);
+void _fmSetObjP(MODEL_DATA* mlwP);
 cnkobj* _fmCnkSearchObject(_anon2* fm, cnkobj* root, char id);
 void _fmGetVChunkType(_anon2* fm);
 void _fmCnkSetFaceObject(_anon2* fm, cnkobj* face);
@@ -244,7 +228,7 @@ void _fmCnkSetEyeballObject(_anon2* fm, unsigned int id, cnkobj* eye, cnkobj* ro
 void _fmCnkSetTangObject(_anon2* fm, cnkobj* tang);
 void _fmCnkSetToothObject(_anon2* fm, cnkobj* tooth);
 void _fmCnkSetJaw(_anon2* fm, unsigned int v0, unsigned int v1);
-void fmCnkInitContext(_anon2* fm, void* data, cnkobj* root, _anon5* mlwP);
+void fmCnkInitContext(_anon2* fm, void* data, cnkobj* root, MODEL_DATA* mlwP);
 void fmCnkSetParam(_anon2* fm, _anon4* param);
 void fmCnkSetParamLip(_anon2* fm, _anon4* param, unsigned int flag);
 void fmCnkSetInterParam(_anon2* fm, _anon4* p1, _anon4* p2, float t, float lv, unsigned int mask);
@@ -299,7 +283,7 @@ void fmSetLipSyncParam(_anon2* fm, _anon4* base, _anon9* lip, unsigned int mask)
 
 // 
 // Start address: 0x2989d0
-void _fmSetObjP(_anon5* mlwP)
+void _fmSetObjP(MODEL_DATA* mlwP)
 {
 	int sp;
 	NJS_OBJECT* stack[256];
@@ -500,8 +484,8 @@ void _fmCnkSetEyeballObject(_anon2* fm, unsigned int id, cnkobj* eye, cnkobj* ro
 // Start address: 0x299030
 void _fmCnkSetTangObject(_anon2* fm, cnkobj* tang)
 {
-	<unknown fundamental type (0xa510)>* dst_128;
-	<unknown fundamental type (0xa510)>* src_128;
+	long128* dst_128;
+	long128* src_128;
 	int i;
 	// Line 631, Address: 0x299030, Func Offset: 0
 	// Line 635, Address: 0x299044, Func Offset: 0x14
@@ -643,7 +627,7 @@ void _fmCnkSetJaw(_anon2* fm, unsigned int v0, unsigned int v1)
 
 // 
 // Start address: 0x299450
-void fmCnkInitContext(_anon2* fm, void* data, cnkobj* root, _anon5* mlwP)
+void fmCnkInitContext(_anon2* fm, void* data, cnkobj* root, MODEL_DATA* mlwP)
 {
 	unsigned int vofs;
 	cnkobj* obj;

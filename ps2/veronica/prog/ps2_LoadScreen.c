@@ -8,7 +8,7 @@ ICONINFORMATION IconInfo;
 MEMORYCARDSTATE McState;
 SAVEFILE SaveFile;
 CONFIGFILE ConfigFile;
-SYS* sys;
+extern SYS* sys;
 
 // 
 // Start address: 0x275340

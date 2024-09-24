@@ -12,249 +12,237 @@
 #define CheckCmdReq(vol, pan, pitch) (0x00 | 0 | ((vol) & 1) | (((pan) & 1) << 1) | (((pitch) & 1) << 2))
 
 typedef struct ADV_MESSAGE_DEFINITION {
-    float Sx;
-    float Sy;
-    int StartMsgNo;
-    int NaviMsgNo;
-    int MsgType;
-} ADV_MESSAGE_DEFINITION;
+    float Sx; // Start X
+    float Sy; // Start Y
+    int StartMsgNo; // Start Message Number
+    int NaviMsgNo; // Navigation Message Number
+    int MsgType; // Message Type
+} ADV_MESSAGE_DEFINITION; // 0x14 bytes
 
-typedef struct Unknown31 {
-    float x;
-    float y;
-    float z;
-    float w;
-} Unknown31;
+typedef struct NJS_POINT4 {
+    float x; // X coordinate or plane parameter
+    float y; // Y coordinate or plane parameter
+    float z; // Z coordinate or plane parameter
+    float w; // W coordinate or plane parameter, possibly used for homogeneous clipping
+} NJS_POINT4; // 16 bytes (0x10)
 
-typedef struct SNDQUE {
-    int cmd;
-    char vol;
-    char pan;
-    short pitch;
-} SNDQUE;
+typedef struct SND_QUEUE {
+    int cmd; // Command
+    char vol; // Volume
+    char pan; // Pan
+    short pitch; // Pitch
+} SND_QUEUE; // 0x8 bytes
+
+typedef struct SND_STATUS {
+    unsigned short se_info[6]; // Sound effect information
+    unsigned short midi_info; // MIDI information
+    short port_info[8]; // Port information
+    short midi_sum[4]; // MIDI summary
+    short se_sum[5]; // Sound effect summary
+    unsigned short dummy[9]; // Reserved for alignment or future use
+} SND_STATUS;
 
 typedef struct Unknown29 {
-    char ppStrPvpl[4];
-    unsigned int ppNextTag;
-    unsigned short ppCategoryCode;
-    unsigned short ppBankId;
-    unsigned short ppEntryOffset;
-    unsigned short ppEntryCount;
-} Unknown29;
+    char ppStrPvpl[4]; // "PVPL"
+    unsigned int ppNextTag; // Next Tag
+    unsigned short ppCategoryCode; // Category Code
+    unsigned short ppBankId; // Bank ID
+    unsigned short ppEntryOffset; // Entry Offset
+    unsigned short ppEntryCount; // Entry Count
+} Unknown29; // 0x10 bytes
 
 typedef struct PS2_TIM_LIST_ENTRY_ADMIN {
-    unsigned int gindex;
-    unsigned int size;
-    unsigned int count;
-    void* addr;
-    void* before;
-    void* after;
-} PS2_TIM_LIST_ENTRY_ADMIN;
+    unsigned int gindex; // G-Index
+    unsigned int size; // Size
+    unsigned int count; // Count
+    void* addr; // Address
+    void* before; // Before
+    void* after; // After
+} PS2_TIM_LIST_ENTRY_ADMIN; // 0x18 bytes
 
 typedef struct PS2_TIM_LIST_ENTRY {
-    char FileId[4];
-    unsigned char FormatVersion;
-    unsigned char FormatId;
-    unsigned short Pictures;
-    unsigned int Gindex;
-    unsigned char OrgColorType;
-    unsigned char OrgTexType;
-    unsigned short ClutChange;
-    unsigned int PalNum;
-    unsigned int PalData[27];
-    unsigned int TotalSize; /* TIM2_PICTUREHEADER */
-    unsigned int ClutSize; /* TIM2_PICTUREHEADER */
-    unsigned int ImageSize; /* TIM2_PICTUREHEADER */
-    unsigned short HeaderSize; /* TIM2_PICTUREHEADER */
-    unsigned short ClutColors; /* TIM2_PICTUREHEADER */
-    unsigned char PictFormat; /* TIM2_PICTUREHEADER */
-    unsigned char MipMapTextures; /* TIM2_PICTUREHEADER */
-    unsigned char ClutType; /* TIM2_PICTUREHEADER */
-    unsigned char ImageType; /* TIM2_PICTUREHEADER */
-    unsigned short ImageWidth; /* TIM2_PICTUREHEADER */
-    unsigned short ImageHeight; /* TIM2_PICTUREHEADER */
-    sceGsTex0 GsTex0; /* TIM2_PICTUREHEADER */
-    sceGsTex1 GsTex1; /* TIM2_PICTUREHEADER */
-    unsigned int GsRegs; /* TIM2_PICTUREHEADER */
-    unsigned int GsTexClut; /* TIM2_PICTUREHEADER */
-    PS2_TIM_LIST_ENTRY_ADMIN admin;
-    unsigned int TpFlag;
-    unsigned int ClampFlag;
+    char FileId[4]; // File ID
+    unsigned char FormatVersion; // Format Version
+    unsigned char FormatId; // Format ID
+    unsigned short Pictures; // Pictures
+    unsigned int Gindex; // G-Index
+    unsigned char OrgColorType; // Original Color Type
+    unsigned char OrgTexType; // Original Texture Type
+    unsigned short ClutChange; // CLUT Change
+    unsigned int PalNum; // Palette Number
+    unsigned int PalData[27]; // Palette Data
+    unsigned int TotalSize; // Total size
+    unsigned int ClutSize; // CLUT size
+    unsigned int ImageSize; // Image size
+    unsigned short HeaderSize; // Header size
+    unsigned short ClutColors; // CLUT colors
+    unsigned char PictFormat; // Picture format
+    unsigned char MipMapTextures; // MipMap textures
+    unsigned char ClutType; // CLUT type
+    unsigned char ImageType; // Image type
+    unsigned short ImageWidth; // Image width
+    unsigned short ImageHeight; // Image height
+    sceGsTex0 GsTex0; // GS Texture 0
+    sceGsTex1 GsTex1; // GS Texture 1
+    unsigned int GsRegs; // GS Registers
+    unsigned int GsTexClut; // GS Texture CLUT
+    PS2_TIM_LIST_ENTRY_ADMIN admin; // Admin
+    unsigned int TpFlag; // TP Flag
+    unsigned int ClampFlag; // Clamp Flag
 } PS2_TIM_LIST_ENTRY;
 
 typedef struct TIM2_PICTUREHEADER {
-    unsigned int TotalSize;
-    unsigned int ClutSize;
-    unsigned int ImageSize;
-    unsigned short HeaderSize;
-    unsigned short ClutColors;
-    unsigned char PictFormat;
-    unsigned char MipMapTextures;
-    unsigned char ClutType;
-    unsigned char ImageType;
-    unsigned short ImageWidth;
-    unsigned short ImageHeight;
-    unsigned long GsTex0;
-    unsigned long GsTex1;
-    unsigned int GsRegs;
-    unsigned int GsTexClut;
+    unsigned int TotalSize; // Total Size
+    unsigned int ClutSize; // CLUT Size
+    unsigned int ImageSize; // Image Size
+    unsigned short HeaderSize; // Header Size
+    unsigned short ClutColors; // CLUT Colors
+    unsigned char PictFormat; // Picture Format
+    unsigned char MipMapTextures; // MipMap Textures
+    unsigned char ClutType; // CLUT Type
+    unsigned char ImageType; // Image Type
+    unsigned short ImageWidth; // Image Width
+    unsigned short ImageHeight; // Image Height
+    unsigned long GsTex0; // GS Texture 0
+    unsigned long GsTex1; // GS Texture 1
+    unsigned int GsRegs; // GS Registers
+    unsigned int GsTexClut; // GS Texture CLUT
 } TIM2_PICTUREHEADER;
 
-typedef struct Unknown22 {
-    int PerType; // Peripheral Type
-    int OldPerType; // Old Peripheral Type
-    int PerTypeEx; // Peripheral Type Extended
-    unsigned int Flag; // Flags
-    int SoftReset; // Soft Reset
-    unsigned int on; // On
-    unsigned int press; // Press
-    unsigned int Rept; // Repeat
-    unsigned int on2; // On 2
-    unsigned int on2old; // On 2 Old
-    unsigned int press2; // Press 2
-    unsigned short l; // Left
-    unsigned short r; // Right
-    short x1; // X1
-    short y1; // Y1
-    short x2; // X2
-    short y2; // Y2
-    short Calibrate; // Calibrate
-} Unknown22;
-
 typedef struct ADV_WORK {
-    int PatId;
-    int Mode;
-    int Mode2;
-    int NextMode;
-    int NextReturnCode;
-    int PortId;
-    int OptIndex;
-    int OptLevel;
-    int NextOptLevel;
-    int OptScrX;
-    int OptScrY;
-    unsigned int PalNo;
-    unsigned int PalMode;
-    unsigned int FontBaseColor;
-    unsigned char* SysMemPtr;
-    unsigned char* MsgPtr;
-    unsigned char* ptr[8];
-    float Timer;
-    float FadeRate;
-    float FadeSpeed;
-    float SaverTimer;
-    float SaverRate;
-    float FlushCount;
-    float FlushSpeed;
-    float FlushCount2;
-    float FlushSpeed2;
-    float ScrollPlatePosX[2][2];
-    char Active;
-    char AppMode;
-    char ExtraFlag;
-    char FadeType;
-    char SaverCommand;
-    char Count;
-    char LastLevel;
-    char FromTitle;
-    char CurrentDiscId;
-    char NextDiscId;
-    char ErrorId;
-    unsigned char ErrorMsgFlushCount;
-    char AnimId;
-    unsigned char AnimTime;
-    char GenFlag;
-    char PalFlag;
-    char SrFlag;
-    char OptFadeType;
-    char TexFlag;
-    char SoundMode;
-    char vibration;
-    char keytype;
-    char adjust_x;
-    char adjust_y;
-    char OptSaveFlag;
-    char vMode;
-    char DriveNo;
-    char MsgNo;
-    char DepthLevel;
-    char OldVmOpMode;
-    char VmOpMode;
-    char SetTexture[2];
-    char KeyCommandCount[7];
-    char Cursor[3];
-    char CursorMax[3];
-    char CursorFlag[4][4];
-    char ModeCommandId[4];
+    int PatId; // Pattern ID
+    int Mode; // Mode
+    int Mode2; // Mode 2
+    int NextMode; // Next Mode
+    int NextReturnCode; // Next Return Code
+    int PortId; // Port ID
+    int OptIndex; // Option Index
+    int OptLevel; // Option Level
+    int NextOptLevel; // Next Option Level
+    int OptScrX; // Option Screen X
+    int OptScrY; // Option Screen Y
+    unsigned int PalNo; // Palette Number
+    unsigned int PalMode; // Palette Mode
+    unsigned int FontBaseColor; // Font Base Color
+    unsigned char* SysMemPtr; // System Memory Pointer
+    unsigned char* MsgPtr; // Message Pointer
+    unsigned char* ptr[8]; // Pointers
+    float Timer; // Timer
+    float FadeRate; // Fade Rate
+    float FadeSpeed; // Fade Speed
+    float SaverTimer; // Saver Timer
+    float SaverRate; // Saver Rate
+    float FlushCount; // Flush Count
+    float FlushSpeed; // Flush Speed
+    float FlushCount2; // Flush Count 2
+    float FlushSpeed2; // Flush Speed 2
+    float ScrollPlatePosX[2][2]; // Scroll Plate Position X
+    char Active; // Active
+    char AppMode; // Application Mode
+    char ExtraFlag; // Extra Flag
+    char FadeType; // Fade Type
+    char SaverCommand; // Saver Command
+    char Count; // Count
+    char LastLevel; // Last Level
+    char FromTitle; // From Title
+    char CurrentDiscId; // Current Disc ID
+    char NextDiscId; // Next Disc ID
+    char ErrorId; // Error ID
+    unsigned char ErrorMsgFlushCount; // Error Message Flush Count
+    char AnimId; // Animation ID
+    unsigned char AnimTime; // Animation Time
+    char GenFlag; // General Flag
+    char PalFlag; // Palette Flag
+    char SrFlag; // SR Flag
+    char OptFadeType; // Option Fade Type
+    char TexFlag; // Texture Flag
+    char SoundMode; // Sound Mode
+    char vibration; // Vibration
+    char keytype; // Key Type
+    char adjust_x; // Adjust X
+    char adjust_y; // Adjust Y
+    char OptSaveFlag; // Option Save Flag
+    char vMode; // V-Mode
+    char DriveNo; // Drive Number
+    char MsgNo; // Message Number
+    char DepthLevel; // Depth Level
+    char OldVmOpMode; // Old VM Operation Mode
+    char VmOpMode; // VM Operation Mode
+    char SetTexture[2]; // Set Texture
+    char KeyCommandCount[7]; // Key Command Count
+    char Cursor[3]; // Cursor
+    char CursorMax[3]; // Cursor Max
+    char CursorFlag[4][4]; // Cursor Flag
+    char ModeCommandId[4]; // Mode Command ID
 } ADV_WORK;
 
 typedef struct Camera {
-    /*   0 */ unsigned int flg;
-    /*   4 */ int camver;
-    /*   8 */ unsigned char mode0;
-    /*   9 */ unsigned char mode1;
-    /*  10 */ unsigned char mode2;
-    /*  11 */ unsigned char mode3;
-    /*  12 */ float px;
-    /*  16 */ float py;
-    /*  20 */ float pz;
-    /*  24 */ float vx;
-    /*  28 */ float vy;
-    /*  32 */ float vz;
-    /*  36 */ float wpx;
-    /*  40 */ float wpy;
-    /*  44 */ float wpz;
-    /*  48 */ float plx;
-    /*  52 */ float ply;
-    /*  56 */ float plz;
-    /*  60 */ float pxp;
-    /*  64 */ float pyp;
-    /*  68 */ float pzp;
-    /*  72 */ float ofx;
-    /*  76 */ float ofy;
-    /*  80 */ float ofz;
-    /*  84 */ int ax;
-    /*  88 */ int ay;
-    /*  92 */ int az;
-    /*  96 */ int axp;
-    /* 100 */ int ayp;
-    /* 104 */ int azp;
-    /* 108 */ float ln;
-    /* 112 */ float pln;
-    /* 116 */ float xr;
-    /* 120 */ float xn;
-    /* 124 */ float yr;
-    /* 128 */ float yn;
-    /* 132 */ int pers;
-    /* 136 */ int ppers;
-    /* 140 */ int ncut;
-    /* 144 */ int ocut;
-    /* 148 */ unsigned int ocflg;
-    /* 152 */ unsigned int attr;
-    /* 156 */ float* mtx;
-    /* 160 */ float* mtxb;
-    /* 164 */ int evc_no;
-    /* 168 */ int hct;
-    /* 172 */ int ct0;
-    /* 176 */ int ct1;
-    /* 180 */ int keyf_no;
-    /* 184 */ float frm;
-    /* 188 */ float spd;
-    /* 192 */ float pxn;
-    /* 196 */ float pyn;
-    /* 200 */ float pzn;
-    /* 204 */ int axn;
-    /* 208 */ int ayn;
-    /* 212 */ int azn;
-    /* 216 */ int pe_ax;
-    /* 220 */ int pe_pers;
-    /* 224 */ unsigned int fog_col;
-    /* 228 */ float fog_nr;
-    /* 232 */ float fog_fr;
-    /* 236 */ float ips[20][3];
-    /* 476 */ float ian[20][3];
-    /* 716 */ float ipf[20][3];
-    /* 956 */ float icr[20][3];
+    /*   0 */ unsigned int flg; // Flags
+    /*   4 */ int camver; // Camera Version
+    /*   8 */ unsigned char mode0; // Mode 0
+    /*   9 */ unsigned char mode1; // Mode 1
+    /*  10 */ unsigned char mode2; // Mode 2
+    /*  11 */ unsigned char mode3; // Mode 3
+    /*  12 */ float px; // Position X
+    /*  16 */ float py; // Position Y
+    /*  20 */ float pz; // Position Z
+    /*  24 */ float vx; // Vector X
+    /*  28 */ float vy; // Vector Y
+    /*  32 */ float vz; // Vector Z
+    /*  36 */ float wpx; // World Position X
+    /*  40 */ float wpy; // World Position Y
+    /*  44 */ float wpz; // World Position Z
+    /*  48 */ float plx; // Player X?
+    /*  52 */ float ply; // Player Y?
+    /*  56 */ float plz; // Player Z?
+    /*  60 */ float pxp; // Position X Previous
+    /*  64 */ float pyp; // Position Y Previous
+    /*  68 */ float pzp; // Position Z Previous
+    /*  72 */ float ofx; // Offset X
+    /*  76 */ float ofy; // Offset Y
+    /*  80 */ float ofz; // Offset Z
+    /*  84 */ int ax; // Angle X
+    /*  88 */ int ay; // Angle Y
+    /*  92 */ int az; // Angle Z
+    /*  96 */ int axp; // Angle X Previous
+    /* 100 */ int ayp; // Angle Y Previous
+    /* 104 */ int azp; // Angle Z Previous
+    /* 108 */ float ln; // Length
+    /* 112 */ float pln; // Previous Length
+    /* 116 */ float xr; // X Rotation
+    /* 120 */ float xn; // X Normal
+    /* 124 */ float yr; // Y Rotation
+    /* 128 */ float yn; // Y Normal
+    /* 132 */ int pers; // Perspective
+    /* 136 */ int ppers; // Previous Perspective
+    /* 140 */ int ncut; // Near Cut
+    /* 144 */ int ocut; // Old Cut
+    /* 148 */ unsigned int ocflg; // Occlusion Flags
+    /* 152 */ unsigned int attr; // Attributes
+    /* 156 */ float* mtx; // Matrix
+    /* 160 */ float* mtxb; // Matrix Backup
+    /* 164 */ int evc_no; // Event Camera Number
+    /* 168 */ int hct; // Height Counter
+    /* 172 */ int ct0; // Counter 0
+    /* 176 */ int ct1; // Counter 1
+    /* 180 */ int keyf_no; // Keyframe Number
+    /* 184 */ float frm; // Frame
+    /* 188 */ float spd; // Speed
+    /* 192 */ float pxn; // Position X Next
+    /* 196 */ float pyn; // Position Y Next
+    /* 200 */ float pzn; // Position Z Next
+    /* 204 */ int axn; // Angle X Next
+    /* 208 */ int ayn; // Angle Y Next
+    /* 212 */ int azn; // Angle Z Next
+    /* 216 */ int pe_ax; // Previous Angle X
+    /* 220 */ int pe_pers; // Previous Perspective
+    /* 224 */ unsigned int fog_col; // Fog Color
+    /* 228 */ float fog_nr; // Fog Near Range
+    /* 232 */ float fog_fr; // Fog Far Range
+    /* 236 */ float ips[20][3]; // Interpolated Position
+    /* 476 */ float ian[20][3]; // Interpolated Angle
+    /* 716 */ float ipf[20][3]; // Interpolated Focal Point
+    /* 956 */ float icr[20][3]; // Interpolated Center
 } Camera;
 
 typedef struct Drive {
@@ -316,7 +304,7 @@ typedef struct Color {
     /* 12 */ float b;
 } Color;
 
-typedef struct Door {
+typedef struct DOOR {
     /*  0 */ unsigned int flg; // Flags
     /*  4 */ char stg_no; // Stage number
     /*  5 */ char rom_no; // Room number
@@ -330,7 +318,7 @@ typedef struct Door {
     /* 16 */ int ct1; // Counter 1
     /* 20 */ int ct2; // Counter 2
     /* 24 */ int ct3; // Counter 3
-} Door;
+} DOOR;
 
 typedef struct HardwareScreenInfo {
     /*  0 */ int mode;
@@ -356,24 +344,6 @@ typedef struct Unknown16 {
     float r1;
     float r2;
 } Unknown16;
-
-typedef struct Unknown15 {
-    unsigned char flg; // Flags
-    unsigned char type; // Type
-    unsigned char id; // ID
-    char flr_no; // Floor number
-    unsigned int attr; // Attributes
-    float px; // Position X
-    float py; // Position Y
-    float pz; // Position Z
-    float w; // Width
-    float h; // Height
-    float d; // Depth
-    unsigned char prm0; // Parameter 0
-    unsigned char prm1; // Parameter 1
-    unsigned char prm2; // Parameter 2
-    unsigned char prm3; // Parameter 3
-} Unknown15;
 
 typedef struct LIGHT_CLEAR_PARAMETERS {
     NJS_POINT3 ps; // Position (Start)
@@ -422,7 +392,7 @@ typedef struct LIGHT_CALIBRATION {
     Color mspc; // Model Specular
 } LIGHT_CALIBRATION;
 
-typedef struct LIGHT_ENTITY {
+typedef struct LIGHT {
     unsigned int flg; // Flags
     unsigned int type; // Type
     int aspd; // Animation Speed
@@ -479,7 +449,7 @@ typedef struct LIGHT_ENTITY {
     unsigned char* lkwkp; // Link Work Pointer
     unsigned char* exp; // Expansion
     NJS_LIGHT_PTR light; // Light
-} LIGHT_ENTITY;
+} LIGHT;
 
 typedef struct Unknown8 {
     unsigned int flg; // Flags
@@ -497,13 +467,13 @@ typedef struct Unknown8 {
     short ax; // Angle X
 } Unknown8;
 
-typedef struct Unknown7 {
+typedef struct TEXTURE_BUFFER {
     unsigned char* adr; // Address
     unsigned int gidx; // G-Index
     unsigned int attr; // Attributes
     unsigned int w; // Width
     unsigned int h; // Height
-} Unknown7;
+} TEXTURE_BUFFER;
 
 typedef struct OBJECT_WORK {
     unsigned int flg; // Flags
@@ -797,6 +767,24 @@ typedef struct BH_PWORK {
     /**/ unsigned int Dummy2[2]; // Dummy
 } BH_PWORK;
 
+typedef struct BOUNDARY {
+    unsigned char flg; // Flags related to the boundary entity's state
+    unsigned char type; // Type identifier for the boundary (e.g., wall, floor, route)
+    unsigned char id; // Unique ID for the boundary object
+    char flr_no; // Floor number where the boundary is located
+    unsigned int attr; // Attributes or properties of the boundary (e.g., collision, interaction type)
+    float px; // Position X - X coordinate of the boundary's origin
+    float py; // Position Y - Y coordinate of the boundary's origin
+    float pz; // Position Z - Z coordinate of the boundary's origin
+    float w; // Width of the boundary
+    float h; // Height of the boundary
+    float d; // Depth of the boundary
+    unsigned char prm0; // Parameter 0 - additional data, purpose depends on the context
+    unsigned char prm1; // Parameter 1 - additional data, purpose depends on the context
+    unsigned char prm2; // Parameter 2 - additional data, purpose depends on the context
+    unsigned char prm3; // Parameter 3 - additional data, purpose depends on the context
+} BOUNDARY;
+
 typedef struct SYS {
     unsigned int ssd_ver; // SSD Version
     unsigned int ssd_flg; // SSD Flags
@@ -968,7 +956,7 @@ typedef struct SYS {
     short txb_n; // Texture Buffer Number
     short txb[256]; // Texture Buffer
     NJS_TEXLIST* txblp[256]; // Texture Buffer List Pointer
-    Unknown7 txbp[256]; // Texture Buffer Pointer
+    TEXTURE_BUFFER txbp[256]; // Texture Buffer Pointer
     unsigned char* ef_psp; // Effect Pointer
     NJS_TEXNAME ef_tex[450]; // Effect Texture
     NJS_TEXLIST ef_tlist; // Effect Texture List
@@ -1044,7 +1032,7 @@ typedef struct SYS {
     NJS_PLANE mr_pl; // Mirror Plane
     unsigned char* zan_memp; // Zan Memory Pointer
     unsigned char* zanp; // Zan Pointer
-    LIGHT_ENTITY* lgtp; // Light Entity Pointer
+    LIGHT* lgtp; // Light Entity Pointer
     float lg_vx; // Light Global Vector X
     float lg_vy; // Light Global Vector Y
     float lg_vz; // Light Global Vector Z
@@ -1068,19 +1056,19 @@ typedef struct SYS {
     unsigned char* rt_nx; // RT Next
     float* rt_ln; // RT Line
     BH_PWORK* plp; // Player Pointer
-    Unknown15* pl_htp; // Player Hit Pointer
+    BOUNDARY* pl_htp; // Player Hit Pointer
     int costume; // Costume
     NJS_POINT3 hd_pos; // Head Position
     NJS_POINT3 apos; // Attack Position
-    Unknown15* ahtp; // Attack Hit Pointer
+    BOUNDARY* ahtp; // Attack Hit Pointer
     int mwal_n; // Model Weapon Number
     int metc_n; // Model Effect Number
     int mflr_n; // Model Floor Number
-    Unknown15 mwalp[64]; // Model Weapon Pointer
-    Unknown15 metcp[64]; // Model Effect Pointer
-    Unknown15 mflrp[64]; // Model Floor Pointer
+    BOUNDARY mwalp[64]; // Model Weapon Pointer
+    BOUNDARY metcp[64]; // Model Effect Pointer
+    BOUNDARY mflrp[64]; // Model Floor Pointer
     int dla_n; // DLA (Dynamic Lighting Area) Number
-    Unknown15* htp; // Hit Pointer
+    BOUNDARY* htp; // Hit Pointer
     int psh_snd; // Push Sound
     int fog_cngct; // Fog Change Counter
     unsigned int fog_col; // Fog Color
@@ -1129,7 +1117,7 @@ typedef struct SYS {
     void* sb_ppp; // Sound Bank Play Pointer
     NJS_TEXLIST* sb_tlist; // Sound Bank Texture List
     int ddmd; // Door Mode
-    Door door; // Door
+    DOOR door; // Door
     int mpmd; // Map Mode
     int mp_prm[4]; // Map Parameter
     unsigned short gov_md0; // Game Over Mode 0
@@ -1274,132 +1262,333 @@ typedef struct PAD_ACTION {
     char data[2]; // Data
 } PAD_ACTION;
 
-typedef struct KEYFRAME // Keyframe
+typedef struct ANIMATION_KEYFRAME // Keyframe data
 {
-    unsigned short flg; // Flag
-    short frame; // Frame
-    float px; // Position X
-    float py; // Position Y
-    float pz; // Position Z
-    short ax; // Angle X
-    short ay; // Angle Y
-    short az; // Angle Z
-    short pers; // Perspective
-    unsigned int hidobj[8]; // Hidden object
-    unsigned int hidlgt[4]; // Hidden light
-    unsigned int fog_col; // Fog color
-    float fog_nr; // Near fog
-    float fog_fr; // Far fog
-    short lkflg; // Link flag
-    short lkno; // Link number
-    short lkono; // Link object number
-    short nxt_no; // Next number
-    float lx; // Link X
-    float ly; // Link Y
-    float lz; // Link Z
-    float prm_0; // Parameter 0
-    float prm_1; // Parameter 1
-    float prm_2; // Parameter 2
-    float prm_3; // Parameter 3
-    float prm_4; // Parameter 4
-    unsigned char* recp; // Record pointer
-} KEYFRAME;
+    unsigned short flg; // Keyframe flag (e.g., keyframe type)
+    short frame; // Frame number where this keyframe occurs
+    float px; // Position X at the keyframe
+    float py; // Position Y at the keyframe
+    float pz; // Position Z at the keyframe
+    short ax; // Rotation/Angle X at the keyframe
+    short ay; // Rotation/Angle Y at the keyframe
+    short az; // Rotation/Angle Z at the keyframe
+    short pers; // Perspective parameter at the keyframe
+    unsigned int hidobj[8]; // Array of hidden objects at this keyframe
+    unsigned int hidlgt[4]; // Array of hidden lights at this keyframe
+    unsigned int fog_col; // Fog color at this keyframe
+    float fog_nr; // Near fog distance at this keyframe
+    float fog_fr; // Far fog distance at this keyframe
+    short lkflg; // Link flag indicating whether this keyframe is linked to another
+    short lkno; // Link number for the linked keyframe
+    short lkono; // Link object number if related to an object
+    short nxt_no; // Number for the next keyframe in the sequence
+    float lx; // Link X position
+    float ly; // Link Y position
+    float lz; // Link Z position
+    float prm_0; // Additional parameter 0
+    float prm_1; // Additional parameter 1
+    float prm_2; // Additional parameter 2
+    float prm_3; // Additional parameter 3
+    float prm_4; // Additional parameter 4
+    unsigned char* recp; // Pointer to recorded data or metadata
+} ANIMATION_KEYFRAME;
 
-typedef struct KEYFRAME_SEQUENCE {
-    unsigned short flg; // Flag
-    unsigned short type; // Type
-    short nxt_no; // Next number
-    short keyf_n; // Keyframe number
-    KEYFRAME keyf[16]; // Keyframes
-} KEYFRAME_SEQUENCE;
+typedef struct ANIMATION_SEQUENCE {
+    unsigned short flg; // Sequence flag (e.g., active/inactive)
+    unsigned short type; // Sequence type (e.g., camera or object)
+    short nxt_no; // Number for the next sequence in the chain
+    short keyf_n; // Number of keyframes in the sequence
+    ANIMATION_KEYFRAME keyf[16]; // Array of keyframes
+} ANIMATION_SEQUENCE;
 
 typedef struct PAD_BUTTON_INFO {
     int Type;
     unsigned int Button;
 } PAD_BUTTON_INFO;
 
-typedef struct _anon4
+typedef struct CAMERA {
+    unsigned short flg; // Flag
+    unsigned char lgtclip; // Light clip
+    char spd; // Speed
+    float px; // Position X
+    float py; // Position Y
+    float pz; // Position Z
+    float ln; // Length
+    float w; // Width
+    float h; // Height
+    float d; // Depth
+    float y0; // Y0
+    float y1; // Y1
+    float y2; // Y2
+    float y3; // Y3
+    float am_spd; // Ambient speed
+    int ax; // Angle X
+    int ay; // Angle Y
+    int az; // Angle Z
+    int lax; // Light angle X
+    int lay; // Light angle Y
+    short laz0; // Light angle Z0
+    short laz1; // Light angle Z1
+    short laz2; // Light angle Z2
+    short laz3; // Light angle Z3
+    char aa_spd; // Ambient angle speed
+    char fil_no; // Filter number
+    char fil_rt; // Filter rate
+    char reserve; // Reserve
+    int pers; // Perspective
+    unsigned int hidobj[16]; // Hidden objects
+    unsigned int hidlgt[8]; // Hidden lights
+    unsigned int fog_col; // Fog color
+    float fog_nr; // Near fog
+    float fog_fr; // Far fog
+} CAMERA;
+
+typedef struct CUTSCENE_TRIGGER {
+    unsigned int attr; // Attribute
+    char flr_no; // Floor Number
+    char reserve0; // Reserved
+    char reserve1; // Reserved
+    char atr_tp; // Attribute Type
+    float h; // Height
+    float dmy; // Dummy
+    float minx; // Minimum X
+    float minz; // Minimum Z
+    float maxx; // Maximum X
+    float maxz; // Maximum Z
+} CUTSCENE_TRIGGER;
+
+typedef struct CUTSCENE {
+    unsigned char flg; // Flag
+    unsigned char type; // Type
+    char flr_no; // Floor Number
+    unsigned char ctab_n; // Cutscene table number
+    CUTSCENE_TRIGGER* cuttp; // Cutscene trigger pointer (bounding box)
+    float cx; // Center X
+    float cy; // Center Y
+    float cz; // Center Z
+    float cw; // Center Width
+    float ch; // Center Height
+    float cd; // Center Depth
+    CAMERA cam[2]; // Camera array
+    unsigned char exd[256]; // Extra data
+} CUTSCENE;
+
+typedef struct ENEMY {
+    unsigned int flg; // Flag
+    unsigned short id; // Enemy ID
+    unsigned short type; // Enemy type
+    char flr_no; // Floor number
+    unsigned char mdlver; // Model version
+    unsigned char wrk_no; // Work number
+    char prm1; // Parameter 1
+    float px; // Position X
+    float py; // Position Y
+    float pz; // Position Z
+    short ax; // Angle X
+    short az; // Angle Z
+    short ay; // Angle Y
+    short aspd; // Angle speed
+    char hide[4]; // Hide (unknown purpose, potentially hiding flags or conditions)
+} ENEMY;
+
+typedef struct EFFECT {
+    unsigned int flg; // Flag
+    unsigned short id; // Effect ID
+    unsigned short type; // Effect type
+    short flr_no; // Floor number
+    unsigned short mdlver; // Model version
+    float px; // Position X
+    float py; // Position Y
+    float pz; // Position Z
+    float sx; // Scale X
+    float sy; // Scale Y
+    float sz; // Scale Z
+    short ay; // Angle Y
+    short ax; // Angle X
+    int lkflg; // Link flag
+    int lkno; // Link number
+    int lkono; // Link object number
+    float lx; // Linked position X
+    float ly; // Linked position Y
+    float lz; // Linked position Z
+    int param; // Parameters
+} EFFECT;
+
+
+typedef struct POSITION {
+    float px; // Position X - X coordinate of the position
+    float py; // Position Y - Y coordinate of the position
+    float pz; // Position Z - Z coordinate of the position
+    int ay; // Angle Y - Rotation or orientation on the Y-axis
+} POSITION;
+
+typedef struct ENTITY {
+    unsigned int flg; // Entity flag
+    unsigned short id; // Entity ID
+    unsigned short type; // Entity type (enemy, object, item, etc.)
+    char flr_no; // Floor number
+    unsigned char mdlver; // Model version
+    unsigned char wrk_no; // Work number (instance or reference number)
+    char prm1; // Parameter 1 (custom entity data)
+    float px; // Position X
+    float py; // Position Y
+    float pz; // Position Z
+    short ax; // Rotation angle X
+    short az; // Rotation angle Z
+    short ay; // Rotation angle Y
+    short aspd; // Angle speed (rotation speed)
+    char hide[4]; // Hidden flags (visibility or interaction)
+} ENTITY;
+
+typedef struct EVT_DATA {
+    unsigned short* scd0; // Pointer to first script data
+    unsigned short* scd1; // Pointer to second script data
+    unsigned short* evd; // Pointer to event data
+} EVT_DATA;
+
+typedef struct ROOM {
+    CUTSCENE* cutp; // Pointer to cutscene data
+    LIGHT* lgtp; // Pointer to light data
+    ENTITY* enep; // Pointer to enemy data
+    ENTITY* objp; // Pointer to object data
+    ENTITY* itmp; // Pointer to item data
+    EFFECT* effp; // Pointer to effect data
+    BOUNDARY* walp; // Pointer to wall data
+    BOUNDARY* etcp; // Pointer to miscellaneous data
+    BOUNDARY* flrp; // Pointer to floor data
+    POSITION* posp; // Pointer to position data
+    BOUNDARY* rutp; // Pointer to route data
+    unsigned char* ruttp; // Pointer to route table
+    EVT_DATA* evtp; // Pointer to event data
+    ANIMATION_SEQUENCE* evcp; // Pointer to event camera data
+    unsigned int* mesp; // Pointer to message data
+    LIGHT* evlp; // Pointer to event light data
+    unsigned char* dmp00; // Reserved or unused
+    unsigned char* dmp01; // Reserved or unused
+    unsigned char* dmp02; // Reserved or unused
+    unsigned char* dmp03; // Reserved or unused
+    unsigned char* dmp04; // Reserved or unused
+    unsigned char* dmp05; // Reserved or unused
+    unsigned char* dmp06; // Reserved or unused
+    unsigned char* dmp07; // Reserved or unused
+    unsigned char* dmp08; // Reserved or unused
+    unsigned char* dmp09; // Reserved or unused
+    unsigned char* dmp10; // Reserved or unused
+    unsigned char* dmp11; // Reserved or unused
+    unsigned char* dmp12; // Reserved or unused
+    unsigned char* dmp13; // Reserved or unused
+    unsigned char* dmp14; // Reserved or unused
+    unsigned char* dmp15; // Reserved or unused
+    int cut_n; // Number of cutscenes
+    int lgt_n; // Number of lights
+    int ene_n; // Number of enemies
+    int obj_n; // Number of objects
+    int itm_n; // Number of items
+    int eff_n; // Number of effects
+    int wal_n; // Number of walls
+    int etc_n; // Number of miscellaneous entities
+    int flr_n; // Number of floors
+    int pos_n; // Number of positions
+    int rut_n; // Number of routes
+    int evc_n; // Number of event cameras
+    int mes_n; // Number of messages
+    int evl_n; // Number of event lights
+    int dmy00; // Dummy or reserved field
+    int dmy01; // Dummy or reserved field
+    int dmy02; // Dummy or reserved field
+    int dmy03; // Dummy or reserved field
+    int dmy04; // Dummy or reserved field
+    int dmy05; // Dummy or reserved field
+    int dmy06; // Dummy or reserved field
+    int dmy07; // Dummy or reserved field
+    int dmy08; // Dummy or reserved field
+    int dmy09; // Dummy or reserved field
+    int dmy10; // Dummy or reserved field
+    int dmy11; // Dummy or reserved field
+    int dmy12; // Dummy or reserved field
+    int dmy13; // Dummy or reserved field
+    int dmy14; // Dummy or reserved field
+    int dmy15; // Dummy or reserved field
+    int dmy16; // Dummy or reserved field
+    int dmy17; // Dummy or reserved field
+    unsigned int flg; // General flag for the scene
+    unsigned int bak_col; // Background color
+    unsigned int fog_col; // Fog color
+    float fog_nr; // Near fog distance
+    float fog_fr; // Far fog distance
+    float w; // Width
+    float h; // Height
+    float d; // Depth
+    float grand[32]; // Grand data array
+    MODEL_DATA mdl; // Model data
+    float fog[128]; // Fog data
+    char amb_rom; // Ambient ROM
+    char amb_chr; // Ambient character
+    char amb_obj; // Ambient object
+    char amb_itm; // Ambient item
+    float amb_r[4]; // Ambient red values
+    float amb_g[4]; // Ambient green values
+    float amb_b[4]; // Ambient blue values
+} ROOM;
+
+typedef struct SND_QUEUE_DATA {
+    int cmd; // Command ID, representing the specific sound operation
+    char data[4]; // Command-specific data (could represent parameters or sound details)
+} SND_QUEUE_DATA;
+
+typedef struct GFX_FADE {
+    int flg; // Fade flag
+    float alpha; // Alpha value
+    float alphaset; // Alpha set value
+    float cnt00; // Counter 00
+    float cnt01; // Counter 01
+    float cnt02; // Counter 02
+} GFX_FADE;
+
+typedef struct WEAPON
 {
-	_anon6* cutp;  // Cutscene? pointer
-	_anon12* lgtp; // Light pointer
-	_anon13* enep; // Enemy pointer
-	_anon13* objp; // Object pointer
-	_anon13* itmp; // Item pointer
-	_anon17* effp; // Effect pointer
-	_anon18* walp; // Wall pointer
-	_anon18* etcp; // Etc pointer
-	_anon18* flrp; // Floor pointer
-	_anon20* posp; // Position pointer
-	_anon18* rutp; // Route pointer
-	unsigned char* ruttp; // Route table pointer
-	_anon27* evtp; // Event pointer
-	_anon28* evcp; // Event camera pointer
-	unsigned int* mesp; // Message pointer
-	_anon12* evlp; // Event light pointer
-	unsigned char* dmp00;
-	unsigned char* dmp01;
-	unsigned char* dmp02;
-	unsigned char* dmp03;
-	unsigned char* dmp04;
-	unsigned char* dmp05;
-	unsigned char* dmp06;
-	unsigned char* dmp07;
-	unsigned char* dmp08;
-	unsigned char* dmp09;
-	unsigned char* dmp10;
-	unsigned char* dmp11;
-	unsigned char* dmp12;
-	unsigned char* dmp13;
-	unsigned char* dmp14;
-	unsigned char* dmp15;
-	int cut_n; // Cutscene number
-	int lgt_n; // Light number
-	int ene_n; // Enemy number
-	int obj_n; // Object number
-	int itm_n; // Item number
-	int eff_n; // Effect number
-	int wal_n; // Wall number
-	int etc_n; // Etc number
-	int flr_n;
-	int pos_n;
-	int rut_n;
-	int evc_n;
-	int mes_n;
-	int evl_n;
-	int dmy00;
-	int dmy01;
-	int dmy02;
-	int dmy03;
-	int dmy04;
-	int dmy05;
-	int dmy06;
-	int dmy07;
-	int dmy08;
-	int dmy09;
-	int dmy10;
-	int dmy11;
-	int dmy12;
-	int dmy13;
-	int dmy14;
-	int dmy15;
-	int dmy16;
-	int dmy17;
-	unsigned int flg;
-	unsigned int bak_col;
-	unsigned int fog_col;
-	float fog_nr;
-	float fog_fr;
-	float w;
-	float h;
-	float d;
-	float grand[32];
-	_anon9 mdl;
-	float fog[128];
-	char amb_rom;
-	char amb_chr;
-	char amb_obj;
-	char amb_itm;
-	float amb_r[4];
-	float amb_g[4];
-	float amb_b[4];
-} _anon4;
+	unsigned int flg; 
+	unsigned int atack_ct;
+	unsigned int fend_ct;
+	unsigned int at_cct;
+	short ef_yct;
+	short act_ct0;
+	short act_ct1;
+	short act_ct2;
+	float r;
+	float l;
+	float rn;
+	float rmax;
+	NJS_POINT3 wp_fps1;
+	NJS_POINT3 wp_fps2;
+	NJS_POINT3 wp_cps;
+	unsigned char ltp;
+	unsigned char lr;
+	unsigned char lg;
+	unsigned char lb;
+	unsigned short lnr;
+	unsigned short lfr;
+	float hrate;
+	float ef_scale;
+	short snd_wpno;
+	short hiteff;
+	unsigned short seno0;
+	unsigned short seno1;
+	char vib_tp;
+	char vib_ct;
+	char reserve1;
+	char reserve2;
+} WEAPON;
+
+typedef struct tagNJS_SCRVECTOR {
+    float x; // X coordinate
+    float y; // Y coordinate
+    float z; // Z coordinate
+    float iz; // Inverted Z coordinate
+    float fog; // Fog distance
+} NJS_SCRVECTOR;
+
+
+typedef struct NJS_MATRIX_WRAP {
+    NJS_MATRIX m; // Matrix
+} NJS_MATRIX_WRAP;

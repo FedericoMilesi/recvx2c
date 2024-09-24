@@ -9,8 +9,8 @@ MEMORYCARDSTATE McState;
 SAVEFILE SaveFile;
 CONFIGFILE ConfigFile;
 unsigned char SaveLoadMessage[10956];
-Unknown22 Pad[0];
-SYS* sys;
+extern Controller Pad[4];
+extern SYS* sys;
 
 //
 // Start address: 0x2770c0

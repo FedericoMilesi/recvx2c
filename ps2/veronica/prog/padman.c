@@ -3,7 +3,7 @@
 unsigned int KeyWaitFirst;
 unsigned int KeyWaitNext;
 ControllerButton ButtonInfo[5];
-int SoftResetFlag;
+extern int SoftResetFlag;
 int CurrentPortId;
 Controller Pad[4];
 int MaxContorolPlayer;

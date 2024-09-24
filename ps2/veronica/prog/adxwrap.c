@@ -1,15 +1,15 @@
-typedef struct _anon0;
+#include "adxwrap.h"
 
 
 
 typedef struct _adxt_sprm;
 typedef struct _anon3;
-typedef struct _anon4;
 
 
-typedef struct _anon5;
 
-typedef struct _anon6;
+
+
+
 
 
 
@@ -25,8 +25,8 @@ typedef void(*type_23)();
 
 
 
-typedef _anon6 type_2[8];
-typedef _anon0 type_3[4];
+
+
 typedef char type_5[256];
 typedef short type_7[128];
 typedef char type_10[256];
@@ -43,27 +43,27 @@ typedef char type_20[256];
 
 
 typedef char type_29[256];
-typedef _anon5 type_31[16];
 
-struct _anon0 // ADXWRAP_ADXT_INFO
-{
-	ADXT Handle;
-	unsigned char* pAdxTWork;
-	int WorkSize;
-	unsigned int Flag;
-	int FadeFunc;
-	int FadeCntMax;
-	float Volume;
-	float VolSpeed;
-	float VolLast;
-	float VolSave;
-	float LimitMaxVol;
-	int PanFunc;
-	int PanCntMax;
-	float Pan;
-	float PanSpeed;
-	float PanLast;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -143,19 +143,12 @@ struct _adxt_sprm
 
 struct _anon3
 {
-	unsigned int MaxChannel;
-	unsigned int MaxSampleRate;
+	unsigned int MaxChannel; // Number of maximum channels(monoral:1, stereo:2)
+	unsigned int MaxSampleRate; 
 	int RecoverType;
 	int ReloadSector;
 };
 
-struct _anon4
-{
-	char* AfsFileName;
-	int PartitionId;
-	int MaxInsideFileNum;
-	unsigned char* pInfoWork;
-};
 
 
 
@@ -181,12 +174,6 @@ struct _anon4
 
 
 
-struct _anon5 // ADXWRAP_AFS_INFO
-{
-	unsigned char* pInfoPart;
-	unsigned int PartAreaSize;
-	unsigned int Flag;
-};
 
 
 
@@ -210,13 +197,26 @@ struct _anon5 // ADXWRAP_AFS_INFO
 
 
 
-struct _anon6 // ADXWRAP_ADXF_INFO
-{
-	ADXF Handle;
-	unsigned char* pAdxFWork;
-	unsigned int Flag;
-	int Mode;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 char last_rdx_files[256];
 char last_adx_files[256];
@@ -230,9 +230,9 @@ _adxt_sprm cf_prm;
 short AdxVolTbl[128];
 int AdxStreamSleepFlag;
 int MaxAdxStreamCnt;
-_anon0 AdxTInfo[4];
-_anon6 AdxFInfo[8];
-_anon5 AfsInfo[16];
+ADXWRAP_ADXT AdxTInfo[4];
+ADXWRAP_ADXF AdxFInfo[8];
+ADXWRAP_AFS AfsInfo[16];
 unsigned char RDX_FILE_PARTISION[880];
 int rdx_image_data_max;
 char* rdx_files[0];
@@ -240,41 +240,7 @@ int ADX_STREAM_BUFF_OFFSET[2];
 char ADX_STREAM_BUFFER[471040];
 char cf_area[5628];
 
-void InitAdx();
-void ExitAdx();
-void DeletePartition(unsigned int PartitionId);
-int CreatePartitionEx(_anon4* ap);
-void DeletePartitionEx(_anon4* ap);
-int SearchAdxFSlot();
-int OpenAfsInsideFile(unsigned int PartitionId, unsigned int FileId);
-int OpenAfsIsoFile(char* FileName);
-int GetAfsInsideFileSize(int SlotNo);
-void RequestReadAfsInsideFile(int SlotNo, unsigned char* Address);
-int CheckReadEndAfsInsideFile(int SlotNo);
-void CloseAfsInsideFile(int SlotNo);
-void StopAfsInsideFile(int SlotNo);
-void RegistAdxStreamEx(int MaxStream, int DummyStream, _anon3* pAdx);
-void FreeAdxStream();
-void SleepAdxStream();
-void WakeupAdxStream(_anon3* pAdx);
-void PlayAdxEx(unsigned int SlotNo, unsigned int PartitionId, unsigned int FileId, int Flag);
-void PlayAdx(unsigned int SlotNo, unsigned int PartitionId, unsigned int FileId);
-void StopAdx(unsigned int SlotNo);
-void PauseAdx(unsigned int SlotNo);
-void ContinueAdx(unsigned int SlotNo);
-int GetAdxStatus(unsigned int SlotNo);
-void SetVolumeAdx(unsigned int SlotNo, int Volume);
-void SetVolumeAdxEx(unsigned int SlotNo, float Volume, float MaxVolume);
-void SetVolumeAdx2(unsigned int SlotNo, float Volume);
-void SetPanAdx2(unsigned int SlotNo, float Pan);
-void SetPanAdx(unsigned int SlotNo, int Channel, int Pan);
-int GetAdxPlayTime(unsigned int SlotNo);
-void RequestAdxFadeFunction2(int SlotNo, int Func, int Timer, int FirstVolume);
-void RequestAdxFadeFunction(int SlotNo, int Func, int Timer);
-void RequestAdxFadeFunctionEx(int SlotNo, int StartVol, int LastVol, int Frame);
-int ExecAdxFadeManager();
-
-// 
+//
 // Start address: 0x291020
 void InitAdx()
 {
@@ -315,7 +281,7 @@ void ExitAdx() { // Line 233, Address: 0x291100
     ADXT_Finish();
 }
 
-// 
+//
 // Start address: 0x291110
 void DeletePartition(unsigned int PartitionId)
 {
@@ -332,9 +298,9 @@ void DeletePartition(unsigned int PartitionId)
 	// Func End, Address: 0x291168, Func Offset: 0x58
 }
 
-// 
+//
 // Start address: 0x291170
-int CreatePartitionEx(_anon4* ap)
+int CreatePartitionEx(AFS_PARTITION* ap)
 {
 	int ret;
 	char chg_AfsFile[256];
@@ -376,9 +342,9 @@ int CreatePartitionEx(_anon4* ap)
 	// Func End, Address: 0x291324, Func Offset: 0x1b4
 }
 
-// 
+//
 // Start address: 0x291330
-void DeletePartitionEx(_anon4* ap)
+void DeletePartitionEx(AFS_PARTITION* ap)
 {
 	// Line 467, Address: 0x291330, Func Offset: 0
 	// Line 464, Address: 0x291338, Func Offset: 0x8
@@ -389,7 +355,7 @@ void DeletePartitionEx(_anon4* ap)
 	// Func End, Address: 0x29136c, Func Offset: 0x3c
 }
 
-// 
+//
 // Start address: 0x291370
 int SearchAdxFSlot()
 {
@@ -403,7 +369,7 @@ int SearchAdxFSlot()
 	// Func End, Address: 0x2913ac, Func Offset: 0x3c
 }
 
-// 
+//
 // Start address: 0x2913b0
 int OpenAfsInsideFile(unsigned int PartitionId, unsigned int FileId)
 {
@@ -423,7 +389,7 @@ int OpenAfsInsideFile(unsigned int PartitionId, unsigned int FileId)
 	// Func End, Address: 0x291454, Func Offset: 0xa4
 }
 
-// 
+//
 // Start address: 0x291460
 int OpenAfsIsoFile(char* FileName)
 {
@@ -470,7 +436,7 @@ int OpenAfsIsoFile(char* FileName)
 	// Func End, Address: 0x291708, Func Offset: 0x2a8
 }
 
-// 
+//
 // Start address: 0x291710
 int GetAfsInsideFileSize(int SlotNo)
 {
@@ -483,7 +449,7 @@ int GetAfsInsideFileSize(int SlotNo)
 	// Func End, Address: 0x291760, Func Offset: 0x50
 }
 
-// 
+//
 // Start address: 0x291760
 void RequestReadAfsInsideFile(int SlotNo, unsigned char* Address)
 {
@@ -500,7 +466,7 @@ void RequestReadAfsInsideFile(int SlotNo, unsigned char* Address)
 	// Func End, Address: 0x2917f4, Func Offset: 0x94
 }
 
-// 
+//
 // Start address: 0x291800
 int CheckReadEndAfsInsideFile(int SlotNo)
 {
@@ -516,7 +482,7 @@ int CheckReadEndAfsInsideFile(int SlotNo)
 	// Func End, Address: 0x291890, Func Offset: 0x90
 }
 
-// 
+//
 // Start address: 0x291890
 void CloseAfsInsideFile(int SlotNo)
 {
@@ -532,7 +498,7 @@ void CloseAfsInsideFile(int SlotNo)
 	// Func End, Address: 0x2918f8, Func Offset: 0x68
 }
 
-// 
+//
 // Start address: 0x291900
 void StopAfsInsideFile(int SlotNo)
 {
@@ -548,11 +514,11 @@ void StopAfsInsideFile(int SlotNo)
 	// Func End, Address: 0x29196c, Func Offset: 0x6c
 }
 
-// 
+//
 // Start address: 0x291970
 void RegistAdxStreamEx(int MaxStream, int DummyStream, _anon3* pAdx)
 {
-	_anon0* tp;
+	ADXWRAP_ADXT* tp;
 	int i;
 	// Line 998, Address: 0x291970, Func Offset: 0
 	// Line 1002, Address: 0x291998, Func Offset: 0x28
@@ -582,7 +548,7 @@ void RegistAdxStreamEx(int MaxStream, int DummyStream, _anon3* pAdx)
 	// Func End, Address: 0x291b04, Func Offset: 0x194
 }
 
-// 
+//
 // Start address: 0x291b10
 void FreeAdxStream()
 {
@@ -604,7 +570,7 @@ void FreeAdxStream()
 	// Func End, Address: 0x291bc4, Func Offset: 0xb4
 }
 
-// 
+//
 // Start address: 0x291bd0
 void SleepAdxStream()
 {
@@ -627,11 +593,11 @@ void SleepAdxStream()
 	// Func End, Address: 0x291c8c, Func Offset: 0xbc
 }
 
-// 
+//
 // Start address: 0x291c90
 void WakeupAdxStream(_anon3* pAdx)
 {
-	_anon0* tp;
+	ADXWRAP_ADXT* tp;
 	int i;
 	// Line 1145, Address: 0x291c90, Func Offset: 0
 	// Line 1149, Address: 0x291ca4, Func Offset: 0x14
@@ -653,7 +619,7 @@ void WakeupAdxStream(_anon3* pAdx)
 	// Func End, Address: 0x291d64, Func Offset: 0xd4
 }
 
-// 
+//
 // Start address: 0x291d70
 void PlayAdxEx(unsigned int SlotNo, unsigned int PartitionId, unsigned int FileId, int Flag)
 {
@@ -669,7 +635,7 @@ void PlayAdxEx(unsigned int SlotNo, unsigned int PartitionId, unsigned int FileI
 	// Func End, Address: 0x291e0c, Func Offset: 0x9c
 }
 
-// 
+//
 // Start address: 0x291e10
 void PlayAdx(unsigned int SlotNo, unsigned int PartitionId, unsigned int FileId)
 {
@@ -677,7 +643,7 @@ void PlayAdx(unsigned int SlotNo, unsigned int PartitionId, unsigned int FileId)
 	// Func End, Address: 0x291e18, Func Offset: 0x8
 }
 
-// 
+//
 // Start address: 0x291e20
 void StopAdx(unsigned int SlotNo)
 {
@@ -693,7 +659,7 @@ void StopAdx(unsigned int SlotNo)
 	// Func End, Address: 0x291e88, Func Offset: 0x68
 }
 
-// 
+//
 // Start address: 0x291e90
 void PauseAdx(unsigned int SlotNo)
 {
@@ -705,7 +671,7 @@ void PauseAdx(unsigned int SlotNo)
 	// Func End, Address: 0x291ed8, Func Offset: 0x48
 }
 
-// 
+//
 // Start address: 0x291ee0
 void ContinueAdx(unsigned int SlotNo)
 {
@@ -717,7 +683,7 @@ void ContinueAdx(unsigned int SlotNo)
 	// Func End, Address: 0x291f28, Func Offset: 0x48
 }
 
-// 
+//
 // Start address: 0x291f30
 int GetAdxStatus(unsigned int SlotNo)
 {
@@ -725,7 +691,7 @@ int GetAdxStatus(unsigned int SlotNo)
 	// Func End, Address: 0x291f48, Func Offset: 0x18
 }
 
-// 
+//
 // Start address: 0x291f50
 void SetVolumeAdx(unsigned int SlotNo, int Volume)
 {
@@ -733,7 +699,7 @@ void SetVolumeAdx(unsigned int SlotNo, int Volume)
 	// Func End, Address: 0x291f5c, Func Offset: 0xc
 }
 
-// 
+//
 // Start address: 0x291f60
 void SetVolumeAdxEx(unsigned int SlotNo, float Volume, float MaxVolume)
 {
@@ -746,7 +712,7 @@ void SetVolumeAdxEx(unsigned int SlotNo, float Volume, float MaxVolume)
 	// Func End, Address: 0x291fa8, Func Offset: 0x48
 }
 
-// 
+//
 // Start address: 0x291fb0
 void SetVolumeAdx2(unsigned int SlotNo, float Volume)
 {
@@ -762,7 +728,7 @@ void SetVolumeAdx2(unsigned int SlotNo, float Volume)
 	// Func End, Address: 0x292040, Func Offset: 0x90
 }
 
-// 
+//
 // Start address: 0x292040
 void SetPanAdx2(unsigned int SlotNo, float Pan)
 {
@@ -776,7 +742,7 @@ void SetPanAdx(unsigned int SlotNo, int Channel, int Pan) { // Line 1405, Addres
     SetPanAdx2(SlotNo, Pan);
 }
 
-// 
+//
 // Start address: 0x292070
 int GetAdxPlayTime(unsigned int SlotNo)
 {
@@ -791,11 +757,11 @@ int GetAdxPlayTime(unsigned int SlotNo)
 	// Func End, Address: 0x2920f4, Func Offset: 0x84
 }
 
-// 
+//
 // Start address: 0x292100
 void RequestAdxFadeFunction2(int SlotNo, int Func, int Timer, int FirstVolume)
 {
-	_anon0* tp;
+	ADXWRAP_ADXT* tp;
 	float Cnt;
 	// Line 1465, Address: 0x292100, Func Offset: 0
 	// Line 1467, Address: 0x292110, Func Offset: 0x10
@@ -823,11 +789,11 @@ void RequestAdxFadeFunction(int SlotNo, int Func, int Timer) { // Line 1507, Add
     RequestAdxFadeFunction2(SlotNo, Func, Timer, 1);
 }
 
-// 
+//
 // Start address: 0x292240
 void RequestAdxFadeFunctionEx(int SlotNo, int StartVol, int LastVol, int Frame)
 {
-	_anon0* tp;
+	ADXWRAP_ADXT* tp;
 	// Line 1511, Address: 0x292240, Func Offset: 0
 	// Line 1514, Address: 0x292250, Func Offset: 0x10
 	// Line 1511, Address: 0x29225c, Func Offset: 0x1c
@@ -847,11 +813,11 @@ void RequestAdxFadeFunctionEx(int SlotNo, int StartVol, int LastVol, int Frame)
 	// Func End, Address: 0x2922e4, Func Offset: 0xa4
 }
 
-// 
+//
 // Start address: 0x2922f0
 int ExecAdxFadeManager()
 {
-	_anon0* tp;
+	ADXWRAP_ADXT* tp;
 	int ReturnCode;
 	int i;
 	// Line 1583, Address: 0x2922f0, Func Offset: 0

@@ -1,8 +1,7 @@
 #define ExitHandler() asm (sync; ei)
 
-typedef	void (*AlarmCallBack)(int, unsigned short, void*);
 
-typedef struct _sif_client_data sceSifClientData;
+typedef struct sceSifClientData sceSifClientData;
 
 int iWakeupThread(int thid);
 int GetThreadId(void);

@@ -1,15 +1,15 @@
 
 typedef struct _anon0;
-typedef struct BH_PWORK;
-typedef struct _anon1;
-typedef struct _anon2;
+
+
+
 typedef struct _anon3;
 
-typedef struct _anon5;
-typedef struct _anon6;
 
 
-typedef struct _anon9;
+
+
+
 
 
 
@@ -33,7 +33,7 @@ typedef unsigned int type_15[2];
 typedef int* type_16[16];
 
 
-typedef _anon9 type_19[16];
+typedef MODEL_DATA type_19[16];
 typedef unsigned char type_20[64];
 
 
@@ -52,161 +52,22 @@ struct _anon0
 	float key[3];
 };
 
-struct BH_PWORK
-{
-	unsigned int flg;
-	unsigned short id;
-	unsigned short type;
-	char flr_no;
-	char flr_nob;
-	unsigned char mdlver;
-	unsigned char param;
-	unsigned char mode0;
-	unsigned char mode1;
-	unsigned char mode2;
-	unsigned char mode3;
-	float px;
-	float py;
-	float pz;
-	int ax;
-	int ay;
-	int az;
-	float ar;
-	float aw;
-	float ah;
-	float ad;
-	float car;
-	float cah;
-	float pxb;
-	float pyb;
-	float pzb;
-	int axb;
-	int ayb;
-	int azb;
-	float gpx;
-	float gpy;
-	float gpz;
-	float lox;
-	float loy;
-	float loz;
-	float aox;
-	float aoy;
-	float aoz;
-	float spd;
-	unsigned int flg2;
-	unsigned int mdflg;
-	unsigned int stflg;
-	unsigned int Dummy3;
-	int draw_tp;
-	int mdl_n;
-	void* mskp;
-	unsigned int Dummy[1];
-	int* skp[16];
-	NJS_OBJECT* mbp[16];
-	NJS_TEXLIST* txp[16];
-	_anon9 mdl[16];
-	_anon9* mlwP;
-	unsigned int mdl_no;
-	int lkono;
-	unsigned char* lkwkp;
-	unsigned char* exp0;
-	unsigned char* exp1;
-	unsigned char* exp2;
-	unsigned char* exp3;
-	unsigned char mtxbuf[64];
-	NJS_MATRIX mtx;
-	NJS_OBJECT* obj_a;
-	NJS_OBJECT* obj_b;
-	float shp_ct;
-	char clp_jno[8];
-	int lok_jno;
-	_anon1* mnwP;
-	_anon1* mnwPb;
-	unsigned int mtn_attr;
-	unsigned int mtn_no;
-	int frm_no;
-	unsigned int frm_mode;
-	int hokan_rate;
-	unsigned int hokan_count;
-	unsigned int hokan_ctbak;
-	int mtn_add;
-	unsigned int mtn_md;
-	unsigned char* mtn_tp;
-	int axp;
-	int ayp;
-	int azp;
-	short psh_ct;
-	short psh_idx;
-	int idx_ct;
-	int mtn_chk;
-	float ofx;
-	float ofy;
-	float ofz;
-	float sx;
-	float sy;
-	float sz;
-	float sxb;
-	float syb;
-	float szb;
-	float xn;
-	float yn;
-	float zn;
-	int ct0;
-	int ct1;
-	int ct2;
-	int ct3;
-	int wpnr_no;
-	int wpnl_no;
-	unsigned int at_flg;
-	NJS_CAPSULE watr;
-	_anon5* cpcl;
-	short wax;
-	short way;
-	short waz;
-	short waxp;
-	short wayp;
-	short wazp;
-	int hp;
-	int dam[64];
-	int djnt_no;
-	int cpcl_no;
-	int dax;
-	int day;
-	float dpx;
-	float dpy;
-	float dpz;
-	float dvx;
-	float dvy;
-	float dvz;
-	int flr_snd;
-	int ko_num;
-	int footeff;
-	int src_no;
-	unsigned char* kdnp;
-	int kdnidx;
-	void* dan_ap;
-	unsigned int comb_flg;
-	unsigned int comb_wep;
-	int comb_pnt;
-	int comb_timeout;
-	int total_dam;
-	unsigned int Dummy2[2];
-};
 
-struct _anon1
-{
-	unsigned int flg;
-	unsigned int obj_num;
-	unsigned int frm_num;
-	void* datP;
-	_anon2* md2P;
-	unsigned short* atrP;
-};
 
-struct _anon2
-{
-	void* p[2];
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon3
 {
@@ -220,20 +81,6 @@ struct _anon3
 
 
 
-struct _anon5
-{
-	short jnt_a;
-	short jnt_b;
-	int cap_r;
-};
-
-struct _anon6
-{
-	unsigned int flg;
-	int dmy;
-	unsigned int dummy[2];
-	NJS_MATRIX mtx;
-};
 
 
 
@@ -249,15 +96,7 @@ struct _anon6
 
 
 
-struct _anon9
-{
-	unsigned int flg;
-	unsigned int obj_num;
-	void* datP;
-	NJS_OBJECT* objP;
-	NJS_TEXLIST* texP;
-	_anon6* owP;
-};
+
 
 
 
@@ -341,8 +180,8 @@ void SetMtnNormal(BH_PWORK* ewP, char* datP, int mode)
 	_anon3* mkaP;
 	float* posP;
 	_anon0* mkfP;
-	_anon6* owP;
-	_anon2* md2P;
+	OBJECT_WORK* owP;
+	MD2* md2P;
 	int obj_no;
 	float flp_f;
 	int flp_s;
@@ -395,8 +234,8 @@ void SetMtnNormalHokan(BH_PWORK* ewP, char* datP, int mode, float rate)
 	int* angP;
 	float* posP;
 	_anon0* mkfP;
-	_anon6* owP;
-	_anon2* md2P;
+	OBJECT_WORK* owP;
+	MD2* md2P;
 	int obj_no;
 	float flp_f;
 	int flp_s;
@@ -473,8 +312,8 @@ void SetMtnFast(BH_PWORK* ewP, char* datP, int mode)
 {
 	int* dstP;
 	_anon3* mkaP;
-	_anon6* owP;
-	_anon2* md2P;
+	OBJECT_WORK* owP;
+	MD2* md2P;
 	int obj_no;
 	int flp;
 	float* posP;
@@ -529,8 +368,8 @@ void SetMtnFastHokan(BH_PWORK* ewP, char* datP, int mode, float rate)
 	int sum;
 	_anon3* mkaP;
 	int* angP;
-	_anon6* owP;
-	_anon2* md2P;
+	OBJECT_WORK* owP;
+	MD2* md2P;
 	int obj_no;
 	int flp;
 	float* posP;
@@ -632,14 +471,14 @@ void SetMtnSlow(BH_PWORK* ewP, char* datP, int mode)
 	float* dstP;
 	float* srcP;
 	_anon0* mkfP;
-	_anon6* owP;
-	_anon2* md2P;
+	OBJECT_WORK* owP;
+	MD2* md2P;
 	int obj_no;
 	float flp_f;
 	int flp_s;
 	int dst_no;
 	int src_no;
-	_anon1* mnwP;
+	Unknown2* mnwP;
 	float frac;
 	// Line 547, Address: 0x1304b0, Func Offset: 0
 	// Line 549, Address: 0x1304dc, Func Offset: 0x2c
@@ -714,14 +553,14 @@ void SetMtnSlowHokan(BH_PWORK* ewP, char* datP, int mode, float rate)
 	float* dstP;
 	float* srcP;
 	_anon0* mkfP;
-	_anon6* owP;
-	_anon2* md2P;
+	OBJECT_WORK* owP;
+	MD2* md2P;
 	int obj_no;
 	float flp_f;
 	int flp_s;
 	int dst_no;
 	int src_no;
-	_anon1* mnwP;
+	Unknown2* mnwP;
 	float frac;
 	// Line 623, Address: 0x1307d0, Func Offset: 0
 	// Line 625, Address: 0x130800, Func Offset: 0x30
@@ -825,7 +664,7 @@ void bhCalcFixOffset(BH_PWORK* ewP, char* datP, NJS_POINT3* offP, NJS_POINT3* rt
 	NJS_POINT3 dst;
 	NJS_POINT3 src;
 	NJS_OBJECT* objP;
-	_anon9* mlwP;
+	MODEL_DATA* mlwP;
 	NJS_POINT3 off;
 	// Line 779, Address: 0x130de0, Func Offset: 0
 	// Line 782, Address: 0x130dfc, Func Offset: 0x1c
@@ -859,7 +698,7 @@ void bhGetObjMotion(BH_PWORK* ewP, int obj_no, float* pos, int* ang)
 {
 	_anon3* mkaP;
 	_anon0* mkfP;
-	_anon2* md2P;
+	MD2* md2P;
 	char* rutP;
 	int s_flp;
 	float f_flp;

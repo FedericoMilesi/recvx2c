@@ -1,15 +1,15 @@
 
-typedef struct _anon0;
-typedef struct _anon1;
 
-typedef struct _anon3;
 
-typedef struct BH_PWORK;
-typedef struct _anon5;
 
-typedef struct _anon7;
 
-typedef struct _anon9;
+
+
+
+
+
+
+
 
 
 typedef void(*type_0)(BH_PWORK*);
@@ -29,7 +29,7 @@ typedef unsigned int type_12[2];
 typedef int* type_13[16];
 
 
-typedef _anon7 type_16[16];
+typedef MODEL_DATA type_16[16];
 typedef unsigned char type_17[64];
 typedef void(*type_18)(BH_PWORK*)[2];
 
@@ -44,189 +44,6 @@ typedef void(*type_18)(BH_PWORK*)[2];
 
 
 
-struct _anon0
-{
-	unsigned int flg;
-	unsigned int obj_num;
-	unsigned int frm_num;
-	void* datP;
-	_anon1* md2P;
-	unsigned short* atrP;
-};
-
-struct _anon1
-{
-	void* p[2];
-};
-
-
-
-
-
-
-
-
-struct _anon3
-{
-	short jnt_a;
-	short jnt_b;
-	int cap_r;
-};
-
-
-
-
-
-
-
-struct BH_PWORK
-{
-	unsigned int flg;
-	unsigned short id;
-	unsigned short type;
-	char flr_no;
-	char flr_nob;
-	unsigned char mdlver;
-	unsigned char param;
-	unsigned char mode0;
-	unsigned char mode1;
-	unsigned char mode2;
-	unsigned char mode3;
-	float px;
-	float py;
-	float pz;
-	int ax;
-	int ay;
-	int az;
-	float ar;
-	float aw;
-	float ah;
-	float ad;
-	float car;
-	float cah;
-	float pxb;
-	float pyb;
-	float pzb;
-	int axb;
-	int ayb;
-	int azb;
-	float gpx;
-	float gpy;
-	float gpz;
-	float lox;
-	float loy;
-	float loz;
-	float aox;
-	float aoy;
-	float aoz;
-	float spd;
-	unsigned int flg2;
-	unsigned int mdflg;
-	unsigned int stflg;
-	unsigned int Dummy3;
-	int draw_tp;
-	int mdl_n;
-	void* mskp;
-	unsigned int Dummy[1];
-	int* skp[16];
-	NJS_OBJECT* mbp[16];
-	NJS_TEXLIST* txp[16];
-	_anon7 mdl[16];
-	_anon7* mlwP;
-	unsigned int mdl_no;
-	int lkono;
-	unsigned char* lkwkp;
-	unsigned char* exp0;
-	unsigned char* exp1;
-	unsigned char* exp2;
-	unsigned char* exp3;
-	unsigned char mtxbuf[64];
-	NJS_MATRIX mtx;
-	NJS_OBJECT* obj_a;
-	NJS_OBJECT* obj_b;
-	float shp_ct;
-	char clp_jno[8];
-	int lok_jno;
-	_anon0* mnwP;
-	_anon0* mnwPb;
-	unsigned int mtn_attr;
-	unsigned int mtn_no;
-	int frm_no;
-	unsigned int frm_mode;
-	int hokan_rate;
-	unsigned int hokan_count;
-	unsigned int hokan_ctbak;
-	int mtn_add;
-	unsigned int mtn_md;
-	unsigned char* mtn_tp;
-	int axp;
-	int ayp;
-	int azp;
-	short psh_ct;
-	short psh_idx;
-	int idx_ct;
-	int mtn_chk;
-	float ofx;
-	float ofy;
-	float ofz;
-	float sx;
-	float sy;
-	float sz;
-	float sxb;
-	float syb;
-	float szb;
-	float xn;
-	float yn;
-	float zn;
-	int ct0;
-	int ct1;
-	int ct2;
-	int ct3;
-	int wpnr_no;
-	int wpnl_no;
-	unsigned int at_flg;
-	NJS_CAPSULE watr;
-	_anon3* cpcl;
-	short wax;
-	short way;
-	short waz;
-	short waxp;
-	short wayp;
-	short wazp;
-	int hp;
-	int dam[64];
-	int djnt_no;
-	int cpcl_no;
-	int dax;
-	int day;
-	float dpx;
-	float dpy;
-	float dpz;
-	float dvx;
-	float dvy;
-	float dvz;
-	int flr_snd;
-	int ko_num;
-	int footeff;
-	int src_no;
-	unsigned char* kdnp;
-	int kdnidx;
-	void* dan_ap;
-	unsigned int comb_flg;
-	unsigned int comb_wep;
-	int comb_pnt;
-	int comb_timeout;
-	int total_dam;
-	unsigned int Dummy2[2];
-};
-
-struct _anon5
-{
-	unsigned int flg;
-	int dmy;
-	unsigned int dummy[2];
-	NJS_MATRIX mtx;
-};
 
 
 
@@ -236,15 +53,6 @@ struct _anon5
 
 
 
-struct _anon7
-{
-	unsigned int flg;
-	unsigned int obj_num;
-	void* datP;
-	NJS_OBJECT* objP;
-	NJS_TEXLIST* texP;
-	_anon5* owP;
-};
 
 
 
@@ -253,24 +61,37 @@ struct _anon7
 
 
 
-struct _anon9
-{
-	unsigned char flg;
-	unsigned char type;
-	unsigned char id;
-	char flr_no;
-	unsigned int attr;
-	float px;
-	float py;
-	float pz;
-	float w;
-	float h;
-	float d;
-	unsigned char prm0;
-	unsigned char prm1;
-	unsigned char prm2;
-	unsigned char prm3;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -418,7 +239,7 @@ void bhEne05s_MV02(BH_PWORK* epw)
 {
 	NJS_POINT3 vec;
 	NJS_POINT3 pos;
-	_anon5* owk;
+	OBJECT_WORK* owk;
 	// Line 252, Address: 0x1b9480, Func Offset: 0
 	// Line 259, Address: 0x1b9498, Func Offset: 0x18
 	// Line 261, Address: 0x1b94a4, Func Offset: 0x24
@@ -462,7 +283,7 @@ void bhEne05s_MV02(BH_PWORK* epw)
 // Start address: 0x1b96a0
 void bhEne05s_FloorCollision(BH_PWORK* epw)
 {
-	_anon9* hp;
+	BOUNDARY* hp;
 	// Line 322, Address: 0x1b96a0, Func Offset: 0
 	// Line 325, Address: 0x1b96ac, Func Offset: 0xc
 	// Line 327, Address: 0x1b96c0, Func Offset: 0x20

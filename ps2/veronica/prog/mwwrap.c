@@ -1,37 +1,34 @@
 
 
-typedef struct _anon2;
+#include "sg_mwply.h"
+typedef struct MW_PLY_OBJ;
 typedef struct _anon3;
-typedef struct _anon4;
-
-
-typedef enum _mwe_ply_stat;
-typedef struct _mwply_if;
+typedef struct MWS_PLY_CPRM_SFD;
 
 
 typedef void(*type_1)();
 
 typedef void(*type_3)();
 typedef void(*type_4)();
-typedef void(*type_5)(_anon2*);
+typedef void(*type_5)(MWPLY);
 
-typedef void(*type_7)(_anon2*);
+typedef void(*type_7)(MWPLY);
 
-typedef void(*type_10)(_anon2*);
-typedef void(*type_11)(_anon2*, char*);
+typedef void(*type_10)(MWPLY);
+typedef void(*type_11)(MWPLY, char*);
 
-typedef void(*type_13)(_anon2*);
+typedef void(*type_13)(MWPLY);
 
-typedef _mwe_ply_stat(*type_15)(_anon2*);
+
 typedef void(*type_16)(void*, int);
-typedef void(*type_17)(_anon2*, int*, int*);
-typedef void(*type_18)(_anon2*, int);
-typedef void(*type_19)(_anon2*, int);
-typedef int(*type_20)(_anon2*);
-typedef void(*type_21)(_anon2*, int, int);
-typedef int(*type_22)(_anon2*, int);
-typedef void(*type_23)(_anon2*, SJ_OBJ*);
-typedef void(*type_25)(_anon2*, void*, int);
+typedef void(*type_17)(MWPLY, int*, int*);
+typedef void(*type_18)(MWPLY, int);
+typedef void(*type_19)(MWPLY, int);
+typedef int(*type_20)(MWPLY);
+typedef void(*type_21)(MWPLY, int, int);
+typedef int(*type_22)(MWPLY, int);
+typedef void(*type_23)(MWPLY, SJ_OBJ*);
+typedef void(*type_25)(MWPLY, void*, int);
 typedef void(*type_26)();
 typedef void(*type_27)();
 typedef void(*type_28)();
@@ -54,10 +51,6 @@ typedef unsigned char type_24[8];
 
 
 
-struct _anon2
-{
-	_mwply_if* vtbl;
-};
 
 struct _anon3
 {
@@ -68,7 +61,7 @@ struct _anon3
 	int rsv[4];
 };
 
-struct _anon4
+struct MWS_PLY_CPRM_SFD
 {
 	int ftype;
 	int max_bps;
@@ -104,40 +97,12 @@ struct _anon4
 
 
 
-enum _mwe_ply_stat
-{
-	MWE_PLY_STAT_STOP,
-	MWE_PLY_STAT_PREP,
-	MWE_PLY_STAT_PLAYING,
-	MWE_PLY_STAT_PLAYEND,
-	MWE_PLY_STAT_ERROR
-};
 
-struct _mwply_if
-{
-	void(*QueryInterface)();
-	void(*AddRef)();
-	void(*Release)();
-	void(*VsyncHndl)(_anon2*);
-	void(*ExecSvrHndl)(_anon2*);
-	void(*Destroy)(_anon2*);
-	void(*StartFname)(_anon2*, char*);
-	void(*Stop)(_anon2*);
-	_mwe_ply_stat(*GetStat)(_anon2*);
-	void(*GetTime)(_anon2*, int*, int*);
-	void(*Pause)(_anon2*, int);
-	void(*SetOutVol)(_anon2*, int);
-	int(*GetOutVol)(_anon2*);
-	void(*SetOutPan)(_anon2*, int, int);
-	int(*GetOutPan)(_anon2*, int);
-	void(*StartSj)(_anon2*, SJ_OBJ*);
-	void(*StartMem)(_anon2*, void*, int);
-};
 
 int MwMode;
 int MwPlayFlag;
-_anon2* MwPly;
-_anon4 MwsCprmSfd;
+MWPLY MwPly;
+MWS_PLY_CPRM_SFD MwsCprmSfd;
 int MwMemoryMode;
 int MwPlayMode;
 

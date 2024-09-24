@@ -1,4 +1,4 @@
-typedef struct _anon0;
+
 
 typedef struct tagEFF5UVWHUC;
 
@@ -7,43 +7,43 @@ typedef struct tagEFF5SNOWGRP;
 typedef struct tagEFF5UV;
 typedef struct tagEFF5UVWH;
 
-typedef struct _anon4;
-typedef struct _anon5;
+
+
 typedef struct tagEFF5SNOWRECT;
-typedef struct _anon6;
-typedef struct _anon7;
-typedef struct _anon8;
 
-typedef struct _anon10;
 
-typedef struct _anon12;
-typedef struct _anon13;
-typedef struct _anon14;
 
-typedef struct _anon16;
-typedef struct _anon17;
-typedef struct _anon18;
-typedef struct _anon19;
-typedef struct BH_PWORK;
-typedef struct _anon20;
-typedef struct _anon21;
 
-typedef struct _anon23;
-typedef struct _anon24;
 
-typedef struct _anon26;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 typedef struct tagEFF5UVTBL;
-typedef struct _anon27;
-
-typedef struct _anon29;
-
-typedef struct _anon31;
 
 
-typedef struct _anon34;
 
 
-typedef struct _anon37;
+
+
+
+
+
+
+typedef struct Camera;
 typedef struct _anon38;
 typedef struct _anon39;
 
@@ -51,58 +51,58 @@ typedef struct _anon39;
 
 
 
-typedef struct _anon45;
 
-typedef void(*type_116)(_anon0*);
-typedef void(*type_118)(_anon0*);
-typedef void(*type_125)(_anon0*);
+
+typedef void(*type_116)(Unknown1*);
+typedef void(*type_118)(Unknown1*);
+typedef void(*type_125)(Unknown1*);
 typedef void(*type_128)(void*);
-typedef void(*type_137)(_anon0*);
-typedef void(*type_148)(_anon0*);
-typedef void(*type_159)(_anon0*);
+typedef void(*type_137)(Unknown1*);
+typedef void(*type_148)(Unknown1*);
+typedef void(*type_159)(Unknown1*);
 
 
 typedef unsigned int type_1[3];
 typedef unsigned int type_2[4];
-typedef _anon0* type_3[512];
+typedef Unknown1* type_3[512];
 typedef float type_4[3];
 typedef tagEFF5UVWHUC* type_5[4];
-typedef _anon0* type_6[32];
+typedef Unknown1* type_6[32];
 
-typedef _anon0* type_8[32];
-typedef _anon0* type_9[512];
+typedef Unknown1* type_8[32];
+typedef Unknown1* type_9[512];
 
 
 typedef tagEFF5UV* type_12[3];
 typedef char type_13[8];
-typedef _anon0* type_14[32];
+typedef Unknown1* type_14[32];
 typedef tagEFF5UV type_15[13];
-typedef _anon0* type_16[512];
+typedef Unknown1* type_16[512];
 
 typedef tagEFF5UV type_18[16];
 typedef char type_19[32];
 typedef float type_20[32];
-typedef _anon0* type_21[512];
+typedef Unknown1* type_21[512];
 
 typedef short type_23[32];
 
-typedef _anon0* type_25[128];
+typedef Unknown1* type_25[128];
 typedef float type_26[3];
 typedef unsigned int type_27[1];
 
 
 typedef int* type_30[16];
-typedef _anon0* type_31[128];
-typedef _anon45 type_32[16];
+typedef Unknown1* type_31[128];
+
 typedef tagEFF5UV* type_33[2];
 
-typedef _anon0* type_35[128];
+typedef Unknown1* type_35[128];
 typedef int type_36[4];
 
 typedef unsigned int type_38[4];
 typedef float type_39[4];
-typedef _anon14 type_40[16];
-typedef _anon0* type_41[512];
+typedef MODEL_DATA type_40[16];
+typedef Unknown1* type_41[512];
 typedef float type_42[4];
 typedef char type_43[256];
 typedef float type_44[4];
@@ -113,12 +113,12 @@ typedef unsigned int type_48[7];
 typedef float type_49[4];
 typedef float type_50[4];
 typedef float type_51[4];
-typedef _anon6* type_52[128];
+
 typedef BH_PWORK type_53[0];
 typedef float type_54[3];
 typedef unsigned char type_55[64];
 typedef float type_56[3][20];
-typedef _anon0 type_57[0];
+typedef Unknown1 type_57[0];
 typedef float type_58[3];
 typedef float type_59[3][20];
 typedef int type_60[2];
@@ -143,7 +143,7 @@ typedef unsigned int type_78[2];
 typedef float type_79[15];
 typedef tagEFF5UV type_80[10][2];
 typedef short type_81[256];
-typedef _anon31 type_82[4];
+
 typedef float type_83[3];
 typedef tagEFF5UV type_84[24];
 typedef short type_85[256];
@@ -154,7 +154,7 @@ typedef tagEFF5UV type_89[20];
 
 
 typedef tagEFF5UV type_92[8];
-typedef _anon12 type_93[256];
+typedef TEXTURE_BUFFER type_93[256];
 typedef unsigned short type_94[4];
 typedef tagEFF5UVTBL type_95[17];
 
@@ -164,7 +164,7 @@ typedef tagEFF5UV type_99[6][2];
 typedef short type_100[256];
 typedef char type_101[3];
 typedef int type_102[64];
-typedef _anon14 type_103[450];
+typedef MODEL_DATA type_103[450];
 typedef unsigned int type_104[16];
 typedef tagEFF5UV type_105[16];
 typedef char type_106[4];
@@ -186,7 +186,7 @@ typedef char type_123[16];
 typedef _anon39 type_124[6][2];
 typedef tagEFF5UV type_126[2];
 typedef char type_127[4];
-typedef _anon23 type_129[2];
+typedef CAMERA type_129[2];
 typedef unsigned int type_130[32];
 
 typedef tagEFF5UV type_132[16];
@@ -194,14 +194,14 @@ typedef tagEFF5UV type_132[16];
 typedef unsigned char type_134[256];
 typedef unsigned int type_135[16];
 typedef tagEFF5UV* type_136[2];
-typedef _anon21 type_138[64];
+typedef BOUNDARY type_138[64];
 typedef unsigned int type_139[16];
-typedef _anon21 type_140[64];
+typedef BOUNDARY type_140[64];
 typedef tagEFF5UV type_141[8];
 typedef unsigned int type_142[32];
 typedef short type_143[3];
 typedef short type_144[3][2];
-typedef _anon21 type_145[64];
+typedef BOUNDARY type_145[64];
 typedef unsigned int type_146[16];
 typedef unsigned int type_147[3];
 typedef unsigned int type_149[4];
@@ -221,11 +221,11 @@ typedef char type_163[64];
 
 typedef char type_165[4];
 typedef int type_166[2];
-typedef _anon14 type_167[16];
+typedef MODEL_DATA type_167[16];
 typedef short type_168[4];
 typedef tagEFF5UVWH* type_169[6];
 typedef unsigned char type_170[4];
-typedef _anon34 type_171[16];
+
 
 typedef tagEFF5UV type_173[3];
 typedef tagEFF5UV type_174[3][3];
@@ -236,137 +236,14 @@ typedef tagEFF5UV type_178[16];
 typedef unsigned int type_179[4];
 typedef tagEFF5UV type_180[4];
 
-typedef _anon0* type_182[512];
-typedef _anon0* type_183[128];
+typedef Unknown1* type_182[512];
+typedef Unknown1* type_183[128];
 typedef tagEFF5UV type_184[6];
 typedef tagEFF5UV type_185[6][2];
-typedef _anon0* type_186[512];
+typedef Unknown1* type_186[512];
 typedef unsigned char type_187[64];
-typedef _anon0* type_188[512];
+typedef Unknown1* type_188[512];
 
-struct _anon0
-{
-	unsigned int flg;
-	unsigned short id;
-	unsigned short type;
-	char flr_no;
-	char flr_nob;
-	unsigned char mdlver;
-	unsigned char param;
-	unsigned char mode0;
-	unsigned char mode1;
-	unsigned char mode2;
-	unsigned char mode3;
-	float px;
-	float py;
-	float pz;
-	int ax;
-	int ay;
-	int az;
-	float ar;
-	float aw;
-	float ah;
-	float ad;
-	float car;
-	float cah;
-	float pxb;
-	float pyb;
-	float pzb;
-	int axb;
-	int ayb;
-	int azb;
-	float gpx;
-	float gpy;
-	float gpz;
-	float lox;
-	float loy;
-	float loz;
-	float aox;
-	float aoy;
-	float aoz;
-	float spd;
-	unsigned int flg2;
-	unsigned int mdflg;
-	unsigned int stflg;
-	unsigned int Dummy3;
-	int draw_tp;
-	int mdl_n;
-	void* mskp;
-	unsigned int Dummy[1];
-	int* skp[16];
-	NJS_OBJECT* mbp[16];
-	NJS_TEXLIST* txp[16];
-	_anon14 mdl[16];
-	_anon14* mlwP;
-	unsigned int mdl_no;
-	int lkono;
-	unsigned char* lkwkp;
-	unsigned char* exp0;
-	unsigned char* exp1;
-	unsigned char* exp2;
-	unsigned char* exp3;
-	unsigned char mtxbuf[64];
-	NJS_MATRIX mtx;
-	NJS_OBJECT* obj_a;
-	NJS_OBJECT* obj_b;
-	float shp_ct;
-	char clp_jno[8];
-	int lok_jno;
-	_anon6* mnwP;
-	_anon6* mnwPb;
-	unsigned int mtn_attr;
-	unsigned int mtn_no;
-	int frm_no;
-	unsigned int frm_mode;
-	int hokan_rate;
-	unsigned int hokan_count;
-	unsigned int hokan_ctbak;
-	int mtn_add;
-	unsigned int mtn_md;
-	unsigned char* mtn_tp;
-	int axp;
-	int ayp;
-	int azp;
-	short psh_ct;
-	short psh_idx;
-	int idx_ct;
-	int mtn_chk;
-	float ofx;
-	float ofy;
-	float ofz;
-	float sx;
-	float sy;
-	float sz;
-	float sxb;
-	float syb;
-	float szb;
-	float xn;
-	float yn;
-	float zn;
-	int ct0;
-	int ct1;
-	int ct2;
-	int ct3;
-	unsigned char* objbak;
-	NJS_SPHERE cspr;
-	int pn;
-	NJS_POLYGON_VTX* pvp;
-	NJS_TEXTURE_VTX* tvp;
-	NJS_POLYGON_VTX pv[4];
-	NJS_TEXTURE_VTX tv[4];
-	int bl_src;
-	int bl_dst;
-	int ani_ct;
-	int tex_id;
-	int aspd;
-	unsigned int gidx;
-	int bank;
-	char jno[16];
-	char hide[4];
-	void(*func)(void*);
-	int idx;
-	int Dummy2;
-};
 
 
 
@@ -430,421 +307,414 @@ struct tagEFF5UVWH
 
 
 
-struct _anon4
-{
-	float px;
-	float py;
-	float pz;
-	int ay;
-};
 
-struct _anon5
-{
-	unsigned int ssd_ver;
-	unsigned int ssd_flg;
-	unsigned int ssd_reserve;
-	char keytype;
-	char adjust_x;
-	char adjust_y;
-	char vibration;
-	int best_tm[8];
-	unsigned int sys_partid;
-	unsigned int itm_partid;
-	unsigned int fil_partid;
-	unsigned int dor_partid;
-	unsigned int ss_flg;
-	int pdm_no;
-	unsigned int typ_flg;
-	unsigned short typ_md0;
-	unsigned short typ_md1;
-	void* typ_exp;
-	unsigned int tk_flg;
-	unsigned int ts_flg;
-	unsigned int gm_flg;
-	unsigned int st_flg;
-	unsigned int cb_flg;
-	unsigned int rm_flg;
-	unsigned int pt_flg;
-	unsigned int sp_flg;
-	unsigned int ef_flg;
-	unsigned int error;
-	unsigned int version;
-	int save_ct;
-	char ply_id;
-	char stg_no;
-	char rom_no;
-	char rcase;
-	char pos_no;
-	char cut_no;
-	char flr_no;
-	char reserve0;
-	int gm_mode;
-	unsigned int ev_flg[32];
-	unsigned int it_flg[16];
-	unsigned int ic_flg[16];
-	unsigned int ed_flg[32];
-	unsigned int ky_flg[16];
-	unsigned int mp_flg[8];
-	unsigned int itm[384];
-	unsigned int ply_stflg[4];
-	NJS_POINT3 ply_pos;
-	int ply_ang;
-	char ply_wno[4];
-	short ply_hp[4];
-	unsigned char evt_posno[4];
-	int time;
-	int stv_tm;
-	short spray_ct;
-	short retry_ct;
-	short clear_ct;
-	short reserve1;
-	unsigned int save_end;
-	char stg_nob;
-	char rom_nob;
-	char pos_nob;
-	char rcase_b;
-	unsigned int en_flg[4];
-	NJS_TEXLIST* et_lp[16][16][100];
-	NJS_TEXLIST* ot_lp[1300];
-	NJS_TEXLIST* it_lp[200];
-	int eft_n;
-	NJS_TEXLIST* eft_lp[8];
-	int loop_ct;
-	int loop_now;
-	int cng_pid;
-	PDS_PERIPHERAL* p1per;
-	PDS_PERIPHERAL* p2per;
-	PDS_PERIPHERAL* kbper;
-	PDS_PERIPHERAL* msper;
-	PDS_PERIPHERAL ms_per;
-	int pad_port;
-	unsigned int pad_on;
-	unsigned int pad_oncpy;
-	unsigned int pad_ps;
-	unsigned int pad_rs;
-	unsigned int pad_old;
-	unsigned int pad_onb;
-	unsigned int pad_psb;
-	unsigned int pad_oldb;
-	short pad_ax;
-	short pad_ay;
-	short pad_dx;
-	short pad_dy;
-	unsigned short pad_ar;
-	unsigned short pad_al;
-	int fixcno;
-	int fixkno;
-	unsigned int exm_attr;
-	short evc_no;
-	short evc_kn;
-	short evc_ono;
-	short evc_okn;
-	int evc_sc;
-	unsigned char mn_mode0;
-	unsigned char mn_mode1;
-	unsigned char mn_mode2;
-	unsigned char mn_mode3;
-	unsigned char mn_md0;
-	unsigned char mn_md1;
-	unsigned char mn_md2;
-	unsigned char mn_md3;
-	int mn_setct;
-	unsigned int mn_stack[8];
-	unsigned int sdm_flg;
-	unsigned int sdm_mode;
-	unsigned char* ltc_bp;
-	unsigned int ltc_tsbak;
-	int ewk_n;
-	unsigned int enow;
-	unsigned int onow;
-	unsigned int efnow;
-	int vsyc_ct;
-	int vsyc_flg;
-	int fog_ct;
-	int bcl_ct;
-	int gfrm_ct;
-	int gframe;
-	int eor_ct;
-	unsigned int pfm_cts;
-	int evt_tmd;
-	int evt_tim;
-	int evt_tdg;
-	int evt_fcd;
-	unsigned int evt_fcdct;
-	unsigned int fsize;
-	unsigned int rdtsz;
-	unsigned char* memp;
-	unsigned char* mempb;
-	unsigned char* endp;
-	unsigned char* rdtp;
-	unsigned char* plmdlp;
-	unsigned char* lmmdlp;
-	unsigned char* wrmdlp;
-	unsigned char* wlmdlp;
-	unsigned char* plmthp;
-	unsigned char* plbmtp;
-	unsigned char* plwmtp;
-	unsigned char* plzmtp;
-	unsigned char* plemtp;
-	unsigned char* plexwp;
-	unsigned char* plhdwp;
-	unsigned char* pletcp;
-	unsigned char* subtxp;
-	unsigned char* doordp;
-	unsigned char* sbs_sp;
-	_anon0* obwp;
-	_anon0* itwp;
-	_anon6* emtp[128];
-	_anon6* rmthp;
-	unsigned char* mspp;
-	unsigned char* lspp;
-	unsigned int* mes_ip;
-	unsigned int* mes_sp;
-	void* mes_tp;
-	short txr_n;
-	short txr_ct;
-	NJS_TEXLIST* txlp[256];
-	unsigned char* txdp[256];
-	short txloff[256];
-	short txb_ct;
-	short txb_n;
-	short txb[256];
-	NJS_TEXLIST* txblp[256];
-	_anon12 txbp[256];
-	unsigned char* ef_psp;
-	NJS_TEXNAME ef_tex[450];
-	NJS_TEXLIST ef_tlist;
-	_anon10 ef;
-	short efid[256];
-	_anon14 efm[450];
-	int ef_ct;
-	int ef_ctb;
-	int ef_extn;
-	int ef_tn[450];
-	unsigned char ef_pbkb[450];
-	int ef_pbnk;
-	int ef_slow;
-	int ef_ctrn;
-	int yk_ct;
-	int mg_ct;
-	int bl_ct;
-	int windr;
-	float winds;
-	int windrb;
-	float windsb;
-	unsigned int thunder;
-	float gas_py;
-	int en_objn;
-	BH_PWORK* en_obj[16];
-	int ef_poln;
-	int ef_mdfn;
-	int ef_linn;
-	int ef_ntxn;
-	int ef_trsn;
-	int ef_pncn;
-	int ef_opqn;
-	int ef_thln;
-	int ef_ntx2dn;
-	int ef_trs2dn;
-	int ef_pnc2dn;
-	int ef_fncn;
-	_anon0* ef_pol[512];
-	_anon0* ef_mdf[128];
-	_anon0* ef_lin[512];
-	_anon0* ef_ntx[512];
-	_anon0* ef_trs[512];
-	_anon0* ef_pnc[512];
-	_anon0* ef_opq[512];
-	_anon0* ef_thl[512];
-	_anon0* ef_ntx2d[128];
-	_anon0* ef_trs2d[128];
-	_anon0* ef_pnc2d[128];
-	_anon0* ef_fnc[512];
-	int ob_nlgn;
-	int ob_hlgn;
-	int ob_spcn;
-	_anon0* ob_nlg[32];
-	_anon0* ob_hlg[32];
-	_anon0* ob_spc[32];
-	unsigned int ren_gid;
-	NJS_TEXINFO ren_info;
-	NJS_TEXNAME ren_tex[1];
-	NJS_TEXLIST ren_tlist;
-	NJS_TEXTUREH_VTX rpb[256];
-	int ren_n;
-	int ren_idx[4];
-	int wt_nbpt;
-	float wt_px;
-	float wt_pz;
-	int wt_xp;
-	int wt_zp;
-	int wt_minx;
-	int wt_minz;
-	int wt_maxx;
-	int wt_maxz;
-	unsigned char* wt_wvp;
-	NJS_PLANE mr_pl;
-	unsigned char* zan_memp;
-	unsigned char* zanp;
-	_anon17* lgtp;
-	float lg_vx;
-	float lg_vy;
-	float lg_vz;
-	float lg_r;
-	float lg_g;
-	float lg_b;
-	int lg_pnt;
-	_anon31 lg_ptb[4];
-	int mes_idx;
-	unsigned int* mes_dp;
-	int mes_ct;
-	int mes_tim;
-	int mes_fls;
-	int mes_sel;
-	int mes_seln;
-	NJS_POINT2 mes_sps[16];
-	int rt_sp;
-	unsigned char* rt_wp;
-	unsigned char* rt_dp;
-	unsigned char* rt_nw;
-	unsigned char* rt_nx;
-	float* rt_ln;
-	BH_PWORK* plp;
-	_anon21* pl_htp;
-	int costume;
-	NJS_POINT3 hd_pos;
-	NJS_POINT3 apos;
-	_anon21* ahtp;
-	int mwal_n;
-	int metc_n;
-	int mflr_n;
-	_anon21 mwalp[64];
-	_anon21 metcp[64];
-	_anon21 mflrp[64];
-	int dla_n;
-	_anon21* htp;
-	int psh_snd;
-	int fog_cngct;
-	unsigned int fog_col;
-	float fog_nr;
-	float fog_fr;
-	float fade_ct;
-	float fade_hkn;
-	float fade_ao;
-	float fade_an;
-	float fade_ap;
-	float fade_ro;
-	float fade_rn;
-	float fade_rp;
-	float fade_go;
-	float fade_gn;
-	float fade_gp;
-	float fade_bo;
-	float fade_bn;
-	float fade_bp;
-	unsigned int fade_pbk;
-	unsigned short ssv_md0;
-	unsigned short ssv_md1;
-	int ssv_tim;
-	float ssv_ct;
-	float ssv_hkn;
-	float ssv_ao;
-	float ssv_an;
-	float ssv_ap;
-	short fil_no;
-	short fil_rt;
-	float rvf_sc;
-	float rvf_sn;
-	unsigned int rvfc[4];
-	float cine_an;
-	float cine_ap;
-	unsigned int sco_flg;
-	float amb_r[4];
-	float amb_g[4];
-	float amb_b[4];
-	int sb_id;
-	int sb_cmd;
-	int sb_rdid;
-	int sb_rdsz;
-	void* sb_rdp;
-	void* sb_mlb;
-	void* sb_ppp;
-	NJS_TEXLIST* sb_tlist;
-	int ddmd;
-	_anon19 door;
-	int mpmd;
-	int mp_prm[4];
-	unsigned short gov_md0;
-	unsigned short gov_md1;
-	int gov_ct;
-	void* gov_exp;
-	unsigned int com_flg;
-	unsigned short com_md0;
-	unsigned short com_md1;
-	unsigned int com_num;
-	void* com_exp;
-	short ond_tnm;
-	short ond_ud;
-	char ond_cx;
-	char ond_n[3];
-	unsigned char ufo_md;
-	unsigned char ufo_flg;
-	short ufo_oidx;
-	NJS_POINT3 ufo_pos;
-	unsigned int opt_flg;
-	unsigned short opt_md0;
-	unsigned short opt_md1;
-	void* opt_exp;
-	unsigned int etc_idx;
-	unsigned int flr_idx;
-	int mvi_no;
-	int mvi_tp;
-	unsigned short mvi_md;
-	unsigned short mvi_flg;
-	unsigned int mvi_tsb;
-	unsigned int mvi_spb;
-	unsigned char* mvi_memp;
-	unsigned int dcg_tkbak;
-	unsigned int dcg_tsbak;
-	unsigned int pau_spbak;
-	unsigned int pau_pad_on;
-	unsigned int pau_pad_ps;
-	unsigned int pau_pad_old;
-	unsigned char* pdm_dp;
-	unsigned char* pdm_pd;
-	int pdm_keytpb;
-	int gat_ct;
-	_anon34 gatc[16];
-	int ght_ct;
-	unsigned int ghtc[32];
-	NJS_POINT3 ghtp[32];
-	unsigned short db_md0;
-	unsigned short db_md1;
-	char db_stgno;
-	char db_romno;
-	char db_rcase;
-	char db_muteki;
-	short db_px;
-	short db_py;
-	int db_mes;
-	int calc_v;
-	unsigned int brkfg;
-	char brkfg_typ[32];
-	short brkfg_bit[32];
-	unsigned int brkfg_tkb;
-	unsigned int brkfg_tsb;
-	int brkfg_ct;
-	unsigned int bmt_size;
-	unsigned int lmt_size;
-	unsigned int emt_size;
-	unsigned int wmt_size;
-	char mes[256];
-	float sfx;
-	float sfy;
-	float sfxn;
-	float sfyn;
-	float sfct;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct tagEFF5SNOWRECT
 {
@@ -874,110 +744,6 @@ struct tagEFF5SNOWRECT
 	NJS_TEXTURE_VTX SnowModel[4];
 };
 
-struct _anon6
-{
-	unsigned int flg;
-	unsigned int obj_num;
-	unsigned int frm_num;
-	void* datP;
-	_anon24* md2P;
-	unsigned short* atrP;
-};
-
-struct _anon7
-{
-	unsigned short flg;
-	unsigned short type;
-	short nxt_no;
-	short keyf_n;
-	_anon45 keyf[16];
-};
-
-struct _anon8
-{
-	_anon13* cutp;
-	_anon17* lgtp;
-	_anon18* enep;
-	_anon18* objp;
-	_anon18* itmp;
-	_anon20* effp;
-	_anon21* walp;
-	_anon21* etcp;
-	_anon21* flrp;
-	_anon4* posp;
-	_anon21* rutp;
-	unsigned char* ruttp;
-	_anon27* evtp;
-	_anon7* evcp;
-	unsigned int* mesp;
-	_anon17* evlp;
-	unsigned char* dmp00;
-	unsigned char* dmp01;
-	unsigned char* dmp02;
-	unsigned char* dmp03;
-	unsigned char* dmp04;
-	unsigned char* dmp05;
-	unsigned char* dmp06;
-	unsigned char* dmp07;
-	unsigned char* dmp08;
-	unsigned char* dmp09;
-	unsigned char* dmp10;
-	unsigned char* dmp11;
-	unsigned char* dmp12;
-	unsigned char* dmp13;
-	unsigned char* dmp14;
-	unsigned char* dmp15;
-	int cut_n;
-	int lgt_n;
-	int ene_n;
-	int obj_n;
-	int itm_n;
-	int eff_n;
-	int wal_n;
-	int etc_n;
-	int flr_n;
-	int pos_n;
-	int rut_n;
-	int evc_n;
-	int mes_n;
-	int evl_n;
-	int dmy00;
-	int dmy01;
-	int dmy02;
-	int dmy03;
-	int dmy04;
-	int dmy05;
-	int dmy06;
-	int dmy07;
-	int dmy08;
-	int dmy09;
-	int dmy10;
-	int dmy11;
-	int dmy12;
-	int dmy13;
-	int dmy14;
-	int dmy15;
-	int dmy16;
-	int dmy17;
-	unsigned int flg;
-	unsigned int bak_col;
-	unsigned int fog_col;
-	float fog_nr;
-	float fog_fr;
-	float w;
-	float h;
-	float d;
-	float grand[32];
-	_anon14 mdl;
-	float fog[128];
-	char amb_rom;
-	char amb_chr;
-	char amb_obj;
-	char amb_itm;
-	float amb_r[4];
-	float amb_g[4];
-	float amb_b[4];
-};
 
 
 
@@ -990,22 +756,6 @@ struct _anon8
 
 
 
-struct _anon10
-{
-	unsigned int flg;
-	unsigned short id;
-	unsigned short type;
-	short flr_no;
-	unsigned short mdlver;
-	float px;
-	float py;
-	float pz;
-	float sx;
-	float sy;
-	float sz;
-	short ay;
-	short ax;
-};
 
 
 
@@ -1021,41 +771,8 @@ struct _anon10
 
 
 
-struct _anon12
-{
-	unsigned char* adr;
-	unsigned int gidx;
-	unsigned int attr;
-	unsigned int w;
-	unsigned int h;
-};
 
-struct _anon13
-{
-	unsigned char flg;
-	unsigned char type;
-	char flr_no;
-	unsigned char ctab_n;
-	_anon16* cuttp;
-	float cx;
-	float cy;
-	float cz;
-	float cw;
-	float ch;
-	float cd;
-	_anon23 cam[2];
-	unsigned char exd[256];
-};
 
-struct _anon14
-{
-	unsigned int flg;
-	unsigned int obj_num;
-	void* datP;
-	NJS_OBJECT* objP;
-	NJS_TEXLIST* texP;
-	_anon29* owP;
-};
 
 
 
@@ -1077,363 +794,52 @@ struct _anon14
 
 
 
-struct _anon16
-{
-	unsigned int attr;
-	char flr_no;
-	char reserve0;
-	char reserve1;
-	char atr_tp;
-	float h;
-	float dmy;
-	float minx;
-	float minz;
-	float maxx;
-	float maxz;
-};
-
-struct _anon17
-{
-	unsigned int flg;
-	unsigned int type;
-	int aspd;
-	int lkflg;
-	int lkno;
-	int lkono;
-	int lsrc;
-	float px;
-	float py;
-	float pz;
-	float lx;
-	float ly;
-	float lz;
-	float vx;
-	float vy;
-	float vz;
-	float spc;
-	float dif;
-	float amb;
-	float r;
-	float g;
-	float b;
-	float nr;
-	float fr;
-	int iang;
-	int oang;
-	int ax;
-	int ay;
-	int az;
-	unsigned int mode;
-	int ct0;
-	int ct1;
-	int ct2;
-	int ct3;
-	float wpx;
-	float wpy;
-	float wpz;
-	float wvx;
-	float wvy;
-	float wvz;
-	float wspc;
-	float wdif;
-	float wamb;
-	float wr;
-	float wg;
-	float wb;
-	float wnr;
-	float wfr;
-	int wiang;
-	int woang;
-	int wax;
-	int way;
-	int waz;
-	unsigned char* lkwkp;
-	unsigned char* exp;
-	NJS_LIGHT_PTR light;
-};
-
-struct _anon18
-{
-	unsigned int flg;
-	unsigned short id;
-	unsigned short type;
-	char flr_no;
-	unsigned char mdlver;
-	unsigned char wrk_no;
-	char prm1;
-	float px;
-	float py;
-	float pz;
-	short ax;
-	short az;
-	short ay;
-	short aspd;
-	char hide[4];
-};
-
-struct _anon19
-{
-	unsigned int flg;
-	char stg_no;
-	char rom_no;
-	unsigned char pos_no;
-	unsigned char dor_tp;
-	unsigned char mode0;
-	unsigned char mode1;
-	unsigned char mode2;
-	unsigned char mode3;
-	int ct0;
-	int ct1;
-	int ct2;
-	int ct3;
-};
-
-struct BH_PWORK
-{
-	unsigned int flg;
-	unsigned short id;
-	unsigned short type;
-	char flr_no;
-	char flr_nob;
-	unsigned char mdlver;
-	unsigned char param;
-	unsigned char mode0;
-	unsigned char mode1;
-	unsigned char mode2;
-	unsigned char mode3;
-	float px;
-	float py;
-	float pz;
-	int ax;
-	int ay;
-	int az;
-	float ar;
-	float aw;
-	float ah;
-	float ad;
-	float car;
-	float cah;
-	float pxb;
-	float pyb;
-	float pzb;
-	int axb;
-	int ayb;
-	int azb;
-	float gpx;
-	float gpy;
-	float gpz;
-	float lox;
-	float loy;
-	float loz;
-	float aox;
-	float aoy;
-	float aoz;
-	float spd;
-	unsigned int flg2;
-	unsigned int mdflg;
-	unsigned int stflg;
-	unsigned int Dummy3;
-	int draw_tp;
-	int mdl_n;
-	void* mskp;
-	unsigned int Dummy[1];
-	int* skp[16];
-	NJS_OBJECT* mbp[16];
-	NJS_TEXLIST* txp[16];
-	_anon14 mdl[16];
-	_anon14* mlwP;
-	unsigned int mdl_no;
-	int lkono;
-	unsigned char* lkwkp;
-	unsigned char* exp0;
-	unsigned char* exp1;
-	unsigned char* exp2;
-	unsigned char* exp3;
-	unsigned char mtxbuf[64];
-	NJS_MATRIX mtx;
-	NJS_OBJECT* obj_a;
-	NJS_OBJECT* obj_b;
-	float shp_ct;
-	char clp_jno[8];
-	int lok_jno;
-	_anon6* mnwP;
-	_anon6* mnwPb;
-	unsigned int mtn_attr;
-	unsigned int mtn_no;
-	int frm_no;
-	unsigned int frm_mode;
-	int hokan_rate;
-	unsigned int hokan_count;
-	unsigned int hokan_ctbak;
-	int mtn_add;
-	unsigned int mtn_md;
-	unsigned char* mtn_tp;
-	int axp;
-	int ayp;
-	int azp;
-	short psh_ct;
-	short psh_idx;
-	int idx_ct;
-	int mtn_chk;
-	float ofx;
-	float ofy;
-	float ofz;
-	float sx;
-	float sy;
-	float sz;
-	float sxb;
-	float syb;
-	float szb;
-	float xn;
-	float yn;
-	float zn;
-	int ct0;
-	int ct1;
-	int ct2;
-	int ct3;
-	int wpnr_no;
-	int wpnl_no;
-	unsigned int at_flg;
-	NJS_CAPSULE watr;
-	_anon26* cpcl;
-	short wax;
-	short way;
-	short waz;
-	short waxp;
-	short wayp;
-	short wazp;
-	int hp;
-	int dam[64];
-	int djnt_no;
-	int cpcl_no;
-	int dax;
-	int day;
-	float dpx;
-	float dpy;
-	float dpz;
-	float dvx;
-	float dvy;
-	float dvz;
-	int flr_snd;
-	int ko_num;
-	int footeff;
-	int src_no;
-	unsigned char* kdnp;
-	int kdnidx;
-	void* dan_ap;
-	unsigned int comb_flg;
-	unsigned int comb_wep;
-	int comb_pnt;
-	int comb_timeout;
-	int total_dam;
-	unsigned int Dummy2[2];
-};
-
-struct _anon20
-{
-	unsigned int flg;
-	unsigned short id;
-	unsigned short type;
-	short flr_no;
-	unsigned short mdlver;
-	float px;
-	float py;
-	float pz;
-	float sx;
-	float sy;
-	float sz;
-	short ay;
-	short ax;
-	int lkflg;
-	int lkno;
-	int lkono;
-	float lx;
-	float ly;
-	float lz;
-	int param;
-};
-
-struct _anon21
-{
-	unsigned char flg;
-	unsigned char type;
-	unsigned char id;
-	char flr_no;
-	unsigned int attr;
-	float px;
-	float py;
-	float pz;
-	float w;
-	float h;
-	float d;
-	unsigned char prm0;
-	unsigned char prm1;
-	unsigned char prm2;
-	unsigned char prm3;
-};
-
-
-
-
-
-
-
-struct _anon23
-{
-	unsigned short flg;
-	unsigned char lgtclip;
-	char spd;
-	float px;
-	float py;
-	float pz;
-	float ln;
-	float w;
-	float h;
-	float d;
-	float y0;
-	float y1;
-	float y2;
-	float y3;
-	float am_spd;
-	int ax;
-	int ay;
-	int az;
-	int lax;
-	int lay;
-	short laz0;
-	short laz1;
-	short laz2;
-	short laz3;
-	char aa_spd;
-	char fil_no;
-	char fil_rt;
-	char reserve;
-	int pers;
-	unsigned int hidobj[16];
-	unsigned int hidlgt[8];
-	unsigned int fog_col;
-	float fog_nr;
-	float fog_fr;
-};
-
-struct _anon24
-{
-	void* p[2];
-};
-
-
-
-
-
-
-
-
-struct _anon26
-{
-	short jnt_a;
-	short jnt_b;
-	int cap_r;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct tagEFF5UVTBL
 {
@@ -1446,12 +852,6 @@ struct tagEFF5UVTBL
 	short h;
 };
 
-struct _anon27
-{
-	unsigned short* scd0;
-	unsigned short* scd1;
-	unsigned short* evd;
-};
 
 
 
@@ -1461,13 +861,6 @@ struct _anon27
 
 
 
-struct _anon29
-{
-	unsigned int flg;
-	int dmy;
-	unsigned int dummy[2];
-	NJS_MATRIX mtx;
-};
 
 
 
@@ -1480,15 +873,6 @@ struct _anon29
 
 
 
-struct _anon31
-{
-	NJS_POINT3 ps;
-	float nr;
-	float fr;
-	float cr;
-	float cg;
-	float cb;
-};
 
 
 
@@ -1504,13 +888,6 @@ struct _anon31
 
 
 
-struct _anon34
-{
-	NJS_POINT3 c1;
-	NJS_POINT3 c2;
-	float r1;
-	float r2;
-};
 
 
 
@@ -1547,75 +924,21 @@ struct _anon34
 
 
 
-struct _anon37
-{
-	unsigned int flg;
-	int camver;
-	unsigned char mode0;
-	unsigned char mode1;
-	unsigned char mode2;
-	unsigned char mode3;
-	float px;
-	float py;
-	float pz;
-	float vx;
-	float vy;
-	float vz;
-	float wpx;
-	float wpy;
-	float wpz;
-	float plx;
-	float ply;
-	float plz;
-	float pxp;
-	float pyp;
-	float pzp;
-	float ofx;
-	float ofy;
-	float ofz;
-	int ax;
-	int ay;
-	int az;
-	int axp;
-	int ayp;
-	int azp;
-	float ln;
-	float pln;
-	float xr;
-	float xn;
-	float yr;
-	float yn;
-	int pers;
-	int ppers;
-	int ncut;
-	int ocut;
-	unsigned int ocflg;
-	unsigned int attr;
-	NJS_MATRIX mtx;
-	NJS_MATRIX mtxb;
-	int evc_no;
-	int hct;
-	int ct0;
-	int ct1;
-	int keyf_no;
-	float frm;
-	float spd;
-	float pxn;
-	float pyn;
-	float pzn;
-	int axn;
-	int ayn;
-	int azn;
-	int pe_ax;
-	int pe_pers;
-	unsigned int fog_col;
-	float fog_nr;
-	float fog_fr;
-	float ips[3][20];
-	float ian[3][20];
-	float ipf[3][20];
-	float icr[3][20];
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct _anon38
 {
@@ -1688,108 +1011,108 @@ struct _anon39
 
 
 
-struct _anon45
-{
-	unsigned short flg;
-	short frame;
-	float px;
-	float py;
-	float pz;
-	short ax;
-	short ay;
-	short az;
-	short pers;
-	unsigned int hidobj[8];
-	unsigned int hidlgt[4];
-	unsigned int fog_col;
-	float fog_nr;
-	float fog_fr;
-	short lkflg;
-	short lkno;
-	short lkono;
-	short nxt_no;
-	float lx;
-	float ly;
-	float lz;
-	float prm_0;
-	float prm_1;
-	float prm_2;
-	float prm_3;
-	float prm_4;
-	unsigned char* recp;
-};
 
-_anon5* sys;
-_anon0 eff[0];
-void(*bhEff_E00_DrawParticlePly)(_anon0*);
-_anon37 cam;
-void(*DrawEff5SnowRect)(_anon0*);
-void(*bhDrawEff221)(_anon0*);
-void(*bhDrawWeaponEffect2)(_anon0*);
-void(*bhDrawEff236)(_anon0*);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+extern SYS* sys;
+extern Unknown1 eff[512];
+void(*bhEff_E00_DrawParticlePly)(Unknown1*);
+extern Camera cam;
+void(*DrawEff5SnowRect)(Unknown1*);
+void(*bhDrawEff221)(Unknown1*);
+void(*bhDrawWeaponEffect2)(Unknown1*);
+void(*bhDrawEff236)(Unknown1*);
 BH_PWORK ene[0];
-_anon8* rom;
-BH_PWORK* plp;
-void(*bhDrawEff243)(_anon0*);
+extern ROOM* rom;
+extern BH_PWORK* plp;
+void(*bhDrawEff243)(Unknown1*);
 
-void bhEff200(_anon0* op);
-void bhEff201(_anon0* op);
-void bhEff202(_anon0* op);
-void bhEff203(_anon0* op);
-void bhEff204(_anon0* op);
-void bhEff205(_anon0* op);
-void bhEff206(_anon0* op);
-void bhEff207(_anon0* op);
-void bhEff208(_anon0* op);
-void bhEff209(_anon0* op);
-void bhEff210(_anon0* op);
-void bhEff211(_anon0* op);
-void bhEff212(_anon0* op);
-void bhEff213(_anon0* op);
-void bhEff214(_anon0* op);
-void bhEff215(_anon0* op);
-void bhEff216(_anon0* op);
-void bhEff217(_anon0* op);
-void bhEff218(_anon0* op);
-void bhEff219(_anon0* op);
-void bhEff220(_anon0* op);
-void bhEff221(_anon0* op);
-void bhDrawEff221(_anon0* op);
-void bhEff222(_anon0* op);
-void bhEff223(_anon0* op);
-void bhEff224(_anon0* op);
-void bhEff225(_anon0* op);
-void bhEff226(_anon0* op);
-void bhEff227(_anon0* op);
-void bhEff228(_anon0* op);
-void bhEff229(_anon0* op);
-void bhDrawWeaponEffect2(_anon0* op);
-void bhEff230(_anon0* op);
-void bhEff231(_anon0* op);
-void bhEff232(_anon0* op);
-void bhEff233(_anon0* op);
-void bhEff234(_anon0* op);
-void bhEff235(_anon0* op);
-void bhEff236(_anon0* op);
-void bhDrawEff236(_anon0* op);
-void bhEff237(_anon0* op);
-void bhEff238(_anon0* op);
-void bhEff239(_anon0* op);
-void bhEff240(_anon0* op);
-void bhEff241(_anon0* op);
-void bhEff242(_anon0* op);
-void bhEff243(_anon0* op);
-void bhDrawEff243(_anon0* op);
-void bhEff244(_anon0* op);
-void bhEff245(_anon0* op);
-void bhEff246(_anon0* op);
-void bhEff247(_anon0* op);
-void bhEff248(_anon0* op);
-void bhEff249(_anon0* op);
+void bhEff200(Unknown1* op);
+void bhEff201(Unknown1* op);
+void bhEff202(Unknown1* op);
+void bhEff203(Unknown1* op);
+void bhEff204(Unknown1* op);
+void bhEff205(Unknown1* op);
+void bhEff206(Unknown1* op);
+void bhEff207(Unknown1* op);
+void bhEff208(Unknown1* op);
+void bhEff209(Unknown1* op);
+void bhEff210(Unknown1* op);
+void bhEff211(Unknown1* op);
+void bhEff212(Unknown1* op);
+void bhEff213(Unknown1* op);
+void bhEff214(Unknown1* op);
+void bhEff215(Unknown1* op);
+void bhEff216(Unknown1* op);
+void bhEff217(Unknown1* op);
+void bhEff218(Unknown1* op);
+void bhEff219(Unknown1* op);
+void bhEff220(Unknown1* op);
+void bhEff221(Unknown1* op);
+void bhDrawEff221(Unknown1* op);
+void bhEff222(Unknown1* op);
+void bhEff223(Unknown1* op);
+void bhEff224(Unknown1* op);
+void bhEff225(Unknown1* op);
+void bhEff226(Unknown1* op);
+void bhEff227(Unknown1* op);
+void bhEff228(Unknown1* op);
+void bhEff229(Unknown1* op);
+void bhDrawWeaponEffect2(Unknown1* op);
+void bhEff230(Unknown1* op);
+void bhEff231(Unknown1* op);
+void bhEff232(Unknown1* op);
+void bhEff233(Unknown1* op);
+void bhEff234(Unknown1* op);
+void bhEff235(Unknown1* op);
+void bhEff236(Unknown1* op);
+void bhDrawEff236(Unknown1* op);
+void bhEff237(Unknown1* op);
+void bhEff238(Unknown1* op);
+void bhEff239(Unknown1* op);
+void bhEff240(Unknown1* op);
+void bhEff241(Unknown1* op);
+void bhEff242(Unknown1* op);
+void bhEff243(Unknown1* op);
+void bhDrawEff243(Unknown1* op);
+void bhEff244(Unknown1* op);
+void bhEff245(Unknown1* op);
+void bhEff246(Unknown1* op);
+void bhEff247(Unknown1* op);
+void bhEff248(Unknown1* op);
+void bhEff249(Unknown1* op);
 tagEFF5SNOWRECT* CreateEff5SnowRect(int lSnowMax);
 void DeleteEff5SnowRect(tagEFF5SNOWRECT* pSnow);
 void ExecEff5SnowRect(tagEFF5SNOWRECT* pSnow);
-void DrawEff5SnowRect(_anon0* op);
+void DrawEff5SnowRect(Unknown1* op);
 void SetEff5SnowRectAreaCenter(tagEFF5SNOWRECT* pSnow, float fPointX, float fPointY, float fPointZ);
 void SetEff5SnowRectAreaCenterAndSize(tagEFF5SNOWRECT* pSnow, float fCenterX, float fCenterY, float fCenterZ, float fSizeX, float fSizeY, float fSizeZ);
 void SetEff5SnowRectParticleMax(tagEFF5SNOWRECT* pSnow, int lSnowMax);
@@ -1802,7 +1125,7 @@ NJS_POINT3* GetEff5SnowRectCurrentWindVector(NJS_POINT3* pVector);
 
 // 
 // Start address: 0x251b40
-void bhEff200(_anon0* op)
+void bhEff200(Unknown1* op)
 {
 	tagEFF5UV* pInfo;
 	tagEFF5UV Eff200UvInfo[8];
@@ -1851,7 +1174,7 @@ void bhEff200(_anon0* op)
 
 // 
 // Start address: 0x251d70
-void bhEff201(_anon0* op)
+void bhEff201(Unknown1* op)
 {
 	tagEFF5UV* pInfo;
 	tagEFF5UV Eff201UvInfo[16];
@@ -1898,12 +1221,12 @@ void bhEff201(_anon0* op)
 
 // 
 // Start address: 0x251fa0
-void bhEff202(_anon0* op)
+void bhEff202(Unknown1* op)
 {
 	unsigned short usType[4];
 	int lNumber;
 	NJS_POINT3 Offset;
-	_anon10* pEffect;
+	Unknown8* pEffect;
 	// Line 337, Address: 0x251fa0, Func Offset: 0
 	// Line 341, Address: 0x251fb0, Func Offset: 0x10
 	// Line 337, Address: 0x251fb4, Func Offset: 0x14
@@ -1980,9 +1303,9 @@ void bhEff202(_anon0* op)
 
 // 
 // Start address: 0x2525b0
-void bhEff203(_anon0* op)
+void bhEff203(Unknown1* op)
 {
-	_anon0* opp;
+	Unknown1* opp;
 	NJS_POINT3 Vector;
 	tagEFF5UV* pInfo;
 	tagEFF5UV Eff203UvInfo[4];
@@ -2090,7 +1413,7 @@ void bhEff203(_anon0* op)
 
 // 
 // Start address: 0x252bf0
-void bhEff204(_anon0* op)
+void bhEff204(Unknown1* op)
 {
 	// Line 644, Address: 0x252bf0, Func Offset: 0
 	// Line 645, Address: 0x252c10, Func Offset: 0x20
@@ -2125,7 +1448,7 @@ void bhEff204(_anon0* op)
 
 // 
 // Start address: 0x252d50
-void bhEff205(_anon0* op)
+void bhEff205(Unknown1* op)
 {
 	tagEFF5UV* pInfo;
 	tagEFF5UV Eff205UvInfo2[2];
@@ -2181,9 +1504,9 @@ void bhEff205(_anon0* op)
 
 // 
 // Start address: 0x252fc0
-void bhEff206(_anon0* op)
+void bhEff206(Unknown1* op)
 {
-	_anon10* pEffect;
+	Unknown8* pEffect;
 	// Line 817, Address: 0x252fc0, Func Offset: 0
 	// Line 821, Address: 0x252fcc, Func Offset: 0xc
 	// Line 822, Address: 0x252fec, Func Offset: 0x2c
@@ -2224,7 +1547,7 @@ void bhEff206(_anon0* op)
 
 // 
 // Start address: 0x253100
-void bhEff207(_anon0* op)
+void bhEff207(Unknown1* op)
 {
 	tagEFF5UV* pInfo;
 	tagEFF5UV Eff207UvInfo[24];
@@ -2302,9 +1625,9 @@ void bhEff207(_anon0* op)
 
 // 
 // Start address: 0x2536a0
-void bhEff208(_anon0* op)
+void bhEff208(Unknown1* op)
 {
-	_anon10* pEffect;
+	Unknown8* pEffect;
 	// Line 1022, Address: 0x2536a0, Func Offset: 0
 	// Line 1026, Address: 0x2536ac, Func Offset: 0xc
 	// Line 1027, Address: 0x2536cc, Func Offset: 0x2c
@@ -2345,7 +1668,7 @@ void bhEff208(_anon0* op)
 
 // 
 // Start address: 0x2537e0
-void bhEff209(_anon0* op)
+void bhEff209(Unknown1* op)
 {
 	tagEFF5UVWH* pInfo;
 	tagEFF5UVWH Eff209UvInfo[21];
@@ -2407,7 +1730,7 @@ void bhEff209(_anon0* op)
 
 // 
 // Start address: 0x253a90
-void bhEff210(_anon0* op)
+void bhEff210(Unknown1* op)
 {
 	tagEFF5UV* pInfo;
 	tagEFF5UV Eff210UvInfo[20];
@@ -2454,7 +1777,7 @@ void bhEff210(_anon0* op)
 
 // 
 // Start address: 0x253cd0
-void bhEff211(_anon0* op)
+void bhEff211(Unknown1* op)
 {
 	tagEFF5UV* pInfo;
 	tagEFF5UV Eff211UvInfo[10];
@@ -2501,7 +1824,7 @@ void bhEff211(_anon0* op)
 
 // 
 // Start address: 0x253f10
-void bhEff212(_anon0* op)
+void bhEff212(Unknown1* op)
 {
 	tagEFF5UV* pInfo;
 	tagEFF5UV Eff212UvInfo[16];
@@ -2547,7 +1870,7 @@ void bhEff212(_anon0* op)
 
 // 
 // Start address: 0x254140
-void bhEff213(_anon0* op)
+void bhEff213(Unknown1* op)
 {
 	tagEFF5UV* pInfo;
 	tagEFF5UV Eff213UvInfo[3][3];
@@ -2596,9 +1919,9 @@ void bhEff213(_anon0* op)
 
 // 
 // Start address: 0x254390
-void bhEff214(_anon0* op)
+void bhEff214(Unknown1* op)
 {
-	_anon10* pEffect;
+	Unknown8* pEffect;
 	// Line 1526, Address: 0x254390, Func Offset: 0
 	// Line 1530, Address: 0x25439c, Func Offset: 0xc
 	// Line 1531, Address: 0x2543bc, Func Offset: 0x2c
@@ -2635,9 +1958,9 @@ void bhEff214(_anon0* op)
 
 // 
 // Start address: 0x254490
-void bhEff215(_anon0* op)
+void bhEff215(Unknown1* op)
 {
-	_anon10* pEffect;
+	Unknown8* pEffect;
 	// Line 1566, Address: 0x254490, Func Offset: 0
 	// Line 1570, Address: 0x25449c, Func Offset: 0xc
 	// Line 1571, Address: 0x2544bc, Func Offset: 0x2c
@@ -2679,7 +2002,7 @@ void bhEff215(_anon0* op)
 
 // 
 // Start address: 0x2545d0
-void bhEff216(_anon0* op)
+void bhEff216(Unknown1* op)
 {
 	tagEFF5UVWH* uvp;
 	tagEFF5UVWH* uvtble[6];
@@ -2743,7 +2066,7 @@ void bhEff216(_anon0* op)
 
 // 
 // Start address: 0x254960
-void bhEff217(_anon0* op)
+void bhEff217(Unknown1* op)
 {
 	float fAngleDev;
 	unsigned int col[3];
@@ -2819,7 +2142,7 @@ void bhEff217(_anon0* op)
 
 // 
 // Start address: 0x254e40
-void bhEff218(_anon0* op)
+void bhEff218(Unknown1* op)
 {
 	int lType;
 	tagEFF5UV* pInfo;
@@ -2887,7 +2210,7 @@ void bhEff218(_anon0* op)
 
 // 
 // Start address: 0x255180
-void bhEff219(_anon0* op)
+void bhEff219(Unknown1* op)
 {
 	tagEFF5SNOWRECT* pSnow;
 	// Line 2135, Address: 0x255180, Func Offset: 0
@@ -2928,7 +2251,7 @@ void bhEff219(_anon0* op)
 
 // 
 // Start address: 0x255580
-void bhEff220(_anon0* op)
+void bhEff220(Unknown1* op)
 {
 	int lNumber;
 	float spq;
@@ -3013,7 +2336,7 @@ void bhEff220(_anon0* op)
 
 // 
 // Start address: 0x255a40
-void bhEff221(_anon0* op)
+void bhEff221(Unknown1* op)
 {
 	float fs;
 	int is;
@@ -3188,7 +2511,7 @@ void bhEff221(_anon0* op)
 
 // 
 // Start address: 0x2560a0
-void bhDrawEff221(_anon0* op)
+void bhDrawEff221(Unknown1* op)
 {
 	int pt;
 	float it;
@@ -3234,9 +2557,9 @@ void bhDrawEff221(_anon0* op)
 
 // 
 // Start address: 0x256290
-void bhEff222(_anon0* op)
+void bhEff222(Unknown1* op)
 {
-	_anon10* pEffect;
+	Unknown8* pEffect;
 	// Line 2520, Address: 0x256290, Func Offset: 0
 	// Line 2524, Address: 0x2562a0, Func Offset: 0x10
 	// Line 2525, Address: 0x2562c0, Func Offset: 0x30
@@ -3283,7 +2606,7 @@ void bhEff222(_anon0* op)
 
 // 
 // Start address: 0x2564a0
-void bhEff223(_anon0* op)
+void bhEff223(Unknown1* op)
 {
 	tagEFF5UV* pInfo;
 	tagEFF5UV Eff223UvInfo[18][2];
@@ -3361,9 +2684,9 @@ void bhEff223(_anon0* op)
 
 // 
 // Start address: 0x256a80
-void bhEff224(_anon0* op)
+void bhEff224(Unknown1* op)
 {
-	_anon10* pEffect;
+	Unknown8* pEffect;
 	// Line 2715, Address: 0x256a80, Func Offset: 0
 	// Line 2719, Address: 0x256a8c, Func Offset: 0xc
 	// Line 2720, Address: 0x256aac, Func Offset: 0x2c
@@ -3399,7 +2722,7 @@ void bhEff224(_anon0* op)
 
 // 
 // Start address: 0x256ba0
-void bhEff225(_anon0* op)
+void bhEff225(Unknown1* op)
 {
 	tagEFF5UVWHUC* pInfo;
 	tagEFF5UVWHUC* pEff225UvInfoTop[4];
@@ -3441,11 +2764,11 @@ void bhEff225(_anon0* op)
 
 // 
 // Start address: 0x256e80
-void bhEff226(_anon0* op)
+void bhEff226(Unknown1* op)
 {
 	int lNumber;
 	int lLoop;
-	_anon10* pEffect;
+	Unknown8* pEffect;
 	// Line 2850, Address: 0x256e80, Func Offset: 0
 	// Line 2855, Address: 0x256e94, Func Offset: 0x14
 	// Line 2856, Address: 0x256eb4, Func Offset: 0x34
@@ -3486,9 +2809,9 @@ void bhEff226(_anon0* op)
 
 // 
 // Start address: 0x257030
-void bhEff227(_anon0* op)
+void bhEff227(Unknown1* op)
 {
-	_anon0* opp;
+	Unknown1* opp;
 	tagEFF5UV* pInfo;
 	tagEFF5UV Eff227UvInfo2[13];
 	tagEFF5UV Eff227UvInfo1[6][2];
@@ -3557,10 +2880,10 @@ void bhEff227(_anon0* op)
 
 // 
 // Start address: 0x257340
-void bhEff228(_anon0* op)
+void bhEff228(Unknown1* op)
 {
 	int lNumber;
-	_anon10* pEffect;
+	Unknown8* pEffect;
 	// Line 3031, Address: 0x257340, Func Offset: 0
 	// Line 3036, Address: 0x257350, Func Offset: 0x10
 	// Line 3037, Address: 0x257370, Func Offset: 0x30
@@ -3643,7 +2966,7 @@ void bhEff228(_anon0* op)
 
 // 
 // Start address: 0x257630
-void bhEff229(_anon0* op)
+void bhEff229(Unknown1* op)
 {
 	// Line 3177, Address: 0x257630, Func Offset: 0
 	// Line 3180, Address: 0x25765c, Func Offset: 0x2c
@@ -3670,7 +2993,7 @@ void bhEff229(_anon0* op)
 
 // 
 // Start address: 0x257740
-void bhDrawWeaponEffect2(_anon0* op)
+void bhDrawWeaponEffect2(Unknown1* op)
 {
 	float off;
 	NJS_TEXTURE_VTX tvb[4];
@@ -3874,7 +3197,7 @@ void bhDrawWeaponEffect2(_anon0* op)
 
 // 
 // Start address: 0x257f20
-void bhEff230(_anon0* op)
+void bhEff230(Unknown1* op)
 {
 	tagEFF5UV* pInfo;
 	tagEFF5UV* pEff230UvInfoTop[4];
@@ -3919,9 +3242,9 @@ void bhEff230(_anon0* op)
 
 // 
 // Start address: 0x258160
-void bhEff231(_anon0* op)
+void bhEff231(Unknown1* op)
 {
-	_anon10* pEffect;
+	Unknown8* pEffect;
 	// Line 3519, Address: 0x258160, Func Offset: 0
 	// Line 3523, Address: 0x25816c, Func Offset: 0xc
 	// Line 3524, Address: 0x25818c, Func Offset: 0x2c
@@ -3964,7 +3287,7 @@ void bhEff231(_anon0* op)
 
 // 
 // Start address: 0x2582d0
-void bhEff232(_anon0* op)
+void bhEff232(Unknown1* op)
 {
 	tagEFF5UV* pInfo;
 	tagEFF5UV Eff232UvInfo[10][2];
@@ -4002,7 +3325,7 @@ void bhEff232(_anon0* op)
 
 // 
 // Start address: 0x258490
-void bhEff233(_anon0* op)
+void bhEff233(Unknown1* op)
 {
 	tagEFF5UV* pInfo;
 	tagEFF5UV Eff233UvInfo[4];
@@ -4060,7 +3383,7 @@ void bhEff233(_anon0* op)
 
 // 
 // Start address: 0x258760
-void bhEff234(_anon0* op)
+void bhEff234(Unknown1* op)
 {
 	tagEFF5UV* pInfo;
 	tagEFF5UV Eff234UvInfo2[13];
@@ -4116,7 +3439,7 @@ void bhEff234(_anon0* op)
 
 // 
 // Start address: 0x258a60
-void bhEff235(_anon0* op)
+void bhEff235(Unknown1* op)
 {
 	int lColor;
 	int lMode;
@@ -4180,7 +3503,7 @@ void bhEff235(_anon0* op)
 
 // 
 // Start address: 0x258d60
-void bhEff236(_anon0* op)
+void bhEff236(Unknown1* op)
 {
 	NJS_POINT3 Tmp;
 	BH_PWORK* pp;
@@ -4284,7 +3607,7 @@ void bhEff236(_anon0* op)
 
 // 
 // Start address: 0x2591e0
-void bhDrawEff236(_anon0* op)
+void bhDrawEff236(Unknown1* op)
 {
 	// Line 4063, Address: 0x2591e0, Func Offset: 0
 	// Line 4065, Address: 0x2591ec, Func Offset: 0xc
@@ -4301,7 +3624,7 @@ void bhDrawEff236(_anon0* op)
 
 // 
 // Start address: 0x259290
-void bhEff237(_anon0* op)
+void bhEff237(Unknown1* op)
 {
 	tagEFF5UV* pInfo;
 	tagEFF5UV Eff237UvInfo[16];
@@ -4371,11 +3694,11 @@ void bhEff237(_anon0* op)
 
 // 
 // Start address: 0x259570
-void bhEff238(_anon0* op)
+void bhEff238(Unknown1* op)
 {
-	_anon0* opp;
+	Unknown1* opp;
 	int lNumber;
-	_anon10* pEffect;
+	Unknown8* pEffect;
 	// Line 4201, Address: 0x259570, Func Offset: 0
 	// Line 4208, Address: 0x259580, Func Offset: 0x10
 	// Line 4209, Address: 0x2595a0, Func Offset: 0x30
@@ -4441,7 +3764,7 @@ void bhEff238(_anon0* op)
 
 // 
 // Start address: 0x259840
-void bhEff239(_anon0* op)
+void bhEff239(Unknown1* op)
 {
 	int lAlpha;
 	tagEFF5UV* pInfo;
@@ -4511,7 +3834,7 @@ void bhEff239(_anon0* op)
 
 // 
 // Start address: 0x259b60
-void bhEff240(_anon0* op)
+void bhEff240(Unknown1* op)
 {
 	int lNumber;
 	float spq;
@@ -4596,10 +3919,10 @@ void bhEff240(_anon0* op)
 
 // 
 // Start address: 0x25a020
-void bhEff241(_anon0* op)
+void bhEff241(Unknown1* op)
 {
 	int lLoop;
-	_anon10* pEffect;
+	Unknown8* pEffect;
 	// Line 4474, Address: 0x25a020, Func Offset: 0
 	// Line 4479, Address: 0x25a030, Func Offset: 0x10
 	// Line 4480, Address: 0x25a050, Func Offset: 0x30
@@ -4638,7 +3961,7 @@ void bhEff241(_anon0* op)
 
 // 
 // Start address: 0x25a150
-void bhEff242(_anon0* op)
+void bhEff242(Unknown1* op)
 {
 	float fSizeH;
 	float fSizeW;
@@ -4778,7 +4101,7 @@ void bhEff242(_anon0* op)
 
 // 
 // Start address: 0x25aa10
-void bhEff243(_anon0* op)
+void bhEff243(Unknown1* op)
 {
 	NJS_POINT3 VecZ;
 	NJS_POINT3 VecY;
@@ -4863,7 +4186,7 @@ void bhEff243(_anon0* op)
 
 // 
 // Start address: 0x25ade0
-void bhDrawEff243(_anon0* op)
+void bhDrawEff243(Unknown1* op)
 {
 	// Line 4845, Address: 0x25ade0, Func Offset: 0
 	// Line 4847, Address: 0x25adec, Func Offset: 0xc
@@ -4887,7 +4210,7 @@ void bhDrawEff243(_anon0* op)
 
 // 
 // Start address: 0x25aed0
-void bhEff244(_anon0* op)
+void bhEff244(Unknown1* op)
 {
 	int lColor;
 	int lType;
@@ -4941,11 +4264,11 @@ void bhEff244(_anon0* op)
 
 // 
 // Start address: 0x25b190
-void bhEff245(_anon0* op)
+void bhEff245(Unknown1* op)
 {
 	int lNumber;
 	int lType;
-	_anon10* pEffect;
+	Unknown8* pEffect;
 	// Line 4970, Address: 0x25b190, Func Offset: 0
 	// Line 4975, Address: 0x25b19c, Func Offset: 0xc
 	// Line 4976, Address: 0x25b1bc, Func Offset: 0x2c
@@ -4990,7 +4313,7 @@ void bhEff245(_anon0* op)
 
 // 
 // Start address: 0x25b350
-void bhEff246(_anon0* op)
+void bhEff246(Unknown1* op)
 {
 	tagEFF5UV* pInfo;
 	tagEFF5UV Eff246UvInfo3[16];
@@ -5139,10 +4462,10 @@ void bhEff246(_anon0* op)
 
 // 
 // Start address: 0x25bdb0
-void bhEff247(_anon0* op)
+void bhEff247(Unknown1* op)
 {
 	int lNumber;
-	_anon10* pEffect;
+	Unknown8* pEffect;
 	// Line 5275, Address: 0x25bdb0, Func Offset: 0
 	// Line 5280, Address: 0x25bdbc, Func Offset: 0xc
 	// Line 5281, Address: 0x25bddc, Func Offset: 0x2c
@@ -5178,9 +4501,9 @@ void bhEff247(_anon0* op)
 
 // 
 // Start address: 0x25bee0
-void bhEff248(_anon0* op)
+void bhEff248(Unknown1* op)
 {
-	_anon0* opp;
+	Unknown1* opp;
 	int lColor;
 	int lAlpha;
 	tagEFF5UV* pInfo;
@@ -5261,7 +4584,7 @@ void bhEff248(_anon0* op)
 
 // 
 // Start address: 0x25c4d0
-void bhEff249(_anon0* op)
+void bhEff249(Unknown1* op)
 {
 	tagEFF5UV* pInfo;
 	tagEFF5UV Eff249UvInfo[16];
@@ -5490,7 +4813,7 @@ void ExecEff5SnowRect(tagEFF5SNOWRECT* pSnow)
 
 // 
 // Start address: 0x25cef0
-void DrawEff5SnowRect(_anon0* op)
+void DrawEff5SnowRect(Unknown1* op)
 {
 	NJS_POINT3 Vector;
 	int aAngleZ;

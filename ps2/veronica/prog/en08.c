@@ -1,14 +1,14 @@
 
-typedef struct BH_PWORK;
-typedef struct _anon0;
-typedef struct _anon1;
-typedef struct _anon2;
 
-typedef struct _anon4;
 
-typedef struct _anon6;
 
-typedef struct _anon8;
+
+
+
+
+
+
+
 
 
 
@@ -32,7 +32,7 @@ typedef unsigned int type_15[2];
 typedef int* type_16[16];
 
 
-typedef _anon8 type_19[16];
+typedef MODEL_DATA type_19[16];
 typedef unsigned char type_20[64];
 
 
@@ -46,208 +46,6 @@ typedef unsigned char type_20[64];
 
 
 
-struct BH_PWORK
-{
-	unsigned int flg;
-	unsigned short id;
-	unsigned short type;
-	char flr_no;
-	char flr_nob;
-	unsigned char mdlver;
-	unsigned char param;
-	unsigned char mode0;
-	unsigned char mode1;
-	unsigned char mode2;
-	unsigned char mode3;
-	float px;
-	float py;
-	float pz;
-	int ax;
-	int ay;
-	int az;
-	float ar;
-	float aw;
-	float ah;
-	float ad;
-	float car;
-	float cah;
-	float pxb;
-	float pyb;
-	float pzb;
-	int axb;
-	int ayb;
-	int azb;
-	float gpx;
-	float gpy;
-	float gpz;
-	float lox;
-	float loy;
-	float loz;
-	float aox;
-	float aoy;
-	float aoz;
-	float spd;
-	unsigned int flg2;
-	unsigned int mdflg;
-	unsigned int stflg;
-	unsigned int Dummy3;
-	int draw_tp;
-	int mdl_n;
-	void* mskp;
-	unsigned int Dummy[1];
-	int* skp[16];
-	NJS_OBJECT* mbp[16];
-	NJS_TEXLIST* txp[16];
-	_anon8 mdl[16];
-	_anon8* mlwP;
-	unsigned int mdl_no;
-	int lkono;
-	unsigned char* lkwkp;
-	unsigned char* exp0;
-	unsigned char* exp1;
-	unsigned char* exp2;
-	unsigned char* exp3;
-	unsigned char mtxbuf[64];
-	NJS_MATRIX mtx;
-	NJS_OBJECT* obj_a;
-	NJS_OBJECT* obj_b;
-	float shp_ct;
-	char clp_jno[8];
-	int lok_jno;
-	_anon0* mnwP;
-	_anon0* mnwPb;
-	unsigned int mtn_attr;
-	unsigned int mtn_no;
-	int frm_no;
-	unsigned int frm_mode;
-	int hokan_rate;
-	unsigned int hokan_count;
-	unsigned int hokan_ctbak;
-	int mtn_add;
-	unsigned int mtn_md;
-	unsigned char* mtn_tp;
-	int axp;
-	int ayp;
-	int azp;
-	short psh_ct;
-	short psh_idx;
-	int idx_ct;
-	int mtn_chk;
-	float ofx;
-	float ofy;
-	float ofz;
-	float sx;
-	float sy;
-	float sz;
-	float sxb;
-	float syb;
-	float szb;
-	float xn;
-	float yn;
-	float zn;
-	int ct0;
-	int ct1;
-	int ct2;
-	int ct3;
-	int wpnr_no;
-	int wpnl_no;
-	unsigned int at_flg;
-	NJS_CAPSULE watr;
-	_anon4* cpcl;
-	short wax;
-	short way;
-	short waz;
-	short waxp;
-	short wayp;
-	short wazp;
-	int hp;
-	int dam[64];
-	int djnt_no;
-	int cpcl_no;
-	int dax;
-	int day;
-	float dpx;
-	float dpy;
-	float dpz;
-	float dvx;
-	float dvy;
-	float dvz;
-	int flr_snd;
-	int ko_num;
-	int footeff;
-	int src_no;
-	unsigned char* kdnp;
-	int kdnidx;
-	void* dan_ap;
-	unsigned int comb_flg;
-	unsigned int comb_wep;
-	int comb_pnt;
-	int comb_timeout;
-	int total_dam;
-	unsigned int Dummy2[2];
-};
-
-struct _anon0
-{
-	unsigned int flg;
-	unsigned int obj_num;
-	unsigned int frm_num;
-	void* datP;
-	_anon2* md2P;
-	unsigned short* atrP;
-};
-
-struct _anon1
-{
-	unsigned char flg;
-	unsigned char type;
-	unsigned char id;
-	char flr_no;
-	unsigned int attr;
-	float px;
-	float py;
-	float pz;
-	float w;
-	float h;
-	float d;
-	unsigned char prm0;
-	unsigned char prm1;
-	unsigned char prm2;
-	unsigned char prm3;
-};
-
-struct _anon2
-{
-	void* p[2];
-};
-
-
-
-
-
-
-
-
-struct _anon4
-{
-	short jnt_a;
-	short jnt_b;
-	int cap_r;
-};
-
-
-
-
-
-
-
-struct _anon6
-{
-	unsigned int flg;
-	int dmy;
-	unsigned int dummy[2];
-	NJS_MATRIX mtx;
-};
 
 
 
@@ -257,15 +55,38 @@ struct _anon6
 
 
 
-struct _anon8
-{
-	unsigned int flg;
-	unsigned int obj_num;
-	void* datP;
-	NJS_OBJECT* objP;
-	NJS_TEXLIST* texP;
-	_anon6* owP;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -357,7 +178,7 @@ void bhEne08_Move(BH_PWORK* epw) { // Line 218, Address: 0x1c60e0
 void bhEne08_MV00(BH_PWORK* epw)
 {
 	NJS_POINT3 vec;
-	_anon1* hp;
+	BOUNDARY* hp;
 	float dy;
 	NJS_POINT3 pos;
 	// Line 229, Address: 0x1c6100, Func Offset: 0
@@ -427,7 +248,7 @@ void bhEne08_MV00(BH_PWORK* epw)
 void bhEne08_MV01(BH_PWORK* epw)
 {
 	NJS_POINT3 vec;
-	_anon1* hp;
+	BOUNDARY* hp;
 	float dy;
 	NJS_POINT3 pos;
 	// Line 309, Address: 0x1c64f0, Func Offset: 0
