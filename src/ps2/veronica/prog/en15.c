@@ -6,7 +6,7 @@
 #include "../../../ps2/veronica/prog/zonzon.h"
 #include "../../../ps2/veronica/prog/zonzon1.h"
 #include "../../../ps2/veronica/prog/subpl.h"
-
+#include "../../../ps2/veronica/prog/Motion.h"
 
 //#include <string.h>
 
@@ -1126,29 +1126,33 @@ static void ReqMtn(BH_PWORK* epw, unsigned int mtn_no)
     EXP0_S(0x58) = mtn_no;
 }
 
-// 
-// Start address: 0x1e5480
-void SetPlyMtn(unsigned int mtn_no)
+// 100% matching!
+static void SetPlyMtn(unsigned int mtn_no)
 {
-	// Line 2618, Address: 0x1e5480, Func Offset: 0
-	// Line 2620, Address: 0x1e5488, Func Offset: 0x8
-	// Line 2621, Address: 0x1e5494, Func Offset: 0x14
-	// Line 2623, Address: 0x1e5498, Func Offset: 0x18
-	// Line 2620, Address: 0x1e549c, Func Offset: 0x1c
-	// Line 2621, Address: 0x1e54a0, Func Offset: 0x20
-	// Line 2622, Address: 0x1e54ac, Func Offset: 0x2c
-	// Line 2623, Address: 0x1e54b8, Func Offset: 0x38
-	// Line 2624, Address: 0x1e54c4, Func Offset: 0x44
-	// Line 2626, Address: 0x1e54d0, Func Offset: 0x50
-	// Line 2627, Address: 0x1e54f0, Func Offset: 0x70
-	// Line 2629, Address: 0x1e550c, Func Offset: 0x8c
-	// Line 2631, Address: 0x1e5528, Func Offset: 0xa8
-	// Line 2632, Address: 0x1e5540, Func Offset: 0xc0
-	// Line 2634, Address: 0x1e555c, Func Offset: 0xdc
-	// Line 2635, Address: 0x1e5574, Func Offset: 0xf4
-	// Line 2637, Address: 0x1e5590, Func Offset: 0x110
-	// Func End, Address: 0x1e559c, Func Offset: 0x11c
-	scePrintf("SetPlyMtn - UNIMPLEMENTED!\n");
+    plp->hokan_rate = 13107;
+    plp->hokan_count = 10;
+    plp->frm_no = 0;
+    plp->mtn_add = 65536;
+    plp->mtn_no = mtn_no;
+    
+    if (bhSetMotion(plp, 0, plp->mtn_md, plp->mtn_tp) != 0)
+    {
+        plp->flg |= 0x2000000;
+    } 
+    else
+    {
+        plp->flg &= ~0x2000000;
+    }
+
+    if (plp->mtn_no == 26)
+    {
+        plp->py -= 10.6722f;
+    }
+    
+    if (plp->mtn_no == 25)
+    {
+        plp->py -= 10.7582f;
+    }
 }
 
 /*// 
