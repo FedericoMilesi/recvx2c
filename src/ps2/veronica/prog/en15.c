@@ -2191,35 +2191,68 @@ void DiePlayer(BH_PWORK* epw)
 	// Line 3809, Address: 0x1e8e54, Func Offset: 0xc4
 	// Func End, Address: 0x1e8e64, Func Offset: 0xd4
 }
+*/
 
-// 
-// Start address: 0x1e8e70
-void ChangeAmbient(short* plist, unsigned char add)
+// 100% matching!
+static void ChangeAmbient(short* plist, unsigned char add)
 {
-	// Line 3838, Address: 0x1e8e70, Func Offset: 0
-	// Line 3840, Address: 0x1e8ea4, Func Offset: 0x34
-	// Line 3842, Address: 0x1e8f10, Func Offset: 0xa0
-	// Line 3843, Address: 0x1e8f14, Func Offset: 0xa4
-	// Line 3844, Address: 0x1e8f24, Func Offset: 0xb4
-	// Line 3846, Address: 0x1e8f2c, Func Offset: 0xbc
-	// Line 3847, Address: 0x1e8f30, Func Offset: 0xc0
-	// Line 3848, Address: 0x1e8f40, Func Offset: 0xd0
-	// Line 3850, Address: 0x1e8f48, Func Offset: 0xd8
-	// Line 3851, Address: 0x1e8f4c, Func Offset: 0xdc
-	// Line 3852, Address: 0x1e8f5c, Func Offset: 0xec
-	// Line 3854, Address: 0x1e8f64, Func Offset: 0xf4
-	// Line 3855, Address: 0x1e8f68, Func Offset: 0xf8
-	// Line 3856, Address: 0x1e8f78, Func Offset: 0x108
-	// Line 3861, Address: 0x1e8f80, Func Offset: 0x110
-	// Line 3862, Address: 0x1e8f84, Func Offset: 0x114
-	// Line 3864, Address: 0x1e8f8c, Func Offset: 0x11c
-	// Line 3865, Address: 0x1e8f90, Func Offset: 0x120
-	// Line 3868, Address: 0x1e8f98, Func Offset: 0x128
-	// Line 3871, Address: 0x1e8fac, Func Offset: 0x13c
-	// Line 3872, Address: 0x1e8fbc, Func Offset: 0x14c
-	// Func End, Address: 0x1e8fc4, Func Offset: 0x154
+    while (*plist != 0xFF)
+    {
+        switch (*(unsigned char *)plist)
+        {
+        case 18:
+            *((unsigned char *)plist + 5) = add;
+            plist++;
+            plist += *plist;
+            plist++;
+            break;
+            
+        case 19:
+            *((unsigned char *)plist + 9) = add;
+            plist++;
+            plist += *plist;
+            plist++;
+            break;
+            
+        case 22:
+            *((unsigned char *)plist + 5) = add;
+            plist++;
+            plist += *plist;
+            plist++;
+            break;
+            
+        case 23:
+            *((unsigned char *)plist + 9) = add;
+            plist++;
+            plist += *plist;
+            plist++;
+            break;
+            
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+        case 4:            
+        case 5:
+            plist++;
+            break;
+            
+        case 8:
+        case 9:
+            plist += 2;
+            break;
+            
+        default:
+            plist++;
+            plist += *plist;
+            plist++;
+            break;
+            
+        }
+    }
 }
 
+/*
 // 
 // Start address: 0x1e8fd0
 void SetMince(BH_PWORK* epw, int type, int num)
