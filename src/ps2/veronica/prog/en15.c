@@ -392,7 +392,7 @@ void Chase(BH_PWORK* epw)
 	// Line 1737, Address: 0x1e20dc, Func Offset: 0x7c
 	// Func End, Address: 0x1e20ec, Func Offset: 0x8c
 }
-
+*/
 // 
 // Start address: 0x1e20f0
 void __goalAng(BH_PWORK* epw, NJS_POINT3* vec, NJS_POINT3* ans)
@@ -407,21 +407,17 @@ void __goalAng(BH_PWORK* epw, NJS_POINT3* vec, NJS_POINT3* ans)
 	// Line 1744, Address: 0x1e2150, Func Offset: 0x60
 	// Line 1745, Address: 0x1e2160, Func Offset: 0x70
 	// Func End, Address: 0x1e2174, Func Offset: 0x84
+	scePrintf("__goalAng - UNIMPLEMENTED!\n");
 }
 
-// 
-// Start address: 0x1e2180
-int _goalAng(BH_PWORK* epw)
+// 100% matching!
+static int _goalAng(BH_PWORK* epw)
 {
-	NJS_POINT3 ans;
-	NJS_POINT3 vec;
-	// Line 1748, Address: 0x1e2180, Func Offset: 0
-	// Line 1750, Address: 0x1e2184, Func Offset: 0x4
-	// Line 1748, Address: 0x1e2188, Func Offset: 0x8
-	// Line 1750, Address: 0x1e218c, Func Offset: 0xc
-	// Line 1751, Address: 0x1e2194, Func Offset: 0x14
-	// Line 1752, Address: 0x1e21b4, Func Offset: 0x34
-	// Func End, Address: 0x1e21c0, Func Offset: 0x40
+    NJS_POINT3 vec;
+    NJS_POINT3 ans;
+
+    __goalAng(epw, &vec, &ans);   
+    return njArcTan2(ans.x, ans.z);
 }
 
 // 
@@ -440,6 +436,7 @@ int _goalAng2(BH_PWORK* epw)
 	// Func End, Address: 0x1e220c, Func Offset: 0x4c
 }
 
+/*
 // 
 // Start address: 0x1e2210
 void KeepFar(BH_PWORK* epw)
