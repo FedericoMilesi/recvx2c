@@ -283,39 +283,43 @@ void bhEne12_Move(BH_PWORK* epw) {
     }
 }
 
-/*// 
-// Start address: 0x1d5ee0
-void bhEne12_MV00(BH_PWORK* epw)
-{
-	float dist;
-	// Line 796, Address: 0x1d5ee0, Func Offset: 0
-	// Line 799, Address: 0x1d5ef0, Func Offset: 0x10
-	// Line 801, Address: 0x1d5f10, Func Offset: 0x30
-	// Line 802, Address: 0x1d5f18, Func Offset: 0x38
-	// Line 805, Address: 0x1d5f20, Func Offset: 0x40
-	// Line 807, Address: 0x1d5f24, Func Offset: 0x44
-	// Line 801, Address: 0x1d5f28, Func Offset: 0x48
-	// Line 802, Address: 0x1d5f30, Func Offset: 0x50
-	// Line 803, Address: 0x1d5f3c, Func Offset: 0x5c
-	// Line 804, Address: 0x1d5f40, Func Offset: 0x60
-	// Line 805, Address: 0x1d5f44, Func Offset: 0x64
-	// Line 806, Address: 0x1d5f48, Func Offset: 0x68
-	// Line 807, Address: 0x1d5f54, Func Offset: 0x74
-	// Line 809, Address: 0x1d5f58, Func Offset: 0x78
-	// Line 810, Address: 0x1d5f64, Func Offset: 0x84
-	// Line 811, Address: 0x1d5f68, Func Offset: 0x88
-	// Line 812, Address: 0x1d5f70, Func Offset: 0x90
-	// Line 814, Address: 0x1d5f78, Func Offset: 0x98
-	// Line 815, Address: 0x1d5fa4, Func Offset: 0xc4
-	// Line 816, Address: 0x1d5fe4, Func Offset: 0x104
-	// Line 817, Address: 0x1d5fec, Func Offset: 0x10c
-	// Line 818, Address: 0x1d5ff0, Func Offset: 0x110
-	// Line 819, Address: 0x1d5ff4, Func Offset: 0x114
-	// Line 824, Address: 0x1d5ff8, Func Offset: 0x118
-	// Func End, Address: 0x1d6008, Func Offset: 0x128
+// 100% matching!
+void bhEne12_MV00(BH_PWORK* epw) {
+    float dist;
+
+    switch (epw->mode3) {
+    case 0:
+        epw->flg |= 0x100000;
+        epw->flg &= 0xFFF7FFFF;
+        epw->mtn_no = 0;
+        epw->frm_no  = 0;
+        epw->mtn_add = 0x10000;
+        epw->mode3 += 1;
+        epw->ct0 = 0xA;
+
+    case 1:
+        if (epw->ct0 != 0) {
+            epw->ct0--;
+            return;
+        }
+
+        epw->mode1 = 1;
+        {
+            float px = plp->px - epw->px;
+            float pz = plp->pz - epw->pz;
+            dist = njSqrt((px * px) + (pz * pz));
+        }
+
+        if (dist > 9.0f || bhEne_CheckDirTarget(epw, plp->px, plp->pz, 0x1C71) == 0) {
+            epw->mode0 = 1;
+            epw->mode1 = 1;
+            epw->mode2 = 1;
+            epw->mode3 = 0U;
+        }
+    }
 }
 
-// 
+/*// 
 // Start address: 0x1d6010
 void bhEne12_MV01(BH_PWORK* epw)
 {
@@ -362,7 +366,7 @@ void bhEne12_MV01(BH_PWORK* epw)
 	// Func End, Address: 0x1d6218, Func Offset: 0x208
 }
 
-// 
+/*// 
 // Start address: 0x1d6220
 void bhEne12_MV02(BH_PWORK* epw)
 {
