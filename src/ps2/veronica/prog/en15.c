@@ -106,23 +106,25 @@ _UVINFO uvinfo1_3[23];
 _UVINFO uvinfo2_1[30];
 _UVINFO uvinfo2_2[16];
 _EFF_INFO eff_info[5];
+*/
 
-// 
-// Start address: 0x1e0eb0
-int target_direction(BH_PWORK* epw)
+// 99.80% matching
+static int target_direction(BH_PWORK* epw)
 {
-	float ans;
-	// Line 948, Address: 0x1e0eb0, Func Offset: 0
-	// Line 950, Address: 0x1e0ebc, Func Offset: 0xc
-	// Line 951, Address: 0x1e0ee8, Func Offset: 0x38
-	// Line 950, Address: 0x1e0ef0, Func Offset: 0x40
-	// Line 951, Address: 0x1e0f04, Func Offset: 0x54
-	// Line 952, Address: 0x1e0f24, Func Offset: 0x74
-	// Line 953, Address: 0x1e0f50, Func Offset: 0xa0
-	// Line 954, Address: 0x1e0f64, Func Offset: 0xb4
-	// Func End, Address: 0x1e0f74, Func Offset: 0xc4
+    float ans;
+
+    ans = 0.005493164f * (NitenDir_ck(epw->px, epw->pz, plp->px, plp->pz) - epw->ay);
+    if (ans > 180.0f) {
+        ans = ans + -360.0f;
+    }
+    else if (ans <= -180.0f)
+    {
+        ans = ans + 360.0f;
+    }
+    return (182.04445f * ans);
 }
 
+/*
 // 
 // Start address: 0x1e0f80
 float target_distance(BH_PWORK* epw)
