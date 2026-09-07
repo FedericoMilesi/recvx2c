@@ -61,6 +61,14 @@ static CPCL CapColTab[25] = {
 
 static char SdwTab[8] = {1, 2, 5, 0xD, 9, 0x15, 0x11, 0xFF};
 unsigned char flip_tree[22] = {0, 1, 2, 3, 4, 5, 10, 11, 12, 13, 6, 7, 8, 9, 18, 19, 20, 21, 14, 15, 16, 17};
+P_WORK ShapeTbl_Acid[6] = {
+    {    0,    0.0f },
+    {   26,    0.0f },
+    {   30, 1000.0f },
+    {   40, 1000.0f },
+    {   50,    0.0f },
+    {  999,    0.0f },
+};
 
 void(*bhEne12_Mode0[6])(BH_PWORK*) = {
     bhEne12_Init,
@@ -272,7 +280,8 @@ void bhEne12_BR00(BH_PWORK* epw)
 }*/
 
 // 100% matching!
-void bhEne12_Move(BH_PWORK* epw) {
+void bhEne12_Move(BH_PWORK* epw) 
+{
     bhEne12_MoveMode2[epw->mode2](epw);
     if (epw->flg & 4) {
         bhEne12_InitDamage(epw);
@@ -284,7 +293,8 @@ void bhEne12_Move(BH_PWORK* epw) {
 }
 
 // 100% matching!
-void bhEne12_MV00(BH_PWORK* epw) {
+void bhEne12_MV00(BH_PWORK* epw) 
+{
     float dist;
 
     switch (epw->mode3) {
@@ -320,7 +330,8 @@ void bhEne12_MV00(BH_PWORK* epw) {
 }
 
 // 100% matching!
-void bhEne12_MV01(BH_PWORK* epw) {
+void bhEne12_MV01(BH_PWORK* epw)
+{
     float dist;
     
     switch (epw->mode3) {                             
@@ -372,63 +383,64 @@ void bhEne12_MV01(BH_PWORK* epw) {
     }
 }
 
-/*// 
-// Start address: 0x1d6220
+// 100% matching!
 void bhEne12_MV02(BH_PWORK* epw)
 {
-	// Line 889, Address: 0x1d6220, Func Offset: 0
-	// Line 890, Address: 0x1d6230, Func Offset: 0x10
-	// Line 892, Address: 0x1d6250, Func Offset: 0x30
-	// Line 893, Address: 0x1d625c, Func Offset: 0x3c
-	// Line 895, Address: 0x1d6260, Func Offset: 0x40
-	// Line 892, Address: 0x1d6264, Func Offset: 0x44
-	// Line 893, Address: 0x1d626c, Func Offset: 0x4c
-	// Line 897, Address: 0x1d6270, Func Offset: 0x50
-	// Line 901, Address: 0x1d6274, Func Offset: 0x54
-	// Line 904, Address: 0x1d6278, Func Offset: 0x58
-	// Line 893, Address: 0x1d627c, Func Offset: 0x5c
-	// Line 895, Address: 0x1d6284, Func Offset: 0x64
-	// Line 896, Address: 0x1d6288, Func Offset: 0x68
-	// Line 897, Address: 0x1d628c, Func Offset: 0x6c
-	// Line 898, Address: 0x1d6290, Func Offset: 0x70
-	// Line 901, Address: 0x1d62b4, Func Offset: 0x94
-	// Line 904, Address: 0x1d62c0, Func Offset: 0xa0
-	// Line 905, Address: 0x1d62c4, Func Offset: 0xa4
-	// Line 906, Address: 0x1d62cc, Func Offset: 0xac
-	// Line 907, Address: 0x1d62d4, Func Offset: 0xb4
-	// Line 908, Address: 0x1d62e0, Func Offset: 0xc0
-	// Line 909, Address: 0x1d62e8, Func Offset: 0xc8
-	// Line 912, Address: 0x1d62f0, Func Offset: 0xd0
-	// Line 914, Address: 0x1d6308, Func Offset: 0xe8
-	// Line 915, Address: 0x1d6314, Func Offset: 0xf4
-	// Line 916, Address: 0x1d631c, Func Offset: 0xfc
-	// Line 917, Address: 0x1d6320, Func Offset: 0x100
-	// Line 918, Address: 0x1d6324, Func Offset: 0x104
-	// Line 919, Address: 0x1d6328, Func Offset: 0x108
-	// Line 923, Address: 0x1d6338, Func Offset: 0x118
-	// Line 924, Address: 0x1d6360, Func Offset: 0x140
-	// Line 927, Address: 0x1d6368, Func Offset: 0x148
-	// Line 928, Address: 0x1d637c, Func Offset: 0x15c
-	// Line 931, Address: 0x1d6390, Func Offset: 0x170
-	// Line 933, Address: 0x1d6398, Func Offset: 0x178
-	// Line 931, Address: 0x1d639c, Func Offset: 0x17c
-	// Line 932, Address: 0x1d63a0, Func Offset: 0x180
-	// Line 931, Address: 0x1d63a4, Func Offset: 0x184
-	// Line 932, Address: 0x1d63a8, Func Offset: 0x188
-	// Line 933, Address: 0x1d63b0, Func Offset: 0x190
-	// Line 935, Address: 0x1d63c0, Func Offset: 0x1a0
-	// Line 939, Address: 0x1d63d8, Func Offset: 0x1b8
-	// Line 940, Address: 0x1d63fc, Func Offset: 0x1dc
-	// Line 941, Address: 0x1d6410, Func Offset: 0x1f0
-	// Line 942, Address: 0x1d643c, Func Offset: 0x21c
-	// Line 943, Address: 0x1d6450, Func Offset: 0x230
-	// Line 944, Address: 0x1d6458, Func Offset: 0x238
-	// Line 946, Address: 0x1d6470, Func Offset: 0x250
-	// Line 948, Address: 0x1d6480, Func Offset: 0x260
-	// Func End, Address: 0x1d6490, Func Offset: 0x270
+    switch (epw->mode3) {
+    case 0:
+        epw->flg &= 0xFFEFFFFF;
+        epw->flg |= 0x80000;
+        epw->mtn_no = 6;
+        epw->frm_no = 0;
+        epw->mtn_add = 0x10000;
+        epw->ct0 = epw->mnwP[epw->mtn_no].frm_num - 2;
+        epw->flg |= 0x40000;
+        epw->mlwP = epw->mdl;
+        epw->obj_a = epw->mdl[0].objP;
+        epw->obj_b = epw->mdl[1].objP;
+        epw->mdflg |= 2;
+        epw->mode3 += 1;
+        return;
+
+    case 1:
+        epw->shp_ct = bhEne_GetShapeCnt(ShapeTbl_Acid, epw->frm_no >> 0x10);
+
+        if (epw->frm_no == 0) {
+            epw->mode1 = 1;
+            epw->mode2 = 1;
+            epw->mode3 = 0;
+            epw->mtn_no = 1;
+            epw->mdflg &= ~2;
+        }
+
+        if ((epw->frm_no >= 0x1E0000) && (epw->frm_no < 0x280001)) {
+            bhEne12_Acid(epw);
+        }
+
+        if (epw->frm_no >= 0x280000) {
+            epw->flg &= 0xFFBFFFFF;
+        }
+
+        epw->xn = plp->px;
+        epw->zn = plp->pz;
+
+        if (bhEne12_AvoidWall(epw) != 0) {
+            bhCheckRoute((NJS_POINT3*)&epw->px, (NJS_POINT3*)&plp->px, (NJS_POINT3*)&epw->xn);
+        }
+
+        if (bhEne_CheckDirTarget(epw,  plp->px, plp->pz, 0x2AAA) != 0) {
+            epw->ayp = bhEne_DirTarget(epw,  epw->xn, epw->zn, 0x111);
+        } else if (bhEne_CheckDirTarget(epw,  plp->px, plp->pz, 0x5555) != 0) {
+            epw->ayp = bhEne_DirTarget(epw,  epw->xn, epw->zn, 0x1C7);
+        } else {
+            epw->ayp = bhEne_DirTarget(epw,  epw->xn, epw->zn, 0x27D);
+        }
+
+        epw->ay += epw->ayp;
+    }
 }
 
-// 
+/*// 
 // Start address: 0x1d6490
 void bhEne12_MV03(BH_PWORK* epw)
 {
