@@ -5,6 +5,8 @@
 #include "../../../ps2/veronica/prog/sdfunc.h"
 #include "../../../ps2/veronica/prog/zonzon.h"
 #include "../../../ps2/veronica/prog/zonzon1.h"
+#include "../../../ps2/veronica/prog/subpl.h"
+
 
 //#include <string.h>
 
@@ -2260,7 +2262,7 @@ void SetMince(BH_PWORK* epw, int type, int num)
 	// Line 3898, Address: 0x1e9208, Func Offset: 0x238
 	// Func End, Address: 0x1e9224, Func Offset: 0x254
 }
-
+*/
 // 
 // Start address: 0x1e9230
 void CoreInit(BH_PWORK* epw)
@@ -2294,6 +2296,7 @@ void CoreInit(BH_PWORK* epw)
 	// Line 3947, Address: 0x1e9320, Func Offset: 0xf0
 	// Line 3948, Address: 0x1e9324, Func Offset: 0xf4
 	// Func End, Address: 0x1e9334, Func Offset: 0x104
+	scePrintf("CoreInit - UNIMPLEMENTED!\n");
 }
 
 // 
@@ -2334,6 +2337,7 @@ void CoreMove(BH_PWORK* epw)
 	// Line 4001, Address: 0x1e94fc, Func Offset: 0x1bc
 	// Line 4006, Address: 0x1e9510, Func Offset: 0x1d0
 	// Func End, Address: 0x1e9518, Func Offset: 0x1d8
+	scePrintf("CoreMove - UNIMPLEMENTED!\n");
 }
 
 // 
@@ -2446,21 +2450,26 @@ void CoreDie(BH_PWORK* epw)
 	// Line 4166, Address: 0x1e9c08, Func Offset: 0x6e8
 	// Line 4172, Address: 0x1e9c10, Func Offset: 0x6f0
 	// Func End, Address: 0x1e9c24, Func Offset: 0x704
-}*/
+	scePrintf("CoreDie - UNIMPLEMENTED!\n");
+}
 
-// 
-// Start address: 0x1e9c30
 void bhEne53(BH_PWORK* epw)
 {
-	// Line 4220, Address: 0x1e9c30, Func Offset: 0
-	// Line 4224, Address: 0x1e9c3c, Func Offset: 0xc
-	// Line 4226, Address: 0x1e9c74, Func Offset: 0x44
-	// Line 4229, Address: 0x1e9c7c, Func Offset: 0x4c
-	// Line 4230, Address: 0x1e9c88, Func Offset: 0x58
-	// Line 4233, Address: 0x1e9c90, Func Offset: 0x60
-	// Line 4234, Address: 0x1e9c98, Func Offset: 0x68
-	// Line 4237, Address: 0x1e9ca0, Func Offset: 0x70
-	// Line 4240, Address: 0x1e9ca8, Func Offset: 0x78
-	// Func End, Address: 0x1e9cb8, Func Offset: 0x88
-	scePrintf("bhEne53 - UNIMPLEMENTED!\n");
+    switch (epw->mode0)
+    {
+    case 0:
+        CoreInit(epw);
+
+    case 1:
+        CoreMove(epw);
+        break;
+        
+    case 3:
+        CoreDie(epw);
+        break;
+        
+    case 5:
+        bhEne_Event(epw);
+        break;
+    }
 }
