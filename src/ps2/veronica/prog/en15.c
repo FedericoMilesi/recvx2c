@@ -1850,7 +1850,7 @@ void bhEff_E15_Poison(O_WRK* op)
 	scePrintf("bhEff_E15_Poison - UNIMPLEMENTED!\n");
 }
 
-/*// 
+// 
 // Start address: 0x1e7ab0
 void bhEne15_RotChar(BH_PWORK* pw, int goal, int add_ang)
 {
@@ -1871,8 +1871,10 @@ void bhEne15_RotChar(BH_PWORK* pw, int goal, int add_ang)
 	// Line 3473, Address: 0x1e7b1c, Func Offset: 0x6c
 	// Line 3476, Address: 0x1e7b28, Func Offset: 0x78
 	// Func End, Address: 0x1e7b30, Func Offset: 0x80
+	scePrintf("bhEne15_RotChar - UNIMPLEMENTED!\n");
 }
 
+/*
 // 
 // Start address: 0x1e7b30
 int AbleToFall(BH_PWORK* pp)
@@ -1987,61 +1989,41 @@ void DrivePlayer(BH_PWORK* epw)
 	// Line 3598, Address: 0x1e81e4, Func Offset: 0x364
 	// Func End, Address: 0x1e81f8, Func Offset: 0x378
 }
-
-// 
-// Start address: 0x1e8200
-void FallingPlayer(BH_PWORK* epw)
-{
-	// Line 3607, Address: 0x1e8200, Func Offset: 0
-	// Line 3608, Address: 0x1e8210, Func Offset: 0x10
-	// Line 3609, Address: 0x1e8224, Func Offset: 0x24
-	// Line 3610, Address: 0x1e8260, Func Offset: 0x60
-	// Line 3609, Address: 0x1e826c, Func Offset: 0x6c
-	// Line 3610, Address: 0x1e82a4, Func Offset: 0xa4
-	// Line 3609, Address: 0x1e82a8, Func Offset: 0xa8
-	// Line 3610, Address: 0x1e82b0, Func Offset: 0xb0
-	// Line 3612, Address: 0x1e82c8, Func Offset: 0xc8
-	// Line 3614, Address: 0x1e82d0, Func Offset: 0xd0
-	// Line 3616, Address: 0x1e839c, Func Offset: 0x19c
-	// Line 3617, Address: 0x1e83dc, Func Offset: 0x1dc
-	// Line 3619, Address: 0x1e83e0, Func Offset: 0x1e0
-	// Func End, Address: 0x1e83f0, Func Offset: 0x1f0
-}
-
-// 
-// Start address: 0x1e83f0
-void SlidePlayer(BH_PWORK* epw)
-{
-	int _mtnno;
-	NJS_POINT3 delta;
-	int _mtnno;
-	// Line 3628, Address: 0x1e83f0, Func Offset: 0
-	// Line 3629, Address: 0x1e8404, Func Offset: 0x14
-	// Line 3630, Address: 0x1e8418, Func Offset: 0x28
-	// Line 3631, Address: 0x1e853c, Func Offset: 0x14c
-	// Line 3633, Address: 0x1e8544, Func Offset: 0x154
-	// Line 3634, Address: 0x1e8558, Func Offset: 0x168
-	// Line 3635, Address: 0x1e8568, Func Offset: 0x178
-	// Line 3636, Address: 0x1e85a8, Func Offset: 0x1b8
-	// Line 3638, Address: 0x1e85ac, Func Offset: 0x1bc
-	// Line 3639, Address: 0x1e864c, Func Offset: 0x25c
-	// Line 3642, Address: 0x1e8660, Func Offset: 0x270
-	// Line 3639, Address: 0x1e8664, Func Offset: 0x274
-	// Line 3642, Address: 0x1e8668, Func Offset: 0x278
-	// Line 3639, Address: 0x1e866c, Func Offset: 0x27c
-	// Line 3642, Address: 0x1e8674, Func Offset: 0x284
-	// Line 3643, Address: 0x1e8684, Func Offset: 0x294
-	// Line 3642, Address: 0x1e8688, Func Offset: 0x298
-	// Line 3643, Address: 0x1e8690, Func Offset: 0x2a0
-	// Line 3644, Address: 0x1e8698, Func Offset: 0x2a8
-	// Line 3645, Address: 0x1e86c0, Func Offset: 0x2d0
-	// Line 3646, Address: 0x1e86cc, Func Offset: 0x2dc
-	// Line 3648, Address: 0x1e888c, Func Offset: 0x49c
-	// Line 3649, Address: 0x1e88b8, Func Offset: 0x4c8
-	// Line 3652, Address: 0x1e88cc, Func Offset: 0x4dc
-	// Func End, Address: 0x1e88e0, Func Offset: 0x4f0
-}
 */
+
+// 100% matching!
+static void FallingPlayer(BH_PWORK* epw)
+{
+    bhEne15_RotChar(plp, plp->day, NJM_DEG_ANG(90.0f));
+    njAddVector((NJS_VECTOR*)&plp->px, (NJS_VECTOR*)&plp->dvx);
+    plp->dvy -= 1.3f;
+    plp->dvx *= 0.9f;
+    plp->dvy *= 0.9f;
+    plp->dvz *= 0.9f;
+    
+    if (plp->py < -90.0f)
+    {
+        plp->hp = -1;
+        plp->mnwP = epw->mnwP;
+        EXP0_S(0x5A) |= 1;
+        epw->mode3 = 4;
+        plp->spd = plp->spd;
+        SetPlyMtn(plp->mtn_no);
+        plp->mode0 = 6;
+        plp->mode1 = 0;
+        plp->mode2 = 0;
+        plp->mode3 = 0;
+        plp->flg |= 0x10004;
+        plp->flg &= ~0x40000;
+        plp->stflg |= 0x50000;
+    }
+    
+    if ((plp->frm_no / 65536) == (plp->mnwP[plp->mtn_no].frm_num - 1))
+    {
+        plp->mtn_add = 0;
+    }
+}
+
 
 // 100% matching!
 static void StandupPlayer(BH_PWORK* epw)
