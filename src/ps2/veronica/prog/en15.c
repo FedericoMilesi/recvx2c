@@ -2170,28 +2170,24 @@ void FallDiePlayer(BH_PWORK* epw)
 	// Line 3784, Address: 0x1e8d78, Func Offset: 0x138
 	// Func End, Address: 0x1e8d84, Func Offset: 0x144
 }
-
-// 
-// Start address: 0x1e8d90
-void DiePlayer(BH_PWORK* epw)
-{
-	// Line 3794, Address: 0x1e8d90, Func Offset: 0
-	// Line 3796, Address: 0x1e8d9c, Func Offset: 0xc
-	// Line 3797, Address: 0x1e8db0, Func Offset: 0x20
-	// Line 3798, Address: 0x1e8db8, Func Offset: 0x28
-	// Line 3800, Address: 0x1e8dcc, Func Offset: 0x3c
-	// Line 3801, Address: 0x1e8e0c, Func Offset: 0x7c
-	// Line 3802, Address: 0x1e8e14, Func Offset: 0x84
-	// Line 3801, Address: 0x1e8e18, Func Offset: 0x88
-	// Line 3802, Address: 0x1e8e24, Func Offset: 0x94
-	// Line 3806, Address: 0x1e8e2c, Func Offset: 0x9c
-	// Line 3802, Address: 0x1e8e30, Func Offset: 0xa0
-	// Line 3806, Address: 0x1e8e38, Func Offset: 0xa8
-	// Line 3807, Address: 0x1e8e40, Func Offset: 0xb0
-	// Line 3809, Address: 0x1e8e54, Func Offset: 0xc4
-	// Func End, Address: 0x1e8e64, Func Offset: 0xd4
-}
 */
+// 100% matching!
+static void DiePlayer(BH_PWORK* epw)
+{
+    if (plp->mode1 == 0)
+    {
+        CallPlayerVoice(1025);
+        plp->mode1++;
+    }
+    
+    if ((plp->frm_no / 65536) == (plp->mnwP[plp->mtn_no].frm_num - 1))
+    {
+        EXP0_S(0x5A) &= ~1;
+        plp->flg |= 2;
+        plp->mtn_add = 0;
+        sys->ts_flg |= 0x4000;
+    }
+}
 
 // 100% matching!
 static void ChangeAmbient(short* plist, unsigned char add)
