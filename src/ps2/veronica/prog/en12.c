@@ -76,6 +76,17 @@ void(*bhEne12_BrainType[2])(BH_PWORK*) = {
     bhEne12_MV00,
 };
 
+void(*bhEne12_MoveMode2[8])(BH_PWORK*) = {
+    bhEne12_MV00,
+    bhEne12_MV01,
+    bhEne12_MV02,
+    bhEne12_MV03,
+    bhEne12_MV04,
+    bhEne12_MV05,
+    bhEne12_MV06,
+    bhEne12_MV07,
+};
+
 // 100% matching!
 void bhEne12(BH_PWORK* epw) 
 {
@@ -189,15 +200,8 @@ void bhEne12_Brain(BH_PWORK* epw)
     bhEne12_BrainType[epw->type](epw);
 }
 
-/*// 
-// Start address: 0x1d5a30
-void bhEne12_Brain(BH_PWORK* epw)
-{
-	// Line 656, Address: 0x1d5a30, Func Offset: 0
-	// Func End, Address: 0x1d5a50, Func Offset: 0x20
-}
 
-// 
+/*// 
 // Start address: 0x1d5a50
 void bhEne12_BR00(BH_PWORK* epw)
 {
@@ -265,23 +269,21 @@ void bhEne12_BR00(BH_PWORK* epw)
 	// Line 759, Address: 0x1d5e34, Func Offset: 0x3e4
 	// Line 763, Address: 0x1d5e40, Func Offset: 0x3f0
 	// Func End, Address: 0x1d5e54, Func Offset: 0x404
+}*/
+
+// 100% matching!
+void bhEne12_Move(BH_PWORK* epw) {
+    bhEne12_MoveMode2[epw->mode2](epw);
+    if (epw->flg & 4) {
+        bhEne12_InitDamage(epw);
+        return;
+    }
+    if (epw->mode1 != 0) {
+        bhEne12_Brain(epw);
+    }
 }
 
-// 
-// Start address: 0x1d5e60
-void bhEne12_Move(BH_PWORK* epw)
-{
-	// Line 773, Address: 0x1d5e60, Func Offset: 0
-	// Line 775, Address: 0x1d5e70, Func Offset: 0x10
-	// Line 778, Address: 0x1d5e90, Func Offset: 0x30
-	// Line 779, Address: 0x1d5ea0, Func Offset: 0x40
-	// Line 780, Address: 0x1d5ea8, Func Offset: 0x48
-	// Line 784, Address: 0x1d5eb0, Func Offset: 0x50
-	// Line 786, Address: 0x1d5ec4, Func Offset: 0x64
-	// Func End, Address: 0x1d5ed4, Func Offset: 0x74
-}
-
-// 
+/*// 
 // Start address: 0x1d5ee0
 void bhEne12_MV00(BH_PWORK* epw)
 {
