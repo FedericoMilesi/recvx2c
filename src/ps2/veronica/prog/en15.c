@@ -1852,28 +1852,33 @@ void bhEff_E15_Poison(O_WRK* op)
 	scePrintf("bhEff_E15_Poison - UNIMPLEMENTED!\n");
 }
 
-// 
-// Start address: 0x1e7ab0
+// 99.06% matching
 void bhEne15_RotChar(BH_PWORK* pw, int goal, int add_ang)
 {
-	int rot;
-	// Line 3458, Address: 0x1e7ab0, Func Offset: 0
-	// Line 3461, Address: 0x1e7ac0, Func Offset: 0x10
-	// Line 3463, Address: 0x1e7ad0, Func Offset: 0x20
-	// Line 3462, Address: 0x1e7ad8, Func Offset: 0x28
-	// Line 3463, Address: 0x1e7adc, Func Offset: 0x2c
-	// Line 3466, Address: 0x1e7ae0, Func Offset: 0x30
-	// Line 3468, Address: 0x1e7ae4, Func Offset: 0x34
-	// Line 3466, Address: 0x1e7ae8, Func Offset: 0x38
-	// Line 3468, Address: 0x1e7af4, Func Offset: 0x44
-	// Line 3470, Address: 0x1e7b00, Func Offset: 0x50
-	// Line 3472, Address: 0x1e7b08, Func Offset: 0x58
-	// Line 3471, Address: 0x1e7b0c, Func Offset: 0x5c
-	// Line 3472, Address: 0x1e7b10, Func Offset: 0x60
-	// Line 3473, Address: 0x1e7b1c, Func Offset: 0x6c
-	// Line 3476, Address: 0x1e7b28, Func Offset: 0x78
-	// Func End, Address: 0x1e7b30, Func Offset: 0x80
-	scePrintf("bhEne15_RotChar - UNIMPLEMENTED!\n");
+    int rot;
+
+    if (!(pw->flg & 0x80))
+    {
+        if (add_ang & 0x80000000)
+        {
+            add_ang = -add_ang;
+            goal = (unsigned short)(goal + NJM_DEG_ANG(180.0f));
+        }
+        
+        rot = (unsigned short)(add_ang + (goal - pw->ay));
+        
+        if (rot < (add_ang + add_ang)) 
+        {
+            pw->ay = goal;
+            return;
+        }
+        
+        pw->ay = pw->ay - add_ang;
+        if (rot <= NJM_DEG_ANG(180.0f))
+        {
+            pw->ay += (add_ang + add_ang);
+        }
+    }
 }
 
 /*
