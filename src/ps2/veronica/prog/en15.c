@@ -2041,25 +2041,42 @@ void SlidePlayer(BH_PWORK* epw)
 	// Line 3652, Address: 0x1e88cc, Func Offset: 0x4dc
 	// Func End, Address: 0x1e88e0, Func Offset: 0x4f0
 }
+*/
 
-// 
-// Start address: 0x1e88e0
-void StandupPlayer(BH_PWORK* epw)
+// 100% matching!
+static void StandupPlayer(BH_PWORK* epw)
 {
-	// Line 3661, Address: 0x1e88e0, Func Offset: 0
-	// Line 3662, Address: 0x1e88e8, Func Offset: 0x8
-	// Line 3663, Address: 0x1e890c, Func Offset: 0x2c
-	// Line 3664, Address: 0x1e891c, Func Offset: 0x3c
-	// Line 3665, Address: 0x1e895c, Func Offset: 0x7c
-	// Line 3666, Address: 0x1e8968, Func Offset: 0x88
-	// Line 3667, Address: 0x1e8970, Func Offset: 0x90
-	// Line 3668, Address: 0x1e8984, Func Offset: 0xa4
-	// Line 3669, Address: 0x1e898c, Func Offset: 0xac
-	// Line 3670, Address: 0x1e8994, Func Offset: 0xb4
-	// Line 3673, Address: 0x1e8a3c, Func Offset: 0x15c
-	// Func End, Address: 0x1e8a48, Func Offset: 0x168
+    if ((plp->mtn_no == 17) || (plp->mtn_no == 16))
+    {
+        plp->flg |= 0xC0000;
+    }
+    
+    if ((plp->frm_no / 65536) == (plp->mnwP[plp->mtn_no].frm_num - 1))
+    {
+        if (plp->mtn_no == 22)
+        {
+            SetPlyMtn(23);
+        }
+        else if (plp->mtn_no == 20)
+        {
+            SetPlyMtn(24);
+        } 
+        else
+        {
+            plp->mnwP = plp->mnwPb;
+            plp->mode0 = 1;
+            plp->mode3 = 0;
+            plp->mode2 = 0;
+            plp->mode1 = 0;
+            plp->flg &= ~0x310004;
+            plp->flg |= 0x118;
+            plp->stflg &= ~0x50480;
+            plp->spd = 0.0f;
+            EXP0_S(0x5A) &= ~1;
+        }
+    }
 }
-
+/*
 // 
 // Start address: 0x1e8a50
 void HoldPlayer(BH_PWORK* epw)
