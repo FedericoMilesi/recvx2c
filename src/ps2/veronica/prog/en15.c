@@ -2118,51 +2118,38 @@ void FlyingPlayer(BH_PWORK* epw)
 	// Line 3727, Address: 0x1e8c34, Func Offset: 0xb4
 	// Func End, Address: 0x1e8c40, Func Offset: 0xc0
 }
-
-// 
-// Start address: 0x1e8c40
-void FallDiePlayer(BH_PWORK* epw)
-{
-	// Line 3736, Address: 0x1e8c40, Func Offset: 0
-	// Line 3752, Address: 0x1e8c48, Func Offset: 0x8
-	// Line 3755, Address: 0x1e8c7c, Func Offset: 0x3c
-	// Line 3756, Address: 0x1e8c80, Func Offset: 0x40
-	// Line 3758, Address: 0x1e8c88, Func Offset: 0x48
-	// Line 3756, Address: 0x1e8c8c, Func Offset: 0x4c
-	// Line 3757, Address: 0x1e8c90, Func Offset: 0x50
-	// Line 3755, Address: 0x1e8c94, Func Offset: 0x54
-	// Line 3756, Address: 0x1e8c98, Func Offset: 0x58
-	// Line 3758, Address: 0x1e8c9c, Func Offset: 0x5c
-	// Line 3756, Address: 0x1e8ca0, Func Offset: 0x60
-	// Line 3757, Address: 0x1e8ca4, Func Offset: 0x64
-	// Line 3756, Address: 0x1e8ca8, Func Offset: 0x68
-	// Line 3757, Address: 0x1e8cb0, Func Offset: 0x70
-	// Line 3758, Address: 0x1e8cb8, Func Offset: 0x78
-	// Line 3757, Address: 0x1e8cbc, Func Offset: 0x7c
-	// Line 3758, Address: 0x1e8cc4, Func Offset: 0x84
-	// Line 3759, Address: 0x1e8ccc, Func Offset: 0x8c
-	// Line 3758, Address: 0x1e8cd0, Func Offset: 0x90
-	// Line 3759, Address: 0x1e8cd8, Func Offset: 0x98
-	// Line 3760, Address: 0x1e8ce0, Func Offset: 0xa0
-	// Line 3759, Address: 0x1e8ce4, Func Offset: 0xa4
-	// Line 3760, Address: 0x1e8cec, Func Offset: 0xac
-	// Line 3761, Address: 0x1e8cf4, Func Offset: 0xb4
-	// Line 3762, Address: 0x1e8d04, Func Offset: 0xc4
-	// Line 3767, Address: 0x1e8d0c, Func Offset: 0xcc
-	// Line 3768, Address: 0x1e8d18, Func Offset: 0xd8
-	// Line 3769, Address: 0x1e8d24, Func Offset: 0xe4
-	// Line 3770, Address: 0x1e8d34, Func Offset: 0xf4
-	// Line 3774, Address: 0x1e8d3c, Func Offset: 0xfc
-	// Line 3775, Address: 0x1e8d44, Func Offset: 0x104
-	// Line 3774, Address: 0x1e8d48, Func Offset: 0x108
-	// Line 3775, Address: 0x1e8d54, Func Offset: 0x114
-	// Line 3779, Address: 0x1e8d5c, Func Offset: 0x11c
-	// Line 3775, Address: 0x1e8d60, Func Offset: 0x120
-	// Line 3779, Address: 0x1e8d68, Func Offset: 0x128
-	// Line 3784, Address: 0x1e8d78, Func Offset: 0x138
-	// Func End, Address: 0x1e8d84, Func Offset: 0x144
-}
 */
+
+// 100% matching!
+static void FallDiePlayer(BH_PWORK* epw)
+{
+    switch (plp->mode1)
+    {
+    case 0:
+        plp->mnwP = plp->mnwPb;
+        plp->flg &= ~0x310004;
+        plp->flg &= ~0x118;
+        plp->stflg &= ~0x10480;
+        plp->stflg |= 8;
+        plp->spd = 0.0f;
+        plp->mode1++;
+        break;
+        
+    case 1:
+        CallPlayerVoice(1025);
+        StartVibrationEx(1, 11);
+        plp->mode1++;
+        break;
+        
+    case 2:
+        EXP0_S(0x5A) &= ~1;
+        plp->flg |= 2;
+        sys->ts_flg |= 0x4000;
+        break;
+        
+    }
+}
+
 // 100% matching!
 static void DiePlayer(BH_PWORK* epw)
 {
