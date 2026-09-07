@@ -420,20 +420,15 @@ static int _goalAng(BH_PWORK* epw)
     return njArcTan2(ans.x, ans.z);
 }
 
-// 
-// Start address: 0x1e21c0
-int _goalAng2(BH_PWORK* epw)
+// 100% matching!
+static int _goalAng2(BH_PWORK* epw)
 {
-	NJS_POINT3 ans;
-	NJS_POINT3 vec;
-	// Line 1755, Address: 0x1e21c0, Func Offset: 0
-	// Line 1757, Address: 0x1e21c4, Func Offset: 0x4
-	// Line 1755, Address: 0x1e21c8, Func Offset: 0x8
-	// Line 1757, Address: 0x1e21cc, Func Offset: 0xc
-	// Line 1758, Address: 0x1e21d4, Func Offset: 0x14
-	// Line 1759, Address: 0x1e21e0, Func Offset: 0x20
-	// Line 1760, Address: 0x1e2200, Func Offset: 0x40
-	// Func End, Address: 0x1e220c, Func Offset: 0x4c
+    NJS_POINT3 vec;
+    NJS_POINT3 ans;
+
+    __goalAng(epw, &vec, &ans);   
+    njAddVector(&ans, &vec);
+    return njArcTan2(ans.x, ans.z);
 }
 
 /*
