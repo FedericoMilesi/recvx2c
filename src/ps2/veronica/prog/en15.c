@@ -141,7 +141,7 @@ float target_distance(BH_PWORK* epw)
 }*/
 
 // 100% matching!
-int GetLocalEneNo(BH_PWORK* epw)
+static int GetLocalEneNo(BH_PWORK* epw)
 {
     int i;
 
@@ -461,7 +461,7 @@ void KeepFar(BH_PWORK* epw)
 }*/
 
 // 100% matching!
-void Attack(BH_PWORK* epw) 
+static void Attack(BH_PWORK* epw) 
 {    
     static char left_idx[4]  = { 0, 4, 5, 1 }, right_idx[4] = { 3, 7, 6, 2 }; 
     int i;                                                 
@@ -1124,14 +1124,10 @@ void SetMtn(BH_PWORK* epw)
 	// Func End, Address: 0x1e5470, Func Offset: 0x190
 }*/
 
-// 
-// Start address: 0x1e5470
-void ReqMtn(BH_PWORK* epw, unsigned int mtn_no)
+// 100% matching!
+static void ReqMtn(BH_PWORK* epw, unsigned int mtn_no)
 {
-	// Line 2613, Address: 0x1e5470, Func Offset: 0
-	// Line 2614, Address: 0x1e5474, Func Offset: 0x4
-	// Func End, Address: 0x1e547c, Func Offset: 0xc
-	scePrintf("ReqMtn - UNIMPLEMENTED!\n");
+    EXP0_S(0x58) = mtn_no;
 }
 
 // 
