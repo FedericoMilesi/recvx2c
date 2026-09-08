@@ -5,6 +5,7 @@
 #include "../../../ps2/veronica/prog/main.h"
 #include "../../../ps2/veronica/prog/MdlPut.h"
 #include "../../../ps2/veronica/prog/Motion.h"
+#include "../../../ps2/veronica/prog/ps2_NaMath.h"
 #include "../../../ps2/veronica/prog/pwksub.h"
 #include "../../../ps2/veronica/prog/rutchk.h"
 #include "../../../ps2/veronica/prog/sdfunc.h"
@@ -45,9 +46,9 @@ static float En21SpdAddTbl[19] = {
 };
 
 static unsigned char En21SparkTbl[15] = {
-    0x11, 0x15, 0x10, 0x14, 0x0F,
-    0x13, 0x0E, 0x12, 0x01, 0x02,
-    0x03, 0x06, 0x0A, 0x04, 0x05
+    17, 21, 16, 20, 15,
+    19, 14, 18, 1, 2,
+    3, 6, 10, 4, 5
 };
 
 void (*bhEne21_Mode0[6])(BH_PWORK*) = {
@@ -61,6 +62,7 @@ void (*bhEne21_Mode0[6])(BH_PWORK*) = {
 
 // Unused (present in DWARF)
 // void (*bhEne21_BrainType[1])(BH_PWORK*);
+// void (*bhEne21_DamageMode2[1])(BH_PWORK*);
 
 void (*bhEne21_MoveMode2[9])(BH_PWORK*) = {
     bhEne21_MV00,
@@ -77,8 +79,6 @@ void (*bhEne21_MoveMode2[9])(BH_PWORK*) = {
 void (*bhEne21_NageMode2[1])(BH_PWORK*) = {
     bhEne21_NG00
 };
-
-// void (*bhEne21_DamageMode2[1])(BH_PWORK*);
 
 void (*bhEne21_DieMode2[1])(BH_PWORK*) = {
     bhEne21_DD00
@@ -99,9 +99,9 @@ void bhEne21(BH_PWORK* epw)
         bhEne21_SetMarkEff(epw);
     }
 
-    if (epw->flg & 4)
+    if (epw->flg & 0x4)
     {
-        for (i = 0; i < 0x40; i++)
+        for (i = 0; i < 64; i++)
         {
             epw->dam[i] = 0;
         }
@@ -109,7 +109,7 @@ void bhEne21(BH_PWORK* epw)
         epw->flg = epw->flg & ~0x4;
     }
 
-    if ((epw->flg & 8) && (epw->mode0 != 5))
+    if ((epw->flg & 0x8) && (epw->mode0 != 5))
     {
         if (epw->flg & 0x10)
         {
@@ -230,8 +230,8 @@ void bhEne21_Init(BH_PWORK* epw)
         epw->mtn_no = 7;
         epw->frm_no = rand() % 19;
         epw->hokan_count = 0;
-        epw->hokan_rate = 0x10000;
-        epw->mtn_add = 0x10000;
+        epw->hokan_rate = 65536;
+        epw->mtn_add = 65536;
         epw->mtn_md = 0;
         epw->mode0 = 1;
         epw->mode1 = 1;
@@ -256,8 +256,7 @@ void bhEne21_Init(BH_PWORK* epw)
 void bhEne21_SearchPlayer(BH_PWORK* epw)
 {
     int ang;
-    float dx;
-    float dz;
+    float dx, dz;
 
     dx = epw->px - plp->px;
     dz = epw->pz - plp->pz;
@@ -288,7 +287,7 @@ void bhEne21_Brain(BH_PWORK* epw)
 // 100% matching!
 void bhEne21_BR00(BH_PWORK* epw)
 {
-    if ((plp->stflg & 0x80000000) || (plp->flg & 2) || (plp->flg & 4) || (epw->flg & 4))
+    if ((plp->stflg & 0x80000000) || (plp->flg & 0x2) || (plp->flg & 0x4) || (epw->flg & 0x4))
     {
         return;
     }
@@ -329,12 +328,12 @@ void bhEne21_Move(BH_PWORK* epw)
     {
         bhEne21_Brain(epw);
     }
-    
-    if (((epw->flg & 4) != 0) && ((epw->flg & 2) == 0))
+
+    if (((epw->flg & 0x4) != 0) && ((epw->flg & 0x2) == 0))
     {
         bhEne21_Damage(epw);
     }
-    
+
     if (epw->mode0 == 1)
     {
         bhEne21_MoveMode2[epw->mode2](epw);
@@ -346,24 +345,24 @@ void bhEne21_MV00(BH_PWORK* epw)
 {
     switch (epw->mode3)
     {
-        case 0:
+    case 0:
         if (epw->mtn_no != 7)
         {
             epw->mtn_no = 7;
             epw->frm_no = rand() % 19;
             epw->hokan_count = 3;
-            epw->hokan_rate = 0x8000;
+            epw->hokan_rate = 32768;
         }
 
         epw->ct0 = rand() % 10 + 10;
         epw->spd = 0.05f;
         epw->mode3++;
-        // Fallthrough
-        case 1:
+
+    case 1:
         bhAddSpeed(epw, 0);
 
         if (epw->ct0 == 8) {
-            bhEne21_SetSparkEff(epw, 1, 3, epw->frm_no >> 0x10);
+            bhEne21_SetSparkEff(epw, 1, 3, epw->frm_no / 65536);
             bhEne_CallSE(epw, (NJS_POINT3*)&epw->px, 0x12301);
         }
 
@@ -373,6 +372,7 @@ void bhEne21_MV00(BH_PWORK* epw)
             epw->mode2 = 1;
             epw->mode3 = 0;
         }
+        break;
     }
 }
 
@@ -384,22 +384,22 @@ void bhEne21_MV01(BH_PWORK* epw)
 
     switch (epw->mode3)
     {
-        case 0:
+    case 0:
         if (epw->mtn_no != 7)
         {
             epw->mtn_no = 7;
             epw->frm_no = rand() % 19;
             epw->hokan_count = 3;
-            epw->hokan_rate = 0x8000;
+            epw->hokan_rate = 32768;
         }
 
         epw->ct0 = rand() % 10 + 10;
         epw->spd = 0.5f;
         epw->mode3++;
-        // Fallthrough
-        case 1:
+
+    case 1:
         epw->spd = 0.5f;
-        epw->spd += En21SpdAddTbl[epw->frm_no >> 0x10];
+        epw->spd += En21SpdAddTbl[epw->frm_no / 65536];
         bhAddSpeed(epw, 0);
 
         if (epw->ct0 == 17)
@@ -458,6 +458,7 @@ void bhEne21_MV01(BH_PWORK* epw)
             }
             epw->mode3 = 0;
         }
+        break;
     }
 }
 
@@ -466,22 +467,22 @@ void bhEne21_MV02(BH_PWORK* epw)
 {
     switch (epw->mode3)
     {
-        case 0:
+    case 0:
         if (epw->mtn_no != 7)
         {
             epw->mtn_no = 7;
             epw->frm_no = rand() % 19;
             epw->hokan_count = 3;
-            epw->hokan_rate = 0x8000;
+            epw->hokan_rate = 32768;
         }
         epw->ct0 = rand() % 10 + 10;
         epw->spd = 0.5f;
         epw->mode3++;
-        // Fallthrough
-        case 1:
+
+    case 1:
         epw->ay -= NJM_DEG_ANG(4.0f);
         epw->spd = 0.5f;
-        epw->spd += En21SpdAddTbl[epw->frm_no >> 0x10];
+        epw->spd += En21SpdAddTbl[epw->frm_no / 65536];
         bhAddSpeed(epw, 0);
 
         if (epw->ct0 == 17)
@@ -501,6 +502,7 @@ void bhEne21_MV02(BH_PWORK* epw)
             epw->mode2 = 1;
             epw->mode3 = 0;
         }
+        break;
     }
 }
 
@@ -509,22 +511,22 @@ void bhEne21_MV03(BH_PWORK* epw)
 {
     switch (epw->mode3)
     {
-        case 0:
+    case 0:
         if (epw->mtn_no != 7)
         {
             epw->mtn_no = 7;
             epw->frm_no = rand() % 19;
             epw->hokan_count = 3;
-            epw->hokan_rate = 0x8000;
+            epw->hokan_rate = 32768;
         }
         epw->ct0 = rand() % 10 + 10;
         epw->spd = 0.5f;
         epw->mode3++;
-        // Fallthrough
-        case 1:
+
+    case 1:
         epw->ay += NJM_DEG_ANG(4.0f);
         epw->spd = 0.5f;
-        epw->spd += En21SpdAddTbl[epw->frm_no >> 0x10];
+        epw->spd += En21SpdAddTbl[epw->frm_no / 65536];
         bhAddSpeed(epw, 0);
 
         if (epw->ct0 == 17)
@@ -544,6 +546,7 @@ void bhEne21_MV03(BH_PWORK* epw)
             epw->mode2 = 1;
             epw->mode3 = 0;
         }
+        break;
     }
 }
 
@@ -552,19 +555,19 @@ void bhEne21_MV04(BH_PWORK* epw)
 {
     switch (epw->mode3)
     {
-        case 0:
+    case 0:
         if (epw->mtn_no != 7)
         {
             epw->mtn_no = 7;
             epw->frm_no = rand() % 19;
             epw->hokan_count = 3;
-            epw->hokan_rate = 0x8000;
+            epw->hokan_rate = 32768;
         }
         epw->ct0 = rand() % 10 + 10;
         epw->spd = 0.05f;
         epw->mode3++;
-        // Fallthrough
-        case 1:
+
+    case 1:
         epw->ay -= NJM_DEG_ANG(7.0f);
         bhAddSpeed(epw, 0);
 
@@ -580,6 +583,7 @@ void bhEne21_MV04(BH_PWORK* epw)
             epw->mode2 = 1;
             epw->mode3 = 0;
         }
+        break;
     }
 }
 
@@ -588,19 +592,19 @@ void bhEne21_MV05(BH_PWORK* epw)
 {
     switch (epw->mode3)
     {
-        case 0:
+    case 0:
         if (epw->mtn_no != 7)
         {
             epw->mtn_no = 7;
             epw->frm_no = rand() % 19;
             epw->hokan_count = 3;
-            epw->hokan_rate = 0x8000;
+            epw->hokan_rate = 32768;
         }
         epw->ct0 = rand() % 10 + 10;
         epw->spd = 0.05f;
         epw->mode3++;
-        // Fallthrough
-        case 1:
+
+    case 1:
         epw->ay += NJM_DEG_ANG(7.0f);
         bhAddSpeed(epw, 0);
 
@@ -616,6 +620,7 @@ void bhEne21_MV05(BH_PWORK* epw)
             epw->mode2 = 1;
             epw->mode3 = 0;
         }
+        break;
     }
 }
 
@@ -626,9 +631,9 @@ void bhEne21_MV06(BH_PWORK* epw)
 
     switch (epw->mode3)
     {
-        case 0:
+    case 0:
         wall = bhEne21_AllWayWallCheck(epw, 3.0f);
-        if ((wall & 8) == 0)
+        if ((wall & 0x8) == 0)
         {
             epw->mtn_no = (rand() % 2) ? 2 : 1;
             epw->mode3 = 2;
@@ -637,15 +642,15 @@ void bhEne21_MV06(BH_PWORK* epw)
         {
             epw->mode3 = 1;
 
-            if (((wall & 2) == 0) && ((wall & 4) == 0))
+            if (((wall & 0x2) == 0) && ((wall & 0x4) == 0))
             {
                 epw->mtn_no = (rand() % 2) ? 2 : 1;
             }
-            else if ((wall & 2) == 0)
+            else if ((wall & 0x2) == 0)
             {
                 epw->mtn_no = 1;
             }
-            else if ((wall & 4) == 0)
+            else if ((wall & 0x4) == 0)
             {
                 epw->mtn_no = 2;
             }
@@ -661,10 +666,10 @@ void bhEne21_MV06(BH_PWORK* epw)
         epw->ct0 = epw->mnwP[epw->mtn_no].frm_num;
         epw->frm_no = 0;
         epw->hokan_count = 3;
-        epw->hokan_rate = 0x8000;
+        epw->hokan_rate = 32768;
         break;
 
-        case 1:
+    case 1:
         if (epw->mtn_no == 1)
         {
             epw->ay -= NJM_DEG_ANG(90.0f) / epw->mnwP[epw->mtn_no].frm_num;
@@ -688,7 +693,7 @@ void bhEne21_MV06(BH_PWORK* epw)
         }
         break;
 
-        case 2:
+    case 2:
         if (epw->mtn_no == 1)
         {
             epw->ay -= NJM_DEG_ANG(180.0f) / epw->mnwP[epw->mtn_no].frm_num;
@@ -710,6 +715,7 @@ void bhEne21_MV06(BH_PWORK* epw)
             epw->mode2 = 1;
             epw->mode3 = 0;
         }
+        break;
     }
 }
 
@@ -764,13 +770,13 @@ void bhEne21_NG00(BH_PWORK* epw)
         epw->mtn_no = 7;
         epw->frm_no = 0;
         epw->hokan_count = 3;
-        epw->hokan_rate = 0x8000;
+        epw->hokan_rate = 32768;
         epw->ct0 = 0;
         bhEne_CallSE(epw, (NJS_POINT3*)&epw->px, 0x12301);
         epw->mode3++;
-        // Fallthrough
+
     case 1:
-        if (((epw->frm_no >> 0x10) % 2) == 0)
+        if (((epw->frm_no / 65536) % 2) == 0)
         {
             bhEne21_SetSparkEff(epw, 1, 1, epw->ct0);
         }
@@ -809,7 +815,7 @@ void bhEne21_NG00(BH_PWORK* epw)
         ep = ene;
         for (i = 0; i < sys->ewk_n; i++, ep++)
         {
-            if ((ep->flg & 1) && (ep->id == 21))
+            if ((ep->flg & 0x1) && (ep->id == 21))
             {
                 ep->exp0[0x15] = 35;
             }
@@ -888,7 +894,7 @@ void bhEne21_DD00(BH_PWORK* epw)
         epw->mtn_no = EXP0_UC(0x16);
         epw->frm_no = 0;
         epw->hokan_count = 3;
-        epw->hokan_rate = 0x8000;
+        epw->hokan_rate = 32768;
         epw->ct0 = epw->mnwP[epw->mtn_no].frm_num - 1;
         ep = ene;
         EXP0_UC(0x16)++;
@@ -898,13 +904,13 @@ void bhEne21_DD00(BH_PWORK* epw)
         }
         for (i = 0; i < sys->ewk_n; i++, ep++)
         {
-            if ((ep->flg & 1) && (ep->id == 21))
+            if ((ep->flg & 0x1) && (ep->id == 21))
             {
                 ep->exp0[0x16] = EXP0_UC(0x16);
             }
         }
         epw->mode3++;
-        // Fallthrough
+
     case 1:
         if (epw->ct0-- == 0)
         {
@@ -917,6 +923,7 @@ void bhEne21_DD00(BH_PWORK* epw)
     case 2:
         epw->hp = -1;
         epw->flg |= 0x2;
+        break;
     }
 }
 
@@ -934,19 +941,19 @@ void bhEne21_PlayerControl(BH_PWORK* epw)
         plp->stflg |= 0x10000;
         if (plp->hp < 30)
         {
-            plp->mtn_no = 0x2C;
+            plp->mtn_no = 44;
         }
         else if (plp->hp < 120)
         {
-            plp->mtn_no = 0x2B;
+            plp->mtn_no = 43;
         }
         else
         {
-            plp->mtn_no = 0x2A;
+            plp->mtn_no = 42;
         }
         plp->frm_no = 0;
         plp->hokan_count = 5;
-        plp->hokan_rate = 0x8000;
+        plp->hokan_rate = 32768;
         plp->mode3++;
         break;
 
@@ -956,19 +963,19 @@ void bhEne21_PlayerControl(BH_PWORK* epw)
         case 0:
             if (plp->mode2 == 0)
             {
-                plp->mtn_no = 0x4A;
+                plp->mtn_no = 74;
             }
             else
             {
-                plp->mtn_no = 0x49;
+                plp->mtn_no = 73;
             }
             plp->frm_no = 0;
             plp->hokan_count = 3;
-            plp->hokan_rate = 0x8000;
+            plp->hokan_rate = 32768;
             plp->ct0 = plp->mnwP[plp->mtn_no].frm_num;
             plp->ct1 = plp->mnwP[plp->mtn_no].frm_num - 3;
             plp->mode3++;
-            // Fallthrough
+
         case 1:
             if (plp->ct1 > 0)
             {
@@ -979,21 +986,22 @@ void bhEne21_PlayerControl(BH_PWORK* epw)
             {
                 if (plp->hp < 30)
                 {
-                    plp->mtn_no = 0x2C;
+                    plp->mtn_no = 44;
                 }
                 else if (plp->hp < 120)
                 {
-                    plp->mtn_no = 0x2B;
+                    plp->mtn_no = 43;
                 }
                 else
                 {
-                    plp->mtn_no = 0x2A;
+                    plp->mtn_no = 42;
                 }
                 plp->frm_no = 0;
                 plp->hokan_count = 4;
-                plp->hokan_rate = 0x8000;
+                plp->hokan_rate = 32768;
                 plp->mode3++;
             }
+            break;
         }
         break;
 
@@ -1005,6 +1013,7 @@ void bhEne21_PlayerControl(BH_PWORK* epw)
         plp->at_flg = 0;
         plp->mode0 = 1;
         EXP0_UC(0x17) = 0;
+        break;
     }
 }
 
@@ -1099,10 +1108,8 @@ void bhEne21_SetSparkEff(BH_PWORK* epw, int num, int flg, unsigned int ofy)
 
         case 1:
         {
-            float mtx12;
-            float mtx13;
-            float mtx14;
-            float tmp;
+            float mtx12, mtx13, mtx14; // Not from DWARF
+            float tmp;                 // Not from DWARF
 
             owk = plp->mlwP->owP + En21SparkTbl[ofy];
             mtx12 = mtx12 = owk->mtx[12];
@@ -1120,7 +1127,7 @@ void bhEne21_SetSparkEff(BH_PWORK* epw, int num, int flg, unsigned int ofy)
 
         case 2:
         {
-            float tmp;
+            float tmp; // Not from DWARF
 
             tmp = ((rand() % 2) ? 0.5f : -0.5f);
             sys->ef.px = plp->px + (tmp * ((rand() % 6) + 1));
@@ -1132,9 +1139,7 @@ void bhEne21_SetSparkEff(BH_PWORK* epw, int num, int flg, unsigned int ofy)
 
         case 3:
         {
-            float mtx12;
-            float mtx13;
-            float mtx14;
+            float mtx12, mtx13, mtx14; // Not from DWARF
 
             owk = &epw->mlwP->owP[1];
             mtx12 = owk->mtx[12];
@@ -1145,6 +1150,7 @@ void bhEne21_SetSparkEff(BH_PWORK* epw, int num, int flg, unsigned int ofy)
             sys->ef.pz = mtx14;
             sys->ef.py = mtx13;
             sys->ef.ay = epw->ay + NJM_DEG_ANG(180.0f);
+            break;
         }
         }
 
@@ -1233,7 +1239,7 @@ void bhEff_E21_Spark(O_WRK* op)
         op->syb = op->sy;
         op->yn = op->py;
         op->mode0 = 1;
-        // Fallthrough
+
     case 1:
         op->ct2--;
         if (op->ct2 < 0)
@@ -1263,6 +1269,7 @@ void bhEff_E21_Spark(O_WRK* op)
         case 3:
             op->px = op->px - njSin((unsigned short)op->ay) * 0.7f;
             op->pz = op->pz - njCos((unsigned short)op->ay) * 0.7f;
+            break;
         }
 
         op->tv[0].col = 0xFFA0A0FF;
@@ -1284,6 +1291,7 @@ void bhEff_E21_Spark(O_WRK* op)
             sys->ef_trs[sys->ef_trsn] = op;
             sys->ef_trsn++;
         }
+        break;
     }
 }
 
@@ -1344,7 +1352,7 @@ void bhEff_E21_Mark(O_WRK* op)
         op->sxb = op->sx;
         op->syb = op->sy;
         op->mode0 = 1;
-        // Fallthrough
+
     case 1:
         op->ct1--;
         if (op->ct1 < 0)
@@ -1379,5 +1387,6 @@ void bhEff_E21_Mark(O_WRK* op)
             sys->ef_trs[sys->ef_trsn] = op;
             sys->ef_trsn++;
         }
+        break;
     }
 }
