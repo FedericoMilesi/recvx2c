@@ -7,6 +7,7 @@
 #include "../../../ps2/veronica/prog/zonzon1.h"
 #include "../../../ps2/veronica/prog/subpl.h"
 #include "../../../ps2/veronica/prog/Motion.h"
+#include "../../../ps2/veronica/prog/effect.h"
 
 //#include <string.h>
 
@@ -1366,23 +1367,21 @@ int bhEne15_AttackPlayerSS(NJS_SPHERE* spr, NJS_VECTOR* attack_v, int damage)
 	scePrintf("bhEne15_AttackPlayerSS - UNIMPLEMENTED!\n");
 }
 
-/*// 
-// Start address: 0x1e5ea0
-void SetSmoke(NJS_POINT3* pos)
+// 100% matching!
+static void SetSmoke(NJS_VECTOR* pos)
 {
-	// Line 2845, Address: 0x1e5ea0, Func Offset: 0
-	// Line 2846, Address: 0x1e5eac, Func Offset: 0xc
-	// Line 2849, Address: 0x1e5eb0, Func Offset: 0x10
-	// Line 2845, Address: 0x1e5eb4, Func Offset: 0x14
-	// Line 2846, Address: 0x1e5ec0, Func Offset: 0x20
-	// Line 2851, Address: 0x1e5ec8, Func Offset: 0x28
-	// Line 2846, Address: 0x1e5ed4, Func Offset: 0x34
-	// Line 2847, Address: 0x1e5ee0, Func Offset: 0x40
-	// Line 2848, Address: 0x1e5ef4, Func Offset: 0x54
-	// Line 2849, Address: 0x1e5f20, Func Offset: 0x80
-	// Line 2851, Address: 0x1e5f5c, Func Offset: 0xbc
-	// Func End, Address: 0x1e5f74, Func Offset: 0xd4
-}*/
+    sys->ef.id = 257;
+    sys->ef.flg = 1;
+    sys->ef.type = 0;
+    
+    *(NJS_POINT3*)&sys->ef.px = *(NJS_POINT3*)&pos->x;
+    
+    sys->ef.sz = 0.5f;
+    sys->ef.sy = 0.5f;
+    sys->ef.sx = 0.5f;
+    
+    bhSetEffectTb(&sys->ef, NULL, NULL, 0);
+}
 
 // 
 // Start address: 0x1e5f80
