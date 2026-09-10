@@ -429,26 +429,41 @@ static int _goalAng2(BH_PWORK* epw)
     return njArcTan2(ans.x, ans.z);
 }
 
-/*
-// 
-// Start address: 0x1e2210
-void KeepFar(BH_PWORK* epw)
+// 100% matching!
+static void KeepFar(BH_PWORK* epw)
 {
-	// Line 1763, Address: 0x1e2210, Func Offset: 0
-	// Line 1764, Address: 0x1e221c, Func Offset: 0xc
-	// Line 1765, Address: 0x1e2240, Func Offset: 0x30
-	// Line 1766, Address: 0x1e2264, Func Offset: 0x54
-	// Line 1768, Address: 0x1e226c, Func Offset: 0x5c
-	// Line 1769, Address: 0x1e2294, Func Offset: 0x84
-	// Line 1770, Address: 0x1e22ac, Func Offset: 0x9c
-	// Line 1771, Address: 0x1e22b4, Func Offset: 0xa4
-	// Line 1773, Address: 0x1e22d0, Func Offset: 0xc0
-	// Line 1774, Address: 0x1e22f8, Func Offset: 0xe8
-	// Line 1775, Address: 0x1e2318, Func Offset: 0x108
-	// Line 1777, Address: 0x1e2320, Func Offset: 0x110
-	// Line 1778, Address: 0x1e232c, Func Offset: 0x11c
-	// Func End, Address: 0x1e233c, Func Offset: 0x12c
-}*/
+    if (9.0f > target_distance(epw)) 
+    {
+        epw->ct2 = 30;
+        epw->mode0 = 1;
+        epw->mode1 = 1;
+        epw->way = 1456;
+        ReqMtn(epw, 1);
+    } 
+    else
+    {
+        if (16.0f > target_distance(epw))
+        {
+            bhEne15_RotChar(epw, _goalAng2(epw), epw->way);
+        } 
+        else
+        {
+            bhEne15_RotChar(epw, _goalAng(epw), epw->way);
+        }
+        
+        if (35.0f < target_distance(epw))
+        {
+            epw->mode0 = 1;
+            epw->mode1 = 3;
+            epw->way = 145;
+            ReqMtn(epw, 1);
+        }
+        else
+        {
+            __attack(epw);
+        }        
+    }    
+}
 
 // 100% matching!
 static void Attack(BH_PWORK* epw) 
