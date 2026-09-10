@@ -124,25 +124,19 @@ static int target_direction(BH_PWORK* epw)
     return (182.04445f * ans);
 }
 
-/*
-// 
-// Start address: 0x1e0f80
-float target_distance(BH_PWORK* epw)
+// 100% matching!
+static float target_distance(BH_PWORK* epw)
 {
-	_anon30* owk;
-	NJS_POINT3 epos;
-	// Line 958, Address: 0x1e0f80, Func Offset: 0
-	// Line 961, Address: 0x1e0f88, Func Offset: 0x8
-	// Line 965, Address: 0x1e0f8c, Func Offset: 0xc
-	// Line 961, Address: 0x1e0f98, Func Offset: 0x18
-	// Line 965, Address: 0x1e0f9c, Func Offset: 0x1c
-	// Line 962, Address: 0x1e0fa0, Func Offset: 0x20
-	// Line 963, Address: 0x1e0fa8, Func Offset: 0x28
-	// Line 964, Address: 0x1e0fac, Func Offset: 0x2c
-	// Line 965, Address: 0x1e0fb0, Func Offset: 0x30
-	// Line 966, Address: 0x1e0fb8, Func Offset: 0x38
-	// Func End, Address: 0x1e0fc4, Func Offset: 0x44
-}*/
+    NJS_POINT3 epos;
+    O_WORK* owk;
+
+    owk = epw->mlwP->owP;
+    epos.x = owk[1].mtx[12];
+    epos.y = 0;
+    epos.z = owk[1].mtx[14];
+    
+    return njDistanceP2P((NJS_POINT3*)&plp->px, &epos);
+}
 
 // 100% matching!
 static int GetLocalEneNo(BH_PWORK* epw)
