@@ -4501,17 +4501,15 @@ void bhEne03_AddNullTrans(BH_PWORK* epw, _anon21* mtn)
 	// Line 6217, Address: 0x1a1574, Func Offset: 0x44
 	// Line 6218, Address: 0x1a1584, Func Offset: 0x54
 	// Func End, Address: 0x1a1594, Func Offset: 0x64
-}
+}*/
 
-// 
-// Start address: 0x1a15a0
+// 100% matching!
 int bhEne03_CheckClimbWall()
 {
-	// Line 6402, Address: 0x1a15a0, Func Offset: 0
-	// Func End, Address: 0x1a15a8, Func Offset: 0x8
+	return 0;
 }
 
-// 
+/*// 
 // Start address: 0x1a15b0
 int bhEne03_CheckClimbDownWall()
 {
