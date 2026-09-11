@@ -57,12 +57,12 @@ void bhEne03_DD04(BH_PWORK* epw);
 void bhEne03_DD05(BH_PWORK* epw);
 int bhEne03_DGDirCheck(BH_PWORK* epw);
 void bhEne03_SearchPlayer(BH_PWORK* epw, int ang);
-/*int bhEne03_DirTarget(BH_PWORK* epw, _anon21* pos, int w);*/
+int bhEne03_DirTarget(BH_PWORK* epw, NJS_POINT3* pos, int w);
 void bhEne03_GoAHead(BH_PWORK* epw);
-/*void bhEne03_GetPartsPos(BH_PWORK* epw, char* parts, _anon21* p);*/
+void bhEne03_GetPartsPos(BH_PWORK* epw, char* parts, NJS_POINT3* p);
 void bhEne03_MakeMatrix(BH_PWORK* epw);
-/*void bhEne03_HidePartsSub0(npobj* p);
-void bhEne03_HidePartsSub1(npobj* p);*/
+void bhEne03_HidePartsSub0(NJS_CNK_OBJECT* p);
+void bhEne03_HidePartsSub1(NJS_CNK_OBJECT* p);
 void bhEne03_HideParts(BH_PWORK* epw, unsigned short PartsNo, unsigned short flg);
 int bhEne03_CollisionWalls(BH_PWORK* epw);
 ATR_WORK* bhEne03_GetWall(BH_PWORK* epw);
@@ -78,12 +78,12 @@ int bhEne03_CollisionBoxEdge2(BH_PWORK* epw);
 void bhEne03_CollisionLine(BH_PWORK* epw);
 void bhEne03_CollisionLine2(BH_PWORK* epw);
 void bhEne03_SetModelFlg(BH_PWORK* epw, unsigned int and_flg, unsigned int or_flg);
-/*void bhEne03_AddNullTrans(BH_PWORK* epw, _anon21* mtn);*/
+void bhEne03_AddNullTrans(BH_PWORK* epw, NJS_VECTOR* mtn);
 int bhEne03_CheckClimbWall();
 int bhEne03_CheckClimbDownWall();
 int bhEne03_AvoidWall();
 int bhEne03_DiveSpace(BH_PWORK* epw);
-/*int bhEne03_GetWallDir(_anon21* v);*/
+int bhEne03_GetWallDir(NJS_VECTOR* v);
 void bhEne03_DamageInit(BH_PWORK* epw);
 int bhEne03_CheckJumpSpace(BH_PWORK* epw);
 void bhEne03_PlayerControl(BH_PWORK* epw);

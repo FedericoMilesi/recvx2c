@@ -1302,7 +1302,7 @@ typedef struct ETTY_WORK
     short ay;             // offset 0x1C, size 0x2
     short aspd;           // offset 0x1E, size 0x2
     char hide[4];         // offset 0x20, size 0x4
-} ETTY_WORK;
+} ETTY_WORK, EGG_WORK;
 
 typedef struct EF_WRK
 {
@@ -1996,26 +1996,6 @@ typedef struct SDCOM_FUNCTBL
     // total size: 0x4
     void (*FuncName)(int); // offset 0x0, size 0x4
 } SDCOM_FUNCTBL;
-
-typedef struct EGG_WORK 
-{
-    // total size: 0x24
-    unsigned int flg;     // offset 0x0, size 0x4
-    unsigned short id;    // offset 0x4, size 0x2
-    unsigned short type;  // offset 0x6, size 0x2
-    char flr_no;          // offset 0x8, size 0x1
-    unsigned char mdlver; // offset 0x9, size 0x1
-    unsigned char wrk_no; // offset 0xA, size 0x1
-    char prm1;            // offset 0xB, size 0x1
-    float px;             // offset 0xC, size 0x4
-    float py;             // offset 0x10, size 0x4
-    float pz;             // offset 0x14, size 0x4
-    short ax;             // offset 0x18, size 0x2
-    short az;             // offset 0x1A, size 0x2
-    short ay;             // offset 0x1C, size 0x2
-    short aspd;           // offset 0x1E, size 0x2
-    char hide[4];         // offset 0x20, size 0x4
-} EGG_WORK;
 
 typedef struct STCAM_WRK
 {
