@@ -1984,17 +1984,15 @@ void bhEne03_Damage(BH_PWORK* epw)
 	// Line 3394, Address: 0x19bae4, Func Offset: 0x164
 	// Line 3395, Address: 0x19bb04, Func Offset: 0x184
 	// Func End, Address: 0x19bb14, Func Offset: 0x194
-}
+}*/
 
-// 
-// Start address: 0x19bb20
+// 100% matching!
 void bhEne03_DG00()
 {
-	// Line 3407, Address: 0x19bb20, Func Offset: 0
-	// Func End, Address: 0x19bb28, Func Offset: 0x8
+	
 }
 
-// 
+/*// 
 // Start address: 0x19bb30
 void bhEne03_DG01(BH_PWORK* epw)
 {
