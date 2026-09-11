@@ -4515,15 +4515,13 @@ int bhEne03_CheckClimbDownWall()
 	return 0;
 }
 
-/*// 
-// Start address: 0x1a15c0
+// 100% matching!
 int bhEne03_AvoidWall()
 {
-	// Line 6696, Address: 0x1a15c0, Func Offset: 0
-	// Func End, Address: 0x1a15c8, Func Offset: 0x8
+	return 0;
 }
 
-// 
+/*// 
 // Start address: 0x1a15d0
 int bhEne03_DiveSpace(BH_PWORK* epw)
 {
