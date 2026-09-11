@@ -55,9 +55,9 @@ _anon27 CapColTabA[23];
 _anon27 CapColTabB[21];
 void(*bhEne03_Mode0)(BH_PWORK*)[6];
 void(*bhEne03_BrainType)(BH_PWORK*)[3];
-void(*bhEne03_MoveMode2)(BH_PWORK*)[20];
-void(*bhEne03_NageMode2)(BH_PWORK*)[2];
-void(*bhEne03_DamageMode2)(BH_PWORK*)[13];
+void(*bhEne03_MoveMode2)(BH_PWORK*)[20];*/
+void (*bhEne03_NageMode2[2])(BH_PWORK*);
+/*void(*bhEne03_DamageMode2)(BH_PWORK*)[13];
 void(*bhEne03_DeadMode2)(BH_PWORK*)[6];
 void(*bhEne03s)(BH_PWORK*);*/
 
@@ -1575,17 +1575,15 @@ void bhEne03_MV19(BH_PWORK* epw)
 	// Line 2876, Address: 0x19a7d0, Func Offset: 0x3e0
 	// Line 2880, Address: 0x19a7e0, Func Offset: 0x3f0
 	// Func End, Address: 0x19a7f4, Func Offset: 0x404
-}
+}*/
 
-// 
-// Start address: 0x19a800
+// 100% matching!
 void bhEne03_Nage(BH_PWORK* epw)
 {
-	// Line 2891, Address: 0x19a800, Func Offset: 0
-	// Func End, Address: 0x19a820, Func Offset: 0x20
+	bhEne03_NageMode2[epw->mode2](epw);
 }
 
-// 
+/*// 
 // Start address: 0x19a820
 void bhEne03_NG00(BH_PWORK* epw)
 {
