@@ -1164,15 +1164,13 @@ void bhEne03_MV12()
 
 }
 
-/*// 
-// Start address: 0x1996d0
+// 100% matching!
 void bhEne03_MV13()
 {
-	// Line 2320, Address: 0x1996d0, Func Offset: 0
-	// Func End, Address: 0x1996d8, Func Offset: 0x8
+
 }
 
-// 
+/*// 
 // Start address: 0x1996e0
 void bhEne03_MV14(BH_PWORK* epw)
 {
