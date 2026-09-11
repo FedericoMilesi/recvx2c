@@ -4509,15 +4509,13 @@ int bhEne03_CheckClimbWall()
 	return 0;
 }
 
-/*// 
-// Start address: 0x1a15b0
+// 100% matching!
 int bhEne03_CheckClimbDownWall()
 {
-	// Line 6645, Address: 0x1a15b0, Func Offset: 0
-	// Func End, Address: 0x1a15b8, Func Offset: 0x8
+	return 0;
 }
 
-// 
+/*// 
 // Start address: 0x1a15c0
 int bhEne03_AvoidWall()
 {
