@@ -3,6 +3,7 @@
 #include "../../../ps2/veronica/prog/Motion.h"
 #include "../../../ps2/veronica/prog/main.h"
 #include "../../../ps2/veronica/prog/ps2_dummy.h"
+#include "../../../ps2/veronica/prog/subpl.h"
 
 // ENEMY: Tentacle 
 
@@ -178,21 +179,22 @@ static void bhEne29_Damage()
 
 }
 
-// 
-// Start address: 0x210ee0
+// 100% matching!
 static void bhEne29_Event(BH_PWORK* ewP)
 {
 	en29_freework* fwP;
-	// Line 586, Address: 0x210ee0, Func Offset: 0
-	// Line 589, Address: 0x210eec, Func Offset: 0xc
-	// Line 593, Address: 0x210ef0, Func Offset: 0x10
-	// Line 591, Address: 0x210ef8, Func Offset: 0x18
-	// Line 593, Address: 0x210f08, Func Offset: 0x28
-	// Line 596, Address: 0x210f14, Func Offset: 0x34
-	// Line 597, Address: 0x210f1c, Func Offset: 0x3c
-	// Line 598, Address: 0x210f30, Func Offset: 0x50
-	// Line 599, Address: 0x210f3c, Func Offset: 0x5c
-	// Func End, Address: 0x210f4c, Func Offset: 0x6c
+
+	fwP = (en29_freework*)ewP->exp0;
+
+	fwP->hit_tabP->flg &= ~0x1;
+
+    fwP->sdw_owkP->stflg |= 0x1000000;
+
+    bhEne_Event(ewP);
+
+    bhSetMotion(ewP, ewP->mtn_add, ewP->mtn_md, ewP->mtn_tp);
+
+    bhEne29_CalcEnemy(ewP, (en29_freework*)ewP->exp0);
 }
 
 // 
