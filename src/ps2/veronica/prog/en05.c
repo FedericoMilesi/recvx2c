@@ -6,6 +6,7 @@
 #include "../../../ps2/veronica/prog/subpl.h"
 #include "../../../ps2/veronica/prog/zonzon1.h"
 #include "../../../ps2/veronica/prog/hitchkl.h"
+#include "../../../ps2/veronica/prog/pwksub.h"
 
 // ENEMY: Hunter/Sweeper 
 
@@ -1249,75 +1250,78 @@ void bhEne05_MV07(BH_PWORK* epw)
 	// Line 2277, Address: 0x1aff44, Func Offset: 0x684
 	// Func End, Address: 0x1aff5c, Func Offset: 0x69c
 }
+*/
 
-// 
-// Start address: 0x1aff60
+// 100% matching!
 void bhEne05_MV08(BH_PWORK* epw)
 {
-	// Line 2287, Address: 0x1aff60, Func Offset: 0
-	// Line 2288, Address: 0x1aff70, Func Offset: 0x10
-	// Line 2290, Address: 0x1affa8, Func Offset: 0x48
-	// Line 2292, Address: 0x1affb0, Func Offset: 0x50
-	// Line 2294, Address: 0x1affb4, Func Offset: 0x54
-	// Line 2290, Address: 0x1affb8, Func Offset: 0x58
-	// Line 2292, Address: 0x1affc0, Func Offset: 0x60
-	// Line 2293, Address: 0x1affc4, Func Offset: 0x64
-	// Line 2294, Address: 0x1affc8, Func Offset: 0x68
-	// Line 2295, Address: 0x1affcc, Func Offset: 0x6c
-	// Line 2296, Address: 0x1affd4, Func Offset: 0x74
-	// Line 2298, Address: 0x1affdc, Func Offset: 0x7c
-	// Line 2300, Address: 0x1affe4, Func Offset: 0x84
-	// Line 2301, Address: 0x1b0008, Func Offset: 0xa8
-	// Line 2303, Address: 0x1b0014, Func Offset: 0xb4
-	// Line 2304, Address: 0x1b0024, Func Offset: 0xc4
-	// Line 2305, Address: 0x1b002c, Func Offset: 0xcc
-	// Line 2306, Address: 0x1b0030, Func Offset: 0xd0
-	// Line 2308, Address: 0x1b0034, Func Offset: 0xd4
-	// Line 2311, Address: 0x1b0038, Func Offset: 0xd8
-	// Line 2312, Address: 0x1b0040, Func Offset: 0xe0
-	// Line 2308, Address: 0x1b0044, Func Offset: 0xe4
-	// Line 2312, Address: 0x1b0048, Func Offset: 0xe8
-	// Line 2308, Address: 0x1b004c, Func Offset: 0xec
-	// Line 2315, Address: 0x1b0060, Func Offset: 0x100
-	// Line 2308, Address: 0x1b0064, Func Offset: 0x104
-	// Line 2309, Address: 0x1b006c, Func Offset: 0x10c
-	// Line 2311, Address: 0x1b0078, Func Offset: 0x118
-	// Line 2312, Address: 0x1b0084, Func Offset: 0x124
-	// Line 2314, Address: 0x1b0090, Func Offset: 0x130
-	// Line 2315, Address: 0x1b0098, Func Offset: 0x138
-	// Line 2316, Address: 0x1b00a0, Func Offset: 0x140
-	// Line 2318, Address: 0x1b00a4, Func Offset: 0x144
-	// Line 2320, Address: 0x1b00ac, Func Offset: 0x14c
-	// Line 2321, Address: 0x1b00c0, Func Offset: 0x160
-	// Line 2323, Address: 0x1b00c8, Func Offset: 0x168
-	// Line 2322, Address: 0x1b00cc, Func Offset: 0x16c
-	// Line 2323, Address: 0x1b00d0, Func Offset: 0x170
-	// Line 2324, Address: 0x1b00d4, Func Offset: 0x174
-	// Line 2325, Address: 0x1b00dc, Func Offset: 0x17c
-	// Line 2326, Address: 0x1b0100, Func Offset: 0x1a0
-	// Line 2329, Address: 0x1b010c, Func Offset: 0x1ac
-	// Line 2330, Address: 0x1b0118, Func Offset: 0x1b8
-	// Line 2332, Address: 0x1b0128, Func Offset: 0x1c8
-	// Line 2333, Address: 0x1b0130, Func Offset: 0x1d0
-	// Line 2337, Address: 0x1b0134, Func Offset: 0x1d4
-	// Line 2333, Address: 0x1b0138, Func Offset: 0x1d8
-	// Line 2337, Address: 0x1b013c, Func Offset: 0x1dc
-	// Line 2333, Address: 0x1b0140, Func Offset: 0x1e0
-	// Line 2334, Address: 0x1b014c, Func Offset: 0x1ec
-	// Line 2335, Address: 0x1b0160, Func Offset: 0x200
-	// Line 2337, Address: 0x1b0174, Func Offset: 0x214
-	// Line 2339, Address: 0x1b0180, Func Offset: 0x220
-	// Line 2341, Address: 0x1b0188, Func Offset: 0x228
-	// Line 2342, Address: 0x1b0198, Func Offset: 0x238
-	// Line 2343, Address: 0x1b01a8, Func Offset: 0x248
-	// Line 2344, Address: 0x1b01ac, Func Offset: 0x24c
-	// Line 2345, Address: 0x1b01b4, Func Offset: 0x254
-	// Line 2347, Address: 0x1b01b8, Func Offset: 0x258
-	// Line 2348, Address: 0x1b01c0, Func Offset: 0x260
-	// Line 2351, Address: 0x1b01c4, Func Offset: 0x264
-	// Func End, Address: 0x1b01d4, Func Offset: 0x274
-}
+    switch (epw->mode3)
+    { 
+    case 0:
+        epw->flg |= 0x40000;
+        epw->mtn_no = 8;
+        epw->frm_no = 0;
+        epw->hokan_count = 10;
+        epw->hokan_rate = 32768;
+        epw->mtn_add = 65536;
+        epw->flr_no = -128;
+        epw->ct0 = epw->mnwP[epw->mtn_no].frm_num - 1;
+        epw->mode3++;
 
+    case 1:
+        if (epw->ct0-- == 0)
+        {
+            epw->mtn_no = 9;
+            epw->frm_no = 0;
+            epw->hokan_count = 0;
+            epw->ct0 = epw->mnwP[epw->mtn_no].frm_num - 1;
+            epw->mode3++;
+            epw->flg &= ~0x40000;
+            epw->flg &= ~0x2000000;
+            EXP0_F(0x1C) = 0.0f;
+            EXP0_F(0x20) = 7.0f;
+            EXP0_F(0x24) = 0.0f;
+        }
+        break;
+        
+    case 2:
+        if (epw->flg & 0x2000000)
+        {
+            epw->mtn_no = 11;
+            epw->frm_no = 0;
+            epw->hokan_count = 10;
+            epw->hokan_rate = 32768;
+            epw->ct0 = epw->mnwP[epw->mtn_no].frm_num - 2;
+            epw->mode3++;
+            epw->flr_no = bhCheckFloorNum(epw->py);
+            epw->stflg &= ~0x100000;
+        } 
+        else
+        {
+            epw->px += EXP0_F(0x1C);
+            epw->py += EXP0_F(0x20);
+            epw->pz += EXP0_F(0x24);
+            EXP0_F(0x20) -= 0.5f;
+        }
+        break;
+        
+    case 3:
+        if (epw->ct0-- == 0)
+        {
+            if (EXP0_UC(0x14) != 0)
+            {
+                epw->mode2 = 2;
+            } 
+            else
+            {
+                epw->mode2 = 0;
+            }
+            epw->mode1 = 1;
+            epw->mode3 = 0;
+        }
+    }
+}
+/*
 // 
 // Start address: 0x1b01e0
 void bhEne05_MV09(BH_PWORK* epw)
