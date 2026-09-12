@@ -1745,32 +1745,27 @@ void bhEne05_MV13(BH_PWORK* epw)
 	// Line 2795, Address: 0x1b11a0, Func Offset: 0x460
 	// Func End, Address: 0x1b11b8, Func Offset: 0x478
 }
-
-// 
-// Start address: 0x1b11c0
+*/
+// 100% matching!
 void bhEne05_MV14(BH_PWORK* epw)
 {
-	// Line 2805, Address: 0x1b11c0, Func Offset: 0
-	// Line 2806, Address: 0x1b11cc, Func Offset: 0xc
-	// Line 2808, Address: 0x1b11e0, Func Offset: 0x20
-	// Line 2812, Address: 0x1b11e8, Func Offset: 0x28
-	// Line 2815, Address: 0x1b11ec, Func Offset: 0x2c
-	// Line 2808, Address: 0x1b11f0, Func Offset: 0x30
-	// Line 2809, Address: 0x1b11f8, Func Offset: 0x38
-	// Line 2816, Address: 0x1b11fc, Func Offset: 0x3c
-	// Line 2819, Address: 0x1b1200, Func Offset: 0x40
-	// Line 2809, Address: 0x1b1204, Func Offset: 0x44
-	// Line 2812, Address: 0x1b120c, Func Offset: 0x4c
-	// Line 2813, Address: 0x1b1210, Func Offset: 0x50
-	// Line 2814, Address: 0x1b1214, Func Offset: 0x54
-	// Line 2815, Address: 0x1b1218, Func Offset: 0x58
-	// Line 2819, Address: 0x1b1224, Func Offset: 0x64
-	// Line 2820, Address: 0x1b1230, Func Offset: 0x70
-	// Line 2822, Address: 0x1b123c, Func Offset: 0x7c
-	// Line 2825, Address: 0x1b1248, Func Offset: 0x88
-	// Func End, Address: 0x1b1258, Func Offset: 0x98
+    switch (epw->mode3)
+    {
+    case 0:
+        epw->flg |= 0x40000;
+        epw->flg |= 0x78;
+        epw->mtn_no = 3;
+        epw->frm_no = 0;
+        epw->hokan_count = 0;
+        epw->mtn_md &= ~2;
+        epw->mtn_add = 65536;
+        epw->py = bhGetGroundPosition((NJS_POINT3*)&epw->px);
+        epw->flr_no = bhCheckFloorNum(epw->py);
+        epw->mode3++;
+    }
 }
 
+/*
 // 
 // Start address: 0x1b1260
 void bhEne05_MV15(BH_PWORK* epw)
