@@ -612,16 +612,14 @@ void bhEne12_MV04(BH_PWORK* epw)
 	// Line 1151, Address: 0x1d6e60, Func Offset: 0x610
 	// Func End, Address: 0x1d6e84, Func Offset: 0x634
 }
+*/
 
-// 
-// Start address: 0x1d6e90
+// 100% matching!
 void bhEne12_MV05()
 {
-	// Line 1163, Address: 0x1d6e90, Func Offset: 0
-	// Func End, Address: 0x1d6e98, Func Offset: 0x8
 }
 
-// 
+/*// 
 // Start address: 0x1d6ea0
 void bhEne12_MV06(BH_PWORK* epw)
 {
