@@ -1124,15 +1124,13 @@ void bhEne23_Nage(BH_PWORK* epw)
 	bhEne23_NageMode2[epw->mode2](epw);
 }
 
-/*// 
-// Start address: 0x202ca0
+// 100% matching!
 void bhEne23_NG00()
 {
-	// Line 1983, Address: 0x202ca0, Func Offset: 0
-	// Func End, Address: 0x202ca8, Func Offset: 0x8
+	
 }
 
-// 
+/*// 
 // Start address: 0x202cb0
 void bhEne23_Damage(BH_PWORK* epw)
 {
