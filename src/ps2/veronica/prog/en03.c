@@ -3596,22 +3596,21 @@ void bhEne03_DD05(BH_PWORK* epw)
 	// Func End, Address: 0x19e88c, Func Offset: 0xfc
 }
 
-// 
-// Start address: 0x19e890
+// 100% matching!
 int bhEne03_DGDirCheck(BH_PWORK* epw)
 {
 	NJS_VECTOR v;
-	// Line 4879, Address: 0x19e890, Func Offset: 0
-	// Line 4882, Address: 0x19e898, Func Offset: 0x8
-	// Line 4885, Address: 0x19e89c, Func Offset: 0xc
-	// Line 4882, Address: 0x19e8a0, Func Offset: 0x10
-	// Line 4883, Address: 0x19e8ac, Func Offset: 0x1c
-	// Line 4884, Address: 0x19e8bc, Func Offset: 0x2c
-	// Line 4885, Address: 0x19e8c4, Func Offset: 0x34
-	// Line 4884, Address: 0x19e8c8, Func Offset: 0x38
-	// Line 4885, Address: 0x19e8cc, Func Offset: 0x3c
-	// Line 4888, Address: 0x19e8f8, Func Offset: 0x68
-	// Func End, Address: 0x19e904, Func Offset: 0x74
+	
+    v.x = -EXP0_F(32);
+    v.y = -EXP0_F(36);
+    v.z = -EXP0_F(40);
+	
+    if (njInnerProduct(&v, (NJS_VECTOR*)&epw->dvx) < 0)
+    {
+        return 0;
+    }
+
+    return 1;
 }
 
 // 
