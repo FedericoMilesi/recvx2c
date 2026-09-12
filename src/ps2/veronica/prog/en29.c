@@ -431,15 +431,13 @@ static void bhEne29_Mv01(BH_PWORK* ewP, en29_freework* fwP, int count)
     }
 }
 
-// 
-// Start address: 0x211780
+// 100% matching!
 static void bhEne29_Mv02(BH_PWORK* ewP, en29_freework* fwP, int count)
 {
-	// Line 1023, Address: 0x211780, Func Offset: 0
-	// Line 1024, Address: 0x211784, Func Offset: 0x4
-	// Line 1025, Address: 0x21178c, Func Offset: 0xc
-	// Line 1027, Address: 0x2117cc, Func Offset: 0x4c
-	// Func End, Address: 0x2117d8, Func Offset: 0x58
+	if (count == 0)
+    {
+        RequestEnemySe(sys->enow, (NJS_POINT3*)&ewP->mlwP->owP[fwP->bas_obj].mtx[12], 74499);
+    }
 }
 
 // 
