@@ -3,6 +3,7 @@
 #include "../../../ps2/veronica/prog/Motion.h"
 #include "../../../ps2/veronica/prog/main.h"
 #include "../../../ps2/veronica/prog/ps2_dummy.h"
+#include "../../../ps2/veronica/prog/sdfunc.h"
 #include "../../../ps2/veronica/prog/subpl.h"
 
 // ENEMY: Tentacle 
@@ -414,18 +415,20 @@ static void bhEne29_Mv00(BH_PWORK* ewP, en29_freework* fwP, int count) // parame
 
 }
 
-// 
-// Start address: 0x2116d0
+// 100% matching!
 static void bhEne29_Mv01(BH_PWORK* ewP, en29_freework* fwP, int count)
 {
-	// Line 1001, Address: 0x2116d0, Func Offset: 0
-	// Line 1002, Address: 0x2116e4, Func Offset: 0x14
-	// Line 1003, Address: 0x2116ec, Func Offset: 0x1c
-	// Line 1006, Address: 0x21172c, Func Offset: 0x5c
-	// Line 1007, Address: 0x211744, Func Offset: 0x74
-	// Line 1008, Address: 0x211758, Func Offset: 0x88
-	// Line 1011, Address: 0x211764, Func Offset: 0x94
-	// Func End, Address: 0x211778, Func Offset: 0xa8
+	if (count == 0)
+    {
+        RequestEnemySe(sys->enow, (NJS_POINT3*)&ewP->mlwP->owP[fwP->bas_obj].mtx[12], 74498);
+    }
+
+    if (bhEne29_AttackHitCheck(ewP, fwP) != -1)
+    {
+        bhEne29_PlySetDamage(plp, fwP, 2);
+
+        fwP->status |= 0x8;
+    }
 }
 
 // 
