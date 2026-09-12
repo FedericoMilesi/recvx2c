@@ -465,16 +465,15 @@ static void bhEne29_Mv04(BH_PWORK* ewP, en29_freework* fwP, int count) // third 
     }
 }
 
-// 
-// Start address: 0x211940
+// 100% matching!
 static void bhEne29_Mv20(BH_PWORK* ewP, en29_freework* fwP, int count) // third parameter not present on DWARF
 {
-	// Line 1082, Address: 0x211940, Func Offset: 0
-	// Line 1083, Address: 0x21194c, Func Offset: 0xc
-	// Line 1084, Address: 0x211960, Func Offset: 0x20
-	// Line 1085, Address: 0x211974, Func Offset: 0x34
-	// Line 1087, Address: 0x211980, Func Offset: 0x40
-	// Func End, Address: 0x211990, Func Offset: 0x50
+	if (bhEne29_AttackHitCheck(ewP, fwP) != -1)
+    {
+        bhEne29_PlySetDamage(plp, fwP, 2);
+
+        fwP->status |= 0x8;
+    }
 }
 
 // 100% matching!
