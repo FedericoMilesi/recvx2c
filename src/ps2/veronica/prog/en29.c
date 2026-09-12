@@ -165,20 +165,18 @@ void bhEne29_Move(BH_PWORK* ewP)
 }*/
 
 // 100% matching!
-void bhEne29_Die()
+static void bhEne29_Die()
 {
 	
 }
 
-/*// 
-// Start address: 0x210ed0
-void bhEne29_Damage()
+// 100% matching!
+static void bhEne29_Damage()
 {
-	// Line 578, Address: 0x210ed0, Func Offset: 0
-	// Func End, Address: 0x210ed8, Func Offset: 0x8
+
 }
 
-// 
+/*// 
 // Start address: 0x210ee0
 void bhEne29_Event(BH_PWORK* ewP)
 {
