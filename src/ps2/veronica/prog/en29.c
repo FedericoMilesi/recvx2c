@@ -784,18 +784,17 @@ static void bhEne29_PlyMoveMain(BH_PWORK* plP, en29_freework* fwP)
 	// Func End, Address: 0x2125c4, Func Offset: 0x174
 }
 
-// 
-// Start address: 0x2125d0
+// 100% matching!
 static void bhEne29_PlyActionInit(BH_PWORK* ewP, PAW_WORK* pawP, ACT_TBL_WORK* act_tblP, int tbl_num)
 {
-	// Line 1676, Address: 0x2125d0, Func Offset: 0
-	// Line 1678, Address: 0x2125d4, Func Offset: 0x4
-	// Line 1677, Address: 0x2125d8, Func Offset: 0x8
-	// Line 1678, Address: 0x2125dc, Func Offset: 0xc
-	// Line 1679, Address: 0x2125e0, Func Offset: 0x10
-	// Line 1680, Address: 0x2125e8, Func Offset: 0x18
-	// Line 1681, Address: 0x2125ec, Func Offset: 0x1c
-	// Func End, Address: 0x2125f4, Func Offset: 0x24
+	pawP->act_tblP = act_tblP;
+    
+    pawP->tbl_num = tbl_num;
+    
+    pawP->p_act_now = -1;
+    
+    pawP->ene_mnwP = ewP->mnwP;
+    pawP->p_paramP = ewP->exp0;
 }
 
 // 100% matching!
