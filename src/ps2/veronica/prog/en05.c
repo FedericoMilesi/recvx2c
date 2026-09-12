@@ -3988,26 +3988,23 @@ void bhEne05_FloorCollision(BH_PWORK* epw)
 	scePrintf("bhEne05_FloorCollision - UNIMPLEMENTED!\n");
 }
 
-// 
-// Start address: 0x1b6e90
+// 100% matching!
 void bhEne05_SetWeponAtr(BH_PWORK* epw)
 {
-	//_anon31* owk2;
-	//_anon31* owk1;
-	// Line 5442, Address: 0x1b6e90, Func Offset: 0
-	// Line 5449, Address: 0x1b6e94, Func Offset: 0x4
-	// Line 5453, Address: 0x1b6e9c, Func Offset: 0xc
-	// Line 5442, Address: 0x1b6ea0, Func Offset: 0x10
-	// Line 5443, Address: 0x1b6ea4, Func Offset: 0x14
-	// Line 5444, Address: 0x1b6eac, Func Offset: 0x1c
-	// Line 5445, Address: 0x1b6eb4, Func Offset: 0x24
-	// Line 5447, Address: 0x1b6ebc, Func Offset: 0x2c
-	// Line 5449, Address: 0x1b6ec4, Func Offset: 0x34
-	// Line 5450, Address: 0x1b6ed8, Func Offset: 0x48
-	// Line 5451, Address: 0x1b6eec, Func Offset: 0x5c
-	// Line 5454, Address: 0x1b6f04, Func Offset: 0x74
-	// Func End, Address: 0x1b6f0c, Func Offset: 0x7c
-	scePrintf("bhEne05_SetWeponAtr - UNIMPLEMENTED!\n");
+    O_WORK* owk1;
+    O_WORK* owk2;
+
+    owk1 = epw->mlwP->owP;
+    epw->watr.c1.x = owk1[4].mtx[12];
+    epw->watr.c1.y = owk1[4].mtx[13];
+    epw->watr.c1.z = owk1[4].mtx[14];
+
+    owk2 = epw->mlwP->owP;
+    epw->watr.c2.x = (owk2[23].mtx[12] + owk2[27].mtx[12]) / 2.0f;
+    epw->watr.c2.y = (owk2[23].mtx[13] + owk2[27].mtx[13]) / 2.0f;
+    epw->watr.c2.z = (owk2[23].mtx[14] + owk2[27].mtx[14]) / 2.0f;
+    
+    epw->watr.r = 4.0f;
 }
 
 /*// 
