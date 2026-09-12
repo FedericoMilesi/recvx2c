@@ -3,6 +3,7 @@
 #include "../../../ps2/veronica/prog/MdlPut.h"
 #include "../../../ps2/veronica/prog/Motion.h"
 #include "../../../ps2/veronica/prog/main.h"
+#include "../../../ps2/veronica/prog/ps2_NaMath.h"
 #include "../../../ps2/veronica/prog/ps2_dummy.h"
 #include "../../../ps2/veronica/prog/sdfunc.h"
 #include "../../../ps2/veronica/prog/subpl.h"
@@ -916,26 +917,33 @@ static int bhEne29_PlyActionChange(BH_PWORK* plP, PAW_WORK* pawP, int act_no)
     return 0;
 }
 
-// 
-// Start address: 0x212820
+// 100% matching!
 static void bhEne29_PlyDmg117(BH_PWORK* plP, en29_freework* fwP)
 {
 	int dlt;
-	// Line 1778, Address: 0x212820, Func Offset: 0
-	// Line 1780, Address: 0x212834, Func Offset: 0x14
-	// Line 1782, Address: 0x21283c, Func Offset: 0x1c
-	// Line 1786, Address: 0x212848, Func Offset: 0x28
-	// Line 1780, Address: 0x212850, Func Offset: 0x30
-	// Line 1781, Address: 0x212858, Func Offset: 0x38
-	// Line 1782, Address: 0x212868, Func Offset: 0x48
-	// Line 1783, Address: 0x212874, Func Offset: 0x54
-	// Line 1786, Address: 0x212880, Func Offset: 0x60
-	// Line 1787, Address: 0x212890, Func Offset: 0x70
-	// Line 1789, Address: 0x21289c, Func Offset: 0x7c
-	// Line 1791, Address: 0x2128c4, Func Offset: 0xa4
-	// Line 1794, Address: 0x2128dc, Func Offset: 0xbc
-	// Line 1795, Address: 0x2128fc, Func Offset: 0xdc
-	// Func End, Address: 0x212914, Func Offset: 0xf4
+	
+    plP->px += fwP->ply_dmg.x;
+    plP->pz += fwP->ply_dmg.z;
+
+    fwP->ply_dmg.x *= 0.9f;
+    fwP->ply_dmg.z *= 0.9f;
+
+    if (fwP->ply_act.p_mtn_rte <= 49152) 
+    {
+		dlt = fwP->dmg_dir - plP->ay;
+
+        if (njCos(dlt) < 0)
+        {
+            dlt += 32768;
+        }
+
+        plP->ay += (short)dlt / 32;
+    }
+
+    if (fwP->ply_act.p_mtn_rte >= 65536)
+    {
+        bhEne29_PlyDmgRtn(plP, fwP);
+    }
 }
 
 // 100% matching!
