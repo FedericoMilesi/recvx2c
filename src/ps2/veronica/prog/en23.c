@@ -848,18 +848,16 @@ void bhEne23_MV06(BH_PWORK* epw)
 // 100% matching!
 void bhEne23_MV07()
 {
-	
+
+}
+
+// 100% matching!
+void bhEne23_MV08()
+{
+
 }
 
 /*// 
-// Start address: 0x202290
-void bhEne23_MV08()
-{
-	// Line 1617, Address: 0x202290, Func Offset: 0
-	// Func End, Address: 0x202298, Func Offset: 0x8
-}
-
-// 
 // Start address: 0x2022a0
 void bhEne23_MV09(BH_PWORK* epw)
 {
