@@ -798,20 +798,29 @@ static void bhEne29_PlyActionInit(BH_PWORK* ewP, PAW_WORK* pawP, ACT_TBL_WORK* a
 	// Func End, Address: 0x2125f4, Func Offset: 0x24
 }
 
-// 
-// Start address: 0x212600
+// 100% matching!
 static void bhEne29_PlyActionMain(BH_PWORK* plP, PAW_WORK* pawP)
 {
-	// Line 1692, Address: 0x212600, Func Offset: 0
-	// Line 1694, Address: 0x212610, Func Offset: 0x10
-	// Line 1695, Address: 0x212628, Func Offset: 0x28
-	// Line 1696, Address: 0x212634, Func Offset: 0x34
-	// Line 1700, Address: 0x21263c, Func Offset: 0x3c
-	// Line 1703, Address: 0x21265c, Func Offset: 0x5c
-	// Line 1706, Address: 0x212674, Func Offset: 0x74
-	// Line 1709, Address: 0x212680, Func Offset: 0x80
-	// Line 1710, Address: 0x2126a0, Func Offset: 0xa0
-	// Func End, Address: 0x2126b4, Func Offset: 0xb4
+	if ((pawP->p_act_flg & 0x7) == 2)
+    {
+        pawP->p_act_flg &= ~0x2;
+        
+        bhEne29_PlyActionChange(plP, pawP, pawP->p_act_jmp);
+    }
+    
+    pawP->p_mtn_rte = plP->frm_no / (pawP->p_frm_num - 1);
+    
+    if (pawP->p_prgP != NULL) 
+    {
+        pawP->p_prgP(plP, pawP->p_paramP);
+    }
+    
+    pawP->p_act_frm = plP->frm_no / 65536;
+    
+    if (pawP->p_act_frm == pawP->p_chg_frm) 
+    {
+        pawP->p_act_flg &= ~0x1;
+    }
 }
 
 // 100% matching!
