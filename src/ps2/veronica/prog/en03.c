@@ -3769,16 +3769,20 @@ void bhEne03_HidePartsSub0(NJS_CNK_OBJECT* p)
     }
 }
 
-// 
-// Start address: 0x19eec0
+// 100% matching!
 void bhEne03_HidePartsSub1(NJS_CNK_OBJECT* p)
 {
-	// Line 5085, Address: 0x19eec0, Func Offset: 0
-	// Line 5086, Address: 0x19eecc, Func Offset: 0xc
-	// Line 5087, Address: 0x19eee0, Func Offset: 0x20
-	// Line 5088, Address: 0x19eef4, Func Offset: 0x34
-	// Line 5089, Address: 0x19ef08, Func Offset: 0x48
-	// Func End, Address: 0x19ef18, Func Offset: 0x58
+	p->evalflags &= ~0x8;
+
+    if (p->child != NULL)
+    {
+        bhEne03_HidePartsSub1(p->child);
+    }
+
+    if (p->sibling != NULL)
+    {
+        bhEne03_HidePartsSub1(p->sibling);
+    }
 }
 
 // 
