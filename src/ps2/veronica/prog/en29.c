@@ -1142,26 +1142,30 @@ static void SetDmgEne(en29_freework* fwP, DS_WORK* dsP, int set_num)
 	// Func End, Address: 0x21341c, Func Offset: 0xac
 }
 
-// 
-// Start address: 0x213420
+// 100% matching!
 static void CalcDmgEne(BH_PWORK* ewP, en29_freework* fwP)
 {
-	BH_PWORK* enP;
-	e19_dmg_typ* edP;
-	e19_dmg_typ* hedP;
-	O_WORK* owP;
-	// Line 2080, Address: 0x213420, Func Offset: 0
-	// Line 2079, Address: 0x213424, Func Offset: 0x4
-	// Line 2081, Address: 0x213428, Func Offset: 0x8
-	// Line 2084, Address: 0x213434, Func Offset: 0x14
-	// Line 2085, Address: 0x213438, Func Offset: 0x18
-	// Line 2086, Address: 0x213440, Func Offset: 0x20
-	// Line 2087, Address: 0x21346c, Func Offset: 0x4c
-	// Line 2089, Address: 0x213498, Func Offset: 0x78
-	// Line 2090, Address: 0x2134a0, Func Offset: 0x80
-	// Line 2091, Address: 0x2134a8, Func Offset: 0x88
-	// Line 2092, Address: 0x2134b8, Func Offset: 0x98
-	// Func End, Address: 0x2134c0, Func Offset: 0xa0
+	O_WORK* owP;      
+	e19_dmg_typ* hedP, *edP; 
+	BH_PWORK* enP;    
+	
+    hedP = fwP->dmg_eneP;
+
+    owP = ewP->mlwP->owP;
+
+	for (edP = hedP->nextP; edP != hedP; edP = edP->nextP)
+	{
+		enP = edP->ewP;
+
+		enP->watr.r = edP->atr_rad;
+
+		enP->watr.c1 = *(NJS_POINT3*)&owP[edP->atr_top].mtx[12];
+		enP->watr.c2 = *(NJS_POINT3*)&owP[edP->atr_end].mtx[12];
+
+		enP->cpcl = ewP->cpcl;
+		
+		enP->mlwP = ewP->mlwP;
+	} 
 }
 
 // 
