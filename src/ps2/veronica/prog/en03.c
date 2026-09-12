@@ -3753,16 +3753,20 @@ void bhEne03_MakeMatrix(BH_PWORK* epw)
 	// Func End, Address: 0x19ee5c, Func Offset: 0x1ac
 }
 
-// 
-// Start address: 0x19ee60
+// 100% matching!
 void bhEne03_HidePartsSub0(NJS_CNK_OBJECT* p)
 {
-	// Line 5071, Address: 0x19ee60, Func Offset: 0
-	// Line 5072, Address: 0x19ee6c, Func Offset: 0xc
-	// Line 5073, Address: 0x19ee7c, Func Offset: 0x1c
-	// Line 5074, Address: 0x19ee90, Func Offset: 0x30
-	// Line 5075, Address: 0x19eea4, Func Offset: 0x44
-	// Func End, Address: 0x19eeb4, Func Offset: 0x54
+    p->evalflags |= 0x8;
+
+    if (p->child != NULL)
+    {
+        bhEne03_HidePartsSub0(p->child);
+    }
+
+    if (p->sibling != NULL)
+    {
+        bhEne03_HidePartsSub0(p->sibling);
+    }
 }
 
 // 
