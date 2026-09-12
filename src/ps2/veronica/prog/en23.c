@@ -20,9 +20,9 @@ _anon27 CapColTabB[23];
 _anon39 DmgReact[21];
 _anon45 CombWepTbl[21];
 _anon49 CombJointTbl[37];
-void(*bhEne23_Mode0)(BH_PWORK*)[6];
-void(*bhEne23_BrainType)(BH_PWORK*)[2];
-void(*bhEne23_MoveMode2)(BH_PWORK*)[13];
+void(*bhEne23_Mode0)(BH_PWORK*)[6];*/
+void (*bhEne23_BrainType[2])(BH_PWORK*);
+/*void(*bhEne23_MoveMode2)(BH_PWORK*)[13];
 void(*bhEne23_NageMode2)(BH_PWORK*)[1];
 void(*bhEne23_DamageMode2)(BH_PWORK*)[8];
 void(*bhEne23_DeadMode2)(BH_PWORK*)[4];
@@ -248,17 +248,15 @@ void bhEne23_Init(BH_PWORK* epw)
 	// Line 831, Address: 0x2007f4, Func Offset: 0x694
 	// Line 833, Address: 0x2007f8, Func Offset: 0x698
 	// Func End, Address: 0x200814, Func Offset: 0x6b4
-}
+}*/
 
-// 
-// Start address: 0x200820
+// 100% matching!
 void bhEne23_Brain(BH_PWORK* epw)
 {
-	// Line 844, Address: 0x200820, Func Offset: 0
-	// Func End, Address: 0x200840, Func Offset: 0x20
+	bhEne23_BrainType[epw->type](epw);
 }
 
-// 
+/*// 
 // Start address: 0x200840
 void bhEne23_BR00(BH_PWORK* epw)
 {
