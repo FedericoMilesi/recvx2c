@@ -4921,21 +4921,19 @@ void bhEne03_CollisionLine2(BH_PWORK* epw)
     njSubVector((NJS_VECTOR*) &epw->px, &v);
 }
 
-// 
-// Start address: 0x1a14e0
+// 100% matching!
 void bhEne03_SetModelFlg(BH_PWORK* epw, unsigned int and_flg, unsigned int or_flg)
 {
-	unsigned int i;
 	O_WORK* owk;
-	// Line 6195, Address: 0x1a14e0, Func Offset: 0
-	// Line 6196, Address: 0x1a14e8, Func Offset: 0x8
-	// Line 6197, Address: 0x1a14f0, Func Offset: 0x10
-	// Line 6199, Address: 0x1a14f4, Func Offset: 0x14
-	// Line 6197, Address: 0x1a14f8, Func Offset: 0x18
-	// Line 6198, Address: 0x1a1500, Func Offset: 0x20
-	// Line 6199, Address: 0x1a150c, Func Offset: 0x2c
-	// Line 6200, Address: 0x1a1524, Func Offset: 0x44
-	// Func End, Address: 0x1a152c, Func Offset: 0x4c
+	unsigned int i;
+
+    owk = epw->mlwP->owP;
+	
+    for (i = 0; i < epw->mnwP->obj_num; i++, owk++)
+    {
+        owk->flg &= and_flg;
+        owk->flg |=  or_flg;
+    }
 }
 
 // 
