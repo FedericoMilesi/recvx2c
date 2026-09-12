@@ -57,17 +57,7 @@ typedef struct eaw_typ
     signed int b_act_cnt; // offset 0x34, size 0x4
     signed int b_mtn_md; // offset 0x38, size 0x4
     signed int dummy; // offset 0x3C, size 0x4
-    struct /* @anon7 */ {
-        // total size: 0x14
-        signed int label; // offset 0x0, size 0x4
-        unsigned char mtn_no; // offset 0x4, size 0x1
-        unsigned char frm_no; // offset 0x5, size 0x1
-        unsigned char hkn_lvl; // offset 0x6, size 0x1
-        unsigned char hkn_cnt; // offset 0x7, size 0x1
-        float chg_rte; // offset 0x8, size 0x4
-        signed int flag; // offset 0xC, size 0x4
-        void * prgP; // offset 0x10, size 0x4
-    } * act_tblP; // offset 0x40, size 0x4
+    EA_WORK* act_tblP; // offset 0x40, size 0x4
     signed int tbl_num; // offset 0x44, size 0x4
 } eaw_typ;
 

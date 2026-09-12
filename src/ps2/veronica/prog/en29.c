@@ -458,15 +458,14 @@ static void bhEne29_Mv20(BH_PWORK* ewP, en29_freework* fwP)
 	// Func End, Address: 0x211990, Func Offset: 0x50
 }
 
-// 
-// Start address: 0x211990
+// 100% matching!
 static void bhEne29_ActionInit(eaw_typ* eawP, EA_WORK* act_tblP, int tbl_num)
 {
-	// Line 1100, Address: 0x211990, Func Offset: 0
-	// Line 1102, Address: 0x211994, Func Offset: 0x4
-	// Line 1101, Address: 0x211998, Func Offset: 0x8
-	// Line 1103, Address: 0x21199c, Func Offset: 0xc
-	// Func End, Address: 0x2119a4, Func Offset: 0x14
+	eawP->act_tblP = act_tblP;
+
+	eawP->tbl_num = tbl_num;
+
+	eawP->act_now = 30;
 }
 
 // 
@@ -648,7 +647,7 @@ static void bhEne29_DmgCheck(BH_PWORK* ewP, en29_freework* fwP)
 {
 	DD_WRK* ddP;
 	int dmg_obj;
-	DD_WRK DmgDat[21];
+	static const DD_WRK DmgDat[21];
 	// Line 1349, Address: 0x211fc0, Func Offset: 0
 	// Line 1377, Address: 0x211fd8, Func Offset: 0x18
 	// Line 1379, Address: 0x211fe0, Func Offset: 0x20
@@ -726,7 +725,7 @@ static int bhEne29_AttackHitCheck(BH_PWORK* ewP, en29_freework* fwP)
 static int bhEne29_PlySetDamage(BH_PWORK* plP, en29_freework* fwP, int dmg_mde)
 {
 	int dir_mde;
-	int PlyDmgTbl[4];
+	static const int PlyDmgTbl[4] = { 5, 5, 5, 5 };
 	// Line 1533, Address: 0x2122e0, Func Offset: 0
 	// Line 1543, Address: 0x2122f0, Func Offset: 0x10
 	// Line 1533, Address: 0x2122f4, Func Offset: 0x14
