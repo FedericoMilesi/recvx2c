@@ -619,25 +619,22 @@ void bhEne12_MV05()
 {
 }
 
-/*// 
-// Start address: 0x1d6ea0
-void bhEne12_MV06(BH_PWORK* epw)
-{
-	// Line 1174, Address: 0x1d6ea0, Func Offset: 0
-	// Line 1176, Address: 0x1d6eb4, Func Offset: 0x14
-	// Line 1177, Address: 0x1d6ebc, Func Offset: 0x1c
-	// Line 1179, Address: 0x1d6ec4, Func Offset: 0x24
-	// Line 1176, Address: 0x1d6ec8, Func Offset: 0x28
-	// Line 1177, Address: 0x1d6ed0, Func Offset: 0x30
-	// Line 1178, Address: 0x1d6edc, Func Offset: 0x3c
-	// Line 1179, Address: 0x1d6ee0, Func Offset: 0x40
-	// Line 1180, Address: 0x1d6ee4, Func Offset: 0x44
-	// Line 1181, Address: 0x1d6ee8, Func Offset: 0x48
-	// Line 1183, Address: 0x1d6ef4, Func Offset: 0x54
-	// Func End, Address: 0x1d6efc, Func Offset: 0x5c
+// 100% matching!
+void bhEne12_MV06(BH_PWORK* epw) {
+    
+    switch (epw->mode3) {
+    case 0:
+        epw->flg |= 0x100000;
+        epw->flg &= 0xFFF7FFFF;
+        epw->mtn_no = 0;
+        epw->hokan_count = 0x14;
+        epw->frm_no = 0;
+        epw->mode3 += 1;
+        break;
+    }
 }
 
-// 
+/*// 
 // Start address: 0x1d6f00
 void bhEne12_MV07(BH_PWORK* epw)
 {
