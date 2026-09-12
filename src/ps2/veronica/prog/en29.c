@@ -7,33 +7,52 @@
 
 // ENEMY: Tentacle 
 
-/*void(*bhEne29_Mode0)(BH_PWORK*)[6];
-void(*bhEne29_BrainType)(BH_PWORK*)[4];
-_enum_0 InitBrnMde[4];
-char En29FlpTbl[20];
-_anon19 Ene29CapColTbl[15];
-EA_WORK En29ActTbl[40];
-ACT_TBL_WORK En29PlyActTbl[2];
-_anon40 En29CombWepTbl[21];
-_anon43 En29CombJointTbl[21];
-ET_WORK TypPrm[4];
-_anon29 En29DmgDat;
-DS_WORK E29DmgSet[5];
-_anon30 E29OffTbl[20];
-int E29EffTbl[4][9];*/
+static void (*bhEne29_Mode0[6])(BH_PWORK*) = 
+{
+	bhEne29_Init,
+	bhEne29_Move,
+	bhEne29_Damage,
+	bhEne29_Die,
+	NULL,
+	bhEne29_Event
+};
+static void (*bhEne29_BrainType[4])(BH_PWORK*) = 
+{
+	bhEne29_Br00,
+	bhEne29_Br00,
+	bhEne29_Br01,
+	bhEne29_Br01
+};
 
-// 
-// Start address: 0x210a00
+EA_WORK En29ActTbl[40];
+
+static COMBWEP_WORK En29CombWepTbl[21];
+static COMBJOINT_WORK En29CombJointTbl[21];
+
+ET_WORK TypPrm[4];
+int E29EffTbl[9][4];
+
+static const char En29FlpTbl[20];
+static const CPCL Ene29CapColTbl[15];
+static const ACT_TBL_WORK En29PlyActTbl[2];
+static const ETTY_WORK En29DmgDat;
+static const DS_WORK E29DmgSet[5];
+/* unused below */
+/*OFF_TBL_WORK E29OffTbl[20];
+TC_BR_MODE0 InitBrnMde[4];*/
+
+// 100% matching!
 void bhEne29(BH_PWORK* ewP)
 {
-	// Line 335, Address: 0x210a00, Func Offset: 0
-	// Line 338, Address: 0x210a0c, Func Offset: 0xc
-	// Line 340, Address: 0x210a1c, Func Offset: 0x1c
-	// Line 357, Address: 0x210a3c, Func Offset: 0x3c
-	// Line 361, Address: 0x210a48, Func Offset: 0x48
-	// Line 365, Address: 0x210a54, Func Offset: 0x54
-	// Func End, Address: 0x210a64, Func Offset: 0x64
-	scePrintf("bhEne29 - UNIMPLEMENTED!\n");
+    if (ewP->type != 8)
+    {
+        bhEne29_Mode0[ewP->mode0](ewP);
+
+        if (ewP->mode0 != TC_PRG_INIT)
+        {
+            ((en29_freework*)ewP->exp0)->mode0_bak = (unsigned char)ewP->mode0;
+        }
+    }
 }
 
 // 
@@ -203,9 +222,9 @@ static void bhEne29_Br00(BH_PWORK* ewP)
 {
 	int lop;
 	int rte;
-	//_enum_4 act;
-	//_enum_1* br1P;
-	//_enum_0* br0P;
+	TC_ACT_NO act;
+	TC_BR_MODE1* br1P;
+	TC_BR_MODE0* br0P;
 	int sts;
 	int typ;
 	int* stsP;
@@ -294,9 +313,9 @@ static void bhEne29_Br01(BH_PWORK* ewP)
 {
 	int lop;
 	int rte;
-	//_enum_4 act;
-	//_enum_1* br1P;
-	//_enum_0* br0P;
+	TC_ACT_NO act;
+	TC_BR_MODE1* br1P;
+	TC_BR_MODE0* br0P;
 	int sts;
 	int typ;
 	int* stsP;
@@ -390,7 +409,7 @@ static void bhEne29_Br01(BH_PWORK* ewP)
 }
 
 // 100% matching!
-static void bhEne29_Mv00()
+static void bhEne29_Mv00(BH_PWORK* ewP, en29_freework* fwP, int count) // parameters not present on DWARF
 {
 
 }
@@ -436,7 +455,7 @@ static void bhEne29_Mv03(BH_PWORK* ewP, en29_freework* fwP, int count)
 
 // 
 // Start address: 0x211890
-static void bhEne29_Mv04(BH_PWORK* ewP, en29_freework* fwP)
+static void bhEne29_Mv04(BH_PWORK* ewP, en29_freework* fwP, int count) // third parameter not present on DWARF
 {
 	// Line 1060, Address: 0x211890, Func Offset: 0
 	// Line 1063, Address: 0x2118a0, Func Offset: 0x10
@@ -448,7 +467,7 @@ static void bhEne29_Mv04(BH_PWORK* ewP, en29_freework* fwP)
 
 // 
 // Start address: 0x211940
-static void bhEne29_Mv20(BH_PWORK* ewP, en29_freework* fwP)
+static void bhEne29_Mv20(BH_PWORK* ewP, en29_freework* fwP, int count) // third parameter not present on DWARF
 {
 	// Line 1082, Address: 0x211940, Func Offset: 0
 	// Line 1083, Address: 0x21194c, Func Offset: 0xc
@@ -696,7 +715,7 @@ static int bhEne29_AttackHitCheck(BH_PWORK* ewP, en29_freework* fwP)
 	int ang;
 	int i;
 	static NJS_SPHERE spr;
-	static const e29_cll E29Cll[6];
+	static const CLL_WORK E29Cll[6];
 	// Line 1478, Address: 0x2121a0, Func Offset: 0
 	// Line 1489, Address: 0x2121c8, Func Offset: 0x28
 	// Line 1494, Address: 0x2121cc, Func Offset: 0x2c
