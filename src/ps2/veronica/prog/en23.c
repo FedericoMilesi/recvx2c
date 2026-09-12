@@ -1820,17 +1820,15 @@ void bhEne23_DD01(BH_PWORK* epw)
 	// Line 2861, Address: 0x2048e4, Func Offset: 0x5e4
 	// Line 2862, Address: 0x2048ec, Func Offset: 0x5ec
 	// Func End, Address: 0x204900, Func Offset: 0x600
-}
+}*/
 
-// 
-// Start address: 0x204900
+// 100% matching!
 void bhEne23_DD02()
 {
-	// Line 2873, Address: 0x204900, Func Offset: 0
-	// Func End, Address: 0x204908, Func Offset: 0x8
+	
 }
 
-// 
+/*// 
 // Start address: 0x204910
 void bhEne23_DD03(BH_PWORK* epw)
 {
