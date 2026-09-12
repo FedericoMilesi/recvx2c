@@ -492,39 +492,58 @@ static EA_WORK* bhEne29_ActionSearch(eaw_typ* eawP, int act_nw, int act_no)
 	// Func End, Address: 0x211a2c, Func Offset: 0x7c
 }
 
-// 
-// Start address: 0x211a30
+// 100% matching!
 static int bhEne29_ActionChange(BH_PWORK* ewP, eaw_typ* eawP, int act_dst)
 {
 	EA_WORK* eaP;
-	// Line 1151, Address: 0x211a30, Func Offset: 0
-	// Line 1156, Address: 0x211a4c, Func Offset: 0x1c
-	// Line 1157, Address: 0x211a68, Func Offset: 0x38
-	// Line 1158, Address: 0x211a74, Func Offset: 0x44
-	// Line 1163, Address: 0x211a88, Func Offset: 0x58
-	// Line 1165, Address: 0x211a90, Func Offset: 0x60
-	// Line 1168, Address: 0x211aa0, Func Offset: 0x70
-	// Line 1171, Address: 0x211aa8, Func Offset: 0x78
-	// Line 1174, Address: 0x211aac, Func Offset: 0x7c
-	// Line 1175, Address: 0x211ab4, Func Offset: 0x84
-	// Line 1176, Address: 0x211ab8, Func Offset: 0x88
-	// Line 1179, Address: 0x211ac0, Func Offset: 0x90
-	// Line 1180, Address: 0x211ac8, Func Offset: 0x98
-	// Line 1181, Address: 0x211ad4, Func Offset: 0xa4
-	// Line 1182, Address: 0x211b08, Func Offset: 0xd8
-	// Line 1184, Address: 0x211b0c, Func Offset: 0xdc
-	// Line 1182, Address: 0x211b10, Func Offset: 0xe0
-	// Line 1184, Address: 0x211b14, Func Offset: 0xe4
-	// Line 1186, Address: 0x211b2c, Func Offset: 0xfc
-	// Line 1187, Address: 0x211b48, Func Offset: 0x118
-	// Line 1189, Address: 0x211b50, Func Offset: 0x120
-	// Line 1192, Address: 0x211b54, Func Offset: 0x124
-	// Line 1189, Address: 0x211b5c, Func Offset: 0x12c
-	// Line 1192, Address: 0x211b60, Func Offset: 0x130
-	// Line 1197, Address: 0x211b70, Func Offset: 0x140
-	// Line 1200, Address: 0x211b7c, Func Offset: 0x14c
-	// Line 1204, Address: 0x211b80, Func Offset: 0x150
-	// Func End, Address: 0x211b9c, Func Offset: 0x16c
+    
+    if (((eaP = bhEne29_ActionSearch(eawP, eawP->act_now, act_dst)) == NULL) && (eawP->act_now != act_dst)) 
+    {
+        eaP = bhEne29_ActionSearch(eawP, -1, act_dst);
+    }
+    
+    if (eaP != NULL) 
+    {
+        njMemCopy4(&eawP->b_act_flg, &eawP->act_flg, 7);
+        
+        eawP->b_mtn_md = ewP->mtn_md;
+        
+        eawP->act_flg = 0;
+        
+        eawP->prgP = eaP->prgP;
+        
+        eawP->act_cnt = 0;
+        eawP->act_frm = eaP->frm_no;
+        
+        ewP->mtn_no = eaP->mtn_no;
+        ewP->frm_no = eaP->frm_no * 65536;
+        
+        ewP->hokan_rate  = eaP->hkn_lvl * (65536.0 / 255.0);
+        ewP->hokan_count = eaP->hkn_cnt;
+
+        if ((eaP->flag & 0x20000)) 
+        {
+            ewP->mtn_add = 0;
+        } 
+        else if ((eaP->flag & 0x40000)) 
+        {
+            ewP->mtn_add = -65536;
+        } 
+        else 
+        {
+            ewP->mtn_add =  65536;
+        }
+
+        ewP->mtn_md = (unsigned short)eaP->flag;
+        
+        eawP->chg_rte = eaP->chg_rte * 65536.0f;
+        
+        eawP->act_now = act_dst;
+        
+        return 1;
+    }
+    
+    return 0;
 }
 
 // 100% matching!
