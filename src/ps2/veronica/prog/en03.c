@@ -3681,15 +3681,12 @@ int bhEne03_DirTarget(BH_PWORK* epw, NJS_POINT3* pos, int w)
 	// Func End, Address: 0x19eb80, Func Offset: 0xc0
 }
 
-// 
-// Start address: 0x19eb80
+// 100% matching!
 void bhEne03_GoAHead(BH_PWORK* epw)
 {
-	// Line 4977, Address: 0x19eb80, Func Offset: 0
-	// Line 4978, Address: 0x19eb9c, Func Offset: 0x1c
-	// Line 4979, Address: 0x19ebb8, Func Offset: 0x38
-	// Line 4980, Address: 0x19ebd0, Func Offset: 0x50
-	// Func End, Address: 0x19ebd8, Func Offset: 0x58
+	epw->px -= EXP0_F(32) * epw->spd;
+    epw->py -= EXP0_F(36) * epw->spd;
+    epw->pz -= EXP0_F(40) * epw->spd;
 }
 
 // 
@@ -4928,7 +4925,7 @@ void bhEne03_SetModelFlg(BH_PWORK* epw, unsigned int and_flg, unsigned int or_fl
 	unsigned int i;
 
     owk = epw->mlwP->owP;
-	
+
     for (i = 0; i < epw->mnwP->obj_num; i++, owk++)
     {
         owk->flg &= and_flg;
