@@ -7,9 +7,9 @@
 #include "../../../ps2/veronica/prog/zonzon1.h"
 #include "../../../ps2/veronica/prog/hitchkl.h"
 #include "../../../ps2/veronica/prog/pwksub.h"
+#include "../../../ps2/veronica/prog/rutchk.h"
 
 // ENEMY: Hunter/Sweeper 
-
 
 NJS_VECTOR hu_020[25] =
 {
@@ -465,7 +465,11 @@ NJS_VECTOR hu_001[60] =
   {-0.048877f, -0.137895f, -0.074804f},
 };
 
-/*int ENE05_HITPOINT[16][2];*/
+static int ENE05_HITPOINT[2][16] =
+{
+  {120, 120, 120, 135, 135, 135, 135, 150, 150, 150, 150, 165, 165, 165, 165, 165},
+  {45, 45, 45, 45, 45, 45, 45, 60, 60, 60, 60, 60, 75, 75, 75, 75}
+};
 
 static char joint_tree[11][8] = 
 {
@@ -481,11 +485,72 @@ static char joint_tree[11][8] =
     { 0,    1, 24, 25,   26,   27, 0xFF,    0 },  
     { 0,    1,  2,  3, 0xFF,    0,    0,    0 },
 };
-/*unsigned char flip_tree[28];
-char SdwTab[6];
-_anon18 ene05_child;
-_anon44 BloodParam;
-_anon34 DmgReact[21];
+
+static unsigned char flip_tree[28] =
+{
+  0, 1, 2, 3, 4, 5, 13, 14, 15, 16, 17, 18, 19, 6, 7, 8, 9, 10, 11, 12, 24, 25, 26, 27, 20, 21, 22, 23
+};
+
+static char SdwTab[6] =
+{
+  1, 23, 27, 7, 14, -1
+};
+
+static ETTY_WORK ene05_child =
+{
+    0x8001,                                 /* flg */
+    0x1F,                                   /* id */
+    0,                                      /* type */
+    0,                                      /* flr_no */
+    0,                                      /* mdlver */
+    0,                                      /* wrk_no */
+    0,                                      /* prm1 */
+    0.0f,                                   /* px */
+    0.0f,                                   /* py */
+    0.0f,                                   /* pz */
+    0,                                      /* ax */
+    0,                                      /* az */
+    0,                                      /* ay */
+    0,                                      /* aspd */
+    {0, 0, 0, 0}                            /* hide */
+};
+
+static BP_WORK BloodParam =
+{
+    {0.0f, 0.1f, 0.0f},                      /* off_pos */
+    0,                                       /* srd_dir */
+    0.0f,                                    /* srd_pos */
+    0.059999999f,                            /* bld_spd */
+    {1.6f, 1.2f, 1.0f, 1.6f, 1.2f},          /* srt_spd */
+    {0, 3, 6, 9, 13}                         /* srt_dir */
+};
+
+static DMG_REACT DmgReact[21] =
+{
+    {{0, 1, 0}, {0, 0, 0}, 0},
+    {{0, 1, 0}, {0, 0, 0}, 0},
+    {{0, 0, 0}, {0, 0, 0}, 0},
+    {{1, 1, 0}, {0, 0, 0}, 0},
+    {{1, 1, 0}, {0, 0, 0}, 0},
+    {{1, 1, 0}, {0, 0, 0}, 0},
+    {{1, 1, 0}, {0, 0, 0}, 0},
+    {{1, 1, 0}, {0, 0, 0}, 0},
+    {{0, 0, 0}, {0, 0, 0}, 0},
+    {{1, 1, 0}, {0, 0, 0}, 0},
+    {{0, 0, 0}, {0, 0, 0}, 0},
+    {{2, 1, 0}, {1, 0, 0}, 0},
+    {{0, 0, 0}, {0, 0, 0}, 0},
+    {{1, 1, 0}, {0, 0, 0}, 0},
+    {{2, 1, 0}, {1, 1, 1}, 1},
+    {{-1, -1, -1}, {0, 0, 0}, 2},
+    {{-1, -1, -1}, {0, 0, 0}, 1},
+    {{-1, -1, -1}, {0, 0, 0}, 0},
+    {{2, 2, 2}, {1, 1, 1}, 5},
+    {{2, 2, 2}, {0, 0, 0}, 1},
+    {{2, 2, 2}, {1, 1, 1}, 5}
+};
+
+/*
 _anon36 BloodTblF[28];
 _anon36 BloodTblR[28];
 _anon47 CombWepTbl[21];
@@ -1142,58 +1207,77 @@ void bhEne05_MV01(BH_PWORK* epw)
 	// Func End, Address: 0x1ae5c8, Func Offset: 0x618
 }
 
-// 
-// Start address: 0x1ae5d0
+*/
+
+// 100% matching!
 void bhEne05_MV02(BH_PWORK* epw)
 {
-	_anon38 pos;
-	// Line 1594, Address: 0x1ae5d0, Func Offset: 0
-	// Line 1597, Address: 0x1ae5dc, Func Offset: 0xc
-	// Line 1600, Address: 0x1ae600, Func Offset: 0x30
-	// Line 1603, Address: 0x1ae614, Func Offset: 0x44
-	// Line 1604, Address: 0x1ae620, Func Offset: 0x50
-	// Line 1605, Address: 0x1ae628, Func Offset: 0x58
-	// Line 1606, Address: 0x1ae654, Func Offset: 0x84
-	// Line 1607, Address: 0x1ae65c, Func Offset: 0x8c
-	// Line 1609, Address: 0x1ae664, Func Offset: 0x94
-	// Line 1610, Address: 0x1ae66c, Func Offset: 0x9c
-	// Line 1611, Address: 0x1ae674, Func Offset: 0xa4
-	// Line 1613, Address: 0x1ae67c, Func Offset: 0xac
-	// Line 1615, Address: 0x1ae684, Func Offset: 0xb4
-	// Line 1614, Address: 0x1ae688, Func Offset: 0xb8
-	// Line 1615, Address: 0x1ae68c, Func Offset: 0xbc
-	// Line 1613, Address: 0x1ae690, Func Offset: 0xc0
-	// Line 1614, Address: 0x1ae698, Func Offset: 0xc8
-	// Line 1615, Address: 0x1ae69c, Func Offset: 0xcc
-	// Line 1616, Address: 0x1ae6a0, Func Offset: 0xd0
-	// Line 1617, Address: 0x1ae6a4, Func Offset: 0xd4
-	// Line 1616, Address: 0x1ae6a8, Func Offset: 0xd8
-	// Line 1617, Address: 0x1ae6ac, Func Offset: 0xdc
-	// Line 1618, Address: 0x1ae6b0, Func Offset: 0xe0
-	// Line 1621, Address: 0x1ae6bc, Func Offset: 0xec
-	// Line 1624, Address: 0x1ae6c8, Func Offset: 0xf8
-	// Line 1625, Address: 0x1ae6f0, Func Offset: 0x120
-	// Line 1626, Address: 0x1ae6fc, Func Offset: 0x12c
-	// Line 1627, Address: 0x1ae704, Func Offset: 0x134
-	// Line 1629, Address: 0x1ae70c, Func Offset: 0x13c
-	// Line 1630, Address: 0x1ae71c, Func Offset: 0x14c
-	// Line 1629, Address: 0x1ae720, Func Offset: 0x150
-	// Line 1630, Address: 0x1ae724, Func Offset: 0x154
-	// Line 1634, Address: 0x1ae734, Func Offset: 0x164
-	// Line 1639, Address: 0x1ae76c, Func Offset: 0x19c
-	// Line 1640, Address: 0x1ae790, Func Offset: 0x1c0
-	// Line 1641, Address: 0x1ae7ac, Func Offset: 0x1dc
-	// Line 1644, Address: 0x1ae7b4, Func Offset: 0x1e4
-	// Line 1647, Address: 0x1ae7d8, Func Offset: 0x208
-	// Line 1648, Address: 0x1ae7e4, Func Offset: 0x214
-	// Line 1649, Address: 0x1ae7e8, Func Offset: 0x218
-	// Line 1650, Address: 0x1ae810, Func Offset: 0x240
-	// Line 1651, Address: 0x1ae818, Func Offset: 0x248
-	// Line 1652, Address: 0x1ae81c, Func Offset: 0x24c
-	// Line 1655, Address: 0x1ae820, Func Offset: 0x250
-	// Func End, Address: 0x1ae830, Func Offset: 0x260
+    NJS_POINT3 pos;
+
+    switch (epw->mode3)
+    {
+    case 0:
+        epw->flg &= ~0x40000;
+        if (epw->mtn_no != 1)
+        {
+            if (epw->mtn_no == 0)
+            {
+                epw->frm_no = (epw->frm_no / 3) & 0xFFFF0000;
+            } 
+            else
+            {
+                epw->frm_no = 655360;
+            }
+            epw->mtn_no = 1;
+            epw->hokan_count = 10;
+            epw->hokan_rate = 45875;
+        }
+        epw->mtn_md &= ~2;
+        epw->mtn_add = 65536;
+        epw->spd = 1.2f;
+        epw->ayp = epw->ay;
+        epw->ct0 = 30;
+        epw->mode3++;
+
+    case 1:
+        bhAddSpeed(epw, 0);
+        
+        if ((bhCheckRoute((NJS_POINT3*)&epw->px, (NJS_POINT3*)&plp->px, &pos)) != 0xFF) 
+        {
+            EXP0_F(0x8) = pos.x;
+            EXP0_F(0x10) = pos.z;
+        } 
+        else
+        {
+            EXP0_F(0x8) = plp->px;
+            EXP0_F(0x10) = plp->pz;
+        }
+        
+        if ((EXP0_UC(0x14) != 0) && ((bhSearchPlayer(epw, 5461) == -1) || (bhEne05_CheckPlyRoute(epw) == 0)))
+        {
+            epw->ayp = epw->ay + bhEne_DirTarget(epw, EXP0_F(0x8), EXP0_F(0x10), 21845);
+            epw->ay += ((short)(epw->ayp - epw->ay) / 4);
+        } 
+        else
+        {
+            epw->ay += bhEne_DirTarget(epw, EXP0_F(0x8), EXP0_F(0x10), 546);
+        }
+
+        if (epw->ct0 != 0)
+        {
+            epw->ct0--;
+        }
+        else if (EXP0_F(0x0) < 15.0f)
+        {
+            epw->mode1 = 1;
+            epw->mode2 = 1;
+            epw->mode3 = 0;
+        }
+        break;
+    }
 }
 
+/*
 // 
 // Start address: 0x1ae830
 void bhEne05_MV03(BH_PWORK* epw)
