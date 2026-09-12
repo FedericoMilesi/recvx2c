@@ -501,7 +501,7 @@ void bhEne05_BR00(BH_PWORK* epw)
 }
 
 // 100% matching!
-void bhEne05_BR01()
+void bhEne05_BR01(void)
 {
 
 }
@@ -849,16 +849,14 @@ void bhEne05_MV03(BH_PWORK* epw)
 	// Func End, Address: 0x1aed20, Func Offset: 0x4f0
 }
 
-// 
-// Start address: 0x1aed20
-void bhEne05_MV04()
+*/
+// 100% matching!
+void bhEne05_MV04(void)
 {
-	// Line 1797, Address: 0x1aed20, Func Offset: 0
-	// Func End, Address: 0x1aed28, Func Offset: 0x8
+
 }
 
-// 
-// Start address: 0x1aed30
+/*
 void bhEne05_MV05(BH_PWORK* epw)
 {
 	float dist;
@@ -2153,7 +2151,7 @@ void bhEne05_DG00(BH_PWORK* epw)
 */
 
 // 100% matching!
-void bhEne05_DG01()
+void bhEne05_DG01(void)
 {
 
 }
@@ -4498,7 +4496,7 @@ void bhEne05_HitMark(BH_PWORK* epw)
 */
 
 // 100% matching!
-void bhEne05_DustEffect()
+void bhEne05_DustEffect(void)
 {
 
 }
