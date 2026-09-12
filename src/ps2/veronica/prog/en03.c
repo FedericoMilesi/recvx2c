@@ -3688,27 +3688,30 @@ void bhEne03_SearchPlayer(BH_PWORK* epw, int ang)
 	// Func End, Address: 0x19eab4, Func Offset: 0x1a4
 }
 
-// 
-// Start address: 0x19eac0
+// 100% matching!
 int bhEne03_DirTarget(BH_PWORK* epw, NJS_POINT3* pos, int w)
 {
-	NJS_VECTOR vec;
 	int ang;
-	// Line 4946, Address: 0x19eac0, Func Offset: 0
-	// Line 4951, Address: 0x19ead0, Func Offset: 0x10
-	// Line 4953, Address: 0x19ead8, Func Offset: 0x18
-	// Line 4951, Address: 0x19eae0, Func Offset: 0x20
-	// Line 4952, Address: 0x19eae8, Func Offset: 0x28
-	// Line 4953, Address: 0x19eaf8, Func Offset: 0x38
-	// Line 4956, Address: 0x19eb08, Func Offset: 0x48
-	// Line 4957, Address: 0x19eb14, Func Offset: 0x54
-	// Line 4958, Address: 0x19eb1c, Func Offset: 0x5c
-	// Line 4960, Address: 0x19eb2c, Func Offset: 0x6c
-	// Line 4961, Address: 0x19eb3c, Func Offset: 0x7c
-	// Line 4962, Address: 0x19eb50, Func Offset: 0x90
-	// Line 4965, Address: 0x19eb68, Func Offset: 0xa8
-	// Line 4966, Address: 0x19eb6c, Func Offset: 0xac
-	// Func End, Address: 0x19eb80, Func Offset: 0xc0
+	NJS_VECTOR vec;
+	
+    vec.x = epw->px - pos->x;
+    vec.y = epw->py - pos->y;
+    vec.z = epw->pz - pos->z;
+    
+    njSetMatrix(NULL, (NJS_MATRIX*)epw->exp0);
+    
+    njInvertMatrix(NULL);
+    
+    njCalcPoint(NULL, &vec, &vec);
+    
+    ang = bhArcTan2(vec.x, vec.z);
+    
+    if (w < abs(ang))
+    {
+        ang = (ang > 0) ? w : -w; 
+    }
+    
+    return ang;
 }
 
 // 100% matching!
