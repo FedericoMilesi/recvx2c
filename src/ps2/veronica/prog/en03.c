@@ -3785,21 +3785,31 @@ void bhEne03_HidePartsSub1(NJS_CNK_OBJECT* p)
     }
 }
 
-// 
-// Start address: 0x19ef20
+// 100% matching!
 void bhEne03_HideParts(BH_PWORK* epw, unsigned short PartsNo, unsigned short flg)
 {
 	NJS_CNK_OBJECT* p;
-	// Line 5101, Address: 0x19ef20, Func Offset: 0
-	// Line 5104, Address: 0x19ef28, Func Offset: 0x8
-	// Line 5105, Address: 0x19ef48, Func Offset: 0x28
-	// Line 5106, Address: 0x19ef50, Func Offset: 0x30
-	// Line 5107, Address: 0x19ef5c, Func Offset: 0x3c
-	// Line 5108, Address: 0x19ef70, Func Offset: 0x50
-	// Line 5109, Address: 0x19ef78, Func Offset: 0x58
-	// Line 5110, Address: 0x19ef88, Func Offset: 0x68
-	// Line 5112, Address: 0x19ef9c, Func Offset: 0x7c
-	// Func End, Address: 0x19efa8, Func Offset: 0x88
+
+    p = &epw->mlwP->objP[PartsNo];
+
+    if (flg)
+    {
+        p->evalflags |= 0x8;
+
+        if (p->child != NULL)
+        {
+            bhEne03_HidePartsSub0(p->child);
+        }
+    }
+    else
+    {
+        p->evalflags &= ~0x8;
+
+        if (p->child != NULL)
+        {
+            bhEne03_HidePartsSub1(p->child);
+        }
+    }
 }
 
 // 
@@ -4947,7 +4957,7 @@ void bhEne03_AddNullTrans(BH_PWORK* epw, NJS_VECTOR* mtn)
 	NJS_VECTOR v;
 
     njCalcVector((NJS_MATRIX*)epw->exp0, &mtn[epw->frm_no / 65536], &v);
-	
+
     epw->px += v.x;
     epw->pz += v.z;
 }
