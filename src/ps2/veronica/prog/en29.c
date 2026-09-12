@@ -1,5 +1,6 @@
 #include "../../../ps2/veronica/prog/en19.h"
 #include "../../../ps2/veronica/prog/en29.h"
+#include "../../../ps2/veronica/prog/Motion.h"
 #include "../../../ps2/veronica/prog/main.h"
 #include "../../../ps2/veronica/prog/ps2_dummy.h"
 
@@ -526,22 +527,24 @@ static int bhEne29_ActionChange(BH_PWORK* ewP, eaw_typ* eawP, int act_dst)
 	// Func End, Address: 0x211b9c, Func Offset: 0x16c
 }
 
-// 
-// Start address: 0x211ba0
+// 100% matching!
 static int bhEne29_ActionMain(BH_PWORK* ewP, eaw_typ* eawP)
 {
 	short* s16P;
-	// Line 1215, Address: 0x211ba0, Func Offset: 0
-	// Line 1217, Address: 0x211bb4, Func Offset: 0x14
-	// Line 1223, Address: 0x211bdc, Func Offset: 0x3c
-	// Line 1221, Address: 0x211be8, Func Offset: 0x48
-	// Line 1223, Address: 0x211bec, Func Offset: 0x4c
-	// Line 1224, Address: 0x211c08, Func Offset: 0x68
-	// Line 1228, Address: 0x211c14, Func Offset: 0x74
-	// Line 1230, Address: 0x211c48, Func Offset: 0xa8
-	// Line 1228, Address: 0x211c4c, Func Offset: 0xac
-	// Line 1231, Address: 0x211c50, Func Offset: 0xb0
-	// Func End, Address: 0x211c68, Func Offset: 0xc8
+    
+    if (eawP->prgP != NULL) 
+    {
+        eawP->prgP(ewP, ewP->exp0, eawP->act_cnt++);
+    }
+    
+    s16P = (short*)&eawP->act_frm;
+    
+    s16P[1] += bhSetMotion(ewP, ewP->mtn_add, ewP->mtn_md, ewP->mtn_tp);
+    s16P[0] =  ewP->frm_no / 65536;
+    
+    eawP->mtn_rte = ewP->frm_no / (ewP->mnwP[ewP->mtn_no].frm_num - 1);
+    
+    return 0;
 }
 
 // 
