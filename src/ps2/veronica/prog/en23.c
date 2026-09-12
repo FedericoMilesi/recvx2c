@@ -1164,7 +1164,7 @@ void bhEne23_Damage(BH_PWORK* epw)
 // 100% matching!
 void bhEne23_DG00()
 {
-	
+
 }
 
 /*// 
@@ -1200,17 +1200,15 @@ void bhEne23_DG01(BH_PWORK* epw)
 	// Line 2097, Address: 0x202f78, Func Offset: 0x148
 	// Line 2098, Address: 0x202f80, Func Offset: 0x150
 	// Func End, Address: 0x202f94, Func Offset: 0x164
-}
+}*/
 
-// 
-// Start address: 0x202fa0
+// 100% matching!
 void bhEne23_DG02()
 {
-	// Line 2109, Address: 0x202fa0, Func Offset: 0
-	// Func End, Address: 0x202fa8, Func Offset: 0x8
+	
 }
 
-// 
+/*// 
 // Start address: 0x202fb0
 void bhEne23_DG03(BH_PWORK* epw)
 {
