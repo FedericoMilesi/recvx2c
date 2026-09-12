@@ -752,17 +752,17 @@ void bhEne03_Init(BH_PWORK* epw)
 	// Func End, Address: 0x1973ec, Func Offset: 0x6dc
 }
 
-// 
-// Start address: 0x1973f0
+// 100% matching!
 void bhEne03_Brain(BH_PWORK* epw)
 {
-	// Line 1069, Address: 0x1973f0, Func Offset: 0
-	// Line 1071, Address: 0x1973f8, Func Offset: 0x8
-	// Line 1072, Address: 0x19740c, Func Offset: 0x1c
-	// Line 1073, Address: 0x19741c, Func Offset: 0x2c
-	// Line 1074, Address: 0x197424, Func Offset: 0x34
-	// Line 1076, Address: 0x197444, Func Offset: 0x54
-	// Func End, Address: 0x197450, Func Offset: 0x60
+	if ((epw->flg & 0x2000000))
+    {
+        bhEne03_BrainType[2](epw);
+    }
+    else 
+	{
+		bhEne03_BrainType[epw->type](epw);
+	}
 }
 
 // 
