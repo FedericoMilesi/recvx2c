@@ -440,18 +440,20 @@ static void bhEne29_Mv02(BH_PWORK* ewP, en29_freework* fwP, int count)
     }
 }
 
-// 
-// Start address: 0x2117e0
+// 100% matching!
 static void bhEne29_Mv03(BH_PWORK* ewP, en29_freework* fwP, int count)
 {
-	// Line 1039, Address: 0x2117e0, Func Offset: 0
-	// Line 1040, Address: 0x2117f4, Func Offset: 0x14
-	// Line 1041, Address: 0x2117fc, Func Offset: 0x1c
-	// Line 1044, Address: 0x21183c, Func Offset: 0x5c
-	// Line 1045, Address: 0x211854, Func Offset: 0x74
-	// Line 1046, Address: 0x211868, Func Offset: 0x88
-	// Line 1048, Address: 0x211874, Func Offset: 0x94
-	// Func End, Address: 0x211888, Func Offset: 0xa8
+	if (count == 0)
+    {
+        RequestEnemySe(sys->enow, (NJS_POINT3*)&ewP->mlwP->owP[fwP->bas_obj].mtx[12], 74499);
+    }
+
+    if (bhEne29_AttackHitCheck(ewP, fwP) != -1)
+    {
+        bhEne29_PlySetDamage(plp, fwP, 2);
+
+        fwP->status |= 0x8;
+    }
 }
 
 // 
