@@ -4501,15 +4501,15 @@ void bhEne05_HitMark(BH_PWORK* epw)
 	// Line 6158, Address: 0x1b89f4, Func Offset: 0x554
 	// Func End, Address: 0x1b8a18, Func Offset: 0x578
 }
+*/
 
-// 
-// Start address: 0x1b8a20
+// 100% matching!
 void bhEne05_DustEffect()
 {
-	// Line 6260, Address: 0x1b8a20, Func Offset: 0
-	// Func End, Address: 0x1b8a28, Func Offset: 0x8
-}*/
 
+}
+
+// 100% matching!
 void bhEne05_CallSE(BH_PWORK* epw) 
 {
     int fno;
