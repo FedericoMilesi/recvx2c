@@ -939,19 +939,23 @@ void bhEne03_BR02(BH_PWORK* epw)
 	// Func End, Address: 0x197e04, Func Offset: 0xe4
 }
 
-// 
-// Start address: 0x197e10
+// 100% matching!
 void bhEne03_Move(BH_PWORK* epw)
 {
-	// Line 1394, Address: 0x197e10, Func Offset: 0
-	// Line 1396, Address: 0x197e1c, Func Offset: 0xc
-	// Line 1397, Address: 0x197e2c, Func Offset: 0x1c
-	// Line 1400, Address: 0x197e34, Func Offset: 0x24
-	// Line 1401, Address: 0x197e50, Func Offset: 0x40
-	// Line 1404, Address: 0x197e58, Func Offset: 0x48
-	// Line 1405, Address: 0x197e68, Func Offset: 0x58
-	// Line 1406, Address: 0x197e88, Func Offset: 0x78
-	// Func End, Address: 0x197e98, Func Offset: 0x88
+    if (epw->mode1 == 1)
+    {
+        bhEne03_Brain(epw);
+    }
+
+    if (((epw->flg & 0x4)) && (!(epw->flg & 0x2)))
+    {
+        bhEne03_DamageInit(epw);
+    }
+
+    if (epw->mode0 == 1)
+    {
+        bhEne03_MoveMode2[epw->mode2](epw);
+    }
 }
 
 // 
