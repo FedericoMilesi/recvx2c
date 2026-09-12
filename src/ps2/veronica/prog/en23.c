@@ -1,39 +1,358 @@
 #include "../../../ps2/veronica/prog/en23.h"
+#include "../../../ps2/veronica/prog/en02.h"
+#include "../../../ps2/veronica/prog/en03.h"
 #include "../../../ps2/veronica/prog/en03sub.h"
+#include "../../../ps2/veronica/prog/Motion.h"
 #include "../../../ps2/veronica/prog/main.h"
+#include "../../../ps2/veronica/prog/subpl.h"
+#include "../../../ps2/veronica/prog/zonzon1.h"
 
 // ENEMY: Giant Black Widow 
 
-/*_anon24 spl_016[20];
-_anon24 spl_023[25];
-_anon24 spl_051[80];
-_anon24 spl_052[21];
-char joint_tree[6][5];
-unsigned char flip_tree[37];
-char SdwTab[6];
-_anon17 ene23_child;
-char BrokenParts[2][2];
-_anon41 BloodParam;
-_anon17 ene24;
-_anon32 BloodTbl[37];
-_anon27 CapColTabA[25];
-_anon27 CapColTabB[23];
-_anon39 DmgReact[21];
-_anon45 CombWepTbl[21];
-_anon49 CombJointTbl[37];
-void(*bhEne23_Mode0)(BH_PWORK*)[6];*/
-void (*bhEne23_BrainType[2])(BH_PWORK*);
-/*void(*bhEne23_MoveMode2)(BH_PWORK*)[13];*/
-void (*bhEne23_NageMode2[1])(BH_PWORK*);
-/*void(*bhEne23_DamageMode2)(BH_PWORK*)[8];*/
-void (*bhEne23_DeadMode2[4])(BH_PWORK*);
+NJS_POINT3 spl_051[80] = 
+{
+    { 0.0f,          0.0f,          0.0f },
+    { 0.0f, -0.043997999f,          0.0f },
+    { 0.0f, -0.123427004f,          0.0f },
+    { 0.0f, -0.190007001f,          0.0f },
+    { 0.0f, -0.243738994f,          0.0f },
+    { 0.0f,    -0.284621f,          0.0f },
+    { 0.0f, -0.312653005f,          0.0f },
+    { 0.0f,  -0.32783699f,          0.0f },
+    { 0.0f, -0.330172986f,          0.0f },
+    { 0.0f, -0.319656014f,          0.0f },
+    { 0.0f,  -0.29629299f,          0.0f },
+    { 0.0f, -0.260078996f,          0.0f },
+    { 0.0f, -0.211016998f,          0.0f },
+    { 0.0f, -0.149105996f,          0.0f },
+    { 0.0f, -0.074346997f,          0.0f },
+    { 0.0f,     0.005778f, -0.015845001f },
+    { 0.0f,  0.078883998f,     -0.04712f },
+    { 0.0f,  0.145785004f,    -0.078342f },
+    { 0.0f,  0.205887005f, -0.110159002f },
+    { 0.0f,  0.258619994f, -0.143058002f },
+    { 0.0f,  0.303436011f, -0.177352995f },
+    { 0.0f,  0.339814991f, -0.213191003f },
+    { 0.0f,  0.367247999f, -0.250535011f },
+    { 0.0f,  0.385280997f, -0.289187998f },
+    { 0.0f,  0.393503994f, -0.328774989f },
+    { 0.0f,  0.391586989f, -0.368777007f },
+    { 0.0f,  0.379301012f,  -0.40853101f },
+    { 0.0f,  0.356534988f, -0.447259992f },
+    { 0.0f,      0.32332f, -0.484091014f },
+    { 0.0f,   0.27985099f, -0.518110991f },
+    { 0.0f,  0.226494998f,  -0.54836601f },
+    { 0.0f,  0.163798004f, -0.573920012f },
+    { 0.0f,  0.092472002f, -0.593909025f },
+    { 0.0f,     0.013408f, -0.607558012f },
+    { 0.0f,    -0.072349f,  -0.61423099f },
+    { 0.0f, -0.163657993f, -0.613456011f },
+    { 0.0f, -0.259267986f, -0.604954004f },
+    { 0.0f, -0.357311994f, -0.588689029f },
+    { 0.0f, -0.446521997f, -0.564808011f },
+    { 0.0f, -0.527827024f, -0.533720016f },
+    { 0.0f,    -0.602651f, -0.496035993f },
+    { 0.0f, -0.669950008f, -0.452576011f },
+    { 0.0f, -0.728837013f, -0.404316008f },
+    { 0.0f, -0.778612971f, -0.352382988f },
+    { 0.0f, -0.818789005f, -0.297989011f },
+    { 0.0f, -0.849110007f, -0.242401004f },
+    { 0.0f, -0.869520009f, -0.186892003f },
+    { 0.0f, -0.880186021f, -0.132695004f },
+    { 0.0f, -0.881483018f,    -0.080978f },
+    { 0.0f, -0.873930991f,    -0.032785f },
+    { 0.0f,  -0.85819602f,     0.010963f },
+    { 0.0f, -0.835048974f,     0.049513f },
+    { 0.0f, -0.805310011f,     0.082278f },
+    { 0.0f, -0.769832015f,     0.108834f },
+    { 0.0f, -0.729451001f,     0.128943f },
+    { 0.0f, -0.684931993f,     0.142512f },
+    { 0.0f, -0.636990011f,     0.149603f },
+    { 0.0f, -0.586210012f,     0.150407f },
+    { 0.0f, -0.533039987f,     0.145226f },
+    { 0.0f, -0.477804005f,     0.134455f },
+    { 0.0f, -0.420648992f,     0.118571f },
+    { 0.0f, -0.361571997f,     0.098123f },
+    { 0.0f, -0.300401002f,     0.073717f },
+    { 0.0f, -0.236799002f,     0.046018f },
+    { 0.0f, -0.170291007f,      0.01577f },
+    { 0.0f, -0.104172997f,     0.000002f },
+    { 0.0f, -0.042123001f,     0.000003f },
+    { 0.0f,     0.011841f,     0.000005f },
+    { 0.0f,  0.057665002f,     0.000004f },
+    { 0.0f,      0.09535f,     0.000005f },
+    { 0.0f,  0.124898002f,     0.000006f },
+    { 0.0f,  0.146304995f,     0.000006f },
+    { 0.0f,  0.159574002f,     0.000006f },
+    { 0.0f,  0.164702997f,     0.000007f },
+    { 0.0f,  0.161695004f,     0.000006f },
+    { 0.0f,  0.150545999f,     0.000004f },
+    { 0.0f,  0.131259993f,     0.000005f },
+    { 0.0f,  0.103832997f,     0.000002f },
+    { 0.0f,     0.068269f,     0.000003f },
+    { 0.0f,     0.024565f,     0.000001f }
+};
+NJS_POINT3 spl_052[21] = 
+{
+    {          0.0f,          0.0f,       0.0f },
+    {  0.323074013f,   1.16421604f, -0.000003f },
+    {  0.862697005f,   1.27816403f, -0.000003f },
+    {   1.17025101f,   1.04479098f, -0.000004f },
+    {     1.121099f,  0.545728981f, -0.000004f },
+    {  0.680630982f,     0.022164f, -0.000004f },
+    {     0.010563f, -0.280977994f, -0.000005f },
+    { -0.589628994f, -0.296923995f, -0.000004f },
+    { -0.868438005f, -0.179964006f, -0.000004f },
+    { -0.754297972f, -0.167448997f, -0.000004f },
+    { -0.488382012f, -0.711363971f, -0.000004f },
+    { -0.407911003f,    -1.540488f, -0.000004f },
+    { -0.329908013f,  -2.07722092f, -0.000004f },
+    {    -0.255604f,  -2.31096101f, -0.000003f },
+    { -0.188733995f,  -2.23500705f, -0.000004f },
+    { -0.131156996f,  -1.84400296f, -0.000003f },
+    { -0.083714001f,  -1.29996598f, -0.000002f },
+    {    -0.046722f, -0.543478012f, -0.000002f },
+    {    -0.020282f,  0.497803003f, -0.000002f },
+    {    -0.004415f,  0.938849986f, -0.000001f },
+    {     0.000878f,  0.506936014f,       0.0f }
+};
+
+static char joint_tree[5][6] = 
+{
+    {  0, -1,  0,  0,  0,  0 },
+    {  0,  1,  4,  5,  6, -1 },
+    {  0,  1, 13, 14, 15, -1 },
+    {  0,  1, 25, 26, 27, -1 },
+    {  0,  1, 28, 29, 30, -1 }
+};
+static unsigned char flip_tree[37] = 
+{
+     0,  1, 23, 24, 25, 26, 27, 22,
+     8, 10,  9, 12, 11, 28, 29, 30,
+    31, 32, 33, 34, 35, 36,  7,  2,
+     3,  4,  5,  6, 13, 14, 15, 16,
+    17, 18, 19, 20, 21
+};
+static char SdwTab[6] = 
+{
+    1, 27, 36, 6, 21, -1
+};
+static ETTY_WORK ene23_child = 
+{
+    0x1, 31, 0, 0, 0, 0, 0, 0.0f, 0.0f, 0.0f, 0, 0, 0, 0, { 0, 0, 0, 0 }
+};
+static char BrokenParts[2][2] = { { 28, 31 }, { 13, 16 } };
+static BP_WORK BloodParam = 
+{
+    { 0.0f, 0.1f, 0.0f }, 0, 0.0f, 0.2f, { 0.5f, 0.1f, 0.6f, 0.3f, 0.5f }, { 0, 3, 6, 9, 12 }
+};
+static BLOOD_TBL BloodTbl[37] = 
+{
+    { 1, {  0.0f,  0.0f,  0.0f }, 0.0f, 0.0f, 0.0f },
+    { 0, {  0.0f,  3.0f, -5.0f }, 3.0f, 0.0f, 4.0f },
+    { 1, {  0.0f,  3.0f,  5.0f }, 3.0f, 2.0f, 5.0f },
+    { 1, {  0.0f,  3.0f,  5.0f }, 3.0f, 2.0f, 5.0f },
+    { 0, { -3.0f,  1.0f,  0.0f }, 3.0f, 0.0f, 1.0f },
+    { 0, { -3.0f,  1.0f,  0.0f }, 3.0f, 0.0f, 1.0f },
+    { 0, { -3.0f,  1.0f,  0.0f }, 3.0f, 0.0f, 1.0f },
+    { 1, {  0.0f,  3.0f,  5.0f }, 3.0f, 2.0f, 5.0f },
+    { 1, {  0.0f,  5.0f,  8.0f }, 4.0f, 3.0f, 6.0f },
+    { 1, {  0.0f,  5.0f, -8.0f }, 4.0f, 3.0f, 6.0f },
+    { 1, {  0.0f,  5.0f, -8.0f }, 4.0f, 3.0f, 6.0f },
+    { 1, {  0.0f,  5.0f, -8.0f }, 4.0f, 3.0f, 6.0f },
+    { 1, {  0.0f,  5.0f, -8.0f }, 4.0f, 3.0f, 6.0f },
+    { 0, { -3.0f,  1.0f,  0.0f }, 3.0f, 0.0f, 1.0f },
+    { 0, { -3.0f,  1.0f,  0.0f }, 3.0f, 0.0f, 1.0f },
+    { 0, { -3.0f,  1.0f,  0.0f }, 3.0f, 0.0f, 1.0f },   
+    { 0, { -3.0f,  1.0f,  0.0f }, 3.0f, 0.0f, 1.0f },
+    { 0, { -3.0f,  1.0f,  0.0f }, 3.0f, 0.0f, 1.0f },
+    { 0, { -3.0f,  1.0f,  0.0f }, 3.0f, 0.0f, 1.0f },
+    { 0, { -3.0f,  1.0f,  0.0f }, 3.0f, 0.0f, 1.0f },
+    { 0, { -3.0f,  1.0f,  0.0f }, 3.0f, 0.0f, 1.0f },
+    { 0, { -3.0f,  1.0f,  0.0f }, 3.0f, 0.0f, 1.0f },
+    { 1, {  0.0f,  3.0f,  5.0f }, 3.0f, 2.0f, 5.0f },
+    { 1, {  0.0f,  3.0f,  5.0f }, 3.0f, 2.0f, 5.0f },
+    { 1, {  0.0f,  3.0f,  5.0f }, 3.0f, 2.0f, 5.0f },
+    { 0, {  3.0f,  1.0f,  0.0f }, 3.0f, 0.0f, 1.0f },
+    { 0, {  3.0f,  1.0f,  0.0f }, 3.0f, 0.0f, 1.0f },
+    { 0, {  3.0f,  1.0f,  0.0f }, 3.0f, 0.0f, 1.0f },
+    { 0, {  3.0f,  1.0f,  0.0f }, 3.0f, 0.0f, 1.0f },
+    { 0, {  3.0f,  1.0f,  0.0f }, 3.0f, 0.0f, 1.0f },
+    { 0, {  3.0f,  1.0f,  0.0f }, 3.0f, 0.0f, 1.0f },
+    { 0, {  3.0f,  1.0f,  0.0f }, 3.0f, 0.0f, 1.0f },
+    { 0, {  3.0f,  1.0f,  0.0f }, 3.0f, 0.0f, 1.0f },
+    { 0, {  3.0f,  1.0f,  0.0f }, 3.0f, 0.0f, 1.0f },
+    { 0, {  3.0f,  1.0f,  0.0f }, 3.0f, 0.0f, 1.0f },
+    { 0, {  3.0f,  1.0f,  0.0f }, 3.0f, 0.0f, 1.0f },
+    { 0, {  3.0f,  1.0f,  0.0f }, 3.0f, 0.0f, 1.0f }
+};
+static CPCL CapColTabA[25] = 
+{
+    {    1,    1,   32 },
+    {    0,    0,  -40 },
+    {    1,    1,   30 },
+    {    0,    0,  -75 },
+    {    1,    1,   25 },
+    {    0,    0, -100 },
+    {    8,    8,   75 },
+    {    0,   30,   65 },
+    {    4,    5,    6 },
+    {    5,    6,    6 },
+    {   25,   26,    6 },
+    {   26,   27,    6 },
+    {   13,   14,    6 },
+    {   14,   15,    6 },
+    {   28,   29,    6 },
+    {   29,   30,    6 },
+    {   16,   17,    6 },
+    {   17,   18,    6 },
+    {   31,   32,    6 },
+    {   32,   33,    6 },
+    {   19,   20,    6 },
+    {   20,   21,    6 },
+    {   34,   35,    6 },
+    {   35,   36,    6 },
+    {    0,    0,    0 }
+};
+static CPCL CapColTabB[23] = 
+{
+    {    1,    1,   32 },
+    {    0,    0,  -40 },
+    {    1,    1,   30 },
+    {    0,    0,  -75 },
+    {    1,    1,   25 },
+    {    0,    0, -100 },
+    {    4,    5,    6 },
+    {    5,    6,    6 },
+    {   25,   26,    6 },
+    {   26,   27,    6 },
+    {   13,   14,    6 },
+    {   14,   15,    6 },
+    {   28,   29,    6 },
+    {   29,   30,    6 },
+    {   16,   17,    6 },
+    {   17,   18,    6 },
+    {   31,   32,    6 },
+    {   32,   33,    6 },
+    {   19,   20,    6 },
+    {   20,   21,    6 },
+    {   34,   35,    6 },
+    {   35,   36,    6 },
+    {    0,    0,    0 }
+};
+static DMG_REACT DmgReact[21] = 
+{
+    { {  0,  1,  0 }, { 0, 0, 0 }, 0 },
+    { {  0,  1,  0 }, { 0, 0, 0 }, 0 },
+    { {  0,  0,  0 }, { 0, 0, 0 }, 0 },
+    { {  1,  1,  0 }, { 0, 0, 0 }, 0 },
+    { {  1,  1,  0 }, { 0, 0, 0 }, 0 },
+    { {  1,  1,  0 }, { 0, 0, 0 }, 0 },
+    { {  1,  1,  0 }, { 0, 0, 0 }, 0 },
+    { {  1,  1,  0 }, { 0, 0, 0 }, 0 },
+    { {  0,  0,  0 }, { 0, 0, 0 }, 0 },
+    { {  1,  1,  0 }, { 0, 0, 0 }, 0 },
+    { {  0,  0,  0 }, { 0, 0, 0 }, 0 },
+    { {  2,  1,  0 }, { 1, 0, 0 }, 0 },
+    { {  0,  0,  0 }, { 0, 0, 0 }, 0 },
+    { {  1,  1,  0 }, { 0, 0, 0 }, 0 },
+    { {  2,  1,  0 }, { 1, 1, 1 }, 1 },
+    { { -1, -1, -1 }, { 0, 0, 0 }, 2 },
+    { { -1, -1, -1 }, { 0, 0, 0 }, 1 },
+    { { -1, -1, -1 }, { 0, 0, 0 }, 0 },
+    { {  2,  2,  2 }, { 1, 1, 1 }, 5 },
+    { {  2,  2,  2 }, { 0, 0, 0 }, 1 },
+    { {  2,  2,  2 }, { 1, 1, 1 }, 5 }
+};
+static COMBWEP_WORK CombWepTbl[21] = 
+{
+    {  0, {  0,  0,  0 },  0,  0 },
+    {  0, {  0,  0,  0 },  0,  0 },
+    {  4, {  1,  0,  0 }, 30, 20 },
+    { 10, {  4,  3,  1 }, 20, 10 },
+    { 10, {  4,  3,  1 }, 20, 10 },
+    { 10, {  4,  3,  1 }, 10,  0 },
+    {  0, {  0,  0,  0 }, 25,  0 },
+    {  0, {  0,  0,  0 }, 25,  0 },
+    { 25, {  5,  3,  1 },  5,  0 },
+    {  0, {  0,  0,  0 },  0,  0 },
+    {  0, {  0,  0,  0 }, 10,  0 },
+    {  0, {  0,  0,  0 }, 30,  0 },
+    { 25, {  5,  4,  2 }, 10,  0 },
+    {  0, {  0,  0,  0 }, 60,  0 },
+    {  0, {  0,  0,  0 },  0,  0 },
+    {  0, {  0,  0,  0 },  0,  0 },
+    { 15, {  1,  1,  1 },  0,  0 },
+    {  0, {  0,  0,  0 },  0,  0 },
+    {  0, {  0,  0,  0 },  0,  0 },
+    {  0, {  0,  0,  0 },  0,  0 },
+    {  0, {  0,  0,  0 },  0,  0 }
+};
+static COMBJOINT_WORK CombJointTbl[37] = { 0 };
+
+void (*bhEne23_Mode0[6])(BH_PWORK*) = 
+{
+	bhEne23_Init,
+	bhEne23_Move,
+	bhEne23_Nage,
+	bhEne23_Damage,
+	bhEne23_Die,
+	bhEne_Event
+};
+void (*bhEne23_BrainType[2])(BH_PWORK*) = 
+{
+	bhEne23_BR00,
+	bhEne23_BR01
+};
+void (*bhEne23_MoveMode2[13])(BH_PWORK*) = 
+{
+	bhEne23_MV00,
+	bhEne23_MV01,
+	bhEne23_MV02,
+	bhEne23_MV03,
+	bhEne23_MV04,
+	bhEne23_MV05,
+	bhEne23_MV06,
+	bhEne23_MV07,
+	bhEne23_MV08,
+	bhEne23_MV09,
+	bhEne23_MV10,
+	bhEne23_MV11,
+	bhEne23_MV12
+};
+void (*bhEne23_NageMode2[1])(BH_PWORK*) = 
+{
+	bhEne23_NG00
+};
+void (*bhEne23_DamageMode2[8])(BH_PWORK*) = 
+{
+	bhEne23_DG00,
+	bhEne23_DG01,
+	bhEne23_DG02,
+	bhEne23_DG03,
+	bhEne23_DG04,
+	bhEne23_DG05,
+	bhEne23_DG06,
+	bhEne23_DG07
+};
+void (*bhEne23_DeadMode2[4])(BH_PWORK*) = 
+{
+	bhEne23_DD00,
+	bhEne23_DD01,
+	bhEne23_DD02,
+	bhEne23_DD03
+};
+/* unused below */
+/*ETTY_WORK ene24;
+NJS_POINT3 spl_016[20];
+NJS_POINT3 spl_023[25];*/
 
 // 
 // Start address: 0x1fff40
 void bhEne23(BH_PWORK* epw)
 {
 	unsigned int flg;
-	//_anon24 pos;
+	NJS_POINT3 pos;
 	// Line 567, Address: 0x1fff40, Func Offset: 0
 	// Line 569, Address: 0x1fff50, Func Offset: 0x10
 	// Line 572, Address: 0x1fff58, Func Offset: 0x18
@@ -83,14 +402,14 @@ void bhEne23(BH_PWORK* epw)
 	scePrintf("bhEne23 - UNIMPLEMENTED!\n");
 }
 
-/*// 
+// 
 // Start address: 0x200160
 void bhEne23_Init(BH_PWORK* epw)
 {
 	int sdw;
-	_anon24 p;
+	NJS_POINT3 p;
 	int i;
-	_anon7* owk;
+	O_WORK* owk;
 	BH_PWORK* ep;
 	BH_PWORK** epw2;
 	// Line 646, Address: 0x200160, Func Offset: 0
@@ -248,7 +567,7 @@ void bhEne23_Init(BH_PWORK* epw)
 	// Line 831, Address: 0x2007f4, Func Offset: 0x694
 	// Line 833, Address: 0x2007f8, Func Offset: 0x698
 	// Func End, Address: 0x200814, Func Offset: 0x6b4
-}*/
+}
 
 // 100% matching!
 void bhEne23_Brain(BH_PWORK* epw)
@@ -256,7 +575,7 @@ void bhEne23_Brain(BH_PWORK* epw)
 	bhEne23_BrainType[epw->type](epw);
 }
 
-/*// 
+// 
 // Start address: 0x200840
 void bhEne23_BR00(BH_PWORK* epw)
 {
@@ -374,7 +693,7 @@ void bhEne23_Move(BH_PWORK* epw)
 void bhEne23_MV00(BH_PWORK* epw)
 {
 	float dist;
-	int mtn[2];
+	int mtn[2] = { 0, 53 };
 	int mno;
 	// Line 1054, Address: 0x200fb0, Func Offset: 0
 	// Line 1055, Address: 0x200fb4, Func Offset: 0x4
@@ -413,13 +732,14 @@ void bhEne23_MV00(BH_PWORK* epw)
 // Start address: 0x201160
 void bhEne23_MV01(BH_PWORK* epw)
 {
-	_anon24 sp;
-	_anon24 dp;
-	float spd[2];
-	float dist;
-	int mtn[2];
+	// already reversed DWARF order
+	NJS_POINT3 pos;
 	int mno;
-	_anon24 pos;
+	int mtn[2] = { 2, 22 };
+	float dist;
+	float spd[2] = { 0.7f, 1.0f };
+	NJS_POINT3 dp;
+	NJS_POINT3 sp;
 	// Line 1104, Address: 0x201160, Func Offset: 0
 	// Line 1106, Address: 0x201164, Func Offset: 0x4
 	// Line 1104, Address: 0x201168, Func Offset: 0x8
@@ -517,17 +837,18 @@ void bhEne23_MV01(BH_PWORK* epw)
 // Start address: 0x201640
 void bhEne23_MV02(BH_PWORK* epw)
 {
-	int fno;
-	float dz;
-	float dx;
-	float dist;
-	float min;
-	int flr_n;
-	int i;
-	_anon21* fp;
-	float spd[2];
-	int mtn[2];
+	// already reversed DWARF order
 	int mno;
+	int mtn[2] = { 2, 22 };
+	float spd[2] = { 0.7f, 1.0f };
+	ATR_WORK* fp;
+	int i;
+	int flr_n;
+	float min;
+	float dist;
+	float dx;
+	float dz;
+	int fno;
 	// Line 1234, Address: 0x201640, Func Offset: 0
 	// Line 1235, Address: 0x201644, Func Offset: 0x4
 	// Line 1234, Address: 0x201648, Func Offset: 0x8
@@ -617,18 +938,19 @@ void bhEne23_MV02(BH_PWORK* epw)
 // Start address: 0x201a50
 void bhEne23_MV03(BH_PWORK* epw)
 {
-	_anon24 p2;
-	_anon24 p1;
-	float dz;
-	float dx;
-	float dist;
-	float min;
-	int flr_n;
-	int i;
-	_anon21* fp;
-	float spd[2];
-	int mtn[2];
+	// already reversed DWARF order
 	int mno;
+	int mtn[2] = { 2, 22 };
+	float spd[2] = { 0.7f, 1.0f };
+	ATR_WORK* fp;
+	int i;
+	int flr_n;
+	float min;
+	float dist;
+	float dx;
+	float dz;
+	NJS_POINT3 p1;
+	NJS_POINT3 p2;
 	// Line 1345, Address: 0x201a50, Func Offset: 0
 	// Line 1346, Address: 0x201a54, Func Offset: 0x4
 	// Line 1345, Address: 0x201a58, Func Offset: 0x8
@@ -718,7 +1040,7 @@ void bhEne23_MV03(BH_PWORK* epw)
 	// Line 1444, Address: 0x201e3c, Func Offset: 0x3ec
 	// Line 1447, Address: 0x201e44, Func Offset: 0x3f4
 	// Func End, Address: 0x201e54, Func Offset: 0x404
-}*/
+}
 
 // 100% matching!
 void bhEne23_MV04()
@@ -726,11 +1048,11 @@ void bhEne23_MV04()
 
 }
 
-/*// 
+// 
 // Start address: 0x201e70
 void bhEne23_MV05(BH_PWORK* epw)
 {
-	int mtn[2];
+	int mtn[2] = { 3, 24 };
 	// Line 1468, Address: 0x201e70, Func Offset: 0
 	// Line 1469, Address: 0x201e74, Func Offset: 0x4
 	// Line 1468, Address: 0x201e78, Func Offset: 0x8
@@ -806,7 +1128,7 @@ void bhEne23_MV05(BH_PWORK* epw)
 // Start address: 0x2020f0
 void bhEne23_MV06(BH_PWORK* epw)
 {
-	int mtn[2];
+	int mtn[2] = { 2, 22 };
 	int mno;
 	// Line 1555, Address: 0x2020f0, Func Offset: 0
 	// Line 1556, Address: 0x2020f4, Func Offset: 0x4
@@ -843,7 +1165,7 @@ void bhEne23_MV06(BH_PWORK* epw)
 	// Line 1591, Address: 0x20226c, Func Offset: 0x17c
 	// Line 1595, Address: 0x202270, Func Offset: 0x180
 	// Func End, Address: 0x202280, Func Offset: 0x190
-}*/
+}
 
 // 100% matching!
 void bhEne23_MV07()
@@ -857,7 +1179,7 @@ void bhEne23_MV08()
 
 }
 
-/*// 
+// 
 // Start address: 0x2022a0
 void bhEne23_MV09(BH_PWORK* epw)
 {
@@ -887,8 +1209,8 @@ void bhEne23_MV09(BH_PWORK* epw)
 // Start address: 0x202390
 void bhEne23_MV10(BH_PWORK* epw)
 {
-	int mtn[2][2];
-	_anon24 pos;
+	int mtn[2][2] = { { 10, 12 }, { 27, 28 } };
+	NJS_POINT3 pos;
 	// Line 1665, Address: 0x202390, Func Offset: 0
 	// Line 1667, Address: 0x20239c, Func Offset: 0xc
 	// Line 1665, Address: 0x2023a0, Func Offset: 0x10
@@ -988,8 +1310,8 @@ void bhEne23_MV10(BH_PWORK* epw)
 // Start address: 0x202840
 void bhEne23_MV11(BH_PWORK* epw)
 {
-	_anon24 trans;
-	int mtn[2][2];
+	NJS_POINT3 trans;
+	int mtn[2][2] = { { 37, 0 }, { 42, 53 } };
 	// Line 1804, Address: 0x202840, Func Offset: 0
 	// Line 1805, Address: 0x202844, Func Offset: 0x4
 	// Line 1804, Address: 0x202848, Func Offset: 0x8
@@ -1050,8 +1372,8 @@ void bhEne23_MV11(BH_PWORK* epw)
 // Start address: 0x202a20
 void bhEne23_MV12(BH_PWORK* epw)
 {
-	_anon24 trans;
-	int mtn[2];
+	NJS_POINT3 trans;
+	int mtn[2] = { 0, 53 };
 	// Line 1877, Address: 0x202a20, Func Offset: 0
 	// Line 1878, Address: 0x202a24, Func Offset: 0x4
 	// Line 1877, Address: 0x202a28, Func Offset: 0x8
@@ -1116,7 +1438,7 @@ void bhEne23_MV12(BH_PWORK* epw)
 	// Line 1958, Address: 0x202c60, Func Offset: 0x240
 	// Line 1960, Address: 0x202c70, Func Offset: 0x250
 	// Func End, Address: 0x202c80, Func Offset: 0x260
-}*/
+}
 
 // 100% matching!
 void bhEne23_Nage(BH_PWORK* epw)
@@ -1130,7 +1452,7 @@ void bhEne23_NG00()
 
 }
 
-/*// 
+// 
 // Start address: 0x202cb0
 void bhEne23_Damage(BH_PWORK* epw)
 {
@@ -1159,7 +1481,7 @@ void bhEne23_Damage(BH_PWORK* epw)
 	// Line 2037, Address: 0x202dec, Func Offset: 0x13c
 	// Line 2038, Address: 0x202e0c, Func Offset: 0x15c
 	// Func End, Address: 0x202e1c, Func Offset: 0x16c
-}*/
+}
 
 // 100% matching!
 void bhEne23_DG00()
@@ -1167,11 +1489,11 @@ void bhEne23_DG00()
 
 }
 
-/*// 
+// 
 // Start address: 0x202e30
 void bhEne23_DG01(BH_PWORK* epw)
 {
-	int mtn[2][2];
+	int mtn[2][2] = { { 14, 18 }, { 29, 33 } };
 	// Line 2059, Address: 0x202e30, Func Offset: 0
 	// Line 2060, Address: 0x202e38, Func Offset: 0x8
 	// Line 2059, Address: 0x202e3c, Func Offset: 0xc
@@ -1200,7 +1522,7 @@ void bhEne23_DG01(BH_PWORK* epw)
 	// Line 2097, Address: 0x202f78, Func Offset: 0x148
 	// Line 2098, Address: 0x202f80, Func Offset: 0x150
 	// Func End, Address: 0x202f94, Func Offset: 0x164
-}*/
+}
 
 // 100% matching!
 void bhEne23_DG02()
@@ -1208,11 +1530,11 @@ void bhEne23_DG02()
 
 }
 
-/*// 
+// 
 // Start address: 0x202fb0
 void bhEne23_DG03(BH_PWORK* epw)
 {
-	int mtn[2];
+	int mtn[2] = { 16, 31 };
 	// Line 2119, Address: 0x202fb0, Func Offset: 0
 	// Line 2120, Address: 0x202fb8, Func Offset: 0x8
 	// Line 2119, Address: 0x202fbc, Func Offset: 0xc
@@ -1248,8 +1570,8 @@ void bhEne23_DG03(BH_PWORK* epw)
 // Start address: 0x2030f0
 void bhEne23_DG04(BH_PWORK* epw)
 {
-	_anon7* owk;
-	_anon24 pos;
+	O_WORK* owk;
+	NJS_POINT3 pos;
 	int i;
 	// Line 2161, Address: 0x2030f0, Func Offset: 0
 	// Line 2166, Address: 0x20310c, Func Offset: 0x1c
@@ -1336,7 +1658,7 @@ void bhEne23_DG04(BH_PWORK* epw)
 	// Line 2255, Address: 0x20363c, Func Offset: 0x54c
 	// Line 2256, Address: 0x203644, Func Offset: 0x554
 	// Func End, Address: 0x203664, Func Offset: 0x574
-}*/
+}
 
 // 100% matching!
 void bhEne23_DG05()
@@ -1344,20 +1666,21 @@ void bhEne23_DG05()
 
 }
 
-/*// 
+// 
 // Start address: 0x203680
 void bhEne23_DG06(BH_PWORK* epw)
 {
-	_anon3* mkaP;
-	int ang;
+	// already reversed order from DWARF
+	int mtn[2][2] = { { 40, 51 }, { 45, 52 } };
+	NJS_POINT3* trans[2] = { spl_051, spl_052 };
+	NJS_MKEY_A_MOD* mkaP;
+	//NJS_MKEY_A_MOD* mkaP;
+	//NJS_POINT3 trans;
+	NJS_VECTOR v;
+	NJS_VECTOR ov;
 	float out;
-	_anon24 ov;
-	_anon24 v;
-	_anon24 trans;
-	_anon3* mkaP;
-	_anon3* mkaP;
-	_anon24* trans[2];
-	int mtn[2][2];
+	int ang;
+	//NJS_MKEY_A_MOD* mkaP;
 	// Line 2277, Address: 0x203680, Func Offset: 0
 	// Line 2278, Address: 0x20368c, Func Offset: 0xc
 	// Line 2277, Address: 0x203694, Func Offset: 0x14
@@ -1513,12 +1836,12 @@ void bhEne23_DG07(BH_PWORK* epw)
 {
 	int ang;
 	float out;
-	_anon24 ov;
-	_anon24 v;
-	_anon24 trans;
-	_anon3* mkaP;
-	_anon3* mkaP;
-	int mtn[2];
+	NJS_VECTOR ov;
+	NJS_VECTOR v;
+	NJS_POINT3 trans;
+	//NJS_MKEY_A_MOD* mkaP;
+	NJS_MKEY_A_MOD* mkaP;
+	int mtn[2] = { 54, 55 };
 	// Line 2477, Address: 0x203cd0, Func Offset: 0
 	// Line 2478, Address: 0x203cdc, Func Offset: 0xc
 	// Line 2477, Address: 0x203ce4, Func Offset: 0x14
@@ -1635,7 +1958,7 @@ void bhEne23_DG07(BH_PWORK* epw)
 	// Line 2625, Address: 0x204180, Func Offset: 0x4b0
 	// Line 2626, Address: 0x204188, Func Offset: 0x4b8
 	// Func End, Address: 0x20419c, Func Offset: 0x4cc
-}*/
+}
 
 // 100% matching!
 void bhEne23_Die(BH_PWORK* epw)
@@ -1643,11 +1966,11 @@ void bhEne23_Die(BH_PWORK* epw)
 	bhEne23_DeadMode2[epw->mode2](epw);
 }
 
-/*// 
+// 
 // Start address: 0x2041c0
 void bhEne23_DD00(BH_PWORK* epw)
 {
-	int mtn[2];
+	int mtn[2] = { 48, 50 };
 	// Line 2648, Address: 0x2041c0, Func Offset: 0
 	// Line 2649, Address: 0x2041c4, Func Offset: 0x4
 	// Line 2648, Address: 0x2041c8, Func Offset: 0x8
@@ -1686,12 +2009,12 @@ void bhEne23_DD01(BH_PWORK* epw)
 {
 	int ang;
 	float out;
-	_anon24 ov;
-	_anon24 v;
-	_anon24 trans;
-	_anon3* mkaP;
-	_anon3* mkaP;
-	int mtn[2][2];
+	NJS_VECTOR ov;
+	NJS_VECTOR v;
+	NJS_POINT3 trans;
+	//NJS_MKEY_A_MOD* mkaP;
+	NJS_MKEY_A_MOD* mkaP;
+	int mtn[2][2] = { { 40, 47 }, { 45, 49 } };
 	// Line 2690, Address: 0x204300, Func Offset: 0
 	// Line 2691, Address: 0x20430c, Func Offset: 0xc
 	// Line 2690, Address: 0x204314, Func Offset: 0x14
@@ -1820,7 +2143,7 @@ void bhEne23_DD01(BH_PWORK* epw)
 	// Line 2861, Address: 0x2048e4, Func Offset: 0x5e4
 	// Line 2862, Address: 0x2048ec, Func Offset: 0x5ec
 	// Func End, Address: 0x204900, Func Offset: 0x600
-}*/
+}
 
 // 100% matching!
 void bhEne23_DD02()
@@ -1828,18 +2151,18 @@ void bhEne23_DD02()
 	
 }
 
-/*// 
+// 
 // Start address: 0x204910
 void bhEne23_DD03(BH_PWORK* epw)
 {
 	int ang;
 	float out;
-	_anon24 ov;
-	_anon24 v;
-	_anon24 trans;
-	_anon3* mkaP;
-	_anon3* mkaP;
-	int mtn[2][2];
+	NJS_VECTOR ov;
+	NJS_VECTOR v;
+	NJS_POINT3 trans;
+	//NJS_MKEY_A_MOD* mkaP;
+	NJS_MKEY_A_MOD* mkaP;
+	int mtn[2][2] = { { 54, 48 }, { 55, 50 } };
 	// Line 2883, Address: 0x204910, Func Offset: 0
 	// Line 2884, Address: 0x20491c, Func Offset: 0xc
 	// Line 2883, Address: 0x204924, Func Offset: 0x14
@@ -1970,12 +2293,12 @@ void bhEne23_DD03(BH_PWORK* epw)
 // Start address: 0x204ed0
 void bhEne23_CollisionWalls(BH_PWORK* epw)
 {
-	npobj* objP;
-	_anon3* mkaP;
+	NJS_CNK_OBJECT* objP;
+	NJS_MKEY_A_MOD* mkaP;
 	float ah;
 	float ar;
-	_anon24 trans;
-	_anon24 body;
+	NJS_POINT3 trans;
+	NJS_POINT3 body;
 	// Line 3054, Address: 0x204ed0, Func Offset: 0
 	// Line 3060, Address: 0x204f00, Func Offset: 0x30
 	// Line 3065, Address: 0x204f04, Func Offset: 0x34
@@ -2077,8 +2400,8 @@ void bhEne23_CollisionWalls(BH_PWORK* epw)
 // Start address: 0x205300
 void bhEne23_CollisionLine(BH_PWORK* epw)
 {
-	_anon21* hp;
-	_anon24 n;
+	ATR_WORK* hp;
+	NJS_POINT3 n;
 	// Line 3187, Address: 0x205300, Func Offset: 0
 	// Line 3191, Address: 0x205310, Func Offset: 0x10
 	// Line 3192, Address: 0x205324, Func Offset: 0x24
@@ -2096,15 +2419,15 @@ void bhEne23_CollisionLine(BH_PWORK* epw)
 // Start address: 0x2053b0
 int bhEne23_CheckClimbWall(BH_PWORK* epw, int flg)
 {
-	_anon20* mkfP;
-	int mtn[2];
+	NJS_MKEY* mkfP;
+	int mtn[2] = { 3, 24 };
 	int root;
 	int i;
 	int ang2;
 	int ang;
-	_anon24 pos2;
-	_anon24 pos;
-	_anon21* hp;
+	NJS_POINT3 pos2;
+	NJS_POINT3 pos;
+	ATR_WORK* hp;
 	// Line 3211, Address: 0x2053b0, Func Offset: 0
 	// Line 3216, Address: 0x2053d0, Func Offset: 0x20
 	// Line 3211, Address: 0x2053d4, Func Offset: 0x24
@@ -2188,8 +2511,8 @@ int bhEne23_CheckClimbWall(BH_PWORK* epw, int flg)
 int bhEne23_CheckDiving(BH_PWORK* epw)
 {
 	float dist;
-	_anon24 pos;
-	_anon20* mkfP;
+	NJS_POINT3 pos;
+	NJS_MKEY* mkfP;
 	// Line 3311, Address: 0x205800, Func Offset: 0
 	// Line 3317, Address: 0x205810, Func Offset: 0x10
 	// Line 3319, Address: 0x20582c, Func Offset: 0x2c
@@ -2307,7 +2630,7 @@ void bhEne23_DamageInit(BH_PWORK* epw)
 // Start address: 0x205da0
 void bhEne23_LegBreak(BH_PWORK* epw)
 {
-	_anon7* owk;
+	O_WORK* owk;
 	int i;
 	// Line 3509, Address: 0x205da0, Func Offset: 0
 	// Line 3513, Address: 0x205dac, Func Offset: 0xc
@@ -2336,7 +2659,7 @@ void bhEne23_LegBreak(BH_PWORK* epw)
 void bhEne23_InitChild(BH_PWORK* epw)
 {
 	float spd;
-	_anon24 v;
+	NJS_VECTOR v;
 	int ang;
 	BH_PWORK** epw2;
 	int i;
@@ -2396,8 +2719,19 @@ void bhEne23_InitChild(BH_PWORK* epw)
 // Start address: 0x2061f0
 void bhEne23_PlayerControl(BH_PWORK* epw)
 {
-	_anon24* trans[3][3];
-	int mtn[8][3];
+	// already reversed order from DWARF
+	int mtn[3][8] = 
+	{
+		{ 60, 61, 62, 63, 65, 64, 0, 0 },
+		{ 66, 67, 68, 69, 71, 70, 0, 0 },
+		{ 66, 67, 68, 69, 71, 70, 0, 0 }
+	};
+	NJS_POINT3* trans[3][3] = 
+	{
+		{ cler_042, cler_043, cler_045 },
+  	    { cher_060, cher_061, cher_063 },
+  	    { cher_060, cher_061, cher_063 }  
+	};
 	// Line 3601, Address: 0x2061f0, Func Offset: 0
 	// Line 3602, Address: 0x2061f4, Func Offset: 0x4
 	// Line 3601, Address: 0x2061fc, Func Offset: 0xc
@@ -2544,7 +2878,7 @@ void bhEne23_PlayerControl(BH_PWORK* epw)
 void bhEne23_Acid(BH_PWORK* epw)
 {
 	float dt;
-	_anon7* owk;
+	O_WORK* owk;
 	int i;
 	int eno;
 	// Line 3758, Address: 0x2068f0, Func Offset: 0
@@ -2636,7 +2970,7 @@ void bhEne23_Acid(BH_PWORK* epw)
 // Start address: 0x206c90
 unsigned int bhEne23_SearchPlayer(BH_PWORK* epw, int ang)
 {
-	_anon24 dist;
+	NJS_POINT3 dist;
 	// Line 3830, Address: 0x206c90, Func Offset: 0
 	// Line 3834, Address: 0x206ca4, Func Offset: 0x14
 	// Line 3836, Address: 0x206cb0, Func Offset: 0x20
@@ -2717,8 +3051,8 @@ void bhEne23_HitMark(BH_PWORK* epw)
 {
 	int range;
 	int i;
-	_anon32* blp;
-	_anon24 ofp;
+	BLOOD_TBL* blp;
+	NJS_POINT3 ofp;
 	// Line 3953, Address: 0x207100, Func Offset: 0
 	// Line 3959, Address: 0x207120, Func Offset: 0x20
 	// Line 3960, Address: 0x207124, Func Offset: 0x24
@@ -2775,4 +3109,4 @@ void bhEne23_HitMark(BH_PWORK* epw)
 	// Line 4001, Address: 0x2075dc, Func Offset: 0x4dc
 	// Line 4003, Address: 0x2075f4, Func Offset: 0x4f4
 	// Func End, Address: 0x207618, Func Offset: 0x518
-}*/
+}
