@@ -22,9 +22,9 @@ _anon45 CombWepTbl[21];
 _anon49 CombJointTbl[37];
 void(*bhEne23_Mode0)(BH_PWORK*)[6];*/
 void (*bhEne23_BrainType[2])(BH_PWORK*);
-/*void(*bhEne23_MoveMode2)(BH_PWORK*)[13];
-void(*bhEne23_NageMode2)(BH_PWORK*)[1];
-void(*bhEne23_DamageMode2)(BH_PWORK*)[8];
+/*void(*bhEne23_MoveMode2)(BH_PWORK*)[13];*/
+void (*bhEne23_NageMode2[1])(BH_PWORK*);
+/*void(*bhEne23_DamageMode2)(BH_PWORK*)[8];
 void(*bhEne23_DeadMode2)(BH_PWORK*)[4];
 void(*bhEne03s)(BH_PWORK*);*/
 
@@ -1116,17 +1116,15 @@ void bhEne23_MV12(BH_PWORK* epw)
 	// Line 1958, Address: 0x202c60, Func Offset: 0x240
 	// Line 1960, Address: 0x202c70, Func Offset: 0x250
 	// Func End, Address: 0x202c80, Func Offset: 0x260
-}
+}*/
 
-// 
-// Start address: 0x202c80
+// 100% matching!
 void bhEne23_Nage(BH_PWORK* epw)
 {
-	// Line 1971, Address: 0x202c80, Func Offset: 0
-	// Func End, Address: 0x202ca0, Func Offset: 0x20
+	bhEne23_NageMode2[epw->mode2](epw);
 }
 
-// 
+/*// 
 // Start address: 0x202ca0
 void bhEne23_NG00()
 {
