@@ -1,5 +1,6 @@
 #include "../../../ps2/veronica/prog/en19.h"
 #include "../../../ps2/veronica/prog/en29.h"
+#include "../../../ps2/veronica/prog/MdlPut.h"
 #include "../../../ps2/veronica/prog/Motion.h"
 #include "../../../ps2/veronica/prog/main.h"
 #include "../../../ps2/veronica/prog/ps2_dummy.h"
@@ -643,20 +644,19 @@ static void bhEne29_TargetAnalyze(BH_PWORK* ewP, en29_freework* fwP)
 	// Func End, Address: 0x211f2c, Func Offset: 0x2bc
 }
 
-// 
-// Start address: 0x211f30
+// 100% matching!
 static void bhEne29_CalcEnemy(BH_PWORK* ewP, en29_freework* fwP)
 {
 	ATR_WORK* htP;
-	// Line 1318, Address: 0x211f30, Func Offset: 0
-	// Line 1322, Address: 0x211f44, Func Offset: 0x14
-	// Line 1325, Address: 0x211f4c, Func Offset: 0x1c
-	// Line 1331, Address: 0x211f58, Func Offset: 0x28
-	// Line 1329, Address: 0x211f60, Func Offset: 0x30
-	// Line 1331, Address: 0x211f64, Func Offset: 0x34
-	// Line 1332, Address: 0x211f80, Func Offset: 0x50
-	// Line 1338, Address: 0x211fa4, Func Offset: 0x74
-	// Func End, Address: 0x211fb8, Func Offset: 0x88
+
+    bhCalcModel(ewP);
+
+    CalcDmgEne(ewP, fwP);
+
+    htP = fwP->hit_tabP;
+
+    htP->px = ewP->mlwP->owP[fwP->atr_obj].mtx[12];
+    htP->pz = ewP->mlwP->owP[fwP->atr_obj].mtx[14];
 }
 
 // 
