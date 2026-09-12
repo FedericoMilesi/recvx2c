@@ -456,16 +456,13 @@ static void bhEne29_Mv03(BH_PWORK* ewP, en29_freework* fwP, int count)
     }
 }
 
-// 
-// Start address: 0x211890
+// 100% matching!
 static void bhEne29_Mv04(BH_PWORK* ewP, en29_freework* fwP, int count) // third parameter not present on DWARF
 {
-	// Line 1060, Address: 0x211890, Func Offset: 0
-	// Line 1063, Address: 0x2118a0, Func Offset: 0x10
-	// Line 1064, Address: 0x2118b8, Func Offset: 0x28
-	// Line 1065, Address: 0x2118e0, Func Offset: 0x50
-	// Line 1070, Address: 0x211920, Func Offset: 0x90
-	// Func End, Address: 0x211934, Func Offset: 0xa4
+	if ((fwP->ene_act.mtn_rte < 65536) && (ChechPlayEnemySe(sys->enow, 74499) == 0))
+    {
+        RequestEnemySe(sys->enow, (NJS_POINT3*)&ewP->mlwP->owP[fwP->bas_obj].mtx[12], 74499);
+    }
 }
 
 // 
