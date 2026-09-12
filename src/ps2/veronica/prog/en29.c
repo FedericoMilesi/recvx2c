@@ -814,39 +814,57 @@ static void bhEne29_PlyActionMain(BH_PWORK* plP, PAW_WORK* pawP)
 	// Func End, Address: 0x2126b4, Func Offset: 0xb4
 }
 
-// 
-// Start address: 0x2126c0
+// 100% matching!
 static int bhEne29_PlyActionChange(BH_PWORK* plP, PAW_WORK* pawP, int act_no)
 {
 	ACT_TBL_WORK* paP;
-	// Line 1721, Address: 0x2126c0, Func Offset: 0
-	// Line 1724, Address: 0x2126d4, Func Offset: 0x14
-	// Line 1722, Address: 0x2126d8, Func Offset: 0x18
-	// Line 1724, Address: 0x2126e8, Func Offset: 0x28
-	// Line 1727, Address: 0x212700, Func Offset: 0x40
-	// Line 1729, Address: 0x212704, Func Offset: 0x44
-	// Line 1727, Address: 0x212708, Func Offset: 0x48
-	// Line 1728, Address: 0x21270c, Func Offset: 0x4c
-	// Line 1731, Address: 0x212710, Func Offset: 0x50
-	// Line 1733, Address: 0x212718, Func Offset: 0x58
-	// Line 1734, Address: 0x212720, Func Offset: 0x60
-	// Line 1735, Address: 0x212728, Func Offset: 0x68
-	// Line 1736, Address: 0x212734, Func Offset: 0x74
-	// Line 1737, Address: 0x21273c, Func Offset: 0x7c
-	// Line 1738, Address: 0x212770, Func Offset: 0xb0
-	// Line 1739, Address: 0x212778, Func Offset: 0xb8
-	// Line 1745, Address: 0x21277c, Func Offset: 0xbc
-	// Line 1739, Address: 0x212780, Func Offset: 0xc0
-	// Line 1742, Address: 0x212784, Func Offset: 0xc4
-	// Line 1743, Address: 0x2127a4, Func Offset: 0xe4
-	// Line 1744, Address: 0x2127ac, Func Offset: 0xec
-	// Line 1745, Address: 0x2127b4, Func Offset: 0xf4
-	// Line 1746, Address: 0x2127cc, Func Offset: 0x10c
-	// Line 1747, Address: 0x2127e4, Func Offset: 0x124
-	// Line 1750, Address: 0x2127f0, Func Offset: 0x130
-	// Line 1753, Address: 0x2127f8, Func Offset: 0x138
-	// Line 1754, Address: 0x2127fc, Func Offset: 0x13c
-	// Func End, Address: 0x212814, Func Offset: 0x154
+    
+    paP = &pawP->act_tblP[act_no];
+    
+    if ((!(pawP->p_act_flg & 0x7)) && (pawP->p_act_now != act_no))
+    {
+        pawP->p_prgP = paP->prgP;
+        
+        pawP->p_act_now = act_no;
+        pawP->p_act_flg = 1;
+        
+        if (act_no >= 0)
+        {
+            plP->mnwP = pawP->ene_mnwP;
+            
+            plP->mtn_no = paP->mtn_no;
+            plP->frm_no = paP->frm_no * 65536;
+            
+            plP->hokan_count = paP->hkn_cnt;
+            plP->hokan_rate  = paP->hkn_lvl * (65536.0 / 255.0);
+            
+            plP->mtn_add = 65536;
+            plP->mtn_md  = (unsigned short)paP->flag;
+                
+            pawP->p_frm_num = plP->mnwP[paP->mtn_no].frm_num;
+            
+            pawP->p_act_frm = paP->frm_no;
+            pawP->p_act_jmp = paP->act_jmp;
+            
+            if (pawP->p_act_jmp != -1)
+            {
+                pawP->p_act_flg |= 0x2;
+            }
+            
+            if (paP->chg_frm != 0xFF) 
+            {
+                pawP->p_chg_frm = paP->chg_frm;
+            } 
+            else 
+            {
+                pawP->p_chg_frm = pawP->p_frm_num - 1;
+            }
+        }
+        
+        return 1;
+    }
+    
+    return 0;
 }
 
 // 
