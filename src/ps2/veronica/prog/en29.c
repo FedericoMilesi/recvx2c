@@ -846,11 +846,11 @@ int bhEne29_PlyActionChange(BH_PWORK* plP, _anon11* pawP, int act_no)
 	// Line 1753, Address: 0x2127f8, Func Offset: 0x138
 	// Line 1754, Address: 0x2127fc, Func Offset: 0x13c
 	// Func End, Address: 0x212814, Func Offset: 0x154
-}
+}*/
 
 // 
 // Start address: 0x212820
-void bhEne29_PlyDmg117(BH_PWORK* plP, _en29_freework* fwP)
+void bhEne29_PlyDmg117(BH_PWORK* plP, en29_freework* fwP)
 {
 	int dlt;
 	// Line 1778, Address: 0x212820, Func Offset: 0
@@ -870,15 +870,13 @@ void bhEne29_PlyDmg117(BH_PWORK* plP, _en29_freework* fwP)
 	// Func End, Address: 0x212914, Func Offset: 0xf4
 }
 
-// 
-// Start address: 0x212920
-void bhEne29_PlyDmg118(BH_PWORK* plP, _en29_freework* fwP)
+// 100% matching!
+void bhEne29_PlyDmg118(BH_PWORK* plP, en29_freework* fwP)
 {
-	// Line 1807, Address: 0x212920, Func Offset: 0
-	// Func End, Address: 0x212928, Func Offset: 0x8
+	bhEne29_PlyDmg117(plP, fwP);
 }
 
-// 
+/*// 
 // Start address: 0x212930
 void bhEne29_PlyDmgRtn(BH_PWORK* plP, _en29_freework* fwP)
 {
