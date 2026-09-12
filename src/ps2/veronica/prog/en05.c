@@ -5,6 +5,7 @@
 #include "../../../ps2/veronica/prog/hitchk.h"
 #include "../../../ps2/veronica/prog/subpl.h"
 #include "../../../ps2/veronica/prog/zonzon1.h"
+#include "../../../ps2/veronica/prog/hitchkl.h"
 
 // ENEMY: Hunter/Sweeper 
 
@@ -4378,32 +4379,26 @@ int bhEne05_CheckBackAttack(BH_PWORK* epw)
 	// Line 6005, Address: 0x1b82b0, Func Offset: 0x2e0
 	// Func End, Address: 0x1b82d0, Func Offset: 0x300
 }
+*/
 
-// 
-// Start address: 0x1b82d0
+// 100% matching!
 int bhEne05_CheckHikkaki(BH_PWORK* epw)
 {
-	_anon38 pos2;
-	_anon38 pos1;
-	// Line 6015, Address: 0x1b82d0, Func Offset: 0
-	// Line 6018, Address: 0x1b82d8, Func Offset: 0x8
-	// Line 6019, Address: 0x1b82dc, Func Offset: 0xc
-	// Line 6021, Address: 0x1b82e4, Func Offset: 0x14
-	// Line 6018, Address: 0x1b82f0, Func Offset: 0x20
-	// Line 6019, Address: 0x1b82f4, Func Offset: 0x24
-	// Line 6027, Address: 0x1b82f8, Func Offset: 0x28
-	// Line 6019, Address: 0x1b8300, Func Offset: 0x30
-	// Line 6020, Address: 0x1b8308, Func Offset: 0x38
-	// Line 6021, Address: 0x1b8310, Func Offset: 0x40
-	// Line 6022, Address: 0x1b8318, Func Offset: 0x48
-	// Line 6023, Address: 0x1b8324, Func Offset: 0x54
-	// Line 6027, Address: 0x1b832c, Func Offset: 0x5c
-	// Line 6030, Address: 0x1b8338, Func Offset: 0x68
-	// Line 6027, Address: 0x1b833c, Func Offset: 0x6c
-	// Line 6030, Address: 0x1b834c, Func Offset: 0x7c
-	// Func End, Address: 0x1b8354, Func Offset: 0x84
+    NJS_POINT3 pos1;
+    NJS_POINT3 pos2;
+ 
+    pos1.x = epw->px;
+    pos1.y = 10.0f + epw->py;
+    pos1.z = epw->pz;
+    
+    pos2.x = plp->px;
+    pos2.y = 10.0f + plp->py;
+    pos2.z = plp->pz;
+
+    return (bhCollisionCheckLine3(&pos1, &pos2, 17408, epw->flr_no) != NULL) ? 0 : 1;
 }
 
+/*
 // 
 // Start address: 0x1b8360
 int bhEne05_CheckPlyRoute(BH_PWORK* epw)
