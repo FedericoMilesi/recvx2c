@@ -2150,14 +2150,14 @@ void bhEne05_DG00(BH_PWORK* epw)
 	// Func End, Address: 0x1b2298, Func Offset: 0x1a8
 }
 
-// 
-// Start address: 0x1b22a0
+*/
+
+// 100% matching!
 void bhEne05_DG01()
 {
-	// Line 3330, Address: 0x1b22a0, Func Offset: 0
-	// Func End, Address: 0x1b22a8, Func Offset: 0x8
-}
 
+}
+/*
 // 
 // Start address: 0x1b22b0
 void bhEne05_DG02(BH_PWORK* epw)
