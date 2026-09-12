@@ -4941,17 +4941,15 @@ void bhEne03_SetModelFlg(BH_PWORK* epw, unsigned int and_flg, unsigned int or_fl
     }
 }
 
-// 
-// Start address: 0x1a1530
+// 100% matching!
 void bhEne03_AddNullTrans(BH_PWORK* epw, NJS_VECTOR* mtn)
 {
 	NJS_VECTOR v;
-	// Line 6211, Address: 0x1a1530, Func Offset: 0
-	// Line 6214, Address: 0x1a1540, Func Offset: 0x10
-	// Line 6216, Address: 0x1a1564, Func Offset: 0x34
-	// Line 6217, Address: 0x1a1574, Func Offset: 0x44
-	// Line 6218, Address: 0x1a1584, Func Offset: 0x54
-	// Func End, Address: 0x1a1594, Func Offset: 0x64
+
+    njCalcVector((NJS_MATRIX*)epw->exp0, &mtn[epw->frm_no / 65536], &v);
+	
+    epw->px += v.x;
+    epw->pz += v.z;
 }
 
 // 100% matching!
