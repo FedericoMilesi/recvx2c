@@ -1,4 +1,5 @@
 #include "../../../ps2/veronica/prog/en03.h"
+#include "../../../ps2/veronica/prog/en03sub.h"
 #include "../../../ps2/veronica/prog/hitchkl.h"
 #include "../../../ps2/veronica/prog/Motion.h"
 #include "../../../ps2/veronica/prog/main.h"
@@ -465,7 +466,6 @@ void (*bhEne03_DeadMode2[6])(BH_PWORK*) =
 	bhEne03_DD04,
 	bhEne03_DD05
 };
-/*void bhEne03s(BH_PWORK*); - unused */
 
 // 
 // Start address: 0x1969c0

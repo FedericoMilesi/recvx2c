@@ -1,4 +1,5 @@
 #include "../../../ps2/veronica/prog/en23.h"
+#include "../../../ps2/veronica/prog/en03sub.h"
 #include "../../../ps2/veronica/prog/main.h"
 
 // ENEMY: Giant Black Widow 
@@ -24,9 +25,8 @@ void(*bhEne23_Mode0)(BH_PWORK*)[6];*/
 void (*bhEne23_BrainType[2])(BH_PWORK*);
 /*void(*bhEne23_MoveMode2)(BH_PWORK*)[13];*/
 void (*bhEne23_NageMode2[1])(BH_PWORK*);
-/*void(*bhEne23_DamageMode2)(BH_PWORK*)[8];
-void(*bhEne23_DeadMode2)(BH_PWORK*)[4];
-void(*bhEne03s)(BH_PWORK*);*/
+/*void(*bhEne23_DamageMode2)(BH_PWORK*)[8];*/
+void (*bhEne23_DeadMode2[4])(BH_PWORK*);
 
 // 
 // Start address: 0x1fff40
@@ -1341,7 +1341,7 @@ void bhEne23_DG04(BH_PWORK* epw)
 // 100% matching!
 void bhEne23_DG05()
 {
-	
+
 }
 
 /*// 
@@ -1635,17 +1635,15 @@ void bhEne23_DG07(BH_PWORK* epw)
 	// Line 2625, Address: 0x204180, Func Offset: 0x4b0
 	// Line 2626, Address: 0x204188, Func Offset: 0x4b8
 	// Func End, Address: 0x20419c, Func Offset: 0x4cc
-}
+}*/
 
-// 
-// Start address: 0x2041a0
+// 100% matching!
 void bhEne23_Die(BH_PWORK* epw)
 {
-	// Line 2637, Address: 0x2041a0, Func Offset: 0
-	// Func End, Address: 0x2041c0, Func Offset: 0x20
+	bhEne23_DeadMode2[epw->mode2](epw);
 }
 
-// 
+/*// 
 // Start address: 0x2041c0
 void bhEne23_DD00(BH_PWORK* epw)
 {
