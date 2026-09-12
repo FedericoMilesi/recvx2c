@@ -718,17 +718,15 @@ void bhEne23_MV03(BH_PWORK* epw)
 	// Line 1444, Address: 0x201e3c, Func Offset: 0x3ec
 	// Line 1447, Address: 0x201e44, Func Offset: 0x3f4
 	// Func End, Address: 0x201e54, Func Offset: 0x404
-}
+}*/
 
-// 
-// Start address: 0x201e60
+// 100% matching!
 void bhEne23_MV04()
 {
-	// Line 1458, Address: 0x201e60, Func Offset: 0
-	// Func End, Address: 0x201e68, Func Offset: 0x8
+	
 }
 
-// 
+/*// 
 // Start address: 0x201e70
 void bhEne23_MV05(BH_PWORK* epw)
 {
