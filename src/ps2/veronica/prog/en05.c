@@ -508,16 +508,13 @@ void bhEne05_BR01()
 	scePrintf("bhEne05_BR01 - UNIMPLEMENTED!\n");
 }
 
-// 
-// Start address: 0x1adda0
+// 100% matching!
 void bhEne05_BR02(BH_PWORK* epw)
 {
-	// Line 1330, Address: 0x1adda0, Func Offset: 0
-	// Line 1331, Address: 0x1adda8, Func Offset: 0x8
-	// Line 1332, Address: 0x1addac, Func Offset: 0xc
-	// Line 1334, Address: 0x1addb0, Func Offset: 0x10
-	// Func End, Address: 0x1addb8, Func Offset: 0x18
-	scePrintf("bhEne05_BR02 - UNIMPLEMENTED!\n");
+    epw->mode0 = 1;
+    epw->mode1 = 0;
+    epw->mode2 = 0;
+    epw->mode3 = 0;
 }
 
 // 
