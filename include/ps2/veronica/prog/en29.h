@@ -38,7 +38,7 @@ typedef struct _e19_dmg_typ
     float atr_rad; // offset 0x10, size 0x4
 } e19_dmg_typ;
 
-typedef struct _eaw_typ 
+typedef struct eaw_typ 
 {
     // total size: 0x48
     signed int act_flg; // offset 0x0, size 0x4
@@ -71,7 +71,7 @@ typedef struct _eaw_typ
     signed int tbl_num; // offset 0x44, size 0x4
 } eaw_typ;
 
-typedef struct _en29_freework 
+typedef struct en29_freework 
 {
     // total size: 0x1A0
     struct _e19_dmg_typ * dmg_eneP; // offset 0x0, size 0x4
@@ -383,7 +383,7 @@ typedef struct _en29_freework
         float z; // offset 0x8, size 0x4
     } ply_dmg; // offset 0x110, size 0xC
     signed int dmg_dir; // offset 0x11C, size 0x4
-    struct _eaw_typ ene_act; // offset 0x120, size 0x48
+    struct eaw_typ ene_act; // offset 0x120, size 0x48
     struct /* @anon11 */ {
         // total size: 0x38
         signed int p_status; // offset 0x0, size 0x4
@@ -424,39 +424,76 @@ typedef struct _en29_freework
     } ply_act; // offset 0x168, size 0x38
 } en29_freework;
 
+typedef struct _e29_cll
+{
+    // total size: 0x8
+    int obj_no;    // offset 0x0, size 0x4
+    float chk_siz; // offset 0x4, size 0x4
+} e29_cll;
+
+typedef struct DS_WORK 
+{
+    // total size: 0x10
+    tc_obj_body atr_top; // offset 0x0, size 0x4
+    tc_obj_body atr_end; // offset 0x4, size 0x4
+    float atr_rad;       // offset 0x8, size 0x4
+    int or_flg2;         // offset 0xC, size 0x4
+} DS_WORK;
+
+typedef struct DD_WRK
+{
+    // total size: 0x10
+    int eff_nml_p; // offset 0x0, size 0x4
+    int eff_nml_s; // offset 0x4, size 0x4
+    int eff_cmb_p; // offset 0x8, size 0x4
+    int eff_cmb_s; // offset 0xC, size 0x4
+} DD_WRK;
+
+typedef struct ET_WORK 
+{
+    // total size: 0x24
+    tc_obj_body bas_obj;  // offset 0x0, size 0x4
+    tc_obj_body atr_obj;  // offset 0x4, size 0x4
+    NJS_POINT3 atr_siz;   // offset 0x8, size 0xC
+    tc_obj_body atk_obj0; // offset 0x14, size 0x4
+    float atk_rng0;       // offset 0x18, size 0x4
+    tc_obj_body atk_obj1; // offset 0x1C, size 0x4
+    float atk_rng1;       // offset 0x20, size 0x4
+} ET_WORK;
+
 void bhEne29(BH_PWORK* ewP);
-void bhEne29_Init(BH_PWORK* ewP);
-void bhEne29_Move(BH_PWORK* ewP);
-void bhEne29_Die();
-void bhEne29_Damage();
-void bhEne29_Event(BH_PWORK* ewP);
-void bhEne29_Br00(BH_PWORK* ewP);
-void bhEne29_Br01(BH_PWORK* ewP);
-void bhEne29_Mv00();
-/*void bhEne29_Mv01(BH_PWORK* ewP, _en29_freework* fwP, int count);
-void bhEne29_Mv02(BH_PWORK* ewP, _en29_freework* fwP, int count);
-void bhEne29_Mv03(BH_PWORK* ewP, _en29_freework* fwP, int count);
-void bhEne29_Mv04(BH_PWORK* ewP, _en29_freework* fwP);
-void bhEne29_Mv20(BH_PWORK* ewP, _en29_freework* fwP);
-void bhEne29_ActionInit(_eaw_typ* eawP, _anon7* act_tblP, int tbl_num);
-_anon7* bhEne29_ActionSearch(_eaw_typ* eawP, int act_nw, int act_no);
-int bhEne29_ActionChange(BH_PWORK* ewP, _eaw_typ* eawP, int act_dst);
-int bhEne29_ActionMain(BH_PWORK* ewP, _eaw_typ* eawP);
-void bhEne29_TargetAnalyze(BH_PWORK* ewP, _en29_freework* fwP);
-void bhEne29_CalcEnemy(BH_PWORK* ewP, _en29_freework* fwP);
-void bhEne29_DmgCheck(BH_PWORK* ewP, _en29_freework* fwP);
-int bhEne29_AttackHitCheck(BH_PWORK* ewP, _en29_freework* fwP);
-int bhEne29_PlySetDamage(BH_PWORK* plP, _en29_freework* fwP, int dmg_mde);
-void bhEne29_PlyMoveMain(BH_PWORK* plP, _en29_freework* fwP);
-void bhEne29_PlyActionInit(BH_PWORK* ewP, _anon11* pawP, _anon14* act_tblP, int tbl_num);
-void bhEne29_PlyActionMain(BH_PWORK* plP, _anon11* pawP);
-int bhEne29_PlyActionChange(BH_PWORK* plP, _anon11* pawP, int act_no);
-void bhEne29_PlyDmg117(BH_PWORK* plP, _en29_freework* fwP);
-void bhEne29_PlyDmg118(BH_PWORK* plP, _en29_freework* fwP);
-void bhEne29_PlyDmgRtn(BH_PWORK* plP, _en29_freework* fwP);
-void bhEne29_SetDmgEffect(BH_PWORK* ewP, int eff_typ);
-void SetDmgEne(_en29_freework* fwP, _anon35* dsP, int set_num);
-void CalcDmgEne(BH_PWORK* ewP, _en29_freework* fwP);
-void CheckDmgEne(BH_PWORK* ewP, _en29_freework* fwP);*/
+static void bhEne29_Init(BH_PWORK* ewP);
+static void bhEne29_Move(BH_PWORK* ewP);
+static void bhEne29_Die();
+static void bhEne29_Damage();
+static void bhEne29_Event(BH_PWORK* ewP);
+static void bhEne29_Br00(BH_PWORK* ewP);
+static void bhEne29_Br01(BH_PWORK* ewP);
+static void bhEne29_Mv00();
+static void bhEne29_Mv01(BH_PWORK* ewP, en29_freework* fwP, int count);
+static void bhEne29_Mv02(BH_PWORK* ewP, en29_freework* fwP, int count);
+static void bhEne29_Mv03(BH_PWORK* ewP, en29_freework* fwP, int count);
+static void bhEne29_Mv04(BH_PWORK* ewP, en29_freework* fwP);
+static void bhEne29_Mv20(BH_PWORK* ewP, en29_freework* fwP);
+static void bhEne29_ActionInit(eaw_typ* eawP, EA_WORK* act_tblP, int tbl_num);
+static EA_WORK* bhEne29_ActionSearch(eaw_typ* eawP, int act_nw, int act_no);
+static int bhEne29_ActionChange(BH_PWORK* ewP, eaw_typ* eawP, int act_dst);
+static int bhEne29_ActionMain(BH_PWORK* ewP, eaw_typ* eawP);
+static void bhEne29_TargetAnalyze(BH_PWORK* ewP, en29_freework* fwP);
+static void bhEne29_CalcEnemy(BH_PWORK* ewP, en29_freework* fwP);
+static void bhEne29_DmgCheck(BH_PWORK* ewP, en29_freework* fwP);
+static int bhEne29_AttackHitCheck(BH_PWORK* ewP, en29_freework* fwP);
+static int bhEne29_PlySetDamage(BH_PWORK* plP, en29_freework* fwP, int dmg_mde);
+static void bhEne29_PlyMoveMain(BH_PWORK* plP, en29_freework* fwP);
+static void bhEne29_PlyActionInit(BH_PWORK* ewP, PAW_WORK* pawP, ACT_TBL_WORK* act_tblP, int tbl_num);
+static void bhEne29_PlyActionMain(BH_PWORK* plP, PAW_WORK* pawP);
+static int bhEne29_PlyActionChange(BH_PWORK* plP, PAW_WORK* pawP, int act_no);
+static void bhEne29_PlyDmg117(BH_PWORK* plP, en29_freework* fwP);
+static void bhEne29_PlyDmg118(BH_PWORK* plP, en29_freework* fwP);
+static void bhEne29_PlyDmgRtn(BH_PWORK* plP, en29_freework* fwP);
+static void bhEne29_SetDmgEffect(BH_PWORK* ewP, int eff_typ);
+static void SetDmgEne(en29_freework* fwP, DS_WORK* dsP, int set_num);
+static void CalcDmgEne(BH_PWORK* ewP, en29_freework* fwP);
+static void CheckDmgEne(BH_PWORK* ewP, en29_freework* fwP);
 
 #endif
