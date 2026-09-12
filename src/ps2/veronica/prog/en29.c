@@ -383,17 +383,15 @@ void bhEne29_Br01(BH_PWORK* ewP)
 	// Line 974, Address: 0x211688, Func Offset: 0x3e8
 	// Line 978, Address: 0x211694, Func Offset: 0x3f4
 	// Func End, Address: 0x2116b4, Func Offset: 0x414
-}
+}*/
 
-// 
-// Start address: 0x2116c0
-void bhEne29_Mv00()
+// 100% matching!
+static void bhEne29_Mv00()
 {
-	// Line 989, Address: 0x2116c0, Func Offset: 0
-	// Func End, Address: 0x2116c8, Func Offset: 0x8
+
 }
 
-// 
+/*// 
 // Start address: 0x2116d0
 void bhEne29_Mv01(BH_PWORK* ewP, _en29_freework* fwP, int count)
 {
