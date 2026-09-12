@@ -499,13 +499,10 @@ void bhEne05_BR00(BH_PWORK* epw)
 	scePrintf("bhEne05_BR00 - UNIMPLEMENTED!\n");
 }
 
-// 
-// Start address: 0x1add90
+// 100% matching!
 void bhEne05_BR01()
 {
-	// Line 1318, Address: 0x1add90, Func Offset: 0
-	// Func End, Address: 0x1add98, Func Offset: 0x8
-	scePrintf("bhEne05_BR01 - UNIMPLEMENTED!\n");
+
 }
 
 // 100% matching!
