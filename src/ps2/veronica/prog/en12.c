@@ -113,6 +113,11 @@ void(*bhEne12_MoveMode2[8])(BH_PWORK*) =
     bhEne12_MV07,
 };
 
+void(*bhEne12_NageMode2[1])(BH_PWORK*) = 
+{
+    bhEne12_NG00,
+};
+
 // 100% matching!
 void bhEne12(BH_PWORK* epw) 
 {
@@ -691,15 +696,13 @@ void bhEne12_MV07(BH_PWORK* epw)
     sys->rm_flg |= 1;
 }
 
-/*// 
-// Start address: 0x1d7020
+// 100% matching!
 void bhEne12_Nage(BH_PWORK* epw)
 {
-	// Line 1236, Address: 0x1d7020, Func Offset: 0
-	// Func End, Address: 0x1d7040, Func Offset: 0x20
+    bhEne12_NageMode2[epw->mode2](epw);
 }
 
-// 
+/*// 
 // Start address: 0x1d7040
 void bhEne12_NG00(BH_PWORK* epw)
 {
