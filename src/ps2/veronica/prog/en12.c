@@ -7,6 +7,7 @@
 #include "../../../ps2/veronica/prog/eneset.h"
 #include "../../../ps2/veronica/prog/macros.h"
 #include "../../../ps2/veronica/prog/effect.h"
+#include "../../../ps2/veronica/prog/hitchk.h"
 
 // ENEMY: First Form Alexia 
 
@@ -31,7 +32,20 @@ void(*bhEne12_NageMode2)(BH_PWORK*)[1];
 void(*bhEne12_DamageMode2)(BH_PWORK*)[1];
 void(*bhEne12_DieMode2)(BH_PWORK*)[1];*/
 
-static CPCL CapColTab[25] = {
+static char joint_tree[8][3] = 
+{
+    {0,     0xFF,      0},
+    {0,     0,         0},
+    {0,     0,         0},
+    {1,     18,       19},
+    {20,    21,     0xFF},
+    {0,     0,         1},
+    {14,    15,       16},
+    {17,    0xFF,      0},
+};
+
+static CPCL CapColTab[25] = 
+{
     {  1,  2, 12 },
     {  2,  3,  8 },
     {  3,  4,  6 },
@@ -61,7 +75,8 @@ static CPCL CapColTab[25] = {
 
 static char SdwTab[8] = {1, 2, 5, 0xD, 9, 0x15, 0x11, 0xFF};
 unsigned char flip_tree[22] = {0, 1, 2, 3, 4, 5, 10, 11, 12, 13, 6, 7, 8, 9, 18, 19, 20, 21, 14, 15, 16, 17};
-P_WORK ShapeTbl_Acid[6] = {
+P_WORK ShapeTbl_Acid[6] = 
+{
     {    0,    0.0f },
     {   26,    0.0f },
     {   30, 1000.0f },
@@ -70,7 +85,8 @@ P_WORK ShapeTbl_Acid[6] = {
     {  999,    0.0f },
 };
 
-void(*bhEne12_Mode0[6])(BH_PWORK*) = {
+void(*bhEne12_Mode0[6])(BH_PWORK*) = 
+{
     bhEne12_Init,
     bhEne12_Move,
     bhEne12_Nage,
@@ -79,12 +95,14 @@ void(*bhEne12_Mode0[6])(BH_PWORK*) = {
     bhEne_Event,
 };
 
-void(*bhEne12_BrainType[2])(BH_PWORK*) = {
+void(*bhEne12_BrainType[2])(BH_PWORK*) = 
+{
     bhEne12_BR00,
     bhEne12_MV00,
 };
 
-void(*bhEne12_MoveMode2[8])(BH_PWORK*) = {
+void(*bhEne12_MoveMode2[8])(BH_PWORK*) = 
+{
     bhEne12_MV00,
     bhEne12_MV01,
     bhEne12_MV02,
@@ -620,7 +638,8 @@ void bhEne12_MV05()
 }
 
 // 100% matching!
-void bhEne12_MV06(BH_PWORK* epw) {
+void bhEne12_MV06(BH_PWORK* epw) 
+{
     
     switch (epw->mode3) {
     case 0:
@@ -634,48 +653,45 @@ void bhEne12_MV06(BH_PWORK* epw) {
     }
 }
 
-/*// 
-// Start address: 0x1d6f00
+// 100% matching!
 void bhEne12_MV07(BH_PWORK* epw)
 {
-	_anon10* mkaP;
-	// Line 1193, Address: 0x1d6f00, Func Offset: 0
-	// Line 1194, Address: 0x1d6f0c, Func Offset: 0xc
-	// Line 1196, Address: 0x1d6f20, Func Offset: 0x20
-	// Line 1197, Address: 0x1d6f30, Func Offset: 0x30
-	// Line 1198, Address: 0x1d6f3c, Func Offset: 0x3c
-	// Line 1197, Address: 0x1d6f40, Func Offset: 0x40
-	// Line 1198, Address: 0x1d6f44, Func Offset: 0x44
-	// Line 1200, Address: 0x1d6f50, Func Offset: 0x50
-	// Line 1213, Address: 0x1d6f54, Func Offset: 0x54
-	// Line 1211, Address: 0x1d6f5c, Func Offset: 0x5c
-	// Line 1212, Address: 0x1d6f60, Func Offset: 0x60
-	// Line 1217, Address: 0x1d6f64, Func Offset: 0x64
-	// Line 1200, Address: 0x1d6f68, Func Offset: 0x68
-	// Line 1205, Address: 0x1d6f70, Func Offset: 0x70
-	// Line 1206, Address: 0x1d6f78, Func Offset: 0x78
-	// Line 1218, Address: 0x1d6f7c, Func Offset: 0x7c
-	// Line 1222, Address: 0x1d6f80, Func Offset: 0x80
-	// Line 1205, Address: 0x1d6f84, Func Offset: 0x84
-	// Line 1206, Address: 0x1d6f98, Func Offset: 0x98
-	// Line 1205, Address: 0x1d6fa4, Func Offset: 0xa4
-	// Line 1206, Address: 0x1d6fa8, Func Offset: 0xa8
-	// Line 1207, Address: 0x1d6fb0, Func Offset: 0xb0
-	// Line 1211, Address: 0x1d6fb8, Func Offset: 0xb8
-	// Line 1212, Address: 0x1d6fc4, Func Offset: 0xc4
-	// Line 1213, Address: 0x1d6fd0, Func Offset: 0xd0
-	// Line 1214, Address: 0x1d6fdc, Func Offset: 0xdc
-	// Line 1215, Address: 0x1d6fe4, Func Offset: 0xe4
-	// Line 1216, Address: 0x1d6fe8, Func Offset: 0xe8
-	// Line 1217, Address: 0x1d6fec, Func Offset: 0xec
-	// Line 1218, Address: 0x1d6ff0, Func Offset: 0xf0
-	// Line 1219, Address: 0x1d6ff4, Func Offset: 0xf4
-	// Line 1222, Address: 0x1d7000, Func Offset: 0x100
-	// Line 1224, Address: 0x1d7010, Func Offset: 0x110
-	// Func End, Address: 0x1d7020, Func Offset: 0x120
+    NJS_MKEY_A_MOD* mkaP;
+
+    switch (epw->mode3) {
+        case 0:
+            break;
+        default:
+            return;
+    } 
+
+    bhEne_GetPartsPos(epw, &joint_tree[0][0], (NJS_POINT3*)&epw->px);
+
+    epw->py += 5.0f;
+    epw->py = bhGetGroundPosition((NJS_POINT3*)&epw->px);
+
+    epw->mtn_md |= 0x100;
+
+    mkaP = epw->mnwP[epw->mtn_no].md2P->p[1];
+    mkaP += (epw->frm_no >> 0x10);
+    epw->ay = mkaP->key[1];
+
+    epw->flg |= 0x40000;
+    epw->flg |= 0x100000;
+    epw->flg &= 0xFFF7FFFF;
+
+    epw->mnwP     = epw->mnwPb;
+    epw->mtn_no   = 0;
+    epw->frm_no   = 0;
+    epw->mtn_add  = 0x10000;
+    epw->hokan_count = 0xA;
+
+    epw->mode3 = epw->mode3 + 1;
+
+    sys->rm_flg |= 1;
 }
 
-// 
+/*// 
 // Start address: 0x1d7020
 void bhEne12_Nage(BH_PWORK* epw)
 {
