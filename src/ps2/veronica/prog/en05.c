@@ -3494,32 +3494,34 @@ void bhEne05_DG13(BH_PWORK* epw)
 	// Func End, Address: 0x1b434c, Func Offset: 0x2dc
 }*/
 
-// 
-// Start address: 0x1b4350
+// 100% matching!
 void bhEne05_ChainDamage(BH_PWORK* epw)
-{
-	//npobj* objP;
-	char model_list[2];
-	// Line 4238, Address: 0x1b4350, Func Offset: 0
-	// Line 4243, Address: 0x1b4360, Func Offset: 0x10
-	// Line 4245, Address: 0x1b4364, Func Offset: 0x14
-	// Line 4247, Address: 0x1b437c, Func Offset: 0x2c
-	// Line 4248, Address: 0x1b43e0, Func Offset: 0x90
-	// Line 4247, Address: 0x1b43ec, Func Offset: 0x9c
-	// Line 4248, Address: 0x1b43f0, Func Offset: 0xa0
-	// Line 4249, Address: 0x1b43f8, Func Offset: 0xa8
-	// Line 4250, Address: 0x1b4400, Func Offset: 0xb0
-	// Line 4251, Address: 0x1b441c, Func Offset: 0xcc
-	// Line 4252, Address: 0x1b442c, Func Offset: 0xdc
-	// Line 4253, Address: 0x1b4434, Func Offset: 0xe4
-	// Line 4255, Address: 0x1b443c, Func Offset: 0xec
-	// Line 4256, Address: 0x1b444c, Func Offset: 0xfc
-	// Line 4257, Address: 0x1b4460, Func Offset: 0x110
-	// Line 4258, Address: 0x1b4464, Func Offset: 0x114
-	// Line 4259, Address: 0x1b446c, Func Offset: 0x11c
-	// Line 4261, Address: 0x1b4478, Func Offset: 0x128
-	// Func End, Address: 0x1b448c, Func Offset: 0x13c
-	scePrintf("bhEne05_ChainDamage - UNIMPLEMENTED!\n");
+{	
+	static char model_list[2] = { 3, 255 };
+    NJS_CNK_OBJECT* objP;
+    
+    objP = epw->mlwP->objP;
+    if (EXP0_C(0x80) == 0)
+    {
+        objP[2].ang[0] = (objP[2].ang[0] + (int)(182.04445f * ((int)(12.0f * njRandom()) + 8)));
+        bhEne05_MotionPause(epw, model_list);
+        EXP0_C(0x80) = 1;
+    }
+    else if ((char)EXP0_C(0x80) > 2)
+    {
+        if (epw->hokan_count < 3)
+        {
+            epw->hokan_count = 3;
+            epw->hokan_rate = 13107;
+        }
+        bhEne05_SetMotionFlg(epw, 2, 1);
+        epw->flg &= ~0x1000000;
+        EXP0_C(0x80) = 0;
+    }
+    else
+    {
+        EXP0_C(0x80)++;
+    }
 }
 
 // 
@@ -4279,6 +4281,7 @@ void bhEne05_SetMotionFlg(BH_PWORK* epw, unsigned int flg, unsigned char mode)
 	scePrintf("bhEne05_SetMotionFlg - UNIMPLEMENTED!\n");
 }
 
+// 100% matching!
 void bhEne05_FixedLegPos(BH_PWORK* epw)
 {
     int fno;
