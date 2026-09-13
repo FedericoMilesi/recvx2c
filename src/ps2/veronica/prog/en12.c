@@ -45,6 +45,33 @@ static char joint_tree[8][3] =
     {17,    0xFF,      0},
 };
 
+static COMBWEP_WORK CombWepTbl[21] = 
+{
+    {  0, {  0, 0, 0 },  0,  0 },
+    {  0, {  0, 0, 0 },  0,  0 },
+    {  4, {  1, 0, 0 },  5, 20 },
+    { 10, {  4, 3, 1 }, 20, 10 },
+    { 10, {  4, 3, 1 }, 20, 10 },
+    { 10, {  4, 3, 1 }, 10,  0 },
+    {  0, {  0, 0, 0 }, 25,  0 },
+    {  0, {  0, 0, 0 }, 25,  0 },
+    { 25, {  5, 3, 1 },  5,  0 },
+    {  0, {  0, 0, 0 }, 25,  0 },
+    {  0, {  0, 0, 0 }, 10,  0 },
+    {  0, {  0, 0, 0 }, 30,  0 },
+    { 25, {  5, 4, 2 }, 10,  0 },
+    {  0, {  0, 0, 0 }, 60,  0 },
+    {  0, {  0, 0, 0 },  0,  0 },
+    {  0, {  0, 0, 0 },  0,  0 },
+    { 15, {  1, 1, 1 },  0,  0 },
+    {  0, {  0, 0, 0 },  0,  0 },
+    {  0, {  0, 0, 0 },  0,  0 },
+    {  0, {  0, 0, 0 },  0,  0 },
+    {  0, {  0, 0, 0 },  0,  0 },
+};
+
+static COMBJOINT_WORK CombJointTbl[33] = {};
+
 static CPCL CapColTab[25] = 
 {
     {  1,  2, 12 },
@@ -170,6 +197,11 @@ void(*bhEne12_MoveMode2[8])(BH_PWORK*) =
 void(*bhEne12_NageMode2[1])(BH_PWORK*) = 
 {
     bhEne12_NG00,
+};
+
+void(*bhEne12_DamageMode2[1])(BH_PWORK*) = 
+{
+    bhEne12_DG00,
 };
 
 // 100% matching!
@@ -842,27 +874,26 @@ void bhEne12_NG00(BH_PWORK* epw) {
     }
 }
 
-/*// 
-// Start address: 0x1d7480
-void bhEne12_Damage(BH_PWORK* epw)
-{
-	// Line 1379, Address: 0x1d7480, Func Offset: 0
-	// Line 1381, Address: 0x1d748c, Func Offset: 0xc
-	// Line 1382, Address: 0x1d749c, Func Offset: 0x1c
-	// Line 1384, Address: 0x1d74a8, Func Offset: 0x28
-	// Line 1387, Address: 0x1d74bc, Func Offset: 0x3c
-	// Line 1388, Address: 0x1d74dc, Func Offset: 0x5c
-	// Line 1391, Address: 0x1d74ec, Func Offset: 0x6c
-	// Line 1394, Address: 0x1d74f4, Func Offset: 0x74
-	// Line 1391, Address: 0x1d74f8, Func Offset: 0x78
-	// Line 1394, Address: 0x1d7500, Func Offset: 0x80
-	// Line 1398, Address: 0x1d751c, Func Offset: 0x9c
-	// Line 1402, Address: 0x1d7528, Func Offset: 0xa8
-	// Line 1403, Address: 0x1d7548, Func Offset: 0xc8
-	// Func End, Address: 0x1d7558, Func Offset: 0xd8
+// 100% matching!
+void bhEne12_Damage(BH_PWORK* epw) {
+    if ((epw->flg & 4) &&
+        ((epw->flg = (int)(epw->flg & ~4),
+          bhEne_CalcDamage(epw, CombWepTbl, CombJointTbl),
+          (epw->wpnr_no != 0x10)) ||
+         (epw->flg2 & 4) ||
+         (epw->comb_pnt == 1))) {
+
+        epw->hp -= (epw->total_dam);
+
+        if (epw->wpnr_no != 0x11 || (epw->flg2 & 4)) {
+            bhEne12_HitMark(epw);
+        }
+    }
+
+    bhEne12_DamageMode2[epw->mode2](epw);
 }
 
-// 
+/*// 
 // Start address: 0x1d7560
 void bhEne12_DG00(BH_PWORK* epw)
 {
