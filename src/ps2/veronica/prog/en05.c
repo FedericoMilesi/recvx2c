@@ -9,6 +9,7 @@
 #include "../../../ps2/veronica/prog/pwksub.h"
 #include "../../../ps2/veronica/prog/rutchk.h"
 #include "../../../ps2/veronica/prog/ps2_NaMatrix.h"
+#include "../../../ps2/veronica/prog/hitchk.h"
 
 // ENEMY: Hunter/Sweeper 
 
@@ -5038,44 +5039,44 @@ int bhEne05_CheckHikkaki(BH_PWORK* epw)
     return (bhCollisionCheckLine3(&pos1, &pos2, 17408, epw->flr_no) != NULL) ? 0 : 1;
 }
 
-/*
-// 
-// Start address: 0x1b8360
+// 99.84% matching
 int bhEne05_CheckPlyRoute(BH_PWORK* epw)
 {
-	_anon6* hp;
-	int i;
-	_anon38 vec;
-	_anon38 pos;
-	// Line 6040, Address: 0x1b8360, Func Offset: 0
-	// Line 6047, Address: 0x1b8378, Func Offset: 0x18
-	// Line 6048, Address: 0x1b837c, Func Offset: 0x1c
-	// Line 6049, Address: 0x1b8380, Func Offset: 0x20
-	// Line 6050, Address: 0x1b8384, Func Offset: 0x24
-	// Line 6047, Address: 0x1b8388, Func Offset: 0x28
-	// Line 6048, Address: 0x1b838c, Func Offset: 0x2c
-	// Line 6050, Address: 0x1b8394, Func Offset: 0x34
-	// Line 6048, Address: 0x1b839c, Func Offset: 0x3c
-	// Line 6049, Address: 0x1b83a0, Func Offset: 0x40
-	// Line 6050, Address: 0x1b83a8, Func Offset: 0x48
-	// Line 6051, Address: 0x1b83b8, Func Offset: 0x58
-	// Line 6053, Address: 0x1b83c8, Func Offset: 0x68
-	// Line 6060, Address: 0x1b83e0, Func Offset: 0x80
-	// Line 6053, Address: 0x1b83e4, Func Offset: 0x84
-	// Line 6054, Address: 0x1b83f4, Func Offset: 0x94
-	// Line 6055, Address: 0x1b8408, Func Offset: 0xa8
-	// Line 6057, Address: 0x1b841c, Func Offset: 0xbc
-	// Line 6058, Address: 0x1b8424, Func Offset: 0xc4
-	// Line 6059, Address: 0x1b842c, Func Offset: 0xcc
-	// Line 6066, Address: 0x1b8434, Func Offset: 0xd4
-	// Line 6067, Address: 0x1b8458, Func Offset: 0xf8
-	// Line 6069, Address: 0x1b8460, Func Offset: 0x100
-	// Line 6070, Address: 0x1b846c, Func Offset: 0x10c
-	// Line 6072, Address: 0x1b847c, Func Offset: 0x11c
-	// Line 6073, Address: 0x1b8480, Func Offset: 0x120
-	// Func End, Address: 0x1b849c, Func Offset: 0x13c
+	NJS_POINT3 pos;
+	NJS_POINT3 vec;
+	int i;    
+	ATR_WORK* hp;
+
+    pos.x = epw->px;
+    pos.y = epw->py;
+    pos.z = epw->pz;
+    
+    if (bhCollisionCheckLine3((NJS_VECTOR*)&plp->px, &pos, 17408, epw->flr_no) != NULL)
+    {
+        return 0;
+    }
+    
+    vec.x = 0.1f * (plp->px - epw->px);
+    vec.y = 0.1f * (plp->py - epw->py);
+    vec.z = 0.1f * (plp->pz - epw->pz);
+    pos.x = epw->px;
+    pos.y = epw->py;
+    pos.z = epw->pz;
+ 
+    for (i = 0; 10 >= i; i++)
+    {
+        if (bhCheckWallType(&pos, 0, 2.0f, 25.0f) != NULL)
+        {
+            return 0;
+        }
+    
+        njAddVector(&pos, &vec);
+    }
+    
+    return 1;
 }
 
+/*
 // 
 // Start address: 0x1b84a0
 void bhEne05_HitMark(BH_PWORK* epw)
